@@ -40,6 +40,7 @@ jobs:
         run: |
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USER }}" --password-stdin
           docker build . --tag ghcr.io/ovrclk/cosmos-omnibus:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}} \
-            --build-arg PROJECT=${{matrix.project}} \
+            --build-arg PROJECT=${{matrix.project}}         \
+            --build-arg PROJECT_VERSION=${{matrix.version}} \
             --build-arg PROJECT_BIN=${{matrix.bin}}
           docker push ghcr.io/ovrclk/cosmos-omnibus:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}
