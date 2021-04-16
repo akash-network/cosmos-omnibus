@@ -1,0 +1,39 @@
+name: publish
+on:
+  push:
+    tags:
+      - v*
+
+strategy:
+  matrix:
+    include:
+      - project: kava
+        # hack
+        env:     KAVA
+        version: v0.14.1
+      - project: gaia
+        env:     GAIA
+        version: v4.2.1
+      - project: dvpn
+        env:     DVPN
+        version: v0.5.0
+      - project: akash
+        env:     AKASH
+        version: v0.12.1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: "1.16"
+      - name: build
+        run: |
+          ${{matrix.env}}_VERSION="${{matrix.version}}" make build-${{matrix.project}}
+      - name: publish
+        run: |
+          echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ secrets.CR_USER }}" --password-stdin
+          docker build . --tag ghcr.io/ovrclk/cosmos-omnibus:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}} --build-arg PROJECT=${{matrix.project}}
+          docker push ghcr.io/ovrclk/cosmos-omnibus:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}
