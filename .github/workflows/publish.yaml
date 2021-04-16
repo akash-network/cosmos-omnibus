@@ -4,30 +4,30 @@ on:
     tags:
       - v*
 
-strategy:
-  matrix:
-    include:
-      # hacks
-      - project: kava
-        env:     KAVA
-        version: v0.14.1
-        bin:     kvd
-      - project: gaiad
-        env:     GAIAD
-        version: v4.2.1
-        bin:     gaiad
-      - project: dvpn
-        env:     DVPN
-        version: v0.5.0
-        bin:     sentinelhub
-      - project: akash
-        env:     AKASH
-        version: v0.12.1
-        bin:     akash
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          # hacks
+          - project: kava
+            env:     KAVA
+            version: v0.14.1
+            bin:     kvd
+          - project: gaiad
+            env:     GAIAD
+            version: v4.2.1
+            bin:     gaiad
+          - project: dvpn
+            env:     DVPN
+            version: v0.5.0
+            bin:     sentinelhub
+          - project: akash
+            env:     AKASH
+            version: v0.12.1
+            bin:     akash
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
