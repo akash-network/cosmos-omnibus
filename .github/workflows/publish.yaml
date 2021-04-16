@@ -38,7 +38,7 @@ jobs:
           ${{matrix.env}}_VERSION="${{matrix.version}}" make build-${{matrix.project}}
       - name: publish
         run: |
-          echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ secrets.CR_USER }}" --password-stdin
+          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USER }}" --password-stdin
           docker build . --tag ghcr.io/ovrclk/cosmos-omnibus:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}} \
             --build-arg PROJECT=${{matrix.project}} \
             --build-arg PROJECT_BIN=${{matrix.bin}}

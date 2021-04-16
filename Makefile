@@ -11,7 +11,7 @@ all: build-kava build-gaia build-dvpn build-akash
 
 .PHONY: build-kava
 build-kava: build-init
-	git clone git@github.com:Kava-Labs/kava.git "$(BUILD_DIR)/kava"
+	git clone https://github.com/Kava-Labs/kava.git "$(BUILD_DIR)/kava"
 	cd "$(BUILD_DIR)/kava" && \
 	git checkout "$(KAVA_VERSION)" && \
 	GOBIN="$(DIST_DIR)" make install
@@ -24,7 +24,7 @@ build-gaiad: build-init
 
 .PHONY: build-dvpn
 build-dvpn: build-init
-	git clone git@github.com:sentinel-official/hub.git "$(BUILD_DIR)/dvpn-hub"
+	git clone https://github.com/sentinel-official/hub.git "$(BUILD_DIR)/dvpn-hub"
 	cd "$(BUILD_DIR)/dvpn-hub" && \
 		mkdir -p dist && \
 		PATH=$$PATH:./dist GOBIN=$$PWD/dist make tools install && \
