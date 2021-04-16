@@ -18,7 +18,7 @@ The available docker images can be found [here](https://github.com/orgs/ovrclk/p
 tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Repository|Version|Image|
-|---|---|---|
+|---|---|---|---|
 |`akash`|https://github.com/ovrclk/akash|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.1-akash-v0.12.1`|
 |`gaiad`|https://github.com/cosmos/gaia|`v0.4.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.1-gaiad-v4.12`|
 |`dvpn`|https://github.com/sentinel-official/hub|`v0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.1-dvpn-v0.5.0`|
