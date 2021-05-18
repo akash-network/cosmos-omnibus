@@ -16,7 +16,7 @@ export NODE_GENESIS_URL="${NODE_GENESIS_URL:-"$METADATA_URL_BASE/genesis.json"}"
 export NODE_SEEDS="${NODE_SEEDS:-$(curl -sL "$METADATA_URL_BASE/seed-nodes.txt" | paste -sd ',')}"
 export NODE_PEERS="${NODE_PEERS:-$(curl -sL "$METADATA_URL_BASE/peer-nodes.txt" | paste -sd ',')}"
 export PRIVATE_PEER_IDS="${PRIVATE_PEER_IDS:-""}"
-export RPC_LIST="${RPC_LIST:-"$METADATA_URL_BASE/rpc-nodes.txt"}"
+export RPC_LIST="${RPC_LIST:-$(curl -sL "$METADATA_URL_BASE/rpc-nodes.txt" | paste -sd ',')}"
 
 /bin/node init "$NODE_MONIKER" --home $NODE_HOME
 curl -s "$NODE_GENESIS_URL" > $NODE_HOME/config/genesis.json

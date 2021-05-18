@@ -18,14 +18,9 @@ def state_sync():
         exit()
 
     if 'statesync' in data.keys():
-        sync_servers = []
-        sys.stderr.write("Fetching: %s\n" % (sync_url,))
-        with urllib.request.urlopen(sync_url, timeout=timeout) as response:
-            sync_data = str(response.read(), 'UTF-8')
-
-        sys.stderr.write("Data: %s\n" % (sync_data,))
+        sys.stderr.write("RPC Servers: %s\n" % (sync_url,))
         orig_sync_servers = [y for y in (
-            x.strip() for x in sync_data.split("\n")) if len(y) != 0]
+            x.strip() for x in sync_url.split(",")) if len(y) != 0]
 
         sync_servers = []
         for sync_server in orig_sync_servers:
