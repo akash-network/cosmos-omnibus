@@ -1,0 +1,56 @@
+---
+version: "2.0"
+
+services:
+  node:
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc1-sentinelhub-v0.5.0
+    env:
+      - MONIKER=my-moniker-1
+      - CHAIN_ID=sentinelhub-1
+      - SEED_NODES=855807cc6a919c22ec943050ebb5c80b23724ed0@3.239.11.246:26656
+      - GENESIS_URL=https://raw.githubusercontent.com/sentinel-official/launch/sentinelhub-1/sentinelhub-1/genesis.json
+      - DENOM=udvpn
+      # - SENTINELHUB_PRUNING=nothing
+      # - SENTINELHUB_STATE_SYNC_SNAPSHOT_INTERVAL=500
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true
+      - port: 26656
+        to:
+          - global: true
+      - port: 1317
+        to:
+          - global: true
+      - port: 9090
+        to:
+          - global: true
+
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 2Gi
+        storage:
+          size: 60Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 100
+
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 1
