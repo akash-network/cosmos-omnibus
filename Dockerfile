@@ -1,9 +1,5 @@
-from debian:buster
+FROM golang:1.16-buster
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus
-
-RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes ca-certificates curl && \
-  apt-get clean
 
 EXPOSE 26656 \
        26657 \
@@ -11,19 +7,33 @@ EXPOSE 26656 \
        9090  \
        8080
 
-ARG  PROJECT
-ARG  PROJECT_BIN
-ARG  PROJECT_VERSION
+ARG PROJECT=akash
+ARG PROJECT_BIN=$PROJECT
+ARG VERSION=v0.12.1
+ARG REPOSITORY=https://github.com/ovrclk/akash.git
 
-ENV COSMOS_OMNIBUS_PROJECT=$PROJECT
-ENV COSMOS_OMNIBUS_PROJECT_VERSION=$PROJECT_VERSION
+ENV PROJECT=$PROJECT
+ENV PROJECT_BIN=$PROJECT_BIN
+ENV PROJECT_DIR=.$PROJECT_BIN
+ENV VERSION=$VERSION
 
-ENV NODE_HOME=/data
+ENV MONIKER=my-omnibus-node
+ENV NETWORK_VARIANT=mainnet
+ENV METADATA_URL=https://raw.githubusercontent.com/ovrclk/cosmos-omnibus/master/$PROJECT/$NETWORK_VARIANT
+ENV DENOM=uakt
 
-COPY dist/$PROJECT_BIN /bin/node
+RUN apt-get update && \
+  apt-get install --no-install-recommends --assume-yes ca-certificates curl file && \
+  apt-get clean
 
-COPY run.sh /run.sh
+RUN git clone -b $VERSION $REPOSITORY /data
+WORKDIR /data
 
-WORKDIR /
+RUN make install
+RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
 
-ENTRYPOINT ["/run.sh"]
+COPY run.sh /usr/bin/
+RUN chmod +x /usr/bin/run.sh
+ENTRYPOINT ["run.sh"]
+
+CMD $PROJECT_BIN start

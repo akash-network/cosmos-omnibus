@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: sentinelhub
+        PROJECT_BIN: sentinelhubd
+        VERSION: v0.5.0
+        REPOSITORY: https://github.com/sentinel-official/hub.git
+    environment:
+      - MONIKER=node_1
+      - CHAIN_ID=sentinelhub-1
+      - SEED_NODES=855807cc6a919c22ec943050ebb5c80b23724ed0@3.239.11.246:26656
+      - GENESIS_URL=https://raw.githubusercontent.com/sentinel-official/launch/sentinelhub-1/sentinelhub-1/genesis.json
+      - DENOM=udvpn
+    volumes:
+      - ./node-data:/root/.sentinelhubd

@@ -1,55 +1,35 @@
 #!/bin/bash
 
-genmoniker(){
-  echo "cosmos-omnibus-$(dd if=/dev/random bs=1 count=3 status=none | od -An -x | tr -d ' ')"
-}
+set -e
 
-export NODE_HOME="${AKASH_HOME:-/home}"
-export NODE_MONIKER="${NODE_MONIKER:-cosmos-omnibus-$(genmoniker)}"
+export PROJECT_HOME="/root/$PROJECT_DIR"
+export CHAIN_ID="${CHAIN_ID:-$(curl -sfL "$METADATA_URL/chain-id.txt")}"
+export SEED_NODES="${SEED_NODES:-$(curl -sfL "$METADATA_URL/seed-nodes.txt" | paste -sd ',')}"
+export GENESIS_URL="${GENESIS_URL:-$METADATA_URL/genesis.json}"
+export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT^^})}"
 
-URL_BASE="${URL_BASE:-https://raw.githubusercontent.com/ovrclk/cosmos-omnibus/master/data}"
-NETWORK_VARIANT="${NETWORK_VARIANT:-mainnet}"
-METADATA_URL_BASE="${METADATA_URL_BASE:-"$URL_BASE/$COSMOS_OMNIBUS_PROJECT/$NETWORK_VARIANT"}"
+[ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
+[ -z "$SEED_NODES" ] && echo "SEED_NODES not found" && exit
 
-export NODE_CHAIN_ID="${NODE_CHAIN_ID:-$(curl -sL "$METADATA_URL_BASE/chain-id.txt")}"
-export NODE_SEEDS="${NODE_SEEDS:-$(curl -sL "$METADATA_URL_BASE/seed-nodes.txt" | paste -sd ',')}"
+export "${NAMESPACE}_P2P_SEEDS=$SEED_NODES"
+export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=$SEED_NODES
 
-/bin/node init "$NODE_MONIKER"
-curl -s "$METADATA_URL_BASE/genesis.json" > $NODE_HOME/config/genesis.json
-akash validate-genesis
+export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
+export "${NAMESPACE}_FASTSYNC_VERSION"="${FASTSYNC_VERSION:v2}"
+export "${NAMESPACE}_MINIMUM_GAS_PRICES"="${MINIMUM_GAS_PRICES:0.025$DENOM}"
 
-do_init(){
-}
+GENESIS_FILE=$PROJECT_HOME/config/genesis.json
+if [ ! -f "$GENESIS_FILE" ]; then
+  $PROJECT_BIN init "$MONIKER" --chain-id "$CHAIN_ID"
 
-do_init_snapshot(){
-# rm -rf "$NODE_HOME"/data
-# mkdir -p "$NODE_HOME"/data
-# ( 
-#   cd "$NODE_HOME" && \
-#   if [[ -z "${SNAPSHOT_URL}" ]]; then
-#     SNAPSHOT_URL=http://135.181.60.250/akash/$(curl -s http://135.181.60.250/akash/ | egrep -o ">akashnet-2.*tar" | tr -d ">");
-#   fi
-#   echo "Downloading snapshot from $SNAPSHOT_URL..."
-#   wget -nv -O - $SNAPSHOT_URL | tar xf -
-# )
-}
+  curl -sfL $GENESIS_URL > genesis.json
+  file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
+  mv genesis.json $GENESIS_FILE
+fi
 
-do_init_statesync(){
-}
+$PROJECT_BIN validate-genesis
 
+# Statesync
+# Snapshot
 
-case "$1" in
-  init)
-    do_init
-    ;;
-  init-snapshot)
-    do_init_snapshot
-    ;;
-  init-statesync)
-    do_init_statesync
-    ;;
-  *)
-    exec /bin/node "$@"
-esac
-
-
+exec "$@"
