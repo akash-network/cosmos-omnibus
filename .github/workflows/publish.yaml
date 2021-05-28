@@ -16,10 +16,6 @@ jobs:
           #   env:     KAVA
           #   version: v0.14.1
           #   bin:     kvd
-          # - project: gaiad
-          #   env:     GAIAD
-          #   version: v4.2.1
-          #   bin:     gaiad
           - project: akash
             project_bin: akash
             version: v0.12.1
@@ -28,6 +24,10 @@ jobs:
             project_bin: sentinelhubd
             version: v0.5.0
             repository: https://github.com/sentinel-official/hub.git
+          - project: gaia
+            project_bin: gaiad
+            version: v4.2.1
+            repository: https://github.com/cosmos/gaia
     steps:
       - uses: actions/checkout@v2
       - name: build
