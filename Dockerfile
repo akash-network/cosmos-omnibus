@@ -2,7 +2,7 @@ FROM golang:1.16-buster
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes ca-certificates curl file unzip && \
+  apt-get install --no-install-recommends --assume-yes ca-certificates curl file unzip jq && \
   apt-get clean
 
 ARG PROJECT=akash

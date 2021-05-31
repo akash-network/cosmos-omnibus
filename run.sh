@@ -10,8 +10,8 @@ export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT^^})}"
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
 
-export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS:$SEED_NODES}"
-export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS:$SEED_NODES}
+export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS:-$SEED_NODES}"
+export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS:-$SEED_NODES}
 
 export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 export "${NAMESPACE}_FASTSYNC_VERSION"="${FASTSYNC_VERSION:v2}"
@@ -25,6 +25,15 @@ if [ ! -f "$GENESIS_FILE" ]; then
   file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
   mv genesis.json $GENESIS_FILE
+fi
+
+if [ ! -z "$TRUSTED_NODE" ]; then
+  LATEST_HEIGHT=$(curl -s $TRUSTED_NODE/block | jq -r .result.block.header.height)
+  BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000))
+  TRUST_HASH=$(curl -s "$TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+  export "${NAMESPACE}_STATESYNC_TRUST_HEIGHT=$BLOCK_HEIGHT"
+  export "${NAMESPACE}_STATESYNC_TRUST_HASH=$TRUST_HASH"
+  export "${NAMESPACE}_STATESYNC_TRUST_PERIOD=168h0m0s"
 fi
 
 # $PROJECT_BIN validate-genesis
