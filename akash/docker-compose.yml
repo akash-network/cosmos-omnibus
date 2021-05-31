@@ -11,5 +11,6 @@ services:
     environment:
       - MONIKER=akash_1
       - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - MINIMUM_GAS_PRICES=0.025uakt
     volumes:
       - ./node-data:/root/.akash
