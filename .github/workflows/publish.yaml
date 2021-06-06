@@ -20,6 +20,7 @@ jobs:
             project_bin: akash
             version: v0.12.1
             repository: https://github.com/ovrclk/akash.git
+            chain_id: akashnet-2
           - project: sentinelhub
             project_bin: sentinelhub
             version: v0.6.2
@@ -29,6 +30,7 @@ jobs:
             project_bin: gaiad
             version: v4.2.1
             repository: https://github.com/cosmos/gaia
+            chain_id: cosmoshub-4
     steps:
       - uses: actions/checkout@v2
       - name: build
@@ -36,7 +38,10 @@ jobs:
           echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ secrets.CR_USER }}" --password-stdin
           docker build . --tag ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}} \
             --build-arg PROJECT=${{matrix.project}} \
-            --build-arg VERSION=${{matrix.version}} \
             --build-arg PROJECT_BIN=${{matrix.project_bin}} \
+            --build-arg PROJECT_DIR=${{matrix.project_dir}} \
+            --build-arg VERSION=${{matrix.version}} \
             --build-arg REPOSITORY=${{matrix.repository}}
+            --build-arg CHAIN_ID=${{matrix.chain_id}}
+            --build-arg NAMESPACE=${{matrix.namespace}}
           docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}

@@ -7,6 +7,7 @@ export CHAIN_ID="${CHAIN_ID:-$(curl -sfL "$METADATA_URL/chain-id.txt")}"
 export SEED_NODES="${SEED_NODES:-$(curl -sfL "$METADATA_URL/seed-nodes.txt" | paste -sd ',')}"
 export GENESIS_URL="${GENESIS_URL:-$METADATA_URL/genesis.json}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT^^})}"
+export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
 
@@ -14,7 +15,7 @@ export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS:-$SEED_NODES}"
 export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS:-$SEED_NODES}
 
 export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
-export "${NAMESPACE}_FASTSYNC_VERSION"="${FASTSYNC_VERSION:v2}"
+export "${NAMESPACE}_FASTSYNC_VERSION"="${FASTSYNC_VERSION:-v2}"
 [ ! -z "$MINIMUM_GAS_PRICES" ] && export "${NAMESPACE}_MINIMUM_GAS_PRICES"=$MINIMUM_GAS_PRICES
 
 GENESIS_FILE=$PROJECT_HOME/config/genesis.json
@@ -36,7 +37,7 @@ if [ ! -z "$TRUSTED_NODE" ]; then
   export "${NAMESPACE}_STATESYNC_TRUST_PERIOD=168h0m0s"
 fi
 
-# $PROJECT_BIN validate-genesis
+[ "$VALIDATE_GENESIS" == "1" ] && $PROJECT_BIN validate-genesis
 
 # Statesync
 # Snapshot
