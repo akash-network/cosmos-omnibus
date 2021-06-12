@@ -21,11 +21,13 @@ jobs:
             version: v0.12.1
             repository: https://github.com/ovrclk/akash.git
             chain_id: akashnet-2
+            namespace: AKASH
           - project: sentinelhub
             project_bin: sentinelhub
             version: v0.6.2
             repository: https://github.com/sentinel-official/hub.git
             chain_id: sentinelhub-2
+            namespace: SENTINELHUB
           - project: gaia
             project_bin: gaiad
             version: v4.2.1
@@ -40,7 +42,6 @@ jobs:
           docker build . --tag ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}} \
             --build-arg PROJECT=${{matrix.project}} \
             --build-arg PROJECT_BIN=${{matrix.project_bin}} \
-            --build-arg PROJECT_DIR=${{matrix.project_dir}} \
             --build-arg VERSION=${{matrix.version}} \
             --build-arg REPOSITORY=${{matrix.repository}} \
             --build-arg CHAIN_ID=${{matrix.chain_id}} \

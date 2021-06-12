@@ -26,8 +26,6 @@ if [ -n "$KEY_PATH" ]; then
   else
     file_suffix=""
   fi
-
-  declare -A restored_keys
 fi
 
 restore_key () {
@@ -43,12 +41,12 @@ restore_key () {
       gpg --decrypt --batch --passphrase "$KEY_PASSWORD" $PROJECT_HOME/config/$1$file_suffix > $PROJECT_HOME/config/$1
       rm $PROJECT_HOME/config/$1$file_suffix
     fi
-    restored_keys[$1]=1
   fi
 }
 
 backup_key () {
-  if [ -z "${restored_keys[$1]}" ]; then
+  existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
+  if [[ -z $existing ]]; then
     echo "Backing up $1"
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Encrypting backup..."
@@ -104,13 +102,18 @@ fi
 # Config
 export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 export "${NAMESPACE}_FASTSYNC_VERSION"="${FASTSYNC_VERSION:-v2}"
-[ ! -z "$MINIMUM_GAS_PRICES" ] && export "${NAMESPACE}_MINIMUM_GAS_PRICES"=$MINIMUM_GAS_PRICES
+[ -n "$MINIMUM_GAS_PRICES" ] && export "${NAMESPACE}_MINIMUM_GAS_PRICES"=$MINIMUM_GAS_PRICES
+[ -n "$PRUNING" ] && export "${NAMESPACE}_PRUNING"=$PRUNING
 
 # Peers
 export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS:-$SEED_NODES}"
 export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS:-$SEED_NODES}
 
 # Statesync
+if [ -n "$STATESYNC_SNAPSHOT_INTERVAL" ]; then
+  export "${NAMESPACE}_STATE_SYNC_SNAPSHOT_INTERVAL=$STATESYNC_SNAPSHOT_INTERVAL"
+fi
+
 if [ -n "$STATESYNC_RPC_SERVERS" ]; then
   export "${NAMESPACE}_STATESYNC_ENABLE=${STATESYNC_ENABLE:-true}"
   export "${NAMESPACE}_STATESYNC_RPC_SERVERS=$STATESYNC_RPC_SERVERS"
