@@ -42,7 +42,7 @@ jobs:
             --build-arg PROJECT_BIN=${{matrix.project_bin}} \
             --build-arg PROJECT_DIR=${{matrix.project_dir}} \
             --build-arg VERSION=${{matrix.version}} \
-            --build-arg REPOSITORY=${{matrix.repository}}
-            --build-arg CHAIN_ID=${{matrix.chain_id}}
+            --build-arg REPOSITORY=${{matrix.repository}} \
+            --build-arg CHAIN_ID=${{matrix.chain_id}} \
             --build-arg NAMESPACE=${{matrix.namespace}}
           docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}

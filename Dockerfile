@@ -5,6 +5,10 @@ RUN apt-get update && \
   apt-get install --no-install-recommends --assume-yes ca-certificates curl file unzip jq && \
   apt-get clean
 
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install --bin-dir /usr/bin
+
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 ARG PROJECT_DIR=.$PROJECT_BIN
