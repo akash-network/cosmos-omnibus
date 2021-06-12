@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc2-gaiad-v4.2.1
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc2-gaia-v4.2.1
     env:
       - MONIKER=my-moniker-1
       - PROJECT_DIR=.gaia
