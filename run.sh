@@ -117,7 +117,8 @@ fi
 if [ -n "$STATESYNC_RPC_SERVERS" ]; then
   export "${NAMESPACE}_STATESYNC_ENABLE=${STATESYNC_ENABLE:-true}"
   export "${NAMESPACE}_STATESYNC_RPC_SERVERS=$STATESYNC_RPC_SERVERS"
-  TRUSTED_NODE=${TRUSTED_NODE:-$(reset(explode(',', $STATESYNC_RPC_SERVERS)))}
+  IFS=',' read -ra rpc_servers <<< "$STATESYNC_RPC_SERVERS"
+  TRUSTED_NODE=${TRUSTED_NODE:-${rpc_servers[0]}}
   if [ -n "$TRUSTED_NODE" ]; then
     LATEST_HEIGHT=$(curl -s $TRUSTED_NODE/block | jq -r .result.block.header.height)
     BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000))
