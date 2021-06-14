@@ -10,10 +10,10 @@ services:
         PROJECT_DIR: .gaia
         VERSION: v4.2.1
         REPOSITORY: https://github.com/cosmos/gaia
-        CHAIN_ID: cosmoshub-4
         NAMESPACE: GA
     environment:
-      - MONIKER=gaia_node_1
+      - MONIKER=node_1
+      - CHAIN_ID=cosmoshub-4
       - P2P_SEEDS=bf8328b66dceb4987e5cd94430af66045e59899f@public-seed.cosmos.vitwit.com:26656
       - P2P_PERSISTENT_PEERS=ee27245d88c632a556cf72cc7f3587380c09b469@45.79.249.253:26656,538ebe0086f0f5e9ca922dae0462cc87e22f0a50@34.122.34.67:26656,d6318b3bd51a5e2b8ed08f2e520d50289ed32bf1@52.79.43.100:26656
       - GENESIS_URL=https://github.com/cosmos/mainnet/raw/master/genesis.cosmoshub-4.json.gz

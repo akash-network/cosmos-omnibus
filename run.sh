@@ -3,13 +3,17 @@
 set -e
 
 export PROJECT_HOME="/root/$PROJECT_DIR"
-export CHAIN_ID="${CHAIN_ID:-$(curl -sfL "$METADATA_URL/chain-id.txt")}"
-export SEED_NODES="${SEED_NODES:-$(curl -sfL "$METADATA_URL/seed-nodes.txt" | paste -sd ',')}"
-export GENESIS_URL="${GENESIS_URL:-$METADATA_URL/genesis.json}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
 if [[ -z $BOOTSTRAP && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL ) ]]; then
   export BOOTSTRAP="1"
+fi
+
+if [ -n $METADATA_URL ]; then
+  export CHAIN_ID="${CHAIN_ID:-$(curl -sfL "$METADATA_URL/chain-id.txt")}"
+  export P2P_SEEDS="${P2P_SEEDS:-$(curl -sfL "$METADATA_URL/seed-nodes.txt" | paste -sd ',')}"
+  export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(curl -sfL "$METADATA_URL/peer-nodes.txt" | paste -sd ',')}"
+  export GENESIS_URL="${GENESIS_URL:-$METADATA_URL/genesis.json}"
 fi
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
@@ -106,8 +110,8 @@ export "${NAMESPACE}_FASTSYNC_VERSION"="${FASTSYNC_VERSION:-v2}"
 [ -n "$PRUNING" ] && export "${NAMESPACE}_PRUNING"=$PRUNING
 
 # Peers
-export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS:-$SEED_NODES}"
-export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS:-$SEED_NODES}
+[ -n "$P2P_SEEDS" ] && export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS}"
+[ -n "$P2P_PERSISTENT_PEERS" ] && export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS}
 
 # Statesync
 if [ -n "$STATESYNC_SNAPSHOT_INTERVAL" ]; then
