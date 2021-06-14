@@ -34,7 +34,7 @@ jobs:
           - project: osmosis
             project_bin: osmosisd
             version: main
-            tag_suffix: -001
+            tag_suffix: '-001'
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSIS
     steps:
@@ -48,4 +48,4 @@ jobs:
             --build-arg VERSION=${{matrix.version}} \
             --build-arg REPOSITORY=${{matrix.repository}} \
             --build-arg NAMESPACE=${{matrix.namespace}}
-          docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}
+          docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}}
