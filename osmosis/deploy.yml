@@ -1,0 +1,50 @@
+---
+version: "2.0"
+
+services:
+  node:
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc8-osmosis-main-001
+    env:
+      - MONIKER=my-moniker-1
+      - CHAIN_ID=osmo-testnet-2
+      - P2P_SEEDS=e46a808d27f4bd837b4c05de57c5c40cb6408289@157.245.94.36:26656
+      - STATESYNC_RPC_SERVERS=157.245.94.36:26657
+      - GENESIS_URL=https://transfer.sh/get/1G2eVq7/genesis.json
+      - VALIDATE_GENESIS=0
+      # - MINIMUM_GAS_PRICES=0.025uatom
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true
+      - port: 26656
+        to:
+          - global: true
+
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 2Gi
+        storage:
+          size: 60Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 100
+
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 1

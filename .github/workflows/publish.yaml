@@ -11,39 +11,41 @@ jobs:
     strategy:
       matrix:
         include:
-          # hacks
-          # - project: kava
-          #   env:     KAVA
-          #   version: v0.14.1
-          #   bin:     kvd
           - project: akash
             project_bin: akash
             version: v0.12.1
             repository: https://github.com/ovrclk/akash.git
-            chain_id: akashnet-2
             namespace: AKASH
           - project: sentinelhub
             project_bin: sentinelhub
             version: v0.6.2
             repository: https://github.com/sentinel-official/hub.git
-            chain_id: sentinelhub-2
             namespace: SENTINELHUB
           - project: gaia
             project_bin: gaiad
             version: v4.2.1
             repository: https://github.com/cosmos/gaia
-            chain_id: cosmoshub-4
             namespace: GA
+          - project: kava
+            project_bin: kvd
+            version: v0.14.1
+            repository: https://github.com/Kava-Labs/kava
+            namespace: KA
+          - project: osmosis
+            project_bin: osmosisd
+            version: main
+            tag_suffix: -001
+            repository: https://github.com/osmosis-labs/osmosis
+            namespace: OSMOSIS
     steps:
       - uses: actions/checkout@v2
       - name: build
         run: |
           echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ secrets.CR_USER }}" --password-stdin
-          docker build . --tag ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}} \
+          docker build . --tag ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} \
             --build-arg PROJECT=${{matrix.project}} \
             --build-arg PROJECT_BIN=${{matrix.project_bin}} \
             --build-arg VERSION=${{matrix.version}} \
             --build-arg REPOSITORY=${{matrix.repository}} \
-            --build-arg CHAIN_ID=${{matrix.chain_id}} \
             --build-arg NAMESPACE=${{matrix.namespace}}
           docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}
