@@ -3,11 +3,14 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc11-osmosis-b702ebfdb139be0723a60f00c398aa2c2326b3cd
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc6-akash-v0.12.1
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/osmo-testnet-3/chain.json
-      # - MINIMUM_GAS_PRICES=0.025uosmo
+      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - MINIMUM_GAS_PRICES=0.025uakt
+      - FASTSYNC_VERSION=v2
+      # - SNAPSHOT_BASE_URL=http://135.181.60.250/akash
+      # - SNAPSHOT_FORMAT=tar
     expose:
       - port: 26657
         as: 80
@@ -24,9 +27,9 @@ profiles:
         cpu:
           units: 2
         memory:
-          size: 4Gi
+          size: 2Gi
         storage:
-          size: 40Gi
+          size: 120Gi
   placement:
     dcloud:
       attributes:

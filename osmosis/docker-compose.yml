@@ -13,7 +13,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/osmo-testnet-3/chain.json
-      # - STATESYNC_RPC_SERVERS=159.65.233.217:26657
       # - MINIMUM_GAS_PRICES=0.025uosmo
     volumes:
       - ./node-data:/root/.osmosisd

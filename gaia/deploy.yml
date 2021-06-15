@@ -6,10 +6,7 @@ services:
     image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc2-gaia-v4.2.1
     env:
       - MONIKER=node_1
-      - CHAIN_ID=cosmoshub-4
-      - P2P_SEEDS=bf8328b66dceb4987e5cd94430af66045e59899f@public-seed.cosmos.vitwit.com:26656
-      - P2P_PERSISTENT_PEERS=ee27245d88c632a556cf72cc7f3587380c09b469@45.79.249.253:26656,538ebe0086f0f5e9ca922dae0462cc87e22f0a50@34.122.34.67:26656,d6318b3bd51a5e2b8ed08f2e520d50289ed32bf1@52.79.43.100:26656
-      - GENESIS_URL=https://github.com/cosmos/mainnet/raw/master/genesis.cosmoshub-4.json.gz
+      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/cosmoshub-4/chain.json
       - MINIMUM_GAS_PRICES=0.025uatom
     expose:
       - port: 26657
@@ -17,12 +14,6 @@ services:
         to:
           - global: true
       - port: 26656
-        to:
-          - global: true
-      - port: 1317
-        to:
-          - global: true
-      - port: 9090
         to:
           - global: true
 
