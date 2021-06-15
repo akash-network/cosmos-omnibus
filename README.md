@@ -136,9 +136,9 @@ See the `docker-compose.yml` example file to run each node locally using `docker
 See the [_examples](./_examples) directory for some common setups, including:
 
 - Statesync
-- Load balanced RPC nodes
-- Validator with public sentires
-- Validator with private sentries
+- [Load Balanced RPC Nodes](./_examples/load-balanced-rpc-nodes)
+- [Validator and Public Sentries](./_examples/validator-and-public-sentries)
+- Validator with Private Sentries
 
 ## Contributing
 

@@ -1,0 +1,40 @@
+---
+version: "2.0"
+
+services:
+  node:
+    image: ghcr.io/tombeynon/nginx-dynamic-lb:v0.0.1
+    env:
+      - HOSTS=<node_deploy_1:port,node_deploy_2:port...>
+    expose:
+      - port: 80
+        to:
+          - global: true
+
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 1
+        memory:
+          size: 2Gi
+        storage:
+          size: 0.5Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 100
+
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 2
