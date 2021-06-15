@@ -3,15 +3,14 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc10-osmosis-b702ebfdb139be0723a60f00c398aa2c2326b3cd
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc11-osmosis-b702ebfdb139be0723a60f00c398aa2c2326b3cd
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_ID=osmo-testnet-3
-      # - P2P_SEEDS=42adaf5c53dee399987e3957e238638654262b99@159.65.233.217:26656
-      - P2P_PERSISTENT_PEERS=42adaf5c53dee399987e3957e238638654262b99@159.65.233.217:26656
+      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/osmo-testnet-3/chain.json
+      # - STATESYNC_SNAPSHOT_INTERVAL=500
       # - STATESYNC_RPC_SERVERS=159.65.233.217:26657
-      - GENESIS_URL=https://transfer.sh/get/14mm7wK/genesis.json
       # - MINIMUM_GAS_PRICES=0.025uosmo
+      # - DEBUG=1
     expose:
       - port: 26657
         as: 80
@@ -28,7 +27,7 @@ profiles:
         cpu:
           units: 2
         memory:
-          size: 2Gi
+          size: 4Gi
         storage:
           size: 40Gi
   placement:
