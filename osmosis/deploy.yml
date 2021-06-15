@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc9-osmosis-b702ebfdb139be0723a60f00c398aa2c2326b3cd
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc10-osmosis-b702ebfdb139be0723a60f00c398aa2c2326b3cd
     env:
       - MONIKER=my-moniker-1
       - CHAIN_ID=osmo-testnet-3
@@ -30,7 +30,7 @@ profiles:
         memory:
           size: 2Gi
         storage:
-          size: 60Gi
+          size: 40Gi
   placement:
     dcloud:
       attributes:

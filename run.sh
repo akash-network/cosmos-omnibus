@@ -105,7 +105,7 @@ fi
 
 # Config
 export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
-export "${NAMESPACE}_FASTSYNC_VERSION"="${FASTSYNC_VERSION:-v2}"
+[ -n "$FASTSYNC_VERSION" ] && export "${NAMESPACE}_FASTSYNC_VERSION"=$FASTSYNC_VERSION
 [ -n "$MINIMUM_GAS_PRICES" ] && export "${NAMESPACE}_MINIMUM_GAS_PRICES"=$MINIMUM_GAS_PRICES
 [ -n "$PRUNING" ] && export "${NAMESPACE}_PRUNING"=$PRUNING
 
@@ -135,5 +135,7 @@ fi
 
 echo "Node ID:"
 $PROJECT_BIN tendermint show-node-id
+
+[ "$DEBUG" == "1" ] && printenv
 
 exec "$@"
