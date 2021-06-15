@@ -33,10 +33,9 @@ jobs:
             namespace: KA
           - project: osmosis
             project_bin: osmosisd
-            version: main
-            tag_suffix: '-001'
+            version: b702ebfdb139be0723a60f00c398aa2c2326b3cd
             repository: https://github.com/osmosis-labs/osmosis
-            namespace: OSMOSIS
+            namespace: OSMOSISD
     steps:
       - uses: actions/checkout@v2
       - name: build
