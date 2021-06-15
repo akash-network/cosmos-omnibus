@@ -133,7 +133,7 @@ See the `docker-compose.yml` example file to run each node locally using `docker
 
 ## Examples
 
-See the [_examples]() directory for some common setups, including:
+See the [_examples](./_examples) directory for some common setups, including:
 
 - Statesync
 - Load balanced RPC nodes

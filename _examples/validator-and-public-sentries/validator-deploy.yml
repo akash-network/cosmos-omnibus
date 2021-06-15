@@ -1,0 +1,56 @@
+---
+version: "2.0"
+
+services:
+  validator:
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc11-sentinelhub-v0.6.2
+    env:
+      - MONIKER=validator
+        # temporary repo
+      - CHAIN_URL=https://raw.githubusercontent.com/tombeynon/tm-networks/master/sentinelhub-2/chain.json
+      - MINIMUM_GAS_PRICES=0.1udvpn
+      - VALIDATE_GENESIS=0 # failing currently?
+      - SENTINELHUB_MODE=validator
+      - SENTINELHUB_P2P_PEX=false
+      - SENTINELHUB_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...
+      - SENTINELHUB_ADDR_BOOK_STRICT=false
+      - SENTINELHUB_DOUBLE_SIGN_CHECK_HEIGHT=10
+      - P2P_PERSISTENT_PEERS=<id@node1:port,id@node2:port>
+      - STATESYNC_RPC_SERVERS=<node1:80>,<node2:80>
+      - S3_KEY=<s3-key>
+      - S3_SECRET=<s3-secret>
+      - KEY_PASSWORD=<key password>
+      - KEY_PATH=<bucket/validator>
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true # debug
+
+profiles:
+  compute:
+    validator:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 2Gi
+        storage:
+          size: 40Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        validator:
+          denom: uakt
+          amount: 100
+
+deployment:
+  validator:
+    dcloud:
+      profile: validator
+      count: 1
