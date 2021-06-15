@@ -32,8 +32,9 @@ EXPOSE 26656 \
        9090  \
        8080
 
-RUN git clone -b $VERSION $REPOSITORY /data
+RUN git clone $REPOSITORY /data
 WORKDIR /data
+RUN git checkout $VERSION
 
 RUN make install
 RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN

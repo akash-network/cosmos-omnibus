@@ -7,17 +7,17 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: main
+        VERSION: b702ebfdb139be0723a60f00c398aa2c2326b3cd
         REPOSITORY: https://github.com/osmosis-labs/osmosis
     ports:
       - '26657:26657'
     environment:
       - MONIKER=node_1
-      - CHAIN_ID=osmo-testnet-2
-      - P2P_SEEDS=e46a808d27f4bd837b4c05de57c5c40cb6408289@157.245.94.36:26656
-      - STATESYNC_RPC_SERVERS=157.245.94.36:26657
-      - GENESIS_URL=https://transfer.sh/get/1G2eVq7/genesis.json
-      - VALIDATE_GENESIS=0
+      - CHAIN_ID=osmo-testnet-3
+      - P2P_SEEDS=42adaf5c53dee399987e3957e238638654262b99@157.245.94.36:26656
+      # - STATESYNC_RPC_SERVERS=157.245.94.36:26657
+      - GENESIS_URL=https://transfer.sh/get/14mm7wK/genesis.json
+      # - VALIDATE_GENESIS=0
       # - MINIMUM_GAS_PRICES=0.025uatom
     volumes:
       - ./node-data:/root/.osmosisd
