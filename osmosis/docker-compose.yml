@@ -10,16 +10,10 @@ services:
         VERSION: b702ebfdb139be0723a60f00c398aa2c2326b3cd
         REPOSITORY: https://github.com/osmosis-labs/osmosis
         NAMESPACE: OSMOSISD
-    ports:
-      - '26656:26656'
-      - '26657:26657'
     environment:
       - MONIKER=node_1
-      - CHAIN_ID=osmo-testnet-3
-      # - P2P_SEEDS=42adaf5c53dee399987e3957e238638654262b99@159.65.233.217:26656
-      - P2P_PERSISTENT_PEERS=42adaf5c53dee399987e3957e238638654262b99@159.65.233.217:26656
+      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/osmo-testnet-3/chain.json
       # - STATESYNC_RPC_SERVERS=159.65.233.217:26657
-      - GENESIS_URL=https://transfer.sh/get/14mm7wK/genesis.json
       # - MINIMUM_GAS_PRICES=0.025uosmo
     volumes:
       - ./node-data:/root/.osmosisd

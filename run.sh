@@ -9,11 +9,19 @@ if [[ -z $BOOTSTRAP && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL ) ]]; then
   export BOOTSTRAP="1"
 fi
 
-if [ -n $METADATA_URL ]; then
+if [ -n "$METADATA_URL" ]; then
   export CHAIN_ID="${CHAIN_ID:-$(curl -sfL "$METADATA_URL/chain-id.txt")}"
   export P2P_SEEDS="${P2P_SEEDS:-$(curl -sfL "$METADATA_URL/seed-nodes.txt" | paste -sd ',')}"
   export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(curl -sfL "$METADATA_URL/peer-nodes.txt" | paste -sd ',')}"
   export GENESIS_URL="${GENESIS_URL:-$METADATA_URL/genesis.json}"
+fi
+
+if [ -n "$CHAIN_URL" ]; then
+  CHAIN_METADATA=$(curl -s $CHAIN_URL)
+  export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
+  export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | join(",")')}"
+  export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | join(",")')}"
+  export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r .genesis.genesis_url )}"
 fi
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
@@ -63,7 +71,9 @@ backup_key () {
 
 if [ ! -d "$PROJECT_HOME/config" ]; then
   $PROJECT_BIN init "$MONIKER" --chain-id "$CHAIN_ID"
+fi
 
+if [ -n "$GENESIS_URL" ]; then
   echo "Downloading genesis"
   curl -sfL $GENESIS_URL > genesis.json
   file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
