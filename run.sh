@@ -3,7 +3,7 @@
 set -e
 
 export PROJECT_HOME="/root/$PROJECT_DIR"
-export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT^^})}"
+export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
 if [[ -z $BOOTSTRAP && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL ) ]]; then
   export BOOTSTRAP="1"

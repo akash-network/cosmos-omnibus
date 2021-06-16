@@ -3,13 +3,18 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc12-osmosis-b702ebfdb139be0723a60f00c398aa2c2326b3cd
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc12-persistence-v0.1.3
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/osmo-testnet-3/chain.json
-      # - MINIMUM_GAS_PRICES=0.025uosmo
+        # temporary repo
+      - CHAIN_URL=https://raw.githubusercontent.com/tombeynon/tm-networks/master/core-1/chain.json
+      # - MINIMUM_GAS_PRICES=0.025uxprt
     expose:
       - port: 26657
+        as: 80
+        to:
+          - global: true
+      - port: 26656
         to:
           - global: true
 
@@ -22,7 +27,7 @@ profiles:
         memory:
           size: 4Gi
         storage:
-          size: 20Gi
+          size: 40Gi
   placement:
     dcloud:
       attributes:
@@ -39,4 +44,4 @@ deployment:
   node:
     dcloud:
       profile: node
-      count: 2
+      count: 1

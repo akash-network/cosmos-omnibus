@@ -36,6 +36,11 @@ jobs:
             version: b702ebfdb139be0723a60f00c398aa2c2326b3cd
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
+          - project: persistence
+            project_bin: persistenceCore
+            version: v0.1.3
+            repository: https://github.com/persistenceOne/persistenceCore
+            namespace: PERSISTENCECORE
     steps:
       - uses: actions/checkout@v2
       - name: build

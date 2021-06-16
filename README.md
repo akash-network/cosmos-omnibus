@@ -23,10 +23,11 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Repository|Version|Image|
 |---|---|---|---|
-|`akash`|https://github.com/ovrclk/akash|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-akash-v0.12.1`|
-|`gaiad`|https://github.com/cosmos/gaia|`v0.4.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-gaiad-v4.12`|
-|`dvpn`|https://github.com/sentinel-official/hub|`v0.6.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-dvpn-v0.6.2`|
-|`kava`|https://github.com/Kava-Labs/kava|`v0.14.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-kava-v0.14.1`|
+|`akash`|https://github.com/ovrclk/akash|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-rc12-akash-v0.12.1`|
+|`gaiad`|https://github.com/cosmos/gaia|`v0.4.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-rc12-gaiad-v4.12`|
+|`dvpn`|https://github.com/sentinel-official/hub|`v0.6.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-rc12-dvpn-v0.6.2`|
+|`kava`|https://github.com/Kava-Labs/kava|`v0.14.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-rc12-kava-v0.14.1`|
+|`persistence`|https://github.com/persistenceOne/persistenceCore|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-rc12-persistence-v0.1.3`|
 
 ## TODO
 

@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node1:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc11-sentinelhub-v0.6.2
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc12-sentinelhub-v0.6.2
     env:
       - MONIKER=private_node_1
         # temporary repo
@@ -30,7 +30,7 @@ services:
         to:
           - global: true
   node2:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc11-sentinelhub-v0.6.2
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc12-sentinelhub-v0.6.2
     env:
       - MONIKER=private_node_2
         # temporary repo

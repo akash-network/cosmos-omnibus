@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   validator:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc11-sentinelhub-v0.6.2
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc12-sentinelhub-v0.6.2
     env:
       - MONIKER=validator
         # temporary repo

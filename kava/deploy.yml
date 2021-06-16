@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc11-kava-v0.14.1
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc12-kava-v0.14.1
     env:
       - MONIKER=my-moniker-1
       - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/kava-7/chain.json
