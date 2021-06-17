@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/tombeynon/nginx-dynamic-lb:v0.0.1
+    image: ghcr.io/tombeynon/nginx-dynamic-lb:v0.0.2
     env:
       - HOST=mylbdomain.com
       - HOSTS=<node_deploy_1:port,node_deploy_2:port...>
