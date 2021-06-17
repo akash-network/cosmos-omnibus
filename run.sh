@@ -99,16 +99,17 @@ fi
 # Snapshot
 if [ "$BOOTSTRAP" == "1" ]; then
   SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
-  SNAPSHOT_PATTERN="${SNAPSHOT_PATTERN:-$CHAIN_ID.*$SNAPSHOT_FORMAT}"
 
-  rm -rf $PROJECT_HOME/data;
-  mkdir -p $PROJECT_HOME/data;
-  cd $PROJECT_HOME/data
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
+    SNAPSHOT_PATTERN="${SNAPSHOT_PATTERN:-$CHAIN_ID.*$SNAPSHOT_FORMAT}"
     SNAPSHOT_URL=$SNAPSHOT_BASE_URL/$(curl -s $SNAPSHOT_BASE_URL/ | egrep -o ">$SNAPSHOT_PATTERN" | tr -d ">");
   fi
 
   echo "Downloading snapshot from $SNAPSHOT_URL..."
+  rm -rf $PROJECT_HOME/data;
+  mkdir -p $PROJECT_HOME/data;
+  cd $PROJECT_HOME/data
+
   [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
   wget -nv -O - $SNAPSHOT_URL | tar $tar_args -
 fi
