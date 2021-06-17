@@ -5,6 +5,7 @@ services:
   node:
     image: ghcr.io/tombeynon/nginx-dynamic-lb:v0.0.1
     env:
+      - HOST=mylbdomain.com
       - HOSTS=<node_deploy_1:port,node_deploy_2:port...>
     expose:
       - port: 80
