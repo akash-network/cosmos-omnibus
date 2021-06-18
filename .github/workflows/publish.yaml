@@ -33,7 +33,7 @@ jobs:
             namespace: KA
           - project: osmosis
             project_bin: osmosisd
-            version: b702ebfdb139be0723a60f00c398aa2c2326b3cd
+            version: ff566c42c50c42c59d3d0c653a50159b2f80d8fb
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
           - project: persistence
