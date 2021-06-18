@@ -108,10 +108,10 @@ This can be from a specific URL, or from a base URL and a file matching a given 
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|BOOTSTRAP|Whether to bootsrap the node from the snapshot URL|1|0|
+|BOOTSTRAP|Whether to bootstrap the node from the snapshot URL|1|0|
 |SNAPSHOT_URL|A URL to a `.tar` or `.tar.gz` file| |http://135.181.60.250/akash/akashnet-2_2021-06-16.tar|
+|SNAPSHOT_FORMAT|The format of the snapshot file|tar.gz|tar|
 |SNAPSHOT_BASE_URL|A base URL to a directory containing backup files| |http://135.181.60.250/akash|
-|SNAPSHOT_FORMAT|The format of the file in the `BASE_URL`|tar.gz|tar|
 |SNAPSHOT_PATTERN|The pattern of the file in the `BASE_URL`|`$CHAIN_ID.*$SNAPSHOT_FORMAT`|`foobar.*tar.gz`|
 
 ### Shortcuts
