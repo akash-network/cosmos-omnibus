@@ -69,20 +69,40 @@ backup_key () {
   fi
 }
 
+# Config
+export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
+[ -n "$FASTSYNC_VERSION" ] && export "${NAMESPACE}_FASTSYNC_VERSION"=$FASTSYNC_VERSION
+[ -n "$MINIMUM_GAS_PRICES" ] && export "${NAMESPACE}_MINIMUM_GAS_PRICES"=$MINIMUM_GAS_PRICES
+[ -n "$PRUNING" ] && export "${NAMESPACE}_PRUNING"=$PRUNING
+
+# Peers
+[ -n "$P2P_SEEDS" ] && export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS}"
+[ -n "$P2P_PERSISTENT_PEERS" ] && export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS}
+
+# Statesync
+if [ -n "$STATESYNC_SNAPSHOT_INTERVAL" ]; then
+  export "${NAMESPACE}_STATE_SYNC_SNAPSHOT_INTERVAL=$STATESYNC_SNAPSHOT_INTERVAL"
+fi
+
+if [ -n "$STATESYNC_RPC_SERVERS" ]; then
+  export "${NAMESPACE}_STATESYNC_ENABLE=${STATESYNC_ENABLE:-true}"
+  export "${NAMESPACE}_STATESYNC_RPC_SERVERS=$STATESYNC_RPC_SERVERS"
+  IFS=',' read -ra rpc_servers <<< "$STATESYNC_RPC_SERVERS"
+  TRUSTED_NODE=${TRUSTED_NODE:-${rpc_servers[0]}}
+  if [ -n "$TRUSTED_NODE" ]; then
+    LATEST_HEIGHT=$(curl -s $TRUSTED_NODE/block | jq -r .result.block.header.height)
+    BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000))
+    TRUST_HASH=$(curl -s "$TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+    export "${NAMESPACE}_STATESYNC_TRUST_HEIGHT=${STATESYNC_TRUST_HEIGHT:-$BLOCK_HEIGHT}"
+    export "${NAMESPACE}_STATESYNC_TRUST_HASH=${STATESYNC_TRUST_HASH:-$TRUST_HASH}"
+    export "${NAMESPACE}_STATESYNC_TRUST_PERIOD=${STATESYNC_TRUST_PERIOD:-168h0m0s}"
+  fi
+fi
+
+# Initialise
 if [ ! -d "$PROJECT_HOME/config" ]; then
   $PROJECT_BIN init "$MONIKER" --chain-id "$CHAIN_ID"
 fi
-
-if [ -n "$GENESIS_URL" ]; then
-  echo "Downloading genesis"
-  curl -sfL $GENESIS_URL > genesis.json
-  file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
-  file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
-  mv genesis.json $PROJECT_HOME/config/genesis.json
-fi
-
-# Validate genesis
-[ "$VALIDATE_GENESIS" == "1" ] && $PROJECT_BIN validate-genesis
 
 # Restore keys
 if [ -n "$KEY_PATH" ]; then
@@ -114,39 +134,21 @@ if [ "$BOOTSTRAP" == "1" ]; then
   wget -nv -O - $SNAPSHOT_URL | tar $tar_args -
 fi
 
-# Config
-export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
-[ -n "$FASTSYNC_VERSION" ] && export "${NAMESPACE}_FASTSYNC_VERSION"=$FASTSYNC_VERSION
-[ -n "$MINIMUM_GAS_PRICES" ] && export "${NAMESPACE}_MINIMUM_GAS_PRICES"=$MINIMUM_GAS_PRICES
-[ -n "$PRUNING" ] && export "${NAMESPACE}_PRUNING"=$PRUNING
-
-# Peers
-[ -n "$P2P_SEEDS" ] && export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS}"
-[ -n "$P2P_PERSISTENT_PEERS" ] && export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS}
-
-# Statesync
-if [ -n "$STATESYNC_SNAPSHOT_INTERVAL" ]; then
-  export "${NAMESPACE}_STATE_SYNC_SNAPSHOT_INTERVAL=$STATESYNC_SNAPSHOT_INTERVAL"
+# Download genesis
+if [ -n "$GENESIS_URL" ]; then
+  echo "Downloading genesis"
+  curl -sfL $GENESIS_URL > genesis.json
+  file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
+  file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
+  mv genesis.json $PROJECT_HOME/config/genesis.json
 fi
 
-if [ -n "$STATESYNC_RPC_SERVERS" ]; then
-  export "${NAMESPACE}_STATESYNC_ENABLE=${STATESYNC_ENABLE:-true}"
-  export "${NAMESPACE}_STATESYNC_RPC_SERVERS=$STATESYNC_RPC_SERVERS"
-  IFS=',' read -ra rpc_servers <<< "$STATESYNC_RPC_SERVERS"
-  TRUSTED_NODE=${TRUSTED_NODE:-${rpc_servers[0]}}
-  if [ -n "$TRUSTED_NODE" ]; then
-    LATEST_HEIGHT=$(curl -s $TRUSTED_NODE/block | jq -r .result.block.header.height)
-    BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000))
-    TRUST_HASH=$(curl -s "$TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
-    export "${NAMESPACE}_STATESYNC_TRUST_HEIGHT=${STATESYNC_TRUST_HEIGHT:-$BLOCK_HEIGHT}"
-    export "${NAMESPACE}_STATESYNC_TRUST_HASH=${STATESYNC_TRUST_HASH:-$TRUST_HASH}"
-    export "${NAMESPACE}_STATESYNC_TRUST_PERIOD=${STATESYNC_TRUST_PERIOD:-168h0m0s}"
-  fi
-fi
+# Validate genesis
+[ "$VALIDATE_GENESIS" == "1" ] && $PROJECT_BIN validate-genesis
+
+[ "$DEBUG" == "1" ] && printenv
 
 echo "Node ID:"
 $PROJECT_BIN tendermint show-node-id
-
-[ "$DEBUG" == "1" ] && printenv
 
 exec "$@"
