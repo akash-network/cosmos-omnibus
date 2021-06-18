@@ -7,12 +7,12 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: ff566c42c50c42c59d3d0c653a50159b2f80d8fb
+        VERSION: a20dab6d638da0883f9fbb9f5bd222affb8700ad
         REPOSITORY: https://github.com/osmosis-labs/osmosis
         NAMESPACE: OSMOSISD
     environment:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/osmo-testnet-5/chain.json
+      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/osmosis-1/osmosis-1/chain.json
       # - MINIMUM_GAS_PRICES=0.025uosmo
     volumes:
       - ./node-data:/root/.osmosisd

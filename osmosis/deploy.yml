@@ -3,10 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc13-osmosis-ff566c42c50c42c59d3d0c653a50159b2f80d8fb
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc14-osmosis-a20dab6d638da0883f9fbb9f5bd222affb8700ad
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/osmo-testnet-5/chain.json
+      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/osmosis-1/osmosis-1/chain.json
       # - MINIMUM_GAS_PRICES=0.025uosmo
     expose:
       - port: 26657
