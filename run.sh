@@ -5,7 +5,7 @@ set -e
 export PROJECT_HOME="/root/$PROJECT_DIR"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
-if [[ -z $BOOTSTRAP && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL ) ]]; then
+if [[ -z $BOOTSTRAP && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL ) && ! -d "$PROJECT_HOME/data" ]]; then
   export BOOTSTRAP="1"
 fi
 
