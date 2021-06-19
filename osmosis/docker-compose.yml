@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: a20dab6d638da0883f9fbb9f5bd222affb8700ad
+        VERSION: v1.0.1
         REPOSITORY: https://github.com/osmosis-labs/osmosis
         NAMESPACE: OSMOSISD
     environment:
