@@ -22,9 +22,10 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |Project|Repository|Version|Image|
 |---|---|---|---|
 |`akash`|[ovrclk/akash](https://github.com/ovrclk/akash)|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-akash-v0.12.1`|
-|`gaiad`|[cosmos/gaia](https://github.com/cosmos/gaia)|`v0.4.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-gaiad-v4.12`|
 |`dvpn`|[sentinel-official/hub](https://github.com/sentinel-official/hub)|`v0.6.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-dvpn-v0.6.2`|
+|`gaiad`|[cosmos/gaia](https://github.com/cosmos/gaia)|`v0.4.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-gaiad-v4.12`|
 |`kava`|[Kava-Labs/kava](https://github.com/Kava-Labs/kava)|`v0.14.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-kava-v0.14.1`|
+|`osmosis`|[osmosis-labs/osmosis](https://github.com/osmosis-labs/osmosis)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-osmosis-v1.0.1`|
 |`persistence`|[persistenceOne/persistenceCore](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-persistence-v0.1.3`|
 
 ## Configuration
