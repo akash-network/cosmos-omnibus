@@ -3,18 +3,17 @@ version: "2.0"
 
 services:
   validator:
-    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc12-sentinelhub-v0.6.2
+    image: ghcr.io/tombeynon/cosmos-omnibus:v0.0.2-rc6-akash-v0.12.1
     env:
       - MONIKER=validator
-        # temporary repo
-      - CHAIN_URL=https://raw.githubusercontent.com/tombeynon/tm-networks/master/sentinelhub-2/chain.json
-      - MINIMUM_GAS_PRICES=0.1udvpn
-      - VALIDATE_GENESIS=0 # failing currently?
-      - SENTINELHUB_MODE=validator
-      - SENTINELHUB_P2P_PEX=false
-      - SENTINELHUB_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...
-      - SENTINELHUB_ADDR_BOOK_STRICT=false
-      - SENTINELHUB_DOUBLE_SIGN_CHECK_HEIGHT=10
+      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - MINIMUM_GAS_PRICES=0.025uakt
+      - FASTSYNC_VERSION=v2
+      - AKASH_MODE=validator
+      - AKASH_P2P_PEX=false
+      - AKASH_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...
+      - AKASH_ADDR_BOOK_STRICT=false
+      - AKASH_DOUBLE_SIGN_CHECK_HEIGHT=10
       - P2P_PERSISTENT_PEERS=<id@node1:port,id@node2:port>
       - STATESYNC_RPC_SERVERS=<node1:80>,<node2:80>
       - S3_KEY=<s3-key>

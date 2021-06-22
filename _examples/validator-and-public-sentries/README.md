@@ -1,6 +1,6 @@
 # Validator and Public Sentries
 
-This example shows 2 sentry nodes [statesynced](../statesync) from other controlled nodes, 
+This example shows 2 sentry nodes [statesynced from other nodes](../statesync), 
 with a single private validator node which only connects to the sentries. 
 
 You should know your sentry and validator node IDs beforehand, which involves controlling a `node_key.json` for each. 
