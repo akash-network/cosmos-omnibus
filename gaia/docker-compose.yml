@@ -13,7 +13,7 @@ services:
         NAMESPACE: GA
     environment:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/tombeynon/tm-networks/master/cosmoshub-4/chain.json
+      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/cosmoshub-4/chain.json
       - MINIMUM_GAS_PRICES=0.025uatom
     volumes:
       - ./node-data:/root/.gaia
