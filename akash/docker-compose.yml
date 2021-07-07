@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: akash
+        VERSION: v0.12.1
+        REPOSITORY: https://github.com/ovrclk/akash.git
+    environment:
+      - MONIKER=node_1
+      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - MINIMUM_GAS_PRICES=0.025uakt
+      - FASTSYNC_VERSION=v2
+      # - SNAPSHOT_BASE_URL=http://135.181.60.250/akash
+      # - SNAPSHOT_FORMAT=tar
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.akash

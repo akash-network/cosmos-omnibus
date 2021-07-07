@@ -11,36 +11,45 @@ jobs:
     strategy:
       matrix:
         include:
-          # hacks
-          - project: kava
-            env:     KAVA
-            version: v0.14.1
-            bin:     kvd
-          - project: gaiad
-            env:     GAIAD
-            version: v4.2.1
-            bin:     gaiad
-          - project: dvpn
-            env:     DVPN
-            version: v0.5.0
-            bin:     sentinelhub
           - project: akash
-            env:     AKASH
+            project_bin: akash
             version: v0.12.1
-            bin:     akash
+            repository: https://github.com/ovrclk/akash.git
+            namespace: AKASH
+          - project: sentinelhub
+            project_bin: sentinelhub
+            version: v0.6.2
+            repository: https://github.com/sentinel-official/hub.git
+            namespace: SENTINELHUB
+          - project: gaia
+            project_bin: gaiad
+            version: v4.2.1
+            repository: https://github.com/cosmos/gaia
+            namespace: GA
+          - project: kava
+            project_bin: kvd
+            version: v0.14.1
+            repository: https://github.com/Kava-Labs/kava
+            namespace: KA
+          - project: osmosis
+            project_bin: osmosisd
+            version: v1.0.1
+            repository: https://github.com/osmosis-labs/osmosis
+            namespace: OSMOSISD
+          - project: persistence
+            project_bin: persistenceCore
+            version: v0.1.3
+            repository: https://github.com/persistenceOne/persistenceCore
+            namespace: PERSISTENCECORE
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-go@v2
-        with:
-          go-version: "1.16"
       - name: build
         run: |
-          ${{matrix.env}}_VERSION="${{matrix.version}}" make build-${{matrix.project}}
-      - name: publish
-        run: |
-          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USER }}" --password-stdin
-          docker build . --tag ghcr.io/ovrclk/cosmos-omnibus:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}} \
-            --build-arg PROJECT=${{matrix.project}}         \
-            --build-arg PROJECT_VERSION=${{matrix.version}} \
-            --build-arg PROJECT_BIN=${{matrix.bin}}
-          docker push ghcr.io/ovrclk/cosmos-omnibus:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}
+          echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u "${{ secrets.CR_USER }}" --password-stdin
+          docker build . --tag ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} \
+            --build-arg PROJECT=${{matrix.project}} \
+            --build-arg PROJECT_BIN=${{matrix.project_bin}} \
+            --build-arg VERSION=${{matrix.version}} \
+            --build-arg REPOSITORY=${{matrix.repository}} \
+            --build-arg NAMESPACE=${{matrix.namespace}}
+          docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}}

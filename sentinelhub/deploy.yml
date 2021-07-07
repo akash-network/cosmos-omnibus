@@ -1,0 +1,48 @@
+---
+version: "2.0"
+
+services:
+  node:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-sentinelhub-v0.6.2
+    env:
+      - MONIKER=my-moniker-1
+        # temporary repo
+      - CHAIN_URL=https://raw.githubusercontent.com/tombeynon/tm-networks/master/sentinelhub-2/chain.json
+      - MINIMUM_GAS_PRICES=0.1udvpn
+      - VALIDATE_GENESIS=0 # failing currently?
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true
+      - port: 26656
+        to:
+          - global: true
+
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 2Gi
+        storage:
+          size: 60Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 100
+
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 1

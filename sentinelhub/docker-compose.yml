@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: sentinelhub
+        VERSION: v0.6.2
+        REPOSITORY: https://github.com/sentinel-official/hub.git
+    environment:
+      - MONIKER=node_1
+        # temporary repo
+      - CHAIN_URL=https://raw.githubusercontent.com/tombeynon/tm-networks/master/sentinelhub-2/chain.json
+      - MINIMUM_GAS_PRICES=0.1udvpn
+      - VALIDATE_GENESIS=0 # failing currently?
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.sentinelhub

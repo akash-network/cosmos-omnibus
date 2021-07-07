@@ -1,0 +1,55 @@
+---
+version: "2.0"
+
+services:
+  validator:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-akash-v0.12.1
+    env:
+      - MONIKER=validator
+      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - MINIMUM_GAS_PRICES=0.025uakt
+      - FASTSYNC_VERSION=v2
+      - AKASH_MODE=validator
+      - AKASH_P2P_PEX=false
+      - AKASH_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...
+      - AKASH_ADDR_BOOK_STRICT=false
+      - AKASH_DOUBLE_SIGN_CHECK_HEIGHT=10
+      - P2P_PERSISTENT_PEERS=<id@node1:port,id@node2:port>
+      - STATESYNC_RPC_SERVERS=<node1:80>,<node2:80>
+      - S3_KEY=<s3-key>
+      - S3_SECRET=<s3-secret>
+      - KEY_PASSWORD=<key password>
+      - KEY_PATH=<bucket/validator>
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true # debug
+
+profiles:
+  compute:
+    validator:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 2Gi
+        storage:
+          size: 40Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        validator:
+          denom: uakt
+          amount: 100
+
+deployment:
+  validator:
+    dcloud:
+      profile: validator
+      count: 1

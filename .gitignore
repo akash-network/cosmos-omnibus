@@ -1,2 +1,7 @@
 /build
 /dist
+
+.DS_Store
+.vim
+.env
+*/node-data

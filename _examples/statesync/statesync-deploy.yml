@@ -1,0 +1,48 @@
+---
+version: "2.0"
+
+services:
+  node1:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-akash-v0.12.1
+    env:
+      - MONIKER=private_node_1
+      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - MINIMUM_GAS_PRICES=0.025uakt
+      - FASTSYNC_VERSION=v2
+      - STATESYNC_RPC_SERVERS=<publicnode1:26657,publicnode2:26657>
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true
+      - port: 26656
+        to:
+          - global: true
+
+profiles:
+  compute:
+    node1:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 2Gi
+        storage:
+          size: 40Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node1:
+          denom: uakt
+          amount: 100
+
+deployment:
+  node1:
+    dcloud:
+      profile: node1
+      count: 1

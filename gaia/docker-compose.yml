@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: gaia
+        PROJECT_BIN: gaiad
+        PROJECT_DIR: .gaia
+        VERSION: v4.2.1
+        REPOSITORY: https://github.com/cosmos/gaia
+        NAMESPACE: GA
+    environment:
+      - MONIKER=node_1
+      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/cosmoshub-4/chain.json
+      - MINIMUM_GAS_PRICES=0.025uatom
+    volumes:
+      - ./node-data:/root/.gaia
