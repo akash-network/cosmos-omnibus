@@ -12,7 +12,7 @@ The goal is to have a simple way to launch any cosmos chain, with a variety of d
 
 Configuration is achieved using environment variables, with shortcuts available for common setups. Every aspect of the node configuration can be achieved in this way.
 
-Additionally the node private keys can be backed up and restored from any S3 compatible storage provider, such as Sia or Storj, via Filebase.
+Additionally the node private keys can be backed up and restored from any S3 compatible storage provider, such as Sia or Storj, via [Filebase](https://filebase.com/).
 
 ## Networks
 
@@ -22,8 +22,8 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |Project|Version|Image| |
 |---|---|---|---|
 |[akash](https://github.com/ovrclk/akash)|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-akash-v0.12.1`|[Example](./akash)|
-|[sentinelhub](https://github.com/sentinel-official/hub)|`v0.6.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-dvpn-v0.6.2`|[Example](./sentinelhub)|
-|[gaia](https://github.com/cosmos/gaia)|`v0.4.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-gaiad-v4.12`|[Example](./gaia)|
+|[sentinelhub](https://github.com/sentinel-official/hub)|`v0.6.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-sentinelhub-v0.6.2`|[Example](./sentinelhub)|
+|[gaia](https://github.com/cosmos/gaia)|`v4.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-gaia-v4.2.1`|[Example](./gaia)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.14.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-kava-v0.14.1`|[Example](./kava)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-osmosis-v1.0.1`|[Example](./osmosis)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.2-persistence-v0.1.3`|[Example](./persistence)|
@@ -57,7 +57,7 @@ Chain config can be sourced from a `chain.json` file [as implemented by @sikkate
 
 ### P2P
 
-See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information
+See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information. Note this can be sourced from `CHAIN_URL` or `METADATA_URL` automatically.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
