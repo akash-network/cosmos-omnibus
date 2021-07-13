@@ -26,7 +26,7 @@ FROM debian:buster
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes ca-certificates curl file unzip gnupg2 jq && \
+  apt-get install --no-install-recommends --assume-yes ca-certificates curl wget file unzip gnupg2 jq && \
   apt-get clean
 
 ARG PROJECT=akash
@@ -51,9 +51,8 @@ EXPOSE 26656 \
        9090  \
        8080
 
-COPY --from=aws /usr/src/aws /usr/src/aws
 COPY --from=project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
-
+COPY --from=aws /usr/src/aws /usr/src/aws
 RUN /usr/src/aws/install --bin-dir /usr/bin
 
 COPY run.sh /usr/bin/
