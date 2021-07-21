@@ -1,7 +1,7 @@
 FROM golang:1.16-buster AS build
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes curl unzip && \
+  apt-get install --no-install-recommends --assume-yes curl unzip  && \
   apt-get clean
 
 FROM build AS aws
@@ -13,14 +13,21 @@ FROM build AS project
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
-ARG VERSION=v0.12.1
+# ARG VERSION=v0.12.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
+
+RUN apt-get install -y git-lfs protobuf-compiler nodejs
+RUN git clone https://github.com/tendermint/starport /starport
+WORKDIR /starport
+RUN git checkout develop
+RUN make
 
 RUN git clone $REPOSITORY /data
 WORKDIR /data
 RUN git checkout $VERSION
-RUN make install
+RUN starport chain build
 RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
+RUN cp $GOPATH/pkg/mod/github.com/!cosm!wasm/wasmvm@v0.14.0/api/libwasmvm.so /lib/libwasmvm.so
 
 FROM debian:buster
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus
@@ -32,7 +39,7 @@ RUN apt-get update && \
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 ARG PROJECT_DIR=.$PROJECT_BIN
-ARG VERSION=v0.12.1
+ARG VERSION=v0
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 ARG NAMESPACE
 
@@ -52,6 +59,7 @@ EXPOSE 26656 \
        8080
 
 COPY --from=project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
+COPY --from=project /lib/libwasmvm.so /lib/libwasmvm.so
 COPY --from=aws /usr/src/aws /usr/src/aws
 RUN /usr/src/aws/install --bin-dir /usr/bin
 

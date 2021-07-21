@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: juno
+        PROJECT_BIN: junod
+        PROJECT_DIR: .juno
+        VERSION: 
+        REPOSITORY: https://github.com/CosmosContracts/Juno
+        NAMESPACE: JUNOD
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+    environment:
+      - MONIKER=nullmames-akash
+      - CHAIN_URL=https://raw.githubusercontent.com/nullMames/juno-on-akash/main/chain.json
+      - MINIMUM_GAS_PRICES=0.025ujuno
+    volumes:
+      - ./node-data:/root/.juno
+
