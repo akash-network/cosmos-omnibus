@@ -8,18 +8,16 @@ services:
         PROJECT: juno
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
-        VERSION: lucina
+        VERSION: 
         REPOSITORY: https://github.com/CosmosContracts/Juno
         NAMESPACE: JUNOD
     ports:
       - '26656:26656'
       - '26657:26657'
     environment:
-      - MONIKER=node_1
+      - MONIKER=nullmames-akash
       - CHAIN_URL=https://raw.githubusercontent.com/nullMames/juno-on-akash/main/chain.json
-    #  - SNAPSHOT_BASE_URL=http://drzerp.com/data
-    #  - SNAPSHOT_FORMAT=tar.gz
-    env_file:
-      - ../.env
+      - MINIMUM_GAS_PRICES=0.025ujuno
     volumes:
       - ./node-data:/root/.juno
+
