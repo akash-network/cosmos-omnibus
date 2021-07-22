@@ -13,14 +13,17 @@ FROM build AS project
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
-# ARG VERSION=v0.12.1
+ARG VERSION=v0.12.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
+ARG USE_STARPORT=$USE_STARPORT
+ARG STARPORT_REPO=$STARPORT_REPO
 
-RUN apt-get install -y git-lfs protobuf-compiler nodejs
-RUN git clone https://github.com/tendermint/starport /starport
+# RUN apt-get install -y git-lfs protobuf-compiler nodejs
+RUN if [ "$USE_STARPORT" = "true" ]; then git clone $STARPORT_REPO /starport; fi
+RUN if [ "$USE_STARPORT" = "true" ]; then apt-get install -y git-lfs protobuf-compiler nodejs; fi
 WORKDIR /starport
-RUN git checkout develop
-RUN make
+RUN if [ "$USE_STARPORT" = "true" ]; then git checkout develop && make; fi
+#RUN git checkout develop && make
 
 RUN git clone $REPOSITORY /data
 WORKDIR /data
