@@ -17,20 +17,32 @@ ARG VERSION=v0.12.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 ARG USE_STARPORT=$USE_STARPORT
 ARG STARPORT_REPO=$STARPORT_REPO
+ARG USE_WASM=$USE_WASM
 
-# RUN apt-get install -y git-lfs protobuf-compiler nodejs
-RUN if [ "$USE_STARPORT" = "true" ]; then git clone $STARPORT_REPO /starport; fi
-RUN if [ "$USE_STARPORT" = "true" ]; then apt-get install -y git-lfs protobuf-compiler nodejs; fi
+# Clone and build starport
+RUN if [ "$USE_STARPORT" = "true" ] \
+  ; then apt-get install -y git-lfs protobuf-compiler nodejs && \
+    git clone $STARPORT_REPO /starport \
+  ; fi
 WORKDIR /starport
-RUN if [ "$USE_STARPORT" = "true" ]; then git checkout develop && make; fi
-#RUN git checkout develop && make
+RUN if [ "$USE_STARPORT" = "true" ] \
+  ; then git checkout develop && make \
+  ; fi
 
+# Clone and build project
 RUN git clone $REPOSITORY /data
 WORKDIR /data
 RUN git checkout $VERSION
-RUN starport chain build
+RUN if ["$USE_STARPORT" = "true"] \
+  ; then starport chain build \
+  ; else make install \
+  ; fi
 RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
-RUN cp $GOPATH/pkg/mod/github.com/!cosm!wasm/wasmvm@v0.14.0/api/libwasmvm.so /lib/libwasmvm.so
+
+# Copy wasm library
+RUN if ["$USE_WASM" = "true"] \
+  ; then cp $GOPATH/pkg/mod/github.com/!cosm!wasm/wasmvm@*/api/libwasmvm.so /lib/libwasmvm.so \
+  ; fi
 
 FROM debian:buster
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus

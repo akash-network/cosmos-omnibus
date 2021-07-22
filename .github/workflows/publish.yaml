@@ -41,6 +41,11 @@ jobs:
             version: v0.1.3
             repository: https://github.com/persistenceOne/persistenceCore
             namespace: PERSISTENCECORE
+          - project: juno
+            project_bin: junod
+            version: lucina
+            repository: https://github.com/CosmosContracts/Juno
+            namespace: JUNOD
     steps:
       - uses: actions/checkout@v2
       - name: build
