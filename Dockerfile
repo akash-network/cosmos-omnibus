@@ -39,11 +39,6 @@ RUN if ["$USE_STARPORT" = "true"] \
   ; fi
 RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
 
-# Copy wasm library
-RUN if ["$USE_WASM" = "true"] \
-  ; then cp $GOPATH/pkg/mod/github.com/!cosm!wasm/wasmvm@*/api/libwasmvm.so /lib/libwasmvm.so \
-  ; fi
-
 FROM debian:buster
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus
 
@@ -74,8 +69,8 @@ EXPOSE 26656 \
        8080
 
 COPY --from=project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
-COPY --from=project /lib/libwasmvm.so /lib/libwasmvm.so
 COPY --from=aws /usr/src/aws /usr/src/aws
+ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/main/api/libwasmvm.so /lib/libwasmvm.so
 RUN /usr/src/aws/install --bin-dir /usr/bin
 
 COPY run.sh /usr/bin/
