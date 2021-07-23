@@ -13,7 +13,6 @@ services:
         NAMESPACE: JUNOD
         USE_STARPORT: "true"
         STARPORT_REPO: https://github.com/tendermint/starport
-        USE_WASM: "true"
     ports:
       - '26656:26656'
       - '26657:26657'
