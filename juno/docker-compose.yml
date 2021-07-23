@@ -17,14 +17,14 @@ services:
       - '26656:26656'
       - '26657:26657'
     environment:
-      - MONIKER=nullmames-akash
+      - MONIKER=node_1
       - CHAIN_URL=https://raw.githubusercontent.com/nullMames/juno-on-akash/main/chain.json
     #  - MINIMUM_GAS_PRICES=0.025ujuno no gas required
     #  - SNAPSHOT_BASE_URL=https://cosmos-nodes.s3.ap-southeast-2.amazonaws.com/juno/lucina/data/juno_lucina_20210721.tar
     #  - SNAPSHOT_FORMAT=tar
     # Need to setup lite client on rpc and set new servers
     #  - STATESYNC_ENABLE=true
-    #  - STATESYNC_RPC_SERVERS=<rpc.juno.omniflix.co:26657,rpc.juno.giansalex.dev:26657>
+    #  - STATESYNC_RPC_SERVERS=<rpc.juno.omniflix.co:80,rpc.juno.giansalex.dev:80>
     env_file:
       - ../.env
     volumes:
