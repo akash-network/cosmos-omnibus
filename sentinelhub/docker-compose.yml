@@ -6,8 +6,11 @@ services:
       context: ../
       args:
         PROJECT: sentinelhub
-        VERSION: v0.6.2
+        VERSION: v0.7.0
         REPOSITORY: https://github.com/sentinel-official/hub.git
+    ports:
+      - '26656:26656'
+      - '26657:26657'
     environment:
       - MONIKER=node_1
         # temporary repo
