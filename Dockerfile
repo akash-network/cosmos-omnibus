@@ -55,7 +55,6 @@ EXPOSE 26656 \
 
 COPY --from=project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
 COPY --from=aws /usr/src/aws /usr/src/aws
-ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/main/api/libwasmvm.so /lib/libwasmvm.so
 RUN /usr/src/aws/install --bin-dir /usr/bin
 ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
 
