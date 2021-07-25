@@ -11,8 +11,6 @@ services:
         VERSION: lucina
         REPOSITORY: https://github.com/CosmosContracts/Juno
         NAMESPACE: JUNOD
-        USE_STARPORT: "true"
-        STARPORT_REPO: https://github.com/tendermint/starport
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -29,4 +27,3 @@ services:
       - ../.env
     volumes:
       - ./node-data:/root/.juno
-
