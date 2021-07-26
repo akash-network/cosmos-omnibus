@@ -3,10 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.3-juno-latest
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-juno-lucina
     env:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/cosmoshub-4/chain.json
+      - CHAIN_URL=https://raw.githubusercontent.com/nullMames/juno-on-akash/main/chain.json
       # - MINIMUM_GAS_PRICES=0.025ujuno
       #  - MINIMUM_GAS_PRICES=0.025ujuno no gas required
       #  - SNAPSHOT_BASE_URL=https://cosmos-nodes.s3.ap-southeast-2.amazonaws.com/juno/lucina/data/juno_lucina_20210721.tar

@@ -16,50 +16,36 @@ jobs:
             version: v0.12.1
             repository: https://github.com/ovrclk/akash.git
             namespace: AKASH
-            use_starport: 
-            starport_repo: https://github.com/tendermint/starport
           - project: sentinelhub
             project_bin: sentinelhub
             version: v0.6.2
             repository: https://github.com/sentinel-official/hub.git
             namespace: SENTINELHUB
-            use_starport: 
-            starport_repo: https://github.com/tendermint/starport
           - project: gaia
             project_bin: gaiad
             version: v4.2.1
             repository: https://github.com/cosmos/gaia
             namespace: GA
-            use_starport: 
-            starport_repo: https://github.com/tendermint/starport
           - project: kava
             project_bin: kvd
             version: v0.14.1
             repository: https://github.com/Kava-Labs/kava
             namespace: KA
-            use_starport: 
-            starport_repo: https://github.com/tendermint/starport
           - project: osmosis
             project_bin: osmosisd
             version: v1.0.1
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
-            use_starport: 
-            starport_repo: https://github.com/tendermint/starport
           - project: persistence
             project_bin: persistenceCore
             version: v0.1.3
             repository: https://github.com/persistenceOne/persistenceCore
             namespace: PERSISTENCECORE
-            use_starport: 
-            starport_repo: https://github.com/tendermint/starport
           - project: juno
             project_bin: junod
             version: lucina
             repository: https://github.com/CosmosContracts/Juno
             namespace: JUNOD
-            use_starport: "true"
-            starport_repo: https://github.com/tendermint/starport
     steps:
       - uses: actions/checkout@v2
       - name: build
@@ -70,7 +56,5 @@ jobs:
             --build-arg PROJECT_BIN=${{matrix.project_bin}} \
             --build-arg VERSION=${{matrix.version}} \
             --build-arg REPOSITORY=${{matrix.repository}} \
-            --build-arg NAMESPACE=${{matrix.namespace}} \
-            --build-arg USE_STARPORT=${{matrix.use_starport}} \
-            --build-arg STARPORT_REPO=${{matrix.starport_repo}}
+            --build-arg NAMESPACE=${{matrix.namespace}}
           docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}}
