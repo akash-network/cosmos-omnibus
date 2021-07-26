@@ -16,6 +16,7 @@ ARG PROJECT_BIN=$PROJECT
 ARG VERSION=v0.12.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 
+# Clone and build project
 RUN git clone $REPOSITORY /data
 WORKDIR /data
 RUN git checkout $VERSION
@@ -33,6 +34,7 @@ ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 ARG PROJECT_DIR=.$PROJECT_BIN
 ARG VERSION=v0.12.1
+ARG WASMVM_VERSION=main
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 ARG NAMESPACE
 
@@ -54,6 +56,7 @@ EXPOSE 26656 \
 COPY --from=project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
 COPY --from=aws /usr/src/aws /usr/src/aws
 RUN /usr/src/aws/install --bin-dir /usr/bin
+ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
 
 COPY run.sh /usr/bin/
 RUN chmod +x /usr/bin/run.sh
