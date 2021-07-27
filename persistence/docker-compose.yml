@@ -17,4 +17,4 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.sentinelhub
+      - ./node-data:/root/.persistenceCore
