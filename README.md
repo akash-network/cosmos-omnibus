@@ -24,7 +24,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[akash](https://github.com/ovrclk/akash)|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.3-akash-v0.12.1`|[Example](./akash)|
 |[sentinelhub](https://github.com/sentinel-official/hub)|`v0.7.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-sentinelhub-v0.7.0`|[Example](./sentinelhub)|
 |[gaia](https://github.com/cosmos/gaia)|`v4.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.3-gaia-v4.2.1`|[Example](./gaia)|
-|[kava](https://github.com/Kava-Labs/kava)|`v0.14.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.3-kava-v0.14.1`|[Example](./kava)|
+|[kava](https://github.com/Kava-Labs/kava)|`v0.14.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-kava-v0.14.2`|[Example](./kava)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.3-osmosis-v1.0.1`|[Example](./osmosis)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.3-persistence-v0.1.3`|[Example](./persistence)|
 |[juno](https://github.com/CosmosContracts/Juno)|`lucina`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-juno-lucina`|[Example](./juno)|

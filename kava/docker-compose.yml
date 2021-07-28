@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: kava
         PROJECT_BIN: kvd
-        VERSION: v0.14.1
+        VERSION: v0.14.2
         REPOSITORY: https://github.com/Kava-Labs/kava
         NAMESPACE: KA
     ports:

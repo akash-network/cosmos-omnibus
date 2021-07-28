@@ -32,7 +32,7 @@ jobs:
           - project: kava
             project_bin: kvd
             project_dir: .kvd
-            version: v0.14.1
+            version: v0.14.2
             repository: https://github.com/Kava-Labs/kava
             namespace: KA
           - project: osmosis
