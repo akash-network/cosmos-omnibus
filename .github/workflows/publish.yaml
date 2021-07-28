@@ -20,7 +20,7 @@ jobs:
           - project: sentinelhub
             project_bin: sentinelhub
             project_dir: .sentinelhub
-            version: v0.6.2
+            version: v0.7.0
             repository: https://github.com/sentinel-official/hub.git
             namespace: SENTINELHUB
           - project: gaia
