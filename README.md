@@ -27,6 +27,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kava](https://github.com/Kava-Labs/kava)|`v0.14.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.3-kava-v0.14.1`|[Example](./kava)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.3-osmosis-v1.0.1`|[Example](./osmosis)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.3-persistence-v0.1.3`|[Example](./persistence)|
+|[juno](https://github.com/CosmosContracts/Juno)|`lucina`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-juno-lucina`|[Example](./juno)|
 
 ## Configuration
 
