@@ -8,7 +8,7 @@ services:
         PROJECT: gaia
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
-        VERSION: v4.2.1
+        VERSION: v5.0.2
         REPOSITORY: https://github.com/cosmos/gaia
         NAMESPACE: GA
     environment:
