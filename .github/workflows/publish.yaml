@@ -38,7 +38,7 @@ jobs:
           - project: osmosis
             project_bin: osmosisd
             project_dir: .osmosisd
-            version: v1.0.1
+            version: v1.0.3
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
           - project: persistence
