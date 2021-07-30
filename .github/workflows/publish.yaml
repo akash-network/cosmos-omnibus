@@ -26,7 +26,7 @@ jobs:
           - project: gaia
             project_bin: gaiad
             project_dir: .gaia
-            version: v4.2.1
+            version: v5.0.2
             repository: https://github.com/cosmos/gaia
             namespace: GA
           - project: kava
