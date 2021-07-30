@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-osmosis-v1.0.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-osmosis-v1.0.3
     env:
       - MONIKER=my-moniker-1
       # - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/osmosis-1/osmosis-1/chain.json
@@ -30,7 +30,7 @@ profiles:
         memory:
           size: 4Gi
         storage:
-          size: 40Gi
+          size: 100Gi
   placement:
     dcloud:
       attributes:
