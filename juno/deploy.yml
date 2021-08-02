@@ -6,9 +6,9 @@ services:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-juno-lucina
     env:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/nullMames/juno-on-akash/main/chain.json
-      - SNAPSHOT_BASE_URL=https://drzerp.com/data/
-      - SNAPSHOT_FORMAT=tar.gz
+      - CHAIN_URL=https://raw.githubusercontent.com/nullmames/juno-on-akash/main/chain.json
+      #- SNAPSHOT_BASE_URL=
+      #- SNAPSHOT_FORMAT=tar.gz
     expose:
       - port: 26657
         as: 80
