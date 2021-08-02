@@ -68,6 +68,7 @@ jobs:
           docker build . --tag ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} \
             --build-arg PROJECT=${{matrix.project}} \
             --build-arg PROJECT_BIN=${{matrix.project_bin}} \
+            --build-arg PROJECT_DIR=${{matrix.project_dir}} \
             --build-arg VERSION=${{matrix.version}} \
             --build-arg REPOSITORY=${{matrix.repository}} \
             --build-arg NAMESPACE=${{matrix.namespace}} \
