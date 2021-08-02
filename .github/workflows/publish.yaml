@@ -16,31 +16,37 @@ jobs:
             version: v0.12.1
             repository: https://github.com/ovrclk/akash.git
             namespace: AKASH
+            wasmvm_version: main
           - project: sentinelhub
             project_bin: sentinelhub
             version: v0.6.2
             repository: https://github.com/sentinel-official/hub.git
             namespace: SENTINELHUB
+            wasmvm_version: main
           - project: gaia
             project_bin: gaiad
             version: v4.2.1
             repository: https://github.com/cosmos/gaia
             namespace: GA
+            wasmvm_version: main
           - project: kava
             project_bin: kvd
             version: v0.14.1
             repository: https://github.com/Kava-Labs/kava
             namespace: KA
+            wasmvm_version: main
           - project: osmosis
             project_bin: osmosisd
             version: v1.0.1
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
+            wasmvm_version: main
           - project: persistence
             project_bin: persistenceCore
             version: v0.1.3
             repository: https://github.com/persistenceOne/persistenceCore
             namespace: PERSISTENCECORE
+            wasmvm_version: main
           - project: juno
             project_bin: junod
             version: lucina
