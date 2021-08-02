@@ -3,12 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.5-juno-lucina
+    image: ghcr.io/nullmames/cosmos-omnibus:v0.0.5-juno-lucina
     env:
       - MONIKER=node_1
       - CHAIN_URL=https://raw.githubusercontent.com/nullmames/juno-on-akash/main/chain.json
-      #- SNAPSHOT_BASE_URL=
-      #- SNAPSHOT_FORMAT=tar.gz
     expose:
       - port: 26657
         as: 80
@@ -27,7 +25,7 @@ profiles:
         memory:
           size: 2Gi
         storage:
-          size: 100Gi
+          size: 60Gi
   placement:
     dcloud:
       attributes:
