@@ -21,7 +21,7 @@ jobs:
           - project: sentinelhub
             project_bin: sentinelhub
             project_dir: .sentinelhub
-            version: v0.6.2
+            version: v0.7.0
             repository: https://github.com/sentinel-official/hub.git
             namespace: SENTINELHUB
             wasmvm_version: main
@@ -35,7 +35,7 @@ jobs:
           - project: kava
             project_bin: kvd
             project_dir: .kvd
-            version: v0.14.1
+            version: v0.14.2
             repository: https://github.com/Kava-Labs/kava
             namespace: KA
             wasmvm_version: main
