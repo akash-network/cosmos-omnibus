@@ -18,10 +18,8 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_URL=https://raw.githubusercontent.com/nullmames/juno-on-akash/main/chain.json
-      #- SNAPSHOT_BASE_URL=https://drzerp.com/data
+      #- SNAPSHOT_BASE_URL=
       #- SNAPSHOT_FORMAT=tar.gz
-      #- STATESYNC_RPC_SERVERS=drzerp.com:26657,45.72.100.103:26657
-      #- STATESYNC_SNAPSHOT_INTERVAL=500
     env_file:
       - ../.env
     volumes:
