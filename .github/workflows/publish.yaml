@@ -26,7 +26,7 @@ jobs:
           - project: gaia
             project_bin: gaiad
             project_dir: .gaia
-            version: v5.0.2
+            version: v5.0.5
             repository: https://github.com/cosmos/gaia
             namespace: GA
           - project: kava
@@ -38,7 +38,7 @@ jobs:
           - project: osmosis
             project_bin: osmosisd
             project_dir: .osmosisd
-            version: v1.0.3
+            version: v3.1.0
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
           - project: persistence
