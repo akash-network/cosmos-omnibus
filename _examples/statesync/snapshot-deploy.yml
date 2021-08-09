@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-akash-v0.12.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.5-akash-v0.12.1
     env:
       - MONIKER=public-node-1
       - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
@@ -20,7 +20,7 @@ services:
         to:
           - global: true
   node2:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-akash-v0.12.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.5-akash-v0.12.1
     env:
       - MONIKER=public-node-2
       - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
