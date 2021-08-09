@@ -18,8 +18,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_URL=https://raw.githubusercontent.com/nullmames/juno-on-akash/main/chain.json
-      #- SNAPSHOT_BASE_URL=
-      #- SNAPSHOT_FORMAT=tar.gz
     env_file:
       - ../.env
     volumes:
