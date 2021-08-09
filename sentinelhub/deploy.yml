@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-sentinelhub-v0.7.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.5-sentinelhub-v0.7.0
     env:
       - MONIKER=my-moniker-1
         # temporary repo

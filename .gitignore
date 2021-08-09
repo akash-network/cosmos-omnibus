@@ -5,3 +5,5 @@
 .vim
 .env
 */node-data
+
+*.tar.gz
