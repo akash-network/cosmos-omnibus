@@ -17,42 +17,49 @@ jobs:
             version: v0.12.1
             repository: https://github.com/ovrclk/akash.git
             namespace: AKASH
+            wasmvm_version: main
           - project: sentinelhub
             project_bin: sentinelhub
             project_dir: .sentinelhub
             version: v0.7.0
             repository: https://github.com/sentinel-official/hub.git
             namespace: SENTINELHUB
+            wasmvm_version: main
           - project: gaia
             project_bin: gaiad
             project_dir: .gaia
             version: v5.0.5
             repository: https://github.com/cosmos/gaia
             namespace: GA
+            wasmvm_version: main
           - project: kava
             project_bin: kvd
             project_dir: .kvd
             version: v0.14.2
             repository: https://github.com/Kava-Labs/kava
             namespace: KA
+            wasmvm_version: main
           - project: osmosis
             project_bin: osmosisd
             project_dir: .osmosisd
             version: v3.1.0
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
+            wasmvm_version: main
           - project: persistence
             project_bin: persistenceCore
             project_dir: .persistenceCore
             version: v0.1.3
             repository: https://github.com/persistenceOne/persistenceCore
             namespace: PERSISTENCECORE
+            wasmvm_version: main
           - project: juno
             project_bin: junod
             project_dir: .juno
             version: lucina
             repository: https://github.com/CosmosContracts/Juno
             namespace: JUNOD
+            wasmvm_version: v0.14.0
     steps:
       - uses: actions/checkout@v2
       - name: build
@@ -64,5 +71,6 @@ jobs:
             --build-arg PROJECT_DIR=${{matrix.project_dir}} \
             --build-arg VERSION=${{matrix.version}} \
             --build-arg REPOSITORY=${{matrix.repository}} \
-            --build-arg NAMESPACE=${{matrix.namespace}}
+            --build-arg NAMESPACE=${{matrix.namespace}} \
+            --build-arg WASMVM_VERSION=${{matrix.wasmvm_version}}
           docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}}

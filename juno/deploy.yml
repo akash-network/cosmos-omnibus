@@ -3,12 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.4-juno-lucina
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.5-juno-lucina
     env:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/nullMames/juno-on-akash/main/chain.json
-      #  - SNAPSHOT_BASE_URL=http://drzerp.com/data
-      #  - SNAPSHOT_FORMAT=tar.gz
+      - CHAIN_URL=https://raw.githubusercontent.com/nullmames/juno-on-akash/main/chain.json
     expose:
       - port: 26657
         as: 80
@@ -34,7 +32,7 @@ profiles:
         host: akash
       signedBy:
         anyOf:
-          - akash1j2wkr3hshu44dxug4n3f27redumw0732p5sazg
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
       pricing:
         node:
           denom: uakt
