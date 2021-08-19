@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: regen
+        PROJECT_BIN: regen
+        PROJECT_DIR: .regen
+        VERSION: v1.0.0
+        REPOSITORY: https://github.com/regen-network/regen-ledger
+        NAMESPACE: REGEN
+    environment:
+      - MONIKER=node_1
+      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/regen-1/chain.json
+      - MINIMUM_GAS_PRICES=0.025uregen
+    volumes:
+      - ./node-data:/root/.regen
