@@ -22,7 +22,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |Project|Version|Image| |
 |---|---|---|---|
 |[akash](https://github.com/ovrclk/akash)|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-akash-v0.12.1`|[Example](./akash)|
-|[sentinelhub](https://github.com/sentinel-official/hub)|`v0.7.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sentinelhub-v0.7.0`|[Example](./sentinelhub)|
+|[sentinelhub](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sentinelhub-v0.8.3`|[Example](./sentinelhub)|
 |[gaia](https://github.com/cosmos/gaia)|`v4.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-gaia-v4.2.1`|[Example](./gaia)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.14.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-kava-v0.14.2`|[Example](./kava)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-osmosis-v3.1.0`|[Example](./osmosis)|
