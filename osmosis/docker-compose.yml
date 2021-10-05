@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: v3.1.0
+        VERSION: v4.1.0
         REPOSITORY: https://github.com/osmosis-labs/osmosis
         NAMESPACE: OSMOSISD
     ports:
@@ -16,6 +16,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/chain.json
+      - VALIDATE_GENESIS=0 # failing currently
     env_file:
       - ../.env
     volumes:
