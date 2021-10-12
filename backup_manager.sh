@@ -47,5 +47,10 @@ while true; do
         $COMMAND &
         PID=$!
         sleep 1s
+    else
+        if ! kill -0 $PID; then
+            echo "$TIME: Process has died. Exiting"
+            break;
+        fi
     fi
 done
