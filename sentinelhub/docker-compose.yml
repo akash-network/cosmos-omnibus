@@ -13,9 +13,7 @@ services:
       - '26657:26657'
     environment:
       - MONIKER=node_1
-        # temporary repo
-      - CHAIN_URL=https://raw.githubusercontent.com/tombeynon/tm-networks/master/sentinelhub-2/chain.json
-      - MINIMUM_GAS_PRICES=0.1udvpn
+      - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/chain.json
       - VALIDATE_GENESIS=0 # failing currently?
     env_file:
       - ../.env

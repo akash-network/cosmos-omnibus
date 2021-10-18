@@ -6,8 +6,7 @@ services:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-gaia-v4.2.1
     env:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/cosmoshub-4/chain.json
-      - MINIMUM_GAS_PRICES=0.025uatom
+      - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/chain.json
     expose:
       - port: 26657
         as: 80
