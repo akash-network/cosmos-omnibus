@@ -61,11 +61,8 @@ COPY --from=aws /usr/src/aws /usr/src/aws
 RUN /usr/src/aws/install --bin-dir /usr/bin
 ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
 
-COPY run.sh /usr/bin/
-COPY backup_manager.sh /usr/bin/
-RUN chmod +x /usr/bin/run.sh
-RUN chmod +x /usr/bin/backup_manager.sh
+COPY run.sh snapshot.sh /usr/bin/
+RUN chmod +x /usr/bin/run.sh /usr/bin/snapshot.sh
 ENTRYPOINT ["run.sh"]
 
-# CMD $PROJECT_CMD
-CMD backup_manager.sh
+CMD $PROJECT_CMD
