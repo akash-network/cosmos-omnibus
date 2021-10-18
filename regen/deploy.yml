@@ -6,8 +6,7 @@ services:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-regen-v1.0.0
     env:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/regen-1/chain.json
-      - MINIMUM_GAS_PRICES=0.025uregen
+      - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/chain.json
     expose:
       - port: 26657
         as: 80

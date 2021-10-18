@@ -12,8 +12,7 @@ services:
         NAMESPACE: PERSISTENCECORE
     environment:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/tombeynon/tm-networks/master/core-1/chain.json
-      # - MINIMUM_GAS_PRICES=0.1udvpn
+      - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/chain.json
     env_file:
       - ../.env
     volumes:
