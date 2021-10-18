@@ -42,7 +42,7 @@ jobs:
           - project: osmosis
             project_bin: osmosisd
             project_dir: .osmosisd
-            version: v3.1.0
+            version: v4.1.0
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
             wasmvm_version: main
