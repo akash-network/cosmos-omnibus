@@ -47,11 +47,11 @@ The omnibus images allow some specific variables and shortcuts to configure extr
 
 ### Chain configuration
 
-Chain config can be sourced from a `chain.json` file [as implemented by @sikkatech](https://github.com/sikkatech/tm-networks), or from a metadata repository such as [Akash's ovrclk/net](https://github.com/ovrclk/net).
+Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Registry](https://github.com/cosmos/chain-registry), or from a metadata repository such as [Akash's ovrclk/net](https://github.com/ovrclk/net).
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`CHAIN_URL`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/sikkatech/tm-networks/blob/master/akashnet-2/chain.json`
+|`CHAIN_URL`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`
 |`METADATA_URL`|URL to a `net` repo in the same form as Akash| |`https://github.com/ovrclk/net/tree/master/mainnet`
 |`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`
 |`GENESIS_URL`|URL to the genesis file in `.gz` or `.zip` format. Can be set by CHAIN_URL or METADATA_URL| |`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json`

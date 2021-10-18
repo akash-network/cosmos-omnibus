@@ -19,9 +19,9 @@ fi
 if [ -n "$CHAIN_URL" ]; then
   CHAIN_METADATA=$(curl -s $CHAIN_URL)
   export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
-  export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | join(",")')}"
-  export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | join(",")')}"
-  export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r .genesis.genesis_url )}"
+  export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')}"
+  export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')}"
+  export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r '.genesis.genesis_url? // .genesis')}"
 fi
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit

@@ -13,7 +13,7 @@ services:
         NAMESPACE: REGEN
     environment:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/sikkatech/tm-networks/master/regen-1/chain.json
+      - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/chain.json
       - MINIMUM_GAS_PRICES=0.025uregen
     volumes:
       - ./node-data:/root/.regen
