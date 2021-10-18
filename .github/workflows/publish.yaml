@@ -21,7 +21,7 @@ jobs:
           - project: sentinelhub
             project_bin: sentinelhub
             project_dir: .sentinelhub
-            version: v0.7.0
+            version: v0.8.3
             repository: https://github.com/sentinel-official/hub.git
             namespace: SENTINELHUB
             wasmvm_version: main
