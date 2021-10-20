@@ -31,7 +31,7 @@ while true; do
         timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
         s3_uri="${s3_uri_base}/snapshot_${timestamp}.tar.gz"
 
-        tar c $SNAPSHOT_DIR | gzip | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE
+        tar c -C $SNAPSHOT_DIR . | gzip | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE
 
         echo "$TIME: Deleting snapshots older than $SNAPSHOT_RETAIN"
         aws $aws_args s3 ls "${s3_uri_base}/snapshot_" | while read -r line; do
