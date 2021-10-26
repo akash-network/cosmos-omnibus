@@ -1,0 +1,51 @@
+---
+version: "2.0"
+
+services:
+  node:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-akash-v0.12.1
+    env:
+      - MONIKER=my-moniker-1
+      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - FASTSYNC_VERSION=v2
+      - PRUNING=nothing
+      # - SNAPSHOT_BASE_URL=http://135.181.60.250/akash
+      # - SNAPSHOT_FORMAT=tar
+      - S3_KEY=<s3-key>
+      - S3_SECRET=<s3-secret>
+      - SNAPSHOT_PATH=<bucket/path>
+      - SNAPSHOT_TIME=00:00:00
+      # - SNAPSHOT_DAY=* #(1-7)
+      - SNAPSHOT_SIZE=214748364800 # 200GB in bytes
+    expose:
+      - port: 26657
+        to:
+          - global: true
+
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 4Gi
+        storage:
+          size: 250Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 100
+
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 2
