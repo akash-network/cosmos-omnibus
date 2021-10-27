@@ -8,6 +8,7 @@ SNAPSHOT_SIZE="${SNAPSHOT_SIZE:-107374182400}"
 SNAPSHOT_DIR="${SNAPSHOT_DIR:-$PROJECT_HOME/data}"
 SNAPSHOT_CMD="${SNAPSHOT_CMD:-$@}"
 SNAPSHOT_PATH="${SNAPSHOT_PATH}"
+SNAPSHOT_PREFIX="${SNAPSHOT_PREFIX:-$CHAIN_ID}"
 SNAPSHOT_RETAIN="${SNAPSHOT_RETAIN:-2 days}"
 SNAPSHOT_METADATA="${SNAPSHOT_METADATA:-1}"
 TIME=$(date -u +%T)
@@ -30,12 +31,12 @@ while true; do
         aws_args="--endpoint-url ${S3_HOST}"
         s3_uri_base="s3://${SNAPSHOT_PATH}"
         timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
-        s3_uri="${s3_uri_base}/snapshot_${timestamp}.tar.gz"
+        s3_uri="${s3_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.tar.gz"
 
         tar c -C $SNAPSHOT_DIR . | gzip | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE
 
         if [[ $SNAPSHOT_RETAIN != "0" || $SNAPSHOT_METADATA != "0" ]]; then
-            readarray -t s3Files < <(aws $aws_args s3 ls "${s3_uri_base}/snapshot_")
+            readarray -t s3Files < <(aws $aws_args s3 ls "${s3_uri_base}/${SNAPSHOT_PREFIX}_")
             snapshots=()
             for line in "${s3Files[@]}"; do
                 createDate=`echo $line|awk {'print $1" "$2'}`
