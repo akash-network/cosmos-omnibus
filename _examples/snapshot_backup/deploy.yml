@@ -17,6 +17,7 @@ services:
       - SNAPSHOT_TIME=00:00:00
       # - SNAPSHOT_DAY=* #(1-7)
       - SNAPSHOT_SIZE=214748364800 # 200GB in bytes
+      - SNAPSHOT_METADATA_URL=https://<bucket>.s3.filebase.com/<path>
     expose:
       - port: 26657
         to:

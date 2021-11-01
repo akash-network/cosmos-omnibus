@@ -42,6 +42,11 @@ while true; do
                 createDate=`echo $line|awk {'print $1" "$2'}`
                 createDate=`date -d"$createDate" +%s`
                 fileName=`echo $line|awk '{$1=$2=$3=""; print $0}' | sed 's/^[ \t]*//'`
+                if [[ -n $SNAPSHOT_METADATA_URL && $SNAPSHOT_METADATA_URL != */ ]]; then
+                    fileUrl="${SNAPSHOT_METADATA_URL}/${fileName}"
+                else
+                    fileUrl="${SNAPSHOT_METADATA_URL}${fileName}"
+                fi
                 if [ "$SNAPSHOT_RETAIN" != "0" ]; then
                     olderThan=`date -d"-$SNAPSHOT_RETAIN" +%s`
                     if [[ $createDate -lt $olderThan ]]; then
@@ -50,18 +55,18 @@ while true; do
                             aws $aws_args s3 rm "${s3_uri_base}/$fileName"
                         fi
                     else
-                        snapshots+=("$fileName")
+                        snapshots+=("$fileUrl")
                     fi
                 else
-                    snapshots+=("$fileName")
+                    snapshots+=("$fileUrl")
                 fi
             done;
 
             if [ "$SNAPSHOT_METADATA" != "0" ]; then
                 echo "$TIME: Uploading metadata"
                 snapshotJson="[]"
-                for val in ${snapshots[@]}; do
-                    snapshotJson="$(echo $snapshotJson | jq ".+[\"$val\"]")"
+                for url in ${snapshots[@]}; do
+                    snapshotJson="$(echo $snapshotJson | jq ".+[\"$url\"]")"
                 done
                 echo $snapshotJson | jq '{chain_id: $c, snapshots: ., latest: $l}' \
                    --arg c "$CHAIN_ID" --arg l "${snapshots[-1]}" | \
