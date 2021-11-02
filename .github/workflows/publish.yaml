@@ -56,7 +56,7 @@ jobs:
           - project: juno
             project_bin: junod
             project_dir: .juno
-            version: lucina
+            version: v1.0.2
             repository: https://github.com/CosmosContracts/Juno
             namespace: JUNOD
             wasmvm_version: v0.14.0
