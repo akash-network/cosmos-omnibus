@@ -63,7 +63,7 @@ jobs:
           - project: regen
             project_bin: regen
             project_dir: .regen
-            version: v1.0.0
+            version: v2.0.0
             repository: https://github.com/regen-network/regen-ledger
             namespace: REGEN
             wasmvm_version: v0.13.0

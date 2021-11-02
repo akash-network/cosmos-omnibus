@@ -28,7 +28,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-osmosis-v3.1.0`|[Example](./osmosis)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-persistence-v0.1.3`|[Example](./persistence)|
 |[juno](https://github.com/CosmosContracts/Juno)|`lucina`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-lucina`|[Example](./juno)|
-|[regen](https://github.com/regen-network/regen-ledger)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-regen-v1.0.0`|[Example](./regen)|
+|[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-regen-v2.0.0`|[Example](./regen)|
 
 ## Configuration
 
