@@ -5,7 +5,7 @@ set -e
 export PROJECT_HOME="/root/$PROJECT_DIR"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
-if [[ -z $BOOTSTRAP && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL ) && ! -d "$PROJECT_HOME/data" ]]; then
+if [[ -z $BOOTSTRAP && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON ) && ! -d "$PROJECT_HOME/data" ]]; then
   export BOOTSTRAP="1"
 fi
 
@@ -16,8 +16,9 @@ if [ -n "$METADATA_URL" ]; then
   export GENESIS_URL="${GENESIS_URL:-$METADATA_URL/genesis.json}"
 fi
 
-if [ -n "$CHAIN_URL" ]; then
-  CHAIN_METADATA=$(curl -s $CHAIN_URL)
+export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
+if [ -n "$CHAIN_JSON" ]; then
+  CHAIN_METADATA=$(curl -s $CHAIN_JSON)
   export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
   export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')}"
   export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')}"
@@ -125,13 +126,22 @@ if [ "$BOOTSTRAP" == "1" ]; then
     SNAPSHOT_URL=$SNAPSHOT_BASE_URL/$(curl -s $SNAPSHOT_BASE_URL/ | egrep -o ">$SNAPSHOT_PATTERN" | tr -d ">");
   fi
 
-  echo "Downloading snapshot from $SNAPSHOT_URL..."
-  rm -rf $PROJECT_HOME/data;
-  mkdir -p $PROJECT_HOME/data;
-  cd $PROJECT_HOME/data
+  if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_JSON}" ]; then
+    SNAPSHOT_METADATA=$(curl -s $SNAPSHOT_JSON)
+    SNAPSHOT_URL="$(echo $SNAPSHOT_METADATA | jq -r .latest)"
+  fi
 
-  [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
-  wget -nv -O - $SNAPSHOT_URL | tar $tar_args -
+  if [ -n "${SNAPSHOT_URL}" ]; then
+    echo "Downloading snapshot from $SNAPSHOT_URL..."
+    rm -rf $PROJECT_HOME/data;
+    mkdir -p $PROJECT_HOME/data;
+    cd $PROJECT_HOME/data
+
+    [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
+    wget -nv -O - $SNAPSHOT_URL | tar $tar_args -
+  else
+    echo "Snapshot URL not found"
+  fi
 fi
 
 # Download genesis
@@ -151,4 +161,8 @@ fi
 echo "Node ID:"
 $PROJECT_BIN tendermint show-node-id
 
-exec "$@"
+if [ -n "$SNAPSHOT_PATH" ]; then
+  exec snapshot.sh "$PROJECT_CMD"
+else
+  exec "$@"
+fi

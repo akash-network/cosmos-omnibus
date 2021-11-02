@@ -51,7 +51,7 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Regi
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`CHAIN_URL`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`
+|`CHAIN_JSON`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`
 |`METADATA_URL`|URL to a `net` repo in the same form as Akash| |`https://github.com/ovrclk/net/tree/master/mainnet`
 |`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`
 |`GENESIS_URL`|URL to the genesis file in `.gz` or `.zip` format. Can be set by CHAIN_URL or METADATA_URL| |`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json`
@@ -88,6 +88,8 @@ The `node_key.json` and `priv_validator_key.json` are both backed up, and can be
 
 Some shortcuts for enabling statesync. Statesync requires 2x nodes with snapshots enabled.
 
+[See an example](_examples/statesync) of a statesync deployment.
+
 |Variable|Description|Default|Examples|
 |---|---|---|---|
 |`STATESYNC_SNAPSHOT_INTERVAL`|Take a snapshot to provide statesync every X blocks| |`500`|
@@ -101,15 +103,40 @@ Some shortcuts for enabling statesync. Statesync requires 2x nodes with snapshot
 ### Snapshot restore
 
 The node `data` directory can be restored from a `.tar` or `.tar.gz` file stored on a public URL. 
-This can be from a specific URL, or from a base URL and a file matching a given pattern.
+This can be from a specific URL, a [snapshot.json](#snapshot-backup), or from a base URL and matching a given pattern.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
 |`BOOTSTRAP`|Whether to bootstrap the node from the snapshot URL|`1`|`0`|
 |`SNAPSHOT_URL`|A URL to a `.tar` or `.tar.gz` file| |`http://135.181.60.250/akash/akashnet-2_2021-06-16.tar`|
+|`SNAPSHOT_JSON`|A URL to a `snapshot.json` as detailed in [Snapshot backup](#snapshot-backup)| |`https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json`|
 |`SNAPSHOT_FORMAT`|The format of the snapshot file|`tar.gz`|`tar`|
 |`SNAPSHOT_BASE_URL`|A base URL to a directory containing backup files| |`http://135.181.60.250/akash`|
 |`SNAPSHOT_PATTERN`|The pattern of the file in the `BASE_URL`|`$CHAIN_ID.*$SNAPSHOT_FORMAT`|`foobar.*tar.gz`|
+
+### Snapshot backup
+
+Omnibus includes a script to automatically snapshot a node and upload the resulting archive to any S3 compatible service like [Filebase](https://filebase.com/).
+At a specified time (or day), the script will shut down the tendermint server, create an archive of the `data` directory and upload it. 
+Snapshots older than a specified time can also be deleted. Finally a JSON metadata file is created listing the current snapshots. The server is then restarted and monitored.
+
+[See an example](_examples/snapshot_backup) of a snapshot node deployment.
+
+|Variable|Description|Default|Examples|
+|---|---|---|---|
+|`S3_KEY`|S3 access key| | |
+|`S3_SECRET`|S3 secret key| | |
+|`S3_HOST`|The S3 API host|`https://s3.filebase.com`|`s3.us-east-1.amazonaws.com`|
+|`SNAPSHOT_PATH`|The S3 path to upload snapshots to, including the bucket| |`cosmos-snapshots/akash`|
+|`SNAPSHOT_PREFIX`|The prefix for the snapshot filename|`$CHAIN_ID`|`snapshot`|
+|`SNAPSHOT_TIME`|The time the snapshot will run|`00:00:00`|`09:00:00`|
+|`SNAPSHOT_DAY`|The numeric day of the week the snapshot will run (Monday = 1)|`*`|`7`|
+|`SNAPSHOT_SIZE`|The rough size of the resulting snapshot for the multi-part upload|`107374182400`|`0`|
+|`SNAPSHOT_DIR`|The directory on disk to snapshot|`$PROJECT_HOME/data`|`/root/.akash`|
+|`SNAPSHOT_CMD`|The command to run the server|`$PROJECT_CMD`|`akash start --someflag`|
+|`SNAPSHOT_RETAIN`|How long to retain snapshots for (0 to disable)|`2 days`|`1 week`|
+|`SNAPSHOT_METADATA`|Whether to create a snapshot.json metadata file|`1`|`0`|
+|`SNAPSHOT_METADATA_URL`|The URL snapshots will be served from (for snapshot.json)| |`https://cosmos-snapshots.s3.filebase.com/akash`|
 
 ### Shortcuts
 
