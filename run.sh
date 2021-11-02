@@ -25,6 +25,10 @@ if [ -n "$CHAIN_JSON" ]; then
   export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r '.genesis.genesis_url? // .genesis')}"
 fi
 
+if [[ -z $DOWNLOAD_GENESIS && -n $GENESIS_URL && ! -f "$PROJECT_HOME/config/genesis.json" ]]; then
+  export DOWNLOAD_GENESIS="1"
+fi
+
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
 
 export AWS_ACCESS_KEY_ID=$S3_KEY
@@ -145,7 +149,7 @@ if [ "$BOOTSTRAP" == "1" ]; then
 fi
 
 # Download genesis
-if [ -n "$GENESIS_URL" ]; then
+if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   echo "Downloading genesis"
   curl -sfL $GENESIS_URL > genesis.json
   file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
