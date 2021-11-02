@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sentinelhub-v0.7.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sentinelhub-v0.8.3
     env:
       - MONIKER=my-moniker-1
       - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/chain.json

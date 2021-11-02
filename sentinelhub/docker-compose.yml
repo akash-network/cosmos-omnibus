@@ -6,7 +6,7 @@ services:
       context: ../
       args:
         PROJECT: sentinelhub
-        VERSION: v0.7.0
+        VERSION: v0.8.3
         REPOSITORY: https://github.com/sentinel-official/hub.git
     ports:
       - '26656:26656'
