@@ -5,8 +5,8 @@ set -e
 export PROJECT_HOME="/root/$PROJECT_DIR"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
-if [[ -z $BOOTSTRAP && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON ) && ! -d "$PROJECT_HOME/data" ]]; then
-  export BOOTSTRAP="1"
+if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON ) && ! -d "$PROJECT_HOME/data" ]]; then
+  export DOWNLOAD_SNAPSHOT="1"
 fi
 
 if [ -n "$METADATA_URL" ]; then
@@ -122,7 +122,7 @@ if [ -n "$KEY_PATH" ]; then
 fi
 
 # Snapshot
-if [ "$BOOTSTRAP" == "1" ]; then
+if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
