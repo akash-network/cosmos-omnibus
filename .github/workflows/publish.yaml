@@ -74,6 +74,13 @@ jobs:
             repository: https://github.com/public-awesome/stargaze
             namespace: STARSD
             wasmvm_version: v0.14.0
+          - project: terra
+            project_bin: terrad
+            project_dir: .terra
+            version: v0.5.9
+            repository: https://github.com/terra-money/core
+            namespace: TERRAD
+            wasmvm_version: v0.13.0
     steps:
       - uses: actions/checkout@v2
       - name: build

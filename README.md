@@ -30,6 +30,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[juno](https://github.com/CosmosContracts/Juno)|`v1.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-v1.0.2`|[Example](./juno)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-regen-v2.0.0`|[Example](./regen)|
 |[stargaze](https://github.com/public-awesome/stargaze)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-stargaze-v1.0.0`|[Example](./stargaze)|
+|[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-terra-v0.5.9`|[Example](./terra)|
 
 ## Configuration
 
