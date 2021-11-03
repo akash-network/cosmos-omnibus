@@ -17,7 +17,7 @@ services:
       - '26657:26657'
     environment:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/nullmames/juno-on-akash/main/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/nullmames/juno-on-akash/main/chain.json
     env_file:
       - ../.env
     volumes:

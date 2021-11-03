@@ -13,7 +13,7 @@ services:
         NAMESPACE: GA
     environment:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/chain.json
     env_file:
       - ../.env
     volumes:
