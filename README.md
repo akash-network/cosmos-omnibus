@@ -21,14 +21,15 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[akash](https://github.com/ovrclk/akash)|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-akash-v0.12.1`|[Example](./akash)|
+|[akash](https://github.com/ovrclk/akash)|`v0.14.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-akash-v0.14.0`|[Example](./akash)|
 |[sentinelhub](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sentinelhub-v0.8.3`|[Example](./sentinelhub)|
-|[gaia](https://github.com/cosmos/gaia)|`v4.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-gaia-v4.2.1`|[Example](./gaia)|
-|[kava](https://github.com/Kava-Labs/kava)|`v0.14.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-kava-v0.14.2`|[Example](./kava)|
-|[osmosis](https://github.com/osmosis-labs/osmosis)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-osmosis-v3.1.0`|[Example](./osmosis)|
+|[gaia](https://github.com/cosmos/gaia)|`v5.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-gaia-v5.0.8`|[Example](./gaia)|
+|[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-kava-v0.15.1`|[Example](./kava)|
+|[osmosis](https://github.com/osmosis-labs/osmosis)|`v4.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-osmosis-v4.2.0`|[Example](./osmosis)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-persistence-v0.1.3`|[Example](./persistence)|
-|[juno](https://github.com/CosmosContracts/Juno)|`lucina`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-lucina`|[Example](./juno)|
-|[regen](https://github.com/regen-network/regen-ledger)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-regen-v1.0.0`|[Example](./regen)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v1.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-v1.0.2`|[Example](./juno)|
+|[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-regen-v2.0.0`|[Example](./regen)|
+|[stargaze](https://github.com/public-awesome/stargaze)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-stargaze-v1.0.0`|[Example](./stargaze)|
 |[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-terra-v0.5.9`|[Example](./terra)|
 
 ## Configuration
@@ -55,7 +56,7 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Regi
 |`CHAIN_JSON`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`
 |`METADATA_URL`|URL to a `net` repo in the same form as Akash| |`https://github.com/ovrclk/net/tree/master/mainnet`
 |`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`
-|`GENESIS_URL`|URL to the genesis file in `.gz` or `.zip` format. Can be set by CHAIN_URL or METADATA_URL| |`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json`
+|`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_URL or METADATA_URL| |`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json`
 |`DOWNLOAD_GENESIS`|Force download of genesis file. If unset the node will only download if the genesis file is missing| |`1`|
 |`VALIDATE_GENESIS`|Set to 0 to disable validation of genesis file|`1`|`0`
 

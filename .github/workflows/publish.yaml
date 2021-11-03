@@ -14,7 +14,7 @@ jobs:
           - project: akash
             project_bin: akash
             project_dir: .akash
-            version: v0.12.1
+            version: v0.14.0
             repository: https://github.com/ovrclk/akash.git
             namespace: AKASH
             wasmvm_version: main
@@ -28,21 +28,21 @@ jobs:
           - project: gaia
             project_bin: gaiad
             project_dir: .gaia
-            version: v4.2.1
+            version: v5.0.8
             repository: https://github.com/cosmos/gaia
             namespace: GA
             wasmvm_version: main
           - project: kava
             project_bin: kvd
             project_dir: .kvd
-            version: v0.14.2
+            version: v0.15.1
             repository: https://github.com/Kava-Labs/kava
             namespace: KA
             wasmvm_version: main
           - project: osmosis
             project_bin: osmosisd
             project_dir: .osmosisd
-            version: v3.1.0
+            version: v4.2.0
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
             wasmvm_version: main
@@ -56,17 +56,24 @@ jobs:
           - project: juno
             project_bin: junod
             project_dir: .juno
-            version: lucina
+            version: v1.0.2
             repository: https://github.com/CosmosContracts/Juno
             namespace: JUNOD
             wasmvm_version: v0.14.0
           - project: regen
             project_bin: regen
             project_dir: .regen
-            version: v1.0.0
+            version: v2.0.0
             repository: https://github.com/regen-network/regen-ledger
             namespace: REGEN
             wasmvm_version: v0.13.0
+          - project: stargaze
+            project_bin: starsd
+            project_dir: .starsd
+            version: v1.0.0
+            repository: https://github.com/public-awesome/stargaze
+            namespace: STARSD
+            wasmvm_version: v0.14.0
           - project: terra
             project_bin: terrad
             project_dir: .terra

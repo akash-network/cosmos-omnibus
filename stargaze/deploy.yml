@@ -3,10 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-gaia-v5.0.8
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-stargaze-v1.0.0
     env:
-      - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/chain.json
+      - MONIKER=my-moniker-1
+      - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/stargaze/chain.json
     expose:
       - port: 26657
         as: 80
@@ -23,9 +23,9 @@ profiles:
         cpu:
           units: 2
         memory:
-          size: 2Gi
+          size: 4Gi
         storage:
-          size: 60Gi
+          size: 100Gi
   placement:
     dcloud:
       attributes:
