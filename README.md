@@ -21,13 +21,13 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[akash](https://github.com/ovrclk/akash)|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-akash-v0.12.1`|[Example](./akash)|
+|[akash](https://github.com/ovrclk/akash)|`v0.14.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-akash-v0.14.0`|[Example](./akash)|
 |[sentinelhub](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sentinelhub-v0.8.3`|[Example](./sentinelhub)|
-|[gaia](https://github.com/cosmos/gaia)|`v4.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-gaia-v4.2.1`|[Example](./gaia)|
-|[kava](https://github.com/Kava-Labs/kava)|`v0.14.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-kava-v0.14.2`|[Example](./kava)|
-|[osmosis](https://github.com/osmosis-labs/osmosis)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-osmosis-v3.1.0`|[Example](./osmosis)|
+|[gaia](https://github.com/cosmos/gaia)|`v5.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-gaia-v5.0.8`|[Example](./gaia)|
+|[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-kava-v0.15.1`|[Example](./kava)|
+|[osmosis](https://github.com/osmosis-labs/osmosis)|`v4.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-osmosis-v4.2.0`|[Example](./osmosis)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-persistence-v0.1.3`|[Example](./persistence)|
-|[juno](https://github.com/CosmosContracts/Juno)|`lucina`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-lucina`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v1.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-v1.0.2`|[Example](./juno)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-regen-v2.0.0`|[Example](./regen)|
 
 ## Configuration
@@ -55,6 +55,7 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Regi
 |`METADATA_URL`|URL to a `net` repo in the same form as Akash| |`https://github.com/ovrclk/net/tree/master/mainnet`
 |`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`
 |`GENESIS_URL`|URL to the genesis file in `.gz` or `.zip` format. Can be set by CHAIN_URL or METADATA_URL| |`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json`
+|`DOWNLOAD_GENESIS`|Force download of genesis file. If unset the node will only download if the genesis file is missing| |`1`|
 |`VALIDATE_GENESIS`|Set to 0 to disable validation of genesis file|`1`|`0`
 
 ### P2P
@@ -107,12 +108,12 @@ This can be from a specific URL, a [snapshot.json](#snapshot-backup), or from a 
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`BOOTSTRAP`|Whether to bootstrap the node from the snapshot URL|`1`|`0`|
 |`SNAPSHOT_URL`|A URL to a `.tar` or `.tar.gz` file| |`http://135.181.60.250/akash/akashnet-2_2021-06-16.tar`|
 |`SNAPSHOT_JSON`|A URL to a `snapshot.json` as detailed in [Snapshot backup](#snapshot-backup)| |`https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json`|
 |`SNAPSHOT_FORMAT`|The format of the snapshot file|`tar.gz`|`tar`|
 |`SNAPSHOT_BASE_URL`|A base URL to a directory containing backup files| |`http://135.181.60.250/akash`|
 |`SNAPSHOT_PATTERN`|The pattern of the file in the `BASE_URL`|`$CHAIN_ID.*$SNAPSHOT_FORMAT`|`foobar.*tar.gz`|
+|`DOWNLOAD_SNAPSHOT`|Force bootstrapping from snapshot. If unset the node will only restore a snapshot if the `data` directory is missing| |`1`|
 
 ### Snapshot backup
 
