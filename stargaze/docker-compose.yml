@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: stargaze
+        PROJECT_BIN: starsd
+        PROJECT_DIR: .starsd
+        VERSION: v1.0.0
+        REPOSITORY: https://github.com/public-awesome/stargaze
+        NAMESPACE: STARGAZE
+        WASMVM_VERSION: v0.14.0
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/stargaze/chain.json
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.starsd
