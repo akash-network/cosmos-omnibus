@@ -153,6 +153,7 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   echo "Downloading genesis"
   curl -sfL $GENESIS_URL > genesis.json
   file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
+  file genesis.json | grep -q 'tar archive' && mv genesis.json genesis.json.tar && tar -xf genesis.json.tar && rm genesis.json.tar
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
   mv genesis.json $PROJECT_HOME/config/genesis.json
 fi
