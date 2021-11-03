@@ -93,11 +93,11 @@ if [ -n "$STATESYNC_RPC_SERVERS" ]; then
   export "${NAMESPACE}_STATESYNC_ENABLE=${STATESYNC_ENABLE:-true}"
   export "${NAMESPACE}_STATESYNC_RPC_SERVERS=$STATESYNC_RPC_SERVERS"
   IFS=',' read -ra rpc_servers <<< "$STATESYNC_RPC_SERVERS"
-  TRUSTED_NODE=${TRUSTED_NODE:-${rpc_servers[0]}}
-  if [ -n "$TRUSTED_NODE" ]; then
-    LATEST_HEIGHT=$(curl -s $TRUSTED_NODE/block | jq -r .result.block.header.height)
+  STATESYNC_TRUSTED_NODE=${STATESYNC_TRUSTED_NODE:-${rpc_servers[0]}}
+  if [ -n "$STATESYNC_TRUSTED_NODE" ]; then
+    LATEST_HEIGHT=$(curl -s $STATESYNC_TRUSTED_NODE/block | jq -r .result.block.header.height)
     BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000))
-    TRUST_HASH=$(curl -s "$TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+    TRUST_HASH=$(curl -s "$STATESYNC_TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
     export "${NAMESPACE}_STATESYNC_TRUST_HEIGHT=${STATESYNC_TRUST_HEIGHT:-$BLOCK_HEIGHT}"
     export "${NAMESPACE}_STATESYNC_TRUST_HASH=${STATESYNC_TRUST_HASH:-$TRUST_HASH}"
     export "${NAMESPACE}_STATESYNC_TRUST_PERIOD=${STATESYNC_TRUST_PERIOD:-168h0m0s}"

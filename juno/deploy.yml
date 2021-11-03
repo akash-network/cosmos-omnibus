@@ -6,7 +6,7 @@ services:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-v1.0.2
     env:
       - MONIKER=node_1
-      - CHAIN_URL=https://raw.githubusercontent.com/nullmames/juno-on-akash/main/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/nullmames/juno-on-akash/main/chain.json
     expose:
       - port: 26657
         as: 80

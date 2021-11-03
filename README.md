@@ -12,7 +12,12 @@ The goal is to have a simple way to launch any cosmos chain, with a variety of d
 
 Configuration is achieved using environment variables, with shortcuts available for common setups. Every aspect of the node configuration can be achieved in this way.
 
-Additionally the node private keys can be backed up and restored from any S3 compatible storage provider, such as Sia or Storj, via [Filebase](https://filebase.com/).
+Additional features are included to make running a node as simple as possible
+
+1. Chain configuration can be sourced from a remote JSON file
+1. Genesis file can be downloaded and unzipped in various ways
+1. Private keys can be backed up and restored from any S3 compatible storage provider, such as Sia or Storj via [Filebase](https://filebase.com/).
+1. A snapshot script is included to create an archive of a node's data directory at a certain time or day and upload it 
 
 ## Networks
 
@@ -22,16 +27,16 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |Project|Version|Image| |
 |---|---|---|---|
 |[akash](https://github.com/ovrclk/akash)|`v0.14.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-akash-v0.14.0`|[Example](./akash)|
-|[sentinelhub](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sentinelhub-v0.8.3`|[Example](./sentinelhub)|
 |[gaia](https://github.com/cosmos/gaia)|`v5.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-gaia-v5.0.8`|[Example](./gaia)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v1.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-v1.0.2`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-kava-v0.15.1`|[Example](./kava)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v4.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-osmosis-v4.2.0`|[Example](./osmosis)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-persistence-v0.1.3`|[Example](./persistence)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v1.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-v1.0.2`|[Example](./juno)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-regen-v2.0.0`|[Example](./regen)|
+|[sentinelhub](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sentinelhub-v0.8.3`|[Example](./sentinelhub)|
+|[sifchain](https://github.com/Sifchain/sifnode)|`betanet-0.9.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sifchain-betanet-0.9.12`|[Example](./sifchain)|
 |[stargaze](https://github.com/public-awesome/stargaze)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-stargaze-v1.0.0`|[Example](./stargaze)|
 |[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-terra-v0.5.9`|[Example](./terra)|
-|[sifchain](https://github.com/Sifchain/sifnode)|`betanet-0.9.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sifchain-betanet-0.9.12`|[Example](./sifchain)|
 
 ## Configuration
 
@@ -57,18 +62,18 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Regi
 |`CHAIN_JSON`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`
 |`METADATA_URL`|URL to a `net` repo in the same form as Akash| |`https://github.com/ovrclk/net/tree/master/mainnet`
 |`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`
-|`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_URL or METADATA_URL| |`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json`
+|`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON or METADATA_URL| |`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json`
 |`DOWNLOAD_GENESIS`|Force download of genesis file. If unset the node will only download if the genesis file is missing| |`1`|
 |`VALIDATE_GENESIS`|Set to 0 to disable validation of genesis file|`1`|`0`
 
 ### P2P
 
-See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information. Note this can be sourced from `CHAIN_URL` or `METADATA_URL` automatically.
+See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information. Note this can be sourced from `CHAIN_JSON` or `METADATA_URL` automatically.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_URL or GENESIS_URL| |`id@node:26656`|
-|`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_URL or GENESIS_URL| |`id@node:26656`|
+|`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
+|`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
 
 ### Private key backup/restore
 
@@ -99,10 +104,10 @@ Some shortcuts for enabling statesync. Statesync requires 2x nodes with snapshot
 |`STATESYNC_SNAPSHOT_INTERVAL`|Take a snapshot to provide statesync every X blocks| |`500`|
 |`STATESYNC_ENABLE`|Enabling statesyncing from a node. Default `true` if `STATESYNC_RPC_SERVERS` is set| | |
 |`STATESYNC_RPC_SERVERS`|Comma separated list of RPC nodes with snapshots enabled| |`ip:26657,ip2:26657`|
-|`TRUSTED_NODE`|A trusted node to obtain trust height and hash from. Defaults to the first `STATESYNC_RPC_SERVERS` if set| |`ip:26657`|
+|`STATESYNC_TRUSTED_NODE`|A trusted node to obtain trust height and hash from. Defaults to the first `STATESYNC_RPC_SERVERS` if set| |`ip:26657`|
 |`STATESYNC_TRUST_PERIOD`|Trust period for the statesync snapshot|`168h0m0s`| |
-|`STATESYNC_TRUST_HEIGHT`|Obtained from TRUSTED_NODE or first STATESYNC_RPC_SERVERS| | |
-|`STATESYNC_TRUST_HASH`|Obtained from TRUSTED_NODE or first STATESYNC_RPC_SERVERS| | |
+|`STATESYNC_TRUST_HEIGHT`|Obtained from `STATESYNC_TRUSTED_NODE`| | |
+|`STATESYNC_TRUST_HASH`|Obtained from `STATESYNC_TRUSTED_NODE`| | |
 
 ### Snapshot restore
 
@@ -172,7 +177,7 @@ See the [_examples](./_examples) directory for some common setups, including:
 
 ## TODO
 
-- [ ] Backup node data to S3 on schedule
+- [x] Backup node data to S3 on schedule
 - [ ] More chains..
 
 ## Contributing
