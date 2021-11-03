@@ -5,8 +5,8 @@ set -e
 export PROJECT_HOME="/root/$PROJECT_DIR"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
-if [[ -z $BOOTSTRAP && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON ) && ! -d "$PROJECT_HOME/data" ]]; then
-  export BOOTSTRAP="1"
+if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON ) && ! -d "$PROJECT_HOME/data" ]]; then
+  export DOWNLOAD_SNAPSHOT="1"
 fi
 
 if [ -n "$METADATA_URL" ]; then
@@ -23,6 +23,10 @@ if [ -n "$CHAIN_JSON" ]; then
   export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')}"
   export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')}"
   export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r '.genesis.genesis_url? // .genesis')}"
+fi
+
+if [[ -z $DOWNLOAD_GENESIS && -n $GENESIS_URL && ! -f "$PROJECT_HOME/config/genesis.json" ]]; then
+  export DOWNLOAD_GENESIS="1"
 fi
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
@@ -118,7 +122,7 @@ if [ -n "$KEY_PATH" ]; then
 fi
 
 # Snapshot
-if [ "$BOOTSTRAP" == "1" ]; then
+if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
@@ -145,7 +149,7 @@ if [ "$BOOTSTRAP" == "1" ]; then
 fi
 
 # Download genesis
-if [ -n "$GENESIS_URL" ]; then
+if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   echo "Downloading genesis"
   curl -sfL $GENESIS_URL > genesis.json
   file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
