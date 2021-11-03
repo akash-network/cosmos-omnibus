@@ -12,7 +12,12 @@ The goal is to have a simple way to launch any cosmos chain, with a variety of d
 
 Configuration is achieved using environment variables, with shortcuts available for common setups. Every aspect of the node configuration can be achieved in this way.
 
-Additionally the node private keys can be backed up and restored from any S3 compatible storage provider, such as Sia or Storj, via [Filebase](https://filebase.com/).
+Additional features are included to make running a node as simple as possible
+
+1. Chain configuration can be sourced from a remote JSON file
+1. Genesis file can be downloaded and unzipped in various ways
+1. Private keys can be backed up and restored from any S3 compatible storage provider, such as Sia or Storj via [Filebase](https://filebase.com/).
+1. A snapshot script is included to create an archive of a node's data directory at a certain time or day and upload it 
 
 ## Networks
 
@@ -172,7 +177,7 @@ See the [_examples](./_examples) directory for some common setups, including:
 
 ## TODO
 
-- [ ] Backup node data to S3 on schedule
+- [x] Backup node data to S3 on schedule
 - [ ] More chains..
 
 ## Contributing
