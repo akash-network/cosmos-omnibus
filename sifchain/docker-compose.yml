@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: sifchain
+        PROJECT_BIN: sifnoded
+        VERSION: betanet-0.9.12
+        REPOSITORY: https://github.com/Sifchain/sifnode.git
+    environment:
+      - MONIKER=node_1
+      # - CHAIN_URL=https://raw.githubusercontent.com/cosmos/chain-registry/master/sifchain/chain.json
+      - CHAIN_ID=sifchain-1
+      - GENESIS_URL=https://github.com/Sifchain/networks/blob/master/betanet/sifchain-1/genesis.json.gz?raw=true
+      - P2P_PERSISTENT_PEERS=0d4981bdaf4d5d73bad00af3b1fa9d699e4d3bc0@44.235.108.41:26656,bcc2d07a14a8a0b3aa202e9ac106dec0bef91fda@13.55.247.60:26656,663dec65b754aceef5fcccb864048305208e7eb2@34.248.110.88:26656,0120f0a48e7e81cc98829ef4f5b39480f11ecd5a@52.76.185.17:26656,6535497f0152293d773108774a705b86c2249a9c@44.238.121.65:26656,fdf5cffc2b20a20fab954d3b6785e9c382762d14@34.255.133.248:26656,8c240f71f9e060277ce18dc09d82d3bbb05d1972@13.211.43.177:26656,9fbcb6bd5a7f20a716564157c4f6296d2faf5f64@18.138.208.95:26656
+      - VALIDATE_GENESIS=0
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.sifnoded

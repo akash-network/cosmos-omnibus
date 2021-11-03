@@ -29,6 +29,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-persistence-v0.1.3`|[Example](./persistence)|
 |[juno](https://github.com/CosmosContracts/Juno)|`lucina`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-juno-lucina`|[Example](./juno)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-regen-v1.0.0`|[Example](./regen)|
+|[sifchain](https://github.com/Sifchain/sifnode)|`betanet-0.9.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.6-sifchain-betanet-0.9.12`|[Example](./sifchain)|
 
 ## Configuration
 

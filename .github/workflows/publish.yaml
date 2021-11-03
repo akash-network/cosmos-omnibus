@@ -67,6 +67,13 @@ jobs:
             repository: https://github.com/regen-network/regen-ledger
             namespace: REGEN
             wasmvm_version: v0.13.0
+          - project: sifchain
+            project_bin: sifnoded
+            project_dir: .sifnoded
+            version: betanet-0.9.12
+            repository: https://github.com/Sifchain/sifnode
+            namespace: SIFNODED
+            wasmvm_version: v0.13.0
     steps:
       - uses: actions/checkout@v2
       - name: build
