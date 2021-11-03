@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .starsd
         VERSION: v1.0.0
         REPOSITORY: https://github.com/public-awesome/stargaze
-        NAMESPACE: STARGAZE
+        NAMESPACE: STARSD
         WASMVM_VERSION: v0.14.0
     ports:
       - '26656:26656'
