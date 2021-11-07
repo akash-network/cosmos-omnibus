@@ -9,13 +9,6 @@ if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n
   export DOWNLOAD_SNAPSHOT="1"
 fi
 
-if [ -n "$METADATA_URL" ]; then
-  export CHAIN_ID="${CHAIN_ID:-$(curl -sfL "$METADATA_URL/chain-id.txt")}"
-  export P2P_SEEDS="${P2P_SEEDS:-$(curl -sfL "$METADATA_URL/seed-nodes.txt" | paste -sd ',')}"
-  export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(curl -sfL "$METADATA_URL/peer-nodes.txt" | paste -sd ',')}"
-  export GENESIS_URL="${GENESIS_URL:-$METADATA_URL/genesis.json}"
-fi
-
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
 if [ -n "$CHAIN_JSON" ]; then
   CHAIN_METADATA=$(curl -s $CHAIN_JSON)
