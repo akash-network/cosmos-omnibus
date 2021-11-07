@@ -10,7 +10,7 @@ services:
         REPOSITORY: https://github.com/ovrclk/akash.git
     environment:
       - MONIKER=node_1
-      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v2
       # - SNAPSHOT_BASE_URL=http://135.181.60.250/akash

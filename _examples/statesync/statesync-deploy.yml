@@ -6,7 +6,7 @@ services:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-akash-v0.14.0
     env:
       - MONIKER=private_node_1
-      - METADATA_URL=https://raw.githubusercontent.com/ovrclk/net/master/mainnet
+      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v2
       - STATESYNC_RPC_SERVERS=<publicnode1:26657,publicnode2:26657>
