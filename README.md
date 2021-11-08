@@ -26,18 +26,18 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[akash](https://github.com/ovrclk/akash)|`v0.14.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-akash-v0.14.0`|[Example](./akash)|
-|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-bitcanna-v1.2`|[Example](./bitcanna)|
-|[gaia](https://github.com/cosmos/gaia)|`v5.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-gaia-v5.0.8`|[Example](./gaia)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-juno-v1.0.0`|[Example](./juno)|
-|[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-kava-v0.15.1`|[Example](./kava)|
-|[osmosis](https://github.com/osmosis-labs/osmosis)|`v4.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-osmosis-v4.2.0`|[Example](./osmosis)|
-|[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-persistence-v0.1.3`|[Example](./persistence)|
-|[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-regen-v2.0.0`|[Example](./regen)|
-|[sentinelhub](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-sentinelhub-v0.8.3`|[Example](./sentinelhub)|
-|[sifchain](https://github.com/Sifchain/sifnode)|`betanet-0.9.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-sifchain-betanet-0.9.12`|[Example](./sifchain)|
-|[stargaze](https://github.com/public-awesome/stargaze)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-stargaze-v1.0.0`|[Example](./stargaze)|
-|[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.8-terra-v0.5.9`|[Example](./terra)|
+|[akash](https://github.com/ovrclk/akash)|`v0.14.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-akash-v0.14.0`|[Example](./akash)|
+|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-bitcanna-v1.2`|[Example](./bitcanna)|
+|[gaia](https://github.com/cosmos/gaia)|`v5.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-gaia-v5.0.8`|[Example](./gaia)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-juno-v1.0.0`|[Example](./juno)|
+|[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-kava-v0.15.1`|[Example](./kava)|
+|[osmosis](https://github.com/osmosis-labs/osmosis)|`v4.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-osmosis-v4.2.0`|[Example](./osmosis)|
+|[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-persistence-v0.1.3`|[Example](./persistence)|
+|[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-regen-v2.0.0`|[Example](./regen)|
+|[sentinelhub](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-sentinelhub-v0.8.3`|[Example](./sentinelhub)|
+|[sifchain](https://github.com/Sifchain/sifnode)|`betanet-0.9.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-sifchain-betanet-0.9.12`|[Example](./sifchain)|
+|[stargaze](https://github.com/public-awesome/stargaze)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-stargaze-v1.0.0`|[Example](./stargaze)|
+|[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.9-terra-v0.5.9`|[Example](./terra)|
 
 ## Configuration
 
