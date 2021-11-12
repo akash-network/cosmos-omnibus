@@ -152,11 +152,7 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
 fi
 
 # Validate genesis
-# NOTE: e-money currently doesn't have a `validate-genesis` command.
-if [ $PROJECT_BIN != "emd" ]; then
-  echo "Validating"
-  [ "$VALIDATE_GENESIS" == "1" ] && $PROJECT_BIN validate-genesis
-fi
+[ "$VALIDATE_GENESIS" == "1" ] && $PROJECT_BIN validate-genesis
 
 [ "$DEBUG" == "1" ] && printenv
 
