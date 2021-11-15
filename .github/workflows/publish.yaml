@@ -101,6 +101,7 @@ jobs:
             version: v1.1.3
             repository: https://github.com/e-money/em-ledger
             namespace: EMD
+            wasmvm_version: v0.13.0
     steps:
       - uses: actions/checkout@v2
       - name: build
