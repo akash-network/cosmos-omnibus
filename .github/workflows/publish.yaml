@@ -14,7 +14,7 @@ jobs:
           - project: akash
             project_bin: akash
             project_dir: .akash
-            version: v0.14.0
+            version: v0.12.1
             repository: https://github.com/ovrclk/akash.git
             namespace: AKASH
             wasmvm_version: main

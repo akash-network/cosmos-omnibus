@@ -6,7 +6,7 @@ services:
       context: ../
       args:
         PROJECT: akash
-        VERSION: v0.14.0
+        VERSION: v0.12.1
         REPOSITORY: https://github.com/ovrclk/akash.git
     environment:
       - MONIKER=node_1

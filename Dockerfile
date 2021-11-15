@@ -13,7 +13,7 @@ FROM build AS project
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
-ARG VERSION=v0.14.0
+ARG VERSION=v0.12.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 
 # Clone and build project
@@ -34,7 +34,7 @@ ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 ARG PROJECT_DIR=.$PROJECT_BIN
 ARG PROJECT_CMD="$PROJECT_BIN start"
-ARG VERSION=v0.14.0
+ARG VERSION=v0.12.1
 ARG WASMVM_VERSION=main
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 ARG NAMESPACE
