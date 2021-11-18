@@ -11,6 +11,7 @@ services:
         VERSION: v1.0.0
         REPOSITORY: https://github.com/CosmosContracts/Juno
         NAMESPACE: JUNOD
+        BUILD_ENV: juno
         WASMVM_VERSION: v0.14.0
     ports:
       - '26656:26656'
