@@ -102,6 +102,13 @@ jobs:
             repository: https://github.com/e-money/em-ledger
             namespace: EMD
             wasmvm_version: v0.13.0
+          - project: band
+            project_bin: bandd
+            project_dir: .band
+            version: v2.3.2
+            repository: https://github.com/bandprotocol/chain
+            namespace: BAND
+            wasmvm_version: v0.13.0
     steps:
       - uses: actions/checkout@v2
       - name: build
