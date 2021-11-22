@@ -124,6 +124,13 @@ jobs:
             repository: https://github.com/ixofoundation/ixo-blockchain
             namespace: IXOD
             build_env: default
+          - project: band
+            project_bin: bandd
+            project_dir: .band
+            version: v2.3.2
+            repository: https://github.com/bandprotocol/chain
+            namespace: BAND
+            build_env: default
     steps:
       - uses: actions/checkout@v2
       - name: build

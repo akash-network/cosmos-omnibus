@@ -22,6 +22,10 @@ RUN git clone $REPOSITORY /data
 WORKDIR /data
 RUN git checkout $VERSION
 RUN make install
+
+RUN ldd $GOPATH/bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
+    xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
+
 RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
 
 FROM debian:buster AS build_default
@@ -56,6 +60,8 @@ EXPOSE 26656 \
        8080
 
 COPY --from=project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
+COPY --from=project /data/deps/ /
+
 COPY --from=aws /usr/src/aws /usr/src/aws
 RUN /usr/src/aws/install --bin-dir /usr/bin
 
