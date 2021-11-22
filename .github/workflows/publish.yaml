@@ -116,6 +116,13 @@ jobs:
             repository: https://github.com/crypto-org-chain/chain-main
             namespace: CRYPTOORGCHAIN
             wasmvm_version: v0.13.0
+          - project: impacthub
+            project_bin: ixod
+            project_dir: .ixod
+            version: v1.6.0
+            repository: https://github.com/ixofoundation/ixo-blockchain
+            namespace: IXOD
+            wasmvm_version: v0.13.0
     steps:
       - uses: actions/checkout@v2
       - name: build
