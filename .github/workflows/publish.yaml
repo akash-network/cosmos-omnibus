@@ -102,6 +102,13 @@ jobs:
             repository: https://github.com/e-money/em-ledger
             namespace: EMD
             wasmvm_version: v0.13.0
+          - project: bitsong
+            project_bin: bitsongd
+            project_dir: .bitsong
+            version: v0.8.0
+            repository: https://github.com/bitsongofficial/go-bitsong
+            namespace: BITSONG
+            wasmvm_version: v0.13.0
     steps:
       - uses: actions/checkout@v2
       - name: build
