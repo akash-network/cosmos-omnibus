@@ -17,48 +17,49 @@ jobs:
             version: v0.12.1
             repository: https://github.com/ovrclk/akash.git
             namespace: AKASH
-            wasmvm_version: main
+            build_env: default
           - project: sentinelhub
             project_bin: sentinelhub
             project_dir: .sentinelhub
             version: v0.8.3
             repository: https://github.com/sentinel-official/hub.git
             namespace: SENTINELHUB
-            wasmvm_version: main
+            build_env: default
           - project: gaia
             project_bin: gaiad
             project_dir: .gaia
             version: v5.0.8
             repository: https://github.com/cosmos/gaia
             namespace: GA
-            wasmvm_version: main
+            build_env: default
           - project: kava
             project_bin: kvd
             project_dir: .kvd
             version: v0.15.1
             repository: https://github.com/Kava-Labs/kava
             namespace: KA
-            wasmvm_version: main
+            build_env: default
           - project: osmosis
             project_bin: osmosisd
             project_dir: .osmosisd
             version: v4.2.0
             repository: https://github.com/osmosis-labs/osmosis
             namespace: OSMOSISD
-            wasmvm_version: main
+            build_env: default
           - project: persistence
             project_bin: persistenceCore
             project_dir: .persistenceCore
             version: v0.1.3
             repository: https://github.com/persistenceOne/persistenceCore
             namespace: PERSISTENCECORE
-            wasmvm_version: main
+            build_env: default
           - project: juno
             project_bin: junod
             project_dir: .juno
             version: v1.0.0
             repository: https://github.com/CosmosContracts/Juno
             namespace: JUNOD
+            build_env: juno
             wasmvm_version: v0.14.0
           - project: regen
             project_bin: regen
@@ -66,63 +67,63 @@ jobs:
             version: v2.0.0
             repository: https://github.com/regen-network/regen-ledger
             namespace: REGEN
-            wasmvm_version: v0.13.0
+            build_env: default
           - project: stargaze
             project_bin: starsd
             project_dir: .starsd
             version: v1.0.0
             repository: https://github.com/public-awesome/stargaze
             namespace: STARSD
-            wasmvm_version: v0.14.0
+            build_env: default
           - project: terra
             project_bin: terrad
             project_dir: .terra
             version: v0.5.9
             repository: https://github.com/terra-money/core
             namespace: TERRAD
-            wasmvm_version: v0.13.0
+            build_env: default
           - project: sifchain
             project_bin: sifnoded
             project_dir: .sifnoded
             version: betanet-0.9.12
             repository: https://github.com/Sifchain/sifnode
             namespace: SIFNODED
-            wasmvm_version: v0.13.0
+            build_env: default
           - project: bitcanna
             project_bin: bcnad
             project_dir: .bcna
             version: v1.2
             repository: https://github.com/BitCannaGlobal/bcna
             namespace: BCNAD
-            wasmvm_version: v0.13.0
+            build_env: default
           - project: emoney
             project_bin: emd
             project_dir: .emd
             version: v1.1.3
             repository: https://github.com/e-money/em-ledger
             namespace: EMD
-            wasmvm_version: v0.13.0
+            build_env: default
           - project: bitsong
             project_bin: bitsongd
             project_dir: .bitsong
             version: v0.8.0
             repository: https://github.com/bitsongofficial/go-bitsong
             namespace: BITSONG
-            wasmvm_version: v0.13.0
+            build_env: default
           - project: cryptoorgchain
             project_bin: chain-maind
             project_dir: .cryptoorgchain
             version: v3.1.1-croeseid
             repository: https://github.com/crypto-org-chain/chain-main
             namespace: CRYPTOORGCHAIN
-            wasmvm_version: v0.13.0
+            build_env: default
           - project: impacthub
             project_bin: ixod
             project_dir: .ixod
             version: v1.6.0
             repository: https://github.com/ixofoundation/ixo-blockchain
             namespace: IXOD
-            wasmvm_version: v0.13.0
+            build_env: default
     steps:
       - uses: actions/checkout@v2
       - name: build
@@ -135,5 +136,6 @@ jobs:
             --build-arg VERSION=${{matrix.version}} \
             --build-arg REPOSITORY=${{matrix.repository}} \
             --build-arg NAMESPACE=${{matrix.namespace}} \
+            --build-arg BUILD_ENV=${{matrix.build_env}} \
             --build-arg WASMVM_VERSION=${{matrix.wasmvm_version}}
           docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}}
