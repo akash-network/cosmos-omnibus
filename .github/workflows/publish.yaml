@@ -103,6 +103,27 @@ jobs:
             repository: https://github.com/e-money/em-ledger
             namespace: EMD
             build_env: default
+          - project: bitsong
+            project_bin: bitsongd
+            project_dir: .bitsong
+            version: v0.8.0
+            repository: https://github.com/bitsongofficial/go-bitsong
+            namespace: BITSONG
+            build_env: default
+          - project: cryptoorgchain
+            project_bin: chain-maind
+            project_dir: .cryptoorgchain
+            version: v3.1.1-croeseid
+            repository: https://github.com/crypto-org-chain/chain-main
+            namespace: CRYPTOORGCHAIN
+            build_env: default
+          - project: impacthub
+            project_bin: ixod
+            project_dir: .ixod
+            version: v1.6.0
+            repository: https://github.com/ixofoundation/ixo-blockchain
+            namespace: IXOD
+            build_env: default
     steps:
       - uses: actions/checkout@v2
       - name: build
