@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: bitsong
+        PROJECT_BIN: bitsongd
+        VERSION: v0.8.0
+        REPOSITORY: https://github.com/bitsongofficial/go-bitsong
+        NAMESPACE: BITSONG
+    environment:
+      - MONIKER=node_1
+      - VALIDATE_GENESIS=0
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/chain.json
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.bitsong
