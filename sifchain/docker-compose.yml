@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: sifchain
         PROJECT_BIN: sifnoded
-        VERSION: betanet-0.9.12
+        VERSION: v0.9.14
         REPOSITORY: https://github.com/Sifchain/sifnode.git
     environment:
       - MONIKER=node_1

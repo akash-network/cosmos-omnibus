@@ -85,7 +85,7 @@ jobs:
           - project: sifchain
             project_bin: sifnoded
             project_dir: .sifnoded
-            version: betanet-0.9.12
+            version: v0.9.14
             repository: https://github.com/Sifchain/sifnode
             namespace: SIFNODED
             build_env: default
