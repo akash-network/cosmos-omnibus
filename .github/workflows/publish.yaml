@@ -138,6 +138,13 @@ jobs:
             repository: https://github.com/KiFoundation/ki-tools
             namespace: KICHAIN
             build_env: default
+          - project: panacea
+            project_bin: panacead
+            project_dir: .panacea
+            version: v2.0.2
+            repository: https://github.com/medibloc/panacea-core.git
+            namespace: PANACEA
+            build_env: default
     steps:
       - uses: actions/checkout@v2
       - name: build
