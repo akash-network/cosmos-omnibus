@@ -41,7 +41,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-persistence-v0.1.3`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-regen-v2.0.0`|[Example](./regen)|
 |[sentinelhub](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-sentinelhub-v0.8.3`|[Example](./sentinelhub)|
-|[sifchain](https://github.com/Sifchain/sifnode)|`betanet-0.9.12`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-sifchain-betanet-0.9.12`|[Example](./sifchain)|
+|[sifchain](https://github.com/Sifchain/sifnode)|`v0.9.14`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-sifchain-v0.9.14`|[Example](./sifchain)|
 |[stargaze](https://github.com/public-awesome/stargaze)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-stargaze-v1.0.0`|[Example](./stargaze)|
 |[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-terra-v0.5.9`|[Example](./terra)|
 
