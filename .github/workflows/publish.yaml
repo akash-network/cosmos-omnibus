@@ -131,6 +131,13 @@ jobs:
             repository: https://github.com/bandprotocol/chain
             namespace: BAND
             build_env: default
+          - project: kichain
+            project_bin: kid
+            project_dir: .kid
+            version: 2.0.0
+            repository: https://github.com/KiFoundation/ki-tools
+            namespace: KICHAIN
+            build_env: default
     steps:
       - uses: actions/checkout@v2
       - name: build

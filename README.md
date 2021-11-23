@@ -36,6 +36,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-impacthub-v1.6.0`|[Example](./impacthub)
 |[juno](https://github.com/CosmosContracts/Juno)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-juno-v1.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-kava-v0.15.1`|[Example](./kava)|
+|[kichain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-kichain-2.0.0`|[Example](./kichain)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v4.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-osmosis-v4.2.0`|[Example](./osmosis)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-persistence-v0.1.3`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.11-regen-v2.0.0`|[Example](./regen)|
