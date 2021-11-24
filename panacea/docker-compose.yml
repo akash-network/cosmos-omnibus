@@ -20,9 +20,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/panacea/chain.json
-      - GENESIS_URL=https://github.com/medibloc/panacea-mainnet/raw/master/panacea-3/genesis.json.gz?raw=true
       - SNAPSHOT_JSON=https://panacea.s3.filebase.com/snapshot.json
-      - P2P_PERSISTENT_PEERS=e93f5df69cc1b9bda230b3efcf162d4672293ded@3.35.82.40:26656,0e0db1c7ab1e37c76f2ceced0bb72e1c60ef17a6@13.124.96.254:26656,a83232db3a40e486b54b1463a43431e8490b808b@52.79.108.35:26656
       - MINIMUM_GAS_PRICES=5umed
     env_file:
       - ../.env
