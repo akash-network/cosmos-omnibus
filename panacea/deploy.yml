@@ -8,6 +8,9 @@ services:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/panacea/chain.json
     expose:
+      - port: 26656
+        to:
+          - global: true
       - port: 26657
         as: 80
         to:

@@ -15,6 +15,7 @@ services:
         REPOSITORY: https://github.com/medibloc/panacea-core
     ports:
       - '1317:1317'
+      - '26656:26656'
       - '26657:26657'
     environment:
       - MONIKER=node_1
