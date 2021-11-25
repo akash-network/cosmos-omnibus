@@ -138,6 +138,13 @@ jobs:
             repository: https://github.com/KiFoundation/ki-tools
             namespace: KICHAIN
             build_env: default
+          - project: iris
+            project_bin: iris
+            project_dir: .iris
+            version: v1.0.1
+            repository: https://github.com/irisnet/irishub
+            namespace: IRIS
+            build_env: default
     steps:
       - uses: actions/checkout@v2
       - name: build
