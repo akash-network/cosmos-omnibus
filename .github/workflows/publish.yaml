@@ -138,6 +138,13 @@ jobs:
             repository: https://github.com/KiFoundation/ki-tools
             namespace: KICHAIN
             build_env: default
+          - project: comdex
+            project_bin: comdex
+            project_dir: .comdex
+            version: 0.0.4
+            repository: https://github.com/comdex-official/comdex
+            namespace: COMDEX
+            build_env: default
     steps:
       - uses: actions/checkout@v2
       - name: build
