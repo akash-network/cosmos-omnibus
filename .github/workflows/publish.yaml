@@ -138,6 +138,13 @@ jobs:
             repository: https://github.com/KiFoundation/ki-tools
             namespace: KICHAIN
             build_env: default
+          - project: shentu
+            project_bin: certik
+            project_dir: .certik
+            version: v2.2.0
+            repository: https://github.com/certikfoundation/shentu
+            namespace: SHENTU
+            build_env: default
     steps:
       - uses: actions/checkout@v2
       - name: build
