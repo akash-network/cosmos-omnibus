@@ -1,14 +1,10 @@
 ARG BUILD_ENV=default
+ARG BUILD_IMAGE=null
 FROM golang:1.16-buster AS base
 
 RUN apt-get update && \
   apt-get install --no-install-recommends --assume-yes curl unzip && \
   apt-get clean
-
-FROM base AS aws
-
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN unzip awscliv2.zip -d /usr/src
 
 FROM base AS project
 
@@ -28,7 +24,36 @@ RUN ldd $GOPATH/bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
 
 RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
 
+#
+# Default build environment for standard Tendermint chains
+#
 FROM debian:buster AS build_default
+
+ARG PROJECT_BIN=$PROJECT
+
+COPY --from=project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
+COPY --from=project /data/deps/ /
+
+#
+# Juno build environment to add wasmvm
+#
+FROM build_default AS build_juno
+
+ARG WASMVM_VERSION=main
+ENV WASMVM_VERSION=$WASMVM_VERSION
+
+ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
+
+#
+# Build from a custom base image instead
+#
+FROM ${BUILD_IMAGE} AS build_custom_image
+
+#
+# Final Omnibus build environment
+# Note optional `BUILD_ENV` argument
+#
+FROM build_${BUILD_ENV} AS build_omnibus
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus
 
 RUN apt-get update && \
@@ -59,10 +84,8 @@ EXPOSE 26656 \
        9090  \
        8080
 
-COPY --from=project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
-COPY --from=project /data/deps/ /
-
-COPY --from=aws /usr/src/aws /usr/src/aws
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip -d /usr/src && rm awscliv2.zip
 RUN /usr/src/aws/install --bin-dir /usr/bin
 
 COPY run.sh snapshot.sh /usr/bin/
@@ -70,12 +93,3 @@ RUN chmod +x /usr/bin/run.sh /usr/bin/snapshot.sh
 ENTRYPOINT ["run.sh"]
 
 CMD $PROJECT_CMD
-
-FROM build_default AS build_juno
-
-ONBUILD ARG WASMVM_VERSION=main
-ONBUILD ENV WASMVM_VERSION=$WASMVM_VERSION
-
-ONBUILD ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
-
-FROM build_${BUILD_ENV}
