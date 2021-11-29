@@ -85,9 +85,9 @@ EXPOSE 26656 \
        8080
 
 # Install AWS
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN unzip awscliv2.zip -d /usr/src && rm awscliv2.zip
-RUN /usr/src/aws/install --bin-dir /usr/bin
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+  && unzip awscliv2.zip -d /usr/src && rm -f awscliv2.zip \
+  && /usr/src/aws/install --bin-dir /usr/bin
 
 # Copy scripts
 COPY run.sh snapshot.sh /usr/bin/
