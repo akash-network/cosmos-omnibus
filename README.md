@@ -44,6 +44,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[sifchain](https://github.com/Sifchain/sifnode)|`v0.9.14`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-sifchain-v0.9.14`|[Example](./sifchain)|
 |[stargaze](https://github.com/public-awesome/stargaze)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-stargaze-v1.0.0`|[Example](./stargaze)|
 |[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-terra-v0.5.9`|[Example](./terra)|
+|[thornode](https://gitlab.com/thorchain/thornode)|`chaosnet-multichain`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-thornode-chaosnet-multichain`|[Example](./thornode)|
 
 ## Configuration
 

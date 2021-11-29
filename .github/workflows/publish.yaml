@@ -138,18 +138,15 @@ jobs:
             repository: https://github.com/KiFoundation/ki-tools
             namespace: KICHAIN
             build_env: default
+          - project: thornode
+            version: chaosnet-multichain
     steps:
       - uses: actions/checkout@v2
       - name: build
         run: |
+          touch .env
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USER }}" --password-stdin
-          docker build . --tag ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} \
-            --build-arg PROJECT=${{matrix.project}} \
-            --build-arg PROJECT_BIN=${{matrix.project_bin}} \
-            --build-arg PROJECT_DIR=${{matrix.project_dir}} \
-            --build-arg VERSION=${{matrix.version}} \
-            --build-arg REPOSITORY=${{matrix.repository}} \
-            --build-arg NAMESPACE=${{matrix.namespace}} \
-            --build-arg BUILD_ENV=${{matrix.build_env}} \
-            --build-arg WASMVM_VERSION=${{matrix.wasmvm_version}}
+          cd ${{matrix.project}}
+          docker-compose build
+          docker tag ${{matrix.project}}_node_1:latest ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}}
           docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}}
