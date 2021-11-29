@@ -1,9 +1,8 @@
-ARG BUILD_ENV=default
-ARG BUILD_IMAGE=set-if-needed
+ARG BUILD_IMAGE=build_default
 #
 # Default build environment for standard Tendermint chains
 #
-FROM golang:1.16-buster AS project_build
+FROM golang:1.16-buster AS build_project
 
 RUN apt-get update && \
   apt-get install --no-install-recommends --assume-yes curl unzip && \
@@ -31,13 +30,8 @@ FROM debian:buster AS build_default
 
 ARG PROJECT_BIN=$PROJECT
 
-COPY --from=project_build /bin/$PROJECT_BIN /bin/$PROJECT_BIN
-COPY --from=project_build /data/deps/ /
-
-#
-# Build from any custom base image instead
-#
-FROM ${BUILD_IMAGE} AS build_custom_image
+COPY --from=build_project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
+COPY --from=build_project /data/deps/ /
 
 #
 # Juno build to add wasmvm
@@ -51,9 +45,9 @@ ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwas
 
 #
 # Final Omnibus build
-# Note optional `BUILD_ENV` argument controls the base image
+# Note optional `BUILD_IMAGE` argument controls the base image
 #
-FROM build_${BUILD_ENV} AS build_omnibus
+FROM ${BUILD_IMAGE} AS build_omnibus
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus
 
 RUN apt-get update && \
