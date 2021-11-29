@@ -1,9 +1,19 @@
+# Configurable arguments
 ARG BUILD_ENV=default
-FROM golang:1.16-buster AS base
+ARG GOLANG_VERSION=1.16-buster
+
+# Install build time dependencies
+FROM golang:${GOLANG_VERSION} AS base
+
+ARG APT_INSTALL_EXTRA_DEPS
+ENV APT_INSTALL_EXTRA_DEPS=$APT_INSTALL_EXTRA_DEPS
 
 RUN apt-get update && \
   apt-get install --no-install-recommends --assume-yes curl unzip && \
   apt-get clean
+
+RUN echo ${APT_INSTALL_EXTRA_DEPS}
+RUN apt-get install --no-install-recommends --assume-yes $APT_INSTALL_EXTRA_DEPS
 
 FROM base AS aws
 
@@ -16,12 +26,14 @@ ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 ARG VERSION=v0.12.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
+ARG MAKE_ENV
+ENV MAKE_ENV=$MAKE_ENV
 
 # Clone and build project
 RUN git clone $REPOSITORY /data
 WORKDIR /data
 RUN git checkout $VERSION
-RUN make install
+RUN export $MAKE_ENV; make install
 
 RUN ldd $GOPATH/bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
     xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
