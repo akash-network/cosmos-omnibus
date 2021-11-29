@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: bostrom
+        PROJECT_BIN: cyber
+        PROJECT_DIR: .cyber
+        VERSION: v0.2.0
+        REPOSITORY: https://github.com/cybercongress/go-cyber
+        NAMESPACE: BOSTROM
+        GOLANG_VERSION: 1.17-buster
+        PROJECT_CMD: "cyber start --compute-gpu=false"
+    ports:
+      - '1317:1317'
+      - '27146:27146'
+      - '27147:27147'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bostrom/chain.json
+      - MINIMUM_GAS_PRICES=0.01boot
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.bostrom

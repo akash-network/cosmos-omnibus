@@ -63,6 +63,8 @@ jobs:
             version: v0.5.9
           - project: thorchain
             version: chaosnet-multichain
+          - project: bostrom
+            version: v0.2.0
     steps:
       -
         name: Checkout
