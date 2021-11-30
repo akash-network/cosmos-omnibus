@@ -53,6 +53,8 @@ jobs:
             version: v0.0.4
           - project: iris
             version: v1.0.1
+          - project: shentu
+            version: v2.2.0
     steps:
       -
         name: Checkout
