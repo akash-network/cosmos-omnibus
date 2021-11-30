@@ -1,9 +1,10 @@
-# Configurable arguments
-ARG BUILD_ENV=default
+ARG BUILD_IMAGE=build_default
 ARG GOLANG_VERSION=1.16-buster
 
-# Install build time dependencies
-FROM golang:${GOLANG_VERSION} AS base
+#
+# Default build environment for standard Tendermint chains
+#
+FROM golang:${GOLANG_VERSION} AS build_project
 
 ARG APT_INSTALL_EXTRA_DEPS
 ENV APT_INSTALL_EXTRA_DEPS=$APT_INSTALL_EXTRA_DEPS
@@ -14,13 +15,6 @@ RUN apt-get update && \
 
 RUN echo ${APT_INSTALL_EXTRA_DEPS}
 RUN apt-get install --no-install-recommends --assume-yes $APT_INSTALL_EXTRA_DEPS
-
-FROM base AS aws
-
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-RUN unzip awscliv2.zip -d /usr/src
-
-FROM base AS project
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
@@ -40,7 +34,31 @@ RUN ldd $GOPATH/bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
 
 RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
 
+#
+# Default build
+#
 FROM debian:buster AS build_default
+
+ARG PROJECT_BIN=$PROJECT
+
+COPY --from=build_project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
+COPY --from=build_project /data/deps/ /
+
+#
+# Juno build to add wasmvm
+#
+FROM build_default AS build_juno
+
+ARG WASMVM_VERSION=main
+ENV WASMVM_VERSION=$WASMVM_VERSION
+
+ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
+
+#
+# Final Omnibus build
+# Note optional `BUILD_IMAGE` argument controls the base image
+#
+FROM ${BUILD_IMAGE} AS build_omnibus
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus
 
 RUN apt-get update && \
@@ -71,23 +89,14 @@ EXPOSE 26656 \
        9090  \
        8080
 
-COPY --from=project /bin/$PROJECT_BIN /bin/$PROJECT_BIN
-COPY --from=project /data/deps/ /
+# Install AWS
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+  && unzip awscliv2.zip -d /usr/src && rm -f awscliv2.zip \
+  && /usr/src/aws/install --bin-dir /usr/bin
 
-COPY --from=aws /usr/src/aws /usr/src/aws
-RUN /usr/src/aws/install --bin-dir /usr/bin
-
+# Copy scripts
 COPY run.sh snapshot.sh /usr/bin/
 RUN chmod +x /usr/bin/run.sh /usr/bin/snapshot.sh
 ENTRYPOINT ["run.sh"]
 
 CMD $PROJECT_CMD
-
-FROM build_default AS build_juno
-
-ONBUILD ARG WASMVM_VERSION=main
-ONBUILD ENV WASMVM_VERSION=$WASMVM_VERSION
-
-ONBUILD ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
-
-FROM build_${BUILD_ENV}
