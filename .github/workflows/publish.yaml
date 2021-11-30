@@ -55,6 +55,8 @@ jobs:
             version: v1.0.1
           - project: shentu
             version: v2.2.0
+          - project: likecoin
+            version: fotan-1.1
     steps:
       -
         name: Checkout
