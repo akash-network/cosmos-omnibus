@@ -12,151 +12,62 @@ jobs:
       matrix:
         include:
           - project: akash
-            project_bin: akash
-            project_dir: .akash
             version: v0.12.1
-            repository: https://github.com/ovrclk/akash.git
-            namespace: AKASH
-            build_env: default
           - project: sentinelhub
-            project_bin: sentinelhub
-            project_dir: .sentinelhub
             version: v0.8.3
-            repository: https://github.com/sentinel-official/hub.git
-            namespace: SENTINELHUB
-            build_env: default
           - project: gaia
-            project_bin: gaiad
-            project_dir: .gaia
             version: v5.0.8
-            repository: https://github.com/cosmos/gaia
-            namespace: GA
-            build_env: default
           - project: kava
-            project_bin: kvd
-            project_dir: .kvd
             version: v0.15.1
-            repository: https://github.com/Kava-Labs/kava
-            namespace: KA
-            build_env: default
           - project: osmosis
-            project_bin: osmosisd
-            project_dir: .osmosisd
             version: v4.2.0
-            repository: https://github.com/osmosis-labs/osmosis
-            namespace: OSMOSISD
-            build_env: default
           - project: persistence
-            project_bin: persistenceCore
-            project_dir: .persistenceCore
             version: v0.1.3
-            repository: https://github.com/persistenceOne/persistenceCore
-            namespace: PERSISTENCECORE
-            build_env: default
           - project: juno
-            project_bin: junod
-            project_dir: .juno
             version: v1.0.0
-            repository: https://github.com/CosmosContracts/Juno
-            namespace: JUNOD
-            build_env: juno
-            wasmvm_version: v0.14.0
           - project: regen
-            project_bin: regen
-            project_dir: .regen
             version: v2.0.0
-            repository: https://github.com/regen-network/regen-ledger
-            namespace: REGEN
-            build_env: default
           - project: stargaze
-            project_bin: starsd
-            project_dir: .starsd
             version: v1.0.0
-            repository: https://github.com/public-awesome/stargaze
-            namespace: STARSD
-            build_env: default
           - project: terra
-            project_bin: terrad
-            project_dir: .terra
             version: v0.5.9
-            repository: https://github.com/terra-money/core
-            namespace: TERRAD
-            build_env: default
           - project: sifchain
-            project_bin: sifnoded
-            project_dir: .sifnoded
             version: v0.9.14
-            repository: https://github.com/Sifchain/sifnode
-            namespace: SIFNODED
-            build_env: default
           - project: bitcanna
-            project_bin: bcnad
-            project_dir: .bcna
             version: v1.2
-            repository: https://github.com/BitCannaGlobal/bcna
-            namespace: BCNAD
-            build_env: default
           - project: emoney
-            project_bin: emd
-            project_dir: .emd
             version: v1.1.3
-            repository: https://github.com/e-money/em-ledger
-            namespace: EMD
-            build_env: default
           - project: bitsong
-            project_bin: bitsongd
-            project_dir: .bitsong
             version: v0.8.0
-            repository: https://github.com/bitsongofficial/go-bitsong
-            namespace: BITSONG
-            build_env: default
           - project: cryptoorgchain
-            project_bin: chain-maind
-            project_dir: .cryptoorgchain
             version: v3.1.1-croeseid
-            repository: https://github.com/crypto-org-chain/chain-main
-            namespace: CRYPTOORGCHAIN
-            build_env: default
           - project: impacthub
-            project_bin: ixod
-            project_dir: .ixod
             version: v1.6.0
-            repository: https://github.com/ixofoundation/ixo-blockchain
-            namespace: IXOD
-            build_env: default
           - project: band
-            project_bin: bandd
-            project_dir: .band
             version: v2.3.2
-            repository: https://github.com/bandprotocol/chain
-            namespace: BAND
-            build_env: default
           - project: kichain
-            project_bin: kid
-            project_dir: .kid
             version: 2.0.0
-            repository: https://github.com/KiFoundation/ki-tools
-            namespace: KICHAIN
-            build_env: default
           - project: comdex
-            project_bin: comdex
-            project_dir: .comdex
             version: 0.0.4
-            repository: https://github.com/comdex-official/comdex
-            namespace: COMDEX
-            build_env: default
     steps:
-      - uses: actions/checkout@v2
-      - name: build
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        uses: docker/setup-buildx-action@v1
+        id: buildx
+        with:
+          install: true
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_USER }}
+          password: ${{ secrets.GHCR_TOKEN }}
+      -
+        name: Build
         run: |
-          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USER }}" --password-stdin
-          docker build . --tag ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} \
-            --build-arg PROJECT=${{matrix.project}} \
-            --build-arg PROJECT_BIN=${{matrix.project_bin}} \
-            --build-arg PROJECT_DIR=${{matrix.project_dir}} \
-            --build-arg VERSION=${{matrix.version}} \
-            --build-arg REPOSITORY=${{matrix.repository}} \
-            --build-arg NAMESPACE=${{matrix.namespace}} \
-            --build-arg BUILD_ENV=${{matrix.build_env}} \
-            --build-arg WASMVM_VERSION=${{matrix.wasmvm_version}}
-          docker push ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}}
+          touch .env # Create dummy env file
+          cd ${{matrix.project}}
+          docker buildx bake -f docker-compose.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push
