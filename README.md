@@ -35,6 +35,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-emoney-v1.1.3`|[Example](./emoney)|
 |[gaia](https://github.com/cosmos/gaia)|`v5.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-gaia-v5.0.8`|[Example](./gaia)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-impacthub-v1.6.0`|[Example](./impacthub)
+|[iris](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-iris-v1.0.1`|[Example](./iris)
 |[juno](https://github.com/CosmosContracts/Juno)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-juno-v1.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-kava-v0.15.1`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.12-kichain-2.0.0`|[Example](./kichain)|

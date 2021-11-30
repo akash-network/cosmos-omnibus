@@ -51,6 +51,8 @@ jobs:
             version: v2.0.2
           - project: comdex
             version: v0.0.4
+          - project: iris
+            version: v1.0.1
     steps:
       -
         name: Checkout
