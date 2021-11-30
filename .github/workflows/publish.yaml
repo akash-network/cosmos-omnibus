@@ -47,6 +47,8 @@ jobs:
             version: v2.3.2
           - project: kichain
             version: 2.0.0
+          - project: panacea
+            version: v2.0.2
     steps:
       -
         name: Checkout
