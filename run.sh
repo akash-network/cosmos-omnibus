@@ -104,7 +104,9 @@ if [ ! -d "$PROJECT_HOME/config" ]; then
 fi
 
 # Overwrite seeds in config.toml for chains that are not using the env variable correctly
-sed -i "s/seeds = \"\"/seeds = \"$P2P_SEEDS\"/" $PROJECT_HOME/config/config.toml
+if [ "$OVERWRITE_SEEDS" == "1" ]; then
+    sed -i "s/seeds = \"\"/seeds = \"$P2P_SEEDS\"/" $PROJECT_HOME/config/config.toml
+fi
 
 # Restore keys
 if [ -n "$KEY_PATH" ]; then
