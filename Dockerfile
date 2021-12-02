@@ -9,10 +9,8 @@ FROM golang:${GOLANG_VERSION} AS build_project
 ARG APT_INSTALL_EXTRA_DEPS
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes curl unzip && \
+  apt-get install --no-install-recommends --assume-yes curl unzip ${APT_INSTALL_EXTRA_DEPS} && \
   apt-get clean
-
-RUN apt-get install --no-install-recommends --assume-yes ${APT_INSTALL_EXTRA_DEPS}
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
