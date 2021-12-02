@@ -3,16 +3,20 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-band-v2.3.2
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-panacea-v2.0.2
     env:
       - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/panacea/chain.json
+      - SNAPSHOT_JSON=https://panacea.s3.filebase.com/snapshot.json
     expose:
+      - port: 26656
+        to:
+          - global: true
       - port: 26657
         as: 80
         to:
           - global: true
-      - port: 26656
+      - port: 1317
         to:
           - global: true
 
@@ -23,9 +27,9 @@ profiles:
         cpu:
           units: 2
         memory:
-          size: 2Gi
+          size: 8Gi
         storage:
-          size: 60Gi
+          size: 500Gi
   placement:
     dcloud:
       attributes:

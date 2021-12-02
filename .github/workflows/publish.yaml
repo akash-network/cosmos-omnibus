@@ -13,40 +13,50 @@ jobs:
         include:
           - project: akash
             version: v0.12.1
-          - project: sentinelhub
-            version: v0.8.3
+          - project: band
+            version: v2.3.2
+          - project: bitcanna
+            version: v1.2
+          - project: bitsong
+            version: v0.8.0
+          - project: comdex
+            version: v0.0.4
+          - project: cryptoorgchain
+            version: v3.1.1-croeseid
+          - project: emoney
+            version: v1.1.3
           - project: gaia
             version: v5.0.8
-          - project: kava
-            version: v0.15.1
-          - project: osmosis
-            version: v4.2.0
-          - project: persistence
-            version: v0.1.3
+          - project: impacthub
+            version: v1.6.0
+          - project: iris
+            version: v1.0.1
           - project: juno
             version: v1.0.0
+          - project: kava
+            version: v0.15.1
+          - project: kichain
+            version: 2.0.0
+          - project: likecoin
+            version: fotan-1.1
+          - project: osmosis
+            version: v4.2.0
+          - project: panacea
+            version: v2.0.2
+          - project: persistence
+            version: v0.1.3
           - project: regen
             version: v2.0.0
+          - project: sentinelhub
+            version: v0.8.3
+          - project: shentu
+            version: v2.2.0
+          - project: sifchain
+            version: v0.9.14
           - project: stargaze
             version: v1.0.0
           - project: terra
             version: v0.5.9
-          - project: sifchain
-            version: v0.9.14
-          - project: bitcanna
-            version: v1.2
-          - project: emoney
-            version: v1.1.3
-          - project: bitsong
-            version: v0.8.0
-          - project: cryptoorgchain
-            version: v3.1.1-croeseid
-          - project: impacthub
-            version: v1.6.0
-          - project: band
-            version: v2.3.2
-          - project: kichain
-            version: 2.0.0
           - project: thornode
             version: chaosnet-multichain
     steps:
