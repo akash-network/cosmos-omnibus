@@ -21,7 +21,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_ID=thorchain
-      - CHAIN_JSON=https://raw.githubusercontent.com/marius-avram/chain-registry/thornode/thornode/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/thornode/chain.json
       - OVERWRITE_SEEDS=1
     env_file:
       - ../.env
