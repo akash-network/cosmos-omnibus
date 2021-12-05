@@ -6,7 +6,7 @@ services:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-thornode-chaosnet-multichain
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/marius-avram/chain-registry/thornode/thornode/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/thorchain/chain.json
     expose:
       - port: 1317
         to:
