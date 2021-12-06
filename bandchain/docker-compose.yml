@@ -5,7 +5,7 @@ services:
     build:
       context: ../
       args:
-        PROJECT: band
+        PROJECT: bandchain
         PROJECT_BIN: bandd
         VERSION: v2.3.2
         REPOSITORY: https://github.com/bandprotocol/chain

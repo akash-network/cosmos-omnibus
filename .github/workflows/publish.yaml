@@ -13,7 +13,7 @@ jobs:
         include:
           - project: akash
             version: v0.12.1
-          - project: band
+          - project: bandchain
             version: v2.3.2
           - project: bitcanna
             version: v1.2
@@ -21,15 +21,15 @@ jobs:
             version: v0.8.0
           - project: comdex
             version: v0.0.4
+          - project: cosmoshub
+            version: v5.0.8
           - project: cryptoorgchain
             version: v3.1.1-croeseid
           - project: emoney
             version: v1.1.3
-          - project: gaia
-            version: v5.0.8
           - project: impacthub
             version: v1.6.0
-          - project: iris
+          - project: irisnet
             version: v1.0.1
           - project: juno
             version: v1.0.0
@@ -49,7 +49,7 @@ jobs:
             version: v2.0.0
           - project: rizon
             version: v0.2.8
-          - project: sentinelhub
+          - project: sentinel
             version: v0.8.3
           - project: shentu
             version: v2.2.0
@@ -61,7 +61,7 @@ jobs:
             version: v0.10.18
           - project: terra
             version: v0.5.9
-          - project: thornode
+          - project: thorchain
             version: chaosnet-multichain
     steps:
       -

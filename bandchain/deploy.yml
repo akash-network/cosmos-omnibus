@@ -3,11 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-sentinelhub-v0.8.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-bandchain-v2.3.2
     env:
-      - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/chain.json
-      - VALIDATE_GENESIS=0 # failing currently?
+      - MONIKER=node_1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/chain.json
     expose:
       - port: 26657
         as: 80

@@ -5,7 +5,7 @@ services:
     build:
       context: ../
       args:
-        PROJECT: gaia
+        PROJECT: cosmoshub
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
         VERSION: v5.0.8

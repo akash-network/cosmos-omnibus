@@ -5,7 +5,8 @@ services:
     build:
       context: ../
       args:
-        PROJECT: sentinelhub
+        PROJECT: sentinel
+        PROJECT_BIN: sentinelhub
         VERSION: v0.8.3
         REPOSITORY: https://github.com/sentinel-official/hub.git
     ports:
