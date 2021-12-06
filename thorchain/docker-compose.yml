@@ -5,7 +5,7 @@ services:
     build:
       context: ../
       args:
-        PROJECT: thornode
+        PROJECT: thorchain
         PROJECT_BIN: thornode
         PROJECT_DIR: .thornode
         VERSION: chaosnet-multichain
