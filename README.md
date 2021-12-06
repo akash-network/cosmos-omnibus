@@ -31,9 +31,9 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-bitcanna-v1.2`|[Example](./bitcanna)|
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.8.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-bitsong-v0.8.0`|[Example](./bitsong)
 |[comdex](https://github.com/comdex-official/comdex)|`v0.0.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-comdex-v0.0.4`|[Example](./comdex)
+|[cosmoshub](https://github.com/cosmos/gaia)|`v5.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-cosmoshub-v5.0.8`|[Example](./cosmoshub)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.1.1-croeseid`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-cryptoorgchain-v3.1.1-croeseid`|[Example](./cryptoorgchain)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-emoney-v1.1.3`|[Example](./emoney)|
-|[gaia](https://github.com/cosmos/gaia)|`v5.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-gaia-v5.0.8`|[Example](./gaia)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-impacthub-v1.6.0`|[Example](./impacthub)
 |[iris](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-iris-v1.0.1`|[Example](./iris)
 |[juno](https://github.com/CosmosContracts/Juno)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-juno-v1.0.0`|[Example](./juno)|
