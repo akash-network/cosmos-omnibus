@@ -27,7 +27,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |Project|Version|Image| |
 |---|---|---|---|
 |[akash](https://github.com/ovrclk/akash)|`v0.12.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-akash-v0.12.1`|[Example](./akash)|
-|[band](https://github.com/bandprotocol/chain)|`v2.3.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-band-v2.3.2`|[Example](./band)|
+|[bandchain](https://github.com/bandprotocol/chain)|`v2.3.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-bandchain-v2.3.2`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-bitcanna-v1.2`|[Example](./bitcanna)|
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.8.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-bitsong-v0.8.0`|[Example](./bitsong)
 |[comdex](https://github.com/comdex-official/comdex)|`v0.0.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-comdex-v0.0.4`|[Example](./comdex)

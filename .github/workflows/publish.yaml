@@ -13,7 +13,7 @@ jobs:
         include:
           - project: akash
             version: v0.12.1
-          - project: band
+          - project: bandchain
             version: v2.3.2
           - project: bitcanna
             version: v1.2
