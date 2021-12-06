@@ -47,6 +47,8 @@ jobs:
             version: v0.1.3
           - project: regen
             version: v2.0.0
+          - project: rizon
+            version: v0.2.8
           - project: sentinelhub
             version: v0.8.3
           - project: shentu
