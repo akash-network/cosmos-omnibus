@@ -97,9 +97,15 @@ if [ -n "$STATESYNC_RPC_SERVERS" ]; then
   fi
 fi
 
+
 # Initialise
 if [ ! -d "$PROJECT_HOME/config" ]; then
   $PROJECT_BIN init "$MONIKER" --chain-id "$CHAIN_ID"
+fi
+
+# Overwrite seeds in config.toml for chains that are not using the env variable correctly
+if [ "$OVERWRITE_SEEDS" == "1" ]; then
+    sed -i "s/seeds = \"\"/seeds = \"$P2P_SEEDS\"/" $PROJECT_HOME/config/config.toml
 fi
 
 # Restore keys
@@ -143,12 +149,17 @@ fi
 
 # Download genesis
 if [ "$DOWNLOAD_GENESIS" == "1" ]; then
-  echo "Downloading genesis"
+  echo "Downloading genesis $GENESIS_URL"
   curl -sfL $GENESIS_URL > genesis.json
+  # Ensure we are using the block that contains 'genesis_time' on the first level
+  # Some chains might be using an encapsulated response (e.g. a jsonrpc embodied response)
+  cat genesis.json | jq '.. | objects | . as $parent | with_entries(select(.key  == "genesis_time")) | select(. != {})| $parent ' > genesis_parsed.json
+  cp genesis_parsed.json genesis.json
   file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
   file genesis.json | grep -q 'tar archive' && mv genesis.json genesis.json.tar && tar -xf genesis.json.tar && rm genesis.json.tar
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
-  mv genesis.json $PROJECT_HOME/config/genesis.json
+  mkdir -p $PROJECT_HOME/config
+  cp genesis.json $PROJECT_HOME/config/genesis.json
 fi
 
 # Validate genesis

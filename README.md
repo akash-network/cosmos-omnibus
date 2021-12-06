@@ -50,6 +50,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[stargaze](https://github.com/public-awesome/stargaze)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-stargaze-v1.0.0`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.10.18`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-starname-v0.10.18`|[Example](./starname)|
 |[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-terra-v0.5.9`|[Example](./terra)|
+|[thornode](https://gitlab.com/thorchain/thornode)|`chaosnet-multichain`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.13-thornode-chaosnet-multichain`|[Example](./thornode)|
 
 ## Configuration
 

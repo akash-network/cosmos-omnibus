@@ -1,22 +1,28 @@
 ARG BUILD_IMAGE=build_default
+ARG GOLANG_VERSION=1.16-buster
+
 #
 # Default build environment for standard Tendermint chains
 #
-FROM golang:1.16-buster AS build_project
+FROM golang:${GOLANG_VERSION} AS build_project
+
+ARG APT_INSTALL_EXTRA_DEPS
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes curl unzip && \
+  apt-get install --no-install-recommends --assume-yes curl unzip ${APT_INSTALL_EXTRA_DEPS} && \
   apt-get clean
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 ARG VERSION=v0.12.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
+ARG MAKE_ENV
 
+# Clone and build project
 RUN git clone $REPOSITORY /data
 WORKDIR /data
 RUN git checkout $VERSION
-RUN make install
+RUN export $MAKE_ENV; make install
 
 RUN ldd $GOPATH/bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
     xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
