@@ -12,17 +12,26 @@ RUN apt-get update && \
   apt-get install --no-install-recommends --assume-yes curl unzip ${APT_INSTALL_EXTRA_DEPS} && \
   apt-get clean
 
+# Install starport
+RUN curl https://get.starport.network/starport! | bash
+
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 ARG VERSION=v0.12.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 ARG MAKE_ENV
+ARG BUILD_METHOD=makefile
 
 # Clone and build project
 RUN git clone $REPOSITORY /data
 WORKDIR /data
 RUN git checkout $VERSION
-RUN export $MAKE_ENV; make install
+
+RUN if [ "$BUILD_METHOD" = "starport" ]; then \
+      starport chain build; \
+    else \
+      export $MAKE_ENV; make install; \
+    fi
 
 RUN ldd $GOPATH/bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
     xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
