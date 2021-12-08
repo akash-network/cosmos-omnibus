@@ -49,6 +49,8 @@ jobs:
             version: v2.0.0
           - project: rizon
             version: v0.2.8
+          - project: secretnetwork
+            version: v1.2.2
           - project: sentinel
             version: v0.8.3
           - project: shentu

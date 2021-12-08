@@ -45,6 +45,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.14-persistence-v0.1.3`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.14-regen-v2.0.0`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.2.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.14-rizon-v0.2.8`|[Example](./rizon)|
+|[secretnetwork](https://github.com/scrtlabs/SecretNetwork)|`v1.2.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.14-secretnetwork-v1.2.2`|[Example](./secretnetwork)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.14-sentinel-v0.8.3`|[Example](./sentinel)|
 |[shentu](https://github.com/certikfoundation/shentu)|`v2.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.14-shentu-v2.2.0`|[Example](./shentu)|
 |[sifchain](https://github.com/Sifchain/sifnode)|`v0.9.14`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.14-sifchain-v0.9.14`|[Example](./sifchain)|
