@@ -1,0 +1,33 @@
+name: test
+on: [push, pull_request]
+
+
+jobs:
+  build_matrix:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - id: set-matrix
+        run: echo "::set-output name=matrix::$(find * -type f -name docker-compose.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)"
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+
+  build:
+    needs: build_matrix
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/setup-buildx-action@v1
+        id: buildx
+        with:
+          install: true
+      - name: Build
+        run: |
+          touch .env # Create dummy env file
+          cd ${{matrix.project}}
+          docker buildx bake -f docker-compose.yml --set node_1.tags=node
