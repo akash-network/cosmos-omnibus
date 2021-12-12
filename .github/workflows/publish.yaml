@@ -19,6 +19,8 @@ jobs:
             version: v1.2
           - project: bitsong
             version: v0.8.0
+          - project: bostrom
+            version: v0.2.0
           - project: cheqd
             version: v0.3.1
           - project: comdex
@@ -65,8 +67,6 @@ jobs:
             version: v0.5.9
           - project: thorchain
             version: chaosnet-multichain
-          - project: bostrom
-            version: v0.2.0
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
