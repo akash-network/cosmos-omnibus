@@ -10,6 +10,7 @@ services:
         VERSION: v5.0.0
         REPOSITORY: https://github.com/osmosis-labs/osmosis
         NAMESPACE: OSMOSISD
+        GOLANG_VERSION: 1.17-buster
     ports:
       - '26656:26656'
       - '26657:26657'
