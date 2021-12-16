@@ -31,6 +31,8 @@ jobs:
             version: v3.1.1-croeseid
           - project: emoney
             version: v1.1.3
+          - project: gravity-bridge
+            version: v1.0.8
           - project: impacthub
             version: v1.6.0
           - project: irisnet
