@@ -12,7 +12,7 @@ services:
         BINARY_URL: https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.0.8/gravity-linux-amd64
     environment:
       - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/chain-registry/boz/add-gravity-bridge/gravity-bridge/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/gravity-bridge/chain.json
       - VALIDATE_GENESIS=0
     env_file:
       - ../.env
