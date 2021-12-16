@@ -77,7 +77,6 @@ ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwas
 #
 FROM build_base AS binary
 
-ARG PROJECT_BIN=$PROJECT
 ARG BINARY_URL
 
 RUN curl -Lo /bin/$PROJECT_BIN $BINARY_URL
