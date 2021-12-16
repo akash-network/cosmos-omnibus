@@ -18,7 +18,6 @@ RUN apt-get update && \
 #
 # Default build from source method
 #
-
 FROM build_base AS build_source
 
 ARG VERSION=v0.12.1
