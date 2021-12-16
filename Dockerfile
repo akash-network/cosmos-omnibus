@@ -5,21 +5,26 @@ ARG GOLANG_VERSION=1.16-buster
 #
 # Default build environment for standard Tendermint chains
 #
-FROM golang:${GOLANG_VERSION} AS build_source
+FROM golang:${GOLANG_VERSION} AS build_base
 
+ARG PROJECT=akash
+ARG PROJECT_BIN=$PROJECT
 ARG APT_INSTALL_EXTRA_DEPS
 
 RUN apt-get update && \
   apt-get install --no-install-recommends --assume-yes curl unzip ${APT_INSTALL_EXTRA_DEPS} && \
   apt-get clean
 
-ARG PROJECT=akash
-ARG PROJECT_BIN=$PROJECT
+#
+# Default build from source method
+#
+
+FROM build_base AS build_source
+
 ARG VERSION=v0.12.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 ARG BUILD_COMMAND="make install"
 
-# Clone and build project
 RUN git clone $REPOSITORY /data
 WORKDIR /data
 RUN git checkout $VERSION
@@ -51,6 +56,7 @@ RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
 #
 FROM debian:buster AS default
 
+ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 
 COPY --from=build /bin/$PROJECT_BIN /bin/$PROJECT_BIN
@@ -65,6 +71,16 @@ ARG WASMVM_VERSION=main
 ENV WASMVM_VERSION=$WASMVM_VERSION
 
 ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
+
+#
+# Optional image to install from binary
+#
+FROM build_base AS binary
+
+ARG BINARY_URL
+
+RUN curl -Lo /bin/$PROJECT_BIN $BINARY_URL
+RUN chmod +x /bin/$PROJECT_BIN
 
 #
 # Final Omnibus image
