@@ -2,7 +2,14 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-bitsong-v0.8.0
+    build:
+      context: ../
+      args:
+        PROJECT: bitsong
+        PROJECT_BIN: bitsongd
+        VERSION: v0.8.0
+        REPOSITORY: https://github.com/bitsongofficial/go-bitsong
+        NAMESPACE: BITSONG
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -11,5 +18,7 @@ services:
       - MONIKER=node_1
       - VALIDATE_GENESIS=0
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/chain.json
+    env_file:
+      - ../.env
     volumes:
       - ./node-data:/root/.bitsong

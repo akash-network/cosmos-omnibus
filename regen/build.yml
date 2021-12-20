@@ -2,7 +2,15 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-regen-v2.0.0
+    build:
+      context: ../
+      args:
+        PROJECT: regen
+        PROJECT_BIN: regen
+        PROJECT_DIR: .regen
+        VERSION: v2.0.0
+        REPOSITORY: https://github.com/regen-network/regen-ledger
+        NAMESPACE: REGEN
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -11,5 +19,7 @@ services:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/chain.json
       - MINIMUM_GAS_PRICES=0.025uregen
+    env_file:
+      - ../.env
     volumes:
       - ./node-data:/root/.regen

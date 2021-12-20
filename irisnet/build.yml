@@ -2,7 +2,14 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-irisnet-v1.0.1
+    build:
+      context: ../
+      args:
+        PROJECT: irisnet
+        PROJECT_BIN: iris
+        VERSION: v1.0.1
+        REPOSITORY: https://github.com/irisnet/irishub
+        NAMESPACE: IRIS
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -11,5 +18,7 @@ services:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/irisnet/chain.json
       - VALIDATE_GENESIS=0
+    env_file:
+      - ../.env
     volumes:
       - ./node-data:/root/.iris

@@ -2,7 +2,15 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-terra-v0.5.9
+    build:
+      context: ../
+      args:
+        PROJECT: terra
+        PROJECT_BIN: terrad
+        VERSION: v0.5.9
+        REPOSITORY: https://github.com/terra-money/core.git
+        NAMESPACE: TERRAD
+        PROJECT_DIR: .terra
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,5 +18,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/chain.json
+    env_file:
+      - ../.env
     volumes:
       - ./node-data:/root/.terra

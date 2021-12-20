@@ -2,7 +2,13 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-sifchain-v0.9.14
+    build:
+      context: ../
+      args:
+        PROJECT: sifchain
+        PROJECT_BIN: sifnoded
+        VERSION: v0.9.14
+        REPOSITORY: https://github.com/Sifchain/sifnode.git
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -11,6 +17,8 @@ services:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/sifchain/chain.json
       - VALIDATE_GENESIS=0
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/sifchain/snapshot.json
+      # - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/sifchain/snapshot.json
+    env_file:
+      - ../.env
     volumes:
       - ./node-data:/root/.sifnoded

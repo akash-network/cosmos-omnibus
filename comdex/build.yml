@@ -2,7 +2,14 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-comdex-v0.0.4
+    build:
+      context: ../
+      args:
+        PROJECT: comdex
+        PROJECT_BIN: comdex
+        VERSION: v0.0.4
+        REPOSITORY: https://github.com/comdex-official/comdex
+        NAMESPACE: COMDEX
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,5 +17,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json
+    env_file:
+      - ../.env
     volumes:
       - ./node-data:/root/.comdex

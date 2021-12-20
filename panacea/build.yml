@@ -1,11 +1,15 @@
 version: '3.4'
 
-# Required configuration can be found on
-# https://medibloc.gitbook.io/panacea-core/guide/join-the-network
-
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-panacea-v2.0.2
+    build:
+      context: ../
+      args:
+        PROJECT: panacea
+        PROJECT_BIN: panacead
+        PROJECT_DIR: .panacea
+        VERSION: v2.0.2
+        REPOSITORY: https://github.com/medibloc/panacea-core
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -13,7 +17,9 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/panacea/chain.json
-      - SNAPSHOT_JSON=https://panacea.s3.filebase.com/snapshot.json
+      # - SNAPSHOT_JSON=https://panacea.s3.filebase.com/snapshot.json
       - MINIMUM_GAS_PRICES=5umed
+    env_file:
+      - ../.env
     volumes:
       - ./node-data:/root/.panacea

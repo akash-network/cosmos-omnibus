@@ -2,7 +2,15 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-bitcanna-v1.2
+    build:
+      context: ../
+      args:
+        PROJECT: bitcanna
+        PROJECT_BIN: bcnad
+        PROJECT_DIR: .bcna
+        VERSION: v1.2
+        REPOSITORY: https://github.com/BitCannaGlobal/bcna
+        NAMESPACE: BCNAD
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,7 +18,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/chain.json
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/bitcanna/snapshot.json
+      # - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/bitcanna/snapshot.json
     env_file:
       - ../.env
     volumes:
