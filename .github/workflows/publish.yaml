@@ -85,4 +85,4 @@ jobs:
         run: |
           touch .env # Create dummy env file
           cd ${{matrix.project}}
-          docker buildx bake -f docker-compose.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push
+          docker buildx bake -f build.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push

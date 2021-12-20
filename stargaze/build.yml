@@ -2,7 +2,15 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-stargaze-v1.0.0
+    build:
+      context: ../
+      args:
+        PROJECT: stargaze
+        PROJECT_BIN: starsd
+        PROJECT_DIR: .starsd
+        VERSION: v1.0.0
+        REPOSITORY: https://github.com/public-awesome/stargaze
+        NAMESPACE: STARSD
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,5 +18,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/stargaze/chain.json
+    env_file:
+      - ../.env
     volumes:
       - ./node-data:/root/.starsd

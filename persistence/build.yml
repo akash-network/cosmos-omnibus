@@ -2,7 +2,14 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.17-persistence-v0.1.3
+    build:
+      context: ../
+      args:
+        PROJECT: persistence
+        PROJECT_BIN: persistenceCore
+        VERSION: v0.1.3
+        REPOSITORY: https://github.com/persistenceOne/persistenceCore
+        NAMESPACE: PERSISTENCECORE
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,5 +17,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/persistence/chain.json
+    env_file:
+      - ../.env
     volumes:
       - ./node-data:/root/.persistenceCore
