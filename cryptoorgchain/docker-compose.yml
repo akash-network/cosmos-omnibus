@@ -12,4 +12,4 @@ services:
       - VALIDATE_GENESIS=0
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cryptoorgchain/chain.json
     volumes:
-      - ./node-data:/root/.cryptoorgchain
+      - ./node-data:/root/.chain-maind
