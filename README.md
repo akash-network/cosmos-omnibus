@@ -76,8 +76,12 @@ These snapshots are created using Omnibus nodes running on Akash, as shown in th
 |---|---|
 |`akashnet-2`|https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json|
 |`bitcanna-1`|https://cosmos-snapshots.s3.filebase.com/bitcanna/snapshot.json|
+|`comdex-1`|https://cosmos-snapshots.s3.filebase.com/comdex/snapshot.json|
+|`desmos-mainnet`|https://cosmos-snapshots.s3.filebase.com/desmos/snapshot.json|
+|`gravity-bridge-1`|https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json|
 |`juno-1`|https://cosmos-snapshots.s3.filebase.com/juno/snapshot.json|
 |`osmosis-1`|https://cosmos-snapshots.s3.filebase.com/osmosis/snapshot.json|
+|`sentinelhub-2`|https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json|
 |`sifchain-1`|https://cosmos-snapshots.s3.filebase.com/sifchain/snapshot.json|
 
 ## Examples

@@ -21,3 +21,11 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json`|
+
+## Snapshot restore
+
+Akash provide daily snapshots of the Comdex blockchain taken at midnight UTC.
+
+|Variable|Value|
+|---|---|
+|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/comdex/snapshot.json`|
