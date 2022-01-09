@@ -38,7 +38,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.1.1-croeseid`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-cryptoorgchain-v3.1.1-croeseid`|[Example](./cryptoorgchain)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-desmos-v2.3.1`|[Example](./desmos)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-emoney-v1.1.3`|[Example](./emoney)|
-|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-gravitybridge-v1.0.8`|[Example](./gravity-bridge)|
+|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-gravitybridge-v1.0.8`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-impacthub-v1.6.0`|[Example](./impacthub)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-irisnet-v1.0.1`|[Example](./irisnet)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-juno-v1.0.0`|[Example](./juno)|
