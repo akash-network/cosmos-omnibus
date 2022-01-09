@@ -62,16 +62,6 @@ COPY --from=build /bin/$PROJECT_BIN /bin/$PROJECT_BIN
 COPY --from=build /data/deps/ /
 
 #
-# Juno image to add wasmvm
-#
-FROM default AS juno
-
-ARG WASMVM_VERSION=main
-ENV WASMVM_VERSION=$WASMVM_VERSION
-
-ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
-
-#
 # Optional image to install from binary
 #
 FROM build_base AS binary

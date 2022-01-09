@@ -42,7 +42,7 @@ jobs:
           - project: irisnet
             version: v1.0.1
           - project: juno
-            version: v1.0.0
+            version: v2.1.0
           - project: kava
             version: v0.15.1
           - project: kichain
