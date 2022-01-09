@@ -6,18 +6,18 @@ easy and standardized across cosmos.
 
 The goal is to have a simple way to launch any cosmos chain, with a variety of different bootstrapping options
 
-1. "normal" boostrap - using `fastsync`.
-1. Hand-made snapshots a la [cosmos-snapshots](https://github.com/c29r3/cosmos-snapshots)
-1. The new `state-sync` mechanism.
+1. ["normal" boostrap](#shortcuts) - using `fastsync`.
+1. [Hand-made snapshots](#snapshot-restore) a la [cosmos-snapshots](https://github.com/c29r3/cosmos-snapshots)
+1. [The new `state-sync` mechanism](#statesync).
 
 Configuration is achieved using environment variables, with shortcuts available for common setups. Every aspect of the node configuration can be achieved in this way.
 
 Additional features are included to make running a node as simple as possible
 
-1. Chain configuration can be sourced from a remote JSON file
-1. Genesis file can be downloaded and unzipped in various ways
-1. Private keys can be backed up and restored from any S3 compatible storage provider, such as Sia or Storj via [Filebase](https://filebase.com/).
-1. A snapshot script is included to create an archive of a node's data directory at a certain time or day and upload it 
+1. [Chain configuration can be sourced from a remote JSON file](#chain-configuration)
+1. [Genesis file can be downloaded and unzipped in various ways](#chain-configuration)
+1. [Private keys can be backed up and restored](#private-key-backuprestore) from any S3 compatible storage provider, such as Sia or Storj via [Filebase](https://filebase.com/).
+1. [Snapshots of a nodes data directory](#snapshot-backup) can be created at a certain time or day and uploaded to an S3 storage provider
 
 ## Networks
 
@@ -38,7 +38,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.1.1-croeseid`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-cryptoorgchain-v3.1.1-croeseid`|[Example](./cryptoorgchain)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-desmos-v2.3.1`|[Example](./desmos)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-emoney-v1.1.3`|[Example](./emoney)|
-|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-gravitybridge-v1.0.8`|[Example](./gravity-bridge)|
+|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-gravitybridge-v1.0.8`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-impacthub-v1.6.0`|[Example](./impacthub)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-irisnet-v1.0.1`|[Example](./irisnet)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-juno-v1.0.0`|[Example](./juno)|
@@ -58,6 +58,42 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-terra-v0.5.9`|[Example](./terra)|
 |[thorchain](https://gitlab.com/thorchain/thornode)|`chaosnet-multichain`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-thorchain-chaosnet-multichain`|[Example](./thorchain)|
 
+## Running on Akash
+
+See the `deploy.yml` example file in each chain directory which details the minimum configuration required. Use the [configuration options below](#configuration) to add functionality.
+
+## Running locally/any docker host
+
+See the `docker-compose.yml` example file in each chain directory to run each node using `docker-compose up`. 
+
+## Snaphots
+
+Akash publish snapshots for the following chains, taken at 12AM UTC every day.
+
+These snapshots are created using Omnibus nodes running on Akash, as shown in the [Snapshot Backup](_examples/snapshot_backup) example.
+
+|Chain|Snapshot JSON|
+|---|---|
+|`akashnet-2`|https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json|
+|`bitcanna-1`|https://cosmos-snapshots.s3.filebase.com/bitcanna/snapshot.json|
+|`comdex-1`|https://cosmos-snapshots.s3.filebase.com/comdex/snapshot.json|
+|`desmos-mainnet`|https://cosmos-snapshots.s3.filebase.com/desmos/snapshot.json|
+|`gravity-bridge-1`|https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json|
+|`juno-1`|https://cosmos-snapshots.s3.filebase.com/juno/snapshot.json|
+|`osmosis-1`|https://cosmos-snapshots.s3.filebase.com/osmosis/snapshot.json|
+|`sentinelhub-2`|https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json|
+|`sifchain-1`|https://cosmos-snapshots.s3.filebase.com/sifchain/snapshot.json|
+
+## Examples
+
+See the [_examples](./_examples) directory for some common setups, including:
+
+- [Statesync](./_examples/statesync)
+- [Load Balanced RPC Nodes](./_examples/load-balanced-rpc-nodes)
+- [Validator and Public Sentries](./_examples/validator-and-public-sentries)
+- [Validator with Private Sentries](./_examples/validator-and-private-sentries)
+- [Snapshot Backup](./_examples/snapshot_backup)
+
 ## Configuration
 
 Cosmos blockchains can be configured entirely using environment variables instead of the config files. 
@@ -69,9 +105,20 @@ For example to configure the `seeds` option in the `p2p` section of `config.toml
 AKASH_P2P_SEEDS=id@node:26656
 ```
 
-The namespace for each of the supported chains in the cosmos omnibus can be found in the `docker-compose.yml` files in each project directory.
+The namespace for each of the supported chains in the cosmos omnibus can be found in the `README` in each project directory.
 
-The omnibus images allow some specific variables and shortcuts to configure extra functionality.
+The omnibus images allow some specific variables and shortcuts to configure extra functionality, detailed below.
+
+### Shortcuts
+
+See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) for more information
+
+|Variable|Description|Default|Examples|
+|---|---|---|---|
+|`FASTSYNC_VERSION`|The fastsync version| |`v2`|
+|`MINIMUM_GAS_PRICES`|Minimum gas prices| |`0.025uakt`|
+|`PRUNING`|How much of the chain to prune| |`nothing`|
+|`DEBUG`|Set to `1` to output all environment variables on boot| |`1`|
 
 ### Chain configuration
 
@@ -108,7 +155,7 @@ The `node_key.json` and `priv_validator_key.json` are both backed up, and can be
 |---|---|---|---|
 |`S3_KEY`|S3 access key| | |
 |`S3_SECRET`|S3 secret key| | |
-|`S3_HOST`|The S3 API host|`https://s3.filebase.com`|`s3.us-east-1.amazonaws.com`|
+|`S3_HOST`|The S3 API host|`https://s3.filebase.com`|`https://s3.us-east-1.amazonaws.com`|
 |`KEY_PATH`|Bucket and directory to backup/restore to| |`bucket/nodes/node_1`|
 |`KEY_PASSWORD`|An optional password to encrypt your private keys. Shouldn't be optional| | |
 
@@ -166,45 +213,12 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`SNAPSHOT_METADATA`|Whether to create a snapshot.json metadata file|`1`|`0`|
 |`SNAPSHOT_METADATA_URL`|The URL snapshots will be served from (for snapshot.json)| |`https://cosmos-snapshots.s3.filebase.com/akash`|
 
-### Shortcuts
-
-See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) for more information
-
-|Variable|Description|Default|Examples|
-|---|---|---|---|
-|`FASTSYNC_VERSION`|The fastsync version| |`v2`|
-|`MINIMUM_GAS_PRICES`|Minimum gas prices| |`0.025uakt`|
-|`PRUNING`|How much of the chain to prune| |`nothing`|
-|`DEBUG`|Set to `1` to output all environment variables on boot| |`1`|
-
-## Running on Akash
-
-See the `deploy.yml` example file in each chain directory which details the minimum configuration required. Use the above configuration options to add functionality.
-
-## Running locally
-
-See the `docker-compose.yml` example file to run each node locally using `docker-compose up`
-
-## Examples
-
-See the [_examples](./_examples) directory for some common setups, including:
-
-- [Statesync](./_examples/statesync)
-- [Load Balanced RPC Nodes](./_examples/load-balanced-rpc-nodes)
-- [Validator and Public Sentries](./_examples/validator-and-public-sentries)
-- [Validator with Private Sentries](./_examples/validator-and-private-sentries)
-
-## TODO
-
-- [x] Backup node data to S3 on schedule
-- [ ] More chains..
-
 ## Contributing
 
 Adding a new chain is easy:
 
-- Ideally setup a `chain.json` or `net` repository to provide a single source of truth for setup info
+- Ideally source or setup a `chain.json` to provide a single source of truth for chain info
 - Add a project directory based on the existing projects
-- The [github workflow](https://github.com/ovrclk/cosmos-omnibus/blob/master/.github/workflows/publish.yaml) to create an image for your chain
+- Update the [github workflow](https://github.com/ovrclk/cosmos-omnibus/blob/master/.github/workflows/publish.yaml) to create an image for your chain
 
 Submit a PR or an issue if you want to see any specific chains.
