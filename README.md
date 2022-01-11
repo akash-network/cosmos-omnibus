@@ -41,7 +41,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-gravitybridge-v1.2.1`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-impacthub-v1.6.0`|[Example](./impacthub)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-irisnet-v1.0.1`|[Example](./irisnet)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-juno-v1.0.0`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v2.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-juno-v2.1.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-kava-v0.15.1`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-kichain-2.0.0`|[Example](./kichain)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`fotan-1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-likecoin-fotan-1.1`|[Example](./likecoin)|
