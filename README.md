@@ -38,7 +38,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.1.1-croeseid`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-cryptoorgchain-v3.1.1-croeseid`|[Example](./cryptoorgchain)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-desmos-v2.3.1`|[Example](./desmos)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-emoney-v1.1.3`|[Example](./emoney)|
-|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-gravitybridge-v1.0.8`|[Example](./gravitybridge)|
+|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-gravitybridge-v1.2.1`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-impacthub-v1.6.0`|[Example](./impacthub)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-irisnet-v1.0.1`|[Example](./irisnet)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.20-juno-v1.0.0`|[Example](./juno)|
@@ -64,7 +64,7 @@ See the `deploy.yml` example file in each chain directory which details the mini
 
 ## Running locally/any docker host
 
-See the `docker-compose.yml` example file in each chain directory to run each node using `docker-compose up`. 
+See the `docker-compose.yml` example file in each chain directory to run each node using `docker-compose up`.
 
 ## Snaphots
 
@@ -78,7 +78,7 @@ These snapshots are created using Omnibus nodes running on Akash, as shown in th
 |`bitcanna-1`|https://cosmos-snapshots.s3.filebase.com/bitcanna/snapshot.json|
 |`comdex-1`|https://cosmos-snapshots.s3.filebase.com/comdex/snapshot.json|
 |`desmos-mainnet`|https://cosmos-snapshots.s3.filebase.com/desmos/snapshot.json|
-|`gravity-bridge-1`|https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json|
+|`gravity-bridge-2`|https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json|
 |`juno-1`|https://cosmos-snapshots.s3.filebase.com/juno/snapshot.json|
 |`osmosis-1`|https://cosmos-snapshots.s3.filebase.com/osmosis/snapshot.json|
 |`sentinelhub-2`|https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json|
@@ -96,8 +96,8 @@ See the [_examples](./_examples) directory for some common setups, including:
 
 ## Configuration
 
-Cosmos blockchains can be configured entirely using environment variables instead of the config files. 
-Every chain has it's own prefix, but the format of the configuration is the same. 
+Cosmos blockchains can be configured entirely using environment variables instead of the config files.
+Every chain has it's own prefix, but the format of the configuration is the same.
 
 For example to configure the `seeds` option in the `p2p` section of `config.toml`, for the Akash blockchain:
 
@@ -177,7 +177,7 @@ Some shortcuts for enabling statesync. Statesync requires 2x nodes with snapshot
 
 ### Snapshot restore
 
-The node `data` directory can be restored from a `.tar` or `.tar.gz` file stored on a public URL. 
+The node `data` directory can be restored from a `.tar` or `.tar.gz` file stored on a public URL.
 This can be from a specific URL, a [snapshot.json](#snapshot-backup), or from a base URL and matching a given pattern.
 
 |Variable|Description|Default|Examples|
@@ -192,7 +192,7 @@ This can be from a specific URL, a [snapshot.json](#snapshot-backup), or from a 
 ### Snapshot backup
 
 Omnibus includes a script to automatically snapshot a node and upload the resulting archive to any S3 compatible service like [Filebase](https://filebase.com/).
-At a specified time (or day), the script will shut down the tendermint server, create an archive of the `data` directory and upload it. 
+At a specified time (or day), the script will shut down the tendermint server, create an archive of the `data` directory and upload it.
 Snapshots older than a specified time can also be deleted. Finally a JSON metadata file is created listing the current snapshots. The server is then restarted and monitored.
 
 [See an example](_examples/snapshot_backup) of a snapshot node deployment.
