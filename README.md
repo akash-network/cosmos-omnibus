@@ -37,6 +37,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cosmoshub](https://github.com/cosmos/gaia)|`v5.0.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.21-cosmoshub-v5.0.8`|[Example](./cosmoshub)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.1.1-croeseid`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.21-cryptoorgchain-v3.1.1-croeseid`|[Example](./cryptoorgchain)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.21-desmos-v2.3.1`|[Example](./desmos)|
+|[dig](https://github.com/notional-labs/dig)|`v1.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.21-dig-v1.1.0`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.21-emoney-v1.1.3`|[Example](./emoney)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.21-gravitybridge-v1.2.1`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.21-impacthub-v1.6.0`|[Example](./impacthub)|
