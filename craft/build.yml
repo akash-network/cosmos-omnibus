@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: craft
+        PROJECT_BIN: craftd
+        VERSION: v0.1.1
+        REPOSITORY: https://github.com/notional-labs/craft.git
+        NAMESPACE: CRAFTD
+        GOLANG_VERSION: 1.18-buster
+        BUILD_CMD: go install ./...
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/craft/chain.json
+      - CHAIN_ID=craft-testnet-1
+      - GENESIS_URL=https://raw.githubusercontent.com/notional-labs/craft/4e804f74f3f2e8a68777e9533b1a89ca941474c3/networks/craft-testnet-1/genesis.json
+      - P2P_PERSISTENT_PEERS=285e70f18b111c5676b13c044f2cebe664e53cb6@38.146.3.195:26656
+      - MINIMUM_GAS_PRICE=0.02ucraft
+      - CRAFTD_STAKING_BOND_DENOM=exp
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.craftd
