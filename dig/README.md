@@ -4,7 +4,7 @@
 |---|---|
 |Version|`v1.1.0`|
 |Binary|`digd`|
-|Directory|`.digd`|
+|Directory|`.dig`|
 |ENV namespace|`DIGD`|
 |Repository|`https://github.com/notional-labs/dig`|
 |Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.21-dig-v1.1.0`|
