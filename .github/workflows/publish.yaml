@@ -50,7 +50,7 @@ jobs:
           - project: likecoin
             version: fotan-1.1
           - project: osmosis
-            version: v6.0.0
+            version: v6.1.0
           - project: panacea
             version: v2.0.2
           - project: persistence
