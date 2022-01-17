@@ -20,7 +20,7 @@ RUN apt-get update && \
 #
 FROM build_base AS build_source
 
-ARG VERSION=v0.12.1
+ARG VERSION=v0.14.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 ARG BUILD_COMMAND="make install"
 
@@ -86,7 +86,7 @@ ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 ARG PROJECT_DIR=.$PROJECT_BIN
 ARG PROJECT_CMD="$PROJECT_BIN start"
-ARG VERSION=v0.12.1
+ARG VERSION=v0.14.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 ARG NAMESPACE
 
