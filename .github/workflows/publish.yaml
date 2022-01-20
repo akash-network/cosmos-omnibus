@@ -68,7 +68,7 @@ jobs:
           - project: sifchain
             version: v0.9.14
           - project: stargaze
-            version: v1.0.0
+            version: v1.1.2
           - project: starname
             version: v0.10.18
           - project: terra
