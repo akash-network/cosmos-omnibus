@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.0.0`|
+|Version|`v1.1.1`|
 |Binary|`chihuahuad`|
 |Directory|`.chihuahua`|
 |ENV namespace|`CHIHUAHUAD`|
 |Repository|`https://github.com/ChihuahuaChain/chihuahua`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.22-chihuahua-v1.0.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.22-chihuahua-v1.1.1`|
 
 ## Examples
 

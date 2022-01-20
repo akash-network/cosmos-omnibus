@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: chihuahua
         PROJECT_BIN: chihuahuad
-        VERSION: v1.0.0
+        VERSION: v1.1.1
         REPOSITORY: https://github.com/ChihuahuaChain/chihuahua
         NAMESPACE: CHIHUAHUAD
         PROJECT_DIR: .chihuahua
@@ -18,6 +18,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/chain.json
+      - VALIDATE_GENESIS=0
     env_file:
       - ../.env
     volumes:
