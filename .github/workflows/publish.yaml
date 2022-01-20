@@ -12,7 +12,7 @@ jobs:
       matrix:
         include:
           - project: akash
-            version: v0.12.1
+            version: v0.14.1
           - project: bandchain
             version: v2.3.2
           - project: bitcanna
