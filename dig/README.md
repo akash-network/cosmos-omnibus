@@ -7,7 +7,7 @@
 |Directory|`.dig`|
 |ENV namespace|`DIGD`|
 |Repository|`https://github.com/notional-labs/dig`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.22-dig-v1.1.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-dig-v1.1.0`|
 
 ## Examples
 
