@@ -4,7 +4,7 @@
 |---|---|
 |Version|`develop`|
 |Binary|`nomic`|
-|Directory|`.nomic-stakenet-rc`|
+|Directory|`.nomic-stakenet`|
 |ENV namespace|`TM`|
 |Repository|`https://github.com/nomic-io/nomic`|
 |Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-nomic-develop`|
