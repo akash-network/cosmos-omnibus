@@ -9,7 +9,7 @@ services:
         VERSION: develop
         REPOSITORY: https://github.com/nomic-io/nomic
         NAMESPACE: TM
-        PROJECT_DIR: .nomic-stakenet-rc
+        PROJECT_DIR: .nomic-stakenet
         BASE_IMAGE: rustlang/rust:nightly
         BUILD_COMMAND: cargo install --path .
         BUILD_PATH: /usr/local/cargo/bin
@@ -20,12 +20,12 @@ services:
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      - CHAIN_ID=nomic-stakenet-rc
+      - CHAIN_ID=nomic-stakenet
       - P2P_SEEDS=dc7103629676c9bc02624887372c3e18a740c37d@167.99.228.240:26656
       - VALIDATE_GENESIS=0
       - INIT_COMMAND=nomic init
-      - CONFIG_DIR=/root/.nomic-stakenet-rc/tendermint/config
+      - CONFIG_DIR=/root/.nomic-stakenet/tendermint/config
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.nomic-stakenet-rc
+      - ./node-data:/root/.nomic-stakenet
