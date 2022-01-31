@@ -6,7 +6,7 @@ services:
       context: ../
       args:
         PROJECT: nomic
-        VERSION: develop
+        VERSION: 4aa1d001210f080cc12012eb7593c66340fc7cb3
         REPOSITORY: https://github.com/nomic-io/nomic
         NAMESPACE: TM
         PROJECT_DIR: .nomic-stakenet
