@@ -1,11 +1,12 @@
 ARG BUILD_IMAGE=default
 ARG BUILD_METHOD=source
 ARG GOLANG_VERSION=1.16-buster
+ARG BASE_IMAGE=golang:${GOLANG_VERSION}
 
 #
 # Default build environment for standard Tendermint chains
 #
-FROM golang:${GOLANG_VERSION} AS build_base
+FROM ${BASE_IMAGE} AS build_base
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
@@ -43,12 +44,14 @@ RUN curl https://get.starport.network/starport! | bash
 #
 FROM build_${BUILD_METHOD} AS build
 
+ARG BUILD_PATH=$GOPATH/bin
+
 RUN $BUILD_COMMAND
 
-RUN ldd $GOPATH/bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
+RUN ldd $BUILD_PATH/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
     xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
 
-RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
+RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
 
 #
 # Default image

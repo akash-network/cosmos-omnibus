@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  node_1:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-nomic-develop
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_ID=nomic-stakenet-rc
+      - P2P_SEEDS=dc7103629676c9bc02624887372c3e18a740c37d@167.99.228.240:26656
+      - VALIDATE_GENESIS=0
+      - INIT_COMMAND=nomic init
+      - CONFIG_DIR=/root/.nomic-stakenet-rc/tendermint/config
+    volumes:
+      - ./node-data:/root/.nomic-stakenet-rc
