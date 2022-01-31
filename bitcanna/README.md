@@ -7,7 +7,7 @@
 |Directory|`.bcna`|
 |ENV namespace|`BCNAD`|
 |Repository|`https://github.com/BitCannaGlobal/bcna`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.10-bitcanna-v1.2`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-bitcanna-v1.2`|
 
 ## Examples
 
