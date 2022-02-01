@@ -52,7 +52,7 @@ jobs:
           - project: likecoin
             version: fotan-1.1
           - project: nomic
-            version: develop
+            version: 4aa1d001210f080cc12012eb7593c663404aa1d001210f080cc12012eb7593c66340fc7cb3
           - project: osmosis
             version: v6.1.0
           - project: panacea
