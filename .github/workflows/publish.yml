@@ -51,6 +51,8 @@ jobs:
             version: 2.0.0
           - project: likecoin
             version: fotan-1.1
+          - project: nomic
+            version: stakenet
           - project: osmosis
             version: v6.1.0
           - project: panacea

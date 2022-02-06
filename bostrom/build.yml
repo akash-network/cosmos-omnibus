@@ -12,7 +12,7 @@ services:
         REPOSITORY: https://github.com/cybercongress/go-cyber
         NAMESPACE: BOSTROM
         GOLANG_VERSION: 1.17-buster
-        PROJECT_CMD: "cyber start --compute-gpu=false"
+        START_CMD: "cyber start --compute-gpu=false"
     ports:
       - '1317:1317'
       - '27146:27146'
