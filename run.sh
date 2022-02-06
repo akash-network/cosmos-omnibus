@@ -29,8 +29,6 @@ fi
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
 
-export INIT_CMD="${INIT_CMD:-"$PROJECT_BIN init $MONIKER --chain-id $CHAIN_ID"}"
-
 export AWS_ACCESS_KEY_ID=$S3_KEY
 export AWS_SECRET_ACCESS_KEY=$S3_SECRET
 export S3_HOST="${S3_HOST:-https://s3.filebase.com}"
@@ -109,7 +107,11 @@ fi
 
 # Initialise
 if [ "$INIT_CONFIG" == "1" ]; then
-  $INIT_CMD
+  if [ -n "$INIT_CMD" ]; then
+    $INIT_CMD
+  else
+    $PROJECT_BIN init "$MONIKER" --chain-id ${CHAIN_ID}
+  fi
 fi
 
 # Overwrite seeds in config.toml for chains that are not using the env variable correctly
