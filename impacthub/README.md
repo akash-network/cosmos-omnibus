@@ -7,7 +7,7 @@
 |Directory|`.ixod`|
 |ENV namespace|`IXOD`|
 |Repository|`https://github.com/ixofoundation/ixo-blockchain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-impacthub-v1.6.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.24-impacthub-v1.6.0`|
 
 ## Examples
 
