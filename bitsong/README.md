@@ -7,7 +7,7 @@
 |Directory|`.bitsongd`|
 |ENV namespace|`BITSONG`|
 |Repository|`https://github.com/bitsongofficial/go-bitsong`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-bitsong-v0.8.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.24-bitsong-v0.8.0`|
 
 ## Examples
 
