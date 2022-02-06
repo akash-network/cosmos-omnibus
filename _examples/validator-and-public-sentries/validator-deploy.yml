@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   validator:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.24-akash-v0.14.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.25-akash-v0.14.1
     env:
       - MONIKER=validator
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
