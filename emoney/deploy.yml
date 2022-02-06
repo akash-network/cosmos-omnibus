@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.24-emoney-v1.1.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.25-emoney-v1.1.3
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/chain.json
