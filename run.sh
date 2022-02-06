@@ -3,7 +3,7 @@
 set -e
 
 export PROJECT_ROOT="/root/$PROJECT_DIR"
-export CONFIG_DIR="${CONFIG_DIR:-$PROJECT_ROOT/config}"
+export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
 if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON ) && ! -d "$PROJECT_ROOT/data" ]]; then
@@ -19,15 +19,17 @@ if [ -n "$CHAIN_JSON" ]; then
   export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r '.genesis.genesis_url? // .genesis')}"
 fi
 
-if [[ -z $DOWNLOAD_GENESIS && -n $GENESIS_URL && ! -f "$CONFIG_DIR/genesis.json" ]]; then
+if [[ -z $DOWNLOAD_GENESIS && -n $GENESIS_URL && ! -f "$CONFIG_PATH/genesis.json" ]]; then
   export DOWNLOAD_GENESIS="1"
 fi
 
-if [[ -z $INIT_CONFIG && ! -d "$CONFIG_DIR" ]]; then
+if [[ -z $INIT_CONFIG && ! -d "$CONFIG_PATH" ]]; then
   export INIT_CONFIG="1"
 fi
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
+
+export INIT_CMD="${INIT_CMD:-"$PROJECT_BIN init $MONIKER --chain-id $CHAIN_ID"}"
 
 export AWS_ACCESS_KEY_ID=$S3_KEY
 export AWS_SECRET_ACCESS_KEY=$S3_SECRET
@@ -49,12 +51,12 @@ restore_key () {
     echo "$1 backup not found"
   else
     echo "Restoring $1"
-    aws $aws_args s3 cp "${s3_uri_base}/$1" $CONFIG_DIR/$1$file_suffix
+    aws $aws_args s3 cp "${s3_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
 
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Decrypting"
-      gpg --decrypt --batch --passphrase "$KEY_PASSWORD" $CONFIG_DIR/$1$file_suffix > $CONFIG_DIR/$1
-      rm $CONFIG_DIR/$1$file_suffix
+      gpg --decrypt --batch --passphrase "$KEY_PASSWORD" $CONFIG_PATH/$1$file_suffix > $CONFIG_PATH/$1
+      rm $CONFIG_PATH/$1$file_suffix
     fi
   fi
 }
@@ -65,10 +67,10 @@ backup_key () {
     echo "Backing up $1"
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Encrypting backup..."
-      gpg --symmetric --batch --passphrase "$KEY_PASSWORD" $CONFIG_DIR/$1
+      gpg --symmetric --batch --passphrase "$KEY_PASSWORD" $CONFIG_PATH/$1
     fi
-    aws $aws_args s3 cp $CONFIG_DIR/$1$file_suffix "${s3_uri_base}/$1"
-    [ -n "$KEY_PASSWORD" ] && rm $CONFIG_DIR/$1.gpg
+    aws $aws_args s3 cp $CONFIG_PATH/$1$file_suffix "${s3_uri_base}/$1"
+    [ -n "$KEY_PASSWORD" ] && rm $CONFIG_PATH/$1.gpg
   fi
 }
 
@@ -103,16 +105,16 @@ if [ -n "$STATESYNC_RPC_SERVERS" ]; then
   fi
 fi
 
+[ "$DEBUG" == "1" ] && printenv
 
 # Initialise
 if [ "$INIT_CONFIG" == "1" ]; then
-  INIT_COMMAND="${INIT_COMMAND:-"$PROJECT_BIN init \"$MONIKER\" --chain-id \"$CHAIN_ID\""}"
-  $INIT_COMMAND
+  $INIT_CMD
 fi
 
 # Overwrite seeds in config.toml for chains that are not using the env variable correctly
 if [ "$OVERWRITE_SEEDS" == "1" ]; then
-    sed -i "s/seeds = \"\"/seeds = \"$P2P_SEEDS\"/" $CONFIG_DIR/config.toml
+    sed -i "s/seeds = \"\"/seeds = \"$P2P_SEEDS\"/" $CONFIG_PATH/config.toml
 fi
 
 # Restore keys
@@ -167,17 +169,15 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   cat genesis.json | jq '.. | objects | . as $parent | with_entries(select(.key  == "genesis_time")) | select(. != {})| $parent ' > genesis_parsed.json
   cp genesis_parsed.json genesis.json
 
-  mkdir -p $CONFIG_DIR
-  cp genesis.json $CONFIG_DIR/genesis.json
+  mkdir -p $CONFIG_PATH
+  cp genesis.json $CONFIG_PATH/genesis.json
 fi
 
 # Validate genesis
 [ "$VALIDATE_GENESIS" == "1" ] && $PROJECT_BIN validate-genesis
 
-[ "$DEBUG" == "1" ] && printenv
-
 if [ -n "$SNAPSHOT_PATH" ]; then
-  exec snapshot.sh "$PROJECT_CMD"
+  exec snapshot.sh "$START_CMD"
 else
   exec "$@"
 fi

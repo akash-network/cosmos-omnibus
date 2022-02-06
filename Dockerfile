@@ -10,10 +10,10 @@ FROM ${BASE_IMAGE} AS build_base
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
-ARG APT_INSTALL_EXTRA_DEPS
+ARG INSTALL_PACKAGES
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes curl unzip ${APT_INSTALL_EXTRA_DEPS} && \
+  apt-get install --no-install-recommends --assume-yes curl unzip ${INSTALL_PACKAGES} && \
   apt-get clean
 
 #
@@ -23,7 +23,7 @@ FROM build_base AS build_source
 
 ARG VERSION=v0.14.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
-ARG BUILD_COMMAND="make install"
+ARG BUILD_CMD="make install"
 
 RUN git clone $REPOSITORY /data
 WORKDIR /data
@@ -34,7 +34,7 @@ RUN git checkout $VERSION
 #
 FROM build_source AS build_starport
 
-ARG BUILD_COMMAND="starport chain build"
+ARG BUILD_CMD="starport chain build"
 
 RUN curl https://get.starport.network/starport! | bash
 
@@ -46,7 +46,7 @@ FROM build_${BUILD_METHOD} AS build
 
 ARG BUILD_PATH=$GOPATH/bin
 
-RUN $BUILD_COMMAND
+RUN $BUILD_CMD
 
 RUN ldd $BUILD_PATH/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
     xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
@@ -88,7 +88,9 @@ RUN apt-get update && \
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
 ARG PROJECT_DIR=.$PROJECT_BIN
-ARG PROJECT_CMD="$PROJECT_BIN start"
+ARG CONFIG_DIR=config
+ARG START_CMD="$PROJECT_BIN start"
+ARG INIT_CMD
 ARG VERSION=v0.14.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
 ARG NAMESPACE
@@ -96,7 +98,9 @@ ARG NAMESPACE
 ENV PROJECT=$PROJECT
 ENV PROJECT_BIN=$PROJECT_BIN
 ENV PROJECT_DIR=$PROJECT_DIR
-ENV PROJECT_CMD=$PROJECT_CMD
+ENV CONFIG_DIR=$CONFIG_DIR
+ENV START_CMD=$START_CMD
+ENV INIT_CMD=$INIT_CMD
 ENV VERSION=$VERSION
 ENV REPOSITORY=$REPOSITORY
 ENV NAMESPACE=$NAMESPACE
@@ -119,4 +123,4 @@ COPY run.sh snapshot.sh /usr/bin/
 RUN chmod +x /usr/bin/run.sh /usr/bin/snapshot.sh
 ENTRYPOINT ["run.sh"]
 
-CMD $PROJECT_CMD
+CMD $START_CMD

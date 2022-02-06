@@ -6,25 +6,24 @@ services:
       context: ../
       args:
         PROJECT: nomic
-        VERSION: 4aa1d001210f080cc12012eb7593c66340fc7cb3
+        VERSION: stakenet
         REPOSITORY: https://github.com/nomic-io/nomic
         NAMESPACE: TM
         PROJECT_DIR: .nomic-stakenet
         BASE_IMAGE: rustlang/rust:nightly
-        BUILD_COMMAND: cargo install --path .
+        INSTALL_PACKAGES: build-essential libssl-dev pkg-config clang
+        BUILD_CMD: cargo install --path .
         BUILD_PATH: /usr/local/cargo/bin
-        APT_INSTALL_EXTRA_DEPS: build-essential libssl-dev pkg-config clang
+        INIT_CMD: nomic init
+        CONFIG_DIR: tendermint/config
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      - CHAIN_ID=nomic-stakenet
-      - P2P_SEEDS=238120dfe716082754048057c1fdc3d6f09609b5@161.35.51.124:26656,a67d7a4d90f84d5c67bfc196aac68441ba9484a6@167.99.119.196:26659
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nomic/chain.json
       - VALIDATE_GENESIS=0
-      - INIT_COMMAND=nomic init
-      - CONFIG_DIR=/root/.nomic-stakenet/tendermint/config
     env_file:
       - ../.env
     volumes:

@@ -46,6 +46,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-kava-v0.15.1`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-kichain-2.0.0`|[Example](./kichain)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`fotan-1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-likecoin-fotan-1.1`|[Example](./likecoin)|
+|[nomic](https://github.com/nomic-io/nomic)|`stakenet`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-nomic-stakenet`|[Example](./nomic)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v6.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-osmosis-v6.1.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-panacea-v2.0.2`|[Example](./panacea)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-persistence-v0.1.3`|[Example](./persistence)|
@@ -209,7 +210,7 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`SNAPSHOT_DAY`|The numeric day of the week the snapshot will run (Monday = 1)|`*`|`7`|
 |`SNAPSHOT_SIZE`|The rough size of the resulting snapshot for the multi-part upload|`107374182400`|`0`|
 |`SNAPSHOT_DIR`|The directory on disk to snapshot|`$PROJECT_HOME/data`|`/root/.akash`|
-|`SNAPSHOT_CMD`|The command to run the server|`$PROJECT_CMD`|`akash start --someflag`|
+|`SNAPSHOT_CMD`|The command to run the server|`$START_CMD`|`akash start --someflag`|
 |`SNAPSHOT_RETAIN`|How long to retain snapshots for (0 to disable)|`2 days`|`1 week`|
 |`SNAPSHOT_METADATA`|Whether to create a snapshot.json metadata file|`1`|`0`|
 |`SNAPSHOT_METADATA_URL`|The URL snapshots will be served from (for snapshot.json)| |`https://cosmos-snapshots.s3.filebase.com/akash`|

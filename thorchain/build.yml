@@ -12,8 +12,8 @@ services:
         REPOSITORY: https://gitlab.com/thorchain/thornode
         NAMESPACE: THOR
         GOLANG_VERSION: 1.17-buster
-        APT_INSTALL_EXTRA_DEPS: protobuf-compiler
-        BUILD_COMMAND: make install TAG=mainet BUILD_TAG=mainet
+        INSTALL_PACKAGES: protobuf-compiler
+        BUILD_CMD: make install TAG=mainet BUILD_TAG=mainet
     ports:
       - '1317:1317' # api
       - '27146:27146' # p2p

@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`4aa1d001210f080cc12012eb7593c663404aa1d001210f080cc12012eb7593c66340fc7cb3`|
+|Version|`stakenet`|
 |Binary|`nomic`|
 |Directory|`.nomic-stakenet`|
 |ENV namespace|`TM`|
 |Repository|`https://github.com/nomic-io/nomic`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-nomic-4aa1d001210f080cc12012eb7593c663404aa1d001210f080cc12012eb7593c66340fc7cb3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-nomic-stakenet`|
 
 ## Examples
 
@@ -16,4 +16,8 @@
 
 ## Chain information
 
-There is no published chain JSON currently. See the [project README](https://github.com/nomic-io/nomic) for latest information.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Nomic.
+
+|Variable|Value|
+|---|---|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/nomic/chain.json`|
