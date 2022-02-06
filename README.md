@@ -53,7 +53,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[rizon](https://github.com/rizon-world/rizon)|`v0.2.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-rizon-v0.2.8`|[Example](./rizon)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-sentinel-v0.8.3`|[Example](./sentinel)|
 |[shentu](https://github.com/certikfoundation/shentu)|`v2.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-shentu-v2.2.0`|[Example](./shentu)|
-|[sifchain](https://github.com/Sifchain/sifnode)|`v0.9.14`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-sifchain-v0.9.14`|[Example](./sifchain)|
+|[sifchain](https://github.com/Sifchain/sifnode)|`v0.10.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-sifchain-v0.10.1`|[Example](./sifchain)|
 |[stargaze](https://github.com/public-awesome/stargaze)|`v1.1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-stargaze-v1.1.2`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.10.18`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-starname-v0.10.18`|[Example](./starname)|
 |[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-terra-v0.5.9`|[Example](./terra)|
