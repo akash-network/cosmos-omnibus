@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.3.3`|
+|Version|`v1.4.1`|
 |Binary|`gravity`|
 |Directory|`.gravity`|
 |ENV namespace|`GRAVITY`|
 |Repository|`https://github.com/Gravity-Bridge/Gravity-Bridge`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-gravitybridge-v1.3.3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.23-gravitybridge-v1.4.1`|
 
 ## Examples
 
