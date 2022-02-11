@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: passage
+        PROJECT_BIN: passage
+        VERSION: v1.0.0-rc2
+        REPOSITORY: https://github.com/envadiv/Passage3D
+        NAMESPACE: PASSAGE
+        PROJECT_DIR: .passage
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/passage/chain.json
+      - CHAIN_ID=passage-1
+      - P2P_SEEDS=aebb8431609cb126a977592446f5de252d8b7fa1@104.236.201.138:26656
+      # - GENESIS_URL=https://raw.githubusercontent.com/envadiv/mainnet/main/passage-1/genesis-prelaunch.json
+      - GENESIS_URL=https://raw.githubusercontent.com/envadiv/mainnet/main/passage-1/genesis.json
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.passage
