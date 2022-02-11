@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.25-gravitybridge-v1.4.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.26-gravitybridge-v1.4.1
     ports:
       - '26656:26656'
       - '26657:26657'
