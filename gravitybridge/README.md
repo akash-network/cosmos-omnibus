@@ -7,7 +7,7 @@
 |Directory|`.gravity`|
 |ENV namespace|`GRAVITY`|
 |Repository|`https://github.com/Gravity-Bridge/Gravity-Bridge`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.25-gravitybridge-v1.4.1`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.26-gravitybridge-v1.4.1`|
 
 ## Examples
 
