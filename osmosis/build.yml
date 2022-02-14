@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: v6.1.0
+        VERSION: v6.3.0
         REPOSITORY: https://github.com/osmosis-labs/osmosis
         NAMESPACE: OSMOSISD
         GOLANG_VERSION: 1.17-buster
