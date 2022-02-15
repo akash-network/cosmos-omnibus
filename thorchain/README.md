@@ -7,7 +7,7 @@
 |Directory|`.thornode`|
 |ENV namespace|`THOR`|
 |Repository|`https://gitlab.com/thorchain/thornode`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.26-thorchain-chaosnet-multichain`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-thorchain-chaosnet-multichain`|
 
 ## Examples
 
