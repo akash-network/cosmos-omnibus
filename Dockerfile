@@ -48,8 +48,9 @@ ARG BUILD_PATH=$GOPATH/bin
 
 RUN $BUILD_CMD
 
+RUN mkdir -p /data/deps
 RUN ldd $BUILD_PATH/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
-    xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
+    xargs -I % sh -c 'cp % deps%;'
 
 RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
 
