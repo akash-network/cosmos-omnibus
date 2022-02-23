@@ -10,6 +10,7 @@ FROM ${BASE_IMAGE} AS build_base
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
+
 ARG INSTALL_PACKAGES
 
 RUN apt-get update && \
@@ -20,6 +21,9 @@ RUN apt-get update && \
 # Default build from source method
 #
 FROM build_base AS build_source
+
+ARG PROJECT=akash
+ARG PROJECT_BIN=$PROJECT
 
 ARG VERSION=v0.14.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
@@ -45,12 +49,10 @@ RUN curl https://get.starport.network/starport! | bash
 FROM build_${BUILD_METHOD} AS build
 
 ARG BUILD_PATH=$GOPATH/bin
-
 RUN $BUILD_CMD
 
-RUN mkdir -p /data/deps
 RUN ldd $BUILD_PATH/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
-    xargs -I % sh -c 'cp % deps%;'
+    xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
 
 RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
 
@@ -58,9 +60,6 @@ RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
 # Default image
 #
 FROM debian:buster AS default
-
-ARG PROJECT=akash
-ARG PROJECT_BIN=$PROJECT
 
 COPY --from=build /bin/$PROJECT_BIN /bin/$PROJECT_BIN
 COPY --from=build /data/deps/ /

@@ -13,6 +13,8 @@ jobs:
         include:
           - project: akash
             version: v0.14.1
+          - project: agoric
+            version: agoric-3.1
           - project: bandchain
             version: v2.3.2
           - project: bitcanna
@@ -40,7 +42,7 @@ jobs:
           - project: gravitybridge
             version: v1.4.1
           - project: impacthub
-            version: v1.6.0
+            version: v0.17.0
           - project: irisnet
             version: v1.0.1
           - project: juno
