@@ -28,7 +28,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |---|---|---|---|
 |[akash](https://github.com/ovrclk/akash)|`v0.14.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-akash-v0.14.1`|[Example](./akash)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.3.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-bandchain-v2.3.2`|[Example](./bandchain)|
-|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-bitcanna-v1.2`|[Example](./bitcanna)|
+|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v.1.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-bitcanna-v.1.3.1`|[Example](./bitcanna)|
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.8.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-bitsong-v0.8.0`|[Example](./bitsong)|
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-bostrom-v0.2.0`|[Example](./bostrom)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`v0.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-cheqd-v0.3.1`|[Example](./cheqd)|
