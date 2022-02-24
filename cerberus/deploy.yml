@@ -1,0 +1,49 @@
+---
+version: "2.0"
+
+services:
+  node:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cerberus-v1.0.0
+    env:
+      - MONIKER=my-moniker-1
+      - CHAIN_ID=cerberus-1
+      - GENESIS_URL=https://raw.githubusercontent.com/cerberus-zone/cerberus_genesis/main/genesis.json
+      - P2P_SEEDS=4c3abff6e4a3e93b84babfc95df854861f83ac82@cerberus-seed.blockpane.com:26656,d8a04beba9fb95c70368b303f701c36b4e3b4a63@185.215.165.29:26656
+      - P2P_PERSISTENT_PEERS=4b1524679daa64954546ac3e6d376faf6a41e4d7@34.139.66.39:26656,402d0fd8e6ca7884a7acfef6e1ab417791715694@194.163.175.85:26656,9923e45bf086edea62dc5bd95e524770190de04e@89.58.37.22:26656,a64a62d7c4ca146560d86da353d924ee1d91a441@65.21.235.249:26656,aaa2eba32286074fb575a48e033ac2ba7f4c94e6@98.113.93.139:26661,e797a59da3c99d418c9272afe93845f8c655839a@66.94.127.8:26656,4aa105e2e0d358edfa7d44e3bbacf4ecb5ba024e@194.163.169.187:26656,358fb3c007a9788764beacf07c9454e3f4f9f8a0@75.119.148.180:26656,c2c45ff3323319d82b95d9401d0290be4699de8a@159.89.210.232:26656,ffbade2af84ed0c42d418134465d14ee1f5e83cb@65.108.135.177:26656,4af2ce6477ab0b5dd46ae54ff37d883ab94635c9@38.146.3.171:26656,6b34fc523d1265a9392d69c6460ea6906acbd726@148.251.177.45:10656,8b63459be13c24219920b03805b75518f9be1adf@65.108.128.240:46656,7c7192d7f925f745105bc50d50a6c6a02b290abd@49.12.156.54:26656,ffbade2af84ed0c42d418134465d14ee1f5e83cb@65.108.135.177:26656,f99c256be682968efe7c4c8a8c504955894c2090@143.198.101.54:26656,b58024e1edf88f627b45e17af40b14eed80248ef@208.76.223.231:26656,f03e64d46713068da60b096d528053a57e0e5fec@157.90.36.33:29563,17e1441d760583ab5cf79a93ea01ced685948bf7@168.119.110.93:26656,c2a307e37c94573a59c691b61408bdd71ec49a0f@65.108.121.239:26656
+      - VALIDATE_GENESIS=0
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true
+      - port: 26656
+        to:
+          - global: true
+
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 2Gi
+        storage:
+          size: 120Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 100
+
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 1
