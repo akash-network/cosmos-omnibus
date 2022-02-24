@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.6.0`|
+|Version|`v0.17.0`|
 |Binary|`ixod`|
 |Directory|`.ixod`|
 |ENV namespace|`IXOD`|
 |Repository|`https://github.com/ixofoundation/ixo-blockchain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-impacthub-v1.6.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-impacthub-v0.17.0`|
 
 ## Examples
 

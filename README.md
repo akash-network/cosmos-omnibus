@@ -40,7 +40,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[dig](https://github.com/notional-labs/dig)|`v1.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-dig-v1.1.0`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-emoney-v1.1.3`|[Example](./emoney)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-gravitybridge-v1.4.1`|[Example](./gravitybridge)|
-|[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-impacthub-v1.6.0`|[Example](./impacthub)|
+|[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.17.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-impacthub-v0.17.0`|[Example](./impacthub)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-irisnet-v1.0.1`|[Example](./irisnet)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v2.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-juno-v2.1.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.15.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-kava-v0.15.1`|[Example](./kava)|
