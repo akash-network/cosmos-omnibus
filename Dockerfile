@@ -10,7 +10,6 @@ FROM ${BASE_IMAGE} AS build_base
 
 ARG PROJECT=akash
 ARG PROJECT_BIN=$PROJECT
-
 ARG INSTALL_PACKAGES
 
 RUN apt-get update && \
@@ -21,9 +20,6 @@ RUN apt-get update && \
 # Default build from source method
 #
 FROM build_base AS build_source
-
-ARG PROJECT=akash
-ARG PROJECT_BIN=$PROJECT
 
 ARG VERSION=v0.14.1
 ARG REPOSITORY=https://github.com/ovrclk/akash.git
@@ -60,6 +56,9 @@ RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
 # Default image
 #
 FROM debian:buster AS default
+
+ARG PROJECT=akash
+ARG PROJECT_BIN=$PROJECT
 
 COPY --from=build /bin/$PROJECT_BIN /bin/$PROJECT_BIN
 COPY --from=build /data/deps/ /

@@ -21,4 +21,4 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.ixo
+      - ./node-data:/root/.ixod
