@@ -16,15 +16,15 @@ jobs:
           - project: agoric
             version: agoric-3.1
           - project: bandchain
-            version: v2.3.2
+            version: v2.3.3
           - project: bitcanna
             version: v1.2
           - project: bitsong
-            version: v0.8.0
+            version: v0.10.0
           - project: bostrom
             version: v0.2.0
           - project: cheqd
-            version: v0.3.1
+            version: v0.4.0
           - project: chihuahua
             version: v1.1.1
           - project: comdex
@@ -38,7 +38,7 @@ jobs:
           - project: dig
             version: v1.1.0
           - project: emoney
-            version: v1.1.3
+            version: v1.1.4
           - project: gravitybridge
             version: v1.4.1
           - project: impacthub
@@ -48,11 +48,11 @@ jobs:
           - project: juno
             version: v2.1.0
           - project: kava
-            version: v0.15.1
+            version: v0.16.1
           - project: kichain
             version: 2.0.0
           - project: likecoin
-            version: fotan-1.1
+            version: fotan-1.2
           - project: nomic
             version: stakenet
           - project: osmosis
