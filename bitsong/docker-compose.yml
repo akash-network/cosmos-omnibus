@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-bitsong-v0.8.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-bitsong-v0.10.0
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -12,4 +12,4 @@ services:
       - VALIDATE_GENESIS=0
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/chain.json
     volumes:
-      - ./node-data:/root/.bitsong
+      - ./node-data:/root/.bitsongd
