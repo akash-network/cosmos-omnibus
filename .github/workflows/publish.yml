@@ -56,7 +56,7 @@ jobs:
           - project: nomic
             version: stakenet
           - project: osmosis
-            version: v6.3.0
+            version: v7.0.2
           - project: panacea
             version: v2.0.2
           - project: persistence
