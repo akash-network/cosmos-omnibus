@@ -30,7 +30,7 @@ jobs:
           - project: comdex
             version: v0.0.4
           - project: cosmoshub
-            version: v5.0.8
+            version: v6.0.3
           - project: cryptoorgchain
             version: v3.1.1-croeseid
           - project: desmos
