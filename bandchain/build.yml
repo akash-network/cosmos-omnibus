@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: bandchain
         PROJECT_BIN: bandd
-        VERSION: v2.3.2
+        VERSION: v2.3.3
         REPOSITORY: https://github.com/bandprotocol/chain
         NAMESPACE: BAND
         PROJECT_DIR: .band
