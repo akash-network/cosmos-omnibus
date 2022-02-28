@@ -11,6 +11,7 @@ services:
         VERSION: v0.4.0
         REPOSITORY: https://github.com/cheqd/cheqd-node
         NAMESPACE: CHEQD
+        GOLANG_VERSION: 1.17-buster
         BUILD_METHOD: starport
     ports:
       - '26656:26656'
