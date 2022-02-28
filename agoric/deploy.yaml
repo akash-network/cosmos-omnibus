@@ -3,11 +3,11 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-impacthub-v0.17.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-agoric-agoric-3.1
     env:
       - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/impacthub/chain.json
       - VALIDATE_GENESIS=0
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/chain.json
     expose:
       - port: 26657
         as: 80
@@ -24,9 +24,9 @@ profiles:
         cpu:
           units: 2
         memory:
-          size: 8Gi
+          size: 2Gi
         storage:
-          size: 40Gi
+          size: 60Gi
   placement:
     dcloud:
       attributes:
