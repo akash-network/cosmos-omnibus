@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v5.0.8`|
+|Version|`v6.0.3`|
 |Binary|`gaiad`|
 |Directory|`.gaia`|
 |ENV namespace|`GA`|
 |Repository|`https://github.com/cosmos/gaia`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-cosmoshub-v5.0.8`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.27-cosmoshub-v6.0.3`|
 
 ## Examples
 
