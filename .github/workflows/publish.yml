@@ -28,7 +28,7 @@ jobs:
           - project: chihuahua
             version: v1.1.1
           - project: comdex
-            version: v0.0.4
+            version: v0.1.1
           - project: cosmoshub
             version: v6.0.3
           - project: cryptoorgchain
