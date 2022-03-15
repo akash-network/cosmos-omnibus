@@ -35,6 +35,8 @@ jobs:
             version: v0.6.5
           - project: cryptoorgchain
             version: v3.1.1-croeseid
+          - project: decentr
+            version: v1.5.7
           - project: desmos
             version: v2.3.1
           - project: dig

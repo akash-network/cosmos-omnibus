@@ -1,13 +1,13 @@
-# Cronos
+# Decntr Net chain
 
 | | |
 |---|---|
 |Version|`v0.6.5`|
-|Binary|`cronosd`|
-|Directory|`.cronos`|
-|ENV namespace|`CRONOS`|
-|Repository|`https://github.com/cosmos/cronos`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cronos-v0.6.5`|
+|Binary|`decentrd`|
+|Directory|`.decentr`|
+|ENV namespace|`decentr`|
+|Repository|`https://github.com/cosmos/decentr`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-decentr-v1.5.7`|
 
 ## Examples
 
@@ -20,4 +20,4 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/cronos/chain.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/decentr/chain.json`|
