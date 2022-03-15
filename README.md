@@ -51,6 +51,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kixchain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-kichain-2.0.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-konstellation-0.5.0`|[Example](./konstellation)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`fotan-1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-likecoin-fotan-1.2`|[Example](./likecoin)|
+|[lumnetwork](https://github.com/lum-network/chain)|`v1.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-lumnetwork-v1.0.5`|[Example](./lumnetwork)|
 |[nomic](https://github.com/nomic-io/nomic)|`stakenet`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-nomic-stakenet`|[Example](./nomic)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v7.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-osmosis-v7.0.2`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-panacea-v2.0.2`|[Example](./panacea)|
