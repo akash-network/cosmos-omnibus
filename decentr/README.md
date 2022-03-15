@@ -16,7 +16,7 @@
 
 ## Chain information
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Cosmos Hub.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Decentr Net chain.
 
 |Variable|Value|
 |---|---|

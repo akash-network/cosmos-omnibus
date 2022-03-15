@@ -43,6 +43,8 @@ jobs:
             version: v1.1.0
           - project: emoney
             version: v1.1.4
+          - project: fetchhub
+            version: v0.9.1
           - project: gravitybridge
             version: v1.4.1
           - project: impacthub

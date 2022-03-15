@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .cronos
         VERSION: v0.6.5
         REPOSITORY: https://github.com/crypto-org-chain/cronos
-        NAMESPACE: cronos
+        NAMESPACE: CRONOS
     ports:
       - '26656:26656'
       - '26657:26657'
