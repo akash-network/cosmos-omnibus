@@ -48,7 +48,8 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-irisnet-v1.0.1`|[Example](./irisnet)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v2.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-juno-v2.1.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.16.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-kava-v0.16.1`|[Example](./kava)|
-|[kichain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-kichain-2.0.0`|[Example](./kichain)|
+|[kixchain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-kichain-2.0.0`|[Example](./kichain)|
+|[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-konstellation-0.5.0`|[Example](./konstellation)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`fotan-1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-likecoin-fotan-1.2`|[Example](./likecoin)|
 |[nomic](https://github.com/nomic-io/nomic)|`stakenet`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-nomic-stakenet`|[Example](./nomic)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v7.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-osmosis-v7.0.2`|[Example](./osmosis)|
