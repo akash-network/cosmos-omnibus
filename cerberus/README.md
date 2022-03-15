@@ -14,10 +14,10 @@
 - Run on Akash with the [example deploy.yml](./deploy.yml)
 - Run locally using the [example docker-compose.yml](./docker-compose.yml)
 
-## Chain information
+<!-- ## Chain information
 
 The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Cerberus
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/cerberus/chain.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/cerberus/chain.json`| -->
