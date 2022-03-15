@@ -36,6 +36,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v1.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-chihuahua-v1.1.1`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v0.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-comdex-v0.1.1`|[Example](./comdex)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v6.0.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cosmoshub-v6.0.3`|[Example](./cosmoshub)|
+|[cronos](https://github.com/cosmos/cronos)|`v0.6.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cronos-v0.6.5`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.1.1-croeseid`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cryptoorgchain-v3.1.1-croeseid`|[Example](./cryptoorgchain)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-desmos-v2.3.1`|[Example](./desmos)|
 |[dig](https://github.com/notional-labs/dig)|`v1.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-dig-v1.1.0`|[Example](./dig)|

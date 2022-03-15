@@ -31,6 +31,8 @@ jobs:
             version: v0.1.1
           - project: cosmoshub
             version: v6.0.3
+          - project: cronos
+            version: v0.6.5
           - project: cryptoorgchain
             version: v3.1.1-croeseid
           - project: desmos
