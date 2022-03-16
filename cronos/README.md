@@ -7,7 +7,7 @@
 |Directory|`.cronos`|
 |ENV namespace|`CRONOS`|
 |Repository|`https://github.com/crypto-org-chain/cronos`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cronos-v0.6.5`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-cronos-v0.6.5`|
 
 ## Examples
 
