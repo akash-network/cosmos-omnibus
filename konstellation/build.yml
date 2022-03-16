@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: konstellation
+        PROJECT_BIN: knstld
+        PROJECT_DIR: .knstld
+        VERSION: v0.5.0
+        REPOSITORY: https://github.com/konstellation/konstellation
+        NAMESPACE: KONSTELLATION
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - VALIDATE_GENESIS=0
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/konstellation/chain.json
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.knstld

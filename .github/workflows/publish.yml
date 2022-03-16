@@ -23,22 +23,30 @@ jobs:
             version: v0.10.0
           - project: bostrom
             version: v0.2.0
+          - project: cerberus
+            version: v1.0.1
           - project: cheqd
             version: v0.4.0
           - project: chihuahua
             version: v1.1.1
           - project: comdex
-            version: v0.0.4
+            version: v0.1.1
           - project: cosmoshub
             version: v6.0.3
+          - project: cronos
+            version: v0.6.5
           - project: cryptoorgchain
             version: v3.1.1-croeseid
+          - project: decentr
+            version: v1.5.7
           - project: desmos
             version: v2.3.1
           - project: dig
             version: v1.1.0
           - project: emoney
             version: v1.1.4
+          - project: fetchhub
+            version: v0.9.1
           - project: gravitybridge
             version: v1.4.1
           - project: impacthub
@@ -49,10 +57,14 @@ jobs:
             version: v2.1.0
           - project: kava
             version: v0.16.1
+          - project: konstellation
+            version: v0.5.0
           - project: kichain
             version: 2.0.0
           - project: likecoin
             version: fotan-1.2
+          - project: lumnetwork
+            version: v1.0.5
           - project: nomic
             version: stakenet
           - project: osmosis
