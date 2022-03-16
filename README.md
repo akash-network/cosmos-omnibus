@@ -35,7 +35,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cerberus](https://github.com/cerberus-zone/cerberus)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cerberus-v1.0.1`|[Example](./cerberus)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`v0.4.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cheqd-v0.4.0`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v1.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-chihuahua-v1.1.1`|[Example](./chihuahua)|
-|[comdex](https://github.com/comdex-official/comdex)|`v0.0.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-comdex-v0.0.4`|[Example](./comdex)|
+|[comdex](https://github.com/comdex-official/comdex)|`v0.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-comdex-v0.1.1`|[Example](./comdex)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v6.0.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cosmoshub-v6.0.3`|[Example](./cosmoshub)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.1.1-croeseid`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cryptoorgchain-v3.1.1-croeseid`|[Example](./cryptoorgchain)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-desmos-v2.3.1`|[Example](./desmos)|

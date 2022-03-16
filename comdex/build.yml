@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: comdex
         PROJECT_BIN: comdex
-        VERSION: v0.0.4
+        VERSION: v0.1.1
         REPOSITORY: https://github.com/comdex-official/comdex
         NAMESPACE: COMDEX
     ports:
@@ -15,6 +15,7 @@ services:
       - '26657:26657'
       - '1317:1317'
     environment:
+      - VALIDATE_GENESIS=0
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json
       # - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/comdex/snapshot.json
