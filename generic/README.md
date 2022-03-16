@@ -1,31 +1,22 @@
-# Osmosis
+# Generic image
 
 | | |
 |---|---|
-|Version|`v7.0.2`|
-|Binary|`osmosisd`|
-|Directory|`.osmosisd`|
-|ENV namespace|`OSMOSISD`|
-|Repository|`https://github.com/omosis-labs/osmosis`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-osmosis-v7.0.2`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-generic`|
 
 ## Examples
 
 - Run on Akash with the [example deploy.yml](./deploy.yml)
 - Run locally using the [example docker-compose.yml](./docker-compose.yml)
 
-## Chain information
+## Configuration
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Osmosis.
+The node binary can be downloaded at runtime when using the [Generic image](#generic-image-binary-downloaded-at-runtime). All configuration can be sourced from `CHAIN_JSON` if the attributes are available, or configured manually. You will need to set `PROJECT`, `PROJECT_BIN` and `PROJECT_DIR` if these can't be sourced from `CHAIN_JSON`.
 
-|Variable|Value|
-|---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/chain.json`|
-
-## Snapshot restore
-
-Akash provide daily snapshots of the Osmosis blockchain taken at midnight UTC.
-
-|Variable|Value|
-|---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/osmosis/snapshot.json`|
+|Variable|Description|Default|Examples|
+|---|---|---|---|
+|`BINARY_URL`|URL to the binary (or `zip`, `tar`, `tar.gz`)| | |
+|`BINARY_ZIP_PATH`|Path to the binary in the archive. Can be left blank if correctly named in root| | |
+|`PROJECT`|Name of the project, informs other variables| | |
+|`PROJECT_BIN`|Binary name|`$PROJECT`|`osmosisd`|
+|`PROJECT_DIR`|Name of project directory|`.$PROJECT_BIN`|`.osmosisd`|

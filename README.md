@@ -138,17 +138,6 @@ The namespace for each of the supported chains in the cosmos omnibus can be foun
 
 The omnibus images allow some specific variables and shortcuts to configure extra functionality, detailed below.
 
-### Shortcuts
-
-See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) for more information
-
-|Variable|Description|Default|Examples|
-|---|---|---|---|
-|`FASTSYNC_VERSION`|The fastsync version| |`v2`|
-|`MINIMUM_GAS_PRICES`|Minimum gas prices| |`0.025uakt`|
-|`PRUNING`|How much of the chain to prune| |`nothing`|
-|`DEBUG`|Set to `1` to output all environment variables on boot| |`1`|
-
 ### Chain configuration
 
 Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chain Registry](https://github.com/cosmos/chain-registry).
@@ -244,7 +233,7 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 
 ### Binary download
 
-The node binary can be downloaded at runtime when using the Generic image detailed above. This information can be sourced from `CHAIN_JSON` if the attributes are available, or configured manually. You will need to set `PROJECT`, `PROJECT_BIN` and `PROJECT_DIR` if these can't be sourced from `CHAIN_JSON`.
+The node binary can be downloaded at runtime when using the [Generic image](#generic-image-binary-downloaded-at-runtime). All configuration can be sourced from `CHAIN_JSON` if the attributes are available, or configured manually. You will need to set `PROJECT`, `PROJECT_BIN` and `PROJECT_DIR` if these can't be sourced from `CHAIN_JSON`.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
@@ -253,6 +242,17 @@ The node binary can be downloaded at runtime when using the Generic image detail
 |`PROJECT`|Name of the project, informs other variables| | |
 |`PROJECT_BIN`|Binary name|`$PROJECT`|`osmosisd`|
 |`PROJECT_DIR`|Name of project directory|`.$PROJECT_BIN`|`.osmosisd`|
+
+### Shortcuts
+
+See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) for more information
+
+|Variable|Description|Default|Examples|
+|---|---|---|---|
+|`FASTSYNC_VERSION`|The fastsync version| |`v2`|
+|`MINIMUM_GAS_PRICES`|Minimum gas prices| |`0.025uakt`|
+|`PRUNING`|How much of the chain to prune| |`nothing`|
+|`DEBUG`|Set to `1` to output all environment variables on boot| |`1`|
 
 ## Contributing
 
