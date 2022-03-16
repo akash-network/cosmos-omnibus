@@ -23,6 +23,8 @@ jobs:
             version: v0.10.0
           - project: bostrom
             version: v0.2.0
+          - project: cerberus
+            version: v1.0.1
           - project: cheqd
             version: v0.4.0
           - project: chihuahua

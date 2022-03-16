@@ -166,11 +166,6 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   file genesis.json | grep -q 'tar archive' && mv genesis.json genesis.json.tar && tar -xf genesis.json.tar && rm genesis.json.tar
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
 
-  # Ensure we are using the block that contains 'genesis_time' on the first level
-  # Some chains might be using an encapsulated response (e.g. a jsonrpc embodied response)
-  cat genesis.json | jq '.. | objects | . as $parent | with_entries(select(.key  == "genesis_time")) | select(. != {})| $parent ' > genesis_parsed.json
-  cp genesis_parsed.json genesis.json
-
   mkdir -p $CONFIG_PATH
   cp genesis.json $CONFIG_PATH/genesis.json
 fi
