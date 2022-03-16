@@ -7,7 +7,7 @@
 |Directory|`.gaia`|
 |ENV namespace|`GA`|
 |Repository|`https://github.com/cosmos/gaia`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-cosmoshub-v6.0.3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-cosmoshub-v6.0.3`|
 
 ## Examples
 
