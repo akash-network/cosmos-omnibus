@@ -67,6 +67,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[terra](https://github.com/terra-money/core)|`v0.5.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-terra-v0.5.9`|[Example](./terra)|
 |[thorchain](https://gitlab.com/thorchain/thornode)|`chaosnet-multichain`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-thorchain-chaosnet-multichain`|[Example](./thorchain)|
 |[umee](https://github.com/umee-network/umee)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-umee-v1.0.1`|[Example](./umee)|
+|[vidulum](https://github.com/vidulum/mainnet)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-vidulum-v1.0.0`|[Example](./vidulum)|
 
 ## Running on Akash
 
