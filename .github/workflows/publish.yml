@@ -83,6 +83,8 @@ jobs:
             version: v2.2.0
           - project: sifchain
             version: v0.10.1
+          - project: sommelier
+            version: v3.1.0
           - project: stargaze
             version: v1.1.2
           - project: starname
