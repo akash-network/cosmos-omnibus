@@ -5,7 +5,7 @@
 |Version|`v6.0.3`|
 |Binary|`gaiad`|
 |Directory|`.gaia`|
-|ENV namespace|`GA`|
+|ENV namespace|`GAIAD`|
 |Repository|`https://github.com/cosmos/gaia`|
 |Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-cosmoshub-v6.0.3`|
 
