@@ -20,4 +20,4 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/betterclever/chain-registry/patch-2/vidulum/chain.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/vidulum/chain.json`|
