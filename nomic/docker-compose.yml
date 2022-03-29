@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-nomic-stakenet
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-nomic-eba76ebd6aac33e727c24f4a50558dbce442b823
     ports:
       - '26656:26656'
       - '26657:26657'

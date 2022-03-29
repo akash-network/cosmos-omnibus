@@ -66,7 +66,7 @@ jobs:
           - project: lumnetwork
             version: v1.0.5
           - project: nomic
-            version: stakenet
+            version: eba76ebd6aac33e727c24f4a50558dbce442b823
           - project: osmosis
             version: v7.0.2
           - project: panacea
