@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.1.1`|
+|Version|`v0.2.2`|
 |Binary|`craftd`|
 |Directory|`.craftd`|
 |ENV namespace|`CRAFTD`|
 |Repository|`https://github.com/notional-labs/craft`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-craft-v0.1.1`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-craft-v0.2.2`|
 
 ## Examples
 
