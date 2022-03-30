@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .gaia
         VERSION: v6.0.3
         REPOSITORY: https://github.com/cosmos/gaia
-        NAMESPACE: GA
+        NAMESPACE: GAIAD
     ports:
       - '26656:26656'
       - '26657:26657'
