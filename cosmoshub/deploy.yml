@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-cosmoshub-v6.0.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-cosmoshub-v6.0.3
     env:
       - MONIKER=node_1
       - VALIDATE_GENESIS=0
