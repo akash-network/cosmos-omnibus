@@ -2,21 +2,31 @@
 
 set -e
 
-export PROJECT_ROOT="/root/$PROJECT_DIR"
-export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
-export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
-export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
-if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON ) && ! -d "$PROJECT_ROOT/data" ]]; then
-  export DOWNLOAD_SNAPSHOT="1"
-fi
-
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
 if [ -n "$CHAIN_JSON" ]; then
   CHAIN_METADATA=$(curl -s $CHAIN_JSON)
   export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
   export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')}"
   export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')}"
-  export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r '.genesis.genesis_url? // .genesis')}"
+  export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r '.genesis.genesis_url? // .genesis?')}"
+  export BINARY_URL="${BINARY_URL:-$(echo $CHAIN_METADATA | jq -r '.codebase.binaries."linux/amd64"?')}"
+  export PROJECT_BIN="${PROJECT_BIN:-$(echo $CHAIN_METADATA | jq -r '.daemon_name?')}"
+  if [ -z "$PROJECT_DIR" ]; then
+    FULL_DIR=$(echo $CHAIN_METADATA | jq -r '.node_home?')
+    [ -n "$FULL_DIR" ] && export PROJECT_DIR=${FULL_DIR#'$HOME/'}
+  fi
+fi
+
+export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
+export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
+export CONFIG_DIR="${CONFIG_DIR:-config}"
+export START_CMD="${START_CMD:-$PROJECT_BIN start}"
+export PROJECT_ROOT="/root/$PROJECT_DIR"
+export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
+export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
+export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
+if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON ) && ! -d "$PROJECT_ROOT/data" ]]; then
+  export DOWNLOAD_SNAPSHOT="1"
 fi
 
 if [[ -z $DOWNLOAD_GENESIS && -n $GENESIS_URL && ! -f "$CONFIG_PATH/genesis.json" ]]; then
@@ -28,6 +38,16 @@ if [[ -z $INIT_CONFIG && ! -d "$CONFIG_PATH" ]]; then
 fi
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
+
+if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
+  echo "Download binary $PROJECT_BIN from $BINARY_URL"
+  curl -sLo /bin/$PROJECT_BIN $BINARY_URL
+  file /bin/$PROJECT_BIN | grep -q 'gzip compressed data' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.gz && tar -xvf /bin/$PROJECT_BIN.gz -C /bin
+  file /bin/$PROJECT_BIN | grep -q 'tar archive' && mv /bin/$PROJECT_BIN.json /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar && rm /bin/$PROJECT_BIN.tar -C /bin
+  file /bin/$PROJECT_BIN | grep -q 'Zip archive data' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin
+  [ -n "$BINARY_ZIP_PATH" ] && mv /bin/${BINARY_ZIP_PATH} /bin
+  chmod +x /bin/$PROJECT_BIN
+fi
 
 export AWS_ACCESS_KEY_ID=$S3_KEY
 export AWS_SECRET_ACCESS_KEY=$S3_SECRET
