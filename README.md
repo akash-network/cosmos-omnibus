@@ -73,7 +73,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-konstellation-0.5.0`|[Example](./konstellation)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`fotan-1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-likecoin-fotan-1.2`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-lumnetwork-v1.0.5`|[Example](./lumnetwork)|
-|[nomic](https://github.com/nomic-io/nomic)|`stakenet`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-nomic-stakenet`|[Example](./nomic)|
+<!-- |[nomic](https://github.com/nomic-io/nomic)|`stakenet`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-nomic-stakenet`|[Example](./nomic)| -->
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v7.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-osmosis-v7.0.2`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-panacea-v2.0.2`|[Example](./panacea)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-persistence-v0.1.3`|[Example](./persistence)|
