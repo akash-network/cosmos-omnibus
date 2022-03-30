@@ -8,9 +8,10 @@ services:
         PROJECT: regen
         PROJECT_BIN: regen
         PROJECT_DIR: .regen
-        VERSION: v2.1.0
+        VERSION: v3.0.0
         REPOSITORY: https://github.com/regen-network/regen-ledger
         NAMESPACE: REGEN
+        GOLANG_VERSION: 1.17-buster
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -19,6 +20,7 @@ services:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/chain.json
       - MINIMUM_GAS_PRICES=0.025uregen
+      - VALIDATE_GENESIS=0
     env_file:
       - ../.env
     volumes:
