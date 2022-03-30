@@ -19,7 +19,27 @@ Additional features are included to make running a node as simple as possible
 1. [Private keys can be backed up and restored](#private-key-backuprestore) from any S3 compatible storage provider, such as Sia or Storj via [Filebase](https://filebase.com/).
 1. [Snapshots of a nodes data directory](#snapshot-backup) can be created at a certain time or day and uploaded to an S3 storage provider
 
-## Networks
+## Generic image (binary downloaded at runtime)
+
+Omnibus has a generic base image which can download the required binary at runtime. This is useful for chain upgrades, testnets, or using a different version than Omnibus primarily supports.
+
+This generic image provides the Omnibus scripts and configuration helpers, and nothing else. Set the `BINARY_URL` environment variable to a `.zip`, `.tar` or `.tar.gz` URL, and configure `PROJECT`, `PROJECT_DIR` and `PROJECT_BIN`. Alternatively provide a [Chain Registry](https://github.com/cosmos/chain-registry) `CHAIN_JSON` to configure everything automatically (where data is available).
+
+Image URL: `ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-generic`
+
+```yaml
+services:
+  node:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.28-generic
+    env:
+      - MONIKER=my-moniker-1
+      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/edgenet/meta.json
+      - BINARY_ZIP_PATH=akash_0.15.0-rc14_linux_amd64/akash
+```
+
+More information on the generic image can be found at [/generic](./generic/), and configuration is detailed in depth below.
+
+## Networks (pre-built images)
 
 The available docker images can be found [here](https://github.com/orgs/ovrclk/packages/container/package/cosmos-omnibus).  They are
 tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
@@ -118,20 +138,9 @@ The namespace for each of the supported chains in the cosmos omnibus can be foun
 
 The omnibus images allow some specific variables and shortcuts to configure extra functionality, detailed below.
 
-### Shortcuts
-
-See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) for more information
-
-|Variable|Description|Default|Examples|
-|---|---|---|---|
-|`FASTSYNC_VERSION`|The fastsync version| |`v2`|
-|`MINIMUM_GAS_PRICES`|Minimum gas prices| |`0.025uakt`|
-|`PRUNING`|How much of the chain to prune| |`nothing`|
-|`DEBUG`|Set to `1` to output all environment variables on boot| |`1`|
-
 ### Chain configuration
 
-Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Registry](https://github.com/cosmos/chain-registry).
+Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chain Registry](https://github.com/cosmos/chain-registry).
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
@@ -143,7 +152,7 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Regi
 
 ### P2P
 
-See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information. Note this can be sourced from a `CHAIN_JSON` URL.
+See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information. This can be sourced from a `CHAIN_JSON` URL.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
@@ -221,6 +230,29 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`SNAPSHOT_RETAIN`|How long to retain snapshots for (0 to disable)|`2 days`|`1 week`|
 |`SNAPSHOT_METADATA`|Whether to create a snapshot.json metadata file|`1`|`0`|
 |`SNAPSHOT_METADATA_URL`|The URL snapshots will be served from (for snapshot.json)| |`https://cosmos-snapshots.s3.filebase.com/akash`|
+
+### Binary download
+
+The node binary can be downloaded at runtime when using the [Generic image](#generic-image-binary-downloaded-at-runtime). All configuration can be sourced from `CHAIN_JSON` if the attributes are available, or configured manually. You will need to set `PROJECT`, `PROJECT_BIN` and `PROJECT_DIR` if these can't be sourced from `CHAIN_JSON`.
+
+|Variable|Description|Default|Examples|
+|---|---|---|---|
+|`BINARY_URL`|URL to the binary (or `zip`, `tar`, `tar.gz`)| | |
+|`BINARY_ZIP_PATH`|Path to the binary in the archive. Can be left blank if correctly named in root| | |
+|`PROJECT`|Name of the project, informs other variables| | |
+|`PROJECT_BIN`|Binary name|`$PROJECT`|`osmosisd`|
+|`PROJECT_DIR`|Name of project directory|`.$PROJECT_BIN`|`.osmosisd`|
+
+### Shortcuts
+
+See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) for more information
+
+|Variable|Description|Default|Examples|
+|---|---|---|---|
+|`FASTSYNC_VERSION`|The fastsync version| |`v2`|
+|`MINIMUM_GAS_PRICES`|Minimum gas prices| |`0.025uakt`|
+|`PRUNING`|How much of the chain to prune| |`nothing`|
+|`DEBUG`|Set to `1` to output all environment variables on boot| |`1`|
 
 ## Contributing
 
