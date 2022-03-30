@@ -65,8 +65,8 @@ jobs:
             version: fotan-1.2
           - project: lumnetwork
             version: v1.0.5
-          - project: nomic
-            version: stakenet
+          # - project: nomic
+          #   version: stakenet
           - project: osmosis
             version: v7.0.2
           - project: panacea
