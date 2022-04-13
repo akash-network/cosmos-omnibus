@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.1.0`|
+|Version|`v3.1.0`|
 |Binary|`junod`|
 |Directory|`.juno`|
 |ENV namespace|`JUNOD`|
 |Repository|`https://github.com/CosmosContracts/Juno`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-juno-v2.1.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-juno-v3.1.0`|
 
 ## Examples
 

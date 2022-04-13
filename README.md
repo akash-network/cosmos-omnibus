@@ -67,7 +67,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-gravitybridge-v1.4.1`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.17.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-impacthub-v0.17.0`|[Example](./impacthub)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-irisnet-v1.0.1`|[Example](./irisnet)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v2.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-juno-v2.1.0`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-juno-v3.1.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.16.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-kava-v0.16.1`|[Example](./kava)|
 |[kixchain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-kichain-2.0.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-konstellation-0.5.0`|[Example](./konstellation)|
@@ -76,7 +76,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v7.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-osmosis-v7.0.2`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-panacea-v2.0.2`|[Example](./panacea)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-persistence-v0.1.3`|[Example](./persistence)|
-|[regen](https://github.com/regen-network/regen-ledger)|`v2.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-regen-v3.0.0`|[Example](./regen)|
+|[regen](https://github.com/regen-network/regen-ledger)|`v3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-regen-v3.0.0`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.2.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-rizon-v0.2.8`|[Example](./rizon)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-sentinel-v0.8.3`|[Example](./sentinel)|
 |[shentu](https://github.com/certikfoundation/shentu)|`v2.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-shentu-v2.2.0`|[Example](./shentu)|
