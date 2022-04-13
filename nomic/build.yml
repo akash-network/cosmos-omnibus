@@ -9,7 +9,7 @@ services:
         VERSION: eba76ebd6aac33e727c24f4a50558dbce442b823
         REPOSITORY: https://github.com/nomic-io/nomic
         NAMESPACE: TM
-        PROJECT_DIR: .nomic-stakenet
+        PROJECT_DIR: .nomic-stakenet-2
         BASE_IMAGE: rustlang/rust:nightly
         INSTALL_PACKAGES: build-essential libssl-dev pkg-config clang
         BUILD_CMD: cargo install --locked --path .
@@ -27,4 +27,4 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.nomic-stakenet
+      - ./node-data:/root/.nomic-stakenet-2

@@ -4,7 +4,7 @@
 |---|---|
 |Version|`eba76ebd6aac33e727c24f4a50558dbce442b823`|
 |Binary|`nomic`|
-|Directory|`.nomic-stakenet`|
+|Directory|`.nomic-stakenet-2`|
 |ENV namespace|`TM`|
 |Repository|`https://github.com/nomic-io/nomic`|
 |Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-nomic-stakenet`|
