@@ -32,7 +32,7 @@ jobs:
           - project: comdex
             version: v0.1.1
           - project: cosmoshub
-            version: v6.0.3
+            version: v7.0.1
           - project: cronos
             version: v0.6.5
           - project: cryptoorgchain
