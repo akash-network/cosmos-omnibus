@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-decentr-v1.5.7
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-decentr-v1.5.7
     env:
       - MONIKER=node_1
       - VALIDATE_GENESIS=0
