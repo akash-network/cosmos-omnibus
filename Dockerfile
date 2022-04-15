@@ -1,6 +1,6 @@
 ARG BUILD_IMAGE=default
 ARG BUILD_METHOD=source
-ARG GOLANG_VERSION=1.16-buster
+ARG GOLANG_VERSION=1.17-buster
 ARG BASE_IMAGE=golang:${GOLANG_VERSION}
 
 #
@@ -8,7 +8,7 @@ ARG BASE_IMAGE=golang:${GOLANG_VERSION}
 #
 FROM ${BASE_IMAGE} AS build_base
 
-ARG PROJECT=akash
+ARG PROJECT
 ARG PROJECT_BIN=$PROJECT
 ARG INSTALL_PACKAGES
 
@@ -17,12 +17,20 @@ RUN apt-get update && \
   apt-get clean
 
 #
+# Optional build environment when libwasmvm.so is required
+#
+FROM build_base AS build_wasmvm
+
+ARG WASMVM_VERSION=main
+ADD https://raw.githubusercontent.com/CosmWasm/wasmvm/$WASMVM_VERSION/api/libwasmvm.so /lib/libwasmvm.so
+
+#
 # Default build from source method
 #
 FROM build_base AS build_source
 
-ARG VERSION=v0.14.1
-ARG REPOSITORY=https://github.com/ovrclk/akash.git
+ARG VERSION
+ARG REPOSITORY
 ARG BUILD_CMD="make install"
 
 RUN git clone $REPOSITORY /data
@@ -57,7 +65,7 @@ RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
 #
 FROM debian:buster AS default
 
-ARG PROJECT=akash
+ARG PROJECT
 ARG PROJECT_BIN=$PROJECT
 
 COPY --from=build /bin/$PROJECT_BIN /bin/$PROJECT_BIN
@@ -84,14 +92,14 @@ RUN apt-get update && \
   apt-get install --no-install-recommends --assume-yes ca-certificates curl wget file unzip gnupg2 jq && \
   apt-get clean
 
-ARG PROJECT=akash
-ARG PROJECT_BIN=$PROJECT
-ARG PROJECT_DIR=.$PROJECT_BIN
-ARG CONFIG_DIR=config
-ARG START_CMD="$PROJECT_BIN start"
+ARG PROJECT
+ARG PROJECT_BIN
+ARG PROJECT_DIR
+ARG CONFIG_DIR
+ARG START_CMD
 ARG INIT_CMD
-ARG VERSION=v0.14.1
-ARG REPOSITORY=https://github.com/ovrclk/akash.git
+ARG VERSION
+ARG REPOSITORY
 ARG NAMESPACE
 
 ENV PROJECT=$PROJECT
