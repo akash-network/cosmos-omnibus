@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-|Version|`eba76ebd6aac33e727c24f4a50558dbce442b823`|
+|Version|`1db00ff8b826b9b1ab5ad1ec2ccacfaca3e0d788`|
 |Binary|`nomic`|
 |Directory|`.nomic-stakenet-2`|
 |ENV namespace|`TM`|
