@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.29-nomic-1db00ff8b826b9b1ab5ad1ec2ccacfaca3e0d788
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-nomic-1db00ff8b826b9b1ab5ad1ec2ccacfaca3e0d788
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nomic/chain.json
