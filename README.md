@@ -53,7 +53,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.10.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-bitsong-v0.10.0`|[Example](./bitsong)|
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-bostrom-v0.2.0`|[Example](./bostrom)|
 |[cerberus](https://github.com/cerberus-zone/cerberus)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-cerberus-v1.0.1`|[Example](./cerberus)|
-|[cheqd](https://github.com/cheqd/cheqd-node)|`v0.4.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-cheqd-v0.4.0`|[Example](./cheqd)|
+|[cheqd](https://github.com/cheqd/cheqd-node)|`v0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-cheqd-v0.5.0`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v1.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-chihuahua-v1.1.1`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v0.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-comdex-v0.1.1`|[Example](./comdex)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v7.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-cosmoshub-v7.0.1`|[Example](./cosmoshub)|
