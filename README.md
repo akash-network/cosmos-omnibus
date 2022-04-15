@@ -61,7 +61,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.1.1-croeseid`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-cryptoorgchain-v3.1.1-croeseid`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.5.7`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-decentr-v1.5.7`|[Example](./decentr)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-desmos-v2.3.1`|[Example](./desmos)|
-|[dig](https://github.com/notional-labs/dig)|`v1.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-dig-v1.1.0`|[Example](./dig)|
+|[dig](https://github.com/notional-labs/dig)|`v2.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-dig-v2.0.1`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-emoney-v1.1.4`|[Example](./emoney)|
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.9.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-fetchhub-v0.9.1`|[Example](./fetchhub)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-gravitybridge-v1.4.1`|[Example](./gravitybridge)|

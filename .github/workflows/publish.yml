@@ -42,7 +42,7 @@ jobs:
           - project: desmos
             version: v2.3.1
           - project: dig
-            version: v1.1.0
+            version: v2.0.1
           - project: emoney
             version: v1.1.4
           - project: fetchhub
