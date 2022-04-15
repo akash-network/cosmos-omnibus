@@ -8,11 +8,11 @@ services:
         PROJECT: cheqd
         PROJECT_BIN: cheqd-noded
         PROJECT_DIR: .cheqdnode
-        VERSION: v0.4.0
+        VERSION: v0.5.0
         REPOSITORY: https://github.com/cheqd/cheqd-node
         NAMESPACE: CHEQD
-        GOLANG_VERSION: 1.17-buster
-        BUILD_METHOD: starport
+        BUILD_IMAGE: binary
+        BINARY_URL: https://github.com/cheqd/cheqd-node/releases/download/v0.5.0/cheqd-node_0.5.0.tar.gz
     ports:
       - '26656:26656'
       - '26657:26657'
