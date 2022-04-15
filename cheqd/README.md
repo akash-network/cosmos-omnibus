@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.4.0`|
+|Version|`v0.5.0`|
 |Binary|`cheqd-noded`|
 |Directory|`.cheqdnode`|
 |ENV namespace|`CHEQD`|
 |Repository|`https://github.com/cheqd/cheqd-node`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-cheqd-v0.4.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-cheqd-v0.5.0`|
 
 ## Examples
 
