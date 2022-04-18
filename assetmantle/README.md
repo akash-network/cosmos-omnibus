@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.3.0-RC`|
+|Version|`v0.3.0`|
 |Binary|`mantleNode`|
 |Directory|`.mantleNode`|
 |ENV namespace|`MANTLENODE`|
 |Repository|`https://github.com/AssetMantle/node`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-assetmantle-v0.3.0-RC`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-assetmantle-v0.3.0`|
 
 ## Examples
 
