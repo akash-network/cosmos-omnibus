@@ -6,7 +6,7 @@ services:
       context: ../
       args:
         PROJECT: akash
-        VERSION: v0.16.0
+        VERSION: v0.16.1
         REPOSITORY: https://github.com/ovrclk/akash
     ports:
       - '26656:26656'
