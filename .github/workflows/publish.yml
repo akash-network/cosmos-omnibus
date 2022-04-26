@@ -12,7 +12,7 @@ jobs:
       matrix:
         include:
           - project: akash
-            version: v0.14.1
+            version: v0.16.0
           - project: agoric
             version: agoric-3.1
           - project: bandchain

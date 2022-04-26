@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-akash-v0.14.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-akash-v0.16.0
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -12,6 +12,7 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json
       - MINIMUM_GAS_PRICES=0.025uakt
-      - FASTSYNC_VERSION=v2
+      - FASTSYNC_VERSION=v0
+      - VALIDATE_GENESIS=0
     volumes:
       - ./node-data:/root/.akash
