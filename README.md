@@ -46,7 +46,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[akash](https://github.com/ovrclk/akash)|`v0.16.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-akash-v0.16.1`|[Example](./akash)|
+|[akash](https://github.com/ovrclk/akash)|`v0.16.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-akash-v0.16.2`|[Example](./akash)|
 |[agoric](https://github.com/Agoric/ag0)|`agoric-3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-agoric-agoric-3.1`|[Example](./agoric)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.3.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-bandchain-v2.3.3`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v.1.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-bitcanna-v.1.3.1`|[Example](./bitcanna)|
