@@ -6,8 +6,8 @@ services:
       context: ../
       args:
         PROJECT: akash
-        VERSION: v0.14.1
-        BUILD_IMAGE: ghcr.io/ovrclk/akash:0.12.1
+        VERSION: v0.16.3
+        REPOSITORY: https://github.com/ovrclk/akash
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -17,7 +17,8 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       # - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json
       - MINIMUM_GAS_PRICES=0.025uakt
-      - FASTSYNC_VERSION=v2
+      - FASTSYNC_VERSION=v0
+      - VALIDATE_GENESIS=0
     env_file:
       - ../.env
     volumes:
