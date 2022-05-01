@@ -8,7 +8,7 @@ services:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/chain.json
       - VALIDATE_GENESIS=0
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/osmosis/snapshot.json
+      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/osmosis/pruned/snapshot.json
     expose:
       - port: 26657
         as: 80

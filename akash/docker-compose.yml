@@ -10,7 +10,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json
+      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
       - VALIDATE_GENESIS=0

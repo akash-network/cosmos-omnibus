@@ -106,13 +106,13 @@ These snapshots are created using Omnibus nodes running on Akash, as shown in th
 
 |Chain|Snapshot JSON|
 |---|---|
-|`akashnet-2`|https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json|
+|`akashnet-2`|https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json|
 |`bitcanna-1`|https://cosmos-snapshots.s3.filebase.com/bitcanna/snapshot.json|
 |`comdex-1`|https://cosmos-snapshots.s3.filebase.com/comdex/snapshot.json|
 |`desmos-mainnet`|https://cosmos-snapshots.s3.filebase.com/desmos/snapshot.json|
 |`gravity-bridge-2`|https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json|
 |`juno-1`|https://cosmos-snapshots.s3.filebase.com/juno/snapshot.json|
-|`osmosis-1`|https://cosmos-snapshots.s3.filebase.com/osmosis/snapshot.json|
+|`osmosis-1`|https://cosmos-snapshots.s3.filebase.com/osmosis/pruned/snapshot.json|
 |`sentinelhub-2`|https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json|
 |`sifchain-1`|https://cosmos-snapshots.s3.filebase.com/sifchain/snapshot.json|
 
@@ -204,7 +204,7 @@ This can be from a specific URL, a [snapshot.json](#snapshot-backup), or from a 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
 |`SNAPSHOT_URL`|A URL to a `.tar` or `.tar.gz` file| |`http://135.181.60.250/akash/akashnet-2_2021-06-16.tar`|
-|`SNAPSHOT_JSON`|A URL to a `snapshot.json` as detailed in [Snapshot backup](#snapshot-backup)| |`https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json`|
+|`SNAPSHOT_JSON`|A URL to a `snapshot.json` as detailed in [Snapshot backup](#snapshot-backup)| |`https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json`|
 |`SNAPSHOT_FORMAT`|The format of the snapshot file|`tar.gz`|`tar`|
 |`SNAPSHOT_BASE_URL`|A base URL to a directory containing backup files| |`http://135.181.60.250/akash`|
 |`SNAPSHOT_PATTERN`|The pattern of the file in the `BASE_URL`|`$CHAIN_ID.*$SNAPSHOT_FORMAT`|`foobar.*tar.gz`|

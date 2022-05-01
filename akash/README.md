@@ -28,7 +28,7 @@ Akash provide daily snapshots of the Akash blockchain taken at midnight UTC.
 
 |Variable|Value|
 |---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json`|
+|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json`|
 
 ## Suggested configuration
 

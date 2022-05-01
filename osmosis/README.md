@@ -28,4 +28,4 @@ Akash provide daily snapshots of the Osmosis blockchain taken at midnight UTC.
 
 |Variable|Value|
 |---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/osmosis/snapshot.json`|
+|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/osmosis/pruned/snapshot.json`|
