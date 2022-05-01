@@ -7,7 +7,7 @@
 |Directory|`.akash`|
 |ENV namespace|`AKASH`|
 |Repository|`https://github.com/ovrclk/akash`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.31-akash-v0.16.3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.0-akash-v0.16.3`|
 
 ## Examples
 
@@ -28,7 +28,7 @@ Akash provide daily snapshots of the Akash blockchain taken at midnight UTC.
 
 |Variable|Value|
 |---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json`|
+|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json`|
 
 ## Suggested configuration
 
