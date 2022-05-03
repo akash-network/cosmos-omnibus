@@ -38,7 +38,7 @@ jobs:
           - project: cronos
             version: v0.6.5
           - project: cryptoorgchain
-            version: v3.1.1-croeseid
+            version: v3.3.3
           - project: decentr
             version: v1.5.7
           - project: desmos
