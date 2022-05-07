@@ -41,6 +41,8 @@ jobs:
             version: v3.1.1-croeseid
           - project: decentr
             version: v1.5.7
+          - project: defund
+            version: v0.0.2
           - project: desmos
             version: v2.3.1
           - project: dig
