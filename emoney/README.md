@@ -7,7 +7,7 @@
 |Directory|`.emd`|
 |ENV namespace|`EMD`|
 |Repository|`https://github.com/e-money/em-ledger`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.0-emoney-v1.1.4`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-emoney-v1.1.4`|
 
 ## Examples
 
