@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v3.1.1-croeseid`|
+|Version|`v3.3.3`|
 |Binary|`chain-maind`|
 |Directory|`.chain-maind`|
 |ENV namespace|`CHAIN_MAIND`|
 |Repository|`https://github.com/crypto-org-chain/chain-main`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.0-cryptoorgchain-v3.1.1-croeseid`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.0-cryptoorgchain-v3.3.3`|
 
 ## Examples
 
