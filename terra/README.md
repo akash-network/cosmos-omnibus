@@ -21,3 +21,12 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/chain.json`|
+
+## Snapshot restore
+
+ChainLayer provide snapshots as part of [their Quicksync service](https://quicksync.io/networks/terra.html).
+
+|Variable|Value|
+|---|---|
+|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/terra.json`|
+|`SNAPSHOT_PRUNING`|`pruned`|
