@@ -29,11 +29,3 @@ Akash provide daily snapshots of the Sentinel blockchain taken at midnight UTC.
 |Variable|Value|
 |---|---|
 |`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json`|
-
-## Suggested configuration
-
-The validate-genesis command fails for v0.8.3 so this should be disabled for now
-
-|Variable|Value|
-|---|---|
-|`VALIDATE_GENESIS`|`0`|

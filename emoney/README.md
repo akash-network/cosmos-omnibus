@@ -21,11 +21,3 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/chain.json`|
-
-## Suggested configuration
-
-e-Money does not support the validate-genesis command so this should be disabled
-
-|Variable|Value|
-|---|---|
-|`VALIDATE_GENESIS`|`0`|

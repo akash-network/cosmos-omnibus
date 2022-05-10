@@ -15,7 +15,6 @@ services:
       - '26657:26657'
       - '1317:1317'
     environment:
-      - VALIDATE_GENESIS=0
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json
       # - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/comdex/snapshot.json

@@ -18,7 +18,6 @@ services:
       # - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
-      - VALIDATE_GENESIS=0
     env_file:
       - ../.env
     volumes:
