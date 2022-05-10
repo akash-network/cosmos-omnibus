@@ -18,6 +18,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/chain.json
+      # - SNAPSHOT_QUICKSYNC=https://quicksync.io/terra.json
     env_file:
       - ../.env
     volumes:

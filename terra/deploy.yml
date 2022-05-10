@@ -7,6 +7,7 @@ services:
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/chain.json
+      - SNAPSHOT_QUICKSYNC=https://quicksync.io/terra.json
     expose:
       - port: 26657
         as: 80
