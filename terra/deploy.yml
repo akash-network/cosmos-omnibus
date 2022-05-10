@@ -23,11 +23,11 @@ profiles:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 2Gi
+          size: 16Gi
         storage:
-          size: 120Gi
+          size: 300Gi
   placement:
     dcloud:
       attributes:
