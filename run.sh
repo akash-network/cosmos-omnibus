@@ -161,15 +161,14 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   fi
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_JSON}" ]; then
-    SNAPSHOT_METADATA=$(curl -s $SNAPSHOT_JSON)
-    SNAPSHOT_URL="$(echo $SNAPSHOT_METADATA | jq -r .latest)"
+    SNAPSHOT_URL="$(curl -s $SNAPSHOT_JSON | jq -r .latest)"
   fi
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_QUICKSYNC}" ]; then
     SNAPSHOT_PRUNING="${SNAPSHOT_PRUNING:-pruned}"
     SNAPSHOT_PATH="data"
     SNAPSHOT_FORMAT="lz4"
-    SNAPSHOT_URL=`curl $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
+    SNAPSHOT_URL=`curl -s $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
   fi
 
   if [ -n "${SNAPSHOT_URL}" ]; then
