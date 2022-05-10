@@ -153,6 +153,7 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chai
 |`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON| |`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json`
 |`DOWNLOAD_GENESIS`|Force download of genesis file. If unset the node will only download if the genesis file is missing| |`1`|
 |`VALIDATE_GENESIS`|Set to 0 to disable validation of genesis file|`1`|`0`
+|`ADDRBOOK_URL`|URL to an addrbook.json file| |`https://quicksync.io/addrbook.terra.json`
 
 ### P2P
 

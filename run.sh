@@ -151,6 +151,12 @@ if [ -n "$KEY_PATH" ]; then
   backup_key "priv_validator_key.json"
 fi
 
+# Addressbook
+if [ -n "$ADDRBOOK_URL" ]; then
+  echo "Downloading addrbook from $ADDRBOOK_URL..."
+  curl -sfL $ADDRBOOK_URL > $CONFIG_PATH/addrbook.json
+fi
+
 # Snapshot
 if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
