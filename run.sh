@@ -195,7 +195,7 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
 
   mkdir -p $CONFIG_PATH
-  mv genesis.json $CONFIG_PATH/genesis.json
+  cp genesis.json $CONFIG_PATH/genesis.json
 fi
 
 # Validate genesis
