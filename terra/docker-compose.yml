@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-terra-v0.5.9
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-terra-v0.5.18
     ports:
       - '26656:26656'
       - '26657:26657'

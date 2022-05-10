@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: terra
         PROJECT_BIN: terrad
-        VERSION: v0.5.9
+        VERSION: v0.5.18
         REPOSITORY: https://github.com/terra-money/core.git
         NAMESPACE: TERRAD
         PROJECT_DIR: .terra
