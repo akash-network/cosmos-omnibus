@@ -1,4 +1,3 @@
 # Examples
 
-- [Load Balanced RPC Nodes](./load-balanced-rpc-nodes)
-- [Validator and Public Sentries](./validator-and-public-sentries)
+See the directories above for some specific use cases for Cosmos Omnibus.

@@ -24,7 +24,7 @@ export START_CMD="${START_CMD:-$PROJECT_BIN start}"
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
-export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
+export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON || -n $SNAPSHOT_QUICKSYNC ) && ! -f "$PROJECT_ROOT/data/priv_validator_state.json" ]]; then
   export DOWNLOAD_SNAPSHOT="1"
 fi
@@ -195,7 +195,7 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
 
   mkdir -p $CONFIG_PATH
-  cp genesis.json $CONFIG_PATH/genesis.json
+  mv genesis.json $CONFIG_PATH/genesis.json
 fi
 
 # Validate genesis
