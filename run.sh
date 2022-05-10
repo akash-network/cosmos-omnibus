@@ -157,6 +157,18 @@ if [ -n "$ADDRBOOK_URL" ]; then
   curl -sfL $ADDRBOOK_URL > $CONFIG_PATH/addrbook.json
 fi
 
+# Download genesis
+if [ "$DOWNLOAD_GENESIS" == "1" ]; then
+  echo "Downloading genesis $GENESIS_URL"
+  curl -sfL $GENESIS_URL > genesis.json
+  file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
+  file genesis.json | grep -q 'tar archive' && mv genesis.json genesis.json.tar && tar -xf genesis.json.tar && rm genesis.json.tar
+  file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
+
+  mkdir -p $CONFIG_PATH
+  mv genesis.json $CONFIG_PATH/genesis.json
+fi
+
 # Snapshot
 if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
@@ -190,18 +202,6 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   else
     echo "Snapshot URL not found"
   fi
-fi
-
-# Download genesis
-if [ "$DOWNLOAD_GENESIS" == "1" ]; then
-  echo "Downloading genesis $GENESIS_URL"
-  curl -sfL $GENESIS_URL > genesis.json
-  file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
-  file genesis.json | grep -q 'tar archive' && mv genesis.json genesis.json.tar && tar -xf genesis.json.tar && rm genesis.json.tar
-  file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
-
-  mkdir -p $CONFIG_PATH
-  cp genesis.json $CONFIG_PATH/genesis.json
 fi
 
 # Validate genesis
