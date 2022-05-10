@@ -10,6 +10,5 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/irisnet/chain.json
-      - VALIDATE_GENESIS=0
     volumes:
       - ./node-data:/root/.iris

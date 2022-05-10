@@ -9,7 +9,6 @@ services:
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      - VALIDATE_GENESIS=0
       # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/defund/chain.json
       - CHAIN_ID=defund-private-1
       - P2P_SEEDS=8e1590558d8fede2f8c9405b7ef550ff455ce842@51.79.30.9:26656,bfffaf3b2c38292bd0aa2a3efe59f210f49b5793@51.91.208.71:26656,106c6974096ca8224f20a85396155979dbd2fb09@198.244.141.176:26656

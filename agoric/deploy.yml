@@ -6,7 +6,6 @@ services:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.2-agoric-agoric-3.1
     env:
       - MONIKER=node_1
-      - VALIDATE_GENESIS=0
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/chain.json
     expose:
       - port: 26657

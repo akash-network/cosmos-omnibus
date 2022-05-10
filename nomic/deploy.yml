@@ -7,7 +7,6 @@ services:
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nomic/chain.json
-      - VALIDATE_GENESIS=0
     expose:
       - port: 26657
         as: 80

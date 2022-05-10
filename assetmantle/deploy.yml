@@ -6,7 +6,6 @@ services:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.2-assetmantle-v0.3.0
     env:
       - MONIKER=node_1
-      - VALIDATE_GENESIS=0
       #- CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/assetmantle/chain.json
       - CHAIN_ID=mantle-1
       - GENESIS_URL=https://github.com/AssetMantle/genesisTransactions/mantle-1/final_genesis.json?raw=true

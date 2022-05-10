@@ -29,11 +29,3 @@ Akash provide daily snapshots of the Sifchain blockchain taken at midnight UTC.
 |Variable|Value|
 |---|---|
 |`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/sifchain/snapshot.json`|
-
-## Suggested configuration
-
-The validate-genesis command fails for betanet-0.9.12 so this should be disabled for now
-
-|Variable|Value|
-|---|---|
-|`VALIDATE_GENESIS`|`0`|
