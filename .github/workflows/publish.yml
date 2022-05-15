@@ -86,7 +86,7 @@ jobs:
           - project: shentu
             version: v2.2.0
           - project: sifchain
-            version: v0.13.1
+            version: v0.13.2
           - project: sommelier
             version: v3.1.0
           - project: stargaze
