@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: v7.2.1
+        VERSION: v8.0.0
         REPOSITORY: https://github.com/osmosis-labs/osmosis
         NAMESPACE: OSMOSISD
     ports:
