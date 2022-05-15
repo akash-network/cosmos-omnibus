@@ -7,7 +7,7 @@
 |Directory|`.agoric`|
 |ENV namespace|`AGORIC`|
 |Repository|`https://github.com/Agoric/ag0/`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.3-agoric-agoric-3.1`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-agoric-agoric-3.1`|
 
 ## Examples
 
