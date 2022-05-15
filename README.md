@@ -69,7 +69,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.3-gravitybridge-v1.4.1`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.17.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.3-impacthub-v0.17.0`|[Example](./impacthub)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.3-irisnet-v1.0.1`|[Example](./irisnet)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v4.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.3-juno-v4.0.0`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v5.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.3-juno-v5.0.1`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.16.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.3-kava-v0.16.1`|[Example](./kava)|
 |[kixchain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.3-kichain-2.0.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.3-konstellation-0.5.0`|[Example](./konstellation)|
