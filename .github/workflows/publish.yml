@@ -58,7 +58,7 @@ jobs:
           - project: irisnet
             version: v1.0.1
           - project: juno
-            version: v5.0.1
+            version: v6.0.0
           - project: kava
             version: v0.16.1
           - project: konstellation
