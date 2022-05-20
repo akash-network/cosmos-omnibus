@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: omniflixhub
+        PROJECT_BIN: omniflixhubd
+        PROJECT_DIR: .omniflixhub
+        VERSION: v0.4.1
+        REPOSITORY: https://github.com/Omniflix/omniflixhub
+        NAMESPACE: OMNIFLIXHUBD
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/omniflixhub/chain.json
+      - CHAIN_ID=omniflixhub-1
+      - GENESIS_URL=https://raw.githubusercontent.com/OmniFlix/mainnet/main/omniflixhub-1/genesis.json
+      - P2P_SEEDS=9d75a06ebd3732a041df459849c21b87b2c55cde@35.187.240.195:26656,19feae28207474eb9f168fff9720fd4d418df1ed@35.240.196.102:26656
+      - P2P_PERSISTENT_PEERS=2df1f357f08049ba0c0dddfffe805f0e135e54ec@35.247.185.216:26656,6198ac4bc907f6d1a78309ef58491370afc49799@34.124.195.219:26656,574b37cc6e80663e70673cbe848147c2643ca48e@35.240.187.174:26656,8313c9d55006da030588f61806b3e056a113e6e8@34.87.18.204:26656
+      - MINIMUM_GAS_PRICES=0.001uflix
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.omniflixhub
