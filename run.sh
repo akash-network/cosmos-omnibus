@@ -184,7 +184,7 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_QUICKSYNC}" ]; then
     SNAPSHOT_PRUNING="${SNAPSHOT_PRUNING:-pruned}"
-    SNAPSHOT_PATH="data"
+    SNAPSHOT_DATA_PATH="data"
     SNAPSHOT_FORMAT="lz4"
     SNAPSHOT_URL=`curl -s $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
   fi
@@ -198,7 +198,7 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
     [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
     [[ $SNAPSHOT_FORMAT = "lz4" ]] && tar_cmd="lz4 -d | tar $tar_args -" || tar_cmd="tar $tar_args -"
     wget -nv -O - $SNAPSHOT_URL | eval $tar_cmd
-    [ -n "${SNAPSHOT_PATH}" ] && mv ./${SNAPSHOT_PATH}/* ./ && rm -rf ./${SNAPSHOT_PATH}
+    [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
   else
     echo "Snapshot URL not found"
   fi
