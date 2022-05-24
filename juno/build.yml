@@ -8,9 +8,9 @@ services:
         PROJECT: juno
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
-        VERSION: v5.0.1
+        VERSION: v6.0.0
         BUILD_IMAGE: binary
-        BINARY_URL: https://github.com/CosmosContracts/juno/releases/download/v5.0.1/junod
+        BINARY_URL: https://github.com/CosmosContracts/juno/releases/download/v6.0.0/junod
     ports:
       - '26656:26656'
       - '26657:26657'
