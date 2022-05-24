@@ -5,7 +5,6 @@ services:
   validator:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-akash-v0.16.3
     env:
-    env:
       - MONIKER=validator
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
