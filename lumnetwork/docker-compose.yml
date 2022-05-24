@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-lumnetwork-v1.0.5
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-lumnetwork-v1.0.5
     ports:
       - '26656:26656'
       - '26657:26657'
