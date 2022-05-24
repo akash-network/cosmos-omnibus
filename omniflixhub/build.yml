@@ -9,7 +9,7 @@ services:
         PROJECT_BIN: omniflixhubd
         PROJECT_DIR: .omniflixhub
         VERSION: v0.4.1
-        REPOSITORY: https://github.com/Omniflix/omniflixhub
+        REPOSITORY: https://github.com/OmniFlix/omniflixhub
         NAMESPACE: OMNIFLIXHUBD
     ports:
       - '26656:26656'

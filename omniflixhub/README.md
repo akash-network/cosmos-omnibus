@@ -1,4 +1,4 @@
-# Omniflixhub
+# OmniFlix Hub
 
 | | |
 |---|---|
@@ -6,7 +6,7 @@
 |Binary|`omniflixhubd`|
 |Directory|`.omniflixhub`|
 |ENV namespace|`OMNIFLIXHUBD`|
-|Repository|`https://github.com/Omniflix/omniflixhub`|
+|Repository|`https://github.com/OmniFlix/omniflixhub`|
 |Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-omniflixhub-v0.4.1`|
 
 ## Examples
