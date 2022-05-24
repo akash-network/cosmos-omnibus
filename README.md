@@ -75,6 +75,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-konstellation-0.5.0`|[Example](./konstellation)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`fotan-1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-likecoin-fotan-1.2`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-lumnetwork-v1.0.5`|[Example](./lumnetwork)|
+|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-omniflixhub-v0.4.1`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v8.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-osmosis-v8.0.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-panacea-v2.0.2`|[Example](./panacea)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.4-persistence-v0.1.3`|[Example](./persistence)|
