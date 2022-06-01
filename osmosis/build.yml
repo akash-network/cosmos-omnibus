@@ -17,7 +17,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/chain.json
-      # - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/osmosis/pruned/snapshot.json
+      # - SNAPSHOT_QUICKSYNC=https://quicksync.io/osmosis.json
     env_file:
       - ../.env
     volumes:

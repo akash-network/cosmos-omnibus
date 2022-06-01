@@ -24,8 +24,8 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 
 ## Snapshot restore
 
-Akash provide daily snapshots of the Osmosis blockchain taken at midnight UTC.
+ChainLayer provide snapshots for Osmosis as part of their [Quicksync service](https://quicksync.io/networks/osmosis.html).
 
 |Variable|Value|
 |---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/osmosis/pruned/snapshot.json`|
+|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/osmosis.json`|

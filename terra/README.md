@@ -24,7 +24,7 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 
 ## Snapshot restore
 
-ChainLayer provide snapshots as part of [their Quicksync service](https://quicksync.io/networks/terra.html).
+ChainLayer provide snapshots for Terra as part of [their Quicksync service](https://quicksync.io/networks/terra.html).
 
 |Variable|Value|
 |---|---|

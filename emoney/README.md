@@ -21,3 +21,11 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/chain.json`|
+
+## Snapshot restore
+
+ChainLayer provide snapshots for e-Money as part of their [Quicksync service](https://quicksync.io/networks/emoney.html).
+
+|Variable|Value|
+|---|---|
+|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/emoney.json`|
