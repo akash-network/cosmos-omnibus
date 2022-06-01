@@ -10,5 +10,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/chain.json
+      - SNAPSHOT_QUICKSYNC=https://quicksync.io/cosmos.json
     volumes:
       - ./node-data:/root/.gaia

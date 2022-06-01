@@ -101,7 +101,11 @@ See the `docker-compose.yml` example file in each chain directory to run each no
 
 ## Snaphots
 
-Akash publish snapshots for the following chains, taken at 12AM UTC every day.
+Omnibus can [import chain snapshots](#snapshot-restore) from almost any location. One example is Chain Layer's [QuickSync service](https://quicksync.io).
+
+Appropriate snapshot configuration is included in most example configurations in the Omnibus repository. Check the project directories for more information.
+
+Akash also generate and publish snapshots for the following chains, taken daily or weekly depending on the size of the chain.
 
 These snapshots are created using Omnibus nodes running on Akash, as shown in the [Snapshot Backup](_examples/snapshot_backup) example.
 
@@ -113,7 +117,6 @@ These snapshots are created using Omnibus nodes running on Akash, as shown in th
 |`desmos-mainnet`|https://cosmos-snapshots.s3.filebase.com/desmos/snapshot.json|
 |`gravity-bridge-2`|https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json|
 |`juno-1`|https://cosmos-snapshots.s3.filebase.com/juno/snapshot.json|
-|`osmosis-1`|https://cosmos-snapshots.s3.filebase.com/osmosis/pruned/snapshot.json|
 |`sentinelhub-2`|https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json|
 |`sifchain-1`|https://cosmos-snapshots.s3.filebase.com/sifchain/snapshot.json|
 

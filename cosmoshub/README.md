@@ -24,4 +24,8 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 
 ## Snapshot restore
 
-Quicksync provide snapshots for Cosmos Hub at [quicksync.io](https://quicksync.io/networks/cosmos.html)
+ChainLayer provide snapshots for Cosmos Hub as part of their [Quicksync service](https://quicksync.io/networks/cosmos.html).
+
+|Variable|Value|
+|---|---|
+|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/cosmos.json`|
