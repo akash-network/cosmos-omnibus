@@ -73,6 +73,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kava](https://github.com/Kava-Labs/kava)|`v0.16.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-kava-v0.16.1`|[Example](./kava)|
 |[kixchain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-kichain-2.0.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-konstellation-0.5.0`|[Example](./konstellation)|
+|[kujira](https://github.com/Team-Kujira/core)|`0.3.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-kujira-v0.3.0`|[Example](./kujira)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`fotan-1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-likecoin-fotan-1.2`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-lumnetwork-v1.0.5`|[Example](./lumnetwork)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-omniflixhub-v0.4.1`|[Example](./omniflixhub)|
