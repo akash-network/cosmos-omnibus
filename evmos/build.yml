@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: evmos
+        PROJECT_BIN: evmosd
+        PROJECT_DIR: .evmosd
+        VERSION: v4.0.1
+        REPOSITORY: https://github.com/tharsis/evmos
+        NAMESPACE: EVMOSD
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/chain.json
+      - MINIMUM_GAS_PRICES=0aevmos
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.evmosd
