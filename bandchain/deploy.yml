@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-bandchain-v2.3.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-bandchain-v2.3.3
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/chain.json

@@ -7,7 +7,7 @@
 |Directory|`.vidulum`|
 |ENV namespace|`vidulum`|
 |Repository|`https://github.com/crypto-org-chain/vidulum`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.5-vidulum-v1.0.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-vidulum-v1.0.0`|
 
 ## Examples
 
