@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  node_1:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-seinetwork-1.0.2beta
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/seinetwork/chain.json
+      - CHAIN_ID=sei-testnet-2
+      - GENESIS_URL=https://raw.githubusercontent.com/sei-protocol/testnet/master/sei-testnet-2/genesis.json
+      - ADDRBOOK_URL=https://raw.githubusercontent.com/sei-protocol/testnet/master/sei-testnet-2/addrbook.json
+      - MINIMUM_GAS_PRICES=0usei
+      - P2P_PERSISTENT_PEERS=20eeb21ad447b8dad15b99209f7e7a81b7bf2a40@167.86.70.196:26656,1d9b0e81cc0a0b8558004fcb75f8a2bd83f4daa9@46.101.207.157:26656 
+    volumes:
+      - ./node-data:/root/.sei
