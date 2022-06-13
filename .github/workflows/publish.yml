@@ -38,7 +38,7 @@ jobs:
           - project: cosmoshub
             version: v7.0.1
           - project: cronos
-            version: v0.6.5
+            version: v0.7.0
           - project: cryptoorgchain
             version: v3.3.3
           - project: decentr
