@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 10
+      max-parallel: 20
       matrix:
         project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
 
