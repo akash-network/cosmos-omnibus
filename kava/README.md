@@ -7,7 +7,7 @@
 |Directory|`.kava`|
 |ENV namespace|`KA`|
 |Repository|`https://github.com/Kava-Labs/kava`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-kava-v0.16.1`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-kava-v0.16.1`|
 
 ## Examples
 

@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-thorchain-chaosnet-multichain
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-thorchain-chaosnet-multichain
     ports:
       - '1317:1317' # api
       - '27146:27146' # p2p
