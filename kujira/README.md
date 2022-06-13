@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.3.0`|
+|Version|`v0.4.0`|
 |Binary|`kujirad`|
 |Directory|`.kujira`|
 |ENV namespace|`KUJIRAD`|
 |Repository|`https://github.com/Team-Kujira/core`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-kujira-v0.3.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-kujira-v0.4.0`|
 
 ## Examples
 
