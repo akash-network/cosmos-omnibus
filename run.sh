@@ -89,7 +89,7 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 [ -n "$PRUNING" ] && export "${NAMESPACE}_PRUNING"=$PRUNING
 
 # Polkachu
-if [[ -n "$P2P_POLACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
+if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
   POLKACHU_CHAIN=`curl -s https://polkachu.com/api/v1/chains | jq -r --arg CHAIN_ID "$CHAIN_ID" 'first(.[] | select(.chain_id==$CHAIN_ID))'`
   if [ -z "$POLKACHU_CHAIN" ]; then
     echo "Polkachu does not support this chain"
