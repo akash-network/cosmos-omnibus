@@ -124,6 +124,7 @@ if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" 
         export POLKACHU_SNAPSHOT=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint') | jq -r '.snapshot.url'`
         export SNAPSHOT_URL=$POLKACHU_SNAPSHOT
         export SNAPSHOT_FORMAT=lz4
+        export SNAPSHOT_DATA_PATH=data
       else
         echo "Polkachu snapshot is not active for this chain"
       fi
