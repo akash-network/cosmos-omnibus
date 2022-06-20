@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .cht
         VERSION: v.1.1.0
         REPOSITORY: https://github.com/ChronicNetwork/cht
-        NAMESPACE: BCNAD
+        NAMESPACE: CHTD
     ports:
       - '26656:26656'
       - '26657:26657'
