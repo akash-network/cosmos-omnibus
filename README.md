@@ -72,7 +72,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-irisnet-v1.0.1`|[Example](./irisnet)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v6.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-juno-v6.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.16.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-kava-v0.16.1`|[Example](./kava)|
-|[kixchain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-kichain-2.0.0`|[Example](./kichain)|
+|[kixchain](https://github.com/KiFoundation/ki-tools)|`3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-kichain-3.0.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-konstellation-0.5.0`|[Example](./konstellation)|
 |[kujira](https://github.com/Team-Kujira/core)|`v0.4.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-kujira-v0.4.0`|[Example](./kujira)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`fotan-1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-likecoin-fotan-1.2`|[Example](./likecoin)|
