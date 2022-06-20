@@ -25,17 +25,6 @@ export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
-if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON || -n $SNAPSHOT_QUICKSYNC ) && ! -f "$PROJECT_ROOT/data/priv_validator_state.json" ]]; then
-  export DOWNLOAD_SNAPSHOT="1"
-fi
-
-if [[ -z $DOWNLOAD_GENESIS && -n $GENESIS_URL && ! -f "$CONFIG_PATH/genesis.json" ]]; then
-  export DOWNLOAD_GENESIS="1"
-fi
-
-if [[ -z $INIT_CONFIG && ! -d "$CONFIG_PATH" ]]; then
-  export INIT_CONFIG="1"
-fi
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
 
@@ -99,9 +88,52 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 [ -n "$MINIMUM_GAS_PRICES" ] && export "${NAMESPACE}_MINIMUM_GAS_PRICES"=$MINIMUM_GAS_PRICES
 [ -n "$PRUNING" ] && export "${NAMESPACE}_PRUNING"=$PRUNING
 
+# Polkachu
+if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
+  POLKACHU_CHAIN=`curl -s https://polkachu.com/api/v1/chains | jq -r --arg CHAIN_ID "$CHAIN_ID" 'first(.[] | select(.chain_id==$CHAIN_ID))'`
+  if [ -z "$POLKACHU_CHAIN" ]; then
+    echo "Polkachu does not support this chain"
+  else
+    [ "$DEBUG" == "1" ] && echo $POLKACHU_CHAIN
+    # Polkachu statesync
+    if [ -n "$STATESYNC_POLKACHU" ]; then
+      export POLKACHU_STATESYNC_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.state_sync.active')
+      if [ $POLKACHU_STATESYNC_ENABLED = true ]; then
+        export POLKACHU_RPC_SERVER=$(echo $POLKACHU_CHAIN | jq -r '.state_sync.url')
+        export STATESYNC_RPC_SERVERS="$POLKACHU_RPC_SERVER,$POLKACHU_RPC_SERVER"
+      else
+        echo "Polkachu statesync is not active for this chain"
+      fi
+    fi
+    
+    # Polkachu live peers
+    if [ -n "$P2P_POLKACHU" ]; then
+      export POLKACHU_PEERS_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.live_peers.active')
+      if [ $POLKACHU_PEERS_ENABLED ]; then
+        export POLKACHU_PEERS=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.live_peers.endpoint') | jq -r '.live_peers | join(",")'`
+        export P2P_PERSISTENT_PEERS="$POLKACHU_PEERS"
+      else
+        echo "Polkachu live peers is not active for this chain"
+      fi
+    fi
+
+    # Polkachu snapshot
+    if [ -n "$SNAPSHOT_POLKACHU" ]; then
+      export POLKACHU_SNAPSHOT_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.snapshot.active')
+      if [ $POLKACHU_SNAPSHOT_ENABLED ]; then
+        export POLKACHU_SNAPSHOT=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint') | jq -r '.snapshot.url'`
+        export SNAPSHOT_URL=$POLKACHU_SNAPSHOT
+        export SNAPSHOT_FORMAT=lz4
+      else
+        echo "Polkachu snapshot is not active for this chain"
+      fi
+    fi
+  fi
+fi
+
 # Peers
-[ -n "$P2P_SEEDS" ] && export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS}"
-[ -n "$P2P_PERSISTENT_PEERS" ] && export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS}
+[ -n "$P2P_SEEDS" ] && [ "$P2P_SEEDS" != '0' ] && export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS}"
+[ -n "$P2P_PERSISTENT_PEERS" ] && [ "$P2P_PERSISTENT_PEERS" != '0' ] && export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS}
 
 # Statesync
 if [ -n "$STATESYNC_SNAPSHOT_INTERVAL" ]; then
@@ -115,12 +147,24 @@ if [ -n "$STATESYNC_RPC_SERVERS" ]; then
   STATESYNC_TRUSTED_NODE=${STATESYNC_TRUSTED_NODE:-${rpc_servers[0]}}
   if [ -n "$STATESYNC_TRUSTED_NODE" ]; then
     LATEST_HEIGHT=$(curl -s $STATESYNC_TRUSTED_NODE/block | jq -r .result.block.header.height)
-    BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000))
+    BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000))
     TRUST_HASH=$(curl -s "$STATESYNC_TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
     export "${NAMESPACE}_STATESYNC_TRUST_HEIGHT=${STATESYNC_TRUST_HEIGHT:-$BLOCK_HEIGHT}"
     export "${NAMESPACE}_STATESYNC_TRUST_HASH=${STATESYNC_TRUST_HASH:-$TRUST_HASH}"
     export "${NAMESPACE}_STATESYNC_TRUST_PERIOD=${STATESYNC_TRUST_PERIOD:-168h0m0s}"
   fi
+fi
+
+if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON || -n $SNAPSHOT_QUICKSYNC ) && ! -f "$PROJECT_ROOT/data/priv_validator_state.json" ]]; then
+  export DOWNLOAD_SNAPSHOT="1"
+fi
+
+if [[ -z $DOWNLOAD_GENESIS && -n $GENESIS_URL && ! -f "$CONFIG_PATH/genesis.json" ]]; then
+  export DOWNLOAD_GENESIS="1"
+fi
+
+if [[ -z $INIT_CONFIG && ! -d "$CONFIG_PATH" ]]; then
+  export INIT_CONFIG="1"
 fi
 
 [ "$DEBUG" == "1" ] && printenv
