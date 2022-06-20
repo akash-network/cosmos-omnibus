@@ -22,10 +22,11 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/chain.json`|
 
-## Snapshot restore
+## ChainLayer Quicksync
 
 ChainLayer provide snapshots for e-Money as part of their [Quicksync service](https://quicksync.io/networks/emoney.html).
 
 |Variable|Value|
 |---|---|
 |`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/emoney.json`|
+|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.emoney.json`|

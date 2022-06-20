@@ -22,10 +22,14 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/chain.json`|
 
-## Snapshot restore
+## Polkachu Chain Services
 
-Akash provide daily snapshots of the GravityBridge blockchain taken at midnight UTC.
+[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, statesync and pruned snapshots.
+
+Note you should choose between statesync and snapshot bootstrapping, snapshot will take precedence.
 
 |Variable|Value|
 |---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json`|
+|`P2P_POLKACHU`|`1`|
+|`SNAPSHOT_POLKACHU`|`1`|
+|`STATESYNC_POLKACHU`|`1`|

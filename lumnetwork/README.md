@@ -22,10 +22,11 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/lumnetwork/chain.json`|
 
-## Snapshot restore
+## ChainLayer Quicksync
 
 ChainLayer provide snapshots for Lum Network as part of their [Quicksync service](https://quicksync.io/networks/lum.html).
 
 |Variable|Value|
 |---|---|
 |`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/lum.json`|
+|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.lum.json`|

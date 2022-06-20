@@ -18,7 +18,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/chronicnetwork/chain.json
-      # - SNAPSHOT_JSON=
     env_file:
       - ../.env
     volumes:
