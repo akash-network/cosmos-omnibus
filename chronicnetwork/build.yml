@@ -8,7 +8,7 @@ services:
         PROJECT: chronicnetwork
         PROJECT_BIN: chtd
         PROJECT_DIR: .cht
-        VERSION: v.1.1.0
+        VERSION: v1.1.0
         REPOSITORY: https://github.com/ChronicNetwork/cht
         NAMESPACE: CHTD
     ports:

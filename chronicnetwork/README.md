@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v.1.1.0`|
+|Version|`v1.1.0`|
 |Binary|`chtd`|
 |Directory|`.cht`|
 |ENV namespace|`CHTD`|
 |Repository|`https://github.com/ChronicNetwork/cht`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-chronicnetwork-v.1.1.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.7-chronicnetwork-v1.1.0`|
 
 ## Examples
 
