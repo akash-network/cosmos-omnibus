@@ -66,7 +66,7 @@ jobs:
           - project: kava
             version: v0.16.1
           - project: kichain
-            version: 2.0.0
+            version: 3.0.0
           - project: konstellation
             version: v0.5.0
           - project: kujira
