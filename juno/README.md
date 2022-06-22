@@ -7,7 +7,7 @@
 |Directory|`.juno`|
 |ENV namespace|`JUNOD`|
 |Repository|`https://github.com/CosmosContracts/Juno`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.0-juno-v6.0.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.2-juno-v6.0.0`|
 
 ## Examples
 
