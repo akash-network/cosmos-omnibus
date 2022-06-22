@@ -83,10 +83,10 @@ profiles:
       pricing:
         node1:
           denom: uakt
-          amount: 100
+          amount: 1000
         node2:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node1:

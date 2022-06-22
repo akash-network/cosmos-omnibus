@@ -46,7 +46,7 @@ profiles:
       pricing:
         validator:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   validator:
