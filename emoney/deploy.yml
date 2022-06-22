@@ -22,7 +22,7 @@ profiles:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
           size: 8Gi
         storage:

@@ -21,9 +21,9 @@ profiles:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 4Gi
+          size: 8Gi
         storage:
           size: 100Gi
   placement:
