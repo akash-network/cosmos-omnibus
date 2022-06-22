@@ -8,7 +8,8 @@ services:
         PROJECT: likecoin
         PROJECT_BIN: liked
         VERSION: v2.0.2
-        BUILD_IMAGE: likecoin/likecoin-chain:v2.0.2
+        REPOSITORY: https://github.com/likecoin/likecoin-chain
+        NAMESPACE: LIKED
     ports:
       - '26656:26656'
       - '26657:26657'
