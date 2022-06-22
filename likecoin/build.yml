@@ -7,8 +7,8 @@ services:
       args:
         PROJECT: likecoin
         PROJECT_BIN: liked
-        VERSION: fotan-1.2
-        BUILD_IMAGE: likecoin/likecoin-chain:fotan-1.2
+        VERSION: v2.0.2
+        BUILD_IMAGE: likecoin/likecoin-chain:v2.0.2
     ports:
       - '26656:26656'
       - '26657:26657'

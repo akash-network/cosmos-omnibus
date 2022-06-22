@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.0-likecoin-fotan-1.2
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.0-likecoin-v2.0.2
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,7 +10,5 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/likecoin/chain.json
-      - BINARY_URL=https://github.com/likecoin/likecoin-chain/releases/download/v2.0.2/likecoin-chain_2.0.2_Linux_x86_64.tar.gz
-      - BINARY_ZIP_PATH=bin/liked
     volumes:
       - ./node-data:/root/.liked
