@@ -24,11 +24,11 @@ profiles:
     node1:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 2Gi
+          size: 8Gi
         storage:
-          size: 40Gi
+          size: 100Gi
   placement:
     dcloud:
       attributes:
@@ -39,7 +39,7 @@ profiles:
       pricing:
         node1:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node1:

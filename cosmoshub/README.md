@@ -22,10 +22,23 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/chain.json`|
 
-## Snapshot restore
+## Polkachu Chain Services
+
+[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, statesync and pruned snapshots.
+
+Note you should choose between statesync and snapshot bootstrapping, snapshot will take precedence.
+
+|Variable|Value|
+|---|---|
+|`P2P_POLKACHU`|`1`|
+|`SNAPSHOT_POLKACHU`|`1`|
+|`STATESYNC_POLKACHU`|`1`|
+
+## ChainLayer Quicksync
 
 ChainLayer provide snapshots for Cosmos Hub as part of their [Quicksync service](https://quicksync.io/networks/cosmos.html).
 
 |Variable|Value|
 |---|---|
 |`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/cosmos.json`|
+|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.cosmos.json`|

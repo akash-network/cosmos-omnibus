@@ -22,7 +22,7 @@ profiles:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
           size: 8Gi
         storage:
@@ -37,7 +37,7 @@ profiles:
       pricing:
         node:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node:

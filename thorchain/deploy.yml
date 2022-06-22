@@ -25,7 +25,7 @@ profiles:
         cpu:
           units: 4
         memory:
-          size: 4Gi
+          size: 8Gi
         storage:
           size: 1024Gi #recommanded value for mainet
   placement:
@@ -38,7 +38,7 @@ profiles:
       pricing:
         node:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node:
