@@ -5,7 +5,7 @@
 |Version|`v2.2.0`|
 |Binary|`certik`|
 |Directory|`.certik`|
-|ENV namespace|`SHENTU`|
+|ENV namespace|`CERTIK`|
 |Repository|`https://github.com/certikfoundation/shentu`|
 |Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.2-shentu-v2.2.0`|
 
