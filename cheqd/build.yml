@@ -10,9 +10,7 @@ services:
         PROJECT_DIR: .cheqdnode
         VERSION: v0.5.0
         REPOSITORY: https://github.com/cheqd/cheqd-node
-        NAMESPACE: CHEQD
-        BUILD_IMAGE: binary
-        BINARY_URL: https://github.com/cheqd/cheqd-node/releases/download/v0.5.0/cheqd-node_0.5.0.tar.gz
+        NAMESPACE: CHEQD_NODED
     ports:
       - '26656:26656'
       - '26657:26657'
