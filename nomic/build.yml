@@ -23,7 +23,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nomic/chain.json
-      - VALIDATE_GENESIS=0
     env_file:
       - ../.env
     volumes:

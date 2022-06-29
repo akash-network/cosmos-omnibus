@@ -5,9 +5,9 @@
 |Version|`v2.2.0`|
 |Binary|`certik`|
 |Directory|`.certik`|
-|ENV namespace|`SHENTU`|
+|ENV namespace|`CERTIK`|
 |Repository|`https://github.com/certikfoundation/shentu`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-shentu-v2.2.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-shentu-v2.2.0`|
 
 ## Examples
 
@@ -21,3 +21,15 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/shentu/chain.json`|
+
+## Polkachu Chain Services
+
+[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, statesync and pruned snapshots.
+
+Note you should choose between statesync and snapshot bootstrapping, snapshot will take precedence.
+
+|Variable|Value|
+|---|---|
+|`P2P_POLKACHU`|`1`|
+|`SNAPSHOT_POLKACHU`|`1`|
+|`STATESYNC_POLKACHU`|`1`|

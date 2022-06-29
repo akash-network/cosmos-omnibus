@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`fotan-1.2`|
+|Version|`v2.0.2`|
 |Binary|`liked`|
 |Directory|`.liked`|
 |ENV namespace|`LIKED`|
 |Repository|`https://github.com/likecoin/likecoin-chain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-likecoin-fotan-1.2`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-likecoin-v2.0.2`|
 
 ## Examples
 

@@ -24,18 +24,7 @@ export START_CMD="${START_CMD:-$PROJECT_BIN start}"
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
-export VALIDATE_GENESIS="${VALIDATE_GENESIS:-1}"
-if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON ) && ! -d "$PROJECT_ROOT/data" ]]; then
-  export DOWNLOAD_SNAPSHOT="1"
-fi
-
-if [[ -z $DOWNLOAD_GENESIS && -n $GENESIS_URL && ! -f "$CONFIG_PATH/genesis.json" ]]; then
-  export DOWNLOAD_GENESIS="1"
-fi
-
-if [[ -z $INIT_CONFIG && ! -d "$CONFIG_PATH" ]]; then
-  export INIT_CONFIG="1"
-fi
+export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
 
@@ -99,9 +88,53 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 [ -n "$MINIMUM_GAS_PRICES" ] && export "${NAMESPACE}_MINIMUM_GAS_PRICES"=$MINIMUM_GAS_PRICES
 [ -n "$PRUNING" ] && export "${NAMESPACE}_PRUNING"=$PRUNING
 
+# Polkachu
+if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
+  POLKACHU_CHAIN=`curl -s https://polkachu.com/api/v1/chains | jq -r --arg CHAIN_ID "$CHAIN_ID" 'first(.[] | select(.chain_id==$CHAIN_ID))'`
+  if [ -z "$POLKACHU_CHAIN" ]; then
+    echo "Polkachu does not support this chain"
+  else
+    [ "$DEBUG" == "1" ] && echo $POLKACHU_CHAIN
+    # Polkachu statesync
+    if [ -n "$STATESYNC_POLKACHU" ]; then
+      export POLKACHU_STATESYNC_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.state_sync.active')
+      if [ $POLKACHU_STATESYNC_ENABLED = true ]; then
+        export POLKACHU_RPC_SERVER=$(echo $POLKACHU_CHAIN | jq -r '.state_sync.url')
+        export STATESYNC_RPC_SERVERS="$POLKACHU_RPC_SERVER,$POLKACHU_RPC_SERVER"
+      else
+        echo "Polkachu statesync is not active for this chain"
+      fi
+    fi
+    
+    # Polkachu live peers
+    if [ -n "$P2P_POLKACHU" ]; then
+      export POLKACHU_PEERS_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.live_peers.active')
+      if [ $POLKACHU_PEERS_ENABLED ]; then
+        export POLKACHU_PEERS=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.live_peers.endpoint') | jq -r '.live_peers | join(",")'`
+        export P2P_PERSISTENT_PEERS="$POLKACHU_PEERS"
+      else
+        echo "Polkachu live peers is not active for this chain"
+      fi
+    fi
+
+    # Polkachu snapshot
+    if [ -n "$SNAPSHOT_POLKACHU" ]; then
+      export POLKACHU_SNAPSHOT_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.snapshot.active')
+      if [ $POLKACHU_SNAPSHOT_ENABLED ]; then
+        export POLKACHU_SNAPSHOT=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint') | jq -r '.snapshot.url'`
+        export SNAPSHOT_URL=$POLKACHU_SNAPSHOT
+        export SNAPSHOT_FORMAT=lz4
+        export SNAPSHOT_DATA_PATH=data
+      else
+        echo "Polkachu snapshot is not active for this chain"
+      fi
+    fi
+  fi
+fi
+
 # Peers
-[ -n "$P2P_SEEDS" ] && export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS}"
-[ -n "$P2P_PERSISTENT_PEERS" ] && export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS}
+[ -n "$P2P_SEEDS" ] && [ "$P2P_SEEDS" != '0' ] && export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS}"
+[ -n "$P2P_PERSISTENT_PEERS" ] && [ "$P2P_PERSISTENT_PEERS" != '0' ] && export "${NAMESPACE}_P2P_PERSISTENT_PEERS"=${P2P_PERSISTENT_PEERS}
 
 # Statesync
 if [ -n "$STATESYNC_SNAPSHOT_INTERVAL" ]; then
@@ -115,12 +148,24 @@ if [ -n "$STATESYNC_RPC_SERVERS" ]; then
   STATESYNC_TRUSTED_NODE=${STATESYNC_TRUSTED_NODE:-${rpc_servers[0]}}
   if [ -n "$STATESYNC_TRUSTED_NODE" ]; then
     LATEST_HEIGHT=$(curl -s $STATESYNC_TRUSTED_NODE/block | jq -r .result.block.header.height)
-    BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000))
+    BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000))
     TRUST_HASH=$(curl -s "$STATESYNC_TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
     export "${NAMESPACE}_STATESYNC_TRUST_HEIGHT=${STATESYNC_TRUST_HEIGHT:-$BLOCK_HEIGHT}"
     export "${NAMESPACE}_STATESYNC_TRUST_HASH=${STATESYNC_TRUST_HASH:-$TRUST_HASH}"
     export "${NAMESPACE}_STATESYNC_TRUST_PERIOD=${STATESYNC_TRUST_PERIOD:-168h0m0s}"
   fi
+fi
+
+if [[ -z $DOWNLOAD_SNAPSHOT && ( -n $SNAPSHOT_URL || -n $SNAPSHOT_BASE_URL || -n $SNAPSHOT_JSON || -n $SNAPSHOT_QUICKSYNC ) && ! -f "$PROJECT_ROOT/data/priv_validator_state.json" ]]; then
+  export DOWNLOAD_SNAPSHOT="1"
+fi
+
+if [[ -z $DOWNLOAD_GENESIS && -n $GENESIS_URL && ! -f "$CONFIG_PATH/genesis.json" ]]; then
+  export DOWNLOAD_GENESIS="1"
+fi
+
+if [[ -z $INIT_CONFIG && ! -d "$CONFIG_PATH" ]]; then
+  export INIT_CONFIG="1"
 fi
 
 [ "$DEBUG" == "1" ] && printenv
@@ -151,31 +196,10 @@ if [ -n "$KEY_PATH" ]; then
   backup_key "priv_validator_key.json"
 fi
 
-# Snapshot
-if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
-  SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
-
-  if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
-    SNAPSHOT_PATTERN="${SNAPSHOT_PATTERN:-$CHAIN_ID.*$SNAPSHOT_FORMAT}"
-    SNAPSHOT_URL=$SNAPSHOT_BASE_URL/$(curl -s $SNAPSHOT_BASE_URL/ | egrep -o ">$SNAPSHOT_PATTERN" | tr -d ">");
-  fi
-
-  if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_JSON}" ]; then
-    SNAPSHOT_METADATA=$(curl -s $SNAPSHOT_JSON)
-    SNAPSHOT_URL="$(echo $SNAPSHOT_METADATA | jq -r .latest)"
-  fi
-
-  if [ -n "${SNAPSHOT_URL}" ]; then
-    echo "Downloading snapshot from $SNAPSHOT_URL..."
-    rm -rf $PROJECT_ROOT/data;
-    mkdir -p $PROJECT_ROOT/data;
-    cd $PROJECT_ROOT/data
-
-    [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
-    wget -nv -O - $SNAPSHOT_URL | tar $tar_args -
-  else
-    echo "Snapshot URL not found"
-  fi
+# Addressbook
+if [ -n "$ADDRBOOK_URL" ]; then
+  echo "Downloading addrbook from $ADDRBOOK_URL..."
+  curl -sfL $ADDRBOOK_URL > $CONFIG_PATH/addrbook.json
 fi
 
 # Download genesis
@@ -187,7 +211,42 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
 
   mkdir -p $CONFIG_PATH
-  cp genesis.json $CONFIG_PATH/genesis.json
+  mv genesis.json $CONFIG_PATH/genesis.json
+fi
+
+# Snapshot
+if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
+  SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
+
+  if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
+    SNAPSHOT_PATTERN="${SNAPSHOT_PATTERN:-$CHAIN_ID.*$SNAPSHOT_FORMAT}"
+    SNAPSHOT_URL=$SNAPSHOT_BASE_URL/$(curl -s $SNAPSHOT_BASE_URL/ | egrep -o ">$SNAPSHOT_PATTERN" | tr -d ">");
+  fi
+
+  if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_JSON}" ]; then
+    SNAPSHOT_URL="$(curl -s $SNAPSHOT_JSON | jq -r .latest)"
+  fi
+
+  if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_QUICKSYNC}" ]; then
+    SNAPSHOT_PRUNING="${SNAPSHOT_PRUNING:-pruned}"
+    SNAPSHOT_DATA_PATH="data"
+    SNAPSHOT_FORMAT="lz4"
+    SNAPSHOT_URL=`curl -s $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
+  fi
+
+  if [ -n "${SNAPSHOT_URL}" ]; then
+    echo "Downloading snapshot from $SNAPSHOT_URL..."
+    rm -rf $PROJECT_ROOT/data;
+    mkdir -p $PROJECT_ROOT/data;
+    cd $PROJECT_ROOT/data
+
+    [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
+    [[ $SNAPSHOT_FORMAT = "lz4" ]] && tar_cmd="lz4 -d | tar $tar_args -" || tar_cmd="tar $tar_args -"
+    wget -nv -O - $SNAPSHOT_URL | eval $tar_cmd
+    [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
+  else
+    echo "Snapshot URL not found"
+  fi
 fi
 
 # Validate genesis

@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-akash-v0.14.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-akash-v0.16.3
     env:
       - MONIKER=private_node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
@@ -29,7 +29,7 @@ services:
         to:
           - global: true
   node2:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-akash-v0.14.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-akash-v0.16.3
     env:
       - MONIKER=private_node_2
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
@@ -60,19 +60,19 @@ profiles:
     node1:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 2Gi
+          size: 8Gi
         storage:
-          size: 40Gi
+          size: 100Gi
     node2:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 2Gi
+          size: 8Gi
         storage:
-          size: 40Gi
+          size: 100Gi
   placement:
     dcloud:
       attributes:
@@ -83,10 +83,10 @@ profiles:
       pricing:
         node1:
           denom: uakt
-          amount: 100
+          amount: 1000
         node2:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node1:

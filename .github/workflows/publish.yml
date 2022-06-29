@@ -9,10 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
+      max-parallel: 15
       matrix:
         include:
+          - project: assetmantle
+            version: v0.3.0
           - project: akash
-            version: v0.14.1
+            version: v0.16.3
           - project: agoric
             version: agoric-3.1
           - project: bandchain
@@ -29,22 +33,28 @@ jobs:
             version: v0.5.0
           - project: chihuahua
             version: v1.1.1
+          - project: chronicnetwork
+            version: v1.1.0
           - project: comdex
             version: v0.1.1
           - project: cosmoshub
-            version: v6.0.3
+            version: v7.0.1
           - project: cronos
-            version: v0.6.5
+            version: v0.7.0
           - project: cryptoorgchain
-            version: v3.1.1-croeseid
+            version: v3.3.3
           - project: decentr
             version: v1.5.7
+          - project: defund
+            version: v0.0.2
           - project: desmos
             version: v2.3.1
           - project: dig
-            version: v1.1.0
+            version: v2.0.1
           - project: emoney
             version: v1.1.4
+          - project: evmos
+            version: v4.0.1
           - project: fetchhub
             version: v0.9.1
           - project: gravitybridge
@@ -54,21 +64,25 @@ jobs:
           - project: irisnet
             version: v1.0.1
           - project: juno
-            version: v2.1.0
+            version: v6.0.0
           - project: kava
             version: v0.16.1
+          - project: kichain
+            version: 3.0.0
           - project: konstellation
             version: v0.5.0
-          - project: kichain
-            version: 2.0.0
+          - project: kujira
+            version: v0.4.0
           - project: likecoin
-            version: fotan-1.2
+            version: v2.0.2
           - project: lumnetwork
             version: v1.0.5
           - project: nomic
             version: 1db00ff8b826b9b1ab5ad1ec2ccacfaca3e0d788
+          - project: omniflixhub
+            version: v0.4.1
           - project: osmosis
-            version: v7.0.2
+            version: v10.0.0
           - project: panacea
             version: v2.0.2
           - project: persistence
@@ -82,15 +96,15 @@ jobs:
           - project: shentu
             version: v2.2.0
           - project: sifchain
-            version: v0.10.1
+            version: v0.13.3
           - project: sommelier
             version: v3.1.0
           - project: stargaze
             version: v1.1.2
           - project: starname
             version: v0.10.18
-          - project: terra
-            version: v0.5.9
+          # - project: terra
+          #   version: v0.5.18
           - project: thorchain
             version: chaosnet-multichain
           - project: umee
@@ -114,3 +128,25 @@ jobs:
           touch .env # Create dummy env file
           cd ${{matrix.project}}
           docker buildx bake -f build.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push
+  build_generic:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 15
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/setup-buildx-action@v1
+        id: buildx
+        with:
+          install: true
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_USER }}
+          password: ${{ secrets.GHCR_TOKEN }}
+      - name: Build
+        run: |
+          touch .env # Create dummy env file
+          cd generic
+          docker buildx bake -f build.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-generic --push

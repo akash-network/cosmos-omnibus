@@ -7,7 +7,7 @@
 |Directory|`.band`|
 |ENV namespace|`BAND`|
 |Repository|`https://github.com/bandprotocol/chain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-bandchain-v2.3.3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-bandchain-v2.3.3`|
 
 ## Examples
 
@@ -21,3 +21,12 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/chain.json`|
+
+## ChainLayer Quicksync
+
+ChainLayer provide snapshots for Bandchain as part of their [Quicksync service](https://quicksync.io/networks/band.html).
+
+|Variable|Value|
+|---|---|
+|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/band.json`|
+|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.band.json`|

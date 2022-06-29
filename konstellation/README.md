@@ -7,7 +7,7 @@
 |Directory|`.knstld`|
 |ENV namespace|`KONSTELLATION`|
 |Repository|`https://github.com/konstellation/konstellation`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-konstellation-v0.5.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-konstellation-v0.5.0`|
 
 ## Examples
 
@@ -21,3 +21,15 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/konstellation/chain.json`|
+
+## Polkachu Chain Services
+
+[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, statesync and pruned snapshots.
+
+Note you should choose between statesync and snapshot bootstrapping, snapshot will take precedence.
+
+|Variable|Value|
+|---|---|
+|`P2P_POLKACHU`|`1`|
+|`SNAPSHOT_POLKACHU`|`1`|
+|`STATESYNC_POLKACHU`|`1`|
