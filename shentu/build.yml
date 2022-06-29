@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .certik
         VERSION: v2.2.0
         REPOSITORY: https://github.com/certikfoundation/shentu
-        NAMESPACE: SHENTU
+        NAMESPACE: CERTIK
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -24,4 +24,4 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.shentu
+      - ./node-data:/root/.certik
