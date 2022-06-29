@@ -6,24 +6,28 @@ services:
       context: ../
       args:
         PROJECT: nomic
-        VERSION: 1db00ff8b826b9b1ab5ad1ec2ccacfaca3e0d788
+        VERSION: bcd87a2a4ab0826cd9a97b68482817231cef1aa1
         REPOSITORY: https://github.com/nomic-io/nomic
         NAMESPACE: TM
-        PROJECT_DIR: .nomic-stakenet-2
+        PROJECT_DIR: .nomic-testnet-4
         BASE_IMAGE: rustlang/rust:nightly
         INSTALL_PACKAGES: build-essential libssl-dev pkg-config clang
         BUILD_CMD: cargo install --locked --path .
         BUILD_PATH: /usr/local/cargo/bin
-        INIT_CMD: nomic init
-        CONFIG_DIR: tendermint/config
+        PROJECT_DIR: .nomic-testnet-4/tendermint
+        CONFIG_DIR: config
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nomic/chain.json
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nomic/chain.json
+      - CHAIN_ID=nomic-testnet-4
+      - DOWNLOAD_GENESIS=0
+      - INIT_CONFIG=0
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.nomic-stakenet-2
+      - ./node-data:/root/.nomic-testnet-4
+      # - ./orga-wallet:/root/.orga-wallet
