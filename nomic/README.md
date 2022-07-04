@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`1db00ff8b826b9b1ab5ad1ec2ccacfaca3e0d788`|
+|Version|`v3`|
 |Binary|`nomic`|
-|Directory|`.nomic-stakenet-2`|
+|Directory|`.nomic-stakenet-3`|
 |ENV namespace|`TM`|
 |Repository|`https://github.com/nomic-io/nomic`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-nomic-stakenet`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-nomic-v3`|
 
 ## Examples
 
