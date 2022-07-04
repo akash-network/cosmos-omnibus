@@ -7,7 +7,7 @@
 |Directory|`.sentinelhub`|
 |ENV namespace|`SENTINELHUB`|
 |Repository|`https://github.com/sentinel-official/hub`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-sentinel-v0.8.3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-sentinel-v0.8.3`|
 
 ## Examples
 
@@ -21,11 +21,3 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/chain.json`|
-
-## Snapshot restore
-
-Akash provide daily snapshots of the Sentinel blockchain taken at midnight UTC.
-
-|Variable|Value|
-|---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json`|

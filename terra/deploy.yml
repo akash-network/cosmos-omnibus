@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-terra-v0.5.18
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-terra-v0.5.18
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/chain.json
@@ -25,9 +25,9 @@ profiles:
         cpu:
           units: 4
         memory:
-          size: 16Gi
+          size: 8Gi
         storage:
-          size: 300Gi
+          size: 100Gi
   placement:
     dcloud:
       attributes:
@@ -38,7 +38,7 @@ profiles:
       pricing:
         node:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node:

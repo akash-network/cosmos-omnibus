@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-gravitybridge-v1.4.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-gravitybridge-v1.4.1
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,6 +10,8 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/chain.json
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json
+      - P2P_POLKACHU=1
+      # - STATESYNC_POLKACHU=1
+      - SNAPSHOT_POLKACHU=1
     volumes:
       - ./node-data:/root/.gravity

@@ -7,7 +7,7 @@
 |Directory|`.comdex`|
 |ENV namespace|`COMDEX`|
 |Repository|`https://github.com/comdex-official/comdex`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-comdex-v0.1.1`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-comdex-v0.1.1`|
 
 ## Examples
 
@@ -22,10 +22,14 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json`|
 
-## Snapshot restore
+## Polkachu Tools
 
-Akash provide daily snapshots of the Comdex blockchain taken at midnight UTC.
+[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, statesync and pruned snapshots.
+
+Note you should choose between statesync and snapshot bootstrapping, snapshot will take precedence.
 
 |Variable|Value|
 |---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/comdex/snapshot.json`|
+|`P2P_POLKACHU`|`1`|
+|`SNAPSHOT_POLKACHU`|`1`|
+|`STATESYNC_POLKACHU`|`1`|

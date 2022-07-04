@@ -25,12 +25,12 @@ Omnibus has a generic base image which can download the required binary at runti
 
 This generic image provides the Omnibus scripts and configuration helpers, and nothing else. Set the `BINARY_URL` environment variable to a `.zip`, `.tar` or `.tar.gz` URL, and configure `PROJECT`, `PROJECT_DIR` and `PROJECT_BIN`. Alternatively provide a [Chain Registry](https://github.com/cosmos/chain-registry) `CHAIN_JSON` to configure everything automatically (where data is available).
 
-Image URL: `ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-generic`
+Image URL: `ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-generic`
 
 ```yaml
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-generic
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-generic
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/edgenet/meta.json
@@ -46,53 +46,54 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[agoric](https://github.com/Agoric/ag0)|`agoric-3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-agoric-agoric-3.1`|[Example](./agoric)|
-|[akash](https://github.com/ovrclk/akash)|`v0.16.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-akash-v0.16.3`|[Example](./akash)|
-|[assetmantle](https://github.com/AssetMantle/node)|`v0.3.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-assetmantle-v0.3.0`|[Example](./assetmantle)|
-|[bandchain](https://github.com/bandprotocol/chain)|`v2.3.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-bandchain-v2.3.3`|[Example](./bandchain)|
-|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v.1.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-bitcanna-v.1.3.1`|[Example](./bitcanna)|
-|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.10.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-bitsong-v0.10.0`|[Example](./bitsong)|
-|[bostrom](https://github.com/cybercongress/go-cyber)|`v0.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-bostrom-v0.2.0`|[Example](./bostrom)|
-|[cerberus](https://github.com/cerberus-zone/cerberus)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-cerberus-v1.0.1`|[Example](./cerberus)|
-|[cheqd](https://github.com/cheqd/cheqd-node)|`v0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-cheqd-v0.5.0`|[Example](./cheqd)|
-|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v1.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-chihuahua-v1.1.1`|[Example](./chihuahua)|
-|[comdex](https://github.com/comdex-official/comdex)|`v0.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-comdex-v0.1.1`|[Example](./comdex)|
-|[cosmoshub](https://github.com/cosmos/gaia)|`v7.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-cosmoshub-v7.0.1`|[Example](./cosmoshub)|
-|[cronos](https://github.com/crypto-org-chain/cronos)|`v0.6.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-cronos-v0.6.5`|[Example](./cronos)|
-|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.3.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-cryptoorgchain-v3.3.3`|[Example](./cryptoorgchain)|
-|[decentr](https://github.com/Decentr-net/decentr)|`v1.5.7`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-decentr-v1.5.7`|[Example](./decentr)|
-|[defund](https://github.com/defund-labs/defund)|`v0.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-defund-v0.0.2`|[Example](./defund)|
-|[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-desmos-v2.3.1`|[Example](./desmos)|
-|[dig](https://github.com/notional-labs/dig)|`v2.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-dig-v2.0.1`|[Example](./dig)|
-|[emoney](https://github.com/e-money/em-ledger)|`v1.1.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-emoney-v1.1.4`|[Example](./emoney)|
-|[evmos](https://github.com/tharsis/evmos)|`v4.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-evmos-v4.0.1`|[Example](./evmos)|
-|[fetchhub](https://github.com/fetchai/fetchd)|`v0.9.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-fetchhub-v0.9.1`|[Example](./fetchhub)|
-|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-gravitybridge-v1.4.1`|[Example](./gravitybridge)|
-|[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.17.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-impacthub-v0.17.0`|[Example](./impacthub)|
-|[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-irisnet-v1.0.1`|[Example](./irisnet)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v6.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-juno-v6.0.0`|[Example](./juno)|
-|[kava](https://github.com/Kava-Labs/kava)|`v0.16.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-kava-v0.16.1`|[Example](./kava)|
-|[kixchain](https://github.com/KiFoundation/ki-tools)|`2.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-kichain-2.0.0`|[Example](./kichain)|
-|[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-konstellation-0.5.0`|[Example](./konstellation)|
-|[kujira](https://github.com/Team-Kujira/core)|`0.3.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-kujira-v0.3.0`|[Example](./kujira)|
-|[likecoin](https://github.com/likecoin/likecoin-chain)|`fotan-1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-likecoin-fotan-1.2`|[Example](./likecoin)|
-|[lumnetwork](https://github.com/lum-network/chain)|`v1.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-lumnetwork-v1.0.5`|[Example](./lumnetwork)|
-|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-omniflixhub-v0.4.1`|[Example](./omniflixhub)|
-|[osmosis](https://github.com/osmosis-labs/osmosis)|`v8.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-osmosis-v8.0.0`|[Example](./osmosis)|
-|[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-panacea-v2.0.2`|[Example](./panacea)|
-|[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-persistence-v0.1.3`|[Example](./persistence)|
-|[regen](https://github.com/regen-network/regen-ledger)|`v3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-regen-v3.0.0`|[Example](./regen)|
-|[rizon](https://github.com/rizon-world/rizon)|`v0.2.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-rizon-v0.2.8`|[Example](./rizon)|
-|[seinetwork](https://github.com/sei-protocol/sei-chain)|`1.0.2beta`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-seinetwork-1.0.2beta`|[Example](./seinetwork)|
-|[sentinel](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-sentinel-v0.8.3`|[Example](./sentinel)|
-|[shentu](https://github.com/certikfoundation/shentu)|`v2.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-shentu-v2.2.0`|[Example](./shentu)|
-|[sifchain](https://github.com/Sifchain/sifnode)|`v0.13.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-sifchain-v0.13.3`|[Example](./sifchain)|
-|[sommelier](https://github.com/PeggyJV/sommelier)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-sommelier-v3.1.0`|[Example](./sommelier)|
-|[stargaze](https://github.com/public-awesome/stargaze)|`v1.1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-stargaze-v1.1.2`|[Example](./stargaze)|
-|[starname](https://github.com/iov-one/starnamed)|`v0.10.18`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-starname-v0.10.18`|[Example](./starname)|
-|[thorchain](https://gitlab.com/thorchain/thornode)|`chaosnet-multichain`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-thorchain-chaosnet-multichain`|[Example](./thorchain)|
-|[umee](https://github.com/umee-network/umee)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-umee-v1.0.1`|[Example](./umee)|
-|[vidulum](https://github.com/vidulum/mainnet)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-vidulum-v1.0.0`|[Example](./vidulum)|
+|[agoric](https://github.com/Agoric/ag0)|`agoric-3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-agoric-agoric-3.1`|[Example](./agoric)|
+|[akash](https://github.com/ovrclk/akash)|`v0.16.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-akash-v0.16.3`|[Example](./akash)|
+|[assetmantle](https://github.com/AssetMantle/node)|`v0.3.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-assetmantle-v0.3.0`|[Example](./assetmantle)|
+|[bandchain](https://github.com/bandprotocol/chain)|`v2.3.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-bandchain-v2.3.3`|[Example](./bandchain)|
+|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v.1.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-bitcanna-v.1.3.1`|[Example](./bitcanna)|
+|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.10.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-bitsong-v0.10.0`|[Example](./bitsong)|
+|[bostrom](https://github.com/cybercongress/go-cyber)|`v0.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-bostrom-v0.2.0`|[Example](./bostrom)|
+|[cerberus](https://github.com/cerberus-zone/cerberus)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-cerberus-v1.0.1`|[Example](./cerberus)|
+|[cheqd](https://github.com/cheqd/cheqd-node)|`v0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-cheqd-v0.5.0`|[Example](./cheqd)|
+|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v1.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-chihuahua-v1.1.1`|[Example](./chihuahua)|
+|[chronicnetwork](https://github.com/ChronicNetwork/cht)|`v1.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-chronic-v1.1.0`|[Example](./chronic)|
+|[comdex](https://github.com/comdex-official/comdex)|`v0.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-comdex-v0.1.1`|[Example](./comdex)|
+|[cosmoshub](https://github.com/cosmos/gaia)|`v7.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-cosmoshub-v7.0.1`|[Example](./cosmoshub)|
+|[cronos](https://github.com/crypto-org-chain/cronos)|`v0.7.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-cronos-v0.7.0`|[Example](./cronos)|
+|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.3.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-cryptoorgchain-v3.3.3`|[Example](./cryptoorgchain)|
+|[decentr](https://github.com/Decentr-net/decentr)|`v1.5.7`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-decentr-v1.5.7`|[Example](./decentr)|
+|[defund](https://github.com/defund-labs/defund)|`v0.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-defund-v0.0.2`|[Example](./defund)|
+|[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-desmos-v2.3.1`|[Example](./desmos)|
+|[dig](https://github.com/notional-labs/dig)|`v2.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-dig-v2.0.1`|[Example](./dig)|
+|[emoney](https://github.com/e-money/em-ledger)|`v1.1.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-emoney-v1.1.4`|[Example](./emoney)|
+|[evmos](https://github.com/tharsis/evmos)|`v4.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-evmos-v4.0.1`|[Example](./evmos)|
+|[fetchhub](https://github.com/fetchai/fetchd)|`v0.9.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-fetchhub-v0.9.1`|[Example](./fetchhub)|
+|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-gravitybridge-v1.4.1`|[Example](./gravitybridge)|
+|[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.17.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-impacthub-v0.17.0`|[Example](./impacthub)|
+|[irisnet](https://github.com/irisnet/irishub)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-irisnet-v1.0.1`|[Example](./irisnet)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v6.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-juno-v6.0.0`|[Example](./juno)|
+|[kava](https://github.com/Kava-Labs/kava)|`v0.16.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-kava-v0.16.1`|[Example](./kava)|
+|[kixchain](https://github.com/KiFoundation/ki-tools)|`3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-kichain-3.0.0`|[Example](./kichain)|
+|[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-konstellation-0.5.0`|[Example](./konstellation)|
+|[kujira](https://github.com/Team-Kujira/core)|`v0.4.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-kujira-v0.4.0`|[Example](./kujira)|
+|[likecoin](https://github.com/likecoin/likecoin-chain)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-likecoin-v2.0.2`|[Example](./likecoin)|
+|[lumnetwork](https://github.com/lum-network/chain)|`v1.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-lumnetwork-v1.0.5`|[Example](./lumnetwork)|
+|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-omniflixhub-v0.4.1`|[Example](./omniflixhub)|
+|[osmosis](https://github.com/osmosis-labs/osmosis)|`v10.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-osmosis-v10.0.0`|[Example](./osmosis)|
+|[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-panacea-v2.0.2`|[Example](./panacea)|
+|[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-persistence-v0.1.3`|[Example](./persistence)|
+|[regen](https://github.com/regen-network/regen-ledger)|`v3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-regen-v3.0.0`|[Example](./regen)|
+|[rizon](https://github.com/rizon-world/rizon)|`v0.2.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-rizon-v0.2.8`|[Example](./rizon)|
+|[seinetwork](https://github.com/sei-protocol/sei-chain)|`1.0.2beta`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-seinetwork-1.0.2beta`|[Example](./seinetwork)|
+|[sentinel](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-sentinel-v0.8.3`|[Example](./sentinel)|
+|[shentu](https://github.com/certikfoundation/shentu)|`v2.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-shentu-v2.2.0`|[Example](./shentu)|
+|[sifchain](https://github.com/Sifchain/sifnode)|`v0.13.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-sifchain-v0.13.3`|[Example](./sifchain)|
+|[sommelier](https://github.com/PeggyJV/sommelier)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-sommelier-v3.1.0`|[Example](./sommelier)|
+|[stargaze](https://github.com/public-awesome/stargaze)|`v1.1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-stargaze-v1.1.2`|[Example](./stargaze)|
+|[starname](https://github.com/iov-one/starnamed)|`v0.10.18`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-starname-v0.10.18`|[Example](./starname)|
+|[thorchain](https://gitlab.com/thorchain/thornode)|`chaosnet-multichain`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-thorchain-chaosnet-multichain`|[Example](./thorchain)|
+|[umee](https://github.com/umee-network/umee)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-umee-v1.0.1`|[Example](./umee)|
+|[vidulum](https://github.com/vidulum/mainnet)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-vidulum-v1.0.0`|[Example](./vidulum)|
 
 ## Running on Akash
 
@@ -104,24 +105,18 @@ See the `docker-compose.yml` example file in each chain directory to run each no
 
 ## Snaphots
 
-Omnibus can [import chain snapshots](#snapshot-restore) from almost any location. One example is Chain Layer's [QuickSync service](https://quicksync.io).
+Omnibus can [import chain snapshots](#snapshot-restore) from almost any location. Some examples are Chain Layer's [QuickSync service](https://quicksync.io) and Polkachu's [Tendermint Snapshots](https://www.polkachu.com/tendermint_snapshots).
 
 Appropriate snapshot configuration is included in most example configurations in the Omnibus repository. Check the project directories for more information.
 
-Akash also generate and publish snapshots for the following chains, taken daily or weekly depending on the size of the chain.
+Akash also generate and publish snapshots for the Akash blockchain. Pruned snapshots are taken daily, and Archive snapshots weekly.
 
 These snapshots are created using Omnibus nodes running on Akash, as shown in the [Snapshot Backup](_examples/snapshot_backup) example.
 
-|Chain|Snapshot JSON|
+|Type|Snapshot JSON|
 |---|---|
-|`akashnet-2`|https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json|
-|`bitcanna-1`|https://cosmos-snapshots.s3.filebase.com/bitcanna/snapshot.json|
-|`comdex-1`|https://cosmos-snapshots.s3.filebase.com/comdex/snapshot.json|
-|`desmos-mainnet`|https://cosmos-snapshots.s3.filebase.com/desmos/snapshot.json|
-|`gravity-bridge-2`|https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json|
-|`juno-1`|https://cosmos-snapshots.s3.filebase.com/juno/snapshot.json|
-|`sentinelhub-2`|https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json|
-|`sifchain-1`|https://cosmos-snapshots.s3.filebase.com/sifchain/snapshot.json|
+|Akash Pruned|https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json|
+|Akash Archive|https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json|
 
 ## Examples
 
@@ -159,16 +154,23 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chai
 |`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON| |`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/genesis.json`
 |`DOWNLOAD_GENESIS`|Force download of genesis file. If unset the node will only download if the genesis file is missing| |`1`|
 |`VALIDATE_GENESIS`|Set to 1 to enable validation of genesis file|`0`|`1`
-|`ADDRBOOK_URL`|URL to an addrbook.json file| |`https://quicksync.io/addrbook.terra.json`
 
 ### P2P
 
-See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information. This can be sourced from a `CHAIN_JSON` URL.
+Peer information can be provided manually, or obtained automatically from the following sources:
+
+- `CHAIN_JSON` URL with peer information included.
+- [Polkachu's live peers](https://www.polkachu.com/live_peers).
+- Any `ADDRBOOK_URL` where the `config/addrbook.json` file is hosted.
+
+See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
 |`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
 |`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
+|`P2P_POLKACHU`|Import live persistent peers from [Polkachu](https://www.polkachu.com/live_peers) if available| |`1`|
+|`ADDRBOOK_URL`|URL to an addrbook.json file| |`https://quicksync.io/addrbook.terra.json`
 
 ### Private key backup/restore
 
@@ -192,6 +194,8 @@ The `node_key.json` and `priv_validator_key.json` are both backed up, and can be
 
 Some shortcuts for enabling statesync. Statesync requires 2x nodes with snapshots enabled.
 
+Statesync nodes can also be sourced from [Polkachu's Statesync service](https://www.polkachu.com/state_sync) automatically.
+
 [See an example](_examples/statesync) of a statesync deployment.
 
 |Variable|Description|Default|Examples|
@@ -203,6 +207,7 @@ Some shortcuts for enabling statesync. Statesync requires 2x nodes with snapshot
 |`STATESYNC_TRUST_PERIOD`|Trust period for the statesync snapshot|`168h0m0s`| |
 |`STATESYNC_TRUST_HEIGHT`|Obtained from `STATESYNC_TRUSTED_NODE`| | |
 |`STATESYNC_TRUST_HASH`|Obtained from `STATESYNC_TRUSTED_NODE`| | |
+|`STATESYNC_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/state_sync) statesync addresses if available| |`1`|
 
 ### Snapshot restore
 
@@ -213,20 +218,22 @@ The file can be obtained from the following sources:
 - Base URL file listing, where the archive matches a given pattern.
 - [snapshot.json](#snapshot-backup) generated by [Omnibus Snapshot backup](#snapshot-backup) feature.
 - ChainLayer's [Quicksync snapshots](https://quicksync.io/) described by a JSON file.
+- Polkachu's [snapshot service](https://www.polkachu.com/tendermint_snapshots), fully automatically.
 
 Note that snapshots will be restored in-process, without downloading the snapshot to disk first. This saves disk space but is slower to extract, and could be made configurable in the future.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
+|`DOWNLOAD_SNAPSHOT`|Force bootstrapping from snapshot. If unset the node will only restore a snapshot if the `data` contents are missing| |`1`|
 |`SNAPSHOT_URL`|A URL to a `.tar`, `.tar.gz` or `.lz4` file| |`http://135.181.60.250/akash/akashnet-2_2021-06-16.tar`|
 |`SNAPSHOT_BASE_URL`|A base URL to a directory containing backup files| |`http://135.181.60.250/akash`|
 |`SNAPSHOT_JSON`|A URL to a `snapshot.json` as detailed in [Snapshot backup](#snapshot-backup)| |`https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json`|
-|`SNAPSHOT_QUICKSYNC`|A URL to a Quicksync JSON file describing their snapshots. Also see `SNAPSHOT_PRUNING`| |`https://quicksync.io/terra.json`|
 |`SNAPSHOT_FORMAT`|The format of the snapshot file|`tar.gz`|`tar`|
 |`SNAPSHOT_PATTERN`|The pattern of the file in the `SNAPSHOT_BASE_URL`|`$CHAIN_ID.*$SNAPSHOT_FORMAT`|`foobar.*tar.gz`|
 |`SNAPSHOT_DATA_PATH`|The path to the data directory within the archive| |`snapshot/data`|
 |`SNAPSHOT_PRUNING`|Type of snapshot to download, e.g. `archive`, `pruned`, `default`.|`pruned`|`archive`|
-|`DOWNLOAD_SNAPSHOT`|Force bootstrapping from snapshot. If unset the node will only restore a snapshot if the `data` contents are missing| |`1`|
+|`SNAPSHOT_QUICKSYNC`|A URL to a Quicksync JSON file describing their snapshots. Also see `SNAPSHOT_PRUNING`| |`https://quicksync.io/terra.json`|
+|`SNAPSHOT_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/tendermint_snapshots) snapshot automatically if available| |`1`|
 
 ### Snapshot backup
 

@@ -7,7 +7,7 @@
 |Directory|`.terra`|
 |ENV namespace|`TERRAD`|
 |Repository|`https://github.com/terra-money/core`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.6-terra-v0.5.18`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-terra-v0.5.18`|
 
 ## Examples
 
@@ -22,11 +22,11 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/terra/chain.json`|
 
-## Snapshot restore
+## ChainLayer Quicksync
 
 ChainLayer provide snapshots for Terra as part of [their Quicksync service](https://quicksync.io/networks/terra.html).
 
 |Variable|Value|
 |---|---|
 |`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/terra.json`|
-|`SNAPSHOT_PRUNING`|`pruned`|
+|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.terra.json`|
