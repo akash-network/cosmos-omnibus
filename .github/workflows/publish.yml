@@ -100,7 +100,7 @@ jobs:
           - project: sommelier
             version: v3.1.0
           - project: stargaze
-            version: v1.1.2
+            version: v5.0.0
           - project: starname
             version: v0.10.18
           # - project: terra
