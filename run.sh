@@ -20,7 +20,11 @@ fi
 export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
 export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
 export CONFIG_DIR="${CONFIG_DIR:-config}"
-export START_CMD="${START_CMD:-$PROJECT_BIN start}"
+if [ "$COSMOVISOR_ENABLED" == "1" ]; then
+  export START_CMD="${START_CMD:-cosmovisor run start}"
+else
+  export START_CMD="${START_CMD:-$PROJECT_BIN start}"
+fi
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
