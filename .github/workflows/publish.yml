@@ -107,8 +107,6 @@ jobs:
             version: v0.10.18
           # - project: terra
           #   version: v0.5.18
-          - project: thorchain
-            version: chaosnet-multichain
           - project: umee
             version: v1.0.1
           - project: vidulum
