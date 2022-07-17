@@ -76,7 +76,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kixchain](https://github.com/KiFoundation/ki-tools)|`3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.5-kichain-3.0.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.5-konstellation-0.5.0`|[Example](./konstellation)|
 |[kujira](https://github.com/Team-Kujira/core)|`v0.4.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.5-kujira-v0.4.0`|[Example](./kujira)|
-|[likecoin](https://github.com/likecoin/likecoin-chain)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.5-likecoin-v2.0.2`|[Example](./likecoin)|
+|[likecoin](https://github.com/likecoin/likecoin-chain)|`v3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.5-likecoin-v3.0.0`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.5-lumnetwork-v1.0.5`|[Example](./lumnetwork)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.5-omniflixhub-v0.4.1`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v10.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.5-osmosis-v10.0.0`|[Example](./osmosis)|
