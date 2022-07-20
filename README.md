@@ -51,7 +51,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[assetmantle](https://github.com/AssetMantle/node)|`v0.3.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.6-assetmantle-v0.3.0`|[Example](./assetmantle)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.3.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.6-bandchain-v2.3.3`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v.1.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.6-bitcanna-v.1.3.1`|[Example](./bitcanna)|
-|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.10.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.6-bitsong-v0.10.0`|[Example](./bitsong)|
+|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.11.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.6-bitsong-v0.11.0`|[Example](./bitsong)|
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.6-bostrom-v0.2.0`|[Example](./bostrom)|
 |[cerberus](https://github.com/cerberus-zone/cerberus)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.6-cerberus-v1.0.1`|[Example](./cerberus)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`v0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.6-cheqd-v0.5.0`|[Example](./cheqd)|
