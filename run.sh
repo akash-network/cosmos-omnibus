@@ -20,7 +20,11 @@ fi
 export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
 export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
 export CONFIG_DIR="${CONFIG_DIR:-config}"
-export START_CMD="${START_CMD:-$PROJECT_BIN start}"
+if [ "$COSMOVISOR_ENABLED" == "1" ]; then
+  export START_CMD="${START_CMD:-cosmovisor run start}"
+else
+  export START_CMD="${START_CMD:-$PROJECT_BIN start}"
+fi
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
@@ -105,7 +109,7 @@ if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" 
         echo "Polkachu statesync is not active for this chain"
       fi
     fi
-    
+
     # Polkachu live peers
     if [ -n "$P2P_POLKACHU" ]; then
       export POLKACHU_PEERS_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.live_peers.active')
@@ -251,6 +255,31 @@ fi
 
 # Validate genesis
 [ "$VALIDATE_GENESIS" == "1" ] && $PROJECT_BIN validate-genesis
+
+# Cosmovisor
+if [ "$COSMOVISOR_ENABLED" == "1" ]; then
+  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.1.0"}"
+
+  # Download Binary
+  if [ ! -f "/bin/cosmovisor" ]; then
+    echo "Downloading the cosmovisor ($COSMOVISOR_VERSION) binary..."
+    mkdir -p cosmovisor_temp
+    cd cosmovisor_temp
+    curl -sL "https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz" | tar zx
+    cp cosmovisor /bin/cosmovisor
+    cd ..
+    rm -r cosmovisor_temp
+  fi
+
+  # Set up the environment variables
+  export DAEMON_NAME=$PROJECT_BIN
+  export DAEMON_HOME=$PROJECT_ROOT
+
+  # Setup Folder Structure
+  mkdir -p $PROJECT_ROOT/cosmovisor/upgrades
+  mkdir -p $PROJECT_ROOT/cosmovisor/genesis/bin
+  cp "/bin/$PROJECT_BIN" $PROJECT_ROOT/cosmovisor/genesis/bin/
+fi
 
 if [ -n "$SNAPSHOT_PATH" ]; then
   exec snapshot.sh "$START_CMD"
