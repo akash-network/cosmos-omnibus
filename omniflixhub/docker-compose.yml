@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.6-omniflixhub-v0.4.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.7-omniflixhub-v0.4.1
     ports:
       - '26656:26656'
       - '26657:26657'
