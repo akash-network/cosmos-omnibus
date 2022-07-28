@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: sifchain
         PROJECT_BIN: sifnoded
-        VERSION: v0.13.4
+        VERSION: v0.13.5
         REPOSITORY: https://github.com/Sifchain/sifnode.git
     ports:
       - '26656:26656'
