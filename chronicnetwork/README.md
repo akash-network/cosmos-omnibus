@@ -7,7 +7,7 @@
 |Directory|`.cht`|
 |ENV namespace|`CHTD`|
 |Repository|`https://github.com/ChronicNetwork/cht`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.7-chronicnetwork-v1.1.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-chronicnetwork-v1.1.0`|
 
 ## Examples
 
