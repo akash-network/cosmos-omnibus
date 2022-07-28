@@ -11,6 +11,7 @@ services:
         VERSION: v9.0.0
         BUILD_IMAGE: binary
         BINARY_URL: https://github.com/CosmosContracts/juno/releases/download/v9.0.0/junod
+        GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
       - '26657:26657'
