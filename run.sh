@@ -208,6 +208,8 @@ fi
 
 # Download genesis
 if [ "$DOWNLOAD_GENESIS" == "1" ]; then
+  GENESIS_FILENAME="${GENESIS_FILENAME:-genesis.json}"
+
   echo "Downloading genesis $GENESIS_URL"
   curl -sfL $GENESIS_URL > genesis.json
   file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
@@ -215,7 +217,7 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
 
   mkdir -p $CONFIG_PATH
-  mv genesis.json $CONFIG_PATH/genesis.json
+  mv $GENESIS_FILENAME $CONFIG_PATH/genesis.json
 fi
 
 # Snapshot
