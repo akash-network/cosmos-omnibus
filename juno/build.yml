@@ -9,8 +9,8 @@ services:
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
         VERSION: v9.0.0
-        BUILD_IMAGE: binary
-        BINARY_URL: https://github.com/CosmosContracts/juno/releases/download/v9.0.0/junod
+        REPOSITORY: https://github.com/CosmosContracts/juno
+        NAMESPACE: JUNOD
         GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
@@ -19,6 +19,8 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/chain.json
+      - GENESIS_URL=https://download.dimi.sh/juno-phoenix2-genesis.tar.gz
+      - GENESIS_FILENAME=juno-phoenix2-genesis.json
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
       # - SNAPSHOT_POLKACHU=1
