@@ -3,11 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-bitsong-v0.10.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-bitsong-v0.11.0
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bitsong/chain.json
-      - VALIDATE_GENESIS=0
     expose:
       - port: 26657
         as: 80
@@ -22,11 +21,11 @@ profiles:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 2Gi
+          size: 8Gi
         storage:
-          size: 40Gi
+          size: 100Gi
   placement:
     dcloud:
       attributes:
@@ -37,7 +36,7 @@ profiles:
       pricing:
         node:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node:

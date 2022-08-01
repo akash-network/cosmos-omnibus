@@ -7,7 +7,7 @@
 |Directory|`.chain-maind`|
 |ENV namespace|`CHAIN_MAIND`|
 |Repository|`https://github.com/crypto-org-chain/chain-main`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-cryptoorgchain-v3.3.3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-cryptoorgchain-v3.3.3`|
 
 ## Examples
 
@@ -21,3 +21,12 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/cryptoorgchain/chain.json`|
+
+## ChainLayer Quicksync
+
+ChainLayer provide snapshots for Cryptoorgchain as part of their [Quicksync service](https://quicksync.io/networks/crypto.html).
+
+|Variable|Value|
+|---|---|
+|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/crypto.json`|
+|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.crypto.json`|

@@ -15,10 +15,11 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
-      # - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
-      - VALIDATE_GENESIS=0
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
+      # - SNAPSHOT_POLKACHU=1
     env_file:
       - ../.env
     volumes:

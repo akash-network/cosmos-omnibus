@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-emoney-v1.1.4
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-emoney-v1.1.4
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,6 +10,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/chain.json
-      - VALIDATE_GENESIS=0
+      - SNAPSHOT_QUICKSYNC=https://quicksync.io/emoney.json
     volumes:
       - ./node-data:/root/.emd

@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-generic
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-generic
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/edgenet/meta.json
@@ -22,11 +22,11 @@ profiles:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 4Gi
+          size: 8Gi
         storage:
-          size: 40Gi
+          size: 100Gi
   placement:
     dcloud:
       attributes:
@@ -37,7 +37,7 @@ profiles:
       pricing:
         node:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node:

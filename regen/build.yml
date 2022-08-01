@@ -20,7 +20,6 @@ services:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/chain.json
       - MINIMUM_GAS_PRICES=0.025uregen
-      - VALIDATE_GENESIS=0
     env_file:
       - ../.env
     volumes:

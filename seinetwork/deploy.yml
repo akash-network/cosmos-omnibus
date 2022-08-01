@@ -3,11 +3,14 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-agoric-agoric-3.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-seinetwork-1.0.7beta-postfix
     env:
       - MONIKER=node_1
-      - VALIDATE_GENESIS=0
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/chain.json
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/seinetwork/chain.json
+      - CHAIN_ID=atlantic-1
+      - GENESIS_URL=https://raw.githubusercontent.com/sei-protocol/testnet/main/sei-incentivized-testnet/genesis.json
+      - ADDRBOOK_URL=https://raw.githubusercontent.com/sei-protocol/testnet/main/sei-incentivized-testnet/addrbook.json
+      - MINIMUM_GAS_PRICES=0.025usei
     expose:
       - port: 26657
         as: 80
@@ -26,7 +29,7 @@ profiles:
         memory:
           size: 2Gi
         storage:
-          size: 60Gi
+          size: 40Gi
   placement:
     dcloud:
       attributes:

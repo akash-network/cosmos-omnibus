@@ -1,0 +1,48 @@
+---
+version: "2.0"
+
+services:
+  node:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-evmos-v6.0.3
+    env:
+      - MONIKER=node_1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/chain.json
+      - P2P_POLKACHU=1
+      # - STATESYNC_POLKACHU=1
+      - SNAPSHOT_POLKACHU=1
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true
+      - port: 26656
+        to:
+          - global: true
+
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 8
+        memory:
+          size: 32Gi
+        storage:
+          size: 100Gi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 1000
+
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 1

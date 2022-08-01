@@ -7,7 +7,7 @@
 |Directory|`.emd`|
 |ENV namespace|`EMD`|
 |Repository|`https://github.com/e-money/em-ledger`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-emoney-v1.1.4`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-emoney-v1.1.4`|
 
 ## Examples
 
@@ -22,10 +22,11 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/chain.json`|
 
-## Suggested configuration
+## ChainLayer Quicksync
 
-e-Money does not support the validate-genesis command so this should be disabled
+ChainLayer provide snapshots for e-Money as part of their [Quicksync service](https://quicksync.io/networks/emoney.html).
 
 |Variable|Value|
 |---|---|
-|`VALIDATE_GENESIS`|`0`|
+|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/emoney.json`|
+|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.emoney.json`|

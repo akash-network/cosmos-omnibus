@@ -3,12 +3,13 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.1.1-gravitybridge-v1.4.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-gravitybridge-v1.4.1
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/chain.json
-      - VALIDATE_GENESIS=0
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/gravitybridge/snapshot.json
+      - P2P_POLKACHU=1
+      # - STATESYNC_POLKACHU=1
+      - SNAPSHOT_POLKACHU=1
     expose:
       - port: 26657
         as: 80
@@ -23,11 +24,11 @@ profiles:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 2Gi
+          size: 8Gi
         storage:
-          size: 120Gi
+          size: 100Gi
   placement:
     dcloud:
       attributes:
@@ -38,7 +39,7 @@ profiles:
       pricing:
         node:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node:

@@ -16,7 +16,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/chain.json
-      - VALIDATE_GENESIS=0 # failing currently?
       # - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json
     env_file:
       - ../.env
