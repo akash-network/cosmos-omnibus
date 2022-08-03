@@ -12,11 +12,6 @@ services:
       - P2P_POLKACHU=1
       # - STATESYNC_POLKACHU=1
       - SNAPSHOT_POLKACHU=1
-    params:
-      storage:
-        data:
-          mount: /root/.akash
-
     expose:
       - port: 26657
         as: 80
@@ -25,6 +20,10 @@ services:
       - port: 26656
         to:
           - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.akash
 
 profiles:
   compute:
@@ -35,11 +34,12 @@ profiles:
         memory:
           size: 8Gi
         storage:
-          - size: 100Mi
-          - name: data
-            size: 400Gi
-            attributes:
-              persistent: true
+          size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
 
   placement:
     dcloud:
