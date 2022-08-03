@@ -82,7 +82,7 @@ jobs:
           - project: omniflixhub
             version: v0.4.1
           - project: osmosis
-            version: v10.0.0
+            version: v11.0.0
           - project: panacea
             version: v2.0.2
           - project: persistence
