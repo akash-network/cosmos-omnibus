@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-regen-v3.0.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-regen-v4.0.0
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/chain.json
