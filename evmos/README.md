@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v6.0.4`|
+|Version|`v7.0.0`|
 |Binary|`evmosd`|
 |Directory|`.evmosd`|
 |ENV namespace|`EVMOSD`|
 |Repository|`https://github.com/tharsis/evmos`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-evmos-v6.0.4`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-evmos-v7.0.0`|
 
 ## Examples
 
