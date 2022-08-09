@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.13.6`|
+|Version|`v0.14.0`|
 |Binary|`sifnoded`|
 |Directory|`.sifnoded`|
 |ENV namespace|`SIFNODED`|
 |Repository|`https://github.com/Sifchain/sifnode`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-sifchain-v0.13.6`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-sifchain-v0.14.0`|
 
 ## Examples
 
