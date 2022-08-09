@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-fetchhub-v0.9.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-fetchhub-v0.10.4
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -14,4 +14,4 @@ services:
       # - STATESYNC_POLKACHU=1
       - SNAPSHOT_POLKACHU=1
     volumes:
-      - ./node-data:/root/.cronos
+      - ./node-data:/root/.fetchd

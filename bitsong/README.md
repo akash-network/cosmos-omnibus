@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.10.0`|
+|Version|`v0.11.0`|
 |Binary|`bitsongd`|
 |Directory|`.bitsongd`|
 |ENV namespace|`BITSONG`|
 |Repository|`https://github.com/bitsongofficial/go-bitsong`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-bitsong-v0.10.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-bitsong-v0.11.0`|
 
 ## Examples
 
