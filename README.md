@@ -94,11 +94,15 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[umee](https://github.com/umee-network/umee)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-umee-v1.0.1`|[Example](./umee)|
 |[vidulum](https://github.com/vidulum/mainnet)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-vidulum-v1.0.0`|[Example](./vidulum)|
 
-## Running on Akash
+## Example configurations
 
-See the `deploy.yml` example file in each chain directory which details the minimum configuration required. Use the [configuration options below](#configuration) to add functionality.
+There are example files within each project subdirectory which include a sensible default configuration for each chain. Optional configuration options are commented out so you can easily enable them, and the node can be configured further using the docs below. 
 
-## Running locally/any docker host
+### Running on Akash
+
+See the `deploy.yml` example file in each chain directory which details the minimum configuration required. Use the [configuration options below](#configuration) to add functionality. Note the commented out persistent storage configuration if needed.
+
+### Running locally/any docker host
 
 See the `docker-compose.yml` example file in each chain directory to run each node using `docker-compose up`.
 
