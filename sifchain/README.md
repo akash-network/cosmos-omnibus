@@ -7,7 +7,7 @@
 |Directory|`.sifnoded`|
 |ENV namespace|`SIFNODED`|
 |Repository|`https://github.com/Sifchain/sifnode`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-sifchain-v0.14.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.0-sifchain-v0.14.0`|
 
 ## Examples
 
