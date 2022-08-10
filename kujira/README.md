@@ -7,7 +7,7 @@
 |Directory|`.kujira`|
 |ENV namespace|`KUJIRAD`|
 |Repository|`https://github.com/Team-Kujira/core`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-kujira-v0.4.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.0-kujira-v0.4.0`|
 
 ## Examples
 
