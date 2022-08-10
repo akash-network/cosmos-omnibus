@@ -23,4 +23,4 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.lum
+      - ./node-data:/root/.lumd

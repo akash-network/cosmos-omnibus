@@ -14,6 +14,10 @@ services:
       - port: 26657
         to:
           - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.akash
 
 profiles:
   compute:
@@ -25,6 +29,11 @@ profiles:
           size: 8Gi
         storage:
           size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
   placement:
     dcloud:
       attributes:

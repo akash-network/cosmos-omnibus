@@ -28,6 +28,10 @@ services:
       - port: 26656
         to:
           - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.akash
   node2:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-akash-v0.16.3
     env:
@@ -54,6 +58,10 @@ services:
       - port: 26656
         to:
           - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.akash
 
 profiles:
   compute:
@@ -65,6 +73,11 @@ profiles:
           size: 8Gi
         storage:
           size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
     node2:
       resources:
         cpu:
@@ -73,6 +86,11 @@ profiles:
           size: 8Gi
         storage:
           size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
   placement:
     dcloud:
       attributes:
