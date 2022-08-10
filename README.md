@@ -82,7 +82,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v11.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-osmosis-v11.0.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-panacea-v2.0.2`|[Example](./panacea)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-persistence-v0.1.3`|[Example](./persistence)|
-|[regen](https://github.com/regen-network/regen-ledger)|`v3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-regen-v3.0.0`|[Example](./regen)|
+|[regen](https://github.com/regen-network/regen-ledger)|`v4.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-regen-v4.0.0`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.2.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-rizon-v0.2.8`|[Example](./rizon)|
 |[seinetwork](https://github.com/sei-protocol/sei-chain)|`1.1.0beta`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-seinetwork-1.1.0beta`|[Example](./seinetwork)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.8.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-sentinel-v0.8.3`|[Example](./sentinel)|
