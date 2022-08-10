@@ -79,7 +79,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`v3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-likecoin-v3.0.0`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-lumnetwork-v1.0.5`|[Example](./lumnetwork)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-omniflixhub-v0.4.1`|[Example](./omniflixhub)|
-|[osmosis](https://github.com/osmosis-labs/osmosis)|`v10.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-osmosis-v10.0.0`|[Example](./osmosis)|
+|[osmosis](https://github.com/osmosis-labs/osmosis)|`v11.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-osmosis-v11.0.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-panacea-v2.0.2`|[Example](./panacea)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-persistence-v0.1.3`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.2.8-regen-v3.0.0`|[Example](./regen)|
