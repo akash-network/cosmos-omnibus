@@ -11,6 +11,7 @@ services:
         VERSION: v1.4.1
         REPOSITORY: https://github.com/BitCannaGlobal/bcna
         NAMESPACE: BCNAD
+        GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
       - '26657:26657'
