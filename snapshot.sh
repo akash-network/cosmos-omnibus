@@ -33,7 +33,7 @@ while true; do
         timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
         s3_uri="${s3_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.tar.gz"
 
-        tar c -C $SNAPSHOT_DIR . | gzip | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE
+        tar c -C $SNAPSHOT_DIR . | gzip -1 | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE
 
         if [[ $SNAPSHOT_RETAIN != "0" || $SNAPSHOT_METADATA != "0" ]]; then
             readarray -t s3Files < <(aws $aws_args s3 ls "${s3_uri_base}/${SNAPSHOT_PREFIX}_")
