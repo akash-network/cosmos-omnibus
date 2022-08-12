@@ -11,6 +11,7 @@ SNAPSHOT_PATH="${SNAPSHOT_PATH}"
 SNAPSHOT_PREFIX="${SNAPSHOT_PREFIX:-$CHAIN_ID}"
 SNAPSHOT_RETAIN="${SNAPSHOT_RETAIN:-2 days}"
 SNAPSHOT_METADATA="${SNAPSHOT_METADATA:-1}"
+SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
 TIME=$(date -u +%T)
 DOW=$(date +%u)
 
@@ -31,7 +32,7 @@ while true; do
         aws_args="--endpoint-url ${S3_HOST}"
         s3_uri_base="s3://${SNAPSHOT_PATH}"
         timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
-        s3_uri="${s3_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.tar.gz"
+        s3_uri="${s3_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.${SNAPSHOT_FORMAT}"
 
         SNAPSHOT_SIZE=$(du -sb $SNAPSHOT_DIR | cut -f1)
         SNAPSHOT_COMPRESS=${SNAPSHOT_COMPRESS:-1}
