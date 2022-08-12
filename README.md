@@ -261,6 +261,7 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`SNAPSHOT_RETAIN`|How long to retain snapshots for (0 to disable)|`2 days`|`1 week`|
 |`SNAPSHOT_METADATA`|Whether to create a snapshot.json metadata file|`1`|`0`|
 |`SNAPSHOT_METADATA_URL`|The URL snapshots will be served from (for snapshot.json)| |`https://cosmos-snapshots.s3.filebase.com/akash`|
+|`SNAPSHOT_COMPRESS`|Whether to compress the snapshot|`1`|`0`|
 
 ### Binary download
 

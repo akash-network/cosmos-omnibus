@@ -13,7 +13,7 @@ ARG PROJECT_BIN=$PROJECT
 ARG INSTALL_PACKAGES
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes curl unzip ${INSTALL_PACKAGES} && \
+  apt-get install --no-install-recommends --assume-yes curl unzip pv ${INSTALL_PACKAGES} && \
   apt-get clean
 
 #
