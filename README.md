@@ -261,6 +261,7 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`SNAPSHOT_METADATA`|Whether to create a snapshot.json metadata file|`1`|`0`|
 |`SNAPSHOT_METADATA_URL`|The URL snapshots will be served from (for snapshot.json)| |`https://cosmos-snapshots.s3.filebase.com/akash`|
 |`SNAPSHOT_COMPRESS`|Whether to compress the snapshot|`1`|`0`|
+|`SNAPSHOT_FORMAT`|To override the snapshot format|`tar.gz` or `tar` (when compression is disabled)|`tar`|
 
 ### Binary download
 

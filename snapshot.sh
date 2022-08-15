@@ -10,7 +10,13 @@ SNAPSHOT_PATH="${SNAPSHOT_PATH}"
 SNAPSHOT_PREFIX="${SNAPSHOT_PREFIX:-$CHAIN_ID}"
 SNAPSHOT_RETAIN="${SNAPSHOT_RETAIN:-2 days}"
 SNAPSHOT_METADATA="${SNAPSHOT_METADATA:-1}"
-SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
+SNAPSHOT_COMPRESS=${SNAPSHOT_COMPRESS:-1}
+SNAPSHOT_FORMAT_DEFAULT=tar
+if [ "$SNAPSHOT_COMPRESS" != "0" ]; then
+  SNAPSHOT_FORMAT_DEFAULT=tar.gz
+fi
+SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-$SNAPSHOT_FORMAT_DEFAULT}"
+
 TIME=$(date -u +%T)
 DOW=$(date +%u)
 
@@ -34,7 +40,6 @@ while true; do
         s3_uri="${s3_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.${SNAPSHOT_FORMAT}"
 
         SNAPSHOT_SIZE=$(du -sb $SNAPSHOT_DIR | cut -f1)
-        SNAPSHOT_COMPRESS=${SNAPSHOT_COMPRESS:-1}
         if [ "$SNAPSHOT_COMPRESS" != "0" ]; then
             (tar c -C $SNAPSHOT_DIR . | gzip -1 | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n'
         else
