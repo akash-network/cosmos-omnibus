@@ -6,7 +6,11 @@ services:
     image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.25-passage-v1.0.0
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/passage/chain.json
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/passage/chain.json
+      - CHAIN_ID=passage-1
+      - P2P_SEEDS=aebb8431609cb126a977592446f5de252d8b7fa1@104.236.201.138:26656
+      - P2P_PERSISTENT_PEERS=69975e7afdf731a165e40449fcffc75167a084fc@104.131.169.70:26656,d35d652b6cb3bf7d6cb8d4bd7c036ea03e7be2ab@116.203.182.185:26656,ffacd3202ded6945fed12fa4fd715b1874985b8c@3.98.38.91:26656,8e0b0d4f80d0d2853f853fbd6a76390113f07d72@65.108.127.249:26656,0111da7144fd2e8ce0dfe17906ef6fd760325aca@142.132.213.231:26656
+      - GENESIS_URL=https://github.com/envadiv/mainnet/raw/main/passage-1/genesis.json
     expose:
       - port: 26657
         as: 80
