@@ -246,8 +246,12 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
     mkdir -p $PROJECT_ROOT/data;
     cd $PROJECT_ROOT/data
 
-    [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
-    [[ $SNAPSHOT_FORMAT = "lz4" ]] && tar_cmd="lz4 -d | tar $tar_args -" || tar_cmd="tar $tar_args -"
+    tar_args="xf"
+    tar_cmd="tar $tar_args -"
+    # case insensitive match
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.gz" ]]; then tar_args="xzf"; fi
+    if [[ "${SNAPSHOT_FORMAT,,}" == "lz4" ]]; then tar_cmd="lz4 -d | tar $tar_args -"; fi
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.zst" ]]; then tar_cmd="zstd -cd | tar $tar_args -"; fi
     wget -nv -O - $SNAPSHOT_URL | eval $tar_cmd
     [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
   else
