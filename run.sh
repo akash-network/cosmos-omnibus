@@ -35,9 +35,12 @@ export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
   echo "Download binary $PROJECT_BIN from $BINARY_URL"
   curl -sLo /bin/$PROJECT_BIN $BINARY_URL
-  file /bin/$PROJECT_BIN | grep -q 'gzip compressed data' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.gz && tar -xvf /bin/$PROJECT_BIN.gz -C /bin
-  file /bin/$PROJECT_BIN | grep -q 'tar archive' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar && rm /bin/$PROJECT_BIN.tar -C /bin
-  file /bin/$PROJECT_BIN | grep -q 'Zip archive data' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin
+  file_description=$(file /bin/$PROJECT_BIN)
+  case "${file_description,,}" in
+    *"gzip compressed data"*)   mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tgz && tar -xvf /bin/$PROJECT_BIN.tgz -C /bin && rm /bin/$PROJECT_BIN.tgz;;
+    *"tar archive"*)            mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar -C /bin && rm /bin/$PROJECT_BIN.tar;;
+    *"zip archive data"*)       mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip;;
+  esac
   [ -n "$BINARY_ZIP_PATH" ] && mv /bin/${BINARY_ZIP_PATH} /bin
   chmod +x /bin/$PROJECT_BIN
 fi
