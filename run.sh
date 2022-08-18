@@ -263,7 +263,17 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
     if [[ "${SNAPSHOT_FORMAT,,}" == "tar.gz" ]]; then tar_args="xzf"; fi
     if [[ "${SNAPSHOT_FORMAT,,}" == "tar.lz4" ]]; then tar_cmd="lz4 -d | tar $tar_args -"; fi
     if [[ "${SNAPSHOT_FORMAT,,}" == "tar.zst" ]]; then tar_cmd="zstd -cd | tar $tar_args -"; fi
-    wget -nv -O - $SNAPSHOT_URL | eval $tar_cmd
+
+    # Detect content size via HTTP header `Content-Length`
+    # Note that the server can refuse to return `Content-Length`, or the URL can be incorrect
+    pv_extra_args=""
+    snapshot_size_in_bytes=$(wget $SNAPSHOT_URL --spider --server-response -O - 2>&1 | sed -ne '/Content-Length/{s/.*: //;p}')
+    case "$snapshot_size_in_bytes" in
+      # Value cannot be started with `0`, and must be integer
+      [1-9]*[0-9]) pv_extra_args="-s $snapshot_size_in_bytes";;
+    esac
+    (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+
     [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
   else
     echo "Snapshot URL not found"
