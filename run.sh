@@ -127,7 +127,6 @@ if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" 
       if [ $POLKACHU_SNAPSHOT_ENABLED ]; then
         export POLKACHU_SNAPSHOT=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint') | jq -r '.snapshot.url'`
         export SNAPSHOT_URL=$POLKACHU_SNAPSHOT
-        export SNAPSHOT_FORMAT=lz4
         export SNAPSHOT_DATA_PATH=data
       else
         echo "Polkachu snapshot is not active for this chain"
@@ -222,7 +221,6 @@ fi
 
 # Snapshot
 if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
-  SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
     SNAPSHOT_PATTERN="${SNAPSHOT_PATTERN:-$CHAIN_ID.*$SNAPSHOT_FORMAT}"
@@ -236,9 +234,19 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_QUICKSYNC}" ]; then
     SNAPSHOT_PRUNING="${SNAPSHOT_PRUNING:-pruned}"
     SNAPSHOT_DATA_PATH="data"
-    SNAPSHOT_FORMAT="lz4"
     SNAPSHOT_URL=`curl -s $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
   fi
+
+  # SNAPSHOT_FORMAT default value generation via SNAPSHOT_URL
+  SNAPSHOT_FORMAT_DEFAULT="tar.gz"
+  case "${SNAPSHOT_URL,,}" in
+    *.tar.gz)   SNAPSHOT_FORMAT_DEFAULT="tar.gz";;
+    *.tar.lz4)  SNAPSHOT_FORMAT_DEFAULT="tar.lz4";;
+    *.tar.zst)  SNAPSHOT_FORMAT_DEFAULT="tar.zst";;
+    # Catchall
+    *)          SNAPSHOT_FORMAT_DEFAULT="tar";;
+  esac
+  SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-$SNAPSHOT_FORMAT_DEFAULT}"
 
   if [ -n "${SNAPSHOT_URL}" ]; then
     echo "Downloading snapshot from $SNAPSHOT_URL..."
@@ -246,8 +254,12 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
     mkdir -p $PROJECT_ROOT/data;
     cd $PROJECT_ROOT/data
 
-    [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
-    [[ $SNAPSHOT_FORMAT = "lz4" ]] && tar_cmd="lz4 -d | tar $tar_args -" || tar_cmd="tar $tar_args -"
+    tar_args="xf"
+    tar_cmd="tar $tar_args -"
+    # case insensitive match
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.gz" ]]; then tar_args="xzf"; fi
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.lz4" ]]; then tar_cmd="lz4 -d | tar $tar_args -"; fi
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.zst" ]]; then tar_cmd="zstd -cd | tar $tar_args -"; fi
     wget -nv -O - $SNAPSHOT_URL | eval $tar_cmd
     [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
   else

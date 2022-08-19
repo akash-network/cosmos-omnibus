@@ -232,7 +232,7 @@ Note that snapshots will be restored in-process, without downloading the snapsho
 |`SNAPSHOT_URL`|A URL to a `.tar`, `.tar.gz` or `.lz4` file| |`http://135.181.60.250/akash/akashnet-2_2021-06-16.tar`|
 |`SNAPSHOT_BASE_URL`|A base URL to a directory containing backup files| |`http://135.181.60.250/akash`|
 |`SNAPSHOT_JSON`|A URL to a `snapshot.json` as detailed in [Snapshot backup](#snapshot-backup)| |`https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json`|
-|`SNAPSHOT_FORMAT`|The format of the snapshot file|`tar.gz`|`tar`|
+|`SNAPSHOT_FORMAT`|The format of the snapshot file|`tar.gz`|`tar`/`tar.zst`|
 |`SNAPSHOT_PATTERN`|The pattern of the file in the `SNAPSHOT_BASE_URL`|`$CHAIN_ID.*$SNAPSHOT_FORMAT`|`foobar.*tar.gz`|
 |`SNAPSHOT_DATA_PATH`|The path to the data directory within the archive| |`snapshot/data`|
 |`SNAPSHOT_PRUNING`|Type of snapshot to download, e.g. `archive`, `pruned`, `default`.|`pruned`|`archive`|
@@ -261,7 +261,11 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`SNAPSHOT_RETAIN`|How long to retain snapshots for (0 to disable)|`2 days`|`1 week`|
 |`SNAPSHOT_METADATA`|Whether to create a snapshot.json metadata file|`1`|`0`|
 |`SNAPSHOT_METADATA_URL`|The URL snapshots will be served from (for snapshot.json)| |`https://cosmos-snapshots.s3.filebase.com/akash`|
-|`SNAPSHOT_SAVE_FORMAT`|To override the `SNAPSHOT_FORMAT`.|`tar.gz`|`tar` (to disable compression)|
+|`SNAPSHOT_SAVE_FORMAT`|Overrides value from `SNAPSHOT_FORMAT`.|`tar.gz`|`tar` (no compression)/`tar.zst` (use [zstd](https://github.com/facebook/zstd))|
+
+When `SNAPSHOT_SAVE_FORMAT` is set to `tar.zst`, [additional variables can be set](https://github.com/facebook/zstd/tree/v1.5.2/programs#passing-parameters-through-environment-variables):
+- `ZSTD_CLEVEL` - Compression level, default `3`
+- `ZSTD_NBTHREADS` - No. of threads, default `1`, `0` = detected no. of cpu cores
 
 ### Binary download
 
