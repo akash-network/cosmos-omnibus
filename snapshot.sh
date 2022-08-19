@@ -19,7 +19,10 @@ fi
 # Actual valid values not documented
 # 27 is default value
 # 31 is max value mentioned in project issues
-valid_zstd_long_values=(27 28 29 30 31)
+# Since value > 27 requires special handling on decompression
+# Only 27 is allowed at the moment when enabled
+# See https://github.com/facebook/zstd/blob/v1.5.2/programs/zstd.1.md for more info
+valid_zstd_long_values=(27)
 # If non empty string and invalid value detected
 # Set to default value assuming long should be enabled
 if [ -n "$ZSTD_LONG" ] && ! echo "${valid_zstd_long_values[@]}" | grep -qiw -- "$ZSTD_LONG"; then
