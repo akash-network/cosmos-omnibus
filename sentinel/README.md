@@ -7,7 +7,7 @@
 |Directory|`.sentinelhub`|
 |ENV namespace|`SENTINELHUB`|
 |Repository|`https://github.com/sentinel-official/hub`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-sentinel-v0.8.3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-sentinel-v0.8.3`|
 
 ## Examples
 
@@ -21,19 +21,3 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/sentinel/chain.json`|
-
-## Snapshot restore
-
-Akash provide daily snapshots of the Sentinel blockchain taken at midnight UTC.
-
-|Variable|Value|
-|---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/sentinel/snapshot.json`|
-
-## Suggested configuration
-
-The validate-genesis command fails for v0.8.3 so this should be disabled for now
-
-|Variable|Value|
-|---|---|
-|`VALIDATE_GENESIS`|`0`|

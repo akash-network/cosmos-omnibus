@@ -2,14 +2,13 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-decentr-v1.5.7
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-decentr-v1.5.7
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      - VALIDATE_GENESIS=0
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/decentr/chain.json
     volumes:
       - ./node-data:/root/.decentr

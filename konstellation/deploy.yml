@@ -3,11 +3,13 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-konstellation-v0.5.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-konstellation-v0.5.0
     env:
       - MONIKER=node_1
-      - VALIDATE_GENESIS=0
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/konstellation/chain.json
+      - P2P_POLKACHU=1
+      # - STATESYNC_POLKACHU=1
+      - SNAPSHOT_POLKACHU=1
     expose:
       - port: 26657
         as: 80
@@ -16,17 +18,26 @@ services:
       - port: 26656
         to:
           - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.knstld
 
 profiles:
   compute:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 2Gi
+          size: 8Gi
         storage:
-          size: 60Gi
+          size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
   placement:
     dcloud:
       attributes:
@@ -37,7 +48,7 @@ profiles:
       pricing:
         node:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node:

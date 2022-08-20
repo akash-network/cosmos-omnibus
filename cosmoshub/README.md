@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v6.0.3`|
+|Version|`v7.0.2`|
 |Binary|`gaiad`|
 |Directory|`.gaia`|
 |ENV namespace|`GAIAD`|
 |Repository|`https://github.com/cosmos/gaia`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-cosmoshub-v6.0.3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-cosmoshub-v7.0.2`|
 
 ## Examples
 
@@ -22,6 +22,23 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/chain.json`|
 
-## Snapshot restore
+## Polkachu Chain Services
 
-Quicksync provide snapshots for Cosmos Hub at [quicksync.io](https://quicksync.io/networks/cosmos.html)
+[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, statesync and pruned snapshots.
+
+Note you should choose between statesync and snapshot bootstrapping, snapshot will take precedence.
+
+|Variable|Value|
+|---|---|
+|`P2P_POLKACHU`|`1`|
+|`SNAPSHOT_POLKACHU`|`1`|
+|`STATESYNC_POLKACHU`|`1`|
+
+## ChainLayer Quicksync
+
+ChainLayer provide snapshots for Cosmos Hub as part of their [Quicksync service](https://quicksync.io/networks/cosmos.html).
+
+|Variable|Value|
+|---|---|
+|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/cosmos.json`|
+|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.cosmos.json`|

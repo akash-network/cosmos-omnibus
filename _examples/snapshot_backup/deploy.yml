@@ -3,11 +3,11 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-akash-v0.14.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-akash-v0.16.3
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json
+      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json
       - FASTSYNC_VERSION=v2
       - PRUNING=nothing
       - S3_KEY=<s3-key>
@@ -21,17 +21,26 @@ services:
       - port: 26657
         to:
           - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.akash
 
 profiles:
   compute:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 4Gi
+          size: 8Gi
         storage:
-          size: 250Gi
+          size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
   placement:
     dcloud:
       attributes:
@@ -42,7 +51,7 @@ profiles:
       pricing:
         node:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   node:

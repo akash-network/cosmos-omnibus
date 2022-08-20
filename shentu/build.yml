@@ -10,16 +10,18 @@ services:
         PROJECT_DIR: .certik
         VERSION: v2.2.0
         REPOSITORY: https://github.com/certikfoundation/shentu
-        NAMESPACE: SHENTU
+        NAMESPACE: CERTIK
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      - VALIDATE_GENESIS=0
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/shentu/chain.json
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
+      # - SNAPSHOT_POLKACHU=1
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.shentu
+      - ./node-data:/root/.certik

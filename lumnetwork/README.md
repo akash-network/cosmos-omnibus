@@ -7,7 +7,7 @@
 |Directory|`.lumd`|
 |ENV namespace|`LUMNETWORK`|
 |Repository|`https://github.com/lum-network/chain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-lumnetwork-v1.0.5`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-lumnetwork-v1.0.5`|
 
 ## Examples
 
@@ -21,3 +21,12 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/lumnetwork/chain.json`|
+
+## ChainLayer Quicksync
+
+ChainLayer provide snapshots for Lum Network as part of their [Quicksync service](https://quicksync.io/networks/lum.html).
+
+|Variable|Value|
+|---|---|
+|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/lum.json`|
+|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.lum.json`|

@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  node_1:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-chronicnetwork-v1.1.0
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/chronicnetwork/chain.json
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.cht

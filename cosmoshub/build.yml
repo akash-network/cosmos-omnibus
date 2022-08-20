@@ -8,7 +8,7 @@ services:
         PROJECT: cosmoshub
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
-        VERSION: v6.0.3
+        VERSION: v7.0.2
         REPOSITORY: https://github.com/cosmos/gaia
         NAMESPACE: GAIAD
     ports:
@@ -17,8 +17,10 @@ services:
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      - VALIDATE_GENESIS=0
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cosmoshub/chain.json
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
+      # - SNAPSHOT_POLKACHU=1
     env_file:
       - ../.env
     volumes:

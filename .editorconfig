@@ -1,0 +1,16 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# default configuration
+[*]
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Unix-style newlines with a newline ending every file
+end_of_line = lf
+
+# Set default charset
+charset = utf-8
+
+# Trailing spaces are useful in Markdown
+[*.{md,markdown}]
+trim_trailing_whitespace = false

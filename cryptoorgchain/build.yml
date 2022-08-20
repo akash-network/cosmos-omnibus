@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: cryptoorgchain
         PROJECT_BIN: chain-maind
-        VERSION: v3.1.1-croeseid
+        VERSION: v3.3.3
         REPOSITORY: https://github.com/crypto-org-chain/chain-main
         NAMESPACE: CHAIN_MAIND
     ports:
@@ -16,8 +16,8 @@ services:
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      - VALIDATE_GENESIS=0
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cryptoorgchain/chain.json
+      # - SNAPSHOT_QUICKSYNC=https://quicksync.io/crypto.json
     env_file:
       - ../.env
     volumes:

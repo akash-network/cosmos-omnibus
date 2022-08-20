@@ -19,7 +19,8 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/lumnetwork/chain.json
+      # - SNAPSHOT_QUICKSYNC=https://quicksync.io/lum.json
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.lum
+      - ./node-data:/root/.lumd

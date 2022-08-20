@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   validator:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-akash-v0.14.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-akash-v0.16.3
     env:
       - MONIKER=validator
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
@@ -25,17 +25,26 @@ services:
         as: 80
         to:
           - global: true # debug
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.akash
 
 profiles:
   compute:
     validator:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 2Gi
+          size: 8Gi
         storage:
-          size: 40Gi
+          size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
   placement:
     dcloud:
       attributes:
@@ -46,7 +55,7 @@ profiles:
       pricing:
         validator:
           denom: uakt
-          amount: 100
+          amount: 1000
 
 deployment:
   validator:

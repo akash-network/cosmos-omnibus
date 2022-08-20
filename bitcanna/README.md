@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v.1.3.1`|
+|Version|`v1.4.1`|
 |Binary|`bcnad`|
 |Directory|`.bcna`|
 |ENV namespace|`BCNAD`|
 |Repository|`https://github.com/BitCannaGlobal/bcna`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-bitcanna-v.1.3.1`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-bitcanna-v1.4.1`|
 
 ## Examples
 
@@ -22,10 +22,14 @@ The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes 
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/chain.json`|
 
-## Snapshot restore
+## Polkachu Chain Services
 
-Akash provide daily snapshots of the Bitcanna blockchain taken at midnight UTC.
+[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, statesync and pruned snapshots.
+
+Note you should choose between statesync and snapshot bootstrapping, snapshot will take precedence.
 
 |Variable|Value|
 |---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/bitcanna/snapshot.json`|
+|`P2P_POLKACHU`|`1`|
+|`SNAPSHOT_POLKACHU`|`1`|
+|`STATESYNC_POLKACHU`|`1`|

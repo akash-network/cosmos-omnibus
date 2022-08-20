@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.0.30-sifchain-v0.10.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.1-sifchain-v0.15.0
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,7 +10,8 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/sifchain/chain.json
-      - VALIDATE_GENESIS=0
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/sifchain/snapshot.json
+      - P2P_POLKACHU=1
+      # - STATESYNC_POLKACHU=1
+      - SNAPSHOT_POLKACHU=1
     volumes:
       - ./node-data:/root/.sifnoded
