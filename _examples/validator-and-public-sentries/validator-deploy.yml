@@ -8,7 +8,7 @@ services:
       - MONIKER=validator
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
-      - FASTSYNC_VERSION=v2
+      - FASTSYNC_VERSION=v0
       - AKASH_MODE=validator
       - AKASH_P2P_PEX=false
       - AKASH_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...

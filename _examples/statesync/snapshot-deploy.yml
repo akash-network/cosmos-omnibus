@@ -9,7 +9,7 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json
       - MINIMUM_GAS_PRICES=0.025uakt
-      - FASTSYNC_VERSION=v2
+      - FASTSYNC_VERSION=v0
       - PRUNING=nothing
       - STATESYNC_SNAPSHOT_INTERVAL=500
     expose:
@@ -31,7 +31,7 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json
       - MINIMUM_GAS_PRICES=0.025uakt
-      - FASTSYNC_VERSION=v2
+      - FASTSYNC_VERSION=v0
       - PRUNING=nothing
       - STATESYNC_SNAPSHOT_INTERVAL=500
     expose:
