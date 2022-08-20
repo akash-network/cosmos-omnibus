@@ -35,9 +35,12 @@ export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
   echo "Download binary $PROJECT_BIN from $BINARY_URL"
   curl -sLo /bin/$PROJECT_BIN $BINARY_URL
-  file /bin/$PROJECT_BIN | grep -q 'gzip compressed data' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.gz && tar -xvf /bin/$PROJECT_BIN.gz -C /bin
-  file /bin/$PROJECT_BIN | grep -q 'tar archive' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar && rm /bin/$PROJECT_BIN.tar -C /bin
-  file /bin/$PROJECT_BIN | grep -q 'Zip archive data' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin
+  file_description=$(file /bin/$PROJECT_BIN)
+  case "${file_description,,}" in
+    *"gzip compressed data"*)   mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tgz && tar -xvf /bin/$PROJECT_BIN.tgz -C /bin && rm /bin/$PROJECT_BIN.tgz;;
+    *"tar archive"*)            mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar -C /bin && rm /bin/$PROJECT_BIN.tar;;
+    *"zip archive data"*)       mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip;;
+  esac
   [ -n "$BINARY_ZIP_PATH" ] && mv /bin/${BINARY_ZIP_PATH} /bin
   chmod +x /bin/$PROJECT_BIN
 fi
@@ -260,7 +263,17 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
     if [[ "${SNAPSHOT_FORMAT,,}" == "tar.gz" ]]; then tar_args="xzf"; fi
     if [[ "${SNAPSHOT_FORMAT,,}" == "tar.lz4" ]]; then tar_cmd="lz4 -d | tar $tar_args -"; fi
     if [[ "${SNAPSHOT_FORMAT,,}" == "tar.zst" ]]; then tar_cmd="zstd -cd | tar $tar_args -"; fi
-    wget -nv -O - $SNAPSHOT_URL | eval $tar_cmd
+
+    # Detect content size via HTTP header `Content-Length`
+    # Note that the server can refuse to return `Content-Length`, or the URL can be incorrect
+    pv_extra_args=""
+    snapshot_size_in_bytes=$(wget $SNAPSHOT_URL --spider --server-response -O - 2>&1 | sed -ne '/Content-Length/{s/.*: //;p}')
+    case "$snapshot_size_in_bytes" in
+      # Value cannot be started with `0`, and must be integer
+      [1-9]*[0-9]) pv_extra_args="-s $snapshot_size_in_bytes";;
+    esac
+    (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+
     [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
   else
     echo "Snapshot URL not found"
