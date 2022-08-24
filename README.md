@@ -285,7 +285,7 @@ See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) f
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`FASTSYNC_VERSION`|The fastsync version| |`v2`|
+|`FASTSYNC_VERSION`|The fastsync version| |`v0`|
 |`MINIMUM_GAS_PRICES`|Minimum gas prices| |`0.025uakt`|
 |`PRUNING`|How much of the chain to prune| |`nothing`|
 |`DEBUG`|Set to `1` to output all environment variables on boot. Set to `2` to debug shell scripts.| |`1`, `2`|
