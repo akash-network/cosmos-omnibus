@@ -2,6 +2,8 @@
 
 set -e
 
+[ "$DEBUG" == "2" ] && set -x
+
 SNAPSHOT_TIME="${SNAPSHOT_TIME:-00:00:00}"
 SNAPSHOT_DAY="${SNAPSHOT_DAY:-*}"
 SNAPSHOT_DIR="${SNAPSHOT_DIR:-$PROJECT_ROOT/data}"

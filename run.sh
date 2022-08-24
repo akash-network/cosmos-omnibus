@@ -2,6 +2,8 @@
 
 set -e
 
+[ "$DEBUG" == "2" ] && set -x
+
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
 if [ -n "$CHAIN_JSON" ]; then
   CHAIN_METADATA=$(curl -s $CHAIN_JSON)
