@@ -9,6 +9,7 @@ services:
         PROJECT_BIN: sifnoded
         VERSION: v0.16.0
         REPOSITORY: https://github.com/Sifchain/sifnode.git
+        GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
       - '26657:26657'
