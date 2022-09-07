@@ -3,12 +3,12 @@ version: "2.0"
 
 services:
   validator:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-akash-v0.16.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.2-akash-v0.16.3
     env:
       - MONIKER=validator
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
-      - FASTSYNC_VERSION=v2
+      - FASTSYNC_VERSION=v0
       - AKASH_MODE=validator
       - AKASH_P2P_PEX=false
       - AKASH_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...
@@ -25,6 +25,10 @@ services:
         as: 80
         to:
           - global: true # debug
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.akash
 
 profiles:
   compute:
@@ -36,6 +40,11 @@ profiles:
           size: 8Gi
         storage:
           size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
   placement:
     dcloud:
       attributes:

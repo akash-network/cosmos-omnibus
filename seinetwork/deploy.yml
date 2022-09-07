@@ -1,0 +1,58 @@
+---
+version: "2.0"
+
+services:
+  node:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.2-seinetwork-1.1.1beta
+    env:
+      - MONIKER=node_1
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/seinetwork/chain.json
+      - CHAIN_ID=atlantic-1
+      - GENESIS_URL=https://raw.githubusercontent.com/sei-protocol/testnet/main/sei-incentivized-testnet/genesis.json
+      - ADDRBOOK_URL=https://raw.githubusercontent.com/sei-protocol/testnet/main/sei-incentivized-testnet/addrbook.json
+      - MINIMUM_GAS_PRICES=0.025usei
+    expose:
+      - port: 26657
+        as: 80
+        to:
+          - global: true
+      - port: 26656
+        to:
+          - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.sei
+
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 2
+        memory:
+          size: 2Gi
+        storage:
+          size: 40Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 100
+
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 1

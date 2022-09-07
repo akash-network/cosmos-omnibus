@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-sifchain-v0.13.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.2-sifchain-v0.15.0
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/sifchain/chain.json
@@ -18,6 +18,10 @@ services:
       - port: 26656
         to:
           - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.sifnoded
 
 profiles:
   compute:
@@ -29,6 +33,11 @@ profiles:
           size: 8Gi
         storage:
           size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
   placement:
     dcloud:
       attributes:

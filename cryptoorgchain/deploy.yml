@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-cryptoorgchain-v3.3.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.2-cryptoorgchain-v3.3.3
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cryptoorgchain/chain.json
@@ -16,6 +16,10 @@ services:
       - port: 26656
         to:
           - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.chain-maind
 
 profiles:
   compute:
@@ -27,6 +31,11 @@ profiles:
           size: 8Gi
         storage:
           size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
   placement:
     dcloud:
       attributes:

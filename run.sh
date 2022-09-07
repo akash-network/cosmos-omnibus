@@ -2,6 +2,8 @@
 
 set -e
 
+[ "$DEBUG" == "2" ] && set -x
+
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
 if [ -n "$CHAIN_JSON" ]; then
   CHAIN_METADATA=$(curl -s $CHAIN_JSON)
@@ -20,7 +22,11 @@ fi
 export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
 export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
 export CONFIG_DIR="${CONFIG_DIR:-config}"
-export START_CMD="${START_CMD:-$PROJECT_BIN start}"
+if [ "$COSMOVISOR_ENABLED" == "1" ]; then
+  export START_CMD="${START_CMD:-cosmovisor run start}"
+else
+  export START_CMD="${START_CMD:-$PROJECT_BIN start}"
+fi
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
@@ -31,9 +37,12 @@ export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
   echo "Download binary $PROJECT_BIN from $BINARY_URL"
   curl -sLo /bin/$PROJECT_BIN $BINARY_URL
-  file /bin/$PROJECT_BIN | grep -q 'gzip compressed data' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.gz && tar -xvf /bin/$PROJECT_BIN.gz -C /bin
-  file /bin/$PROJECT_BIN | grep -q 'tar archive' && mv /bin/$PROJECT_BIN.json /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar && rm /bin/$PROJECT_BIN.tar -C /bin
-  file /bin/$PROJECT_BIN | grep -q 'Zip archive data' && mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin
+  file_description=$(file /bin/$PROJECT_BIN)
+  case "${file_description,,}" in
+    *"gzip compressed data"*)   mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tgz && tar -xvf /bin/$PROJECT_BIN.tgz -C /bin && rm /bin/$PROJECT_BIN.tgz;;
+    *"tar archive"*)            mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar -C /bin && rm /bin/$PROJECT_BIN.tar;;
+    *"zip archive data"*)       mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip;;
+  esac
   [ -n "$BINARY_ZIP_PATH" ] && mv /bin/${BINARY_ZIP_PATH} /bin
   chmod +x /bin/$PROJECT_BIN
 fi
@@ -105,7 +114,7 @@ if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" 
         echo "Polkachu statesync is not active for this chain"
       fi
     fi
-    
+
     # Polkachu live peers
     if [ -n "$P2P_POLKACHU" ]; then
       export POLKACHU_PEERS_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.live_peers.active')
@@ -123,7 +132,6 @@ if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" 
       if [ $POLKACHU_SNAPSHOT_ENABLED ]; then
         export POLKACHU_SNAPSHOT=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint') | jq -r '.snapshot.url'`
         export SNAPSHOT_URL=$POLKACHU_SNAPSHOT
-        export SNAPSHOT_FORMAT=lz4
         export SNAPSHOT_DATA_PATH=data
       else
         echo "Polkachu snapshot is not active for this chain"
@@ -204,6 +212,8 @@ fi
 
 # Download genesis
 if [ "$DOWNLOAD_GENESIS" == "1" ]; then
+  GENESIS_FILENAME="${GENESIS_FILENAME:-genesis.json}"
+
   echo "Downloading genesis $GENESIS_URL"
   curl -sfL $GENESIS_URL > genesis.json
   file genesis.json | grep -q 'gzip compressed data' && mv genesis.json genesis.json.gz && gzip -d genesis.json.gz
@@ -211,12 +221,11 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
 
   mkdir -p $CONFIG_PATH
-  mv genesis.json $CONFIG_PATH/genesis.json
+  mv $GENESIS_FILENAME $CONFIG_PATH/genesis.json
 fi
 
 # Snapshot
 if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
-  SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-tar.gz}"
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
     SNAPSHOT_PATTERN="${SNAPSHOT_PATTERN:-$CHAIN_ID.*$SNAPSHOT_FORMAT}"
@@ -230,9 +239,19 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_QUICKSYNC}" ]; then
     SNAPSHOT_PRUNING="${SNAPSHOT_PRUNING:-pruned}"
     SNAPSHOT_DATA_PATH="data"
-    SNAPSHOT_FORMAT="lz4"
     SNAPSHOT_URL=`curl -s $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
   fi
+
+  # SNAPSHOT_FORMAT default value generation via SNAPSHOT_URL
+  SNAPSHOT_FORMAT_DEFAULT="tar.gz"
+  case "${SNAPSHOT_URL,,}" in
+    *.tar.gz)   SNAPSHOT_FORMAT_DEFAULT="tar.gz";;
+    *.tar.lz4)  SNAPSHOT_FORMAT_DEFAULT="tar.lz4";;
+    *.tar.zst)  SNAPSHOT_FORMAT_DEFAULT="tar.zst";;
+    # Catchall
+    *)          SNAPSHOT_FORMAT_DEFAULT="tar";;
+  esac
+  SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-$SNAPSHOT_FORMAT_DEFAULT}"
 
   if [ -n "${SNAPSHOT_URL}" ]; then
     echo "Downloading snapshot from $SNAPSHOT_URL..."
@@ -240,9 +259,23 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
     mkdir -p $PROJECT_ROOT/data;
     cd $PROJECT_ROOT/data
 
-    [[ $SNAPSHOT_FORMAT = "tar.gz" ]] && tar_args="xzf" || tar_args="xf"
-    [[ $SNAPSHOT_FORMAT = "lz4" ]] && tar_cmd="lz4 -d | tar $tar_args -" || tar_cmd="tar $tar_args -"
-    wget -nv -O - $SNAPSHOT_URL | eval $tar_cmd
+    tar_args="xf"
+    tar_cmd="tar $tar_args -"
+    # case insensitive match
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.gz" ]]; then tar_args="xzf"; fi
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.lz4" ]]; then tar_cmd="lz4 -d | tar $tar_args -"; fi
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.zst" ]]; then tar_cmd="zstd -cd | tar $tar_args -"; fi
+
+    # Detect content size via HTTP header `Content-Length`
+    # Note that the server can refuse to return `Content-Length`, or the URL can be incorrect
+    pv_extra_args=""
+    snapshot_size_in_bytes=$(wget $SNAPSHOT_URL --spider --server-response -O - 2>&1 | sed -ne '/Content-Length/{s/.*: //;p}')
+    case "$snapshot_size_in_bytes" in
+      # Value cannot be started with `0`, and must be integer
+      [1-9]*[0-9]) pv_extra_args="-s $snapshot_size_in_bytes";;
+    esac
+    (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+
     [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
   else
     echo "Snapshot URL not found"
@@ -251,6 +284,31 @@ fi
 
 # Validate genesis
 [ "$VALIDATE_GENESIS" == "1" ] && $PROJECT_BIN validate-genesis
+
+# Cosmovisor
+if [ "$COSMOVISOR_ENABLED" == "1" ]; then
+  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.1.0"}"
+
+  # Download Binary
+  if [ ! -f "/bin/cosmovisor" ]; then
+    echo "Downloading the cosmovisor ($COSMOVISOR_VERSION) binary..."
+    mkdir -p cosmovisor_temp
+    cd cosmovisor_temp
+    curl -sL "https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz" | tar zx
+    cp cosmovisor /bin/cosmovisor
+    cd ..
+    rm -r cosmovisor_temp
+  fi
+
+  # Set up the environment variables
+  export DAEMON_NAME=$PROJECT_BIN
+  export DAEMON_HOME=$PROJECT_ROOT
+
+  # Setup Folder Structure
+  mkdir -p $PROJECT_ROOT/cosmovisor/upgrades
+  mkdir -p $PROJECT_ROOT/cosmovisor/genesis/bin
+  cp "/bin/$PROJECT_BIN" $PROJECT_ROOT/cosmovisor/genesis/bin/
+fi
 
 if [ -n "$SNAPSHOT_PATH" ]; then
   exec snapshot.sh "$START_CMD"

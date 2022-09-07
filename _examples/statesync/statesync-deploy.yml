@@ -3,12 +3,12 @@ version: "2.0"
 
 services:
   node1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.2.3-akash-v0.16.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.2-akash-v0.16.3
     env:
       - MONIKER=private_node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
-      - FASTSYNC_VERSION=v2
+      - FASTSYNC_VERSION=v0
       - STATESYNC_RPC_SERVERS=<publicnode1:26657,publicnode2:26657>
     expose:
       - port: 26657
@@ -18,6 +18,10 @@ services:
       - port: 26656
         to:
           - global: true
+    # params:
+    #   storage:
+    #     data:
+    #       mount: /root/.akash
 
 profiles:
   compute:
@@ -29,6 +33,11 @@ profiles:
           size: 8Gi
         storage:
           size: 100Gi
+          # - size: 100Mi
+          # - name: data
+          #   size: 400Gi
+          #   attributes:
+          #     persistent: true
   placement:
     dcloud:
       attributes:

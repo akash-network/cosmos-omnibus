@@ -13,7 +13,7 @@ ARG PROJECT_BIN=$PROJECT
 ARG INSTALL_PACKAGES
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes curl unzip ${INSTALL_PACKAGES} && \
+  apt-get install --no-install-recommends --assume-yes curl unzip pv ${INSTALL_PACKAGES} && \
   apt-get clean
 
 #
@@ -82,6 +82,32 @@ ARG BINARY_URL
 RUN curl -Lo /bin/$PROJECT_BIN $BINARY_URL
 RUN chmod +x /bin/$PROJECT_BIN
 
+FROM gcc:12 AS zstd_build
+
+ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz"
+
+RUN apt-get update && \
+      apt-get install --no-install-recommends --assume-yes python3 ninja-build && \
+      apt-get clean && \
+    curl -o /tmp/get-pip.py -L 'https://bootstrap.pypa.io/get-pip.py' && \
+      python3 /tmp/get-pip.py && \
+    pip3 install meson && \
+    mkdir -p /tmp/zstd && \
+    cd /tmp/zstd && \
+    curl -Lo zstd.source $ZTSD_SOURCE_URL && \
+    file zstd.source | grep -q 'gzip compressed data' && mv zstd.source zstd.source.gz && gzip -d zstd.source.gz && \
+    file zstd.source | grep -q 'tar archive' && mv zstd.source zstd.source.tar && tar -xf zstd.source.tar --strip-components=1 && rm zstd.source.tar && \
+    LDFLAGS=-static \
+    meson setup \
+      -Dbin_programs=true \
+      -Dstatic_runtime=true \
+      -Ddefault_library=static \
+      -Dzlib=disabled -Dlzma=disabled -Dlz4=disabled \
+      build/meson builddir-st && \
+    ninja -C builddir-st && \
+    ninja -C builddir-st install && \
+    /usr/local/bin/zstd -v
+
 #
 # Final Omnibus image
 # Note optional `BUILD_IMAGE` argument controls the base image
@@ -90,8 +116,10 @@ FROM ${BUILD_IMAGE} AS omnibus
 LABEL org.opencontainers.image.source https://github.com/ovrclk/cosmos-omnibus
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes ca-certificates curl wget file unzip liblz4-tool gnupg2 jq && \
+  apt-get install --no-install-recommends --assume-yes ca-certificates curl wget file unzip liblz4-tool gnupg2 jq pv && \
   apt-get clean
+
+COPY --from=zstd_build /usr/local/bin/zstd /bin/
 
 ARG PROJECT
 ARG PROJECT_BIN
