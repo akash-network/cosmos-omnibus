@@ -7,7 +7,7 @@
 |Directory|`.knstld`|
 |ENV namespace|`KONSTELLATION`|
 |Repository|`https://github.com/konstellation/konstellation`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.2-konstellation-v0.5.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-konstellation-v0.5.0`|
 
 ## Examples
 
