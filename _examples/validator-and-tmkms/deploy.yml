@@ -1,0 +1,87 @@
+---
+version: "2.0"
+
+services:
+  node:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.2-akash-v0.16.3
+    env:
+      - MONIKER=my-moniker-1
+      - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
+      - MINIMUM_GAS_PRICES=0.025uakt
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
+      - AKASH_PRIV_VALIDATOR_LADDR=tcp://0.0.0.0:26658 # requires remote signer
+    expose:
+      - port: 26657
+        to:
+          - service: proxy # only exposed to proxy, not globally
+      - port: 26658
+        to:
+          - service: proxy # only exposed to proxy, not globally
+    params:
+      storage:
+        data:
+          mount: /root/.akash
+  proxy:
+    image: ghcr.io/ovrclk/stunnel-proxy:v0.0.1
+    env:
+      - PSK=DmtaC6N3HOWFkJZpNZs2dkabFT5yQONw # must match PSK in Stunnel client
+      - STUNNEL_SVC_RPC_ACCEPT=36657 # accept 36657
+      - STUNNEL_SVC_RPC_CONNECT=node:26657 # proxy 36657 to node:26657
+      - STUNNEL_SVC_SIGNER_ACCEPT=36658 # accept 36658
+      - STUNNEL_SVC_SIGNER_CONNECT=node:26658 # proxy 36658 to node:26658
+    expose:
+      - port: 36657 # expose TLS encrypted 36657 globally through a random port
+        to:
+          - global: true
+      - port: 36658 # expose TLS encrypted 36658 globally through a random port
+        to:
+          - global: true
+
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 4
+        memory:
+          size: 8Gi
+        storage:
+          - size: 512Mi
+          - name: data
+            size: 120Gi
+            attributes:
+              persistent: true
+              class: beta2
+    proxy:
+      resources:
+        cpu:
+          units: 1
+        memory:
+          size: 512Mi
+        storage:
+          size: 512Mi
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 10000
+        proxy:
+          denom: uakt
+          amount: 10000
+
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 1
+  proxy:
+    dcloud:
+      profile: proxy
+      count: 1

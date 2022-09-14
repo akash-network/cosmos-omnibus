@@ -1,0 +1,14 @@
+services:
+  stunnel:
+    image: ghcr.io/ovrclk/stunnel-proxy:v0.0.1
+    environment:
+      - PSK=DmtaC6N3HOWFkJZpNZs2dkabFT5yQONw # must match PSK in Stunnel server
+      - STUNNEL_SVC_RPC_CLIENT=yes # client mode - we are sending connections from this proxy
+      - STUNNEL_SVC_RPC_ACCEPT=0.0.0.0:26657 # accept 26657
+      - STUNNEL_SVC_RPC_CONNECT=akash.provider.host:3123 # proxy 26657 to the host:port from the Akash deployment
+      - STUNNEL_SVC_SIGNER_CLIENT=yes # client mode - we are sending connections from this proxy
+      - STUNNEL_SVC_SIGNER_ACCEPT=0.0.0.0:26658 # accept 26658
+      - STUNNEL_SVC_SIGNER_CONNECT=akash.provider.host:3222 # proxy 26658 to the host:port from the Akash deployment
+    ports:
+      - '26657:26657' # expose unencryped 26657 to the server
+      - '26658:26658' # expose unencryped 26658 to the server
