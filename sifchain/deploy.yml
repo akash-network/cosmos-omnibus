@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-sifchain-v0.17.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-sifchain-v1.0-beta.11
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/sifchain/chain.json
