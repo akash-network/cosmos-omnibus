@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  node_1:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-autonomy-v1.2.1
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_ID=autonomy
+      - P2P_PERSISTENT_PEERS=390bbb89b868236e0c1b05eec29c92f7b96d14b8@v2.rpc.wouo.autonomy.network:26656,93ee9a647c64f77912dd7e3a7c61c78c5346787e@52.255.154.207:26656,1bbc7b1fa7ed19476785a899025c250990ae303a@20.85.215.78:26656,eccc6bbdf408757e549639e5a7c89f002012dd2b@20.124.119.15:26656
+      - GENESIS_URL=https://drive.google.com/uc?export=download&id=1APXcTwlldae5cumDLygiu9wlozT6x8a-
+    volumes:
+      - ./node-data:/root/.autonomy
