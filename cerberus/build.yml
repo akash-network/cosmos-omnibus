@@ -11,6 +11,7 @@ services:
         REPOSITORY: https://github.com/cerberus-zone/cerberus.git
         NAMESPACE: CERBERUSD
         PROJECT_DIR: .cerberus
+        GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
       - '26657:26657'
