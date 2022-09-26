@@ -7,10 +7,11 @@ services:
       args:
         PROJECT: cerberus
         PROJECT_BIN: cerberusd
-        VERSION: v1.0.1
+        VERSION: v2.0.0
         REPOSITORY: https://github.com/cerberus-zone/cerberus.git
         NAMESPACE: CERBERUSD
         PROJECT_DIR: .cerberus
+        GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
       - '26657:26657'
