@@ -259,12 +259,11 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
     mkdir -p $PROJECT_ROOT/data;
     cd $PROJECT_ROOT/data
 
-    tar_args="xf"
-    tar_cmd="tar $tar_args -"
+    tar_cmd="tar xf -"
     # case insensitive match
-    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.gz" ]]; then tar_args="xzf"; fi
-    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.lz4" ]]; then tar_cmd="lz4 -d | tar $tar_args -"; fi
-    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.zst" ]]; then tar_cmd="zstd -cd | tar $tar_args -"; fi
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.gz" ]]; then tar_cmd="tar xzf -"; fi
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.lz4" ]]; then tar_cmd="lz4 -d | tar xf -"; fi
+    if [[ "${SNAPSHOT_FORMAT,,}" == "tar.zst" ]]; then tar_cmd="zstd -cd | tar xf -"; fi
 
     # Detect content size via HTTP header `Content-Length`
     # Note that the server can refuse to return `Content-Length`, or the URL can be incorrect
