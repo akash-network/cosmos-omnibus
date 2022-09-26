@@ -49,6 +49,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[agoric](https://github.com/Agoric/ag0)|`agoric-3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-agoric-agoric-3.1`|[Example](./agoric)|
 |[akash](https://github.com/ovrclk/akash)|`v0.16.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-akash-v0.16.3`|[Example](./akash)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v0.3.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-assetmantle-v0.3.0`|[Example](./assetmantle)|
+|[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-autonomy-v1.2.1`|[Example](./autonomy)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.3.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-bandchain-v2.3.3`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-bitcanna-v1.4.1`|[Example](./bitcanna)|
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.11.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.3-bitsong-v0.11.0`|[Example](./bitsong)|
