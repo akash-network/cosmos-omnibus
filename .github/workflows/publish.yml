@@ -56,7 +56,7 @@ jobs:
           - project: emoney
             version: v1.1.4
           - project: evmos
-            version: v7.0.0
+            version: v8.2.0
           - project: fetchhub
             version: v0.10.4
           - project: gravitybridge
