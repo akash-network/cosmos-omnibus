@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  node_1:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.4-terp-v0.1.0
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - 
+CHAIN_JSON=https://raw.githubusercontent.com/terpnetwork/test-net/master/athena-1/chain.json
+      - MINIMUM_GAS_PRICES=0.025upersyx
+      - FASTSYNC_VERSION=v0
+
+    volumes:
+      - ./node-data:/root/.terp
