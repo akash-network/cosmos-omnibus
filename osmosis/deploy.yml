@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.4-osmosis-v11.0.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.4-osmosis-v12.0.0
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/chain.json
