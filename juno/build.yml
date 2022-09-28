@@ -8,7 +8,7 @@ services:
         PROJECT: juno
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
-        VERSION: v9.0.0
+        VERSION: v10.0.2
         REPOSITORY: https://github.com/CosmosContracts/juno
         NAMESPACE: JUNOD
         GOLANG_VERSION: 1.18-buster
