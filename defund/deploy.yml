@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.4-defund-v0.0.2
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.5-defund-v0.0.2
     env:
       - MONIKER=node_1
       - CHAIN_ID=defund-private-1
