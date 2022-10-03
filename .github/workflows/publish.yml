@@ -55,6 +55,8 @@ jobs:
             version: v2.0.1
           - project: emoney
             version: v1.1.4
+          - project: empowerchain
+            version: cfbae91c6657e02a357b0cae427d770d4348f7c9
           - project: evmos
             version: v8.2.0
           - project: fetchhub
