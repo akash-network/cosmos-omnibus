@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.5-osmosis-v11.0.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.5-osmosis-v12.0.0
     ports:
       - '26656:26656'
       - '26657:26657'
