@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  node_1:
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.5-teritori-v1.1.2
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_ID=teritori-1
+      - GENESIS_URL=https://github.com/TERITORI/teritori-mainnet-genesis/raw/main/genesis.json
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
+    volumes:
+      - ./node-data:/root/.teritorid
