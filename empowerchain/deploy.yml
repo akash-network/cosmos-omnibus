@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.5-empowerchain-cfbae91c6657e02a357b0cae427d770d4348f7c9
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.5-empowerchain-v0.0.1
     env:
       - MONIKER=my-moniker-1
       - CHAIN_ID=altruistic-1
