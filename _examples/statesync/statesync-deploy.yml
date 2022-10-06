@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.5-akash-v0.16.3
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-akash-v0.16.3
     env:
       - MONIKER=private_node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
