@@ -98,7 +98,7 @@ jobs:
           - project: rizon
             version: v0.2.8
           - project: seinetwork
-            version: 1.2.0beta
+            version: 1.2.2beta
           - project: sentinel
             version: v0.8.3
           - project: shentu
