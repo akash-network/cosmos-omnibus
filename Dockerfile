@@ -33,9 +33,10 @@ FROM build_base AS build_source
 ARG VERSION
 ARG REPOSITORY
 ARG BUILD_CMD="make install"
+ARG BUILD_DIR=/data
 
 RUN git clone $REPOSITORY /data
-WORKDIR /data
+WORKDIR $BUILD_DIR
 RUN git checkout $VERSION
 
 #
@@ -68,9 +69,10 @@ FROM debian:buster AS default
 
 ARG PROJECT
 ARG PROJECT_BIN=$PROJECT
+ARG BUILD_DIR=/data
 
 COPY --from=build /bin/$PROJECT_BIN /bin/$PROJECT_BIN
-COPY --from=build /data/deps/ /
+COPY --from=build $BUILD_DIR/deps/ /
 
 #
 # Optional image to install from binary
