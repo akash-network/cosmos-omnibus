@@ -81,7 +81,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`v3.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-likecoin-v3.0.0`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-lumnetwork-v1.0.5`|[Example](./lumnetwork)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-omniflixhub-v0.4.1`|[Example](./omniflixhub)|
-|[osmosis](https://github.com/osmosis-labs/osmosis)|`v12.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-osmosis-v12.0.0`|[Example](./osmosis)|
+|[osmosis](https://github.com/osmosis-labs/osmosis)|`v12.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-osmosis-v12.2.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-panacea-v2.0.2`|[Example](./panacea)|
 |[passage](https://github.com/envadiv/Passage3D)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-passage-v1.0.0`|[Example](./passage)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-persistence-v0.1.3`|[Example](./persistence)|
