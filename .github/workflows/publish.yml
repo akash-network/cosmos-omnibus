@@ -24,7 +24,7 @@ jobs:
           - project: bandchain
             version: v2.3.3
           - project: bitcanna
-            version: v1.4.3
+            version: v1.4.4
           - project: bitsong
             version: v0.11.0
           - project: bostrom
