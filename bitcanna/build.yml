@@ -8,8 +8,8 @@ services:
         PROJECT: bitcanna
         PROJECT_BIN: bcnad
         PROJECT_DIR: .bcna
-        VERSION: v1.4.3
-        REPOSITORY: https://github.com/BitCannaGlobal/bcna
+        VERSION: v1.4.4
+        REPOSITORY: https://github.com/BitCannaGlobal/bcna-patch
         NAMESPACE: BCNAD
         GOLANG_VERSION: 1.18-buster
     ports:
