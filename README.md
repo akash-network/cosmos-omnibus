@@ -68,7 +68,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[dig](https://github.com/notional-labs/dig)|`v2.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-dig-v2.0.1`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-emoney-v1.1.4`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v0.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-empowerchain-v0.0.1`|[Example](./empowerchain)|
-|[evmos](https://github.com/tharsis/evmos)|`v8.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-evmos-v8.2.0`|[Example](./evmos)|
+|[evmos](https://github.com/tharsis/evmos)|`v8.2.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-evmos-v8.2.3`|[Example](./evmos)|
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-fetchhub-v0.10.4`|[Example](./fetchhub)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-gravitybridge-v1.4.1`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.17.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-impacthub-v0.17.0`|[Example](./impacthub)|
