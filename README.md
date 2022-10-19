@@ -95,7 +95,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-starname-v0.11.5`|[Example](./starname)|
 |[stride](https://github.com/Stride-Labs/stride)|`v1.0.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-stride-v1.0.4`|[Example](./starname)|
 |[teritori](https://github.com/TERITORI/teritori-chain)|`v1.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-teritori-v1.2.0`|[Example](./teritori)|
-|[umee](https://github.com/umee-network/umee)|`v1.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-umee-v1.0.1`|[Example](./umee)|
+|[umee](https://github.com/umee-network/umee)|`v3.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-umee-v3.0.2`|[Example](./umee)|
 |[vidulum](https://github.com/vidulum/mainnet)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-vidulum-v1.0.0`|[Example](./vidulum)|
 
 ## Example configurations
