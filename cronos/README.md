@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.7.0`|
+|Version|`v0.8.2`|
 |Binary|`cronosd`|
 |Directory|`.cronos`|
 |ENV namespace|`CRONOS`|
 |Repository|`https://github.com/crypto-org-chain/cronos`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-cronos-v0.7.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-cronos-v0.8.2`|
 
 ## Examples
 

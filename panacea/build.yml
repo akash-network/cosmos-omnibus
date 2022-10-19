@@ -8,7 +8,7 @@ services:
         PROJECT: panacea
         PROJECT_BIN: panacead
         PROJECT_DIR: .panacea
-        VERSION: v2.0.2
+        VERSION: v2.0.5
         REPOSITORY: https://github.com/medibloc/panacea-core
     ports:
       - '26656:26656'

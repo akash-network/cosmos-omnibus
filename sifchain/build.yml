@@ -7,9 +7,8 @@ services:
       args:
         PROJECT: sifchain
         PROJECT_BIN: sifnoded
-        VERSION: v1.0-beta.12-issuefix
+        VERSION: v1.0.13-beta
         REPOSITORY: https://github.com/Sifchain/sifnode.git
-        GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
       - '26657:26657'

@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.0.2`|
+|Version|`v2.0.5`|
 |Binary|`panacead`|
 |Directory|`.panacea`|
 |ENV namespace|`PANACEAD`|
 |Repository|`https://github.com/medibloc/panacea-core`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-panacea-v2.0.2`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-panacea-v2.0.5`|
 
 ## Examples
 

@@ -12,7 +12,6 @@ services:
         NAMESPACE: EMPOWERD
         PROJECT_DIR: .empowerchain
         BUILD_DIR: /data/chain
-        GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
       - '26657:26657'
