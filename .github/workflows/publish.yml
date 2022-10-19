@@ -94,7 +94,7 @@ jobs:
           - project: regen
             version: v4.1.4
           - project: rizon
-            version: v0.2.8
+            version: v0.4.1
           - project: seinetwork
             version: 1.2.2beta
           - project: sentinel
