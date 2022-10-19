@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: comdex
         VERSION: v0.1.3
         REPOSITORY: https://github.com/comdex-official/comdex
-        GOLANG_VERSION: 1.18-buster
         NAMESPACE: COMDEX
     ports:
       - '26656:26656'

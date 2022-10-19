@@ -10,7 +10,6 @@ services:
         VERSION: v0.11.0
         REPOSITORY: https://github.com/bitsongofficial/go-bitsong
         NAMESPACE: BITSONG
-        GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
       - '26657:26657'
