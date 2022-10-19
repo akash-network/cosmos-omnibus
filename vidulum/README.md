@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.0.0`|
+|Version|`v1.2.0`|
 |Binary|`vidulumd`|
 |Directory|`.vidulum`|
 |ENV namespace|`vidulum`|
 |Repository|`https://github.com/crypto-org-chain/vidulum`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-vidulum-v1.0.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-vidulum-v1.2.0`|
 
 ## Examples
 
