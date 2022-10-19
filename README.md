@@ -91,7 +91,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[shentu](https://github.com/certikfoundation/shentu)|`v2.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-shentu-v2.5.0`|[Example](./shentu)|
 |[sifchain](https://github.com/Sifchain/sifnode)|`v1.0.13-beta`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-sifchain-v1.0.13-beta`|[Example](./sifchain)|
 |[sommelier](https://github.com/PeggyJV/sommelier)|`v4.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-sommelier-v4.0.2`|[Example](./sommelier)|
-|[stargaze](https://github.com/public-awesome/stargaze)|`v5.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-stargaze-v5.0.0`|[Example](./stargaze)|
+|[stargaze](https://github.com/public-awesome/stargaze)|`v7.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-stargaze-v7.5.0`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.10.18`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-starname-v0.10.18`|[Example](./starname)|
 |[stride](https://github.com/Stride-Labs/stride)|`v1.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-stride-v1.0.2`|[Example](./starname)|
 |[teritori](https://github.com/TERITORI/teritori-chain)|`v1.1.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-teritori-v1.1.2`|[Example](./teritori)|

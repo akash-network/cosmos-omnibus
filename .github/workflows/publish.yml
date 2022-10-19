@@ -106,7 +106,7 @@ jobs:
           - project: sommelier
             version: v4.0.2
           - project: stargaze
-            version: v5.0.0
+            version: v7.5.0
           - project: stride
             version: v1.0.2
           - project: starname
