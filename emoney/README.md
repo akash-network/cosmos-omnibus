@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.1.4`|
+|Version|`v1.2.0`|
 |Binary|`emd`|
 |Directory|`.emd`|
 |ENV namespace|`EMD`|
 |Repository|`https://github.com/e-money/em-ledger`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-emoney-v1.1.4`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-emoney-v1.2.0`|
 
 ## Examples
 

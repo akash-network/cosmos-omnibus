@@ -52,7 +52,7 @@ jobs:
           - project: dig
             version: v2.0.1
           - project: emoney
-            version: v1.1.4
+            version: v1.2.0
           - project: empowerchain
             version: v0.0.1
           - project: evmos
