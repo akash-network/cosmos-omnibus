@@ -58,7 +58,7 @@ jobs:
           - project: evmos
             version: v8.2.3
           - project: fetchhub
-            version: v0.10.4
+            version: v0.10.6
           - project: gravitybridge
             version: v1.4.1
           - project: impacthub
