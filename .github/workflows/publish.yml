@@ -78,7 +78,7 @@ jobs:
           - project: likecoin
             version: v3.1.0
           - project: lumnetwork
-            version: v1.0.5
+            version: v1.2.2
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
