@@ -9,7 +9,6 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
-      - AKASH_MODE=validator
       - AKASH_P2P_PEX=false
       - AKASH_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...
       - AKASH_ADDR_BOOK_STRICT=false
@@ -45,7 +44,6 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
-      - AKASH_MODE=full
       - AKASH_P2P_PEX=true
       - AKASH_PRIVATE_PEER_IDS=<validatorid>
       - AKASH_UNCONDITIONAL_PEER_IDS=<validatorid>
@@ -76,7 +74,6 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
-      - AKASH_MODE=full
       - AKASH_P2P_PEX=true
       - AKASH_PRIVATE_PEER_IDS=<validatorid>
       - AKASH_UNCONDITIONAL_PEER_IDS=<validatorid>
