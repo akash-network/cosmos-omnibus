@@ -7,7 +7,7 @@
 |Directory|`.umee`|
 |ENV namespace|`umee`|
 |Repository|`https://github.com/crypto-org-chain/umee`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-umee-v3.0.2`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-umee-v3.0.2`|
 
 ## Examples
 
