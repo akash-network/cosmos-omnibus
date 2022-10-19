@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.2.0`|
+|Version|`v0.3.2`|
 |Binary|`cyber`|
 |Directory|`.cyber`|
 |ENV namespace|`BOSTROM`|
 |Repository|`https://github.com/cybercongress/go-cyber`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-bostrom-v0.2.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-bostrom-v0.3.2`|
 
 ## Examples
 

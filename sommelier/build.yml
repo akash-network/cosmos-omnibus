@@ -8,7 +8,7 @@ services:
         PROJECT: sommelier
         PROJECT_BIN: sommelier
         PROJECT_DIR: .sommelier
-        VERSION: v3.1.0
+        VERSION: v4.0.2
         REPOSITORY: https://github.com/PeggyJV/sommelier
         NAMESPACE: SOMMELIER
     ports:

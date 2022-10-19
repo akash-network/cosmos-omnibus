@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.1.3`|
+|Version|`v3.2.0`|
 |Binary|`persistenceCore`|
 |Directory|`.persistenceCore`|
 |ENV namespace|`PERSISTENCECORE`|
 |Repository|`https://github.com/persistenceOne/persistenceCore`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-persistence-v0.1.3`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-persistence-v3.2.0`|
 
 ## Examples
 

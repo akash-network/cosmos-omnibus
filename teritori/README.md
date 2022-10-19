@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.1.2`|
+|Version|`v1.2.0`|
 |Binary|`teritorid`|
 |Directory|`.teritorid`|
 |ENV namespace|`TERITORID`|
 |Repository|`https://github.com/TERITORI/teritori-chain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-teritori-v1.1.2`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-teritori-v1.2.0`|
 
 ## Examples
 

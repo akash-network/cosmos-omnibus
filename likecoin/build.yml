@@ -7,10 +7,9 @@ services:
       args:
         PROJECT: likecoin
         PROJECT_BIN: liked
-        VERSION: v3.0.0
+        VERSION: v3.1.0
         REPOSITORY: https://github.com/likecoin/likecoin-chain
         NAMESPACE: LIKED
-        GOLANG_VERSION: 1.18-buster
         BUILD_CMD: "make codegen install"
     ports:
       - '26656:26656'

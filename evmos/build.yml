@@ -8,10 +8,9 @@ services:
         PROJECT: evmos
         PROJECT_BIN: evmosd
         PROJECT_DIR: .evmosd
-        VERSION: v8.2.0
-        REPOSITORY: https://github.com/tharsis/evmos
+        VERSION: v8.2.3
+        REPOSITORY: https://github.com/evmos/evmos
         NAMESPACE: EVMOSD
-        GOLANG_VERSION: 1.18-buster
     ports:
       - '26656:26656'
       - '26657:26657'
