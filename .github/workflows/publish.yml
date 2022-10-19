@@ -76,7 +76,7 @@ jobs:
           - project: kujira
             version: v0.6.3
           - project: likecoin
-            version: v3.0.0
+            version: v3.1.0
           - project: lumnetwork
             version: v1.0.5
           # - project: nomic
