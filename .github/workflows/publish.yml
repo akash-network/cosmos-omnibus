@@ -60,7 +60,7 @@ jobs:
           - project: fetchhub
             version: v0.10.6
           - project: gravitybridge
-            version: v1.4.1
+            version: v1.7.2
           - project: impacthub
             version: v0.17.0
           - project: irisnet
