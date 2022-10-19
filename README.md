@@ -79,7 +79,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kujira](https://github.com/Team-Kujira/core)|`v0.6.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-kujira-v0.6.3`|[Example](./kujira)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-likecoin-v3.1.0`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.2.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-lumnetwork-v1.2.2`|[Example](./lumnetwork)|
-|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.4.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-omniflixhub-v0.4.1`|[Example](./omniflixhub)|
+|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.4.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-omniflixhub-v0.4.2`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v12.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-osmosis-v12.2.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-panacea-v2.0.2`|[Example](./panacea)|
 |[passage](https://github.com/envadiv/Passage3D)|`v1.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-passage-v1.1.0`|[Example](./passage)|
