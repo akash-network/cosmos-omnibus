@@ -8,7 +8,7 @@ services:
         PROJECT: bostrom
         PROJECT_BIN: cyber
         PROJECT_DIR: .cyber
-        VERSION: v0.2.0
+        VERSION: v0.3.2
         REPOSITORY: https://github.com/cybercongress/go-cyber
         NAMESPACE: BOSTROM
         GOLANG_VERSION: 1.17-buster
