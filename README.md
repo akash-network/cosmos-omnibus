@@ -50,7 +50,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[akash](https://github.com/ovrclk/akash)|`v0.16.6`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-akash-v0.16.6`|[Example](./akash)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v0.3.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-assetmantle-v0.3.0`|[Example](./assetmantle)|
 |[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-autonomy-v1.2.1`|[Example](./autonomy)|
-|[bandchain](https://github.com/bandprotocol/chain)|`v2.3.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-bandchain-v2.3.3`|[Example](./bandchain)|
+|[bandchain](https://github.com/bandprotocol/chain)|`v2.3.6`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-bandchain-v2.3.6`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.4.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-bitcanna-v1.4.4`|[Example](./bitcanna)|
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.11.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-bitsong-v0.11.0`|[Example](./bitsong)|
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-bostrom-v0.2.0`|[Example](./bostrom)|
