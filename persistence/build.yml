@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: persistence
         PROJECT_BIN: persistenceCore
-        VERSION: v0.1.3
+        VERSION: v3.2.0
         REPOSITORY: https://github.com/persistenceOne/persistenceCore
         NAMESPACE: PERSISTENCECORE
     ports:

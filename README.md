@@ -83,7 +83,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v12.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-osmosis-v12.2.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-panacea-v2.0.5`|[Example](./panacea)|
 |[passage](https://github.com/envadiv/Passage3D)|`v1.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-passage-v1.1.0`|[Example](./passage)|
-|[persistence](https://github.com/persistenceOne/persistenceCore)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-persistence-v0.1.3`|[Example](./persistence)|
+|[persistence](https://github.com/persistenceOne/persistenceCore)|`v3.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-persistence-v3.2.0`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v4.1.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-regen-v4.1.4`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.2.8`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-rizon-v0.2.8`|[Example](./rizon)|
 |[seinetwork](https://github.com/sei-protocol/sei-chain)|`1.2.2beta`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-seinetwork-1.2.2beta`|[Example](./seinetwork)|
