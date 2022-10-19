@@ -64,7 +64,7 @@ jobs:
           - project: impacthub
             version: v0.18.1
           - project: irisnet
-            version: v1.0.1
+            version: v1.3.1
           - project: juno
             version: v10.1.0
           - project: kava
