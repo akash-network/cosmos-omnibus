@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-teritori-v1.1.2
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-teritori-v1.2.0
     env:
       - MONIKER=my-moniker-1
       - CHAIN_ID=teritori-1
