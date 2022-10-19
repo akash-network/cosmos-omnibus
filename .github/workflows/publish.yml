@@ -110,7 +110,7 @@ jobs:
           - project: stride
             version: v1.0.2
           - project: starname
-            version: v0.10.18
+            version: v0.11.5
           - project: teritori
             version: v1.1.2
           # - project: terra

@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.10.18`|
+|Version|`v0.11.5`|
 |Binary|`starnamed`|
 |Directory|`.starnamed`|
 |ENV namespace|`STARNAME`|
 |Repository|`https://github.com/iov-one/starnamed`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-starname-v0.10.18`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-starname-v0.11.5`|
 
 ## Examples
 
