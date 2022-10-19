@@ -98,7 +98,7 @@ jobs:
           - project: seinetwork
             version: 1.2.2beta
           - project: sentinel
-            version: v0.8.3
+            version: v0.9.3
           - project: shentu
             version: v2.2.0
           - project: sifchain
