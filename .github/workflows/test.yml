@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - id: set-matrix
         run: echo "matrix=$(find * -type f -name build.yml -not -path "nomic*" -not -path "terra*" | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
     outputs:
@@ -23,7 +23,7 @@ jobs:
         project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: docker/setup-buildx-action@v1
         id: buildx
         with:
