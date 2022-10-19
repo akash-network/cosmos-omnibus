@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: agoric
         PROJECT_BIN: ag0
-        VERSION: agoric-3.1
+        VERSION: agoric-upgrade-7-2
         REPOSITORY: https://github.com/Agoric/ag0/
         NAMESPACE: AG0
         PROJECT_DIR: .agoric
