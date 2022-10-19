@@ -100,7 +100,7 @@ jobs:
           - project: sentinel
             version: v0.9.3
           - project: shentu
-            version: v2.2.0
+            version: v2.5.0
           - project: sifchain
             version: v1.0-beta.12-issuefix
           - project: sommelier
