@@ -9,7 +9,7 @@ services:
         PROJECT_BIN: evmosd
         PROJECT_DIR: .evmosd
         VERSION: v8.2.3
-        REPOSITORY: https://github.com/tharsis/evmos
+        REPOSITORY: https://github.com/evmos/evmos
         NAMESPACE: EVMOSD
     ports:
       - '26656:26656'
