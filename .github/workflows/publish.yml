@@ -62,7 +62,7 @@ jobs:
           - project: gravitybridge
             version: v1.7.2
           - project: impacthub
-            version: v0.17.0
+            version: v0.18.1
           - project: irisnet
             version: v1.0.1
           - project: juno
