@@ -6,9 +6,9 @@ services:
       context: ../
       args:
         PROJECT: desmos
-        VERSION: v2.3.1
+        VERSION: v2.4.0
         BUILD_IMAGE: binary
-        BINARY_URL: https://github.com/desmos-labs/desmos/releases/download/v2.3.1/desmos-2.3.1-linux-amd64
+        BINARY_URL: https://github.com/desmos-labs/desmos/releases/download/v2.4.0/desmos-2.3.1-linux-amd64
     ports:
       - '26656:26656'
       - '26657:26657'

@@ -63,7 +63,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.3.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-cryptoorgchain-v3.3.5`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-decentr-v1.6.0`|[Example](./decentr)|
 |[defund](https://github.com/defund-labs/defund)|`v0.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-defund-v0.0.2`|[Example](./defund)|
-|[desmos](https://github.com/desmos-labs/desmos)|`v2.3.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-desmos-v2.3.1`|[Example](./desmos)|
+|[desmos](https://github.com/desmos-labs/desmos)|`v2.4.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-desmos-v2.4.0`|[Example](./desmos)|
 |[dig](https://github.com/notional-labs/dig)|`v2.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-dig-v2.0.1`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.1.4`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-emoney-v1.1.4`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v0.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-empowerchain-v0.0.1`|[Example](./empowerchain)|
