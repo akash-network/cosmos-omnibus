@@ -104,7 +104,7 @@ jobs:
           - project: sifchain
             version: v1.0.13-beta
           - project: sommelier
-            version: v3.1.0
+            version: v4.0.2
           - project: stargaze
             version: v5.0.0
           - project: stride
