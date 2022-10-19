@@ -10,8 +10,6 @@ jobs:
       - uses: actions/checkout@v2
       - id: set-matrix
         run: echo "matrix=$(find * -type f -name build.yml -not -path "nomic*" -not -path "terra*" | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
 
   build:
     needs: build_matrix
