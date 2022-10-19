@@ -7,7 +7,7 @@
 |Directory|`.band`|
 |ENV namespace|`BAND`|
 |Repository|`https://github.com/bandprotocol/chain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.6-bandchain-v2.3.6`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-bandchain-v2.3.6`|
 
 ## Examples
 
