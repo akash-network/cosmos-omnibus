@@ -34,7 +34,7 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v2.1.0
+            version: v2.2.0
           - project: chronicnetwork
             version: v1.1.0
           - project: comdex
