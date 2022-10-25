@@ -21,7 +21,7 @@ services:
     # params:
     #   storage:
     #     data:
-    #       mount: /root/.chihuahua
+    #       mount: /root/.chihuahuad
 
 profiles:
   compute:
