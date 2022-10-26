@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.0.0`|
+|Version|`v2.0.1`|
 |Binary|`cerberusd`|
 |Directory|`.cerberus`|
 |ENV namespace|`CERBERUSD`|
 |Repository|`https://github.com/cerberus-zone/cerberus.git`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-cerberus-v2.0.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-cerberus-v2.0.1`|
 
 ## Examples
 
