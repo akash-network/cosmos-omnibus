@@ -108,7 +108,7 @@ jobs:
           - project: stargaze
             version: v7.5.0
           - project: stride
-            version: v1.0.4
+            version: v2.0.3
           - project: starname
             version: v0.11.5
           - project: teritori
