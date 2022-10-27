@@ -62,7 +62,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v0.8.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-cronos-v0.8.2`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.3.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-cryptoorgchain-v3.3.5`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-decentr-v1.6.0`|[Example](./decentr)|
-|[defund](https://github.com/defund-labs/defund)|`v0.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-defund-v0.0.2`|[Example](./defund)|
+|[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-defund-v0.1.0-alpha`|[Example](./defund)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.4.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-desmos-v2.4.0`|[Example](./desmos)|
 |[dig](https://github.com/notional-labs/dig)|`v2.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-dig-v2.0.1`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-emoney-v1.2.0`|[Example](./emoney)|
