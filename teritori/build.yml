@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: teritori
         PROJECT_BIN: teritorid
-        VERSION: v1.2.0
+        VERSION: v1.3.0
         REPOSITORY: https://github.com/TERITORI/teritori-chain
         NAMESPACE: TERITORID
         PROJECT_DIR: .teritorid

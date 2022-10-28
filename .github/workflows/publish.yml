@@ -112,7 +112,7 @@ jobs:
           - project: starname
             version: v0.11.5
           - project: teritori
-            version: v1.2.0
+            version: v1.3.0
           # - project: terra
           #   version: v0.5.18
           - project: umee

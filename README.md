@@ -94,7 +94,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[stargaze](https://github.com/public-awesome/stargaze)|`v7.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-stargaze-v7.5.0`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-starname-v0.11.5`|[Example](./starname)|
 |[stride](https://github.com/Stride-Labs/stride)|`v2.0.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-stride-v2.0.3`|[Example](./starname)|
-|[teritori](https://github.com/TERITORI/teritori-chain)|`v1.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-teritori-v1.2.0`|[Example](./teritori)|
+|[teritori](https://github.com/TERITORI/teritori-chain)|`v1.3.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-teritori-v1.3.0`|[Example](./teritori)|
 |[umee](https://github.com/umee-network/umee)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-umee-v3.1.0`|[Example](./umee)|
 |[vidulum](https://github.com/vidulum/mainnet)|`v1.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-vidulum-v1.2.0`|[Example](./vidulum)|
 
