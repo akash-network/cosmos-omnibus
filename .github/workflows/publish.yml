@@ -46,7 +46,7 @@ jobs:
           - project: decentr
             version: v1.6.0
           - project: defund
-            version: v0.0.2
+            version: v0.1.0-alpha
           - project: desmos
             version: v2.4.0
           - project: dig
