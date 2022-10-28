@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v3.0.2`|
+|Version|`v3.1.0`|
 |Binary|`umeed`|
 |Directory|`.umee`|
 |ENV namespace|`umee`|
 |Repository|`https://github.com/crypto-org-chain/umee`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-umee-v3.0.2`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-umee-v3.1.0`|
 
 ## Examples
 
