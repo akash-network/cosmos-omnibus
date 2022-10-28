@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-chihuahua-v2.2.2
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-chihuahua-v3.0.0
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -14,4 +14,4 @@ services:
       # - STATESYNC_POLKACHU=1
       - SNAPSHOT_POLKACHU=1
     volumes:
-      - ./node-data:/root/.chihuahua
+      - ./node-data:/root/.chihuahuad

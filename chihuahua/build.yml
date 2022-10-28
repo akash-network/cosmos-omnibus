@@ -7,10 +7,11 @@ services:
       args:
         PROJECT: chihuahua
         PROJECT_BIN: chihuahuad
-        VERSION: v2.2.2
+        VERSION: v3.0.0
         REPOSITORY: https://github.com/ChihuahuaChain/chihuahua
         NAMESPACE: CHIHUAHUAD
-        PROJECT_DIR: .chihuahua
+        PROJECT_DIR: .chihuahuad
+        GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -24,4 +25,4 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.chihuahua
+      - ./node-data:/root/.chihuahuad
