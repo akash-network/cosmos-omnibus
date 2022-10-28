@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`1.2.2beta`|
+|Version|`1.2.3beta`|
 |Binary|`seid`|
 |Directory|`.sei`|
 |ENV namespace|`SEID`|
 |Repository|`https://github.com/sei-protocol/sei-chain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-seinetwork-1.2.2beta`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.7-seinetwork-1.2.3beta`|
 
 ## Examples
 
