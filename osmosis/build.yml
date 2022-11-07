@@ -20,6 +20,7 @@ services:
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
       # - SNAPSHOT_POLKACHU=1
+      # - SNAPSHOT_WASM_PATH=wasm
     env_file:
       - ../.env
     volumes:
