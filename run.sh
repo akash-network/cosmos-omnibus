@@ -279,6 +279,7 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
     (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
 
     [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
+    [ -n "${SNAPSHOT_WASM_PATH}" ] && mv ./${SNAPSHOT_WASM_PATH}/* ../wasm && rm -rf ./${SNAPSHOT_WASM_PATH}
   else
     echo "Snapshot URL not found"
   fi

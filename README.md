@@ -239,6 +239,7 @@ Note that snapshots will be restored in-process, without downloading the snapsho
 |`SNAPSHOT_FORMAT`|The format of the snapshot file|`tar.gz`|`tar`/`tar.zst`|
 |`SNAPSHOT_PATTERN`|The pattern of the file in the `SNAPSHOT_BASE_URL`|`$CHAIN_ID.*$SNAPSHOT_FORMAT`|`foobar.*tar.gz`|
 |`SNAPSHOT_DATA_PATH`|The path to the data directory within the archive| |`snapshot/data`|
+|`SNAPSHOT_WASM_PATH`|The path to the wasm directory within the archive, if exists outside of data| |`snapshot/wasm`|
 |`SNAPSHOT_PRUNING`|Type of snapshot to download, e.g. `archive`, `pruned`, `default`.|`pruned`|`archive`|
 |`SNAPSHOT_QUICKSYNC`|A URL to a Quicksync JSON file describing their snapshots. Also see `SNAPSHOT_PRUNING`| |`https://quicksync.io/terra.json`|
 |`SNAPSHOT_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/tendermint_snapshots) snapshot automatically if available| |`1`|
