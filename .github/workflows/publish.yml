@@ -96,7 +96,7 @@ jobs:
           - project: rizon
             version: v0.4.1
           - project: seinetwork
-            version: 1.2.3beta
+            version: 1.2.2beta-postfix
           - project: sentinel
             version: v0.9.3
           - project: shentu

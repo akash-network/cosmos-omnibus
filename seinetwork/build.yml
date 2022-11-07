@@ -8,7 +8,7 @@ services:
         PROJECT: seinetwork
         PROJECT_BIN: seid
         PROJECT_DIR: .sei
-        VERSION: 1.2.3beta
+        VERSION: 1.2.2beta-postfix
         REPOSITORY: https://github.com/sei-protocol/sei-chain
         NAMESPACE: SEID
     ports:
