@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-empowerchain-v0.0.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-empowerchain-v0.0.2
     ports:
       - '26656:26656'
       - '26657:26657'
