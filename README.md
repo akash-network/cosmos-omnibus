@@ -1,6 +1,6 @@
 # COSMOS OMNIBUS - Run Cosmos Nodes on Akash
 
-This is a meta package of [cosmos-sdk](//github.com/cosmos-cosmos-sdk)-based
+This is a meta package of [cosmos-sdk](https://github.com/cosmos/cosmos-sdk)-based
 docker images and configuration meant to make deploying onto [Akash](//github.com/ovrclk/akash)
 easy and standardized across cosmos.
 
