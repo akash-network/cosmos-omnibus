@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v3.3.5`|
+|Version|`v3.3.9`|
 |Binary|`chain-maind`|
 |Directory|`.chain-maind`|
 |ENV namespace|`CHAIN_MAIND`|
 |Repository|`https://github.com/crypto-org-chain/chain-main`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-cryptoorgchain-v3.3.5`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-cryptoorgchain-v3.3.9`|
 
 ## Examples
 

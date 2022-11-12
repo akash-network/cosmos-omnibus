@@ -60,7 +60,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[comdex](https://github.com/comdex-official/comdex)|`v0.1.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-comdex-v0.1.3`|[Example](./comdex)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v7.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-cosmoshub-v7.1.0`|[Example](./cosmoshub)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v0.8.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-cronos-v0.8.2`|[Example](./cronos)|
-|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.3.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-cryptoorgchain-v3.3.5`|[Example](./cryptoorgchain)|
+|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.3.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-cryptoorgchain-v3.3.9`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-decentr-v1.6.0`|[Example](./decentr)|
 |[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-defund-v0.1.0-alpha`|[Example](./defund)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.4.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-desmos-v2.4.0`|[Example](./desmos)|

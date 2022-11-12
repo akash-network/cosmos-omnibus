@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-cryptoorgchain-v3.3.5
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-cryptoorgchain-v3.3.9
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cryptoorgchain/chain.json
