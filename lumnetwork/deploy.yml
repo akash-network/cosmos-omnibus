@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.9-lumnetwork-v1.2.2
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.10-lumnetwork-v1.2.2
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/lumnetwork/chain.json
