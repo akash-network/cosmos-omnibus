@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: empowerchain
         PROJECT_BIN: empowerd
-        VERSION: v0.0.1
+        VERSION: v0.0.2
         REPOSITORY: https://github.com/empowerchain/empowerchain
         NAMESPACE: EMPOWERD
         PROJECT_DIR: .empowerchain
