@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .cyber
         VERSION: v0.3.2
         REPOSITORY: https://github.com/cybercongress/go-cyber
-        NAMESPACE: BOSTROM
+        NAMESPACE: CYBER
         START_CMD: "cyber start --compute-gpu=false"
     ports:
       - '1317:1317'

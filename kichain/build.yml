@@ -9,7 +9,7 @@ services:
         PROJECT_BIN: kid
         VERSION: 4.1.0
         REPOSITORY: https://github.com/KiFoundation/ki-tools
-        NAMESPACE: KICHAIN
+        NAMESPACE: KID
     ports:
       - '26656:26656'
       - '26657:26657'

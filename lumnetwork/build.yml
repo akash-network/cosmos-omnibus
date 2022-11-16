@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .lumd
         VERSION: v1.2.2
         REPOSITORY: https://github.com/lum-network/chain
-        NAMESPACE: LUMNETWORK
+        NAMESPACE: LUMD
     ports:
       - '26656:26656'
       - '26657:26657'
