@@ -36,7 +36,7 @@ jobs:
           - project: chihuahua
             version: v4.0.0
           - project: comdex
-            version: v0.1.3
+            version: v5.0.0
           - project: cosmoshub
             version: v7.1.0
           - project: cronos
