@@ -16,7 +16,7 @@ jobs:
           - project: agoric
             version: agoric-upgrade-7-2
           - project: akash
-            version: v0.16.6
+            version: v0.18.0
           - project: assetmantle
             version: v0.3.0
           - project: autonomy
