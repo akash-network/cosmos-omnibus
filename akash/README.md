@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.18.0`|
+|Version|`v0.18.1`|
 |Binary|`akash`|
 |Directory|`.akash`|
 |ENV namespace|`AKASH`|
 |Repository|`https://github.com/ovrclk/akash`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.11-akash-v0.18.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.11-akash-v0.18.1`|
 
 ## Examples
 
