@@ -10,6 +10,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/ovrclk/net/master/edgenet/meta.json
-      - BINARY_ZIP_PATH=akash_0.15.0-rc14_linux_amd64/akash
+      - BINARY_ZIP_PATH=akash_0.18.1_linux_amd64/akash
     volumes:
       - ./node-data:/root/.akash
