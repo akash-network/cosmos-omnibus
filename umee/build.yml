@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .umee
         VERSION: v3.1.0
         REPOSITORY: https://github.com/umee-network/umee
-        NAMESPACE: UMEE
+        NAMESPACE: UMEED
     ports:
       - '26656:26656'
       - '26657:26657'

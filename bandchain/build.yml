@@ -9,7 +9,7 @@ services:
         PROJECT_BIN: bandd
         VERSION: v2.3.6
         REPOSITORY: https://github.com/bandprotocol/chain
-        NAMESPACE: BAND
+        NAMESPACE: BANDD
         PROJECT_DIR: .band
     ports:
       - '26656:26656'

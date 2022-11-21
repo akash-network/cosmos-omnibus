@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .fetchd
         VERSION: v0.10.6
         REPOSITORY: https://github.com/fetchai/fetchd
-        NAMESPACE: FETCHHUB
+        NAMESPACE: FETCHD
     ports:
       - '26656:26656'
       - '26657:26657'
