@@ -110,7 +110,7 @@ jobs:
           - project: stargaze
             version: v7.5.0
           - project: stride
-            version: v2.0.3
+            version: v3.0.0
           - project: starname
             version: v0.11.5
           - project: teritori
