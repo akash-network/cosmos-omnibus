@@ -8,7 +8,7 @@ services:
         PROJECT: dig
         PROJECT_BIN: digd
         PROJECT_DIR: .dig
-        VERSION: v2.0.1
+        VERSION: v3.3.1
         REPOSITORY: https://github.com/notional-labs/dig
         NAMESPACE: DIGD
     ports:

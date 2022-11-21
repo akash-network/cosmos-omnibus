@@ -10,7 +10,7 @@ services:
         PROJECT_DIR: .knstld
         VERSION: v0.5.0
         REPOSITORY: https://github.com/konstellation/konstellation
-        NAMESPACE: KONSTELLATION
+        NAMESPACE: KNSTLD
     ports:
       - '26656:26656'
       - '26657:26657'
