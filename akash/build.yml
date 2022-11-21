@@ -6,8 +6,9 @@ services:
       context: ../
       args:
         PROJECT: akash
-        VERSION: v0.16.6
+        VERSION: v0.18.1
         REPOSITORY: https://github.com/ovrclk/akash
+        GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'
       - '26657:26657'
