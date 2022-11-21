@@ -50,7 +50,7 @@ jobs:
           - project: desmos
             version: v2.4.0
           - project: dig
-            version: v2.0.1
+            version: v3.3.1
           - project: emoney
             version: v1.2.0
           - project: empowerchain
