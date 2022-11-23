@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.13-generic`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-generic`|
 
 ## Examples
 
