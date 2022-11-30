@@ -138,6 +138,17 @@ jobs:
           touch .env # Create dummy env file
           cd ${{matrix.project}}
           docker buildx bake -f build.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push
+      - name: Check build_skip.yml existence
+        id: check_skip
+        uses: andstor/file-existence-action@v2
+        with:
+          files: "${{matrix.project}}/build-skip.yml"
+      - name: Build Skip
+        if: steps.check_skip.outputs.files_exists == 'true'
+        run: |
+          touch .env # Create dummy env file
+          cd ${{matrix.project}}
+          docker buildx bake -f build-skip.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}-skip --push
   build_generic:
     runs-on: ubuntu-latest
     strategy:
