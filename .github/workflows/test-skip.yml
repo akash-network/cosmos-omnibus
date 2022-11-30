@@ -1,6 +1,5 @@
-name: test
+name: test-skip
 on: [push, pull_request]
-
 
 jobs:
   build_matrix:
