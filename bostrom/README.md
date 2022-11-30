@@ -7,7 +7,7 @@
 |Directory|`.cyber`|
 |ENV namespace|`BOSTROM`|
 |Repository|`https://github.com/cybercongress/go-cyber`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.13-bostrom-v0.3.2`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-bostrom-v0.3.2`|
 
 ## Examples
 
