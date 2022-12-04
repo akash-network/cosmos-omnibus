@@ -293,7 +293,7 @@ fi
 
 # Cosmovisor
 if [ "$COSMOVISOR_ENABLED" == "1" ]; then
-  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.1.0"}"
+  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.3.0"}"
 
   # Download Binary
   if [ ! -f "/bin/cosmovisor" ]; then
