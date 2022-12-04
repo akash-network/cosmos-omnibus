@@ -90,7 +90,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[seinetwork](https://github.com/sei-protocol/sei-chain)|`1.2.2beta-postfix`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-seinetwork-1.2.2beta-postfix`|[Example](./seinetwork)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.9.3`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-sentinel-v0.9.3`|[Example](./sentinel)|
 |[shentu](https://github.com/certikfoundation/shentu)|`v2.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-shentu-v2.5.0`|[Example](./shentu)|
-|[sifchain](https://github.com/Sifchain/sifnode)|`v1.0.14-beta`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-sifchain-v1.0.14-beta`|[Example](./sifchain)|
+|[sifchain](https://github.com/Sifchain/sifnode)|`v1.1.0-beta`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-sifchain-v1.1.0-beta`|[Example](./sifchain)|
 |[sommelier](https://github.com/PeggyJV/sommelier)|`v4.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-sommelier-v4.0.2`|[Example](./sommelier)|
 |[stargaze](https://github.com/public-awesome/stargaze)|`v7.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-stargaze-v7.5.0`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-starname-v0.11.5`|[Example](./starname)|

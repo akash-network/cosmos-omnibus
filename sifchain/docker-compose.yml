@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-sifchain-v1.0.14-beta
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-sifchain-v1.1.0-beta
     ports:
       - '26656:26656'
       - '26657:26657'
