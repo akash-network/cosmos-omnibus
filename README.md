@@ -99,6 +99,17 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[umee](https://github.com/umee-network/umee)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-umee-v3.1.0`|[Example](./umee)|
 |[vidulum](https://github.com/vidulum/mainnet)|`v1.2.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-vidulum-v1.2.0`|[Example](./vidulum)|
 
+### Skip MEV Support
+
+Additional image variants are built for chains with [Skip MEV support](https://skip.money/). Use these images if you would like to enable MEV capture and protect against sandwiching and front-running.
+
+|Project|Version|Image| |
+|---|---|---|---|
+|[evmos](https://github.com/evmos/evmos)|`v9.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-evmos-v9.1.0-skip`|[Example](./evmos)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v11.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-juno-v11.0.0-skip`|[Example](./juno)|
+
+Note that configuration for Skip needs to be done in the configuration file currently - the ENV variable method of configuring the node doesn't work for the Skip config options.
+
 ## Example configurations
 
 There are example files within each project subdirectory which include a sensible default configuration for each chain. Optional configuration options are commented out so you can easily enable them, and the node can be configured further using the docs below. 

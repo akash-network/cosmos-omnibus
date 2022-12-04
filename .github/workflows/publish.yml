@@ -4,13 +4,12 @@ on:
     tags:
       - v*
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 15
+      max-parallel: 12
       matrix:
         include:
           - project: agoric

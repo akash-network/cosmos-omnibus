@@ -33,3 +33,11 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |`P2P_POLKACHU`|`1`|
 |`SNAPSHOT_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|
+
+## Skip MEV support
+
+If you would like to use this chain with [Skip Protocol](https://skip.money/), an additional image is available with Skip's version of Tendermint pre-installed.
+
+| | |
+|---|---|
+|Skip Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-juno-v11.0.0-skip`|
