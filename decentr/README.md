@@ -7,7 +7,7 @@
 |Directory|`.decentr`|
 |ENV namespace|`decentr`|
 |Repository|`https://github.com/Decentr-net/decentr`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-decentr-v1.6.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.15-decentr-v1.6.0`|
 
 ## Examples
 
