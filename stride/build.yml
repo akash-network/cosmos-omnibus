@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: stride
         PROJECT_BIN: strided
-        VERSION: v4.0.0
+        VERSION: v4.0.2
         REPOSITORY: https://github.com/Stride-Labs/stride
         NAMESPACE: STRIDED
         PROJECT_DIR: .stride
