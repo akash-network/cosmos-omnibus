@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.15-akash-v0.18.1
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.16-akash-v0.18.1
     ports:
       - '26656:26656'
       - '26657:26657'

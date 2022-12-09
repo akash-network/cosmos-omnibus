@@ -7,7 +7,7 @@
 |Directory|`.persistenceCore`|
 |ENV namespace|`PERSISTENCECORE`|
 |Repository|`https://github.com/persistenceOne/persistenceCore`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.15-persistence-v3.2.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.16-persistence-v3.2.0`|
 
 ## Examples
 
