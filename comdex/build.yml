@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: comdex
         PROJECT_BIN: comdex
-        VERSION: v5.0.0
+        VERSION: v6.0.0
         REPOSITORY: https://github.com/comdex-official/comdex
         NAMESPACE: COMDEX
     ports:
