@@ -10,6 +10,7 @@ services:
         VERSION: v6.0.1
         REPOSITORY: https://github.com/comdex-official/comdex
         NAMESPACE: COMDEX
+        GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'
       - '26657:26657'
