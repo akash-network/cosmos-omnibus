@@ -324,7 +324,7 @@ fi
 # preseed priv_validator_state.json if missing
 # ref. https://github.com/tendermint/tendermint/issues/8389
 if [[ ! -f "$PROJECT_ROOT/data/priv_validator_state.json" ]]; then
-  mkdir -p "$PROJECT_ROOT/data"
+  mkdir -p "$PROJECT_ROOT/data" 2>/dev/null || :
   echo '{"height":"0","round":0,"step":0}' > "$PROJECT_ROOT/data/priv_validator_state.json"
 fi
 
