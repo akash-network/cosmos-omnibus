@@ -321,6 +321,13 @@ if [ "$COSMOVISOR_ENABLED" == "1" ]; then
   cp "/bin/$PROJECT_BIN" $PROJECT_ROOT/cosmovisor/genesis/bin/
 fi
 
+# preseed priv_validator_state.json if missing
+# ref. https://github.com/tendermint/tendermint/issues/8389
+if [[ ! -f "$PROJECT_ROOT/data/priv_validator_state.json" ]]; then
+  mkdir -p "$PROJECT_ROOT/data"
+  echo '{"height":"0","round":0,"step":0}' > "$PROJECT_ROOT/data/priv_validator_state.json"
+fi
+
 if [ -n "$SNAPSHOT_PATH" ]; then
   exec snapshot.sh "$START_CMD"
 else
