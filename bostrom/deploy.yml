@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.16-bostrom-v0.3.2
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-bostrom-v0.3.2
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bostrom/chain.json

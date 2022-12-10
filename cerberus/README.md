@@ -7,7 +7,7 @@
 |Directory|`.cerberus`|
 |ENV namespace|`CERBERUSD`|
 |Repository|`https://github.com/cerberus-zone/cerberus.git`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.16-cerberus-v2.0.1`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-cerberus-v2.0.1`|
 
 ## Examples
 
