@@ -134,8 +134,13 @@ if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" 
       export POLKACHU_SNAPSHOT_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.snapshot.active')
       if [ $POLKACHU_SNAPSHOT_ENABLED ]; then
         export POLKACHU_SNAPSHOT=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint') | jq -r '.snapshot.url'`
-        export SNAPSHOT_URL=$POLKACHU_SNAPSHOT
-        export SNAPSHOT_DATA_PATH=data
+        if [[ "$POLKACHU_SNAPSHOT" == "null" ]]; then
+          echo "Issue obtaining the Polkachu snapshot. Likely the API issue. Trying the API to see the response..."
+          curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint')
+        else
+          export SNAPSHOT_URL=$POLKACHU_SNAPSHOT
+          export SNAPSHOT_DATA_PATH=data
+        fi
       else
         echo "Polkachu snapshot is not active for this chain"
       fi
@@ -314,6 +319,13 @@ if [ "$COSMOVISOR_ENABLED" == "1" ]; then
   mkdir -p $PROJECT_ROOT/cosmovisor/upgrades
   mkdir -p $PROJECT_ROOT/cosmovisor/genesis/bin
   cp "/bin/$PROJECT_BIN" $PROJECT_ROOT/cosmovisor/genesis/bin/
+fi
+
+# preseed priv_validator_state.json if missing
+# ref. https://github.com/tendermint/tendermint/issues/8389
+if [[ ! -f "$PROJECT_ROOT/data/priv_validator_state.json" ]]; then
+  mkdir -p "$PROJECT_ROOT/data" 2>/dev/null || :
+  echo '{"height":"0","round":0,"step":0}' > "$PROJECT_ROOT/data/priv_validator_state.json"
 fi
 
 if [ -n "$SNAPSHOT_PATH" ]; then
