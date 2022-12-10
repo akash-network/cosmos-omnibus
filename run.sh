@@ -135,8 +135,10 @@ if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" 
       if [ $POLKACHU_SNAPSHOT_ENABLED ]; then
         export POLKACHU_SNAPSHOT=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint') | jq -r '.snapshot.url'`
         if [[ "$POLKACHU_SNAPSHOT" == "null" ]]; then
-          echo "Issue obtaining the Polkachu snapshot. Likely the API issue. Trying the API to see the response..."
-          curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint')
+          echo "Issue obtaining the Polkachu snapshot. Likely the API issue."
+          echo "Sleeping for 10 minutes before restarting..."
+          sleep 600
+          exit 1
         else
           export SNAPSHOT_URL=$POLKACHU_SNAPSHOT
           export SNAPSHOT_DATA_PATH=data
