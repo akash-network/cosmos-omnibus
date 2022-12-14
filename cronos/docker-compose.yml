@@ -10,5 +10,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cronos/chain.json
+      - SNAPSHOT_QUICKSYNC=https://dl2.quicksync.io/json/cronos.json
+      - SNAPSHOT_PRUNING=leveldb-pruned
     volumes:
       - ./node-data:/root/.cronos

@@ -7,6 +7,8 @@ services:
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cronos/chain.json
+      - SNAPSHOT_QUICKSYNC=https://dl2.quicksync.io/json/cronos.json
+      - SNAPSHOT_PRUNING=leveldb-pruned
     expose:
       - port: 26657
         as: 80
