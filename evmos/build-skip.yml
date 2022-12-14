@@ -8,12 +8,12 @@ services:
         PROJECT: evmos
         PROJECT_BIN: evmosd
         PROJECT_DIR: .evmosd
-        VERSION: v9.1.0
+        VERSION: v10.0.0-rc2
         REPOSITORY: https://github.com/evmos/evmos
         NAMESPACE: EVMOSD
         GOLANG_VERSION: 1.19-buster
         BUILD_METHOD: skip
-        MEV_TENDERMINT_VERSION: v0.34.22-mev.9
+        MEV_TENDERMINT_VERSION: v0.34.22-mev.12 # https://github.com/skip-mev/config/blob/main/evmos_9000-4/mev-tendermint_version.txt
     ports:
       - '26656:26656'
       - '26657:26657'
