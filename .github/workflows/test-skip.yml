@@ -1,6 +1,5 @@
-name: test
+name: test-skip
 on: [push, pull_request]
-
 
 jobs:
   build_matrix:
@@ -9,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: set-matrix
-        run: echo "matrix=$(find * -type f -name build.yml -not -path "nomic*" -not -path "terra*" | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+        run: echo "matrix=$(find * -type f -name build-skip.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
 
@@ -18,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 12
+      max-parallel: 2
       matrix:
         project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
 
@@ -32,4 +31,4 @@ jobs:
         run: |
           touch .env # Create dummy env file
           cd ${{matrix.project}}
-          docker buildx bake -f build.yml --set node_1.tags=node
+          docker buildx bake -f build-skip.yml --set node_1.tags=node

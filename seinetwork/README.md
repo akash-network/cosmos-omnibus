@@ -7,7 +7,7 @@
 |Directory|`.sei`|
 |ENV namespace|`SEID`|
 |Repository|`https://github.com/sei-protocol/sei-chain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-seinetwork-1.2.2beta-postfix`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-seinetwork-1.2.2beta-postfix`|
 
 ## Examples
 

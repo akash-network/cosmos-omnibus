@@ -4,13 +4,12 @@ on:
     tags:
       - v*
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 15
+      max-parallel: 12
       matrix:
         include:
           - project: agoric
@@ -36,7 +35,7 @@ jobs:
           - project: chihuahua
             version: v4.1.0
           - project: comdex
-            version: v5.0.0
+            version: v6.0.1
           - project: cosmoshub
             version: v7.1.0
           - project: cronos
@@ -54,7 +53,7 @@ jobs:
           - project: emoney
             version: v1.2.0
           - project: empowerchain
-            version: v0.0.2
+            version: v0.0.3
           - project: evmos
             version: v10.0.0-rc1
           - project: fetchhub
@@ -84,9 +83,9 @@ jobs:
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
-            version: v0.4.2
+            version: v0.8.0
           - project: osmosis
-            version: v12.2.0
+            version: v13.1.0
           - project: panacea
             version: v2.0.5
           - project: passage
@@ -104,13 +103,13 @@ jobs:
           - project: shentu
             version: v2.5.0
           - project: sifchain
-            version: v1.0.14-beta
+            version: v1.1.0-beta
           - project: sommelier
             version: v4.0.2
           - project: stargaze
             version: v7.5.0
           - project: stride
-            version: v3.0.0
+            version: v4.0.2
           - project: starname
             version: v0.11.5
           - project: teritori

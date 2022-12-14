@@ -49,6 +49,18 @@ ARG BUILD_CMD="starport chain build"
 RUN curl https://get.starport.network/starport! | bash
 
 #
+# Optional build environment for Skip support
+#
+FROM build_source AS build_skip
+
+# Get MEV_TENDERMINT_VERSION from 
+# https://raw.githubusercontent.com/skip-mev/config/main/$CHAIN_ID/mev-tendermint_version.txt
+ARG MEV_TENDERMINT_VERSION
+
+RUN go mod edit -replace github.com/tendermint/tendermint=github.com/skip-mev/mev-tendermint@$MEV_TENDERMINT_VERSION && \
+    go mod tidy
+
+#
 # Final build environment
 # Note optional `BUILD_METHOD` argument controls the base image
 #

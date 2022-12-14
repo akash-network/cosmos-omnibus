@@ -7,7 +7,7 @@
 |Directory|`.evmosd`|
 |ENV namespace|`EVMOSD`|
 |Repository|`https://github.com/evmos/evmos`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-evmos-v10.0.0-rc1`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-evmos-v10.0.0-rc1`|
 
 ## Examples
 
@@ -33,3 +33,11 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |`P2P_POLKACHU`|`1`|
 |`SNAPSHOT_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|
+
+## Skip MEV support
+
+If you would like to use this chain with [Skip Protocol](https://skip.money/), an additional image is available with Skip's version of Tendermint pre-installed.
+
+| | |
+|---|---|
+|Skip Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-evmos-v9.1.0-skip`|

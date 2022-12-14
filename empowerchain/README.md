@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.0.2`|
+|Version|`v0.0.3`|
 |Binary|`empowerd`|
 |Directory|`.empowerchain`|
 |ENV namespace|`EMPOWERD`|
 |Repository|`https://github.com/empowerchain/empowerchain`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.14-empowerchain-v0.0.2`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-empowerchain-v0.0.3`|
 
 ## Examples
 
