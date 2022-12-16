@@ -57,7 +57,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cerberus](https://github.com/cerberus-zone/cerberus)|`v2.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-cerberus-v2.0.1`|[Example](./cerberus)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-cheqd-0.6.9`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v4.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-chihuahua-v4.1.0`|[Example](./chihuahua)|
-|[comdex](https://github.com/comdex-official/comdex)|`v6.0.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-comdex-v6.0.1`|[Example](./comdex)|
+|[comdex](https://github.com/comdex-official/comdex)|`v6.0.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-comdex-v6.0.2`|[Example](./comdex)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v7.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-cosmoshub-v7.1.0`|[Example](./cosmoshub)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v0.8.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-cronos-v0.8.2`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.3.9`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-cryptoorgchain-v3.3.9`|[Example](./cryptoorgchain)|
