@@ -9,6 +9,7 @@ services:
         VERSION: v0.20.0
         REPOSITORY: https://github.com/ovrclk/akash
         GOLANG_VERSION: 1.19.2-buster
+        INSTALL_PACKAGES: jq
     ports:
       - '26656:26656'
       - '26657:26657'
