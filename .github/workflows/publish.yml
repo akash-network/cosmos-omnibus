@@ -15,7 +15,7 @@ jobs:
           - project: agoric
             version: agoric-upgrade-7-2
           - project: akash
-            version: v0.18.1
+            version: v0.20.0
           - project: assetmantle
             version: v0.3.0
           - project: autonomy
@@ -35,7 +35,7 @@ jobs:
           - project: chihuahua
             version: v4.1.0
           - project: comdex
-            version: v6.0.1
+            version: v6.0.2
           - project: cosmoshub
             version: v7.1.0
           - project: cronos
@@ -85,7 +85,7 @@ jobs:
           - project: omniflixhub
             version: v0.8.0
           - project: osmosis
-            version: v13.1.0
+            version: v13.1.2
           - project: panacea
             version: v2.0.5
           - project: passage

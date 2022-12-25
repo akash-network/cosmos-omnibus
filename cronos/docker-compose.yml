@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.17-cronos-v0.8.2
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.19-cronos-v0.8.2
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -10,5 +10,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/cronos/chain.json
+      - SNAPSHOT_QUICKSYNC=https://dl2.quicksync.io/json/cronos.json
+      - SNAPSHOT_PRUNING=leveldb-pruned
     volumes:
       - ./node-data:/root/.cronos
