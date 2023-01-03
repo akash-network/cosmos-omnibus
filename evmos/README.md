@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v10.0.0-rc4`|
+|Version|`v10.0.0`|
 |Binary|`evmosd`|
 |Directory|`.evmosd`|
 |ENV namespace|`EVMOSD`|
 |Repository|`https://github.com/evmos/evmos`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.19-evmos-v10.0.0-rc4`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.19-evmos-v10.0.0`|
 
 ## Examples
 
@@ -40,4 +40,4 @@ If you would like to use this chain with [Skip Protocol](https://skip.money/), a
 
 | | |
 |---|---|
-|Skip Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.19-evmos-v10.0.0-rc4-skip`|
+|Skip Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.19-evmos-v10.0.0-skip`|
