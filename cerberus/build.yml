@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: cerberus
         PROJECT_BIN: cerberusd
-        VERSION: v2.0.1
+        VERSION: v3.0.1
         REPOSITORY: https://github.com/cerberus-zone/cerberus.git
         NAMESPACE: CERBERUSD
         PROJECT_DIR: .cerberus
