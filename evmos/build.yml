@@ -8,7 +8,7 @@ services:
         PROJECT: evmos
         PROJECT_BIN: evmosd
         PROJECT_DIR: .evmosd
-        VERSION: v10.0.0
+        VERSION: v10.0.1
         REPOSITORY: https://github.com/evmos/evmos
         NAMESPACE: EVMOSD
     ports:
