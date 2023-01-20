@@ -10,9 +10,9 @@ services:
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
       - AKASH_P2P_PEX=false
-      - AKASH_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...
-      - AKASH_ADDR_BOOK_STRICT=false
-      - AKASH_DOUBLE_SIGN_CHECK_HEIGHT=10
+      - AKASH_P2P_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...
+      - AKASH_P2P_ADDR_BOOK_STRICT=false
+      - AKASH_CONSENSUS_DOUBLE_SIGN_CHECK_HEIGHT=10
       - P2P_PERSISTENT_PEERS=<id@node1:port,id@node2:port>
       - STATESYNC_RPC_SERVERS=<node1:80>,<node2:80>
       - S3_KEY=<s3-key>

@@ -10,9 +10,9 @@ services:
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
       - AKASH_P2P_PEX=true
-      - AKASH_PRIVATE_PEER_IDS=<validatorid>
-      - AKASH_UNCONDITIONAL_PEER_IDS=<validatorid>
-      - AKASH_ADDR_BOOK_STRICT=false
+      - AKASH_P2P_PRIVATE_PEER_IDS=<validatorid>
+      - AKASH_P2P_UNCONDITIONAL_PEER_IDS=<validatorid>
+      - AKASH_P2P_ADDR_BOOK_STRICT=false
       - STATESYNC_RPC_SERVERS=<publicnode1:26657,publicnode2:26657>
       - STATESYNC_SNAPSHOT_INTERVAL=500
       - S3_KEY=<s3-key>
@@ -39,9 +39,9 @@ services:
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
       - AKASH_P2P_PEX=true
-      - AKASH_PRIVATE_PEER_IDS=<validatorid>
-      - AKASH_UNCONDITIONAL_PEER_IDS=<validatorid>
-      - AKASH_ADDR_BOOK_STRICT=false
+      - AKASH_P2P_PRIVATE_PEER_IDS=<validatorid>
+      - AKASH_P2P_UNCONDITIONAL_PEER_IDS=<validatorid>
+      - AKASH_P2P_ADDR_BOOK_STRICT=false
       - STATESYNC_RPC_SERVERS=<publicnode1:26657,publicnode2:26657>
       - STATESYNC_SNAPSHOT_INTERVAL=500
       - S3_KEY=<s3-key>
