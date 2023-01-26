@@ -55,7 +55,7 @@ jobs:
           - project: empowerchain
             version: v0.0.3
           - project: evmos
-            version: v11.0.0-rc1
+            version: v11.0.0-rc3
           - project: fetchhub
             version: v0.10.6
           - project: gravitybridge
