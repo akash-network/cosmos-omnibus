@@ -80,6 +80,8 @@ jobs:
             version: v3.1.0
           - project: lumnetwork
             version: v1.2.2
+          - project: mars
+            version: v1.0.0
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
