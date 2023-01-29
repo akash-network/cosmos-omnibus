@@ -11,6 +11,7 @@ services:
         REPOSITORY: https://github.com/mars-protocol/hub.git
         NAMESPACE: MARSD
         PROJECT_DIR: .mars
+        GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'
       - '26657:26657'
