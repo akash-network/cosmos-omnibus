@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.20-comdex-v7.0.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.20-comdex-v8.1.0
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json
