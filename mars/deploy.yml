@@ -3,13 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-teritori-v1.3.0
+    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-mars-v1.0.0
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_ID=teritori-1
-      - GENESIS_URL=https://github.com/TERITORI/teritori-mainnet-genesis/raw/main/genesis.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/mars/chain.json
     expose:
       - port: 26657
         as: 80
@@ -21,7 +18,7 @@ services:
     # params:
     #   storage:
     #     data:
-    #       mount: /root/.teritorid
+    #       mount: /root/.mars
 
 profiles:
   compute:

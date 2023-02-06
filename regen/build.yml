@@ -8,9 +8,10 @@ services:
         PROJECT: regen
         PROJECT_BIN: regen
         PROJECT_DIR: .regen
-        VERSION: v4.1.4
+        VERSION: v5.0.0
         REPOSITORY: https://github.com/regen-network/regen-ledger
         NAMESPACE: REGEN
+        GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'
       - '26657:26657'
