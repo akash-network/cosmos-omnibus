@@ -53,7 +53,7 @@ RUN curl https://get.starport.network/starport! | bash
 #
 FROM build_source AS build_skip
 
-# Get MEV_TENDERMINT_VERSION from 
+# Get MEV_TENDERMINT_VERSION from
 # https://raw.githubusercontent.com/skip-mev/config/main/$CHAIN_ID/mev-tendermint_version.txt
 ARG MEV_TENDERMINT_VERSION
 
@@ -98,7 +98,7 @@ RUN chmod +x /bin/$PROJECT_BIN
 
 FROM gcc:12 AS zstd_build
 
-ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.2/zstd-1.5.2.tar.gz"
+ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.4/zstd-1.5.4.tar.gz"
 
 RUN apt-get update && \
       apt-get install --no-install-recommends --assume-yes python3 ninja-build && \
