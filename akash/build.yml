@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: akash
         VERSION: v0.20.0
-        REPOSITORY: https://github.com/ovrclk/akash
+        REPOSITORY: https://github.com/akash-network/node
         GOLANG_VERSION: 1.19.2-buster
         INSTALL_PACKAGES: jq
     ports:
