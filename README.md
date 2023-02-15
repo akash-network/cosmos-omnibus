@@ -78,7 +78,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kichain](https://github.com/KiFoundation/ki-tools)|`4.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-kichain-4.1.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-konstellation-v0.5.0`|[Example](./konstellation)|
 |[kujira](https://github.com/Team-Kujira/core)|`v0.7.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-kujira-v0.7.1`|[Example](./kujira)|
-|[likecoin](https://github.com/likecoin/likecoin-chain)|`v3.1.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-likecoin-v3.1.0`|[Example](./likecoin)|
+|[likecoin](https://github.com/likecoin/likecoin-chain)|`v3.1.1`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-likecoin-v3.1.1`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.2.2`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-lumnetwork-v1.2.2`|[Example](./lumnetwork)|
 |[mars](https://github.com/mars-protocol/hub.git)|`v1.0.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-mars-v1.0.0`|[Example](./mars)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.8.0`|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-omniflixhub-v0.8.0`|[Example](./omniflixhub)|
