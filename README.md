@@ -41,7 +41,7 @@ More information on the generic image can be found at [/generic](./generic/), an
 
 ## Networks (pre-built images)
 
-The available docker images can be found [here](https://github.com/orgs/ovrclk/packages/container/package/cosmos-omnibus).  They are
+The available docker images can be found [here](https://github.com/orgs/akash-network/packages/container/package/cosmos-omnibus).  They are
 tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Version|Image| |
