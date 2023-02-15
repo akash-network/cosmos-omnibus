@@ -7,7 +7,7 @@
 |Directory|`.rizon`|
 |ENV namespace|`RIZON`|
 |Repository|`https://github.com/rizon-world/rizon`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-rizon-v0.4.1`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.23-rizon-v0.4.1`|
 
 ## Examples
 

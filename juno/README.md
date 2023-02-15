@@ -7,7 +7,7 @@
 |Directory|`.juno`|
 |ENV namespace|`JUNOD`|
 |Repository|`https://github.com/CosmosContracts/Juno`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-juno-v11.0.0`|
+|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.23-juno-v11.0.0`|
 
 ## Examples
 
@@ -40,4 +40,4 @@ If you would like to use this chain with [Skip Protocol](https://skip.money/), a
 
 | | |
 |---|---|
-|Skip Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-juno-v11.0.0-skip`|
+|Skip Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.23-juno-v11.0.0-skip`|
