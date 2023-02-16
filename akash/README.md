@@ -6,8 +6,8 @@
 |Binary|`akash`|
 |Directory|`.akash`|
 |ENV namespace|`AKASH`|
-|Repository|`https://github.com/ovrclk/akash`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-akash-v0.20.0`|
+|Repository|`https://github.com/akash-network/node`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-akash-v0.20.0`|
 
 ## Examples
 
@@ -16,11 +16,11 @@
 
 ## Chain information
 
-Akash provide up to date chain information in their [ovrclk/net](https://github.com/ovrclk/net) repository.
+Akash provide up to date chain information in their [akash-network/net](https://github.com/akash-network/net) repository.
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/ovrclk/net/master/mainnet/meta.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/akash-network/net/master/mainnet/meta.json`|
 
 ## Suggested configuration
 
