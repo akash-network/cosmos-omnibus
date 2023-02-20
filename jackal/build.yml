@@ -23,7 +23,6 @@ services:
       - MINIMUM_GAS_PRICES=0.002ujkl
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
-      # - SNAPSHOT_POLKACHU=1
     env_file:
       - ../.env
     volumes:

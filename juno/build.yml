@@ -22,7 +22,6 @@ services:
       - GENESIS_FILENAME=juno-phoenix2-genesis.json
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
-      # - SNAPSHOT_POLKACHU=1
       # These IAVL settings are required starting juno v11.0.0
       # https://github.com/CosmosContracts/juno/releases/tag/v11.0.0
       - JUNOD_IAVL_CACHE_SIZE=781250
