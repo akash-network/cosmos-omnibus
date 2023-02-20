@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v11.0.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v12.0.0
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -15,8 +15,8 @@ services:
       - P2P_POLKACHU=1
       # - STATESYNC_POLKACHU=1
       - SNAPSHOT_POLKACHU=1
-      # These IAVL settings are required starting juno v11.0.0
-      # https://github.com/CosmosContracts/juno/releases/tag/v11.0.0
+      # These IAVL settings are required starting juno v12.0.0
+      # https://github.com/CosmosContracts/juno/releases/tag/v12.0.0
       - JUNOD_IAVL_CACHE_SIZE=781250
       - JUNOD_IAVL_DISABLE_FASTNODE=false
     volumes:

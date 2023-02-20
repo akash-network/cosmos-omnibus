@@ -8,12 +8,12 @@ services:
         PROJECT: juno
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
-        VERSION: v11.0.0
+        VERSION: v12.0.0
         REPOSITORY: https://github.com/CosmosContracts/juno
         NAMESPACE: JUNOD
         GOLANG_VERSION: 1.19-buster
         BUILD_METHOD: skip
-        MEV_TENDERMINT_VERSION: v0.34.21-mev.8
+        MEV_TENDERMINT_VERSION: v0.34.24-mev.15 # https://github.com/skip-mev/config/blob/main/juno-1/v12.0.0/mev-tendermint_version.txt
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -26,8 +26,8 @@ services:
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
       # - SNAPSHOT_POLKACHU=1
-      # These IAVL settings are required starting juno v11.0.0
-      # https://github.com/CosmosContracts/juno/releases/tag/v11.0.0
+      # These IAVL settings are required starting juno v12.0.0
+      # https://github.com/CosmosContracts/juno/releases/tag/v12.0.0
       - JUNOD_IAVL_CACHE_SIZE=781250
       - JUNOD_IAVL_DISABLE_FASTNODE=false
     env_file:

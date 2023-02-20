@@ -73,7 +73,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-impacthub-v0.18.1`|[Example](./impacthub)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-irisnet-v1.3.1`|[Example](./irisnet)|
 |[jackal](https://github.com/JackalLabs/canine-chain)|`v1.1.2-hotfix`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-jackal-v1.1.2-hotfix`|[Example](./jackal)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v11.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v11.0.0`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v12.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v12.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-kava-v0.18.1`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`4.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-kichain-4.1.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-konstellation-v0.5.0`|[Example](./konstellation)|
@@ -107,7 +107,7 @@ Additional image variants are built for chains with [Skip MEV support](https://s
 |Project|Version|Image| |
 |---|---|---|---|
 |[evmos](https://github.com/evmos/evmos)|`v11.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-evmos-v11.0.2-skip`|[Example](./evmos)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v11.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v11.0.0-skip`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v12.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v12.0.0-skip`|[Example](./juno)|
 
 Note that configuration for Skip needs to be done in the configuration file currently - the ENV variable method of configuring the node doesn't work for the Skip config options.
 
