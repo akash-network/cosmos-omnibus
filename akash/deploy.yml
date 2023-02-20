@@ -10,8 +10,7 @@ services:
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
       - P2P_POLKACHU=1
-      # - STATESYNC_POLKACHU=1
-      - SNAPSHOT_POLKACHU=1
+      - STATESYNC_POLKACHU=1
     expose:
       - port: 26657
         as: 80
