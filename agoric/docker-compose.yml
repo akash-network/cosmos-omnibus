@@ -11,7 +11,6 @@ services:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/chain.json
       - P2P_POLKACHU=1
-      # - STATESYNC_POLKACHU=1
-      - SNAPSHOT_POLKACHU=1
+      - STATESYNC_POLKACHU=1
     volumes:
       - ./node-data:/root/.agoric
