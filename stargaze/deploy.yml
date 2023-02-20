@@ -8,9 +8,8 @@ services:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/stargaze/chain.json
       - P2P_POLKACHU=1
-      # - STATESYNC_POLKACHU=1
-      - SNAPSHOT_POLKACHU=1
-      - SNAPSHOT_WASM_PATH=wasm
+      - STATESYNC_POLKACHU=1
+      #- SNAPSHOT_WASM_PATH=wasm
     expose:
       - port: 26657
         as: 80
