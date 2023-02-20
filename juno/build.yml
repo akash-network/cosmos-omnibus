@@ -8,9 +8,10 @@ services:
         PROJECT: juno
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
-        VERSION: v11.0.0
+        VERSION: v12.0.0
         REPOSITORY: https://github.com/CosmosContracts/juno
         NAMESPACE: JUNOD
+        GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'
       - '26657:26657'
