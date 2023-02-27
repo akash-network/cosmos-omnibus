@@ -71,6 +71,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.24-fetchhub-v0.10.6`|[Example](./fetchhub)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.7.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.24-gravitybridge-v1.7.2`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.24-impacthub-v0.18.1`|[Example](./impacthub)|
+|[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.9.0-1673970775`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.24-injective-v1.9.0-1673970775`|[Example](./injective)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.24-irisnet-v1.3.1`|[Example](./irisnet)|
 |[jackal](https://github.com/JackalLabs/canine-chain)|`v1.1.2-hotfix`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.24-jackal-v1.1.2-hotfix`|[Example](./jackal)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v12.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.24-juno-v12.0.0`|[Example](./juno)|
