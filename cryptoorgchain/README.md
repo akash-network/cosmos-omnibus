@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v3.3.9`|
+|Version|`v4.2.2`|
 |Binary|`chain-maind`|
 |Directory|`.chain-maind`|
 |ENV namespace|`CHAIN_MAIND`|
 |Repository|`https://github.com/crypto-org-chain/chain-main`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-cryptoorgchain-v3.3.9`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-cryptoorgchain-v4.2.2`|
 
 ## Examples
 
