@@ -58,9 +58,9 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-cheqd-0.6.9`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-chihuahua-v4.2.0`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v9.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-comdex-v9.0.0`|[Example](./comdex)|
-|[cosmoshub](https://github.com/cosmos/gaia)|`v7.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-cosmoshub-v7.1.0`|[Example](./cosmoshub)|
+|[cosmoshub](https://github.com/cosmos/gaia)|`v8.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-cosmoshub-v8.0.0`|[Example](./cosmoshub)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v0.8.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-cronos-v0.8.2`|[Example](./cronos)|
-|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v3.3.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-cryptoorgchain-v3.3.9`|[Example](./cryptoorgchain)|
+|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-cryptoorgchain-v4.2.2`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-decentr-v1.6.0`|[Example](./decentr)|
 |[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-defund-v0.1.0-alpha`|[Example](./defund)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v2.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-desmos-v2.4.0`|[Example](./desmos)|
@@ -73,7 +73,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-impacthub-v0.18.1`|[Example](./impacthub)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-irisnet-v1.3.1`|[Example](./irisnet)|
 |[jackal](https://github.com/JackalLabs/canine-chain)|`v1.1.2-hotfix`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-jackal-v1.1.2-hotfix`|[Example](./jackal)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v11.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v11.0.0`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v12.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v12.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-kava-v0.18.1`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`4.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-kichain-4.1.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-konstellation-v0.5.0`|[Example](./konstellation)|
@@ -107,7 +107,7 @@ Additional image variants are built for chains with [Skip MEV support](https://s
 |Project|Version|Image| |
 |---|---|---|---|
 |[evmos](https://github.com/evmos/evmos)|`v11.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-evmos-v11.0.2-skip`|[Example](./evmos)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v11.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v11.0.0-skip`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v12.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-juno-v12.0.0-skip`|[Example](./juno)|
 
 Note that configuration for Skip needs to be done in the configuration file currently - the ENV variable method of configuring the node doesn't work for the Skip config options.
 
