@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.18.1`|
+|Version|`v0.21.0`|
 |Binary|`kava`|
 |Directory|`.kava`|
 |ENV namespace|`KA`|
 |Repository|`https://github.com/Kava-Labs/kava`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-kava-v0.18.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.23-kava-v0.21.0`|
 
 ## Examples
 
