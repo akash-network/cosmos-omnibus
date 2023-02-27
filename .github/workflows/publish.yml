@@ -35,13 +35,13 @@ jobs:
           - project: chihuahua
             version: v4.2.0
           - project: comdex
-            version: v8.1.1
+            version: v9.0.0
           - project: cosmoshub
-            version: v7.1.0
+            version: v8.0.0
           - project: cronos
             version: v0.8.2
           - project: cryptoorgchain
-            version: v3.3.9
+            version: v4.2.2
           - project: decentr
             version: v1.6.0
           - project: defund
@@ -67,7 +67,7 @@ jobs:
           - project: jackal
             version: v1.1.2-hotfix
           - project: juno
-            version: v11.0.0
+            version: v12.0.0
           - project: kava
             version: v0.18.1
           - project: kichain
@@ -115,7 +115,7 @@ jobs:
           - project: starname
             version: v0.11.5
           - project: teritori
-            version: v1.3.0
+            version: v1.3.1
           # - project: terra
           #   version: v0.5.18
           - project: umee
