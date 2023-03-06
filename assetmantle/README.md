@@ -7,7 +7,7 @@
 |Directory|`.mantleNode`|
 |ENV namespace|`MANTLENODE`|
 |Repository|`https://github.com/AssetMantle/node`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.24-assetmantle-v0.3.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-assetmantle-v0.3.0`|
 
 ## Examples
 
