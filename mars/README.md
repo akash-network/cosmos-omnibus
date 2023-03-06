@@ -7,7 +7,7 @@
 |Directory|`.mars`|
 |ENV namespace|`MARSD`|
 |Repository|`https://github.com/mars-protocol/hub.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.24-mars-v3.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-mars-v3.0.1`|
 
 ## Examples
 
