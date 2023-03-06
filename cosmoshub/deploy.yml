@@ -29,7 +29,7 @@ profiles:
         cpu:
           units: 4
         memory:
-          size: 8Gi
+          size: 16Gi
         storage:
           size: 100Gi
           # - size: 100Mi
