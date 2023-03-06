@@ -86,6 +86,8 @@ jobs:
             version: v1.2.2
           - project: mars
             version: v1.0.0
+          - project: migaloo
+            version: v1.0.0
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
