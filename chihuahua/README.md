@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v4.1.0`|
+|Version|`v4.2.0`|
 |Binary|`chihuahuad`|
 |Directory|`.chihuahuad`|
 |ENV namespace|`CHIHUAHUAD`|
 |Repository|`https://github.com/ChihuahuaChain/chihuahua`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-chihuahua-v4.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-chihuahua-v4.2.0`|
 
 ## Examples
 
@@ -31,5 +31,4 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |Variable|Value|
 |---|---|
 |`P2P_POLKACHU`|`1`|
-|`SNAPSHOT_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|

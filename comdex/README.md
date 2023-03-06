@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v8.1.0`|
+|Version|`v9.0.0`|
 |Binary|`comdex`|
 |Directory|`.comdex`|
 |ENV namespace|`COMDEX`|
 |Repository|`https://github.com/comdex-official/comdex`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-comdex-v8.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-comdex-v9.0.0`|
 
 ## Examples
 
@@ -31,5 +31,4 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |Variable|Value|
 |---|---|
 |`P2P_POLKACHU`|`1`|
-|`SNAPSHOT_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|

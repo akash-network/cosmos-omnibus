@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v5.1.1`|
+|Version|`v6.0.0`|
 |Binary|`strided`|
 |Directory|`.stride`|
 |ENV namespace|`STRIDED`|
 |Repository|`https://github.com/Stride-Labs/stride`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-stride-v5.1.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-stride-v6.0.0`|
 
 ## Examples
 
@@ -31,5 +31,4 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |Variable|Value|
 |---|---|
 |`P2P_POLKACHU`|`1`|
-|`SNAPSHOT_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|

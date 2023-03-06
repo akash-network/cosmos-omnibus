@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: comdex
         PROJECT_BIN: comdex
-        VERSION: v8.1.0
+        VERSION: v9.0.0
         REPOSITORY: https://github.com/comdex-official/comdex
         NAMESPACE: COMDEX
         GOLANG_VERSION: 1.19-buster
@@ -20,7 +20,6 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
-      # - SNAPSHOT_POLKACHU=1
     env_file:
       - ../.env
     volumes:

@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.18.1`|
+|Version|`v0.21.0`|
 |Binary|`kava`|
 |Directory|`.kava`|
 |ENV namespace|`KA`|
 |Repository|`https://github.com/Kava-Labs/kava`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-kava-v0.18.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-kava-v0.21.0`|
 
 ## Examples
 
@@ -31,7 +31,6 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |Variable|Value|
 |---|---|
 |`P2P_POLKACHU`|`1`|
-|`SNAPSHOT_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|
 
 ## ChainLayer Quicksync

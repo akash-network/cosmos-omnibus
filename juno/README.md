@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v11.0.0`|
+|Version|`v12.0.0`|
 |Binary|`junod`|
 |Directory|`.juno`|
 |ENV namespace|`JUNOD`|
 |Repository|`https://github.com/CosmosContracts/Juno`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-juno-v11.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-juno-v12.0.0`|
 
 ## Examples
 
@@ -31,7 +31,6 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |Variable|Value|
 |---|---|
 |`P2P_POLKACHU`|`1`|
-|`SNAPSHOT_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|
 
 ## Skip MEV support
@@ -40,4 +39,4 @@ If you would like to use this chain with [Skip Protocol](https://skip.money/), a
 
 | | |
 |---|---|
-|Skip Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-juno-v11.0.0-skip`|
+|Skip Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-juno-v12.0.0-skip`|

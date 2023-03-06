@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v11.0.1`|
+|Version|`v11.0.2`|
 |Binary|`evmosd`|
 |Directory|`.evmosd`|
 |ENV namespace|`EVMOSD`|
 |Repository|`https://github.com/evmos/evmos`|
-|Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-evmos-v11.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-evmos-v11.0.2`|
 
 ## Examples
 
@@ -31,7 +31,6 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |Variable|Value|
 |---|---|
 |`P2P_POLKACHU`|`1`|
-|`SNAPSHOT_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|
 
 ## Skip MEV support
@@ -40,4 +39,4 @@ If you would like to use this chain with [Skip Protocol](https://skip.money/), a
 
 | | |
 |---|---|
-|Skip Image|`ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-evmos-v11.0.1-skip`|
+|Skip Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-evmos-v11.0.2-skip`|

@@ -101,7 +101,7 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 [ -n "$PRUNING_KEEP_RECENT" ] && export "${NAMESPACE}_PRUNING_KEEP_RECENT"=$PRUNING_KEEP_RECENT
 
 # Polkachu
-if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
+if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
   POLKACHU_CHAIN=`curl -s https://polkachu.com/api/v1/chains | jq -r --arg CHAIN_ID "$CHAIN_ID" 'first(.[] | select(.chain_id==$CHAIN_ID))'`
   if [ -z "$POLKACHU_CHAIN" ]; then
     echo "Polkachu does not support this chain"
@@ -129,24 +129,6 @@ if [[ -n "$P2P_POLKACHU" || -n "$SNAPSHOT_POLKACHU" || -n "$STATESYNC_POLKACHU" 
       fi
     fi
 
-    # Polkachu snapshot
-    if [ -n "$SNAPSHOT_POLKACHU" ]; then
-      export POLKACHU_SNAPSHOT_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.snapshot.active')
-      if [ $POLKACHU_SNAPSHOT_ENABLED ]; then
-        export POLKACHU_SNAPSHOT=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.snapshot.endpoint') | jq -r '.snapshot.url'`
-        if [[ "$POLKACHU_SNAPSHOT" == "null" ]]; then
-          echo "Issue obtaining the Polkachu snapshot. Likely the API issue."
-          echo "Sleeping for 10 minutes before restarting..."
-          sleep 600
-          exit 1
-        else
-          export SNAPSHOT_URL=$POLKACHU_SNAPSHOT
-          export SNAPSHOT_DATA_PATH=data
-        fi
-      else
-        echo "Polkachu snapshot is not active for this chain"
-      fi
-    fi
   fi
 fi
 

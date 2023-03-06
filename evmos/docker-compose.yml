@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/ovrclk/cosmos-omnibus:v0.3.22-evmos-v11.0.1
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.25-evmos-v11.0.2
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -11,7 +11,6 @@ services:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/chain.json
       - P2P_POLKACHU=1
-      # - STATESYNC_POLKACHU=1
-      - SNAPSHOT_POLKACHU=1
+      - STATESYNC_POLKACHU=1
     volumes:
       - ./node-data:/root/.evmosd

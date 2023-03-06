@@ -33,15 +33,15 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v4.1.0
+            version: v4.2.0
           - project: comdex
-            version: v8.1.0
+            version: v9.0.0
           - project: cosmoshub
-            version: v7.1.0
+            version: v8.0.1
           - project: cronos
             version: v0.8.2
           - project: cryptoorgchain
-            version: v3.3.9
+            version: v4.2.2
           - project: decentr
             version: v1.6.0
           - project: defund
@@ -55,7 +55,7 @@ jobs:
           - project: empowerchain
             version: v0.0.3
           - project: evmos
-            version: v11.0.1
+            version: v11.0.2
           - project: fetchhub
             version: v0.10.6
           - project: gravitybridge
@@ -67,9 +67,9 @@ jobs:
           - project: jackal
             version: v1.1.2-hotfix
           - project: juno
-            version: v11.0.0
+            version: v12.0.0
           - project: kava
-            version: v0.18.1
+            version: v0.21.0
           - project: kichain
             version: 4.1.0
           - project: konstellation
@@ -77,7 +77,7 @@ jobs:
           - project: kujira
             version: v0.8.0
           - project: likecoin
-            version: v3.1.0
+            version: v3.1.1
           - project: lumnetwork
             version: v1.2.2
           - project: mars
@@ -109,13 +109,13 @@ jobs:
           - project: sommelier
             version: v4.0.2
           - project: stargaze
-            version: v7.5.0
+            version: v8.0.0
           - project: stride
-            version: v5.1.1
+            version: v6.0.0
           - project: starname
             version: v0.11.5
           - project: teritori
-            version: v1.3.0
+            version: v1.3.1
           # - project: terra
           #   version: v0.5.18
           - project: umee

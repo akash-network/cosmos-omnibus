@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: likecoin
         PROJECT_BIN: liked
-        VERSION: v3.1.0
+        VERSION: v3.1.1
         REPOSITORY: https://github.com/likecoin/likecoin-chain
         NAMESPACE: LIKED
         BUILD_CMD: "make codegen install"
