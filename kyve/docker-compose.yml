@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.25-kyve-v1.0.0-rc1
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.25-kyve-v1.0.0
     ports:
       - '26656:26656'
       - '26657:26657'
