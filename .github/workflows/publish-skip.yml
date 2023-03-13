@@ -15,7 +15,7 @@ jobs:
           - project: evmos
             version: v11.0.2
           - project: juno
-            version: v12.0.0
+            version: v13.0.0
     steps:
       - uses: actions/checkout@v3
       - uses: docker/setup-buildx-action@v2
