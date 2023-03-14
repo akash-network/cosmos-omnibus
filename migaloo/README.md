@@ -1,13 +1,13 @@
-# Chihuahua
+# Migaloo
 
 | | |
 |---|---|
-|Version|`v4.2.1`|
-|Binary|`chihuahuad`|
-|Directory|`.chihuahuad`|
-|ENV namespace|`CHIHUAHUAD`|
-|Repository|`https://github.com/ChihuahuaChain/chihuahua`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-chihuahua-v4.2.1`|
+|Version|`v1.0.0`|
+|Binary|`migalood`|
+|Directory|`.migalood`|
+|ENV namespace|`MIGALOOD`|
+|Repository|`https://github.com/White-Whale-Defi-Platform/migaloo-chain`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-migaloo-v1.0.0`|
 
 ## Examples
 
@@ -16,11 +16,11 @@
 
 ## Chain information
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Chihuahua.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Migaloo
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/chain.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/migaloo/chain.json`|
 
 ## Polkachu Chain Services
 

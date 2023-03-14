@@ -1,13 +1,13 @@
-# Chihuahua
+# Injective
 
 | | |
 |---|---|
-|Version|`v4.2.1`|
-|Binary|`chihuahuad`|
-|Directory|`.chihuahuad`|
-|ENV namespace|`CHIHUAHUAD`|
-|Repository|`https://github.com/ChihuahuaChain/chihuahua`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-chihuahua-v4.2.1`|
+|Version|`v1.9.0-1673970775`|
+|Binary|`injectived`|
+|Directory|`.injectived`|
+|ENV namespace|`INJECTIVED`|
+|Repository|`https://github.com/InjectiveLabs/injective-chain-releases`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-injective-v1.9.0-1673970775`|
 
 ## Examples
 
@@ -16,11 +16,11 @@
 
 ## Chain information
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Chihuahua.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Injective.
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/chain.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/injective/chain.json`|
 
 ## Polkachu Chain Services
 

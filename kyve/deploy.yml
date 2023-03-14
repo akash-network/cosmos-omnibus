@@ -3,12 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.25-chihuahua-v4.2.1
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.25-kyve-v1.0.0
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/chihuahua/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/kyve/chain.json
     expose:
       - port: 26657
         as: 80
@@ -20,7 +18,7 @@ services:
     # params:
     #   storage:
     #     data:
-    #       mount: /root/.chihuahuad
+    #       mount: /root/.kyve
 
 profiles:
   compute:

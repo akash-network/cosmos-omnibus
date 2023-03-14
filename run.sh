@@ -119,11 +119,15 @@ if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
     fi
 
     # Polkachu live peers
-    if [ -n "$P2P_POLKACHU" ]; then
+    if [ "$P2P_POLKACHU" == "1" ]; then
       export POLKACHU_PEERS_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.live_peers.active')
       if [ $POLKACHU_PEERS_ENABLED ]; then
         export POLKACHU_PEERS=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.live_peers.endpoint') | jq -r '.live_peers | join(",")'`
-        export P2P_PERSISTENT_PEERS="$POLKACHU_PEERS"
+	if [ -n "$P2P_PERSISTENT_PEERS" ]; then
+          export P2P_PERSISTENT_PEERS="$POLKACHU_PEERS,$P2P_PERSISTENT_PEERS"
+	else
+          export P2P_PERSISTENT_PEERS="$POLKACHU_PEERS"
+	fi
       else
         echo "Polkachu live peers is not active for this chain"
       fi
