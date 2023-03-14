@@ -10,11 +10,10 @@ services:
       # Obtain the current snapshot URL via this Polkachu site for Kava nodes:
       # https://polkachu.com/tendermint_snapshots/kava
       # Populated example SNAPSHOT_URL provided below
-      # - SNAPSHOT_URL=https://snapshots.polkachu.com/snapshots/kava/kava_3875212.tar.lz4
-      - SNAPSHOT_URL=https://snapshots.polkachu.com/snapshots/kava/kava_3954337.tar.lz4
+      # - SNAPSHOT_URL=https://snapshots.polkachu.com/snapshots/kava/kava_3954337.tar.lz4
+      - SNAPSHOT_URL=https://snapshots.polkachu.com/snapshots/kava/kava_3967613.tar.lz4
       - SNAPSHOT_DATA_PATH=data
-      - ADDRBOOK_URL=https://snapshots.polkachu.com/addrbook/kava/addrbook.json
-      - P2P_SEEDS=ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:13956
+      # - ADDRBOOK_URL=https://snapshots.polkachu.com/addrbook/kava/addrbook.json
       # Statesync for the Kava chain currerntly fails.  In the future - to test statesync anew - uncomment the P2P and STATESYNC lines below.
       # - P2P_POLKACHU=1
       # - STATESYNC_POLKACHU=1
