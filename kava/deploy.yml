@@ -7,8 +7,16 @@ services:
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
+      # Obtain the current snapshot URL via this Polkachu site for Kava nodes:
+      # https://polkachu.com/tendermint_snapshots/kava
+      # Populated example SNAPSHOT_URL provided below
+      # - SNAPSHOT_URL=https://snapshots.polkachu.com/snapshots/kava/kava_3954337.tar.lz4
+      - SNAPSHOT_URL=https://snapshots.polkachu.com/snapshots/kava/kava_3967613.tar.lz4
+      - SNAPSHOT_DATA_PATH=data
+      # - ADDRBOOK_URL=https://snapshots.polkachu.com/addrbook/kava/addrbook.json
+      # Statesync for the Kava chain currerntly fails.  In the future - to test statesync anew - uncomment the P2P and STATESYNC lines below.
+      # - P2P_POLKACHU=1
+      # - STATESYNC_POLKACHU=1
     expose:
       - port: 26657
         as: 80
