@@ -96,6 +96,27 @@ ARG BINARY_URL
 RUN curl -Lo /bin/$PROJECT_BIN $BINARY_URL
 RUN chmod +x /bin/$PROJECT_BIN
 
+#
+# Custom image for injective
+#
+FROM debian:buster AS injective
+
+ARG VERSION
+
+RUN apt-get update && \
+  apt-get install --no-install-recommends --assume-yes ca-certificates curl unzip && \
+  apt-get clean
+
+WORKDIR /data
+RUN curl -Lo /data/release.zip https://github.com/InjectiveLabs/injective-chain-releases/releases/download/$VERSION/linux-amd64.zip
+RUN unzip -oj /data/release.zip
+RUN mv injectived /bin
+RUN mv libwasmvm.x86_64.so /usr/lib
+RUN chmod +x /bin/injectived
+
+#
+# ZSTD build
+#
 FROM gcc:12 AS zstd_build
 
 ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.4/zstd-1.5.4.tar.gz"
