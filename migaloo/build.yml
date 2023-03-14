@@ -19,6 +19,8 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/migaloo/chain.json
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
     env_file:
       - ../.env
     volumes:
