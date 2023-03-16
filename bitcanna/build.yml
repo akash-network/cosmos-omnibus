@@ -8,7 +8,7 @@ services:
         PROJECT: bitcanna
         PROJECT_BIN: bcnad
         PROJECT_DIR: .bcna
-        VERSION: v1.5.3
+        VERSION: v1.6.1
         REPOSITORY: https://github.com/BitCannaGlobal/bcna
         NAMESPACE: BCNAD
     ports:
@@ -16,7 +16,7 @@ services:
       - '26657:26657'
       - '1317:1317'
     environment:
-      - MONIKER=node_1
+      - MONIKER=R-Node
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/chain.json
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
