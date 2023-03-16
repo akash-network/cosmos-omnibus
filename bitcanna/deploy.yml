@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: moonbys/cosmos-omnibus:v0.3.26-bitcanna-v1.6.1
+    image: moonbys/cosmos-omnibus:v0.3.26-bitcanna-v1.6.2
     env:
       - MONIKER=R-Drone
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/chain.json
