@@ -38,7 +38,7 @@ profiles:
           #   attributes:
           #     persistent: true
   placement:
-    moonbys:
+    dcloud:
       pricing:
         node:
           denom: uakt
@@ -46,6 +46,6 @@ profiles:
 
 deployment:
   node:
-    moonbys:
+    dcloud:
       profile: node
       count: 1
