@@ -7,7 +7,7 @@
 |Directory|`.evmosd`|
 |ENV namespace|`EVMOSD`|
 |Repository|`https://github.com/evmos/evmos`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-evmos-v11.0.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-evmos-v11.0.2`|
 
 ## Examples
 
@@ -39,4 +39,4 @@ If you would like to use this chain with [Skip Protocol](https://skip.money/), a
 
 | | |
 |---|---|
-|Skip Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.25-evmos-v11.0.2-skip`|
+|Skip Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-evmos-v11.0.2-skip`|

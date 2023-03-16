@@ -4,6 +4,10 @@ on:
     tags:
       - v*
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -33,9 +37,9 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v4.2.0
+            version: v4.2.1
           - project: comdex
-            version: v9.0.0
+            version: v9.1.0
           - project: cosmoshub
             version: v8.0.1
           - project: cronos
@@ -62,12 +66,14 @@ jobs:
             version: v1.7.2
           - project: impacthub
             version: v0.18.1
+          - project: injective
+            version: v1.9.0-1673970775
           - project: irisnet
             version: v1.3.1
           - project: jackal
             version: v1.1.2-hotfix
           - project: juno
-            version: v12.0.0
+            version: v13.0.0
           - project: kava
             version: v0.21.0
           - project: kichain
@@ -76,11 +82,15 @@ jobs:
             version: v0.5.0
           - project: kujira
             version: v0.8.3
+          - project: kyve
+            version: v1.0.0
           - project: likecoin
             version: v3.1.1
           - project: lumnetwork
             version: v1.2.2
           - project: mars
+            version: v1.0.0
+          - project: migaloo
             version: v1.0.0
           # - project: nomic
           #   version: stakenet

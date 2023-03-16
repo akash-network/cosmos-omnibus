@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: comdex
         PROJECT_BIN: comdex
-        VERSION: v9.0.0
+        VERSION: v9.1.0
         REPOSITORY: https://github.com/comdex-official/comdex
         NAMESPACE: COMDEX
         GOLANG_VERSION: 1.19-buster

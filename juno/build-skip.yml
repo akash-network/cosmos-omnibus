@@ -8,12 +8,12 @@ services:
         PROJECT: juno
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
-        VERSION: v12.0.0
+        VERSION: v13.0.0
         REPOSITORY: https://github.com/CosmosContracts/juno
         NAMESPACE: JUNOD
         GOLANG_VERSION: 1.19-buster
         BUILD_METHOD: skip
-        MEV_TENDERMINT_VERSION: v0.34.24-mev.15 # https://github.com/skip-mev/config/blob/main/juno-1/v12.0.0/mev-tendermint_version.txt
+        MEV_TENDERMINT_VERSION: v0.34.26-mev.15 # https://github.com/skip-mev/config/blob/main/juno-1/v13.0.0/mev-tendermint_version.txt
     ports:
       - '26656:26656'
       - '26657:26657'

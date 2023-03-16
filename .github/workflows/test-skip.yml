@@ -1,6 +1,10 @@
 name: test-skip
 on: [push, pull_request]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build_matrix:
     runs-on: ubuntu-latest

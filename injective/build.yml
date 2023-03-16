@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: injective
+        PROJECT_BIN: injectived
+        PROJECT_DIR: .injectived
+        VERSION: v1.9.0-1673970775
+        BUILD_IMAGE: injective
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/injective/chain.json
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.injectived
