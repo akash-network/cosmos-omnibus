@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-|Version|`v8.0.1`|
+|Version|`v9.0.1`|
 |Binary|`gaiad`|
 |Directory|`.gaia`|
 |ENV namespace|`GAIAD`|
