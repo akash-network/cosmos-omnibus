@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.26-injective-v1.10-1678709842
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.26-injective-v1.10.0-1679005968
     ports:
       - '26656:26656'
       - '26657:26657'
