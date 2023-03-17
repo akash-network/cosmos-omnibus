@@ -67,7 +67,7 @@ jobs:
           - project: impacthub
             version: v0.18.1
           - project: injective
-            version: v1.10.0-1679005968
+            version: v1.10.0-1679065799
           - project: irisnet
             version: v1.3.1
           - project: jackal
