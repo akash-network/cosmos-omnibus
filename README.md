@@ -78,7 +78,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kava](https://github.com/Kava-Labs/kava)|`v0.21.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-kava-v0.21.0`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`4.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-kichain-4.1.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-konstellation-v0.5.0`|[Example](./konstellation)|
-|[kujira](https://github.com/Team-Kujira/core)|`c54c3202a95a5ad1687b4d62ef8a60759b597087`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-kujira-c54c3202a95a5ad1687b4d62ef8a60759b597087`|[Example](./kujira)|
+|[kujira](https://github.com/Team-Kujira/core)|`2adb479a57d13e98d2bd762fdb87c0324de9df94`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-kujira-2adb479a57d13e98d2bd762fdb87c0324de9df94`|[Example](./kujira)|
 |[kyve](https://github.com/KYVENetwork/chain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-kyve-v1.0.0`|[Example](./kyve)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`v3.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-likecoin-v3.1.1`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-lumnetwork-v1.2.2`|[Example](./lumnetwork)|
