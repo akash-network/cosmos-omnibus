@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`2adb479a57d13e98d2bd762fdb87c0324de9df94`|
+|Version|`v0.8.5`|
 |Binary|`kujirad`|
 |Directory|`.kujira`|
 |ENV namespace|`KUJIRAD`|
 |Repository|`https://github.com/Team-Kujira/core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-kujira-2adb479a57d13e98d2bd762fdb87c0324de9df94`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-kujira-v0.8.5`|
 
 ## Examples
 
