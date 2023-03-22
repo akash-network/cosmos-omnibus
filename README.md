@@ -84,6 +84,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-lumnetwork-v1.2.2`|[Example](./lumnetwork)|
 |[mars](https://github.com/mars-protocol/hub.git)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-mars-v1.0.0`|[Example](./mars)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-migaloo-v1.0.0`|[Example](./migaloo)|
+|[nois](https://github.com/noislabs/noisd)|`v0.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-nois-v0.6.0`|[Example](./nois)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.8.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-omniflixhub-v0.8.0`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v14.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-osmosis-v14.0.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-panacea-v2.0.5`|[Example](./panacea)|
