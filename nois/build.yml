@@ -11,6 +11,7 @@ services:
         VERSION: v0.6.0
         REPOSITORY: https://github.com/noislabs/noisd
         NAMESPACE: NOISD
+        GOLANG_VERSION: 1.20-buster
     ports:
       - '26656:26656'
       - '26657:26657'
