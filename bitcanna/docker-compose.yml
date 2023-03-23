@@ -2,16 +2,19 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.26-generic
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.26-bitcanna-v1.6.2
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
     environment:
-      - BINARY_URL=https://github.com/BitCannaGlobal/bcna/releases/download/v1.6.2/bcna_linux_amd64.tar.gz
-      - MONIKER=R-Drone
+      - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bitcanna/chain.json
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
     volumes:
       - ./node-data:/root/.bcna
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.bcna  
