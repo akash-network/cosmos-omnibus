@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: nois
+        PROJECT_BIN: noisd
+        PROJECT_DIR: .noisd
+        VERSION: v0.6.0
+        REPOSITORY: https://github.com/noislabs/noisd
+        NAMESPACE: NOISD
+        GOLANG_VERSION: 1.20-buster
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nois/chain.json
+      - CHAIN_ID=nois-testnet-004
+      - GENESIS_URL=https://raw.githubusercontent.com/noislabs/networks/nois-testnet-004.final.2/nois-testnet-004/genesis.json
+      - P2P_SEEDS=ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@testnet-seeds.polkachu.com:17356,babc3f3f7804933265ec9c40ad94f4da8e9e0017@testnet-seed.rhinostake.com:17356
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.noisd
