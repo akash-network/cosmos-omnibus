@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-|Version|`v13.1.0`|
+|Version|`v15.0.0`|
 |Binary|`osmosisd`|
 |Directory|`.osmosisd`|
 |ENV namespace|`OSMOSISD`|
