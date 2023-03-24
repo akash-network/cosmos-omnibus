@@ -7,7 +7,7 @@
 |Directory|`.kujira`|
 |ENV namespace|`KUJIRAD`|
 |Repository|`https://github.com/Team-Kujira/core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-kujira-v0.8.4-mainnet`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-kujira-v0.8.4-mainnet`|
 
 ## Examples
 
