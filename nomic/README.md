@@ -7,7 +7,7 @@
 |Directory|`.nomic-stakenet`|
 |ENV namespace|`TM`|
 |Repository|`https://github.com/nomic-io/nomic`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.26-nomic-stakenet`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-nomic-stakenet`|
 
 ## Examples
 
