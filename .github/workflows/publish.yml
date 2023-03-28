@@ -93,7 +93,7 @@ jobs:
           - project: migaloo
             version: v1.0.0
           - project: nois
-            version: v0.6.0
+            version: v1.0.0
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
