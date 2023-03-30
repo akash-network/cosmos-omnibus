@@ -17,7 +17,7 @@ jobs:
       matrix:
         include:
           - project: evmos
-            version: v11.0.2
+            version: v12.1.0
           - project: juno
             version: v13.0.0
     steps:
