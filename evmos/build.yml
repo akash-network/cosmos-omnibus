@@ -11,6 +11,7 @@ services:
         VERSION: v12.1.0
         REPOSITORY: https://github.com/evmos/evmos
         NAMESPACE: EVMOSD
+        GOLANG_VERSION: 1.20-buster
     ports:
       - '26656:26656'
       - '26657:26657'
