@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: terpnetwork
+        PROJECT_BIN: terpd
+        VERSION: v1.0.0-stable
+        REPOSITORY: https://github.com/terpnetwork/terp-core
+        NAMESPACE: TERPD
+        PROJECT_DIR: .terp
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_ID=morocco-1
+      - GENESIS_URL=https://raw.githubusercontent.com/terpnetwork/mainnet/main/morocco-1/genesis.json
+    # - SNAPSHOT_WASM_PATH=wasm
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.terp
