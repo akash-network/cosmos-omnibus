@@ -69,6 +69,9 @@ FROM build_${BUILD_METHOD} AS build
 ARG BUILD_PATH=$GOPATH/bin
 RUN $BUILD_CMD
 
+# workaround: address projects which produce "/go/bin/main" instead of "/go/bin/$PROJECT_BIN" during "make install"
+RUN ! test -f $BUILD_PATH/$PROJECT_BIN && mv $BUILD_PATH/main $BUILD_PATH/$PROJECT_BIN || :
+
 RUN ldd $BUILD_PATH/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
     xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
 
