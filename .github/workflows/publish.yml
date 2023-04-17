@@ -25,7 +25,7 @@ jobs:
           - project: autonomy
             version: v1.2.1
           - project: bandchain
-            version: v2.3.6
+            version: v2.5.1
           - project: bitcanna
             version: v1.6.3
           - project: bitsong
