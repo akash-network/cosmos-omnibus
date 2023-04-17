@@ -119,7 +119,7 @@ RUN chmod +x /bin/injectived
 #
 FROM gcc:12 AS zstd_build
 
-ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.4/zstd-1.5.4.tar.gz"
+ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz"
 
 RUN apt-get update && \
       apt-get install --no-install-recommends --assume-yes python3 ninja-build && \
