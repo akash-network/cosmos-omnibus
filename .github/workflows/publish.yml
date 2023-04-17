@@ -73,7 +73,7 @@ jobs:
           - project: jackal
             version: v1.2.1
           - project: juno
-            version: v13.0.0
+            version: v14.0.0
           - project: kava
             version: v0.21.0
           - project: kichain
