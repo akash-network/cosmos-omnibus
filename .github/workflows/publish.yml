@@ -25,9 +25,9 @@ jobs:
           - project: autonomy
             version: v1.2.1
           - project: bandchain
-            version: v2.3.6
+            version: v2.5.1
           - project: bitcanna
-            version: v1.5.3
+            version: v1.6.3
           - project: bitsong
             version: v0.12.0
           - project: bostrom
@@ -41,7 +41,7 @@ jobs:
           - project: comdex
             version: v9.1.0
           - project: cosmoshub
-            version: v9.0.1
+            version: v9.0.2
           - project: cronos
             version: v0.8.2
           - project: cryptoorgchain
@@ -59,7 +59,7 @@ jobs:
           - project: empowerchain
             version: v0.0.3
           - project: evmos
-            version: v11.0.2
+            version: v12.1.0
           - project: fetchhub
             version: v0.10.6
           - project: gravitybridge
@@ -92,6 +92,8 @@ jobs:
             version: v1.0.0
           - project: migaloo
             version: v1.0.0
+          - project: nois
+            version: v1.0.0
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
@@ -105,7 +107,7 @@ jobs:
           - project: persistence
             version: v3.2.0
           - project: regen
-            version: v5.0.0
+            version: v5.1.0
           - project: rizon
             version: v0.4.1
           - project: seinetwork
@@ -121,7 +123,7 @@ jobs:
           - project: stargaze
             version: v8.0.0
           - project: stride
-            version: v7.0.0
+            version: v8.0.0
           - project: starname
             version: v0.11.5
           - project: teritori

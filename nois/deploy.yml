@@ -3,12 +3,13 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.27-evmos-v12.1.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.26-nois-v1.0.0
     env:
       - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/evmos/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nois/chain.json
+      - CHAIN_ID=nois-1
+      - GENESIS_URL=https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json
+      - P2P_SEEDS=b3e3bd436ee34c39055a4c9946a02feec232988c@seeds.cros-nest.com:56656,babc3f3f7804933265ec9c40ad94f4da8e9e0017@seed.rhinostake.com:17356,ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:17356,72cd4222818d25da5206092c3efc2c0dd0ec34fe@161.97.96.91:36656,20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:17356,c8db99691545545402a1c45fa897f3cb1a05aea6@nois-mainnet-seed.itrocket.net:36656
     expose:
       - port: 26657
         as: 80
@@ -20,16 +21,16 @@ services:
     # params:
     #   storage:
     #     data:
-    #       mount: /root/.evmosd
+    #       mount: /root/.noisd
 
 profiles:
   compute:
     node:
       resources:
         cpu:
-          units: 8
+          units: 4
         memory:
-          size: 32Gi
+          size: 8Gi
         storage:
           size: 100Gi
           # - size: 100Mi

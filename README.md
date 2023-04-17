@@ -50,15 +50,15 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[akash](https://github.com/akash-network/node)|`v0.20.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-akash-v0.20.0`|[Example](./akash)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v0.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-assetmantle-v0.3.0`|[Example](./assetmantle)|
 |[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-autonomy-v1.2.1`|[Example](./autonomy)|
-|[bandchain](https://github.com/bandprotocol/chain)|`v2.3.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-bandchain-v2.3.6`|[Example](./bandchain)|
-|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.5.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-bitcanna-v1.5.3`|[Example](./bitcanna)|
+|[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-bandchain-v2.5.1`|[Example](./bandchain)|
+|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.6.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-bitcanna-v1.6.3`|[Example](./bitcanna)|
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.12.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-bitsong-v0.12.0`|[Example](./bitsong)|
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-bostrom-v0.3.2`|[Example](./bostrom)|
 |[cerberus](https://github.com/cerberus-zone/cerberus)|`v3.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-cerberus-v3.1.0`|[Example](./cerberus)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-cheqd-0.6.9`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v4.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-chihuahua-v4.2.1`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v9.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-comdex-v9.1.0`|[Example](./comdex)|
-|[cosmoshub](https://github.com/cosmos/gaia)|`v9.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-cosmoshub-v9.0.1`|[Example](./cosmoshub)|
+|[cosmoshub](https://github.com/cosmos/gaia)|`v9.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-cosmoshub-v9.0.2`|[Example](./cosmoshub)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v0.8.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-cronos-v0.8.2`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-cryptoorgchain-v4.2.2`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-decentr-v1.6.0`|[Example](./decentr)|
@@ -67,7 +67,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-dig-v3.3.1`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-emoney-v1.2.0`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v0.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-empowerchain-v0.0.3`|[Example](./empowerchain)|
-|[evmos](https://github.com/evmos/evmos)|`v11.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-evmos-v11.0.2`|[Example](./evmos)|
+|[evmos](https://github.com/evmos/evmos)|`v12.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-evmos-v12.1.0`|[Example](./evmos)|
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-fetchhub-v0.10.6`|[Example](./fetchhub)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.7.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-gravitybridge-v1.7.2`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-impacthub-v0.18.1`|[Example](./impacthub)|
@@ -84,12 +84,13 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-lumnetwork-v1.2.2`|[Example](./lumnetwork)|
 |[mars](https://github.com/mars-protocol/hub.git)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-mars-v1.0.0`|[Example](./mars)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-migaloo-v1.0.0`|[Example](./migaloo)|
+|[nois](https://github.com/noislabs/noisd)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-nois-v1.0.0`|[Example](./nois)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.8.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-omniflixhub-v0.8.0`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v15.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-osmosis-v15.0.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-panacea-v2.0.5`|[Example](./panacea)|
 |[passage](https://github.com/envadiv/Passage3D)|`v1.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-passage-v1.1.0`|[Example](./passage)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v3.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-persistence-v3.2.0`|[Example](./persistence)|
-|[regen](https://github.com/regen-network/regen-ledger)|`v5.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-regen-v5.0.0`|[Example](./regen)|
+|[regen](https://github.com/regen-network/regen-ledger)|`v5.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-regen-v5.1.0`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-rizon-v0.4.1`|[Example](./rizon)|
 |[seinetwork](https://github.com/sei-protocol/sei-chain)|`1.2.2beta-postfix`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-seinetwork-1.2.2beta-postfix`|[Example](./seinetwork)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.9.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-sentinel-v0.9.3`|[Example](./sentinel)|
@@ -98,7 +99,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[sommelier](https://github.com/PeggyJV/sommelier)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-sommelier-v4.0.2`|[Example](./sommelier)|
 |[stargaze](https://github.com/public-awesome/stargaze)|`v8.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-stargaze-v8.0.0`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-starname-v0.11.5`|[Example](./starname)|
-|[stride](https://github.com/Stride-Labs/stride)|`v7.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-stride-v7.0.0`|[Example](./stride)|
+|[stride](https://github.com/Stride-Labs/stride)|`v8.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-stride-v8.0.0`|[Example](./stride)|
 |[teritori](https://github.com/TERITORI/teritori-chain)|`v1.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-teritori-v1.3.1`|[Example](./teritori)|
 |[umee](https://github.com/umee-network/umee)|`v3.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-umee-v3.1.0`|[Example](./umee)|
 |[vidulum](https://github.com/vidulum/mainnet)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-vidulum-v1.2.0`|[Example](./vidulum)|
@@ -111,7 +112,7 @@ Some chains such as Juno have Skip support included in the core binary, so the d
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[evmos](https://github.com/evmos/evmos)|`v11.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-evmos-v11.0.2-skip`|[Example](./evmos)|
+|[evmos](https://github.com/evmos/evmos)|`v12.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-evmos-v12.1.0-skip`|[Example](./evmos)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v14.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-juno-v14.0.0`|[Example](./juno)|
 
 Note that configuration for Skip needs to be done in the configuration file currently - the ENV variable method of configuring the node doesn't work for the Skip config options.
