@@ -7,11 +7,12 @@ services:
       args:
         PROJECT: kyve
         PROJECT_BIN: kyved
-        VERSION: v1.0.0
+        VERSION: v1.1.0
         REPOSITORY: https://github.com/KYVENetwork/chain
         NAMESPACE: KYVED
         PROJECT_DIR: .kyve
         GOLANG_VERSION: 1.19-buster
+        BUILD_CMD: make install ENV=kaon
     ports:
       - '26656:26656'
       - '26657:26657'
