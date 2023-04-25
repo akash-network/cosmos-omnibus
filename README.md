@@ -58,7 +58,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-cheqd-0.6.9`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v4.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-chihuahua-v4.2.2`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v9.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-comdex-v9.1.0`|[Example](./comdex)|
-|[cosmoshub](https://github.com/cosmos/gaia)|`v9.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-cosmoshub-v9.0.2`|[Example](./cosmoshub)|
+|[cosmoshub](https://github.com/cosmos/gaia)|`v9.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-cosmoshub-v9.0.3`|[Example](./cosmoshub)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v0.8.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-cronos-v0.8.2`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-cryptoorgchain-v4.2.2`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-decentr-v1.6.0`|[Example](./decentr)|
