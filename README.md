@@ -56,7 +56,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-bostrom-v0.3.2`|[Example](./bostrom)|
 |[cerberus](https://github.com/cerberus-zone/cerberus)|`v3.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-cerberus-v3.1.0`|[Example](./cerberus)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-cheqd-0.6.9`|[Example](./cheqd)|
-|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v4.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-chihuahua-v4.2.1`|[Example](./chihuahua)|
+|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v4.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-chihuahua-v4.2.2`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v9.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-comdex-v9.1.0`|[Example](./comdex)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v9.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-cosmoshub-v9.0.2`|[Example](./cosmoshub)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v0.8.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-cronos-v0.8.2`|[Example](./cronos)|
