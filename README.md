@@ -74,7 +74,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.10.0-1679065799`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-injective-v1.10.0-1679065799`|[Example](./injective)|
 |[irisnet](https://github.com/irisnet/irishub)|`v1.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-irisnet-v1.3.1`|[Example](./irisnet)|
 |[jackal](https://github.com/JackalLabs/canine-chain)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-jackal-v1.2.1`|[Example](./jackal)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v14.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-juno-v14.0.0`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v14.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-juno-v14.1.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.21.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-kava-v0.21.0`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`4.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-kichain-4.1.0`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-konstellation-v0.5.0`|[Example](./konstellation)|
@@ -113,7 +113,7 @@ Some chains such as Juno have Skip support included in the core binary, so the d
 |Project|Version|Image| |
 |---|---|---|---|
 |[evmos](https://github.com/evmos/evmos)|`v12.1.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-evmos-v12.1.2-skip`|[Example](./evmos)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v14.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-juno-v14.0.0`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v14.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.28-juno-v14.1.0`|[Example](./juno)|
 
 Note that configuration for Skip needs to be done in the configuration file currently - the ENV variable method of configuring the node doesn't work for the Skip config options.
 
