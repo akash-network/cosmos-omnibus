@@ -91,7 +91,7 @@ jobs:
           - project: mars
             version: v1.0.0
           - project: migaloo
-            version: v1.0.0
+            version: v2.0.2
           - project: nois
             version: v1.0.0
           # - project: nomic
