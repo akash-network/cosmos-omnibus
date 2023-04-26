@@ -37,11 +37,11 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v4.2.1
+            version: v4.2.2
           - project: comdex
             version: v9.1.0
           - project: cosmoshub
-            version: v9.0.2
+            version: v9.0.3
           - project: cronos
             version: v0.8.2
           - project: cryptoorgchain
@@ -59,7 +59,7 @@ jobs:
           - project: empowerchain
             version: v0.0.3
           - project: evmos
-            version: v12.1.0
+            version: v12.1.2
           - project: fetchhub
             version: v0.10.6
           - project: gravitybridge
@@ -73,7 +73,7 @@ jobs:
           - project: jackal
             version: v1.2.2
           - project: juno
-            version: v14.0.0
+            version: v14.1.0
           - project: kava
             version: v0.21.0
           - project: kichain
@@ -91,15 +91,15 @@ jobs:
           - project: mars
             version: v1.0.0
           - project: migaloo
-            version: v1.0.0
+            version: v2.0.2
           - project: nois
             version: v1.0.0
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
-            version: v0.8.0
+            version: v0.10.0
           - project: osmosis
-            version: v15.0.0
+            version: v15.1.0
           - project: panacea
             version: v2.0.5
           - project: passage
