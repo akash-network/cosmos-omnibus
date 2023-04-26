@@ -97,7 +97,7 @@ jobs:
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
-            version: v0.8.0
+            version: v0.10.0
           - project: osmosis
             version: v15.0.0
           - project: panacea
