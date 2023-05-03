@@ -6,7 +6,7 @@ set -e
 
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
 if [ -n "$CHAIN_JSON" ]; then
-  CHAIN_METADATA=$(curl -s $CHAIN_JSON)
+  CHAIN_METADATA=$(curl -Ls $CHAIN_JSON)
   export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
   export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')}"
   export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')}"
@@ -36,7 +36,7 @@ export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 
 if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
   echo "Download binary $PROJECT_BIN from $BINARY_URL"
-  curl -sLo /bin/$PROJECT_BIN $BINARY_URL
+  curl -Lso /bin/$PROJECT_BIN $BINARY_URL
   file_description=$(file /bin/$PROJECT_BIN)
   case "${file_description,,}" in
     *"gzip compressed data"*)   mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tgz && tar -xvf /bin/$PROJECT_BIN.tgz -C /bin && rm /bin/$PROJECT_BIN.tgz;;
@@ -102,7 +102,7 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 
 # Polkachu
 if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
-  POLKACHU_CHAIN=`curl -s https://polkachu.com/api/v1/chains | jq -r --arg CHAIN_ID "$CHAIN_ID" 'first(.[] | select(.chain_id==$CHAIN_ID))'`
+  POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v1/chains | jq -r --arg CHAIN_ID "$CHAIN_ID" 'first(.[] | select(.chain_id==$CHAIN_ID))'`
   if [ -z "$POLKACHU_CHAIN" ]; then
     echo "Polkachu does not support this chain"
   else
@@ -151,9 +151,9 @@ if [ -n "$STATESYNC_RPC_SERVERS" ]; then
   IFS=',' read -ra rpc_servers <<< "$STATESYNC_RPC_SERVERS"
   STATESYNC_TRUSTED_NODE=${STATESYNC_TRUSTED_NODE:-${rpc_servers[0]}}
   if [ -n "$STATESYNC_TRUSTED_NODE" ]; then
-    LATEST_HEIGHT=$(curl -s $STATESYNC_TRUSTED_NODE/block | jq -r .result.block.header.height)
+    LATEST_HEIGHT=$(curl -Ls $STATESYNC_TRUSTED_NODE/block | jq -r .result.block.header.height)
     BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000))
-    TRUST_HASH=$(curl -s "$STATESYNC_TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+    TRUST_HASH=$(curl -Ls "$STATESYNC_TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
     export "${NAMESPACE}_STATESYNC_TRUST_HEIGHT=${STATESYNC_TRUST_HEIGHT:-$BLOCK_HEIGHT}"
     export "${NAMESPACE}_STATESYNC_TRUST_HASH=${STATESYNC_TRUST_HASH:-$TRUST_HASH}"
     export "${NAMESPACE}_STATESYNC_TRUST_PERIOD=${STATESYNC_TRUST_PERIOD:-168h0m0s}"
@@ -225,17 +225,17 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
     SNAPSHOT_PATTERN="${SNAPSHOT_PATTERN:-$CHAIN_ID.*$SNAPSHOT_FORMAT}"
-    SNAPSHOT_URL=$SNAPSHOT_BASE_URL/$(curl -s $SNAPSHOT_BASE_URL/ | egrep -o ">$SNAPSHOT_PATTERN" | tr -d ">");
+    SNAPSHOT_URL=$SNAPSHOT_BASE_URL/$(curl -Ls $SNAPSHOT_BASE_URL/ | egrep -o ">$SNAPSHOT_PATTERN" | tr -d ">");
   fi
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_JSON}" ]; then
-    SNAPSHOT_URL="$(curl -s $SNAPSHOT_JSON | jq -r .latest)"
+    SNAPSHOT_URL="$(curl -Ls $SNAPSHOT_JSON | jq -r .latest)"
   fi
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_QUICKSYNC}" ]; then
     SNAPSHOT_PRUNING="${SNAPSHOT_PRUNING:-pruned}"
     SNAPSHOT_DATA_PATH="data"
-    SNAPSHOT_URL=`curl -s $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
+    SNAPSHOT_URL=`curl -Ls $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
   fi
 
   # SNAPSHOT_FORMAT default value generation via SNAPSHOT_URL
@@ -293,7 +293,7 @@ if [ "$COSMOVISOR_ENABLED" == "1" ]; then
     echo "Downloading the cosmovisor ($COSMOVISOR_VERSION) binary..."
     mkdir -p cosmovisor_temp
     cd cosmovisor_temp
-    curl -sL "https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz" | tar zx
+    curl -Ls "https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz" | tar zx
     cp cosmovisor /bin/cosmovisor
     cd ..
     rm -r cosmovisor_temp
