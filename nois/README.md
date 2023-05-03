@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.0.0`|
+|Version|`v1.0.2`|
 |Binary|`noisd`|
 |Directory|`.noisd`|
 |ENV namespace|`NOISD`|
 |Repository|`https://github.com/noislabs/noisd`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.29-nois-v1.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.29-nois-v1.0.2`|
 
 ## Examples
 
