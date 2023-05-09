@@ -93,7 +93,7 @@ jobs:
           - project: migaloo
             version: v2.0.2
           - project: neutron
-            version: v1.0.0-rc1
+            version: v1.0.1
           - project: nois
             version: v1.0.2
           # - project: nomic
