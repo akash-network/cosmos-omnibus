@@ -41,7 +41,7 @@ jobs:
           - project: comdex
             version: v9.1.0
           - project: cosmoshub
-            version: v9.0.3
+            version: v9.1.0
           - project: cronos
             version: v0.8.2
           - project: cryptoorgchain
@@ -71,7 +71,7 @@ jobs:
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v1.2.2
+            version: v2.0.0
           - project: juno
             version: v14.1.0
           - project: kava
@@ -83,7 +83,7 @@ jobs:
           - project: kujira
             version: v0.8.4-mainnet
           - project: kyve
-            version: v1.0.0
+            version: v1.1.0
           - project: likecoin
             version: v3.1.1
           - project: lumnetwork
@@ -92,8 +92,10 @@ jobs:
             version: v1.0.0
           - project: migaloo
             version: v2.0.2
+          - project: neutron
+            version: v1.0.1
           - project: nois
-            version: v1.0.0
+            version: v1.0.2
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
