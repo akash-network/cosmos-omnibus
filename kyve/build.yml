@@ -12,7 +12,7 @@ services:
         NAMESPACE: KYVED
         PROJECT_DIR: .kyve
         GOLANG_VERSION: 1.19-buster
-        BUILD_CMD: make install ENV=mainnet
+        BUILD_CMD: make install ENV=kaon
     ports:
       - '26656:26656'
       - '26657:26657'
