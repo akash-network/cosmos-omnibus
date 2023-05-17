@@ -3,10 +3,14 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.29-kyve-v1.1.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.29-neutron-v1.0.1
     env:
-      - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/kyve/chain.json
+      - MONIKER=node_1
+      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/chain.json
+      - CHAIN_ID=pion-1
+      - GENESIS_URL=https://github.com/cosmos/testnets/raw/master/replicated-security/pion-1/pion-1-genesis.json
+      - P2P_SEEDS=e2c07e8e6e808fb36cca0fc580e31216772841df@p2p-palvus.pion-1.ntrn.tech:26656
+      - P2P_PERSISTENT_PEERS=49d75c6094c006b6f2758e45457c1f3d6002ce7a@pion-banana.rs-testnet.polypore.xyz:26656,f2520026fb9086f1b2f09e132d209cbe88064ec1@pion-cherry.rs-testnet.polypore.xyz:26656
     expose:
       - port: 26657
         as: 80
@@ -18,7 +22,7 @@ services:
     # params:
     #   storage:
     #     data:
-    #       mount: /root/.kyve
+    #       mount: /root/.neutrond
 
 profiles:
   compute:
@@ -27,7 +31,7 @@ profiles:
         cpu:
           units: 4
         memory:
-          size: 8Gi
+          size: 16Gi
         storage:
           size: 100Gi
           # - size: 100Mi
