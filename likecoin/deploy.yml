@@ -1,6 +1,5 @@
 ---
 version: "2.0"
-
 services:
   node:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.3.30-likecoin-v3.1.1
@@ -15,11 +14,13 @@ services:
       - port: 26656
         to:
           - global: true
-    # params:
-    #   storage:
-    #     data:
-    #       mount: /root/.liked
-
+#################################
+# Required for persistent storage
+    params:
+      storage:
+        data:
+          mount: /root/.liked
+#################################
 profiles:
   compute:
     node:
@@ -28,15 +29,25 @@ profiles:
           units: 4
         memory:
           size: 8Gi
+#################################
+# Persistent storage enabled by default with SSD.
+#################################
         storage:
-          size: 100Gi
-          # - size: 100Mi
-          # - name: data
-          #   size: 400Gi
-          #   attributes:
-          #     persistent: true
+          - size: 1Gi
+          - name: data
+            size: 400Gi
+            attributes:
+              persistent: true
+              class: beta2
+              # Choose Storage Type : beta1 (HDD), beta2 (SSD), beta3 (NVMe)
+#################################
+# To use ephemeral storage, comment out persistent storage blocks and uncomment below
+#################################
+#        storage:
+#          size: 100Gi
+#################################
   placement:
-    dcloud:
+    akash:
       attributes:
         host: akash
       signedBy:
@@ -45,10 +56,9 @@ profiles:
       pricing:
         node:
           denom: uakt
-          amount: 1000
-
+          amount: 10000
 deployment:
   node:
-    dcloud:
+    akash:
       profile: node
       count: 1

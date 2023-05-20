@@ -1,6 +1,5 @@
 ---
 version: "2.0"
-
 services:
   node:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.3.30-seinetwork-1.2.2beta-postfix
@@ -19,28 +18,40 @@ services:
       - port: 26656
         to:
           - global: true
-    # params:
-    #   storage:
-    #     data:
-    #       mount: /root/.sei
-
+#################################
+# Required for persistent storage
+    params:
+      storage:
+        data:
+          mount: /root/.sei
+#################################
 profiles:
   compute:
     node:
       resources:
         cpu:
-          units: 2
+          units: 4
         memory:
-          size: 2Gi
+          size: 8Gi
+#################################
+# Persistent storage enabled by default with SSD.
+#################################
         storage:
-          size: 40Gi
-          # - size: 100Mi
-          # - name: data
-          #   size: 400Gi
-          #   attributes:
-          #     persistent: true
+          - size: 1Gi
+          - name: data
+            size: 400Gi
+            attributes:
+              persistent: true
+              class: beta2
+              # Choose Storage Type : beta1 (HDD), beta2 (SSD), beta3 (NVMe)
+#################################
+# To use ephemeral storage, comment out persistent storage blocks and uncomment below
+#################################
+#        storage:
+#          size: 100Gi
+#################################
   placement:
-    dcloud:
+    akash:
       attributes:
         host: akash
       signedBy:
@@ -50,9 +61,8 @@ profiles:
         node:
           denom: uakt
           amount: 100
-
 deployment:
   node:
-    dcloud:
+    akash:
       profile: node
       count: 1
