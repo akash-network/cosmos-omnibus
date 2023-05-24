@@ -11,6 +11,7 @@ services:
         VERSION: v10.0.0
         REPOSITORY: https://github.com/cosmos/gaia
         NAMESPACE: GAIAD
+        GOLANG_VERSION: 1.20-buster
     ports:
       - '26656:26656'
       - '26657:26657'
