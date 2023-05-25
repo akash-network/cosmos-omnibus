@@ -11,7 +11,7 @@ services:
         VERSION: v0.8.6
         REPOSITORY: https://github.com/Team-Kujira/core
         NAMESPACE: KUJIRAD
-        GOLANG_VERSION: 1.19-buster
+        GOLANG_VERSION: 1.19.7-buster
     ports:
       - '26656:26656'
       - '26657:26657'
