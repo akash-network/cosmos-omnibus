@@ -81,7 +81,7 @@ jobs:
           - project: konstellation
             version: v0.5.0
           - project: kujira
-            version: v0.8.4-mainnet
+            version: v0.8.6
           - project: kyve
             version: v1.1.0
           - project: likecoin
