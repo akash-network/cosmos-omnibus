@@ -52,7 +52,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-autonomy-v1.2.1`|[Example](./autonomy)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-bandchain-v2.5.1`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v1.6.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-bitcanna-v1.6.3`|[Example](./bitcanna)|
-|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.12.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-bitsong-v0.12.0`|[Example](./bitsong)|
+|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.14.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-bitsong-v0.14.0`|[Example](./bitsong)|
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-bostrom-v0.3.2`|[Example](./bostrom)|
 |[cerberus](https://github.com/cerberus-zone/cerberus)|`v3.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-cerberus-v3.1.0`|[Example](./cerberus)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-cheqd-0.6.9`|[Example](./cheqd)|
