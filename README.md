@@ -76,7 +76,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[jackal](https://github.com/JackalLabs/canine-chain)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-jackal-v2.0.0`|[Example](./jackal)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v14.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-juno-v14.1.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.23.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-kava-v0.23.1`|[Example](./kava)|
-|[kichain](https://github.com/KiFoundation/ki-tools)|`4.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-kichain-4.1.0`|[Example](./kichain)|
+|[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-kichain-5.0.1`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-konstellation-v0.5.0`|[Example](./konstellation)|
 |[kujira](https://github.com/Team-Kujira/core)|`v0.8.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-kujira-v0.8.6`|[Example](./kujira)|
 |[kyve](https://github.com/KYVENetwork/chain)|`v1.1.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-kyve-v1.1.3`|[Example](./kyve)|
