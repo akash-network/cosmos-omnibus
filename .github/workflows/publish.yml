@@ -89,7 +89,7 @@ jobs:
           - project: lumnetwork
             version: v1.4.0
           - project: mars
-            version: v1.0.0
+            version: v1.0.1
           - project: migaloo
             version: v2.0.2
           - project: neutron
