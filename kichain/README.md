@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`4.1.0`|
+|Version|`5.0.1`|
 |Binary|`kid`|
 |Directory|`.kid`|
 |ENV namespace|`KICHAIN`|
 |Repository|`https://github.com/KiFoundation/ki-tools`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-kichain-4.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-kichain-5.0.1`|
 
 ## Examples
 
