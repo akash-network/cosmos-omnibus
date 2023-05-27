@@ -10,6 +10,7 @@ services:
         VERSION: v4.0.0
         REPOSITORY: https://github.com/likecoin/likecoin-chain
         NAMESPACE: LIKED
+        GOLANG_VERSION: 1.19-buster
         BUILD_CMD: "make codegen install"
     ports:
       - '26656:26656'
