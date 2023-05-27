@@ -67,7 +67,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-dig-v3.3.1`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-emoney-v1.2.0`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v0.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-empowerchain-v0.0.3`|[Example](./empowerchain)|
-|[evmos](https://github.com/evmos/evmos)|`v12.1.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-evmos-v12.1.3`|[Example](./evmos)|
+|[evmos](https://github.com/evmos/evmos)|`v12.1.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-evmos-v12.1.4`|[Example](./evmos)|
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-fetchhub-v0.10.6`|[Example](./fetchhub)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.7.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-gravitybridge-v1.7.2`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-impacthub-v0.18.1`|[Example](./impacthub)|
@@ -113,7 +113,7 @@ Some chains such as Juno have Skip support included in the core binary, so the d
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[evmos](https://github.com/evmos/evmos)|`v12.1.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-evmos-v12.1.3-skip`|[Example](./evmos)|
+|[evmos](https://github.com/evmos/evmos)|`v12.1.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-evmos-v12.1.4-skip`|[Example](./evmos)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v14.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.31-juno-v14.1.0`|[Example](./juno)|
 
 Note that configuration for Skip needs to be done in the configuration file currently - the ENV variable method of configuring the node doesn't work for the Skip config options.
