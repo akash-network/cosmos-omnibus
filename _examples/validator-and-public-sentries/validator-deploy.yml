@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   validator:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.31-akash-v0.20.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.32-akash-v0.20.0
     env:
       - MONIKER=validator
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/master/mainnet/meta.json
