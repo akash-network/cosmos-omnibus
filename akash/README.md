@@ -41,11 +41,3 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |---|---|
 |`P2P_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|
-
-## Akash Snapshots
-
-Akash provide daily snapshots of the Akash blockchain taken at midnight UTC.
-
-|Variable|Value|
-|---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json`|
