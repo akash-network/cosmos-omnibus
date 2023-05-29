@@ -8,10 +8,10 @@ services:
         PROJECT: kujira
         PROJECT_BIN: kujirad
         PROJECT_DIR: .kujira
-        VERSION: v0.8.4-mainnet
+        VERSION: v0.8.6
         REPOSITORY: https://github.com/Team-Kujira/core
         NAMESPACE: KUJIRAD
-        GOLANG_VERSION: 1.19-buster
+        GOLANG_VERSION: 1.19.7-buster
     ports:
       - '26656:26656'
       - '26657:26657'

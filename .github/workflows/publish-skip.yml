@@ -17,7 +17,7 @@ jobs:
       matrix:
         include:
           - project: evmos
-            version: v12.1.2
+            version: v12.1.4
     steps:
       - uses: actions/checkout@v3
       - uses: docker/setup-buildx-action@v2
