@@ -7,7 +7,7 @@
 |Directory|`.liked`|
 |ENV namespace|`LIKED`|
 |Repository|`https://github.com/likecoin/likecoin-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.30-likecoin-v3.1.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-likecoin-v3.1.1`|
 
 ## Examples
 
