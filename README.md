@@ -59,7 +59,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v4.2.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-chihuahua-v4.2.3`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v9.1.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-comdex-v9.1.2`|[Example](./comdex)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v9.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-cosmoshub-v9.1.1`|[Example](./cosmoshub)|
-|[cronos](https://github.com/crypto-org-chain/cronos)|`v0.8.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-cronos-v0.8.2`|[Example](./cronos)|
+|[cronos](https://github.com/crypto-org-chain/cronos)|`v1.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-rc1-cronos-v1.0.4`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-cryptoorgchain-v4.2.2`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-decentr-v1.6.0`|[Example](./decentr)|
 |[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-defund-v0.1.0-alpha`|[Example](./defund)|

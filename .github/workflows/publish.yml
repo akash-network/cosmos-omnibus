@@ -43,7 +43,7 @@ jobs:
           - project: cosmoshub
             version: v9.1.1
           - project: cronos
-            version: v0.8.2
+            version: v1.0.4
           - project: cryptoorgchain
             version: v4.2.2
           - project: decentr
