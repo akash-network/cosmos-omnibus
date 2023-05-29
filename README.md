@@ -123,15 +123,6 @@ Omnibus can [import chain snapshots](#snapshot-restore) from almost any location
 
 Appropriate snapshot configuration is included in most example configurations in the Omnibus repository. Check the project directories for more information.
 
-Akash also generate and publish snapshots for the Akash blockchain. Pruned snapshots are taken daily, and Archive snapshots weekly.
-
-These snapshots are created using Omnibus nodes running on Akash, as shown in the [Snapshot Backup](_examples/snapshot_backup) example.
-
-|Type|Snapshot JSON|
-|---|---|
-|Akash Pruned|https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json|
-|Akash Archive|https://cosmos-snapshots.s3.filebase.com/akash/snapshot.json|
-
 ## Examples
 
 See the [_examples](./_examples) directory for some common setups, including:

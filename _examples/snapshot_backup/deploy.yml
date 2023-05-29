@@ -7,9 +7,10 @@ services:
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/master/mainnet/meta.json
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json
+      - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
-      - PRUNING=nothing
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
       - S3_KEY=<s3-key>
       - S3_SECRET=<s3-secret>
       - SNAPSHOT_PATH=<bucket/path>
