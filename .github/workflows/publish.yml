@@ -109,7 +109,7 @@ jobs:
           - project: persistence
             version: v3.2.0
           - project: regen
-            version: v5.1.0
+            version: v5.1.1
           - project: rizon
             version: v0.4.1
           - project: seinetwork
