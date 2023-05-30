@@ -7,11 +7,12 @@ services:
       args:
         PROJECT: empowerchain
         PROJECT_BIN: empowerd
-        VERSION: v0.0.3
-        REPOSITORY: https://github.com/empowerchain/empowerchain
+        VERSION: v1.0.0-rc0
+        REPOSITORY: https://github.com/EmpowerPlastic/empowerchain
         NAMESPACE: EMPOWERD
         PROJECT_DIR: .empowerchain
         BUILD_DIR: /data/chain
+        GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'
       - '26657:26657'
