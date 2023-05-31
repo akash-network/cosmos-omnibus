@@ -47,7 +47,7 @@ jobs:
           - project: cryptoorgchain
             version: v4.2.2
           - project: decentr
-            version: v1.6.0
+            version: v1.6.2
           - project: defund
             version: v0.1.0-alpha
           - project: desmos
