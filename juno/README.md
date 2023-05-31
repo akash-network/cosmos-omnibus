@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v14.1.0`|
+|Version|`v15.0.0`|
 |Binary|`junod`|
 |Directory|`.juno`|
 |ENV namespace|`JUNOD`|
 |Repository|`https://github.com/CosmosContracts/Juno`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-juno-v14.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-juno-v15.0.0`|
 
 ## Examples
 
@@ -39,4 +39,4 @@ If you would like to use this chain with [Skip Protocol](https://skip.money/), a
 
 | | |
 |---|---|
-|Skip Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-juno-v14.1.0-skip`|
+|Skip Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-juno-v15.0.0-skip`|
