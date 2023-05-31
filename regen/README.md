@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v5.1.0`|
+|Version|`v5.1.1`|
 |Binary|`regen`|
 |Directory|`.regen`|
 |ENV namespace|`REGEN`|
 |Repository|`https://github.com/regen-network/regen-ledger`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.32-regen-v5.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-regen-v5.1.1`|
 
 ## Examples
 

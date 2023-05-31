@@ -27,11 +27,13 @@ jobs:
           - project: bandchain
             version: v2.5.1
           - project: bitcanna
-            version: v1.6.3
+            version: v1.7.0
           - project: bitsong
             version: v0.14.0
           - project: bostrom
             version: v0.3.2
+          - project: canto
+            version: v5.0.0
           - project: cerberus
             version: v3.1.0
           - project: cheqd
@@ -43,11 +45,11 @@ jobs:
           - project: cosmoshub
             version: v10.0.1
           - project: cronos
-            version: v0.8.2
+            version: v1.0.4
           - project: cryptoorgchain
             version: v4.2.2
           - project: decentr
-            version: v1.6.0
+            version: v1.6.2
           - project: defund
             version: v0.1.0-alpha
           - project: desmos
@@ -57,7 +59,7 @@ jobs:
           - project: emoney
             version: v1.2.0
           - project: empowerchain
-            version: v0.0.3
+            version: v1.0.0-rc0
           - project: evmos
             version: v12.1.4
           - project: fetchhub
@@ -71,7 +73,7 @@ jobs:
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v2.0.0
+            version: v2.0.1
           - project: juno
             version: v14.1.0
           - project: kava
@@ -83,17 +85,17 @@ jobs:
           - project: kujira
             version: v0.8.6
           - project: kyve
-            version: v1.1.3
+            version: v1.2.1
           - project: likecoin
             version: v3.1.1
           - project: lumnetwork
-            version: v1.4.0
+            version: v1.4.1
           - project: mars
             version: v1.0.1
           - project: migaloo
             version: v2.0.2
           - project: neutron
-            version: v1.0.1
+            version: v1.0.2
           - project: nois
             version: v1.0.2
           # - project: nomic
@@ -109,7 +111,7 @@ jobs:
           - project: persistence
             version: v3.2.0
           - project: regen
-            version: v5.1.0
+            version: v5.1.1
           - project: rizon
             version: v0.4.1
           - project: seinetwork
