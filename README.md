@@ -67,7 +67,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[desmos](https://github.com/desmos-labs/desmos)|`v4.8.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-desmos-v4.8.0`|[Example](./desmos)|
 |[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-dig-v3.3.1`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-emoney-v1.2.0`|[Example](./emoney)|
-|[empowerchain](https://github.com/empowerchain/empowerchain)|`v1.0.0-rc0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-empowerchain-v1.0.0-rc0`|[Example](./empowerchain)|
+|[empowerchain](https://github.com/empowerchain/empowerchain)|`v1.0.0-rc1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-empowerchain-v1.0.0-rc1`|[Example](./empowerchain)|
 |[evmos](https://github.com/evmos/evmos)|`v12.1.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-evmos-v12.1.4`|[Example](./evmos)|
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-fetchhub-v0.10.6`|[Example](./fetchhub)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.7.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-gravitybridge-v1.7.2`|[Example](./gravitybridge)|
