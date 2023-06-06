@@ -102,7 +102,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[stargaze](https://github.com/public-awesome/stargaze)|`v8.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-stargaze-v8.0.0`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-starname-v0.11.5`|[Example](./starname)|
 |[stride](https://github.com/Stride-Labs/stride)|`v9.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-stride-v9.0.1`|[Example](./stride)|
-|[teritori](https://github.com/TERITORI/teritori-chain)|`v1.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-teritori-v1.3.1`|[Example](./teritori)|
+|[teritori](https://github.com/TERITORI/teritori-chain)|`v1.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-teritori-v1.4.0`|[Example](./teritori)|
 |[umee](https://github.com/umee-network/umee)|`v3.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-umee-v3.1.0`|[Example](./umee)|
 |[vidulum](https://github.com/vidulum/mainnet)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-vidulum-v1.2.0`|[Example](./vidulum)|
 
