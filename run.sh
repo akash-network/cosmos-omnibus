@@ -318,6 +318,8 @@ fi
 
 if [ -n "$SNAPSHOT_PATH" ]; then
   exec snapshot.sh "$START_CMD"
+elif [ -n "$START_CMD" ]; then
+  exec $START_CMD
 else
   exec "$@"
 fi
