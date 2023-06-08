@@ -135,7 +135,7 @@ jobs:
           # - project: terra
           #   version: v0.5.18
           - project: umee
-            version: v3.1.0
+            version: v5.0.0
           - project: vidulum
             version: v1.2.0
     steps:
