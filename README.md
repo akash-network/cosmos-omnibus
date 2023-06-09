@@ -80,7 +80,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-konstellation-v0.5.0`|[Example](./konstellation)|
 |[kujira](https://github.com/Team-Kujira/core)|`v0.8.7`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-kujira-v0.8.7`|[Example](./kujira)|
 |[kyve](https://github.com/KYVENetwork/chain)|`v1.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-kyve-v1.2.2`|[Example](./kyve)|
-|[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-likecoin-v4.0.0`|[Example](./likecoin)|
+|[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-likecoin-v4.0.1`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.4.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-lumnetwork-v1.4.2`|[Example](./lumnetwork)|
 |[mars](https://github.com/mars-protocol/hub.git)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-mars-v1.0.2`|[Example](./mars)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v2.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-migaloo-v2.0.2`|[Example](./migaloo)|
