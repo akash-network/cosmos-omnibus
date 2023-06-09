@@ -8,10 +8,10 @@ services:
         PROJECT: stargaze
         PROJECT_BIN: starsd
         PROJECT_DIR: .starsd
-        VERSION: v8.0.0
+        VERSION: v10.0.0
         REPOSITORY: https://github.com/public-awesome/stargaze
         NAMESPACE: STARSD
-        GOLANG_VERSION: 1.19-buster
+        GOLANG_VERSION: 1.20-buster
     ports:
       - '26656:26656'
       - '26657:26657'
