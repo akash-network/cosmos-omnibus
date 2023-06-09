@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: cryptoorgchain
         PROJECT_BIN: chain-maind
-        VERSION: v4.2.2
+        VERSION: v4.2.6
         REPOSITORY: https://github.com/crypto-org-chain/chain-main
         NAMESPACE: CHAIN_MAIND
     ports:
