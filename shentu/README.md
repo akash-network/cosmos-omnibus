@@ -7,7 +7,7 @@
 |Directory|`.certik`|
 |ENV namespace|`CERTIK`|
 |Repository|`https://github.com/certikfoundation/shentu`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.34-shentu-v2.5.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.35-shentu-v2.5.0`|
 
 ## Examples
 
