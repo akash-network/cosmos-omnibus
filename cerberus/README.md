@@ -1,13 +1,13 @@
-# Agoric
+# Cerberus
 
 | | |
 |---|---|
-|Version|`agoric-upgrade-7-2`|
-|Binary|`ag0`|
-|Directory|`.agoric`|
-|ENV namespace|`AG0`|
-|Repository|`https://github.com/Agoric/ag0/`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.35-agoric-agoric-upgrade-7-2`|
+|Version|`v3.1.0`|
+|Binary|`cerberusd`|
+|Directory|`.cerberus`|
+|ENV namespace|`CERBERUSD`|
+|Repository|`https://github.com/cerberus-zone/cerberus.git`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.35-cerberus-v3.1.0`|
 
 ## Examples
 
@@ -16,11 +16,11 @@
 
 ## Chain information
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Agoric.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Cerberus
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/chain.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/cerberus/chain.json`|
 
 ## Polkachu Chain Services
 
