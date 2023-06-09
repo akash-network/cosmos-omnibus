@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: mars
         PROJECT_BIN: marsd
-        VERSION: v1.0.1
+        VERSION: v1.0.2
         REPOSITORY: https://github.com/mars-protocol/hub.git
         NAMESPACE: MARSD
         PROJECT_DIR: .mars
