@@ -6,7 +6,7 @@ services:
       context: ../
       args:
         PROJECT: akash
-        VERSION: v0.20.0
+        VERSION: v0.22.7
         REPOSITORY: https://github.com/akash-network/node
         GOLANG_VERSION: 1.19.2-buster
         INSTALL_PACKAGES: jq
