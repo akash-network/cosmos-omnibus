@@ -5,7 +5,7 @@
 |Version|`v0.23.1`|
 |Binary|`kava`|
 |Directory|`.kava`|
-|ENV namespace|`KA`|
+|ENV namespace|`KAVA`|
 |Repository|`https://github.com/Kava-Labs/kava`|
 |Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.35-kava-v0.23.1`|
 
