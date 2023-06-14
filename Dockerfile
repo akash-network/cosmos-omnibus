@@ -122,11 +122,8 @@ FROM gcc:12 AS zstd_build
 ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz"
 
 RUN apt-get update && \
-      apt-get install --no-install-recommends --assume-yes python3 ninja-build && \
+      apt-get install --no-install-recommends --assume-yes python3 meson ninja-build && \
       apt-get clean && \
-    curl -o /tmp/get-pip.py -L 'https://bootstrap.pypa.io/get-pip.py' && \
-      python3 /tmp/get-pip.py && \
-    pip3 install meson && \
     mkdir -p /tmp/zstd && \
     cd /tmp/zstd && \
     curl -Lo zstd.source $ZTSD_SOURCE_URL && \
