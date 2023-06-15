@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v9.1.2`|
+|Version|`v11.5.0`|
 |Binary|`comdex`|
 |Directory|`.comdex`|
 |ENV namespace|`COMDEX`|
 |Repository|`https://github.com/comdex-official/comdex`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.36-comdex-v9.1.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.36-comdex-v11.5.0`|
 
 ## Examples
 
