@@ -89,7 +89,7 @@ jobs:
           - project: likecoin
             version: v4.0.1
           - project: lumnetwork
-            version: v1.4.2
+            version: v1.4.5
           - project: mars
             version: v1.0.2
           - project: migaloo
