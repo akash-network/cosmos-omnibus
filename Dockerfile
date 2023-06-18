@@ -121,8 +121,11 @@ FROM gcc:12 AS zstd_build
 
 ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz"
 
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
 RUN apt-get update && \
-      apt-get install --no-install-recommends --assume-yes python3 meson ninja-build && \
+      apt-get install --no-install-recommends --assume-yes meson ninja-build && \
       apt-get clean && \
     mkdir -p /tmp/zstd && \
     cd /tmp/zstd && \
