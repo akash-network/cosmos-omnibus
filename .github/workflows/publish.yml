@@ -34,8 +34,6 @@ jobs:
             version: v0.3.2
           - project: canto
             version: v5.0.0
-          - project: cerberus
-            version: v3.1.0
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
