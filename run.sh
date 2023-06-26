@@ -323,5 +323,5 @@ if [ "$#" -ne 0 ]; then
 elif [ -n "$START_CMD" ]; then
   exec $PREFIX_CMD $START_CMD
 else
-  exec $PREFIX_CMD start
+  exec $PREFIX_CMD $PROJECT_BIN start
 fi
