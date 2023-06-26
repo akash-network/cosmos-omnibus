@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.4.1`|
-|Binary|`lumnetworkd`|
+|Version|`v1.4.2`|
+|Binary|`lumd`|
 |Directory|`.lumd`|
-|ENV namespace|`LUMNETWORK`|
+|ENV namespace|`LUMD`|
 |Repository|`https://github.com/lum-network/chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-lumnetwork-v1.4.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.36-lumnetwork-v1.4.2`|
 
 ## Examples
 

@@ -7,7 +7,7 @@
 |Directory|`.osmosisd`|
 |ENV namespace|`OSMOSISD`|
 |Repository|`https://github.com/omosis-labs/osmosis`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.33-osmosis-v15.1.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.36-osmosis-v15.1.2`|
 
 ## Examples
 

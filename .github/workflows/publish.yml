@@ -19,7 +19,7 @@ jobs:
           - project: agoric
             version: agoric-upgrade-7-2
           - project: akash
-            version: v0.20.0
+            version: v0.22.7
           - project: assetmantle
             version: v0.3.0
           - project: autonomy
@@ -47,7 +47,7 @@ jobs:
           - project: cronos
             version: v1.0.4
           - project: cryptoorgchain
-            version: v4.2.2
+            version: v4.2.6
           - project: decentr
             version: v1.6.2
           - project: defund
@@ -59,9 +59,9 @@ jobs:
           - project: emoney
             version: v1.2.0
           - project: empowerchain
-            version: v1.0.0-rc0
+            version: v1.0.0-rc2
           - project: evmos
-            version: v12.1.4
+            version: v12.1.5
           - project: fetchhub
             version: v0.10.6
           - project: gravitybridge
@@ -69,13 +69,13 @@ jobs:
           - project: impacthub
             version: v0.18.1
           - project: injective
-            version: v1.10.1-1685036881
+            version: v1.11.4-1686608669
           - project: irisnet
             version: v2.0.1
           - project: jackal
             version: v2.0.1
           - project: juno
-            version: v14.1.0
+            version: v15.0.0
           - project: kava
             version: v0.23.1
           - project: kichain
@@ -83,15 +83,15 @@ jobs:
           - project: konstellation
             version: v0.5.0
           - project: kujira
-            version: v0.8.6
+            version: v0.8.7
           - project: kyve
-            version: v1.2.1
+            version: v1.2.2
           - project: likecoin
-            version: v3.1.1
+            version: v4.0.1
           - project: lumnetwork
-            version: v1.4.1
+            version: v1.4.2
           - project: mars
-            version: v1.0.1
+            version: v1.0.2
           - project: migaloo
             version: v2.0.2
           - project: neutron
@@ -125,13 +125,13 @@ jobs:
           - project: sommelier
             version: v4.0.2
           - project: stargaze
-            version: v8.0.0
+            version: v10.0.0
           - project: stride
-            version: v9.0.1
+            version: v9.2.1
           - project: starname
             version: v0.11.5
           - project: teritori
-            version: v1.3.1
+            version: v1.4.0
           # - project: terra
           #   version: v0.5.18
           - project: umee
