@@ -7,7 +7,7 @@
 |Directory|`.comdex`|
 |ENV namespace|`COMDEX`|
 |Repository|`https://github.com/comdex-official/comdex`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.36-comdex-v11.5.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.37-comdex-v11.5.0`|
 
 ## Examples
 
