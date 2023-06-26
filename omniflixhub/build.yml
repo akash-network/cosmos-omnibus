@@ -8,9 +8,10 @@ services:
         PROJECT: omniflixhub
         PROJECT_BIN: omniflixhubd
         PROJECT_DIR: .omniflixhub
-        VERSION: v0.10.0
+        VERSION: v0.11.0
         REPOSITORY: https://github.com/OmniFlix/omniflixhub
         NAMESPACE: OMNIFLIXHUBD
+        GOLANG_VERSION: 1.20-buster
     ports:
       - '26656:26656'
       - '26657:26657'
