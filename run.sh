@@ -50,9 +50,17 @@ fi
 export AWS_ACCESS_KEY_ID=$S3_KEY
 export AWS_SECRET_ACCESS_KEY=$S3_SECRET
 export S3_HOST="${S3_HOST:-https://s3.filebase.com}"
+export STORJ_ACCESS_GRANT=$STORJ_ACCESS_GRANT
+
+storj_args="${STORJ_UPLINK_ARGS:--p 4 -t 4 --progress=false}"
+
+if [ -n "$STORJ_ACCESS_GRANT" ]; then
+  uplink access import --force --interactive=false default "$STORJ_ACCESS_GRANT"
+fi
 
 if [ -n "$KEY_PATH" ]; then
-  s3_uri_base="s3://${KEY_PATH}"
+  s3_uri_base="s3://${KEY_PATH%/}"
+  storj_uri_base="sj://${KEY_PATH%/}"
   aws_args="--endpoint-url ${S3_HOST}"
   if [ -n "$KEY_PASSWORD" ]; then
     file_suffix=".gpg"
@@ -62,12 +70,20 @@ if [ -n "$KEY_PATH" ]; then
 fi
 
 restore_key () {
-  existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
+  if [ -n "$STORJ_ACCESS_GRANT" ]; then
+    existing=$(uplink ls "${storj_uri_base}/$1" | head -n 1)
+  else
+    existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
+  fi
   if [[ -z $existing ]]; then
     echo "$1 backup not found"
   else
     echo "Restoring $1"
-    aws $aws_args s3 cp "${s3_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
+    if [ -n "$STORJ_ACCESS_GRANT" ]; then
+      uplink cp "${storj_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
+    else
+      aws $aws_args s3 cp "${s3_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
+    fi
 
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Decrypting"
@@ -78,14 +94,22 @@ restore_key () {
 }
 
 backup_key () {
-  existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
+  if [ -n "$STORJ_ACCESS_GRANT" ]; then
+    existing=$(uplink ls "${storj_uri_base}/$1" | head -n 1)
+  else
+    existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
+  fi
   if [[ -z $existing ]]; then
     echo "Backing up $1"
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Encrypting backup..."
       gpg --symmetric --batch --passphrase "$KEY_PASSWORD" $CONFIG_PATH/$1
     fi
-    aws $aws_args s3 cp $CONFIG_PATH/$1$file_suffix "${s3_uri_base}/$1"
+    if [ -n "$STORJ_ACCESS_GRANT" ]; then
+      uplink cp $CONFIG_PATH/$1$file_suffix "${storj_uri_base}/$1"
+    else
+      aws $aws_args s3 cp $CONFIG_PATH/$1$file_suffix "${s3_uri_base}/$1"
+    fi
     [ -n "$KEY_PASSWORD" ] && rm $CONFIG_PATH/$1.gpg
   fi
 }
@@ -240,7 +264,9 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
 
   # SNAPSHOT_FORMAT default value generation via SNAPSHOT_URL
   SNAPSHOT_FORMAT_DEFAULT="tar.gz"
-  case "${SNAPSHOT_URL,,}" in
+  # DCS Storj backups adding ?download=1 part which needs to be stripped before determining the extension
+  SNAPSHOT_URL_TRIM="${SNAPSHOT_URL%?download=1}"
+  case "${SNAPSHOT_URL_TRIM,,}" in
     *.tar.gz)   SNAPSHOT_FORMAT_DEFAULT="tar.gz";;
     *.tar.lz4)  SNAPSHOT_FORMAT_DEFAULT="tar.lz4";;
     *.tar.zst)  SNAPSHOT_FORMAT_DEFAULT="tar.zst";;
@@ -269,7 +295,16 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
       # Value cannot be started with `0`, and must be integer
       [1-9]*[0-9]) pv_extra_args="-s $snapshot_size_in_bytes";;
     esac
-    (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+
+    # use DCS Storj uplink for the Storj backups (much faster)
+    if [[ "${SNAPSHOT_URL}" == *"link.storjshare.io"* ]] && [ -n "$STORJ_ACCESS_GRANT" ]; then
+      STORJ_SNAPSHOT_URL=${SNAPSHOT_URL#*link.storjshare.io/s/}
+      STORJ_SNAPSHOT_URL=${STORJ_SNAPSHOT_URL#*/}
+      STORJ_SNAPSHOT_URL=${STORJ_SNAPSHOT_URL%%\?*}
+      (uplink cp $storj_args sj://${STORJ_SNAPSHOT_URL} - | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+    else
+      (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+    fi
 
     [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
     if [ -n "${SNAPSHOT_WASM_PATH}" ]; then

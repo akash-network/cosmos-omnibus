@@ -189,6 +189,12 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
   && unzip awscliv2.zip -d /usr/src && rm -f awscliv2.zip \
   && /usr/src/aws/install --bin-dir /usr/bin
 
+# Install Storj DCS uplink client
+RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux_amd64.zip -o uplink_linux_amd64.zip && \
+  unzip -o uplink_linux_amd64.zip && \
+  install uplink /usr/bin/uplink && \
+  rm -f uplink uplink_linux_amd64.zip
+
 # Copy scripts
 COPY run.sh snapshot.sh /usr/bin/
 RUN chmod +x /usr/bin/run.sh /usr/bin/snapshot.sh
