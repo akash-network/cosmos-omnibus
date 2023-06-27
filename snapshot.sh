@@ -40,7 +40,7 @@ DOW=$(date +%u)
 
 echo "$TIME: Starting server"
 echo "$TIME: Snapshot will run at $SNAPSHOT_TIME on day $SNAPSHOT_DAY"
-$SNAPSHOT_CMD &
+exec $SNAPSHOT_CMD &
 PID=$!
 
 while true; do
@@ -108,7 +108,7 @@ while true; do
         fi
 
         echo "$TIME: Restarting server"
-        $SNAPSHOT_CMD &
+        exec $SNAPSHOT_CMD &
         PID=$!
         sleep 1s
     else
