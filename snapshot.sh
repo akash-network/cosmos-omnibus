@@ -8,7 +8,7 @@ SNAPSHOT_TIME="${SNAPSHOT_TIME:-00:00:00}"
 SNAPSHOT_DAY="${SNAPSHOT_DAY:-*}"
 SNAPSHOT_DIR="${SNAPSHOT_DIR:-$PROJECT_ROOT/data}"
 SNAPSHOT_CMD="${SNAPSHOT_CMD:-$@}"
-SNAPSHOT_PATH="${SNAPSHOT_PATH}"
+SNAPSHOT_PATH="${SNAPSHOT_PATH%/}"
 SNAPSHOT_PREFIX="${SNAPSHOT_PREFIX:-$CHAIN_ID}"
 SNAPSHOT_RETAIN="${SNAPSHOT_RETAIN:-2 days}"
 SNAPSHOT_METADATA="${SNAPSHOT_METADATA:-1}"
@@ -40,7 +40,7 @@ DOW=$(date +%u)
 
 echo "$TIME: Starting server"
 echo "$TIME: Snapshot will run at $SNAPSHOT_TIME on day $SNAPSHOT_DAY"
-$SNAPSHOT_CMD &
+exec $SNAPSHOT_CMD &
 PID=$!
 
 while true; do
@@ -53,23 +53,42 @@ while true; do
 
         echo "$TIME: Running snapshot"
         aws_args="--endpoint-url ${S3_HOST}"
+        storj_args="${STORJ_UPLINK_ARGS:--p 4 -t 4 --progress=false}"
         s3_uri_base="s3://${SNAPSHOT_PATH}"
+        storj_uri_base="sj://${SNAPSHOT_PATH}"
         timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
         s3_uri="${s3_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.${SNAPSHOT_SAVE_FORMAT}"
+        storj_uri="${storj_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.${SNAPSHOT_SAVE_FORMAT}"
 
         SNAPSHOT_SIZE=$(du -sb $SNAPSHOT_DIR | cut -f1)
 
-        case "${SNAPSHOT_SAVE_FORMAT,,}" in
-          tar.gz)   (tar c -C $SNAPSHOT_DIR . | gzip -1 | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n';;
-          # Compress level can be set via `ZSTD_CLEVEL`, default `3`
-          # No. of threads can be set via `ZSTD_NBTHREADS`, default `1`, `0` = detected no. of cpu cores
-          tar.zst)  (tar c -C $SNAPSHOT_DIR . | zstd -c $zstd_extra_arg | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n';;
-          # Catchall, assume to be tar
-          *)        (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n';;
-        esac
+        if [ -n "$STORJ_ACCESS_GRANT" ]; then
+          case "${SNAPSHOT_SAVE_FORMAT,,}" in
+            tar.gz)   (tar c -C $SNAPSHOT_DIR . | gzip -1 | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | uplink cp $storj_args - "$storj_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            # Compress level can be set via `ZSTD_CLEVEL`, default `3`
+            # No. of threads can be set via `ZSTD_NBTHREADS`, default `1`, `0` = detected no. of cpu cores
+            tar.zst)  (tar c -C $SNAPSHOT_DIR . | zstd -c $zstd_extra_arg | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | uplink cp $storj_args - "$storj_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            # Catchall, assume to be tar
+            *)        (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | uplink cp $storj_args - "$storj_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+          esac
+	else
+          case "${SNAPSHOT_SAVE_FORMAT,,}" in
+            tar.gz)   (tar c -C $SNAPSHOT_DIR . | gzip -1 | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            # Compress level can be set via `ZSTD_CLEVEL`, default `3`
+            # No. of threads can be set via `ZSTD_NBTHREADS`, default `1`, `0` = detected no. of cpu cores
+            tar.zst)  (tar c -C $SNAPSHOT_DIR . | zstd -c $zstd_extra_arg | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            # Catchall, assume to be tar
+            *)        (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | aws $aws_args s3 cp - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n';;
+          esac
+	fi
 
         if [[ $SNAPSHOT_RETAIN != "0" || $SNAPSHOT_METADATA != "0" ]]; then
-            readarray -t s3Files < <(aws $aws_args s3 ls "${s3_uri_base}/${SNAPSHOT_PREFIX}_")
+            if [ -n "$STORJ_ACCESS_GRANT" ]; then
+              SNAPSHOT_METADATA_URL=$(uplink share --url --not-after=none ${storj_uri_base}/ | grep ^URL | awk '{print $NF}')
+	      readarray -t s3Files < <(uplink ls ${storj_uri_base}/ | grep "${SNAPSHOT_PREFIX}_" | awk '{print $2,$3,$4,$5}' | sort -d -k4,4)
+            else
+              readarray -t s3Files < <(aws $aws_args s3 ls "${s3_uri_base}/${SNAPSHOT_PREFIX}_")
+            fi
             snapshots=()
             for line in "${s3Files[@]}"; do
                 createDate=`echo $line|awk {'print $1" "$2'}`
@@ -80,12 +99,19 @@ while true; do
                 else
                     fileUrl="${SNAPSHOT_METADATA_URL}${fileName}"
                 fi
+                if [ -n "$STORJ_ACCESS_GRANT" ]; then
+		    fileUrl="${fileUrl}?download=1"
+                fi
                 if [ "$SNAPSHOT_RETAIN" != "0" ]; then
                     olderThan=`date -d"-$SNAPSHOT_RETAIN" +%s`
                     if [[ $createDate -lt $olderThan ]]; then
                         if [[ $fileName != "" ]]; then
                             echo "$TIME: Deleting snapshot $fileName"
-                            aws $aws_args s3 rm "${s3_uri_base}/$fileName"
+                            if [ -n "$STORJ_ACCESS_GRANT" ]; then
+                              uplink rm "${storj_uri_base}/$fileName"
+                            else
+                              aws $aws_args s3 rm "${s3_uri_base}/$fileName"
+                            fi
                         fi
                     else
                         snapshots+=("$fileUrl")
@@ -101,14 +127,24 @@ while true; do
                 for url in ${snapshots[@]}; do
                     snapshotJson="$(echo $snapshotJson | jq ".+[\"$url\"]")"
                 done
-                echo $snapshotJson | jq '{chain_id: $c, snapshots: ., latest: $l}' \
-                   --arg c "$CHAIN_ID" --arg l "${snapshots[-1]}" | \
-                   aws $aws_args s3 cp - "${s3_uri_base}/snapshot.json"
+                if [ -n "$STORJ_ACCESS_GRANT" ]; then
+                  echo $snapshotJson | jq '{chain_id: $c, snapshots: ., latest: $l}' \
+                     --arg c "$CHAIN_ID" --arg l "${snapshots[-1]}" | \
+                     uplink cp - "${storj_uri_base}/snapshot.json"
+		  echo "=== Use the following as SNAPSHOT_JSON to restore the DCS Storj backup ==="
+                  ##uplink share --url --not-after=none "${storj_uri_base}/snapshot.json" | grep ^URL | awk '{print $NF"?download=1"}'
+		  echo "${SNAPSHOT_METADATA_URL%/}/snapshot.json?download=1"
+		  echo "=== === ==="
+                else
+                  echo $snapshotJson | jq '{chain_id: $c, snapshots: ., latest: $l}' \
+                     --arg c "$CHAIN_ID" --arg l "${snapshots[-1]}" | \
+                     aws $aws_args s3 cp - "${s3_uri_base}/snapshot.json"
+                fi
             fi
         fi
 
         echo "$TIME: Restarting server"
-        $SNAPSHOT_CMD &
+        exec $SNAPSHOT_CMD &
         PID=$!
         sleep 1s
     else

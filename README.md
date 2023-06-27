@@ -193,6 +193,7 @@ The `node_key.json` and `priv_validator_key.json` are both backed up, and can be
 |`S3_KEY`|S3 access key| | |
 |`S3_SECRET`|S3 secret key| | |
 |`S3_HOST`|The S3 API host|`https://s3.filebase.com`|`https://s3.us-east-1.amazonaws.com`|
+|`STORJ_ACCESS_GRANT`|DCS Storj Access Grant token (replaces `S3_KEY`, `S3_SECRET`, `S3_HOST`| | |
 |`KEY_PATH`|Bucket and directory to backup/restore to| |`bucket/nodes/node_1`|
 |`KEY_PASSWORD`|An optional password to encrypt your private keys. Shouldn't be optional| | |
 
@@ -254,6 +255,8 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`S3_KEY`|S3 access key| | |
 |`S3_SECRET`|S3 secret key| | |
 |`S3_HOST`|The S3 API host|`https://s3.filebase.com`|`s3.us-east-1.amazonaws.com`|
+|`STORJ_ACCESS_GRANT`|DCS Storj Access Grant token (replaces `S3_KEY`, `S3_SECRET`, `S3_HOST`| | |
+|`STORJ_UPLINK_ARGS`|DCS Storj Uplink arguments|`-p 4 -t 4 --progress=false`|`-p 8 -t 8 --parallelism-chunk-size 256M --progress=false`|
 |`SNAPSHOT_PATH`|The S3 path to upload snapshots to, including the bucket| |`cosmos-snapshots/akash`|
 |`SNAPSHOT_PREFIX`|The prefix for the snapshot filename|`$CHAIN_ID`|`snapshot`|
 |`SNAPSHOT_TIME`|The time the snapshot will run|`00:00:00`|`09:00:00`|
