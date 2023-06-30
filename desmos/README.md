@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.4.0`|
+|Version|`v4.8.0`|
 |Binary|`desmos`|
 |Directory|`.desmos`|
 |ENV namespace|`DESMOS`|
 |Repository|`https://github.com/desmos-labs/desmos`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-desmos-v2.4.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-desmos-v4.8.0`|
 
 ## Examples
 

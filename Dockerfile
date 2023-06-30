@@ -119,14 +119,14 @@ RUN chmod +x /bin/injectived
 #
 FROM gcc:12 AS zstd_build
 
-ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.4/zstd-1.5.4.tar.gz"
+ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz"
+
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 RUN apt-get update && \
-      apt-get install --no-install-recommends --assume-yes python3 ninja-build && \
+      apt-get install --no-install-recommends --assume-yes meson ninja-build && \
       apt-get clean && \
-    curl -o /tmp/get-pip.py -L 'https://bootstrap.pypa.io/get-pip.py' && \
-      python3 /tmp/get-pip.py && \
-    pip3 install meson && \
     mkdir -p /tmp/zstd && \
     cd /tmp/zstd && \
     curl -Lo zstd.source $ZTSD_SOURCE_URL && \
@@ -188,6 +188,12 @@ EXPOSE 26656 \
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
   && unzip awscliv2.zip -d /usr/src && rm -f awscliv2.zip \
   && /usr/src/aws/install --bin-dir /usr/bin
+
+# Install Storj DCS uplink client
+RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux_amd64.zip -o uplink_linux_amd64.zip && \
+  unzip -o uplink_linux_amd64.zip && \
+  install uplink /usr/bin/uplink && \
+  rm -f uplink uplink_linux_amd64.zip
 
 # Copy scripts
 COPY run.sh snapshot.sh /usr/bin/

@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-generic`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-generic`|
 
 ## Examples
 

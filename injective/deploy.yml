@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.27-injective-v1.10.0-1679065799
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.38-injective-v1.11.5-1687535916
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/injective/chain.json

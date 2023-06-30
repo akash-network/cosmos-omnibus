@@ -6,7 +6,7 @@ set -e
 
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
 if [ -n "$CHAIN_JSON" ]; then
-  CHAIN_METADATA=$(curl -s $CHAIN_JSON)
+  CHAIN_METADATA=$(curl -Ls $CHAIN_JSON)
   export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
   export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')}"
   export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')}"
@@ -36,7 +36,7 @@ export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 
 if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
   echo "Download binary $PROJECT_BIN from $BINARY_URL"
-  curl -sLo /bin/$PROJECT_BIN $BINARY_URL
+  curl -Lso /bin/$PROJECT_BIN $BINARY_URL
   file_description=$(file /bin/$PROJECT_BIN)
   case "${file_description,,}" in
     *"gzip compressed data"*)   mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tgz && tar -xvf /bin/$PROJECT_BIN.tgz -C /bin && rm /bin/$PROJECT_BIN.tgz;;
@@ -50,9 +50,17 @@ fi
 export AWS_ACCESS_KEY_ID=$S3_KEY
 export AWS_SECRET_ACCESS_KEY=$S3_SECRET
 export S3_HOST="${S3_HOST:-https://s3.filebase.com}"
+export STORJ_ACCESS_GRANT=$STORJ_ACCESS_GRANT
+
+storj_args="${STORJ_UPLINK_ARGS:--p 4 -t 4 --progress=false}"
+
+if [ -n "$STORJ_ACCESS_GRANT" ]; then
+  uplink access import --force --interactive=false default "$STORJ_ACCESS_GRANT"
+fi
 
 if [ -n "$KEY_PATH" ]; then
-  s3_uri_base="s3://${KEY_PATH}"
+  s3_uri_base="s3://${KEY_PATH%/}"
+  storj_uri_base="sj://${KEY_PATH%/}"
   aws_args="--endpoint-url ${S3_HOST}"
   if [ -n "$KEY_PASSWORD" ]; then
     file_suffix=".gpg"
@@ -62,12 +70,20 @@ if [ -n "$KEY_PATH" ]; then
 fi
 
 restore_key () {
-  existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
+  if [ -n "$STORJ_ACCESS_GRANT" ]; then
+    existing=$(uplink ls "${storj_uri_base}/$1" | head -n 1)
+  else
+    existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
+  fi
   if [[ -z $existing ]]; then
     echo "$1 backup not found"
   else
     echo "Restoring $1"
-    aws $aws_args s3 cp "${s3_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
+    if [ -n "$STORJ_ACCESS_GRANT" ]; then
+      uplink cp "${storj_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
+    else
+      aws $aws_args s3 cp "${s3_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
+    fi
 
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Decrypting"
@@ -78,14 +94,22 @@ restore_key () {
 }
 
 backup_key () {
-  existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
+  if [ -n "$STORJ_ACCESS_GRANT" ]; then
+    existing=$(uplink ls "${storj_uri_base}/$1" | head -n 1)
+  else
+    existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
+  fi
   if [[ -z $existing ]]; then
     echo "Backing up $1"
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Encrypting backup..."
       gpg --symmetric --batch --passphrase "$KEY_PASSWORD" $CONFIG_PATH/$1
     fi
-    aws $aws_args s3 cp $CONFIG_PATH/$1$file_suffix "${s3_uri_base}/$1"
+    if [ -n "$STORJ_ACCESS_GRANT" ]; then
+      uplink cp $CONFIG_PATH/$1$file_suffix "${storj_uri_base}/$1"
+    else
+      aws $aws_args s3 cp $CONFIG_PATH/$1$file_suffix "${s3_uri_base}/$1"
+    fi
     [ -n "$KEY_PASSWORD" ] && rm $CONFIG_PATH/$1.gpg
   fi
 }
@@ -102,7 +126,7 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 
 # Polkachu
 if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
-  POLKACHU_CHAIN=`curl -s https://polkachu.com/api/v1/chains | jq -r --arg CHAIN_ID "$CHAIN_ID" 'first(.[] | select(.chain_id==$CHAIN_ID))'`
+  POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v1/chains | jq -r --arg CHAIN_ID "$CHAIN_ID" 'first(.[] | select(.chain_id==$CHAIN_ID))'`
   if [ -z "$POLKACHU_CHAIN" ]; then
     echo "Polkachu does not support this chain"
   else
@@ -151,9 +175,9 @@ if [ -n "$STATESYNC_RPC_SERVERS" ]; then
   IFS=',' read -ra rpc_servers <<< "$STATESYNC_RPC_SERVERS"
   STATESYNC_TRUSTED_NODE=${STATESYNC_TRUSTED_NODE:-${rpc_servers[0]}}
   if [ -n "$STATESYNC_TRUSTED_NODE" ]; then
-    LATEST_HEIGHT=$(curl -s $STATESYNC_TRUSTED_NODE/block | jq -r .result.block.header.height)
+    LATEST_HEIGHT=$(curl -Ls $STATESYNC_TRUSTED_NODE/block | jq -r .result.block.header.height)
     BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000))
-    TRUST_HASH=$(curl -s "$STATESYNC_TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
+    TRUST_HASH=$(curl -Ls "$STATESYNC_TRUSTED_NODE/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
     export "${NAMESPACE}_STATESYNC_TRUST_HEIGHT=${STATESYNC_TRUST_HEIGHT:-$BLOCK_HEIGHT}"
     export "${NAMESPACE}_STATESYNC_TRUST_HASH=${STATESYNC_TRUST_HASH:-$TRUST_HASH}"
     export "${NAMESPACE}_STATESYNC_TRUST_PERIOD=${STATESYNC_TRUST_PERIOD:-168h0m0s}"
@@ -225,22 +249,24 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_BASE_URL}" ]; then
     SNAPSHOT_PATTERN="${SNAPSHOT_PATTERN:-$CHAIN_ID.*$SNAPSHOT_FORMAT}"
-    SNAPSHOT_URL=$SNAPSHOT_BASE_URL/$(curl -s $SNAPSHOT_BASE_URL/ | egrep -o ">$SNAPSHOT_PATTERN" | tr -d ">");
+    SNAPSHOT_URL=$SNAPSHOT_BASE_URL/$(curl -Ls $SNAPSHOT_BASE_URL/ | egrep -o ">$SNAPSHOT_PATTERN" | tr -d ">");
   fi
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_JSON}" ]; then
-    SNAPSHOT_URL="$(curl -s $SNAPSHOT_JSON | jq -r .latest)"
+    SNAPSHOT_URL="$(curl -Ls $SNAPSHOT_JSON | jq -r .latest)"
   fi
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_QUICKSYNC}" ]; then
     SNAPSHOT_PRUNING="${SNAPSHOT_PRUNING:-pruned}"
     SNAPSHOT_DATA_PATH="data"
-    SNAPSHOT_URL=`curl -s $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
+    SNAPSHOT_URL=`curl -Ls $SNAPSHOT_QUICKSYNC | jq -r --arg FILE "$CHAIN_ID-$SNAPSHOT_PRUNING"  'first(.[] | select(.file==$FILE)) | .url'`
   fi
 
   # SNAPSHOT_FORMAT default value generation via SNAPSHOT_URL
   SNAPSHOT_FORMAT_DEFAULT="tar.gz"
-  case "${SNAPSHOT_URL,,}" in
+  # DCS Storj backups adding ?download=1 part which needs to be stripped before determining the extension
+  SNAPSHOT_URL_TRIM="${SNAPSHOT_URL%?download=1}"
+  case "${SNAPSHOT_URL_TRIM,,}" in
     *.tar.gz)   SNAPSHOT_FORMAT_DEFAULT="tar.gz";;
     *.tar.lz4)  SNAPSHOT_FORMAT_DEFAULT="tar.lz4";;
     *.tar.zst)  SNAPSHOT_FORMAT_DEFAULT="tar.zst";;
@@ -269,7 +295,16 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
       # Value cannot be started with `0`, and must be integer
       [1-9]*[0-9]) pv_extra_args="-s $snapshot_size_in_bytes";;
     esac
-    (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+
+    # use DCS Storj uplink for the Storj backups (much faster)
+    if [[ "${SNAPSHOT_URL}" == *"link.storjshare.io"* ]] && [ -n "$STORJ_ACCESS_GRANT" ]; then
+      STORJ_SNAPSHOT_URL=${SNAPSHOT_URL#*link.storjshare.io/s/}
+      STORJ_SNAPSHOT_URL=${STORJ_SNAPSHOT_URL#*/}
+      STORJ_SNAPSHOT_URL=${STORJ_SNAPSHOT_URL%%\?*}
+      (uplink cp $storj_args sj://${STORJ_SNAPSHOT_URL} - | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+    else
+      (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+    fi
 
     [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
     if [ -n "${SNAPSHOT_WASM_PATH}" ]; then
@@ -293,7 +328,7 @@ if [ "$COSMOVISOR_ENABLED" == "1" ]; then
     echo "Downloading the cosmovisor ($COSMOVISOR_VERSION) binary..."
     mkdir -p cosmovisor_temp
     cd cosmovisor_temp
-    curl -sL "https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz" | tar zx
+    curl -Ls "https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz" | tar zx
     cp cosmovisor /bin/cosmovisor
     cd ..
     rm -r cosmovisor_temp

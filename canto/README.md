@@ -1,13 +1,13 @@
-# Cerberus
+# Canto
 
 | | |
 |---|---|
-|Version|`v3.1.0`|
-|Binary|`cerberusd`|
-|Directory|`.cerberus`|
-|ENV namespace|`CERBERUSD`|
-|Repository|`https://github.com/cerberus-zone/cerberus.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-cerberus-v3.1.0`|
+|Version|`v5.0.0`|
+|Binary|`cantod`|
+|Directory|`.cantod`|
+|ENV namespace|`CANTOD`|
+|Repository|`https://github.com/Canto-Network/Canto`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-canto-v5.0.0`|
 
 ## Examples
 
@@ -16,11 +16,11 @@
 
 ## Chain information
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Cerberus
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Canto.
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/cerberus/chain.json`|
+|`CHAIN_JSON`|`https://github.com/cosmos/chain-registry/blob/master/canto/chain.json`|
 
 ## Polkachu Chain Services
 

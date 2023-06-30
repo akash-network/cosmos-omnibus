@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.0.0`|
+|Version|`v1.0.2`|
 |Binary|`marsd`|
 |Directory|`.mars`|
 |ENV namespace|`MARSD`|
 |Repository|`https://github.com/mars-protocol/hub.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-mars-v1.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-mars-v1.0.2`|
 
 ## Examples
 

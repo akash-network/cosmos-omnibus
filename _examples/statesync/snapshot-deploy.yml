@@ -3,13 +3,14 @@ version: "2.0"
 
 services:
   node1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.27-akash-v0.20.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.38-akash-v0.22.7
     env:
       - MONIKER=public-node-1
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/master/mainnet/meta.json
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
       - PRUNING=nothing
       - STATESYNC_SNAPSHOT_INTERVAL=500
     expose:
@@ -25,13 +26,14 @@ services:
     #     data:
     #       mount: /root/.akash
   node2:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.27-akash-v0.20.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.38-akash-v0.22.7
     env:
       - MONIKER=public-node-2
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/master/mainnet/meta.json
-      - SNAPSHOT_JSON=https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
       - PRUNING=nothing
       - STATESYNC_SNAPSHOT_INTERVAL=500
     expose:

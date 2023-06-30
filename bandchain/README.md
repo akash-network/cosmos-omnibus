@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.3.6`|
+|Version|`v2.5.1`|
 |Binary|`bandd`|
 |Directory|`.band`|
 |ENV namespace|`BAND`|
 |Repository|`https://github.com/bandprotocol/chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-bandchain-v2.3.6`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-bandchain-v2.5.1`|
 
 ## Examples
 

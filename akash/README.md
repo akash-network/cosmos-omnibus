@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.20.0`|
+|Version|`v0.22.7`|
 |Binary|`akash`|
 |Directory|`.akash`|
 |ENV namespace|`AKASH`|
 |Repository|`https://github.com/akash-network/node`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.27-akash-v0.20.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-akash-v0.22.7`|
 
 ## Examples
 
@@ -41,11 +41,3 @@ Note you should choose between statesync and snapshot bootstrapping, snapshot wi
 |---|---|
 |`P2P_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|
-
-## Akash Snapshots
-
-Akash provide daily snapshots of the Akash blockchain taken at midnight UTC.
-
-|Variable|Value|
-|---|---|
-|`SNAPSHOT_JSON`|`https://cosmos-snapshots.s3.filebase.com/akash/pruned/snapshot.json`|
