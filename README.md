@@ -66,7 +66,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[desmos](https://github.com/desmos-labs/desmos)|`v4.8.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-desmos-v4.8.0`|[Example](./desmos)|
 |[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-dig-v3.3.1`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-emoney-v1.2.0`|[Example](./emoney)|
-|[empowerchain](https://github.com/empowerchain/empowerchain)|`v1.0.0-rc3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-empowerchain-v1.0.0-rc3`|[Example](./empowerchain)|
+|[empowerchain](https://github.com/empowerchain/empowerchain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-empowerchain-v1.0.0`|[Example](./empowerchain)|
 |[evmos](https://github.com/evmos/evmos)|`v12.1.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-evmos-v12.1.5`|[Example](./evmos)|
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-fetchhub-v0.10.6`|[Example](./fetchhub)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.7.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-gravitybridge-v1.7.2`|[Example](./gravitybridge)|
@@ -86,7 +86,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v2.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-migaloo-v2.0.2`|[Example](./migaloo)|
 |[neutron](https://github.com/neutron-org/neutron)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-neutron-v1.0.2`|[Example](./neutron)|
 |[nois](https://github.com/noislabs/noisd)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-nois-v1.0.2`|[Example](./nois)|
-|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.10.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-omniflixhub-v0.10.0`|[Example](./omniflixhub)|
+|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.11.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-omniflixhub-v0.11.0`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v15.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-osmosis-v15.2.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-panacea-v2.0.5`|[Example](./panacea)|
 |[passage](https://github.com/envadiv/Passage3D)|`v1.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-passage-v1.1.0`|[Example](./passage)|

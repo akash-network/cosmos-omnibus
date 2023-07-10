@@ -57,7 +57,7 @@ jobs:
           - project: emoney
             version: v1.2.0
           - project: empowerchain
-            version: v1.0.0-rc3
+            version: v1.0.0
           - project: evmos
             version: v12.1.5
           - project: fetchhub
@@ -99,7 +99,7 @@ jobs:
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
-            version: v0.10.0
+            version: v0.11.0
           - project: osmosis
             version: v15.2.0
           - project: panacea

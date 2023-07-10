@@ -199,5 +199,4 @@ RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux
 COPY run.sh snapshot.sh /usr/bin/
 RUN chmod +x /usr/bin/run.sh /usr/bin/snapshot.sh
 ENTRYPOINT ["run.sh"]
-
-CMD $START_CMD
+CMD []
