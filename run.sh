@@ -23,9 +23,11 @@ export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
 export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
 export CONFIG_DIR="${CONFIG_DIR:-config}"
 if [ "$COSMOVISOR_ENABLED" == "1" ]; then
-  export START_CMD="${START_CMD:-cosmovisor run start}"
+  PREFIX_CMD="cosmovisor run"
+elif [ -n "$SNAPSHOT_PATH"  ]; then
+  PREFIX_CMD="snapshot.sh"
 else
-  export START_CMD="${START_CMD:-$PROJECT_BIN start}"
+  PREFIX_CMD=
 fi
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
@@ -351,8 +353,10 @@ if [[ ! -f "$PROJECT_ROOT/data/priv_validator_state.json" ]]; then
   echo '{"height":"0","round":0,"step":0}' > "$PROJECT_ROOT/data/priv_validator_state.json"
 fi
 
-if [ -n "$SNAPSHOT_PATH" ]; then
-  exec snapshot.sh "$START_CMD"
+if [ "$#" -ne 0 ]; then
+  exec $PREFIX_CMD "$@"
+elif [ -n "$START_CMD" ]; then
+  exec $PREFIX_CMD $START_CMD
 else
-  exec "$@"
+  exec $PREFIX_CMD $PROJECT_BIN start
 fi
