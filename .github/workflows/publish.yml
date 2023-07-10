@@ -41,7 +41,7 @@ jobs:
           - project: comdex
             version: v11.5.0
           - project: cosmoshub
-            version: v10.0.1
+            version: v10.0.2
           - project: cronos
             version: v1.0.4
           - project: cryptoorgchain
