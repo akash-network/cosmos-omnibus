@@ -42,6 +42,8 @@ jobs:
             version: v11.5.0
           - project: cosmoshub
             version: v10.0.2
+          - project: crescent
+            version: v4.2.0
           - project: cronos
             version: v1.0.4
           - project: cryptoorgchain
