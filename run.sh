@@ -22,13 +22,6 @@ fi
 export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
 export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
 export CONFIG_DIR="${CONFIG_DIR:-config}"
-if [ "$COSMOVISOR_ENABLED" == "1" ]; then
-  PREFIX_CMD="cosmovisor run"
-elif [ -n "$SNAPSHOT_PATH"  ]; then
-  PREFIX_CMD="snapshot.sh"
-else
-  PREFIX_CMD=
-fi
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
@@ -324,13 +317,14 @@ fi
 # Cosmovisor
 if [ "$COSMOVISOR_ENABLED" == "1" ]; then
   export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.3.0"}"
+  export COSMOVISOR_URL="${COSMOVISOR_URL:-"https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz"}"
 
   # Download Binary
   if [ ! -f "/bin/cosmovisor" ]; then
-    echo "Downloading the cosmovisor ($COSMOVISOR_VERSION) binary..."
+    echo "Downloading Cosmovisor from $COSMOVISOR_URL..."
     mkdir -p cosmovisor_temp
     cd cosmovisor_temp
-    curl -Ls "https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz" | tar zx
+    curl -Ls $COSMOVISOR_URL | tar zx
     cp cosmovisor /bin/cosmovisor
     cd ..
     rm -r cosmovisor_temp
@@ -354,9 +348,21 @@ if [[ ! -f "$PROJECT_ROOT/data/priv_validator_state.json" ]]; then
 fi
 
 if [ "$#" -ne 0 ]; then
-  exec $PREFIX_CMD "$@"
-elif [ -n "$START_CMD" ]; then
-  exec $PREFIX_CMD $START_CMD
+  export START_CMD="$@"
+fi
+
+if [ -z "$START_CMD" ]; then
+  if [ "$COSMOVISOR_ENABLED" == "1" ]; then
+    export START_CMD="cosmovisor run start"
+  else
+    export START_CMD="$PROJECT_BIN start"
+  fi
+fi
+
+if [ -n "$SNAPSHOT_PATH" ]; then
+  echo "Running '$START_CMD' with snapshot..."
+  exec snapshot.sh "$START_CMD"
 else
-  exec $PREFIX_CMD $PROJECT_BIN start
+  echo "Running '$START_CMD'..."
+  exec $START_CMD
 fi
