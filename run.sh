@@ -40,6 +40,12 @@ if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
   esac
   [ -n "$BINARY_ZIP_PATH" ] && mv /bin/${BINARY_ZIP_PATH} /bin
   chmod +x /bin/$PROJECT_BIN
+
+  if [ -n "$WASMVM_URL" ]; then
+    WASMVM_PATH="${WASMVM_PATH:-/lib/libwasmvm.so}"
+    echo "Downloading wasmvm from $WASMVM_URL..."
+    curl -Ls $WASMVM_URL > $WASMVM_PATH
+  fi
 fi
 
 export AWS_ACCESS_KEY_ID=$S3_KEY
