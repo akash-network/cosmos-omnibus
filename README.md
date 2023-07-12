@@ -285,6 +285,16 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 |`PROJECT_BIN`|Binary name|`$PROJECT`|`osmosisd`|
 |`PROJECT_DIR`|Name of project directory|`.$PROJECT_BIN`|`.osmosisd`|
 
+### Cosmovisor
+
+[Cosmovisor](https://docs.cosmos.network/main/tooling/cosmovisor) can be downloaded at runtime to automatically manage chain upgrades. You should be familiar with how Cosmovisor works before using this feature.
+
+|Variable|Description|Default|Examples|
+|---|---|---|---|
+|`COSMOVISOR_ENABLED`|Enable Cosmovisor binary download and support| |`1`|
+|`COSMOVISOR_VERSION`|Version of Cosmovisor to download|`1.3.0`| |
+|`COSMOVISOR_URL`|Alternative full URL to Cosmovisor binary tar.gz| | |
+
 ### Shortcuts
 
 See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) for more information
