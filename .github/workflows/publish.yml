@@ -103,7 +103,7 @@ jobs:
           - project: omniflixhub
             version: v0.11.0
           - project: osmosis
-            version: v16.0.0
+            version: v16.1.0
           - project: panacea
             version: v2.0.5
           - project: passage
