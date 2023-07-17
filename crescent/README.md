@@ -1,13 +1,13 @@
-# Shentu
+# Crescent
 
 | | |
 |---|---|
-|Version|`v2.5.0`|
-|Binary|`certik`|
-|Directory|`.certik`|
-|ENV namespace|`CERTIK`|
-|Repository|`https://github.com/certikfoundation/shentu`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-shentu-v2.5.0`|
+|Version|`v4.2.0`|
+|Binary|`crescentd`|
+|Directory|`.crescent`|
+|ENV namespace|`CRESCENTD`|
+|Repository|`https://github.com/crescent-network/crescent`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-crescent-v4.2.0`|
 
 ## Examples
 
@@ -16,11 +16,11 @@
 
 ## Chain information
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Shentu.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Crescent.
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/shentu/chain.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/crescent/chain.json`|
 
 ## Polkachu Chain Services
 

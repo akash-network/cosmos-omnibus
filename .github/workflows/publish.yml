@@ -42,6 +42,8 @@ jobs:
             version: v11.5.0
           - project: cosmoshub
             version: v10.0.2
+          - project: crescent
+            version: v4.2.0
           - project: cronos
             version: v1.0.4
           - project: cryptoorgchain
@@ -67,7 +69,7 @@ jobs:
           - project: impacthub
             version: v0.18.1
           - project: injective
-            version: v1.11.5-1687535916
+            version: v1.11.6-1688984159
           - project: irisnet
             version: v2.0.1
           - project: jackal
@@ -75,7 +77,7 @@ jobs:
           - project: juno
             version: v15.0.0
           - project: kava
-            version: v0.23.1
+            version: v0.24.0
           - project: kichain
             version: 5.0.1
           - project: konstellation
