@@ -68,13 +68,13 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-dig-v3.3.1`|[Example](./dig)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-emoney-v1.2.0`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-empowerchain-v1.0.0`|[Example](./empowerchain)|
-|[evmos](https://github.com/evmos/evmos)|`v12.1.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-evmos-v12.1.5`|[Example](./evmos)|
+|[evmos](https://github.com/evmos/evmos)|`v13.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-evmos-v13.0.2`|[Example](./evmos)|
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-fetchhub-v0.10.6`|[Example](./fetchhub)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.7.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-gravitybridge-v1.7.2`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-impacthub-v0.18.1`|[Example](./impacthub)|
 |[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.11.6-1688984159`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-injective-v1.11.6-1688984159`|[Example](./injective)|
 |[irisnet](https://github.com/irisnet/irishub)|`v2.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-irisnet-v2.0.1`|[Example](./irisnet)|
-|[jackal](https://github.com/JackalLabs/canine-chain)|`v2.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-jackal-v2.0.1`|[Example](./jackal)|
+|[jackal](https://github.com/JackalLabs/canine-chain)|`v2.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-jackal-v2.1.0`|[Example](./jackal)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v15.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-juno-v15.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.24.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-kava-v0.24.0`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-kichain-5.0.1`|[Example](./kichain)|
@@ -88,7 +88,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[neutron](https://github.com/neutron-org/neutron)|`v1.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-neutron-v1.0.3`|[Example](./neutron)|
 |[nois](https://github.com/noislabs/noisd)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-nois-v1.0.2`|[Example](./nois)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.11.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-omniflixhub-v0.11.1`|[Example](./omniflixhub)|
-|[osmosis](https://github.com/osmosis-labs/osmosis)|`v15.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-osmosis-v15.2.0`|[Example](./osmosis)|
+|[osmosis](https://github.com/osmosis-labs/osmosis)|`v16.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-osmosis-v16.1.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-panacea-v2.0.5`|[Example](./panacea)|
 |[passage](https://github.com/envadiv/Passage3D)|`v1.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-passage-v1.1.0`|[Example](./passage)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v3.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.40-persistence-v3.2.0`|[Example](./persistence)|

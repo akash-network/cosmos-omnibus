@@ -61,7 +61,7 @@ jobs:
           - project: empowerchain
             version: v1.0.0
           - project: evmos
-            version: v12.1.5
+            version: v13.0.2
           - project: fetchhub
             version: v0.10.6
           - project: gravitybridge
@@ -73,7 +73,7 @@ jobs:
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v2.0.1
+            version: v2.1.0
           - project: juno
             version: v15.0.0
           - project: kava
@@ -103,7 +103,7 @@ jobs:
           - project: omniflixhub
             version: v0.11.1
           - project: osmosis
-            version: v15.2.0
+            version: v16.1.0
           - project: panacea
             version: v2.0.5
           - project: passage
