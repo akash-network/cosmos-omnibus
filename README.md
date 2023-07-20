@@ -292,7 +292,7 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 |Variable|Description|Default|Examples|
 |---|---|---|---|
 |`COSMOVISOR_ENABLED`|Enable Cosmovisor binary download and support| |`1`|
-|`COSMOVISOR_VERSION`|Version of Cosmovisor to download|`1.3.0`| |
+|`COSMOVISOR_VERSION`|Version of Cosmovisor to download|`1.5.0`| |
 |`COSMOVISOR_URL`|Alternative full URL to Cosmovisor binary tar.gz| | |
 
 ### Shortcuts
