@@ -7,7 +7,7 @@
 |Directory|`.decentr`|
 |ENV namespace|`decentr`|
 |Repository|`https://github.com/Decentr-net/decentr`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.41-decentr-v1.6.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-decentr-v1.6.2`|
 
 ## Examples
 
