@@ -322,7 +322,7 @@ fi
 
 # Cosmovisor
 if [ "$COSMOVISOR_ENABLED" == "1" ]; then
-  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.3.0"}"
+  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.5.0"}"
   export COSMOVISOR_URL="${COSMOVISOR_URL:-"https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz"}"
 
   # Download Binary
