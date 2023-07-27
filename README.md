@@ -80,7 +80,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kava](https://github.com/Kava-Labs/kava)|`v0.24.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-kava-v0.24.0`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-kichain-5.0.1`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-konstellation-v0.5.0`|[Example](./konstellation)|
-|[kujira](https://github.com/Team-Kujira/core)|`v0.8.7`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-kujira-v0.8.7`|[Example](./kujira)|
+|[kujira](https://github.com/Team-Kujira/core)|`v0.8.8`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-kujira-v0.8.8`|[Example](./kujira)|
 |[kyve](https://github.com/KYVENetwork/chain)|`v1.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-kyve-v1.2.2`|[Example](./kyve)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-likecoin-v4.0.1`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.4.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-lumnetwork-v1.4.5`|[Example](./lumnetwork)|
