@@ -20,7 +20,7 @@ Akash provide up to date chain information in their [akash-network/net](https://
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/akash-network/net/master/mainnet/meta.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json`|
 
 ## Suggested configuration
 

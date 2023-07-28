@@ -6,7 +6,7 @@ services:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.3.42-akash-v0.22.7
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/master/mainnet/meta.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
       - MINIMUM_GAS_PRICES=0.025uakt
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
