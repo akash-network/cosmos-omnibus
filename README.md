@@ -33,7 +33,7 @@ services:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.3.42-generic
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/master/edgenet/meta.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/edgenet/meta.json
       - BINARY_ZIP_PATH=akash_0.15.0-rc14_linux_amd64/akash
 ```
 
@@ -159,7 +159,7 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chai
 |---|---|---|---|
 |`CHAIN_JSON`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`
 |`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`
-|`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON| |`https://raw.githubusercontent.com/akash-network/net/master/mainnet/genesis.json`
+|`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON| |`https://raw.githubusercontent.com/akash-network/net/main/mainnet/genesis.json`
 |`DOWNLOAD_GENESIS`|Force download of genesis file. If unset the node will only download if the genesis file is missing| |`1`|
 |`VALIDATE_GENESIS`|Set to 1 to enable validation of genesis file|`0`|`1`
 
