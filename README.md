@@ -33,7 +33,7 @@ services:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.3.42-generic
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/master/edgenet/meta.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/edgenet/meta.json
       - BINARY_ZIP_PATH=akash_0.15.0-rc14_linux_amd64/akash
 ```
 
@@ -91,7 +91,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.11.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-omniflixhub-v0.11.1`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v16.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-osmosis-v16.1.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-panacea-v2.0.5`|[Example](./panacea)|
-|[passage](https://github.com/envadiv/Passage3D)|`v1.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-passage-v1.1.0`|[Example](./passage)|
+|[passage](https://github.com/envadiv/Passage3D)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-passage-v2.0.0`|[Example](./passage)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v3.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-persistence-v3.2.0`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v5.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-regen-v5.1.1`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-rizon-v0.4.1`|[Example](./rizon)|
@@ -159,7 +159,7 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chai
 |---|---|---|---|
 |`CHAIN_JSON`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`
 |`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`
-|`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON| |`https://raw.githubusercontent.com/akash-network/net/master/mainnet/genesis.json`
+|`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON| |`https://raw.githubusercontent.com/akash-network/net/main/mainnet/genesis.json`
 |`DOWNLOAD_GENESIS`|Force download of genesis file. If unset the node will only download if the genesis file is missing| |`1`|
 |`VALIDATE_GENESIS`|Set to 1 to enable validation of genesis file|`0`|`1`
 
