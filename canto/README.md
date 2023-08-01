@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v5.0.0`|
+|Version|`v6.0.0`|
 |Binary|`cantod`|
 |Directory|`.cantod`|
 |ENV namespace|`CANTOD`|
 |Repository|`https://github.com/Canto-Network/Canto`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-canto-v5.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.42-canto-v6.0.0`|
 
 ## Examples
 
