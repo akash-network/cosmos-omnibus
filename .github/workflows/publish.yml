@@ -87,7 +87,7 @@ jobs:
           - project: kujira
             version: v0.8.7
           - project: kyve
-            version: v1.3.0
+            version: v1.3.1
           - project: likecoin
             version: v4.0.1
           - project: lumnetwork
