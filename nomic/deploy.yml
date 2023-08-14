@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.43-nomic-stakenet
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.44-nomic-stakenet
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nomic/chain.json
