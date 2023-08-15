@@ -37,7 +37,7 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v4.2.3
+            version: v5.0.0
           - project: comdex
             version: v11.5.1
           - project: cosmoshub
@@ -77,7 +77,7 @@ jobs:
           - project: jackal
             version: v2.1.0
           - project: juno
-            version: v15.0.0
+            version: v16.0.0
           - project: kava
             version: v0.24.0
           - project: kichain
