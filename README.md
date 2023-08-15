@@ -60,7 +60,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[comdex](https://github.com/comdex-official/comdex)|`v11.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-comdex-v11.5.1`|[Example](./comdex)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v10.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-cosmoshub-v10.0.2`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-crescent-v4.2.0`|[Example](./crescent)|
-|[cronos](https://github.com/crypto-org-chain/cronos)|`v1.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-cronos-v1.0.4`|[Example](./cronos)|
+|[cronos](https://github.com/crypto-org-chain/cronos)|`v1.0.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-cronos-v1.0.9`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-cryptoorgchain-v4.2.6`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-decentr-v1.6.2`|[Example](./decentr)|
 |[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-defund-v0.1.0-alpha`|[Example](./defund)|
@@ -83,7 +83,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kujira](https://github.com/Team-Kujira/core)|`v0.8.7`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-kujira-v0.8.7`|[Example](./kujira)|
 |[kyve](https://github.com/KYVENetwork/chain)|`v1.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-kyve-v1.3.1`|[Example](./kyve)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-likecoin-v4.0.1`|[Example](./likecoin)|
-|[lumnetwork](https://github.com/lum-network/chain)|`v1.4.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-lumnetwork-v1.4.5`|[Example](./lumnetwork)|
+|[lumnetwork](https://github.com/lum-network/chain)|`v1.5.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-lumnetwork-v1.5.2`|[Example](./lumnetwork)|
 |[mars](https://github.com/mars-protocol/hub.git)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-mars-v1.0.2`|[Example](./mars)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v2.2.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-migaloo-v2.2.6`|[Example](./migaloo)|
 |[neutron](https://github.com/neutron-org/neutron)|`v1.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-neutron-v1.0.4`|[Example](./neutron)|
