@@ -21,7 +21,7 @@ jobs:
           - project: akash
             version: v0.22.7
           - project: assetmantle
-            version: v0.3.0
+            version: v1.0.0
           - project: autonomy
             version: v1.2.1
           - project: bandchain
