@@ -7,7 +7,7 @@
 |Directory|`.teritorid`|
 |ENV namespace|`TERITORID`|
 |Repository|`https://github.com/TERITORI/teritori-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.44-teritori-v1.4.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.45-teritori-v1.4.0`|
 
 ## Examples
 
