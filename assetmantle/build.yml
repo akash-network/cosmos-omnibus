@@ -8,9 +8,10 @@ services:
         PROJECT: assetmantle
         PROJECT_BIN: mantleNode
         PROJECT_DIR: .mantleNode
-        VERSION: v0.3.0
+        VERSION: v1.0.0
         REPOSITORY: https://github.com/AssetMantle/node
         NAMESPACE: MANTLENODE
+        GOLANG_VERSION: 1.20-buster
     ports:
       - '26656:26656'
       - '26657:26657'
