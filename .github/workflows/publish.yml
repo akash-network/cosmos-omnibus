@@ -119,7 +119,7 @@ jobs:
           - project: seinetwork
             version: 1.2.2beta-postfix
           - project: sentinel
-            version: v0.9.3
+            version: v0.10.1
           - project: shentu
             version: v2.5.0
           - project: sifchain
