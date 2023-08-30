@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: passage
         PROJECT_BIN: passage
-        VERSION: v2.0.0
+        VERSION: v2.0.1
         REPOSITORY: https://github.com/envadiv/Passage3D
         NAMESPACE: PASSAGE
         PROJECT_DIR: .passage

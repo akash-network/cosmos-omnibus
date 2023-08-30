@@ -21,13 +21,13 @@ jobs:
           - project: akash
             version: v0.22.7
           - project: assetmantle
-            version: v0.3.0
+            version: v1.0.0
           - project: autonomy
             version: v1.2.1
           - project: bandchain
             version: v2.5.1
           - project: bitcanna
-            version: v2.0.2
+            version: v2.0.3
           - project: bitsong
             version: v0.14.0
           - project: bostrom
@@ -37,15 +37,15 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v5.0.0
+            version: v5.0.1
           - project: comdex
             version: v11.5.1
           - project: cosmoshub
-            version: v10.0.2
+            version: v11.0.0
           - project: crescent
             version: v4.2.0
           - project: cronos
-            version: v1.0.4
+            version: v1.0.9
           - project: cryptoorgchain
             version: v4.2.6
           - project: decentr
@@ -75,7 +75,7 @@ jobs:
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v2.1.0
+            version: v3.0.0
           - project: juno
             version: v16.0.0
           - project: kava
@@ -91,7 +91,7 @@ jobs:
           - project: likecoin
             version: v4.0.1
           - project: lumnetwork
-            version: v1.5.1
+            version: v1.5.2
           - project: mars
             version: v1.0.2
           - project: migaloo
@@ -103,13 +103,13 @@ jobs:
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
-            version: v0.11.1
+            version: v0.12.0
           - project: osmosis
             version: v16.1.0
           - project: panacea
             version: v2.0.5
           - project: passage
-            version: v2.0.0
+            version: v2.0.1
           - project: persistence
             version: v3.2.0
           - project: regen
@@ -119,7 +119,7 @@ jobs:
           - project: seinetwork
             version: 1.2.2beta-postfix
           - project: sentinel
-            version: v0.9.3
+            version: v0.10.1
           - project: shentu
             version: v2.5.0
           - project: sifchain
@@ -129,7 +129,7 @@ jobs:
           - project: stargaze
             version: v10.0.0
           - project: stride
-            version: v12.1.0
+            version: v13.1.0
           - project: starname
             version: v0.11.5
           - project: teritori
