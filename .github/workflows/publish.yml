@@ -99,7 +99,7 @@ jobs:
           - project: neutron
             version: v1.0.4
           - project: nois
-            version: v1.0.2
+            version: v1.0.4
           # - project: nomic
           #   version: stakenet
           - project: omniflixhub
