@@ -1,7 +1,9 @@
+ARG DEBIAN_VERSION=buster
 ARG BUILD_IMAGE=default
 ARG BUILD_METHOD=source
 ARG GOLANG_VERSION=1.18-buster
 ARG BASE_IMAGE=golang:${GOLANG_VERSION}
+ARG DEBIAN_IMAGE=debian:${DEBIAN_VERSION}
 
 #
 # Default build environment for standard Tendermint chains
@@ -77,7 +79,7 @@ RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
 #
 # Default image
 #
-FROM debian:buster AS default
+FROM ${DEBIAN_IMAGE} AS default
 
 ARG PROJECT
 ARG PROJECT_BIN=$PROJECT
