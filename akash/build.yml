@@ -9,6 +9,7 @@ services:
         VERSION: v0.24.0
         REPOSITORY: https://github.com/akash-network/node
         GOLANG_VERSION: 1.21-bullseye
+        BUILD_BASE: debian:bullseye
         INSTALL_PACKAGES: jq
     ports:
       - '26656:26656'

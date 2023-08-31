@@ -1,3 +1,4 @@
+ARG BUILD_BASE=debian:buster
 ARG BUILD_IMAGE=default
 ARG BUILD_METHOD=source
 ARG GOLANG_VERSION=1.18-buster
@@ -77,7 +78,7 @@ RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
 #
 # Default image
 #
-FROM debian:buster AS default
+FROM ${BUILD_BASE} AS default
 
 ARG PROJECT
 ARG PROJECT_BIN=$PROJECT
