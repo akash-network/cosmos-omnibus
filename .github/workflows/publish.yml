@@ -37,7 +37,7 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v5.0.1
+            version: v5.0.2
           - project: comdex
             version: v11.5.1
           - project: cosmoshub
@@ -105,13 +105,13 @@ jobs:
           - project: omniflixhub
             version: v0.12.0
           - project: osmosis
-            version: v18.0.0
+            version: v19.0.0
           - project: panacea
             version: v2.0.5
           - project: passage
             version: v2.0.1
           - project: persistence
-            version: v3.2.0
+            version: v8.1.0
           - project: regen
             version: v5.1.1
           - project: rizon
@@ -121,13 +121,13 @@ jobs:
           - project: sentinel
             version: v0.10.1
           - project: shentu
-            version: v2.5.0
+            version: v2.7.2
           - project: sifchain
             version: v1.1.0-beta
           - project: sommelier
             version: v4.0.2
           - project: stargaze
-            version: v10.0.0
+            version: v12.0.0
           - project: stride
             version: v14.0.0
           - project: starname
@@ -138,6 +138,8 @@ jobs:
           #   version: v0.5.18
           - project: umee
             version: v3.1.0
+          - project: ununifi
+            version: v3.2.1
           - project: vidulum
             version: v1.2.0
     steps:

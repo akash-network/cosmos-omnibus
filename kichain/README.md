@@ -7,7 +7,7 @@
 |Directory|`.kid`|
 |ENV namespace|`KICHAIN`|
 |Repository|`https://github.com/KiFoundation/ki-tools`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.46-kichain-5.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.47-kichain-5.0.1`|
 
 ## Examples
 
