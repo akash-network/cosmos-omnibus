@@ -7,7 +7,7 @@
 |Directory|`.defund`|
 |ENV namespace|`DEFUNDD`|
 |Repository|`https://github.com/defund-labs/defund`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.47-defund-v0.1.0-alpha`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.48-defund-v0.1.0-alpha`|
 
 ## Examples
 

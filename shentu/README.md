@@ -7,7 +7,7 @@
 |Directory|`.shentud`|
 |ENV namespace|`SHENTUD`|
 |Repository|`https://github.com/shentufoundation/shentu`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.47-shentu-v2.7.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.48-shentu-v2.7.2`|
 
 ## Examples
 

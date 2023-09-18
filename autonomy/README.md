@@ -7,7 +7,7 @@
 |Directory|`.autonomy`|
 |ENV namespace|`AUTONOMY`|
 |Repository|`https://github.com/AutonomyNetwork/autonomy-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.47-autonomy-v1.2.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.48-autonomy-v1.2.1`|
 
 ## Examples
 
