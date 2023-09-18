@@ -111,7 +111,7 @@ jobs:
           - project: passage
             version: v2.0.1
           - project: persistence
-            version: v8.1.0
+            version: v9.1.1
           - project: regen
             version: v5.1.1
           - project: rizon
