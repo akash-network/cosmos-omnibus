@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.24.0`|
+|Version|`v0.26.1`|
 |Binary|`akash`|
 |Directory|`.akash`|
 |ENV namespace|`AKASH`|
 |Repository|`https://github.com/akash-network/node`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.48-akash-v0.24.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.48-akash-v0.26.1`|
 
 ## Examples
 
