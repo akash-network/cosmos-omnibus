@@ -7,7 +7,7 @@
 |Directory|`.noisd`|
 |ENV namespace|`NOISD`|
 |Repository|`https://github.com/noislabs/noisd`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.48-nois-v1.0.4`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.49-nois-v1.0.4`|
 
 ## Examples
 
