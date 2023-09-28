@@ -8,7 +8,7 @@ services:
         PROJECT: evmos
         PROJECT_BIN: evmosd
         PROJECT_DIR: .evmosd
-        VERSION: v13.0.2
+        VERSION: v14.1.0
         REPOSITORY: https://github.com/evmos/evmos
         NAMESPACE: EVMOSD
         GOLANG_VERSION: 1.20-buster
