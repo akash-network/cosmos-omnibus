@@ -99,6 +99,21 @@ RUN curl -Lo /bin/$PROJECT_BIN $BINARY_URL
 RUN chmod +x /bin/$PROJECT_BIN
 
 #
+# Optional image to install from binary zip
+#
+FROM build_base AS binary_zip
+
+ARG BINARY_URL
+ARG BINARY_ZIP_PATH
+
+RUN curl -Lo /bin/$PROJECT_BIN.zip $BINARY_URL
+RUN unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip
+RUN if [ -n "$BINARY_ZIP_PATH" ]; then \
+      mv /bin/${BINARY_ZIP_PATH} /bin; \
+    fi
+RUN chmod +x /bin/$PROJECT_BIN
+
+#
 # Custom image for injective
 #
 FROM debian:buster AS injective
