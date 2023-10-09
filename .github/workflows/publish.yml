@@ -33,11 +33,11 @@ jobs:
           - project: bostrom
             version: v0.3.2
           - project: canto
-            version: v6.0.0
+            version: v7.0.0
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v5.0.3
+            version: v5.0.4
           - project: comdex
             version: v11.5.1
           - project: cosmoshub
@@ -95,7 +95,7 @@ jobs:
           - project: mars
             version: v1.0.2
           - project: migaloo
-            version: v2.2.6
+            version: v3.0.1-hotfix
           - project: neutron
             version: v1.0.4
           - project: nois
@@ -121,7 +121,7 @@ jobs:
           - project: sentinel
             version: v0.10.1
           - project: shentu
-            version: v2.7.2
+            version: v2.8.0
           - project: sifchain
             version: v1.1.0-beta
           - project: sommelier

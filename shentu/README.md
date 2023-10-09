@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.7.2`|
+|Version|`v2.8.0`|
 |Binary|`shentud`|
 |Directory|`.shentud`|
 |ENV namespace|`SHENTUD`|
 |Repository|`https://github.com/shentufoundation/shentu`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.49-shentu-v2.7.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.50-shentu-v2.8.0`|
 
 ## Examples
 

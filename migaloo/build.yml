@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: migaloo
         PROJECT_BIN: migalood
-        VERSION: v2.2.6
+        VERSION: v3.0.1-hotfix
         REPOSITORY: https://github.com/White-Whale-Defi-Platform/migaloo-chain
         NAMESPACE: MIGALOOD
         PROJECT_DIR: .migalood
