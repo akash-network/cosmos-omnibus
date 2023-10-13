@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v17.0.0`|
+|Version|`v17.1.1`|
 |Binary|`junod`|
 |Directory|`.juno`|
 |ENV namespace|`JUNOD`|
 |Repository|`https://github.com/CosmosContracts/Juno`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.50-juno-v17.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.50-juno-v17.1.1`|
 
 ## Examples
 
