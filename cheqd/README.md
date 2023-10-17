@@ -7,7 +7,7 @@
 |Directory|`.cheqdnode`|
 |ENV namespace|`CHEQD`|
 |Repository|`https://github.com/cheqd/cheqd-node`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.50-cheqd-0.6.9`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-cheqd-0.6.9`|
 
 ## Examples
 

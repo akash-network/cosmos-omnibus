@@ -7,7 +7,7 @@
 |Directory|`.sommelier`|
 |ENV namespace|`sommelier`|
 |Repository|`https://github.com/crypto-org-chain/sommelier`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.50-sommelier-v4.0.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-sommelier-v4.0.2`|
 
 ## Examples
 

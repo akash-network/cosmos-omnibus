@@ -7,7 +7,7 @@
 |Directory|`.ununifi`|
 |ENV namespace|`UNUNIFID`|
 |Repository|`https://github.com/UnUniFi/chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.45-ununifi-v3.2.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-ununifi-v3.2.2`|
 
 ## Examples
 

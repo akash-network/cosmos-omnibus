@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.50-gravitybridge-v1.7.2
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.51-gravitybridge-v1.7.2
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/gravitybridge/chain.json
