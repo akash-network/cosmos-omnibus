@@ -100,8 +100,6 @@ jobs:
             version: v1.0.4
           - project: nois
             version: v1.0.4
-          # - project: nomic
-          #   version: stakenet
           - project: omniflixhub
             version: v0.12.0
           - project: osmosis
