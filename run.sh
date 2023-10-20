@@ -127,7 +127,7 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 
 # Polkachu
 if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
-  POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v2/chains/$CHAIN_ID | jq`
+  POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v2/chains/$CHAIN_ID | jq .`
   if [ -z "$POLKACHU_CHAIN" ]; then
     echo "Polkachu does not support this chain"
   else
@@ -144,10 +144,10 @@ if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
     fi
 
     # Polkachu live peers
-    if [ "$P2P_POLKACHU" == "1" ]; then # currently broken: no endpoint available
-      export POLKACHU_PEERS_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.live_peers.active')
+    if [ "$P2P_POLKACHU" == "1" ]; then
+      export POLKACHU_PEERS_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.live_peers.active')
       if [ $POLKACHU_PEERS_ENABLED ]; then
-        export POLKACHU_PEERS=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.live_peers.endpoint') | jq -r '.live_peers | join(",")'`
+        export POLKACHU_PEERS=`curl -Ls $(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.seed'`
 	if [ -n "$P2P_PERSISTENT_PEERS" ]; then
           export P2P_PERSISTENT_PEERS="$POLKACHU_PEERS,$P2P_PERSISTENT_PEERS"
 	else
