@@ -126,8 +126,8 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 [ -n "$PRUNING_KEEP_RECENT" ] && export "${NAMESPACE}_PRUNING_KEEP_RECENT"=$PRUNING_KEEP_RECENT
 
 # Polkachu
-if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU" ]]; then
-  POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v2/chains/$CHAIN_ID | jq .`
+if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU" || -z "$POLKACHU_CHAIN_ID"  ]]; then
+  POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v2/chains/$POLKACHU_CHAIN_ID | jq .`
   if [ -z "$POLKACHU_CHAIN" ]; then
     echo "Polkachu does not support this chain"
   else
