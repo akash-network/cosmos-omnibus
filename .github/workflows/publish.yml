@@ -89,7 +89,7 @@ jobs:
           - project: kyve
             version: v1.3.1
           - project: likecoin
-            version: v4.0.1
+            version: v4.0.2
           - project: lumnetwork
             version: v1.5.2
           - project: mars
