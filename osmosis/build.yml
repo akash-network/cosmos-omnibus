@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: v20.1.1
+        VERSION: v20.1.2
         REPOSITORY: https://github.com/osmosis-labs/osmosis
         NAMESPACE: OSMOSISD
         GOLANG_VERSION: 1.20-buster
