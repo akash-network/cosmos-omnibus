@@ -5,7 +5,7 @@ services:
     build:
       context: ../
       args:
-        PROJECT: dydxprotocol
+        PROJECT: dydx
         PROJECT_BIN: dydxprotocold
         PROJECT_DIR: .dydxprotocol
         VERSION: protocol/v1.0.0

@@ -66,7 +66,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-defund-v0.1.0-alpha`|[Example](./defund)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v4.8.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-desmos-v4.8.0`|[Example](./desmos)|
 |[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-dig-v3.3.1`|[Example](./dig)|
-|[dydxprotocol](https://github.com/dydxprotocol/v4-chain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-dydxprotocol-1.0.0`|[Example](./dydxprotocol)|
+|[dydx](https://github.com/dydxprotocol/v4-chain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-dydx-1.0.0`|[Example](./dydx)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-emoney-v1.2.0`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-empowerchain-v1.0.0`|[Example](./empowerchain)|
 |[evmos](https://github.com/evmos/evmos)|`v14.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-evmos-v14.1.0`|[Example](./evmos)|
