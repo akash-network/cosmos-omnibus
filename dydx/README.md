@@ -1,13 +1,13 @@
-# Stride
+# dYdX
 
 | | |
 |---|---|
-|Version|`v16.0.0`|
-|Binary|`strided`|
-|Directory|`.stride`|
-|ENV namespace|`STRIDED`|
-|Repository|`https://github.com/Stride-Labs/stride`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-stride-v16.0.0`|
+|Version|`v1.0.0`|
+|Binary|`dydxprotocold`|
+|Directory|`.dydxprotocol`|
+|ENV namespace|`DYDXPROTOCOLD`|
+|Repository|`https://github.com/dydxprotocol/v4-chain`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.51-dydx-v1.0.0`|
 
 ## Examples
 
@@ -16,11 +16,11 @@
 
 ## Chain information
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Stride.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for DYDX protocol.
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/stride/chain.json`|
+|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/dydx/chain.json`|
 
 ## Polkachu Chain Services
 
