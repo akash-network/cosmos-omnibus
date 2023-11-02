@@ -41,7 +41,7 @@ jobs:
           - project: comdex
             version: v11.5.1
           - project: cosmoshub
-            version: v13.0.0
+            version: v13.0.1
           - project: crescent
             version: v4.2.0
           - project: cronos
@@ -56,6 +56,8 @@ jobs:
             version: v4.8.0
           - project: dig
             version: v3.3.1
+          - project: dydx
+            version: v1.0.0
           - project: emoney
             version: v1.2.0
           - project: empowerchain
@@ -91,7 +93,7 @@ jobs:
           - project: likecoin
             version: v4.0.1
           - project: lumnetwork
-            version: v1.5.2
+            version: v1.6.2
           - project: mars
             version: v1.0.2
           - project: migaloo
@@ -103,11 +105,11 @@ jobs:
           - project: omniflixhub
             version: v0.12.0
           - project: osmosis
-            version: v19.0.0
+            version: v20.1.2
           - project: panacea
             version: v2.0.5
           - project: passage
-            version: v2.0.1
+            version: v2.2.0
           - project: persistence
             version: v10.0.0
           - project: regen
@@ -127,7 +129,7 @@ jobs:
           - project: stargaze
             version: v12.0.0
           - project: stride
-            version: v15.0.0
+            version: v16.0.0
           - project: starname
             version: v0.11.5
           - project: teritori
@@ -135,7 +137,7 @@ jobs:
           # - project: terra
           #   version: v0.5.18
           - project: umee
-            version: v3.1.0
+            version: v6.1.0
           - project: ununifi
             version: v3.2.2
           - project: vidulum
