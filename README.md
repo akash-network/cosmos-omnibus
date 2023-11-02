@@ -160,7 +160,6 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chai
 |---|---|---|---|
 |`CHAIN_JSON`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`
 |`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`
-|`POLKACHU_CHAIN_ID` | Polkachu API chain-id| |`akashnet`    
 |`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON| |`https://raw.githubusercontent.com/akash-network/net/main/mainnet/genesis.json`
 |`DOWNLOAD_GENESIS`|Force download of genesis file. If unset the node will only download if the genesis file is missing| |`1`|
 |`VALIDATE_GENESIS`|Set to 1 to enable validation of genesis file|`0`|`1`
@@ -179,7 +178,6 @@ See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2
 |---|---|---|---|
 |`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
 |`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
-|`P2P_POLKACHU`|Import live persistent peers from [Polkachu](https://www.polkachu.com/live_peers) if available| |`1`|
 |`ADDRBOOK_URL`|URL to an addrbook.json file| |`https://quicksync.io/addrbook.terra.json`
 
 ### Private key backup/restore
@@ -218,7 +216,6 @@ Statesync nodes can also be sourced from [Polkachu's Statesync service](https://
 |`STATESYNC_TRUST_PERIOD`|Trust period for the statesync snapshot|`168h0m0s`| |
 |`STATESYNC_TRUST_HEIGHT`|Obtained from `STATESYNC_TRUSTED_NODE`| | |
 |`STATESYNC_TRUST_HASH`|Obtained from `STATESYNC_TRUSTED_NODE`| | |
-|`STATESYNC_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/state_sync) statesync addresses if available| |`1`|
 
 ### Snapshot restore
 
@@ -287,6 +284,16 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 |`PROJECT`|Name of the project, informs other variables| | |
 |`PROJECT_BIN`|Binary name|`$PROJECT`|`osmosisd`|
 |`PROJECT_DIR`|Name of project directory|`.$PROJECT_BIN`|`.osmosisd`|
+
+### Polkachu Services
+
+[Polkachu](https://polkachu.com/) validator provide various Cosmos chain services that can be automatically enabled using environment variables.
+
+|Variable|Description|Default|Examples|
+|---|---|---|---|
+|`POLKACHU_CHAIN_ID`| Polkachu API chain-id if it differs from Chain Registry naming convention.| |`cryptocom`
+|`P2P_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/seeds) seed node if available| |`1`|
+|`STATESYNC_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/state_sync) statesync addresses if available| |`1`|
 
 ### Cosmovisor
 
