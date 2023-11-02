@@ -13,6 +13,7 @@ services:
         NAMESPACE: DYDXPROTOCOLD
         BUILD_CMD: make install -C protocol
         GOLANG_VERSION: 1.21-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
