@@ -107,7 +107,7 @@ jobs:
           - project: panacea
             version: v2.0.5
           - project: passage
-            version: v2.0.1
+            version: v2.2.0
           - project: persistence
             version: v9.1.1
           - project: regen
