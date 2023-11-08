@@ -66,7 +66,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-defund-v0.1.0-alpha`|[Example](./defund)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v4.8.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-desmos-v4.8.0`|[Example](./desmos)|
 |[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-dig-v3.3.1`|[Example](./dig)|
-|[dydx](https://github.com/dydxprotocol/v4-chain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-dydx-1.0.0`|[Example](./dydx)|
+|[dydx](https://github.com/dydxprotocol/v4-chain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-dydx-v1.0.0`|[Example](./dydx)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-emoney-v1.2.0`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-empowerchain-v1.0.0`|[Example](./empowerchain)|
 |[evmos](https://github.com/evmos/evmos)|`v15.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-evmos-v15.0.0`|[Example](./evmos)|
@@ -83,7 +83,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-konstellation-v0.5.0`|[Example](./konstellation)|
 |[kujira](https://github.com/Team-Kujira/core)|`v0.9.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-kujira-v0.9.1`|[Example](./kujira)|
 |[kyve](https://github.com/KYVENetwork/chain)|`v1.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-kyve-v1.3.1`|[Example](./kyve)|
-|[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-likecoin-v4.0.2`|[Example](./likecoin)|
+|[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-likecoin-v4.1.0`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.6.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-lumnetwork-v1.6.2`|[Example](./lumnetwork)|
 |[mars](https://github.com/mars-protocol/hub.git)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-mars-v1.0.2`|[Example](./mars)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v3.0.1-hotfix`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-migaloo-v3.0.1-hotfix`|[Example](./migaloo)|
