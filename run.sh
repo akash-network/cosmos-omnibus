@@ -136,7 +136,7 @@ if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU"  ]]; then
     # Polkachu statesync
     if [ -n "$STATESYNC_POLKACHU" ]; then
       export POLKACHU_STATESYNC_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.active')
-      if [ $POLKACHU_STATESYNC_ENABLED = true ]; then
+      if [ "$POLKACHU_STATESYNC_ENABLED" = "true" ]; then
         export POLKACHU_RPC_SERVER=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.node')
         export STATESYNC_RPC_SERVERS="$POLKACHU_RPC_SERVER,$POLKACHU_RPC_SERVER"
       else
