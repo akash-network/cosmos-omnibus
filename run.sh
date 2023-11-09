@@ -19,6 +19,7 @@ if [ -n "$CHAIN_JSON" ]; then
   fi
 fi
 
+export PROJECT="${PROJECT:-$PROJECT_BIN}"
 export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
 export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
 export CONFIG_DIR="${CONFIG_DIR:-config}"
