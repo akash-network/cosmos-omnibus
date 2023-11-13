@@ -12,8 +12,9 @@ services:
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/edgenet/meta.json
-      - BINARY_ZIP_PATH=akash_0.15.0-rc14_linux_amd64/akash
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
     env_file:
       - ../.env
     volumes:
