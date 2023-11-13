@@ -7,7 +7,7 @@
 |Directory|`.chain-maind`|
 |ENV namespace|`CHAIN_MAIND`|
 |Repository|`https://github.com/crypto-org-chain/chain-main`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-cryptoorgchain-v4.2.6`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-cryptoorgchain-v4.2.6`|
 
 ## Examples
 
