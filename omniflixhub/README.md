@@ -7,7 +7,7 @@
 |Directory|`.omniflixhub`|
 |ENV namespace|`OMNIFLIXHUBD`|
 |Repository|`https://github.com/OmniFlix/omniflixhub`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.0-omniflixhub-v0.12.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-omniflixhub-v0.12.0`|
 
 ## Examples
 
