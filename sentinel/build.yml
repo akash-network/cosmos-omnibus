@@ -7,8 +7,9 @@ services:
       args:
         PROJECT: sentinel
         PROJECT_BIN: sentinelhub
-        VERSION: v0.10.1
+        VERSION: v0.11.3
         REPOSITORY: https://github.com/sentinel-official/hub.git
+        GOLANG_VERSION: 1.20-buster
     ports:
       - '26656:26656'
       - '26657:26657'
