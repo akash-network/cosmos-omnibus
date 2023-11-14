@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: gravitybridge
         PROJECT_BIN: gravity
-        VERSION: v1.7.2
+        VERSION: v1.11.1
         BUILD_IMAGE: binary
         BINARY_URL: https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.7.2/gravity-linux-amd64
     ports:

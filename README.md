@@ -72,7 +72,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[evmos](https://github.com/evmos/evmos)|`v15.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-evmos-v15.0.0`|[Example](./evmos)|
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-fetchhub-v0.10.6`|[Example](./fetchhub)|
 |[gitopia](https://github.com/gitopia/gitopia)|`v2.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-gitopia-v2.1.1`|[Example](./gitopia)|
-|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.7.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-gravitybridge-v1.7.2`|[Example](./gravitybridge)|
+|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.11.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-gravitybridge-v1.11.1`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-impacthub-v0.18.1`|[Example](./impacthub)|
 |[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.11.6-1688984159`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-injective-v1.11.6-1688984159`|[Example](./injective)|
 |[irisnet](https://github.com/irisnet/irishub)|`v2.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-irisnet-v2.0.1`|[Example](./irisnet)|

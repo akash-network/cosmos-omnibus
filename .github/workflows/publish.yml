@@ -69,7 +69,7 @@ jobs:
           - project: gitopia
             version: v2.1.1
           - project: gravitybridge
-            version: v1.7.2
+            version: v1.11.1
           - project: impacthub
             version: v0.18.1
           - project: injective
