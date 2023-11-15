@@ -53,7 +53,7 @@ jobs:
           - project: defund
             version: v0.1.0-alpha
           - project: desmos
-            version: v4.8.0
+            version: v6.2.0
           - project: dig
             version: v3.3.1
           - project: dydx
