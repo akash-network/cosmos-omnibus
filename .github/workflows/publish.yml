@@ -97,7 +97,7 @@ jobs:
           - project: mars
             version: v1.0.2
           - project: migaloo
-            version: v3.0.1-hotfix
+            version: v3.0.2
           - project: neutron
             version: v1.0.4
           - project: nois
