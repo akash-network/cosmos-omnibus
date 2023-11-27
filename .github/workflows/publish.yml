@@ -49,15 +49,15 @@ jobs:
           - project: cryptoorgchain
             version: v4.2.6
           - project: decentr
-            version: v1.6.2
+            version: v1.6.3
           - project: defund
             version: v0.1.0-alpha
           - project: desmos
-            version: v4.8.0
+            version: v6.2.0
           - project: dig
             version: v3.3.1
           - project: dydx
-            version: v1.0.1
+            version: v2.0.0
           - project: emoney
             version: v1.2.0
           - project: empowerchain
@@ -69,7 +69,7 @@ jobs:
           - project: gitopia
             version: v2.1.1
           - project: gravitybridge
-            version: v1.7.2
+            version: v1.11.1
           - project: impacthub
             version: v0.18.1
           - project: injective
@@ -97,15 +97,15 @@ jobs:
           - project: mars
             version: v1.0.2
           - project: migaloo
-            version: v3.0.1-hotfix
+            version: v3.0.2
           - project: neutron
             version: v1.0.4
           - project: nois
             version: v1.0.4
           - project: omniflixhub
-            version: v0.12.0
+            version: v0.12.1
           - project: osmosis
-            version: v20.2.1
+            version: v20.5.0
           - project: panacea
             version: v2.0.5
           - project: passage
