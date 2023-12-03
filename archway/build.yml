@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: archway
+        PROJECT_BIN: archwayd
+        PROJECT_DIR: .archway
+        VERSION: v4.0.2
+        REPOSITORY: https://github.com/archway-network/archway
+        NAMESPACE: archwayd
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/archway/chain.json
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.archway
