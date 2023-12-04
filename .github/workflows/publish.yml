@@ -139,7 +139,7 @@ jobs:
           - project: umee
             version: v6.1.0
           - project: ununifi
-            version: v3.2.2
+            version: v4.0.1
           - project: vidulum
             version: v1.2.0
     steps:

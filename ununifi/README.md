@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v3.2.2`|
+|Version|`v4.0.1`|
 |Binary|`ununifid`|
 |Directory|`.ununifi`|
 |ENV namespace|`UNUNIFID`|
 |Repository|`https://github.com/UnUniFi/chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-ununifi-v3.2.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-ununifi-v4.0.1`|
 
 ## Examples
 
