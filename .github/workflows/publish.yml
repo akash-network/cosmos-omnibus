@@ -123,7 +123,7 @@ jobs:
           - project: shentu
             version: v2.9.0
           - project: sifchain
-            version: v1.2.0-beta
+            version: v1.3.0-beta
           - project: sommelier
             version: v4.0.2
           - project: stargaze
