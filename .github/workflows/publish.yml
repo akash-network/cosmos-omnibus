@@ -49,7 +49,7 @@ jobs:
           - project: cronos
             version: v1.0.9
           - project: cryptoorgchain
-            version: v4.2.6
+            version: v4.2.8
           - project: decentr
             version: v1.6.4
           - project: defund
