@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: ununifi
         PROJECT_BIN: ununifid
-        VERSION: v3.2.2
+        VERSION: v4.0.1
         REPOSITORY: https://github.com/UnUniFi/chain
         NAMESPACE: UNUNIFID
         PROJECT_DIR: .ununifi

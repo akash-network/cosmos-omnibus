@@ -19,7 +19,7 @@ jobs:
           - project: agoric
             version: agoric-upgrade-7-2
           - project: akash
-            version: v0.28.2
+            version: v0.30.0
           - project: assetmantle
             version: v1.0.0
           - project: autonomy
@@ -91,9 +91,9 @@ jobs:
           - project: kyve
             version: v1.4.0
           - project: likecoin
-            version: v4.0.2
+            version: v4.1.1
           - project: lumnetwork
-            version: v1.6.2
+            version: v1.6.3
           - project: mars
             version: v1.0.2
           - project: migaloo
@@ -121,7 +121,7 @@ jobs:
           - project: sentinel
             version: v0.11.3
           - project: shentu
-            version: v2.8.0
+            version: v2.9.0
           - project: sifchain
             version: v1.2.0-beta
           - project: sommelier
@@ -139,7 +139,7 @@ jobs:
           - project: umee
             version: v6.1.0
           - project: ununifi
-            version: v3.2.2
+            version: v4.0.1
           - project: vidulum
             version: v1.2.0
     steps:
