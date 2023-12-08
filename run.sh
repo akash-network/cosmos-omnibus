@@ -54,7 +54,7 @@ export AWS_SECRET_ACCESS_KEY=$S3_SECRET
 export S3_HOST="${S3_HOST:-https://s3.filebase.com}"
 export STORJ_ACCESS_GRANT=$STORJ_ACCESS_GRANT
 
-storj_args="${STORJ_UPLINK_ARGS:--p 4 -t 4 --progress=false}"
+storj_args="${STORJ_UPLINK_ARGS:--p 4 --progress=false}"
 
 if [ -n "$STORJ_ACCESS_GRANT" ]; then
   uplink access import --force --interactive=false default "$STORJ_ACCESS_GRANT"
