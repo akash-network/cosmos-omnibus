@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v6.1.0`|
+|Version|`v6.2.0`|
 |Binary|`umeed`|
 |Directory|`.umee`|
 |ENV namespace|`umee`|
 |Repository|`https://github.com/crypto-org-chain/umee`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-umee-v6.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-umee-v6.2.0`|
 
 ## Examples
 

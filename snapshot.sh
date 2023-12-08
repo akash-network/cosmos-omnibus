@@ -53,7 +53,7 @@ while true; do
 
         echo "$TIME: Running snapshot"
         aws_args="--endpoint-url ${S3_HOST}"
-        storj_args="${STORJ_UPLINK_ARGS:--p 4 -t 4 --progress=false}"
+        storj_args="${STORJ_UPLINK_ARGS:--p 4 --progress=false}"
         s3_uri_base="s3://${SNAPSHOT_PATH}"
         storj_uri_base="sj://${SNAPSHOT_PATH}"
         timestamp=$(date +"%Y-%m-%dT%H:%M:%S")

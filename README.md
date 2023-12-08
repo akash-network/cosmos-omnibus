@@ -25,12 +25,12 @@ Omnibus has a generic base image which can download the required binary at runti
 
 This generic image provides the Omnibus scripts and configuration helpers, and nothing else. Set the `BINARY_URL` environment variable to a `.zip`, `.tar` or `.tar.gz` URL, and configure `PROJECT`, `PROJECT_DIR` and `PROJECT_BIN`. Alternatively provide a [Chain Registry](https://github.com/cosmos/chain-registry) `CHAIN_JSON` to configure everything automatically (where data is available).
 
-Image URL: `ghcr.io/akash-network/cosmos-omnibus:v0.4.2-generic`
+Image URL: `ghcr.io/akash-network/cosmos-omnibus:v0.4.3-generic`
 
 ```yaml
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.2-generic
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.3-generic
     env:
       - MONIKER=my-moniker-1
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/edgenet/meta.json
@@ -46,68 +46,69 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[agoric](https://github.com/Agoric/ag0)|`agoric-upgrade-7-2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-agoric-agoric-upgrade-7-2`|[Example](./agoric)|
-|[akash](https://github.com/akash-network/node)|`v0.28.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-akash-v0.28.2`|[Example](./akash)|
-|[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-assetmantle-v1.0.0`|[Example](./assetmantle)|
-|[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-autonomy-v1.2.1`|[Example](./autonomy)|
-|[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-bandchain-v2.5.1`|[Example](./bandchain)|
-|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v2.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-bitcanna-v2.0.3`|[Example](./bitcanna)|
-|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.14.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-bitsong-v0.14.0`|[Example](./bitsong)|
-|[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-bostrom-v0.3.2`|[Example](./bostrom)|
-|[canto](https://github.com/Canto-Network/Canto)|`v7.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-canto-v7.0.0`|[Example](./canto)|
-|[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-cheqd-0.6.9`|[Example](./cheqd)|
-|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v5.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-chihuahua-v5.0.4`|[Example](./chihuahua)|
-|[comdex](https://github.com/comdex-official/comdex)|`v11.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-comdex-v11.5.1`|[Example](./comdex)|
-|[cosmoshub](https://github.com/cosmos/gaia)|`v13.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-cosmoshub-v13.0.2`|[Example](./cosmoshub)|
-|[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-crescent-v4.2.0`|[Example](./crescent)|
-|[cronos](https://github.com/crypto-org-chain/cronos)|`v1.0.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-cronos-v1.0.9`|[Example](./cronos)|
-|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-cryptoorgchain-v4.2.6`|[Example](./cryptoorgchain)|
-|[decentr](https://github.com/Decentr-net/decentr)|`v1.6.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-decentr-v1.6.3`|[Example](./decentr)|
-|[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-defund-v0.1.0-alpha`|[Example](./defund)|
-|[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-desmos-v6.2.0`|[Example](./desmos)|
-|[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-dig-v3.3.1`|[Example](./dig)|
-|[dydx](https://github.com/dydxprotocol/v4-chain)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-dydx-v2.0.0`|[Example](./dydx)|
-|[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-emoney-v1.2.0`|[Example](./emoney)|
-|[empowerchain](https://github.com/empowerchain/empowerchain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-empowerchain-v1.0.0`|[Example](./empowerchain)|
-|[evmos](https://github.com/evmos/evmos)|`v15.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-evmos-v15.0.0`|[Example](./evmos)|
-|[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-fetchhub-v0.10.6`|[Example](./fetchhub)|
-|[gitopia](https://github.com/gitopia/gitopia)|`v2.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-gitopia-v2.1.1`|[Example](./gitopia)|
-|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.11.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-gravitybridge-v1.11.1`|[Example](./gravitybridge)|
-|[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-impacthub-v0.18.1`|[Example](./impacthub)|
-|[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.11.6-1688984159`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-injective-v1.11.6-1688984159`|[Example](./injective)|
-|[irisnet](https://github.com/irisnet/irishub)|`v2.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-irisnet-v2.0.1`|[Example](./irisnet)|
-|[jackal](https://github.com/JackalLabs/canine-chain)|`v3.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-jackal-v3.0.2`|[Example](./jackal)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v18.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-juno-v18.0.0`|[Example](./juno)|
-|[kava](https://github.com/Kava-Labs/kava)|`v0.24.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-kava-v0.24.0`|[Example](./kava)|
-|[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-kichain-5.0.1`|[Example](./kichain)|
-|[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-konstellation-v0.5.0`|[Example](./konstellation)|
-|[kujira](https://github.com/Team-Kujira/core)|`v0.9.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-kujira-v0.9.1`|[Example](./kujira)|
-|[kyve](https://github.com/KYVENetwork/chain)|`v1.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-kyve-v1.3.1`|[Example](./kyve)|
-|[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-likecoin-v4.0.2`|[Example](./likecoin)|
-|[lumnetwork](https://github.com/lum-network/chain)|`v1.6.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-lumnetwork-v1.6.2`|[Example](./lumnetwork)|
-|[mars](https://github.com/mars-protocol/hub.git)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-mars-v1.0.2`|[Example](./mars)|
-|[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v3.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-migaloo-v3.0.2`|[Example](./migaloo)|
-|[neutron](https://github.com/neutron-org/neutron)|`v1.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-neutron-v1.0.4`|[Example](./neutron)|
-|[nois](https://github.com/noislabs/noisd)|`v1.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-nois-v1.0.4`|[Example](./nois)|
-|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.12.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-omniflixhub-v0.12.1`|[Example](./omniflixhub)|
-|[osmosis](https://github.com/osmosis-labs/osmosis)|`v20.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-osmosis-v20.5.0`|[Example](./osmosis)|
-|[panacea](https://github.com/medibloc/panacea-core)|`v2.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-panacea-v2.0.5`|[Example](./panacea)|
-|[passage](https://github.com/envadiv/Passage3D)|`v2.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-passage-v2.2.0`|[Example](./passage)|
-|[persistence](https://github.com/persistenceOne/persistenceCore)|`v10.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-persistence-v10.0.0`|[Example](./persistence)|
-|[regen](https://github.com/regen-network/regen-ledger)|`v5.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-regen-v5.1.1`|[Example](./regen)|
-|[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-rizon-v0.4.1`|[Example](./rizon)|
-|[seinetwork](https://github.com/sei-protocol/sei-chain)|`1.2.2beta-postfix`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-seinetwork-1.2.2beta-postfix`|[Example](./seinetwork)|
-|[sentinel](https://github.com/sentinel-official/hub)|`v0.11.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-sentinel-v0.11.3`|[Example](./sentinel)|
-|[shentu](https://github.com/certikfoundation/shentu)|`v2.8.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-shentu-v2.8.0`|[Example](./shentu)|
-|[sifchain](https://github.com/Sifchain/sifnode)|`v1.2.0-beta`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-sifchain-v1.2.0-beta`|[Example](./sifchain)|
-|[sommelier](https://github.com/PeggyJV/sommelier)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-sommelier-v4.0.2`|[Example](./sommelier)|
-|[stargaze](https://github.com/public-awesome/stargaze)|`v12.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-stargaze-v12.0.0`|[Example](./stargaze)|
-|[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-starname-v0.11.5`|[Example](./starname)|
-|[stride](https://github.com/Stride-Labs/stride)|`v16.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-stride-v16.0.0`|[Example](./stride)|
-|[teritori](https://github.com/TERITORI/teritori-chain)|`v1.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-teritori-v1.4.0`|[Example](./teritori)|
-|[umee](https://github.com/umee-network/umee)|`v6.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-umee-v6.1.0`|[Example](./umee)|
-|[ununifi](https://github.com/UnUniFi/chain)|`v3.2.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-ununifi-v3.2.2`|[Example](./ununifi)|
-|[vidulum](https://github.com/vidulum/mainnet)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.2-vidulum-v1.2.0`|[Example](./vidulum)|
+|[agoric](https://github.com/Agoric/ag0)|`agoric-upgrade-7-2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-agoric-agoric-upgrade-7-2`|[Example](./agoric)|
+|[akash](https://github.com/akash-network/node)|`v0.30.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-akash-v0.30.0`|[Example](./akash)|
+|[archway](https://github.com/archway-network/archway)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-archway-v4.0.2`|[Example](./archway)|
+|[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-assetmantle-v1.0.0`|[Example](./assetmantle)|
+|[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-autonomy-v1.2.1`|[Example](./autonomy)|
+|[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-bandchain-v2.5.1`|[Example](./bandchain)|
+|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v2.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-bitcanna-v2.0.3`|[Example](./bitcanna)|
+|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.14.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-bitsong-v0.14.0`|[Example](./bitsong)|
+|[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-bostrom-v0.3.2`|[Example](./bostrom)|
+|[canto](https://github.com/Canto-Network/Canto)|`v7.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-canto-v7.0.0`|[Example](./canto)|
+|[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-cheqd-0.6.9`|[Example](./cheqd)|
+|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v5.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-chihuahua-v5.0.4`|[Example](./chihuahua)|
+|[comdex](https://github.com/comdex-official/comdex)|`v11.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-comdex-v11.5.1`|[Example](./comdex)|
+|[cosmoshub](https://github.com/cosmos/gaia)|`v13.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-cosmoshub-v13.0.2`|[Example](./cosmoshub)|
+|[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-crescent-v4.2.0`|[Example](./crescent)|
+|[cronos](https://github.com/crypto-org-chain/cronos)|`v1.0.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-cronos-v1.0.9`|[Example](./cronos)|
+|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-cryptoorgchain-v4.2.6`|[Example](./cryptoorgchain)|
+|[decentr](https://github.com/Decentr-net/decentr)|`v1.6.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-decentr-v1.6.3`|[Example](./decentr)|
+|[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-defund-v0.1.0-alpha`|[Example](./defund)|
+|[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-desmos-v6.2.0`|[Example](./desmos)|
+|[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-dig-v3.3.1`|[Example](./dig)|
+|[dydx](https://github.com/dydxprotocol/v4-chain)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-dydx-v2.0.0`|[Example](./dydx)|
+|[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-emoney-v1.2.0`|[Example](./emoney)|
+|[empowerchain](https://github.com/empowerchain/empowerchain)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-empowerchain-v1.0.0`|[Example](./empowerchain)|
+|[evmos](https://github.com/evmos/evmos)|`v15.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-evmos-v15.0.0`|[Example](./evmos)|
+|[fetchhub](https://github.com/fetchai/fetchd)|`v0.10.6`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-fetchhub-v0.10.6`|[Example](./fetchhub)|
+|[gitopia](https://github.com/gitopia/gitopia)|`v2.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-gitopia-v2.1.1`|[Example](./gitopia)|
+|[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.11.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-gravitybridge-v1.11.1`|[Example](./gravitybridge)|
+|[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-impacthub-v0.18.1`|[Example](./impacthub)|
+|[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.11.6-1688984159`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-injective-v1.11.6-1688984159`|[Example](./injective)|
+|[irisnet](https://github.com/irisnet/irishub)|`v2.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-irisnet-v2.0.1`|[Example](./irisnet)|
+|[jackal](https://github.com/JackalLabs/canine-chain)|`v3.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-jackal-v3.0.2`|[Example](./jackal)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v18.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-juno-v18.0.0`|[Example](./juno)|
+|[kava](https://github.com/Kava-Labs/kava)|`v0.25.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-kava-v0.25.0`|[Example](./kava)|
+|[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-kichain-5.0.1`|[Example](./kichain)|
+|[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-konstellation-v0.5.0`|[Example](./konstellation)|
+|[kujira](https://github.com/Team-Kujira/core)|`v0.9.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-kujira-v0.9.1`|[Example](./kujira)|
+|[kyve](https://github.com/KYVENetwork/chain)|`v1.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-kyve-v1.4.0`|[Example](./kyve)|
+|[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-likecoin-v4.1.1`|[Example](./likecoin)|
+|[lumnetwork](https://github.com/lum-network/chain)|`v1.6.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-lumnetwork-v1.6.3`|[Example](./lumnetwork)|
+|[mars](https://github.com/mars-protocol/hub.git)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-mars-v1.0.2`|[Example](./mars)|
+|[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v3.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-migaloo-v3.0.2`|[Example](./migaloo)|
+|[neutron](https://github.com/neutron-org/neutron)|`v1.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-neutron-v1.0.4`|[Example](./neutron)|
+|[nois](https://github.com/noislabs/noisd)|`v1.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-nois-v1.0.4`|[Example](./nois)|
+|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.12.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-omniflixhub-v0.12.1`|[Example](./omniflixhub)|
+|[osmosis](https://github.com/osmosis-labs/osmosis)|`v20.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-osmosis-v20.5.0`|[Example](./osmosis)|
+|[panacea](https://github.com/medibloc/panacea-core)|`v2.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-panacea-v2.0.5`|[Example](./panacea)|
+|[passage](https://github.com/envadiv/Passage3D)|`v2.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-passage-v2.2.0`|[Example](./passage)|
+|[persistence](https://github.com/persistenceOne/persistenceCore)|`v10.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-persistence-v10.0.0`|[Example](./persistence)|
+|[regen](https://github.com/regen-network/regen-ledger)|`v5.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-regen-v5.1.1`|[Example](./regen)|
+|[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-rizon-v0.4.1`|[Example](./rizon)|
+|[seinetwork](https://github.com/sei-protocol/sei-chain)|`1.2.2beta-postfix`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-seinetwork-1.2.2beta-postfix`|[Example](./seinetwork)|
+|[sentinel](https://github.com/sentinel-official/hub)|`v0.11.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-sentinel-v0.11.3`|[Example](./sentinel)|
+|[shentu](https://github.com/certikfoundation/shentu)|`v2.9.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-shentu-v2.9.0`|[Example](./shentu)|
+|[sifchain](https://github.com/Sifchain/sifnode)|`v1.3.1-beta`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-sifchain-v1.3.1-beta`|[Example](./sifchain)|
+|[sommelier](https://github.com/PeggyJV/sommelier)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-sommelier-v4.0.2`|[Example](./sommelier)|
+|[stargaze](https://github.com/public-awesome/stargaze)|`v12.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-stargaze-v12.0.0`|[Example](./stargaze)|
+|[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-starname-v0.11.5`|[Example](./starname)|
+|[stride](https://github.com/Stride-Labs/stride)|`v16.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-stride-v16.0.0`|[Example](./stride)|
+|[teritori](https://github.com/TERITORI/teritori-chain)|`v1.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-teritori-v1.4.0`|[Example](./teritori)|
+|[umee](https://github.com/umee-network/umee)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-umee-v6.2.0`|[Example](./umee)|
+|[ununifi](https://github.com/UnUniFi/chain)|`v4.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-ununifi-v4.0.1`|[Example](./ununifi)|
+|[vidulum](https://github.com/vidulum/mainnet)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-vidulum-v1.2.0`|[Example](./vidulum)|
 
 ## Example configurations
 
@@ -258,7 +259,7 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`S3_SECRET`|S3 secret key| | |
 |`S3_HOST`|The S3 API host|`https://s3.filebase.com`|`s3.us-east-1.amazonaws.com`|
 |`STORJ_ACCESS_GRANT`|DCS Storj Access Grant token (replaces `S3_KEY`, `S3_SECRET`, `S3_HOST`| | |
-|`STORJ_UPLINK_ARGS`|DCS Storj Uplink arguments|`-p 4 -t 4 --progress=false`|`-p 8 -t 8 --parallelism-chunk-size 256M --progress=false`|
+|`STORJ_UPLINK_ARGS`|DCS Storj Uplink arguments|`-p 4 --progress=false`|`-p 4 --parallelism-chunk-size 256M --progress=false`|
 |`SNAPSHOT_PATH`|The S3 path to upload snapshots to, including the bucket| |`cosmos-snapshots/akash`|
 |`SNAPSHOT_PREFIX`|The prefix for the snapshot filename|`$CHAIN_ID`|`snapshot`|
 |`SNAPSHOT_TIME`|The time the snapshot will run|`00:00:00`|`09:00:00`|

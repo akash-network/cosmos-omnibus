@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: kava
         PROJECT_BIN: kava
-        VERSION: v0.24.0
+        VERSION: v0.25.0
         REPOSITORY: https://github.com/Kava-Labs/kava
         NAMESPACE: KAVA
         GOLANG_VERSION: 1.20-buster
