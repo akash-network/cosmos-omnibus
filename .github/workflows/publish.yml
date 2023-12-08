@@ -81,7 +81,7 @@ jobs:
           - project: juno
             version: v17.1.1
           - project: kava
-            version: v0.24.0
+            version: v0.25.0
           - project: kichain
             version: 5.0.1
           - project: konstellation
