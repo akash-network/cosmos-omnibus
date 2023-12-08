@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: kyve
         PROJECT_BIN: kyved
-        VERSION: v1.3.1
+        VERSION: v1.4.0
         REPOSITORY: https://github.com/KYVENetwork/chain
         NAMESPACE: KYVED
         PROJECT_DIR: .kyve
