@@ -26,6 +26,8 @@ jobs:
             version: v1.0.0
           - project: autonomy
             version: v1.2.1
+          - project: axelar
+            version: v0.34.0
           - project: bandchain
             version: v2.5.1
           - project: bitcanna
