@@ -43,7 +43,7 @@ jobs:
           - project: chihuahua
             version: v6
           - project: comdex
-            version: v11.5.1
+            version: v13.3.0
           - project: cosmoshub
             version: v14.1.0
           - project: crescent
