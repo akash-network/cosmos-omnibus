@@ -59,11 +59,11 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-cheqd-0.6.9`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v5.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-chihuahua-v5.0.4`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v11.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-comdex-v11.5.1`|[Example](./comdex)|
-|[cosmoshub](https://github.com/cosmos/gaia)|`v13.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-cosmoshub-v13.0.2`|[Example](./cosmoshub)|
+|[cosmoshub](https://github.com/cosmos/gaia)|`v14.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-cosmoshub-v14.1.0`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-crescent-v4.2.0`|[Example](./crescent)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v1.0.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-cronos-v1.0.9`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.8`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-cryptoorgchain-v4.2.8`|[Example](./cryptoorgchain)|
-|[decentr](https://github.com/Decentr-net/decentr)|`v1.6.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-decentr-v1.6.3`|[Example](./decentr)|
+|[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-decentr-v1.6.4`|[Example](./decentr)|
 |[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-defund-v0.1.0-alpha`|[Example](./defund)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-desmos-v6.2.0`|[Example](./desmos)|
 |[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-dig-v3.3.1`|[Example](./dig)|
@@ -78,7 +78,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.11.6-1688984159`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-injective-v1.11.6-1688984159`|[Example](./injective)|
 |[irisnet](https://github.com/irisnet/irishub)|`v2.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-irisnet-v2.0.1`|[Example](./irisnet)|
 |[jackal](https://github.com/JackalLabs/canine-chain)|`v3.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-jackal-v3.0.2`|[Example](./jackal)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v17.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-juno-v17.1.1`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v18.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-juno-v18.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.25.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-kava-v0.25.0`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-kichain-5.0.1`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-konstellation-v0.5.0`|[Example](./konstellation)|
@@ -88,7 +88,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.6.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-lumnetwork-v1.6.3`|[Example](./lumnetwork)|
 |[mars](https://github.com/mars-protocol/hub.git)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-mars-v1.0.2`|[Example](./mars)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v3.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-migaloo-v3.0.2`|[Example](./migaloo)|
-|[neutron](https://github.com/neutron-org/neutron)|`v1.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-neutron-v1.0.4`|[Example](./neutron)|
+|[neutron](https://github.com/neutron-org/neutron)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-neutron-v2.0.0`|[Example](./neutron)|
 |[nois](https://github.com/noislabs/noisd)|`v1.0.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-nois-v1.0.4`|[Example](./nois)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v0.12.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-omniflixhub-v0.12.1`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v20.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-osmosis-v20.5.0`|[Example](./osmosis)|

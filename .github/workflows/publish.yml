@@ -43,7 +43,7 @@ jobs:
           - project: comdex
             version: v11.5.1
           - project: cosmoshub
-            version: v13.0.2
+            version: v14.1.0
           - project: crescent
             version: v4.2.0
           - project: cronos
@@ -51,7 +51,7 @@ jobs:
           - project: cryptoorgchain
             version: v4.2.8
           - project: decentr
-            version: v1.6.3
+            version: v1.6.4
           - project: defund
             version: v0.1.0-alpha
           - project: desmos
@@ -81,7 +81,7 @@ jobs:
           - project: jackal
             version: v3.0.2
           - project: juno
-            version: v17.1.1
+            version: v18.0.0
           - project: kava
             version: v0.25.0
           - project: kichain
@@ -101,7 +101,7 @@ jobs:
           - project: migaloo
             version: v3.0.2
           - project: neutron
-            version: v1.0.4
+            version: v2.0.0
           - project: nois
             version: v1.0.4
           - project: omniflixhub
