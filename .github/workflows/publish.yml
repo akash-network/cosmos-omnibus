@@ -26,6 +26,8 @@ jobs:
             version: v1.0.0
           - project: autonomy
             version: v1.2.1
+          - project: axelar
+            version: v0.34.0
           - project: bandchain
             version: v2.5.1
           - project: bitcanna
@@ -39,19 +41,19 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v5.0.4
+            version: v6
           - project: comdex
             version: v13.4.0
           - project: cosmoshub
-            version: v13.0.2
+            version: v14.1.0
           - project: crescent
             version: v4.2.0
           - project: cronos
             version: v1.0.9
           - project: cryptoorgchain
-            version: v4.2.6
+            version: v4.2.8
           - project: decentr
-            version: v1.6.3
+            version: v1.6.4
           - project: defund
             version: v0.1.0-alpha
           - project: desmos
@@ -63,7 +65,7 @@ jobs:
           - project: emoney
             version: v1.2.0
           - project: empowerchain
-            version: v1.0.0
+            version: v2.0.0
           - project: evmos
             version: v15.0.0
           - project: fetchhub
@@ -81,7 +83,7 @@ jobs:
           - project: jackal
             version: v3.0.2
           - project: juno
-            version: v17.1.1
+            version: v18.0.0
           - project: kava
             version: v0.25.0
           - project: kichain
@@ -101,19 +103,19 @@ jobs:
           - project: migaloo
             version: v3.0.2
           - project: neutron
-            version: v1.0.4
+            version: v2.0.0
           - project: nois
             version: v1.0.4
           - project: omniflixhub
             version: v0.12.1
           - project: osmosis
-            version: v20.5.0
+            version: v21.1.4
           - project: panacea
             version: v2.0.5
           - project: passage
             version: v2.2.0
           - project: persistence
-            version: v10.0.0
+            version: v10.2.0
           - project: regen
             version: v5.1.1
           - project: rizon
@@ -125,7 +127,7 @@ jobs:
           - project: shentu
             version: v2.9.0
           - project: sifchain
-            version: v1.3.1-beta
+            version: v1.4.0
           - project: sommelier
             version: v4.0.2
           - project: stargaze

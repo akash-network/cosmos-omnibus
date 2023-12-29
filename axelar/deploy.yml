@@ -3,18 +3,14 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.3-osmosis-v21.1.4
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.3-axelar-v0.34.0
     env:
       - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/axelar/chain.json
+      - MINIMUM_GAS_PRICES=0.007uaxl
+      - FASTSYNC_VERSION=v0
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
-      #- SNAPSHOT_WASM_PATH=wasm
-      ## Make sure to set SNAPSHOT_DATA_PATH=data when using snapshots with the directory structure // TODO: https://github.com/akash-network/cosmos-omnibus/issues/378
-      # - SNAPSHOT_URL=https://snapshots.polkachu.com/snapshots/osmosis/osmosis_7268027.tar.lz4
-      # - SNAPSHOT_DATA_PATH=data
-      ## You can use state-sync instead of downloading the snapshot archive
-      # - STATESYNC_RPC_SERVERS=https://rpc-osmosis-ia.cosmosia.notional.ventures:443,https://osmosis-rpc.polkachu.com:443,https://osmosis.validator.network:443,https://rpc-osmosis.blockapsis.com:443
     expose:
       - port: 26657
         as: 80
@@ -26,7 +22,7 @@ services:
     # params:
     #   storage:
     #     data:
-    #       mount: /root/.osmosisd
+    #       mount: /root/.axelar
 
 profiles:
   compute:
@@ -43,6 +39,7 @@ profiles:
           #   size: 400Gi
           #   attributes:
           #     persistent: true
+
   placement:
     dcloud:
       attributes:
