@@ -51,6 +51,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[archway](https://github.com/archway-network/archway)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-archway-v4.0.2`|[Example](./archway)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-assetmantle-v1.0.0`|[Example](./assetmantle)|
 |[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-autonomy-v1.2.1`|[Example](./autonomy)|
+|[axelar](https://github.com/axelarnetwork/axelar-core)|`v0.34.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-axelar-v0.34.0`|[Example](./axelar)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-bandchain-v2.5.1`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v2.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-bitcanna-v2.0.3`|[Example](./bitcanna)|
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.14.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.3-bitsong-v0.14.0`|[Example](./bitsong)|
