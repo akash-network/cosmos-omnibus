@@ -67,7 +67,7 @@ jobs:
           - project: empowerchain
             version: v2.0.0
           - project: evmos
-            version: v15.0.0
+            version: v16.0.0
           - project: fetchhub
             version: v0.10.6
           - project: gitopia
