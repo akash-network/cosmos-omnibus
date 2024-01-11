@@ -41,7 +41,7 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v6
+            version: v6.0.1
           - project: comdex
             version: v13.4.0
           - project: cosmoshub
@@ -67,7 +67,7 @@ jobs:
           - project: empowerchain
             version: v2.0.0
           - project: evmos
-            version: v15.0.0
+            version: v16.0.1
           - project: fetchhub
             version: v0.10.6
           - project: gitopia
@@ -77,13 +77,13 @@ jobs:
           - project: impacthub
             version: v0.18.1
           - project: injective
-            version: v1.11.6-1688984159
+            version: v1.12.0-1704530206
           - project: irisnet
             version: v2.0.1
           - project: jackal
             version: v3.0.5
           - project: juno
-            version: v18.0.0
+            version: v18.1.0
           - project: kava
             version: v0.25.0
           - project: kichain
@@ -91,7 +91,7 @@ jobs:
           - project: konstellation
             version: v0.5.0
           - project: kujira
-            version: v0.9.1
+            version: v0.9.3-1
           - project: kyve
             version: v1.4.0
           - project: likecoin
@@ -103,13 +103,13 @@ jobs:
           - project: migaloo
             version: v3.0.2
           - project: neutron
-            version: v2.0.0
+            version: v2.0.1
           - project: nois
             version: v1.0.4
           - project: omniflixhub
             version: v0.12.1
           - project: osmosis
-            version: v21.1.4
+            version: v21.2.1
           - project: panacea
             version: v2.0.5
           - project: passage
@@ -141,7 +141,7 @@ jobs:
           # - project: terra
           #   version: v0.5.18
           - project: umee
-            version: v6.2.0
+            version: v6.3.0
           - project: ununifi
             version: v4.0.1
           - project: vidulum
