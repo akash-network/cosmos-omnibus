@@ -123,7 +123,7 @@ See the `deploy.yml` example file in each chain directory which details the mini
 
 See the `docker-compose.yml` example file in each chain directory to run each node using `docker-compose up`.
 
-## Snaphots
+## Snapshots
 
 Omnibus can [import chain snapshots](#snapshot-restore) from almost any location. Some examples are Chain Layer's [QuickSync service](https://quicksync.io) and Polkachu's [Tendermint Snapshots](https://www.polkachu.com/tendermint_snapshots).
 
@@ -143,7 +143,7 @@ See the [_examples](./_examples) directory for some common setups, including:
 ## Configuration
 
 Cosmos blockchains can be configured entirely using environment variables instead of the config files.
-Every chain has it's own prefix, but the format of the configuration is the same.
+Every chain has its own prefix, but the format of the configuration is the same.
 
 For example to configure the `seeds` option in the `p2p` section of `config.toml`, for the Akash blockchain:
 
@@ -290,7 +290,7 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 
 ### Polkachu Services
 
-[Polkachu](https://polkachu.com/) validator provide various Cosmos chain services that can be automatically enabled using environment variables.
+[Polkachu](https://polkachu.com/) validator provides various Cosmos chain services that can be automatically enabled using environment variables.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
