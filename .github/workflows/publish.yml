@@ -103,7 +103,7 @@ jobs:
           - project: migaloo
             version: v3.0.2
           - project: neutron
-            version: v2.0.0
+            version: v2.0.1
           - project: nois
             version: v1.0.4
           - project: omniflixhub
