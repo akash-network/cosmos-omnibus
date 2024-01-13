@@ -7,10 +7,11 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: v21.2.1
+        VERSION: v22.0.0
         REPOSITORY: https://github.com/osmosis-labs/osmosis
         NAMESPACE: OSMOSISD
-        GOLANG_VERSION: 1.20-buster
+        GOLANG_VERSION: 1.21-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
