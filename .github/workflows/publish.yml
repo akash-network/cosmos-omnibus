@@ -69,7 +69,7 @@ jobs:
           - project: evmos
             version: v16.0.2
           - project: fetchhub
-            version: v0.10.6
+            version: v0.11.3
           - project: gitopia
             version: v2.1.1
           - project: gravitybridge
@@ -81,7 +81,7 @@ jobs:
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v3.0.5
+            version: v3.1.1
           - project: juno
             version: v18.1.0
           - project: kava
@@ -105,17 +105,17 @@ jobs:
           - project: neutron
             version: v2.0.1
           - project: nois
-            version: v1.0.4
+            version: v1.0.5
           - project: omniflixhub
-            version: v0.12.1
+            version: v2.0.0
           - project: osmosis
-            version: v21.2.1
+            version: v22.0.0
           - project: panacea
             version: v2.0.5
           - project: passage
             version: v2.3.0
           - project: persistence
-            version: v10.2.0
+            version: v10.3.0
           - project: regen
             version: v5.1.1
           - project: rizon
@@ -133,7 +133,7 @@ jobs:
           - project: stargaze
             version: v12.0.0
           - project: stride
-            version: v16.0.0
+            version: v17.0.0
           - project: starname
             version: v0.11.5
           - project: teritori
