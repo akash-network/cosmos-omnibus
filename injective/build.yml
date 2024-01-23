@@ -8,7 +8,7 @@ services:
         PROJECT: injective
         PROJECT_BIN: injectived
         PROJECT_DIR: .injectived
-        VERSION: v1.12.0-1704530206
+        VERSION: v1.12.1-1705909076
         BUILD_IMAGE: injective
     ports:
       - '26656:26656'
