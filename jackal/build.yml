@@ -7,11 +7,12 @@ services:
       args:
         PROJECT: jackal
         PROJECT_BIN: canined
-        VERSION: v3.0.5
+        VERSION: v3.1.1
         REPOSITORY: https://github.com/JackalLabs/canine-chain
         NAMESPACE: CANINED
         PROJECT_DIR: .canine
-        GOLANG_VERSION: 1.20-buster
+        GOLANG_VERSION: 1.21-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
