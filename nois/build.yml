@@ -8,7 +8,7 @@ services:
         PROJECT: nois
         PROJECT_BIN: noisd
         PROJECT_DIR: .noisd
-        VERSION: v1.0.4
+        VERSION: v1.0.5
         REPOSITORY: https://github.com/noislabs/noisd
         NAMESPACE: NOISD
         GOLANG_VERSION: 1.20-buster
