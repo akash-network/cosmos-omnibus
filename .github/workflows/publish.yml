@@ -61,7 +61,7 @@ jobs:
           - project: dig
             version: v3.3.1
           - project: dydx
-            version: v2.0.0
+            version: v3.0.0
           - project: emoney
             version: v1.2.0
           - project: empowerchain
