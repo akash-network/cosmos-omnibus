@@ -8,7 +8,7 @@ services:
         PROJECT: dydx
         PROJECT_BIN: dydxprotocold
         PROJECT_DIR: .dydxprotocol
-        VERSION: protocol/v2.0.0
+        VERSION: protocol/v3.0.0
         REPOSITORY: https://github.com/dydxprotocol/v4-chain
         NAMESPACE: DYDXPROTOCOLD
         BUILD_CMD: make install -C protocol
