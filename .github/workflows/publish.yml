@@ -107,7 +107,7 @@ jobs:
           - project: nois
             version: v1.0.5
           - project: omniflixhub
-            version: v2.0.0
+            version: v2.1.0
           - project: osmosis
             version: v22.0.0
           - project: panacea
