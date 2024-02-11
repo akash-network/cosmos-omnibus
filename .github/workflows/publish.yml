@@ -61,7 +61,7 @@ jobs:
           - project: dig
             version: v3.3.1
           - project: dydx
-            version: v2.0.0
+            version: v3.0.0
           - project: emoney
             version: v1.2.0
           - project: empowerchain
@@ -137,7 +137,7 @@ jobs:
           - project: starname
             version: v0.11.5
           - project: teritori
-            version: v1.4.0
+            version: v2.0.6
           # - project: terra
           #   version: v0.5.18
           - project: umee
