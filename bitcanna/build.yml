@@ -8,10 +8,11 @@ services:
         PROJECT: bitcanna
         PROJECT_BIN: bcnad
         PROJECT_DIR: .bcna
-        VERSION: v2.0.3
+        VERSION: v3.0.1
         REPOSITORY: https://github.com/BitCannaGlobal/bcna
         NAMESPACE: BCNAD
-        GOLANG_VERSION: 1.20-buster
+        GOLANG_VERSION: 1.21-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

@@ -31,7 +31,7 @@ jobs:
           - project: bandchain
             version: v2.5.1
           - project: bitcanna
-            version: v2.0.3
+            version: v3.0.1
           - project: bitsong
             version: v0.14.0
           - project: bostrom
@@ -61,7 +61,7 @@ jobs:
           - project: dig
             version: v3.3.1
           - project: dydx
-            version: v2.0.0
+            version: v3.0.0
           - project: dymension
             version: v3.0.0
           - project: emoney
@@ -83,9 +83,9 @@ jobs:
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v3.1.1
+            version: v3.1.2
           - project: juno
-            version: v18.1.0
+            version: v20.0.0
           - project: kava
             version: v0.25.0
           - project: kichain
@@ -109,7 +109,7 @@ jobs:
           - project: nois
             version: v1.0.5
           - project: omniflixhub
-            version: v2.0.0
+            version: v2.1.0
           - project: osmosis
             version: v22.0.0
           - project: panacea
@@ -135,11 +135,11 @@ jobs:
           - project: stargaze
             version: v12.0.0
           - project: stride
-            version: v17.0.0
+            version: v18.0.0
           - project: starname
             version: v0.11.5
           - project: teritori
-            version: v1.4.0
+            version: v2.0.6
           # - project: terra
           #   version: v0.5.18
           - project: umee
