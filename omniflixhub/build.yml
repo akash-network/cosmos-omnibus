@@ -8,7 +8,7 @@ services:
         PROJECT: omniflixhub
         PROJECT_BIN: omniflixhubd
         PROJECT_DIR: .omniflixhub
-        VERSION: v2.1.0
+        VERSION: v3.1.0
         REPOSITORY: https://github.com/OmniFlix/omniflixhub
         NAMESPACE: OMNIFLIXHUBD
         GOLANG_VERSION: 1.21-bullseye
