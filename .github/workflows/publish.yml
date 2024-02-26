@@ -64,6 +64,8 @@ jobs:
             version: v3.0.0
           - project: dymension
             version: v3.0.0
+          - project: elysnetwork
+            version: v0.29.12
           - project: emoney
             version: v1.2.0
           - project: empowerchain
@@ -97,7 +99,7 @@ jobs:
           - project: kyve
             version: v1.4.0
           - project: likecoin
-            version: v4.1.1
+            version: v4.1.2
           - project: lumnetwork
             version: v1.6.3
           - project: mars
@@ -111,7 +113,7 @@ jobs:
           - project: omniflixhub
             version: v3.1.0
           - project: osmosis
-            version: v22.0.0
+            version: v23.0.0
           - project: panacea
             version: v2.0.5
           - project: passage

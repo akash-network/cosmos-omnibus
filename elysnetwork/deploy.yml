@@ -3,10 +3,12 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.7-likecoin-v4.1.2
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.7-elysnetwork-v0.29.12
     env:
       - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/likecoin/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/testnets/elystestnet/chain.json
+      # - P2P_POLKACHU=1
+      # - STATESYNC_POLKACHU=1
     expose:
       - port: 26657
         as: 80
@@ -18,7 +20,7 @@ services:
     # params:
     #   storage:
     #     data:
-    #       mount: /root/.liked
+    #       mount: /root/.elys
 
 profiles:
   compute:
@@ -27,7 +29,7 @@ profiles:
         cpu:
           units: 4
         memory:
-          size: 8Gi
+          size: 16Gi
         storage:
           size: 100Gi
           # - size: 100Mi
