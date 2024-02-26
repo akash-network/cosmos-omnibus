@@ -94,7 +94,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[neutron](https://github.com/neutron-org/neutron)|`v2.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.7-neutron-v2.0.1`|[Example](./neutron)|
 |[nois](https://github.com/noislabs/noisd)|`v1.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.7-nois-v1.0.5`|[Example](./nois)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v2.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.7-omniflixhub-v2.1.0`|[Example](./omniflixhub)|
-|[osmosis](https://github.com/osmosis-labs/osmosis)|`v22.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.7-osmosis-v22.0.0`|[Example](./osmosis)|
+|[osmosis](https://github.com/osmosis-labs/osmosis)|`v23.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.7-osmosis-v23.0.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.7-panacea-v2.0.5`|[Example](./panacea)|
 |[passage](https://github.com/envadiv/Passage3D)|`v2.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.7-passage-v2.3.0`|[Example](./passage)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v10.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.7-persistence-v10.3.0`|[Example](./persistence)|
