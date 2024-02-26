@@ -7,7 +7,7 @@
 |Directory|`.crescent`|
 |ENV namespace|`CRESCENTD`|
 |Repository|`https://github.com/crescent-network/crescent`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.7-crescent-v4.2.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.8-crescent-v4.2.0`|
 
 ## Examples
 
