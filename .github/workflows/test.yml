@@ -1,42 +1,62 @@
-name: test
+name: Test
+
 on:
   push:
     branches:
       - '**'
+    paths-ignore:
+      - '.github/workflows/**'
   pull_request:
+    branches:
+      - '**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build_matrix:
+  detect_changes:
     runs-on: ubuntu-latest
-
+    outputs:
+      changed_project: ${{ steps.detect_changes.outputs.changed_project }}
     steps:
       - uses: actions/checkout@v3
-      - id: set-matrix
-        run: echo "matrix=$(find * -type f -name build.yml -not -path "terra*" | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+        with:
+          fetch-depth: 2 # Fetch current and previous commit
+
+      - name: Detect changed project
+        id: detect_changes
+        run: |
+          PROJECT_DIRECTORIES=$(find * -type f -name build.yml -not -path "terra*" | xargs dirname | sort | uniq)
+          COMMIT_BEFORE=$(git rev-parse HEAD~1)
+          COMMIT_AFTER=${{ github.sha }}
+          CHANGED_PROJECT=""
+
+          for dir in $PROJECT_DIRECTORIES; do
+            if git diff --name-only $COMMIT_BEFORE $COMMIT_AFTER | grep -q "^$dir/"; then
+              CHANGED_PROJECT="$dir"
+              break
+            fi
+          done
+
+          echo "Changed project: $CHANGED_PROJECT"
+          echo "changed_project=$CHANGED_PROJECT" >> $GITHUB_ENV
+          echo "::set-output name=changed_project::$CHANGED_PROJECT"
 
   build:
-    needs: build_matrix
+    needs: detect_changes
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      max-parallel: 12
-      matrix:
-        project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
-
+    if: needs.detect_changes.outputs.changed_project != ''
     steps:
       - uses: actions/checkout@v3
       - uses: docker/setup-buildx-action@v2
-        id: buildx
         with:
           install: true
+      - name: Debug before build
+        run: |
+          echo "Building project: ${{ needs.detect_changes.outputs.changed_project }}"
       - name: Build
         run: |
           touch .env # Create dummy env file
-          cd ${{matrix.project}}
+          cd ${{ needs.detect_changes.outputs.changed_project }}
           docker buildx bake -f build.yml --set node_1.tags=node
