@@ -107,7 +107,7 @@ jobs:
           - project: migaloo
             version: v3.0.2
           - project: neutron
-            version: v2.0.1
+            version: v2.0.3
           - project: nois
             version: v1.0.5
           - project: omniflixhub
