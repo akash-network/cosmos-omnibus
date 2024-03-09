@@ -134,6 +134,8 @@ jobs:
             version: v1.4.0
           - project: sommelier
             version: v4.0.2
+          - project: source
+            version: v3.0.1
           - project: stargaze
             version: v12.0.0
           - project: stride
