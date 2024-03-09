@@ -7,7 +7,7 @@
 |Directory|`.terra`|
 |ENV namespace|`TERRAD`|
 |Repository|`https://github.com/terra-money/core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.8-terra-v0.5.18`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.9-terra-v0.5.18`|
 
 ## Examples
 

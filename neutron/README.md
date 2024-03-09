@@ -7,7 +7,7 @@
 |Directory|`.neutrond`|
 |ENV namespace|`NEUTROND`|
 |Repository|`https://github.com/neutron-org/neutron.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.8-neutron-v2.0.3`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.9-neutron-v2.0.3`|
 
 ## Examples
 
