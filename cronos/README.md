@@ -7,7 +7,7 @@
 |Directory|`.cronos`|
 |ENV namespace|`CRONOS`|
 |Repository|`https://github.com/crypto-org-chain/cronos`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.9-cronos-v1.0.9`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.10-cronos-v1.0.9`|
 
 ## Examples
 
