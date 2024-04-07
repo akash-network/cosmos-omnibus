@@ -8,7 +8,8 @@ services:
         PROJECT: panacea
         PROJECT_BIN: panacead
         PROJECT_DIR: .panacea
-        VERSION: v2.0.5
+        VERSION: v2.2.0
+        GOLANG_VERSION: 1.19-buster
         REPOSITORY: https://github.com/medibloc/panacea-core
     ports:
       - '26656:26656'
