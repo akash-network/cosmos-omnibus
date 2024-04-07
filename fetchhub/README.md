@@ -7,7 +7,7 @@
 |Directory|`.fetchd`|
 |ENV namespace|`FETCH`|
 |Repository|`https://github.com/fetchai/fetchd`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.10-fetchhub-v0.11.3`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-fetchhub-v0.11.3`|
 
 ## Examples
 
