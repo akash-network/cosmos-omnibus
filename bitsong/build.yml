@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: bitsong
         PROJECT_BIN: bitsongd
-        VERSION: v0.14.0
+        VERSION: v0.15.0
         REPOSITORY: https://github.com/bitsongofficial/go-bitsong
         NAMESPACE: BITSONGD
     ports:
