@@ -11,7 +11,8 @@ services:
         VERSION: v3.0.1
         REPOSITORY: https://github.com/neutron-org/neutron.git
         NAMESPACE: NEUTROND
-        GOLANG_VERSION: 1.20-buster
+        GOLANG_VERSION: 1.21-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
