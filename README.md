@@ -91,7 +91,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.6.3`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-lumnetwork-v1.6.3`|[Example](./lumnetwork)|
 |[mars](https://github.com/mars-protocol/hub.git)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-mars-v1.0.2`|[Example](./mars)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v3.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-migaloo-v3.0.2`|[Example](./migaloo)|
-|[neutron](https://github.com/neutron-org/neutron)|`v3.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-neutron-v3.0.1`|[Example](./neutron)|
+|[neutron](https://github.com/neutron-org/neutron)|`v3.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-neutron-v3.0.2`|[Example](./neutron)|
 |[nois](https://github.com/noislabs/noisd)|`v1.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-nois-v1.0.5`|[Example](./nois)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v3.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-omniflixhub-v3.3.0`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v24.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-osmosis-v24.0.0`|[Example](./osmosis)|
