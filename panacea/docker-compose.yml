@@ -5,7 +5,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.11-panacea-v2.2.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.12-panacea-v2.2.0
     ports:
       - '26656:26656'
       - '26657:26657'
