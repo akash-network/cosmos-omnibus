@@ -7,7 +7,7 @@
 |Directory|`.elys`|
 |ENV namespace|`ELYSD`|
 |Repository|`https://github.com/elys-network/elys`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.11-elysnetwork-v0.29.12`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.12-elysnetwork-v0.29.12`|
 
 ## Examples
 
