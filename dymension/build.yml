@@ -8,10 +8,11 @@ services:
         PROJECT: dymension
         PROJECT_BIN: dymd
         PROJECT_DIR: .dymension
-        VERSION: v3.0.0
+        VERSION: v3.1.0
         REPOSITORY: https://github.com/dymensionxyz/dymension
         NAMESPACE: DYMD
-        GOLANG_VERSION: 1.20-buster
+        GOLANG_VERSION: 1.22-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

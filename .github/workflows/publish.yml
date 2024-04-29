@@ -63,7 +63,7 @@ jobs:
           - project: dydx
             version: v4.0.5
           - project: dymension
-            version: v3.0.0
+            version: v3.1.0
           - project: elysnetwork
             version: v0.29.12
           - project: emoney

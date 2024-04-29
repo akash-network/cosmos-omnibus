@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v3.0.0`|
+|Version|`v3.1.0`|
 |Binary|`dymd`|
 |Directory|`.dymension`|
 |ENV namespace|`DYMD`|
 |Repository|`https://github.com/dymensionxyz/dymension`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.12-dymension-v3.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.12-dymension-v3.1.0`|
 
 ## Examples
 
