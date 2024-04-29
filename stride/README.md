@@ -7,7 +7,7 @@
 |Directory|`.stride`|
 |ENV namespace|`STRIDED`|
 |Repository|`https://github.com/Stride-Labs/stride`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.12-stride-v22.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.13-stride-v22.0.0`|
 
 ## Examples
 
