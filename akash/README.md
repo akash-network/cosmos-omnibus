@@ -7,7 +7,7 @@
 |Directory|`.akash`|
 |ENV namespace|`AKASH`|
 |Repository|`https://github.com/akash-network/node`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.14-akash-v0.34.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.15-akash-v0.34.1`|
 
 ## Examples
 
