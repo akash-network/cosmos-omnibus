@@ -5,7 +5,7 @@ services:
     build:
       context: ../
       args:
-        GOLANG_VERSION: 1.20.1
+        GOLANG_VERSION: 1.20.1-buster
         PROJECT: seinetwork
         PROJECT_BIN: seid
         PROJECT_DIR: .sei
