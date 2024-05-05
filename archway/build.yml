@@ -8,7 +8,7 @@ services:
         PROJECT: archway
         PROJECT_BIN: archwayd
         PROJECT_DIR: .archway
-        VERSION: v4.0.2
+        VERSION: v6.0.3
         REPOSITORY: https://github.com/archway-network/archway
         NAMESPACE: archwayd
     ports:
