@@ -21,7 +21,7 @@ jobs:
           - project: akash
             version: v0.34.1
           - project: archway
-            version: v4.0.2
+            version: v7.0.0
           - project: assetmantle
             version: v1.0.0
           - project: autonomy
