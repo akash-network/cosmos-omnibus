@@ -8,9 +8,11 @@ services:
         PROJECT: archway
         PROJECT_BIN: archwayd
         PROJECT_DIR: .archway
-        VERSION: v4.0.2
+        VERSION: v7.0.0
         REPOSITORY: https://github.com/archway-network/archway
-        NAMESPACE: archwayd
+        BUILD_IMAGE: binary
+        BINARY_URL: https://github.com/archway-network/archway/releases/download/v7.0.0/archwayd_linux_amd64
+        DEBIAN_VERSION: stable-slim
     ports:
       - '26656:26656'
       - '26657:26657'
