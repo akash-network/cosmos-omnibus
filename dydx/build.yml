@@ -12,7 +12,7 @@ services:
         REPOSITORY: https://github.com/dydxprotocol/v4-chain
         NAMESPACE: DYDXPROTOCOLD
         BUILD_CMD: make install -C protocol
-        GOLANG_VERSION: 1.21-bullseye
+        GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
