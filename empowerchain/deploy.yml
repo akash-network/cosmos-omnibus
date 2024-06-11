@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.17-empowerchain-v2.0.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.18-empowerchain-v2.0.0
     env:
       - MONIKER=my-moniker-1
       - CHAIN_ID=circulus-1
