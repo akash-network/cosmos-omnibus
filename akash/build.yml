@@ -6,10 +6,10 @@ services:
       context: ../
       args:
         PROJECT: akash
-        VERSION: v0.34.1
+        VERSION: v0.36.0
         REPOSITORY: https://github.com/akash-network/node
         BUILD_IMAGE: binary_zip
-        BINARY_URL: https://github.com/akash-network/node/releases/download/v0.34.1/akash_linux_amd64.zip
+        BINARY_URL: https://github.com/akash-network/node/releases/download/v0.36.0/akash_linux_amd64.zip
     ports:
       - '26656:26656'
       - '26657:26657'
