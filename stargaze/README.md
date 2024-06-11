@@ -7,7 +7,7 @@
 |Directory|`.starsd`|
 |ENV namespace|`STARSD`|
 |Repository|`https://github.com/public-awesome/stargaze`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.17-stargaze-v12.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-stargaze-v12.0.0`|
 
 ## Examples
 

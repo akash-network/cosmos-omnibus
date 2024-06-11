@@ -7,7 +7,7 @@
 |Directory|`.lumd`|
 |ENV namespace|`LUMD`|
 |Repository|`https://github.com/lum-network/chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.17-lumnetwork-v1.6.3`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-lumnetwork-v1.6.3`|
 
 ## Examples
 
