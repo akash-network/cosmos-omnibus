@@ -8,7 +8,7 @@ services:
         PROJECT: juno
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
-        VERSION: v22.0.0
+        VERSION: v22.0.1
         REPOSITORY: https://github.com/CosmosContracts/juno
         NAMESPACE: JUNOD
         GOLANG_VERSION: 1.22-bullseye
