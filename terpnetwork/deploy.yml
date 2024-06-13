@@ -3,11 +3,11 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.27-terpnetwork-v1.0.0-stable
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.27-terpnetwork-v4.2.2
     env:
       - MONIKER=my-moniker-1
       - CHAIN_ID=morocco-1
-      - GENESIS_URL=https://raw.githubusercontent.com/terpnetwork/mainnet/main/morocco-1/genesis.json
+      - GENESIS_URL=https://raw.githubusercontent.com/terpnetwork/networks/main/mainnet/morocco-1/genesis.json
     expose:
       - port: 26657
         as: 80
