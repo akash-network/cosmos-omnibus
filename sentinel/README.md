@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v0.9.3`|
+|Version|`v0.11.3`|
 |Binary|`sentinelhub`|
 |Directory|`.sentinelhub`|
 |ENV namespace|`SENTINELHUB`|
 |Repository|`https://github.com/sentinel-official/hub`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-sentinel-v0.9.3`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-sentinel-v0.11.3`|
 
 ## Examples
 

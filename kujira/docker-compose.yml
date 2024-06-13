@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.3.38-kujira-v0.8.7
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.18-kujira-v1.0.2
     ports:
       - '26656:26656'
       - '26657:26657'

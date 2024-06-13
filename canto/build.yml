@@ -8,9 +8,9 @@ services:
         PROJECT: canto
         PROJECT_BIN: cantod
         PROJECT_DIR: .cantod
-        VERSION: v5.0.0
+        VERSION: v7.0.0
         REPOSITORY: https://github.com/Canto-Network/Canto
-        NAMESPACE: BCNAD
+        NAMESPACE: CANTOD
     ports:
       - '26656:26656'
       - '26657:26657'

@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.6.2`|
+|Version|`v1.6.4`|
 |Binary|`decentrd`|
 |Directory|`.decentr`|
 |ENV namespace|`decentr`|
 |Repository|`https://github.com/Decentr-net/decentr`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-decentr-v1.6.2`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-decentr-v1.6.4`|
 
 ## Examples
 

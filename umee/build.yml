@@ -8,7 +8,8 @@ services:
         PROJECT: umee
         PROJECT_BIN: umeed
         PROJECT_DIR: .umee
-        VERSION: v3.1.0
+        VERSION: v6.3.0
+        GOLANG_VERSION: 1.21-bullseye
         REPOSITORY: https://github.com/umee-network/umee
         NAMESPACE: UMEED
     ports:

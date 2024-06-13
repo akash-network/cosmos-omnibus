@@ -8,9 +8,10 @@ services:
         PROJECT: lum
         PROJECT_BIN: lumd
         PROJECT_DIR: .lumd
-        VERSION: v1.4.5
+        VERSION: v1.6.3
         REPOSITORY: https://github.com/lum-network/chain
         NAMESPACE: LUMD
+        GOLANG_VERSION: 1.19.7-buster
     ports:
       - '26656:26656'
       - '26657:26657'

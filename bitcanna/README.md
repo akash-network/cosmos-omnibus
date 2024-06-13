@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.7.0`|
+|Version|`v3.1.0`|
 |Binary|`bcnad`|
 |Directory|`.bcna`|
 |ENV namespace|`BCNAD`|
 |Repository|`https://github.com/BitCannaGlobal/bcna`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.3.38-bitcanna-v1.7.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-bitcanna-v3.1.0`|
 
 ## Examples
 

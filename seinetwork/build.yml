@@ -5,10 +5,11 @@ services:
     build:
       context: ../
       args:
+        GOLANG_VERSION: 1.20.1-buster
         PROJECT: seinetwork
         PROJECT_BIN: seid
         PROJECT_DIR: .sei
-        VERSION: 1.2.2beta-postfix
+        VERSION: v3.9.0
         REPOSITORY: https://github.com/sei-protocol/sei-chain
         NAMESPACE: SEID
     ports:
@@ -17,11 +18,8 @@ services:
       - '1317:1317'
     environment:
       - MONIKER=node_1
-      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/seinetwork/chain.json
-      - CHAIN_ID=atlantic-1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/sei/chain.json
       - GENESIS_URL=https://raw.githubusercontent.com/sei-protocol/testnet/main/sei-incentivized-testnet/genesis.json
-      - ADDRBOOK_URL=https://raw.githubusercontent.com/sei-protocol/testnet/main/sei-incentivized-testnet/addrbook.json
-      - MINIMUM_GAS_PRICES=0.025usei
     env_file:
       - ../.env
     volumes:

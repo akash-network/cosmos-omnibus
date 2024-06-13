@@ -19,131 +19,149 @@ jobs:
           - project: agoric
             version: agoric-upgrade-7-2
           - project: akash
-            version: v0.22.7
+            version: v0.36.0
+          - project: archway
+            version: v7.0.0
           - project: assetmantle
-            version: v0.3.0
+            version: v1.0.0
           - project: autonomy
             version: v1.2.1
+          - project: axelar
+            version: v0.34.0
           - project: bandchain
             version: v2.5.1
           - project: bitcanna
-            version: v1.7.0
+            version: v3.1.0
           - project: bitsong
-            version: v0.14.0
+            version: v0.15.0
           - project: bostrom
             version: v0.3.2
           - project: canto
-            version: v5.0.0
+            version: v7.0.0
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v4.2.3
+            version: v7
           - project: comdex
-            version: v11.5.0
+            version: v13.4.0
           - project: cosmoshub
-            version: v10.0.1
+            version: v17.2.0
+          - project: crescent
+            version: v4.2.0
           - project: cronos
-            version: v1.0.4
+            version: v1.0.9
           - project: cryptoorgchain
-            version: v4.2.6
+            version: v4.2.9
           - project: decentr
-            version: v1.6.2
+            version: v1.6.4
           - project: defund
             version: v0.1.0-alpha
           - project: desmos
-            version: v4.8.0
+            version: v6.2.0
           - project: dig
             version: v3.3.1
+          - project: dydx
+            version: v5.0.0
+          - project: dymension
+            version: v3.1.0
+          - project: elysnetwork
+            version: v0.29.12
           - project: emoney
             version: v1.2.0
           - project: empowerchain
-            version: v1.0.0-rc3
+            version: v2.0.0
           - project: evmos
-            version: v12.1.5
+            version: v18.1.0
           - project: fetchhub
-            version: v0.10.6
+            version: v0.11.3
+          - project: gitopia
+            version: v2.1.1
           - project: gravitybridge
-            version: v1.7.2
+            version: v1.11.1
           - project: impacthub
             version: v0.18.1
           - project: injective
-            version: v1.11.5-1687535916
+            version: v1.12.1-1705909076
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v2.0.1
+            version: v3.2.2
           - project: juno
-            version: v15.0.0
+            version: v22.0.0
           - project: kava
-            version: v0.23.1
+            version: v0.25.0
           - project: kichain
             version: 5.0.1
           - project: konstellation
             version: v0.5.0
           - project: kujira
-            version: v0.8.7
+            version: v1.0.2
           - project: kyve
-            version: v1.2.2
+            version: v1.4.0
           - project: likecoin
-            version: v4.0.1
+            version: v4.2.0
           - project: lumnetwork
-            version: v1.4.5
+            version: v1.6.3
           - project: mars
             version: v1.0.2
           - project: migaloo
-            version: v2.0.2
+            version: v3.0.2
           - project: neutron
-            version: v1.0.2
+            version: v3.0.5
           - project: nois
-            version: v1.0.2
-          # - project: nomic
-          #   version: stakenet
+            version: v1.0.5
           - project: omniflixhub
-            version: v0.10.0
+            version: v4.0.0
           - project: osmosis
-            version: v15.1.2
+            version: v25.0.0
           - project: panacea
-            version: v2.0.5
+            version: v2.2.0
           - project: passage
-            version: v1.1.0
+            version: v2.4.0
           - project: persistence
-            version: v3.2.0
+            version: v10.3.0
           - project: regen
             version: v5.1.1
           - project: rizon
             version: v0.4.1
           - project: seinetwork
-            version: 1.2.2beta-postfix
+            version: v3.9.0
           - project: sentinel
-            version: v0.9.3
+            version: v0.11.3
           - project: shentu
-            version: v2.5.0
+            version: v2.9.0
           - project: sifchain
-            version: v1.1.0-beta
+            version: v1.4.0
           - project: sommelier
             version: v4.0.2
+          - project: source
+            version: v3.0.1
           - project: stargaze
-            version: v10.0.0
+            version: v12.0.0
           - project: stride
-            version: v11.0.0
+            version: v22.0.0
           - project: starname
             version: v0.11.5
           - project: teritori
-            version: v1.4.0
-          # - project: terra
-          #   version: v0.5.18
+            version: v2.0.6
+          - project: terra
+            version: v2.11.1
           - project: umee
-            version: v3.1.0
+            version: v6.3.0
+          - project: ununifi
+            version: v4.0.1
           - project: vidulum
             version: v1.2.0
+          - project: xpla
+            version: v1.4.1
     steps:
-      - uses: actions/checkout@v3
-      - uses: docker/setup-buildx-action@v2
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
         id: buildx
         with:
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -159,13 +177,13 @@ jobs:
       fail-fast: false
       max-parallel: 15
     steps:
-      - uses: actions/checkout@v3
-      - uses: docker/setup-buildx-action@v2
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
         id: buildx
         with:
           install: true
       - name: Login to DockerHub
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}

@@ -6,10 +6,10 @@ services:
       context: ../
       args:
         PROJECT: shentu
-        PROJECT_BIN: certik
-        PROJECT_DIR: .certik
-        VERSION: v2.5.0
-        REPOSITORY: https://github.com/certikfoundation/shentu
+        PROJECT_BIN: shentud
+        PROJECT_DIR: .shentud
+        VERSION: v2.9.0
+        REPOSITORY: https://github.com/shentufoundation/shentu/
         NAMESPACE: CERTIK
     ports:
       - '26656:26656'
@@ -23,4 +23,4 @@ services:
     env_file:
       - ../.env
     volumes:
-      - ./node-data:/root/.certik
+      - ./node-data:/root/.shentud

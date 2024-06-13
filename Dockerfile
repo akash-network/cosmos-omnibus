@@ -1,7 +1,9 @@
+ARG DEBIAN_VERSION=buster
 ARG BUILD_IMAGE=default
 ARG BUILD_METHOD=source
 ARG GOLANG_VERSION=1.18-buster
 ARG BASE_IMAGE=golang:${GOLANG_VERSION}
+ARG DEBIAN_IMAGE=debian:${DEBIAN_VERSION}
 
 #
 # Default build environment for standard Tendermint chains
@@ -77,7 +79,7 @@ RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
 #
 # Default image
 #
-FROM debian:buster AS default
+FROM ${DEBIAN_IMAGE} AS default
 
 ARG PROJECT
 ARG PROJECT_BIN=$PROJECT
@@ -94,6 +96,21 @@ FROM build_base AS binary
 ARG BINARY_URL
 
 RUN curl -Lo /bin/$PROJECT_BIN $BINARY_URL
+RUN chmod +x /bin/$PROJECT_BIN
+
+#
+# Optional image to install from binary zip
+#
+FROM build_base AS binary_zip
+
+ARG BINARY_URL
+ARG BINARY_ZIP_PATH
+
+RUN curl -Lo /bin/$PROJECT_BIN.zip $BINARY_URL
+RUN unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip
+RUN if [ -n "$BINARY_ZIP_PATH" ]; then \
+      mv /bin/${BINARY_ZIP_PATH} /bin; \
+    fi
 RUN chmod +x /bin/$PROJECT_BIN
 
 #
@@ -119,7 +136,7 @@ RUN chmod +x /bin/injectived
 #
 FROM gcc:12 AS zstd_build
 
-ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-1.5.5.tar.gz"
+ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz"
 
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
@@ -199,5 +216,4 @@ RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux
 COPY run.sh snapshot.sh /usr/bin/
 RUN chmod +x /usr/bin/run.sh /usr/bin/snapshot.sh
 ENTRYPOINT ["run.sh"]
-
-CMD $START_CMD
+CMD []
