@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: terpnetwork
         PROJECT_BIN: terpd
-        VERSION: v1.0.0-stable
+        VERSION: v4.2.2
         REPOSITORY: https://github.com/terpnetwork/terp-core
         NAMESPACE: TERPD
         PROJECT_DIR: .terp
@@ -18,7 +18,8 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_ID=morocco-1
-      - GENESIS_URL=https://raw.githubusercontent.com/terpnetwork/mainnet/main/morocco-1/genesis.json
+      - GENESIS_URL=https://raw.githubusercontent.com/terpnetwork/networks/main/mainnet/morocco-1/genesis.json
+      - P2P_PERSISTENT_PEERS=a81dc3bf1bb1c3837b768eeb82659eecc971890b@terp-mainnet-peer.itrocket.net:13656
     # - SNAPSHOT_WASM_PATH=wasm
     env_file:
       - ../.env
