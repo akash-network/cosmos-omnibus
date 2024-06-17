@@ -41,7 +41,7 @@ jobs:
           - project: cheqd
             version: 0.6.9
           - project: chihuahua
-            version: v7.0.1
+            version: v7.0.2
           - project: comdex
             version: v13.4.0
           - project: cosmoshub
