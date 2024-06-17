@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: chihuahua
         PROJECT_BIN: chihuahuad
-        VERSION: v7
+        VERSION: v7.0.1
         REPOSITORY: https://github.com/ChihuahuaChain/chihuahua
         NAMESPACE: CHIHUAHUAD
         PROJECT_DIR: .chihuahuad
