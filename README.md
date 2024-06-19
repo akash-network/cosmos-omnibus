@@ -58,7 +58,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-bostrom-v0.3.2`|[Example](./bostrom)|
 |[canto](https://github.com/Canto-Network/Canto)|`v7.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-canto-v7.0.0`|[Example](./canto)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-cheqd-0.6.9`|[Example](./cheqd)|
-|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v7`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-chihuahua-v7`|[Example](./chihuahua)|
+|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v7.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-chihuahua-v7.0.2`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v13.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-comdex-v13.4.0`|[Example](./comdex)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v17.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-cosmoshub-v17.2.0`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-crescent-v4.2.0`|[Example](./crescent)|
