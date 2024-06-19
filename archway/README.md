@@ -7,7 +7,7 @@
 |Directory|`.archway`|
 |ENV namespace|`archway`|
 |Repository|`https://github.com/archway-network/archway`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.18-archway-v7.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.19-archway-v7.0.0`|
 
 ## Examples
 
