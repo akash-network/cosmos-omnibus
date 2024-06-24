@@ -7,10 +7,11 @@ services:
       args:
         PROJECT: comdex
         PROJECT_BIN: comdex
-        VERSION: v13.4.0
+        VERSION: v14.1.0
         REPOSITORY: https://github.com/comdex-official/comdex
         NAMESPACE: COMDEX
-        GOLANG_VERSION: 1.20-buster
+        GOLANG_VERSION: 1.22-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
