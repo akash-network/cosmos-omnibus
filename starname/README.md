@@ -7,7 +7,7 @@
 |Directory|`.starnamed`|
 |ENV namespace|`STARNAME`|
 |Repository|`https://github.com/iov-one/starnamed`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.19-starname-v0.11.5`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.20-starname-v0.11.5`|
 
 ## Examples
 
