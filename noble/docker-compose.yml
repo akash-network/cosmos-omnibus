@@ -10,7 +10,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/noble/chain.json
-            - P2P_POLKACHU=1
+      - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
       #- SNAPSHOT_WASM_PATH=wasm
       ## Make sure to set SNAPSHOT_DATA_PATH=data when using snapshots with the directory structure // TODO: https://github.com/akash-network/cosmos-omnibus/issues/378
