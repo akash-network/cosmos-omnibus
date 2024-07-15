@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  node_1:
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.20-noble-v5.0.0
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/noble/chain.json
+            - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
+      #- SNAPSHOT_WASM_PATH=wasm
+      ## Make sure to set SNAPSHOT_DATA_PATH=data when using snapshots with the directory structure // TODO: https://github.com/akash-network/cosmos-omnibus/issues/378
+      # - SNAPSHOT_URL=https://snapshots.polkachu.com/snapshots/noble/noble_8268809.tar.lz4
+      # - SNAPSHOT_DATA_PATH=data
+    volumes:
+      - ./node-data:/root/.noble
