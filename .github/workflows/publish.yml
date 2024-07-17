@@ -45,7 +45,7 @@ jobs:
           - project: comdex
             version: v14.1.0
           - project: cosmoshub
-            version: v17.3.0
+            version: v18.1.0
           - project: crescent
             version: v4.2.0
           - project: cronos
@@ -61,7 +61,7 @@ jobs:
           - project: dig
             version: v3.3.1
           - project: dydx
-            version: v5.0.4
+            version: v5.0.6
           - project: dymension
             version: v3.1.0
           - project: elysnetwork
@@ -107,13 +107,13 @@ jobs:
           - project: migaloo
             version: v3.0.2
           - project: neutron
-            version: v3.0.6
+            version: v4.0.1
           - project: noble
             version: v5.0.0
           - project: nois
             version: v1.0.5
           - project: omniflixhub
-            version: v4.0.0
+            version: v4.1.1
           - project: osmosis
             version: v25.1.1
           - project: panacea
