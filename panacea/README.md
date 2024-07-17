@@ -7,7 +7,7 @@
 |Directory|`.panacea`|
 |ENV namespace|`PANACEAD`|
 |Repository|`https://github.com/medibloc/panacea-core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.20-panacea-v2.2.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.21-panacea-v2.2.0`|
 
 ## Examples
 
