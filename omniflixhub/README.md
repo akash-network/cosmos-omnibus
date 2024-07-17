@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v4.0.0`|
+|Version|`v4.1.1`|
 |Binary|`omniflixhubd`|
 |Directory|`.omniflixhub`|
 |ENV namespace|`OMNIFLIXHUBD`|
 |Repository|`https://github.com/OmniFlix/omniflixhub`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.20-omniflixhub-v4.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.20-omniflixhub-v4.1.1`|
 
 ## Examples
 
