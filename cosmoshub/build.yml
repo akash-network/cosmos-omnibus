@@ -8,10 +8,10 @@ services:
         PROJECT: cosmoshub
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
-        VERSION: v17.3.0
+        VERSION: v18.1.0
         REPOSITORY: https://github.com/cosmos/gaia
         NAMESPACE: GAIAD
-        GOLANG_VERSION: 1.21-bullseye
+        GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
