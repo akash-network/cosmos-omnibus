@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.21-kichain-5.0.1
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.22-kichain-5.0.1
     env:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/kichain/chain.json
