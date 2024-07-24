@@ -80,7 +80,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.22-impacthub-v0.18.1`|[Example](./impacthub)|
 |[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.12.1-1705909076`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.22-injective-v1.12.1-1705909076`|[Example](./injective)|
 |[irisnet](https://github.com/irisnet/irishub)|`v2.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.22-irisnet-v2.0.1`|[Example](./irisnet)|
-|[jackal](https://github.com/JackalLabs/canine-chain)|`v3.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.22-jackal-v3.4.0`|[Example](./jackal)|
+|[jackal](https://github.com/JackalLabs/canine-chain)|`v4.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.22-jackal-v4.0.0`|[Example](./jackal)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v23.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.22-juno-v23.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.25.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.22-kava-v0.25.0`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.22-kichain-5.0.1`|[Example](./kichain)|
