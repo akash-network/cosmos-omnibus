@@ -7,7 +7,7 @@ services:
       args:
         PROJECT: jackal
         PROJECT_BIN: canined
-        VERSION: v4.0.0
+        VERSION: v4.0.1
         REPOSITORY: https://github.com/JackalLabs/canine-chain
         NAMESPACE: CANINED
         PROJECT_DIR: .canine
