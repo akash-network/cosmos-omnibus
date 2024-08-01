@@ -7,7 +7,7 @@
 |Directory|`.dydxprotocol`|
 |ENV namespace|`DYDXPROTOCOLD`|
 |Repository|`https://github.com/dydxprotocol/v4-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.22-dydx-v5.1.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.23-dydx-v5.1.1`|
 
 ## Examples
 
