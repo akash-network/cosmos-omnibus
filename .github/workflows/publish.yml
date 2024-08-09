@@ -147,7 +147,7 @@ jobs:
           - project: teritori
             version: v2.0.6
           - project: terra
-            version: v2.12.0
+            version: v2.11.8
           - project: umee
             version: v6.3.0
           - project: ununifi

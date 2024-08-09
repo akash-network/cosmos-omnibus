@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.12.0`|
+|Version|`v2.11.8`|
 |Binary|`terrad`|
 |Directory|`.terra`|
 |ENV namespace|`TERRAD`|
 |Repository|`https://github.com/terra-money/core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.23-terra-v2.12.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.23-terra-v2.11.8`|
 
 ## Examples
 
