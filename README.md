@@ -115,7 +115,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[umee](https://github.com/umee-network/umee)|`v6.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.23-umee-v6.3.0`|[Example](./umee)|
 |[ununifi](https://github.com/UnUniFi/chain)|`v4.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.23-ununifi-v4.0.1`|[Example](./ununifi)|
 |[vidulum](https://github.com/vidulum/mainnet)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.23-vidulum-v1.2.0`|[Example](./vidulum)|
-|[xpla](https://github.com/xpladev/xpla)|`v1.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.23-xpla-v1.4.1`|[Example](./xpla)|
+|[xpla](https://github.com/xpladev/xpla)|`v1.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.23-xpla-v1.5.1`|[Example](./xpla)|
 
 ## Example configurations
 
