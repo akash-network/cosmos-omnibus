@@ -127,7 +127,7 @@ jobs:
           - project: rizon
             version: v0.4.1
           - project: seinetwork
-            version: v3.9.0
+            version: v5.7.5
           - project: sentinel
             version: v0.11.5
           - project: shentu
