@@ -11,6 +11,7 @@ services:
         VERSION: v1.3.0
         REPOSITORY: https://github.com/crypto-org-chain/cronos
         NAMESPACE: CRONOSD
+        GOLANG_VERSION: 1.20-buster
     ports:
       - '26656:26656'
       - '26657:26657'
