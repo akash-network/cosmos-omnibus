@@ -7,7 +7,7 @@
 |Directory|`.source`|
 |ENV namespace|`SOURCED`|
 |Repository|`https://github.com/Source-Protocol-Cosmos/source`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.25-source-v3.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.26-source-v3.0.1`|
 
 ## Examples
 

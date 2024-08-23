@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   node_1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.25-sentinel-v0.11.5
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.26-sentinel-v0.11.5
     ports:
       - '26656:26656'
       - '26657:26657'

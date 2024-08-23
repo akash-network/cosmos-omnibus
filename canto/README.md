@@ -7,7 +7,7 @@
 |Directory|`.cantod`|
 |ENV namespace|`CANTOD`|
 |Repository|`https://github.com/Canto-Network/Canto`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.25-canto-v8.1.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.26-canto-v8.1.1`|
 
 ## Examples
 
