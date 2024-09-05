@@ -45,7 +45,7 @@ jobs:
           - project: comdex
             version: v14.1.0
           - project: cosmoshub
-            version: v19.1.0
+            version: v19.2.0
           - project: crescent
             version: v4.2.0
           - project: cronos
