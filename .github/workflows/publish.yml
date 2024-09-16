@@ -107,7 +107,7 @@ jobs:
           - project: migaloo
             version: v3.0.2
           - project: neutron
-            version: v4.2.1
+            version: v4.2.3
           - project: noble
             version: v5.0.0
           - project: nois
