@@ -8,10 +8,10 @@ services:
         PROJECT: omniflixhub
         PROJECT_BIN: omniflixhubd
         PROJECT_DIR: .omniflixhub
-        VERSION: v4.1.1
+        VERSION: v5.0.0
         REPOSITORY: https://github.com/OmniFlix/omniflixhub
         NAMESPACE: OMNIFLIXHUBD
-        GOLANG_VERSION: 1.21-bullseye
+        GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
