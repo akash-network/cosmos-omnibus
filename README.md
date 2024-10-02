@@ -103,7 +103,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-rizon-v0.4.1`|[Example](./rizon)|
 |[seinetwork](https://github.com/sei-protocol/sei-chain)|`v5.7.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-seinetwork-v5.7.5`|[Example](./seinetwork)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-sentinel-v0.11.5`|[Example](./sentinel)|
-|[shentu](https://github.com/certikfoundation/shentu)|`v2.10.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-shentu-v2.10.0`|[Example](./shentu)|
+|[shentu](https://github.com/certikfoundation/shentu)|`v2.11.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-shentu-v2.11.0`|[Example](./shentu)|
 |[sifchain](https://github.com/Sifchain/sifnode)|`v1.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-sifchain-v1.4.0`|[Example](./sifchain)|
 |[sommelier](https://github.com/PeggyJV/sommelier)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-sommelier-v4.0.2`|[Example](./sommelier)|
 |[source](https://github.com/Source-Protocol-Cosmos/source)|`v3.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-source-v3.0.1`|[Example](./source)|
