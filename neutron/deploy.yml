@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.28-neutron-v4.2.4
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.29-neutron-v4.2.4
     env:
       - MONIKER=node_1
       # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/chain.json
