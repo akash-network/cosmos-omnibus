@@ -53,7 +53,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-autonomy-v1.2.1`|[Example](./autonomy)|
 |[axelar](https://github.com/axelarnetwork/axelar-core)|`v0.34.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-axelar-v0.34.0`|[Example](./axelar)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-bandchain-v2.5.1`|[Example](./bandchain)|
-|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v3.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-bitcanna-v3.1.0`|[Example](./bitcanna)|
+|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v3.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-bitcanna-v3.1.1`|[Example](./bitcanna)|
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.14.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-bitsong-v0.14.0`|[Example](./bitsong)|
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-bostrom-v0.3.2`|[Example](./bostrom)|
 |[canto](https://github.com/Canto-Network/Canto)|`v8.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.28-canto-v8.1.1`|[Example](./canto)|
