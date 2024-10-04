@@ -8,10 +8,11 @@ services:
         PROJECT: shentu
         PROJECT_BIN: shentud
         PROJECT_DIR: .shentud
-        VERSION: v2.10.0
+        VERSION: v2.11.0
         REPOSITORY: https://github.com/shentufoundation/shentu/
         NAMESPACE: CERTIK
-        GOLANG_VERSION: 1.19-buster
+        GOLANG_VERSION: 1.23-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
