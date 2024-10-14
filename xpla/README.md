@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.5.1`|
+|Version|`v1.6.0`|
 |Binary|`xplad`|
 |Directory|`.xpla`|
 |ENV namespace|`XPLAD`|
 |Repository|`https://github.com/xpladev/xpla|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.29-xpla-v1.5.1'|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.29-xpla-v1.6.0'|
 
 ## Examples
 
