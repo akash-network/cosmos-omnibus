@@ -8,9 +8,11 @@ services:
         PROJECT: canto
         PROJECT_BIN: cantod
         PROJECT_DIR: .cantod
-        VERSION: v7.0.0
+        VERSION: v8.1.1
         REPOSITORY: https://github.com/Canto-Network/Canto
         NAMESPACE: CANTOD
+        GOLANG_VERSION: 1.21-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

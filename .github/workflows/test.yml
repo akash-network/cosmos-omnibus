@@ -20,7 +20,7 @@ jobs:
     outputs:
       changed_project: ${{ steps.detect_changes.outputs.changed_project }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2 # Fetch current and previous commit
 
@@ -48,8 +48,8 @@ jobs:
     runs-on: ubuntu-latest
     if: needs.detect_changes.outputs.changed_project != ''
     steps:
-      - uses: actions/checkout@v3
-      - uses: docker/setup-buildx-action@v2
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
         with:
           install: true
       - name: Debug before build

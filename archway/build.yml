@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  node_1:
+    build:
+      context: ../
+      args:
+        PROJECT: archway
+        PROJECT_BIN: archwayd
+        PROJECT_DIR: .archway
+        VERSION: v7.0.0
+        REPOSITORY: https://github.com/archway-network/archway
+        BUILD_IMAGE: binary
+        BINARY_URL: https://github.com/archway-network/archway/releases/download/v7.0.0/archwayd_linux_amd64
+        DEBIAN_VERSION: stable-slim
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=node_1
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/archway/chain.json
+    env_file:
+      - ../.env
+    volumes:
+      - ./node-data:/root/.archway

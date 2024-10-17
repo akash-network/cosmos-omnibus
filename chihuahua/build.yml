@@ -7,11 +7,12 @@ services:
       args:
         PROJECT: chihuahua
         PROJECT_BIN: chihuahuad
-        VERSION: v5.0.4
+        VERSION: v8.0.0
         REPOSITORY: https://github.com/ChihuahuaChain/chihuahua
         NAMESPACE: CHIHUAHUAD
         PROJECT_DIR: .chihuahuad
-        GOLANG_VERSION: 1.20-buster
+        GOLANG_VERSION: 1.22-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

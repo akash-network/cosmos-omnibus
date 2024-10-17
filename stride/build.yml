@@ -7,11 +7,12 @@ services:
       args:
         PROJECT: stride
         PROJECT_BIN: strided
-        VERSION: v16.0.0
+        VERSION: v24.0.0
         REPOSITORY: https://github.com/Stride-Labs/stride
         NAMESPACE: STRIDED
         PROJECT_DIR: .stride
-        GOLANG_VERSION: 1.19-buster
+        GOLANG_VERSION: 1.21-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.3.1`|
+|Version|`v1.5.0`|
 |Binary|`kyved`|
 |Directory|`.kyve`|
 |ENV namespace|`KYVED`|
 |Repository|`https://github.com/KYVENetwork/chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.1-kyve-v1.3.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.30-kyve-v1.5.0`|
 
 ## Examples
 
