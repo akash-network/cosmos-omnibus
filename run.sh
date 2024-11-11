@@ -23,8 +23,12 @@ fi
 export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
 export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
 export CONFIG_DIR="${CONFIG_DIR:-config}"
+export DATA_DIR="${DATA_DIR:-data}"
+export WASM_DIR="${WASM_DIR:-wasm}"
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
+export DATA_PATH="${DATA_PATH:-$PROJECT_ROOT/$DATA_DIR}"
+export WASM_PATH="${WASM_PATH:-$PROJECT_ROOT/$WASM_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 
@@ -266,23 +270,23 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   fi
 
   # SNAPSHOT_FORMAT default value generation via SNAPSHOT_URL
-  SNAPSHOT_FORMAT_DEFAULT="tar.gz"
-  # DCS Storj backups adding ?download=1 part which needs to be stripped before determining the extension
-  SNAPSHOT_URL_TRIM="${SNAPSHOT_URL%?download=1}"
-  case "${SNAPSHOT_URL_TRIM,,}" in
-    *.tar.gz)   SNAPSHOT_FORMAT_DEFAULT="tar.gz";;
-    *.tar.lz4)  SNAPSHOT_FORMAT_DEFAULT="tar.lz4";;
-    *.tar.zst)  SNAPSHOT_FORMAT_DEFAULT="tar.zst";;
-    # Catchall
-    *)          SNAPSHOT_FORMAT_DEFAULT="tar";;
-  esac
-  SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-$SNAPSHOT_FORMAT_DEFAULT}"
+  if [ -z "${SNAPSHOT_FORMAT}" ]; then
+    # DCS Storj backups adding ?download=1 part which needs to be stripped before determining the extension
+    SNAPSHOT_URL_TRIM="${SNAPSHOT_URL%?download=1}"
+    case "${SNAPSHOT_URL_TRIM,,}" in
+      *.tar.gz)   SNAPSHOT_FORMAT="tar.gz";;
+      *.tar.lz4)  SNAPSHOT_FORMAT="tar.lz4";;
+      *.tar.zst)  SNAPSHOT_FORMAT="tar.zst";;
+      # Catchall
+      *)          SNAPSHOT_FORMAT="tar";;
+    esac
+  fi
 
   if [ -n "${SNAPSHOT_URL}" ]; then
     echo "Downloading snapshot from $SNAPSHOT_URL..."
-    rm -rf $PROJECT_ROOT/data;
-    mkdir -p $PROJECT_ROOT/data;
-    cd $PROJECT_ROOT/data
+    rm -rf $PROJECT_ROOT/snapshot;
+    mkdir -p $PROJECT_ROOT/snapshot;
+    cd $PROJECT_ROOT/snapshot;
 
     tar_cmd="tar xf -"
     # case insensitive match
@@ -309,11 +313,30 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
       (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
     fi
 
-    [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
-    if [ -n "${SNAPSHOT_WASM_PATH}" ]; then
-      rm -rf ../wasm && mkdir ../wasm
-      mv ./${SNAPSHOT_WASM_PATH}/* ../wasm && rm -rf ./${SNAPSHOT_WASM_PATH}
+    # if [ -z "$( ls -A ./ )" ]; then
+    #   echo "Snapshot download empty, exiting..."
+    #   exit 1
+    # fi
+
+    [ -z "${SNAPSHOT_DATA_PATH}" ] && [ -d "./${DATA_DIR}" ] && SNAPSHOT_DATA_PATH="${DATA_DIR}"
+    [ -z "${SNAPSHOT_WASM_PATH}" ] && [ -d "./${WASM_DIR}" ] && SNAPSHOT_WASM_PATH="${WASM_DIR}"
+
+    if [ -n "${SNAPSHOT_DATA_PATH}" ]; then
+      rm -rf ../$DATA_DIR
+      mv ./${SNAPSHOT_DATA_PATH} ../$DATA_DIR
     fi
+
+    if [ -n "${SNAPSHOT_WASM_PATH}" ]; then
+      rm -rf ../$WASM_DIR
+      mv ./${SNAPSHOT_WASM_PATH} ../$WASM_DIR
+    fi
+
+    if [ -z "${SNAPSHOT_DATA_PATH}" ]; then
+      rm -rf ../$DATA_DIR && mkdir -p ../$DATA_DIR
+      mv ./* ../$DATA_DIR
+    fi
+
+    cd ../ && rm -rf ./snapshot
   else
     echo "Snapshot URL not found"
   fi
