@@ -33,7 +33,7 @@ jobs:
           - project: bitcanna
             version: v3.1.1
           - project: bitsong
-            version: v0.15.0
+            version: v0.17.0
           - project: bostrom
             version: v0.3.2
           - project: canto
