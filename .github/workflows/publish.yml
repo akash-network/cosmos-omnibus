@@ -61,7 +61,7 @@ jobs:
           - project: dig
             version: v3.3.1
           - project: dydx
-            version: v6.0.9
+            version: v7.0.1
           - project: dymension
             version: v3.1.0
           - project: elysnetwork
