@@ -7,7 +7,7 @@
 |Directory|`.empowerchain`|
 |ENV namespace|`EMPOWERD`|
 |Repository|`https://github.com/empowerchain/empowerchain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.31-empowerchain-v2.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.32-empowerchain-v2.0.0`|
 
 ## Examples
 

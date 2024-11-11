@@ -7,7 +7,7 @@
 |Directory|`.evmosd`|
 |ENV namespace|`EVMOSD`|
 |Repository|`https://github.com/evmos/evmos`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.31-evmos-v20.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.32-evmos-v20.0.0`|
 
 ## Examples
 
