@@ -18,8 +18,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/panacea/chain.json
-      # - SNAPSHOT_JSON=https://panacea.s3.filebase.com/snapshot.json
-      - MINIMUM_GAS_PRICES=5umed
     env_file:
       - ../.env
     volumes:
