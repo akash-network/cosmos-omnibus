@@ -22,7 +22,7 @@ if [ -n "$CHAIN_JSON" ]; then
   if [ -z "$MINIMUM_GAS_PRICES" ]; then
     FEE_TOKEN=$(echo $CHAIN_METADATA | jq -r '.fees.fee_tokens[0].denom')
     GAS_PRICE=$(echo $CHAIN_METADATA | jq -r '.fees.fee_tokens[0].low_gas_price // .fees.fee_tokens[0].fixed_min_gas_price')
-    if [ -n "$FEE_TOKEN" ] && [ -n "$GAS_PRICE" ]; then
+    if [ -n "$FEE_TOKEN" ] && [ "$FEE_TOKEN" != "null" ] && [ -n "$GAS_PRICE" ] && [ "$GAS_PRICE" != "null" ]; then
       export MINIMUM_GAS_PRICES="$GAS_PRICE$FEE_TOKEN"
       echo "Minimum gas prices set to $MINIMUM_GAS_PRICES"
     fi
