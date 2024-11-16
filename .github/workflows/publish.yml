@@ -61,7 +61,7 @@ jobs:
           - project: dig
             version: v3.3.1
           - project: dydx
-            version: v6.0.9
+            version: v7.0.1
           - project: dymension
             version: v3.1.0
           - project: elysnetwork
@@ -85,7 +85,7 @@ jobs:
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v4.2.0
+            version: v4.2.1
           - project: juno
             version: v25.0.0
           - project: kava
@@ -107,7 +107,7 @@ jobs:
           - project: migaloo
             version: v3.0.2
           - project: neutron
-            version: v4.2.4
+            version: v5.0.1
           - project: noble
             version: v5.0.0
           - project: nois
