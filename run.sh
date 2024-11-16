@@ -18,6 +18,15 @@ if [ -n "$CHAIN_JSON" ]; then
     FULL_DIR=$(echo $CHAIN_METADATA | jq -r '.codebase.node_home? // .node_home?')
     [ -n "$FULL_DIR" ] && export PROJECT_DIR=${FULL_DIR#'$HOME/'}
   fi
+
+  if [ -z "$MINIMUM_GAS_PRICES" ]; then
+    FEE_TOKEN=$(echo $CHAIN_METADATA | jq -r '.fees.fee_tokens[0].denom')
+    GAS_PRICE=$(echo $CHAIN_METADATA | jq -r '.fees.fee_tokens[0].low_gas_price // .fees.fee_tokens[0].fixed_min_gas_price')
+    if [ -n "$FEE_TOKEN" ] && [ -n "$GAS_PRICE" ]; then
+      export MINIMUM_GAS_PRICES="$GAS_PRICE$FEE_TOKEN"
+      echo "Minimum gas prices set to $MINIMUM_GAS_PRICES"
+    fi
+  fi
 fi
 
 export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
