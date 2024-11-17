@@ -10,6 +10,7 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/omniflixhub/chain.json
-      - MINIMUM_GAS_PRICES=0.001uflix
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
     volumes:
       - ./node-data:/root/.omniflixhub
