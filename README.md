@@ -178,16 +178,16 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chai
 Peer information can be provided manually, or obtained automatically from the following sources:
 
 - `CHAIN_JSON` URL with peer information included.
-- [Polkachu's live peers](https://www.polkachu.com/live_peers).
+- [Polkachu's live seed and peers](#polkachu-services).
 - Any `ADDRBOOK_URL` where the `config/addrbook.json` file is hosted.
 
 See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
-|`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
-|`ADDRBOOK_URL`|URL to an addrbook.json file| |`https://quicksync.io/addrbook.terra.json`
+|`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_JSON| |`id@node:26656`|
+|`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_JSON| |`id@node:26656`|
+|`ADDRBOOK_URL`|URL to an addrbook.json file| |`https://quicksync.io/addrbook.terra.json`|
 
 ### Private key backup/restore
 
