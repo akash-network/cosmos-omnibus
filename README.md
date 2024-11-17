@@ -163,7 +163,7 @@ The omnibus images allow some specific variables and shortcuts to configure extr
 
 ### Chain configuration
 
-Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chain Registry](https://github.com/cosmos/chain-registry).
+Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chain Registry](https://github.com/cosmos/chain-registry). The [Chain Registry](https://github.com/cosmos/chain-registry) will be used automatically for all pre-built images, or whenever the `PROJECT` environment variable matches a [Chain Registry](https://github.com/cosmos/chain-registry) ID. Set `CHAIN_JSON` to an alternative URL if required, or `0` to disable this behaviour entirely.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
