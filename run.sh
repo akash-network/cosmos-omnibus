@@ -5,7 +5,19 @@ set -e
 [ "$DEBUG" == "2" ] && set -x
 
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
-if [ -n "$CHAIN_JSON" ]; then
+if [[ -z "$CHAIN_JSON" && -n "$PROJECT" ]]; then
+  CHAIN_JSON="https://raw.githubusercontent.com/cosmos/chain-registry/master/${PROJECT}/chain.json"
+fi
+
+CHAIN_JSON_EXISTS=false
+if [[ -n "$CHAIN_JSON" && "$CHAIN_JSON" != "0" ]]; then
+  if curl --output /dev/null --silent --head --fail "$CHAIN_JSON"; then
+    CHAIN_JSON_EXISTS=true
+  else
+    echo "Chain JSON not found"
+  fi
+fi
+if [[ $CHAIN_JSON_EXISTS == true ]]; then
   CHAIN_METADATA=$(curl -Ls $CHAIN_JSON)
   CHAIN_SEEDS=$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')
   CHAIN_PERSISTENT_PEERS=$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')
