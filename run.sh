@@ -155,7 +155,7 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 [ -n "$DOUBLE_SIGN_CHECK_HEIGHT" ] && export "${NAMESPACE}_CONSENSUS_DOUBLE_SIGN_CHECK_HEIGHT"=$DOUBLE_SIGN_CHECK_HEIGHT
 
 # Polkachu
-if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU"  ]]; then
+if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEED_POLKACHU" || -n "$P2P_PEERS_POLKACHU" || -n "$ADDRBOOK_POLKACHU" ]]; then
   export POLKACHU_CHAIN_ID="${POLKACHU_CHAIN_ID:-$PROJECT}"
   POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v2/chains/$POLKACHU_CHAIN_ID | jq .`
   POLKACHU_SUCCESS=$(echo $POLKACHU_CHAIN | jq -r '.success')
@@ -166,7 +166,7 @@ if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU"  ]]; then
     [ "$DEBUG" == "1" ] && echo $POLKACHU_CHAIN
     # Polkachu statesync
     if [ -n "$STATESYNC_POLKACHU" ]; then
-      export POLKACHU_STATESYNC_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.active')
+      POLKACHU_STATESYNC_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.active')
       if [ $POLKACHU_STATESYNC_ENABLED = true ]; then
         export POLKACHU_RPC_SERVER=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.node')
         export STATESYNC_RPC_SERVERS="$POLKACHU_RPC_SERVER,$POLKACHU_RPC_SERVER"
@@ -175,21 +175,51 @@ if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU"  ]]; then
       fi
     fi
 
-    # Polkachu live peers
+    # Polkachu seed
     if [ "$P2P_POLKACHU" == "1" ]; then
-      export POLKACHU_SEED_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.active')
+      export P2P_SEED_POLKACHU="1"
+      export P2P_PEERS_POLKACHU="1"
+    fi
+
+    if [ "$P2P_SEED_POLKACHU" == "1" ]; then
+      POLKACHU_SEED_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.active')
       if [ $POLKACHU_SEED_ENABLED ]; then
-        export POLKACHU_SEED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.seed')
-        if [ -n "$P2P_SEEDS" ]; then
-            export P2P_SEEDS="$POLKACHU_SEED,$P2P_SEEDS"
+        POLKACHU_SEED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.seed')
+        if [ -n "$P2P_SEEDS" ] && ["$P2P_SEEDS" != "0"]; then
+          export P2P_SEEDS="$POLKACHU_SEED,$P2P_SEEDS"
         else
-            export P2P_SEEDS="$POLKACHU_SEED"
+          export P2P_SEEDS="$POLKACHU_SEED"
         fi
       else
         echo "Polkachu seed is not active for this chain"
       fi
     fi
 
+    if [ "$P2P_PEERS_POLKACHU" == "1" ]; then
+      POLKACHU_PEERS_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.live_peers.active')
+      if [ $POLKACHU_PEERS_ENABLED ]; then
+        POLKACHU_PEERS=`curl -Ls https://polkachu.com/api/v2/chains/$POLKACHU_CHAIN_ID/live_peers | jq .`
+        POLKACHU_PEER=$(echo $POLKACHU_PEERS | jq -r '.polkachu_peer')
+        POLKACHU_LIVE_PEERS=$(echo $POLKACHU_PEERS | jq -r '.live_peers | join(",")')
+        if [ -n "$P2P_PERSISTENT_PEERS" ] && ["$P2P_PERSISTENT_PEERS" != "0"]; then
+          export P2P_PERSISTENT_PEERS="$POLKACHU_PEER,$POLKACHU_LIVE_PEERS,$P2P_PERSISTENT_PEERS"
+        else
+          export P2P_PERSISTENT_PEERS="$POLKACHU_PEER,$POLKACHU_LIVE_PEERS"
+        fi
+      else
+        echo "Polkachu live peers is not active for this chain"
+      fi
+    fi
+
+    if [ "$ADDRBOOK_POLKACHU" == "1" ]; then
+      POLKACHU_ADDRBOOK_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.addrbook.active')
+      if [ $POLKACHU_ADDRBOOK_ENABLED ]; then
+        POLKACHU_ADDRBOOK=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.addrbook.download_url')
+        export ADDRBOOK_URL="${ADDRBOOK_URL:-$POLKACHU_ADDRBOOK}"
+      else
+        echo "Polkachu addrbook is not active for this chain"
+      fi
+    fi
   fi
 fi
 
