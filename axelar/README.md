@@ -28,6 +28,7 @@ Axelar suggests setting a minimum gas price and using Fastsync v0.
 
 |Variable|Value|
 |---|---|
+|`MINIMUM_GAS_PRICES`|`0.007uaxl`|
 |`FASTSYNC_VERSION`|`v0`|
 
 ## Polkachu Chain Services

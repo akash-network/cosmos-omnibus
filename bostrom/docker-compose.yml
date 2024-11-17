@@ -10,5 +10,6 @@ services:
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/bostrom/chain.json
+      - MINIMUM_GAS_PRICES=0.01boot
     volumes:
       - ./node-data:/root/.bostrom
