@@ -65,7 +65,6 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-cryptoorgchain-v4.2.9`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-decentr-v1.6.4`|[Example](./decentr)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-desmos-v6.2.0`|[Example](./desmos)|
-|[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-dig-v3.3.1`|[Example](./dig)|
 |[dydx](https://github.com/dydxprotocol/v4-chain)|`v7.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-dydx-v7.0.1`|[Example](./dydx)|
 |[dymension](https://github.com/dymensionxyz/dymension)|`v3.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-dymension-v3.1.0`|[Example](./dymension)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-emoney-v1.2.0`|[Example](./emoney)|
@@ -111,7 +110,6 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[terra](https://github.com/terra-money/core)|`v2.11.8`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-terra-v2.11.8`|[Example](./terra)|
 |[umee](https://github.com/umee-network/umee)|`v6.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-umee-v6.3.0`|[Example](./umee)|
 |[ununifi](https://github.com/UnUniFi/chain)|`v4.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-ununifi-v4.0.1`|[Example](./ununifi)|
-|[vidulum](https://github.com/vidulum/mainnet)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-vidulum-v1.2.0`|[Example](./vidulum)|
 |[xpla](https://github.com/xpladev/xpla)|`v1.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-xpla-v1.6.0`|[Example](./xpla)|
 
 ## Example configurations

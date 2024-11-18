@@ -38,6 +38,10 @@ for dir in $DIRS; do
     sleep 0.5 # avoid rate limiting
     CHAIN_METADATA=$(curl -Ls $CHAIN_JSON)
     PROJECT_NAME="$(echo $CHAIN_METADATA | jq -r .pretty_name)"
+    PROJECT_STATUS="$(echo $CHAIN_METADATA | jq -r .status)"
+    if [ $PROJECT_STATUS != "live" ]; then
+      echo "${PROJECT}: Chain is not live (${PROJECT_STATUS})"
+    fi
   else
     PROJECT_NAME=$PROJECT
   fi
