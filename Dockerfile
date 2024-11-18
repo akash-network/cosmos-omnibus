@@ -36,10 +36,11 @@ ARG VERSION
 ARG REPOSITORY
 ARG BUILD_CMD="make install"
 ARG BUILD_DIR=/data
+ARG BUILD_REF=$VERSION
 
 RUN git clone $REPOSITORY /data
 WORKDIR $BUILD_DIR
-RUN git checkout $VERSION
+RUN git checkout $BUILD_REF
 
 #
 # Optional build environment for Starport chains
