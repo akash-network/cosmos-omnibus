@@ -18,6 +18,7 @@ if [[ -n "$CHAIN_JSON" && "$CHAIN_JSON" != "0" ]]; then
   fi
 fi
 if [[ $CHAIN_JSON_EXISTS == true ]]; then
+  sleep 0.5 # avoid rate limiting
   CHAIN_METADATA=$(curl -Ls $CHAIN_JSON)
   export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
   export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')}"
