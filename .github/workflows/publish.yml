@@ -54,8 +54,6 @@ jobs:
             version: v1.6.4
           - project: desmos
             version: v6.2.0
-          - project: dig
-            version: v3.3.1
           - project: dydx
             version: v7.0.1
           - project: dymension
@@ -146,8 +144,6 @@ jobs:
             version: v6.3.0
           - project: ununifi
             version: v4.0.1
-          - project: vidulum
-            version: v1.2.0
           - project: xpla
             version: v1.6.0
     steps:
