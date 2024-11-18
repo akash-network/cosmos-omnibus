@@ -140,6 +140,7 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEED_POLKACHU" 
       if [ $POLKACHU_STATESYNC_ENABLED = true ]; then
         export POLKACHU_RPC_SERVER=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.node')
         export STATESYNC_RPC_SERVERS="$POLKACHU_RPC_SERVER,$POLKACHU_RPC_SERVER"
+        echo "Configured Polkachu statesync"
       else
         echo "Polkachu statesync is not active for this chain"
       fi
@@ -160,6 +161,7 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEED_POLKACHU" 
         else
           export P2P_SEEDS="$POLKACHU_SEED"
         fi
+        echo "Configured Polkachu seed"
       else
         echo "Polkachu seed is not active for this chain"
       fi
@@ -176,6 +178,7 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEED_POLKACHU" 
         else
           export P2P_PERSISTENT_PEERS="$POLKACHU_PEER,$POLKACHU_LIVE_PEERS"
         fi
+        echo "Configured Polkachu live peers"
       else
         echo "Polkachu live peers is not active for this chain"
       fi
