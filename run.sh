@@ -169,7 +169,7 @@ export "${NAMESPACE}_MONIKER"="$MONIKER"
 [ -n "$DOUBLE_SIGN_CHECK_HEIGHT" ] && export "${NAMESPACE}_CONSENSUS_DOUBLE_SIGN_CHECK_HEIGHT"=$DOUBLE_SIGN_CHECK_HEIGHT
 
 # Polkachu
-if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEED_POLKACHU" || -n "$P2P_PEERS_POLKACHU" || -n "$ADDRBOOK_POLKACHU" ]]; then
+if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEEDS_POLKACHU" || -n "$P2P_PEERS_POLKACHU" || -n "$ADDRBOOK_POLKACHU" ]]; then
   export POLKACHU_CHAIN_ID="${POLKACHU_CHAIN_ID:-$PROJECT}"
   POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v2/chains/$POLKACHU_CHAIN_ID | jq .`
   POLKACHU_SUCCESS=$(echo $POLKACHU_CHAIN | jq -r '.success')
@@ -184,6 +184,7 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEED_POLKACHU" 
       if [ $POLKACHU_STATESYNC_ENABLED = true ]; then
         export POLKACHU_RPC_SERVER=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.node')
         export STATESYNC_RPC_SERVERS="$POLKACHU_RPC_SERVER,$POLKACHU_RPC_SERVER"
+        echo "Configured Polkachu statesync"
       else
         echo "Polkachu statesync is not active for this chain"
       fi
@@ -191,11 +192,11 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEED_POLKACHU" 
 
     # Polkachu seed
     if [ "$P2P_POLKACHU" == "1" ]; then
-      export P2P_SEED_POLKACHU="1"
+      export P2P_SEEDS_POLKACHU="1"
       export P2P_PEERS_POLKACHU="1"
     fi
 
-    if [ "$P2P_SEED_POLKACHU" == "1" ]; then
+    if [ "$P2P_SEEDS_POLKACHU" == "1" ]; then
       POLKACHU_SEED_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.active')
       if [ $POLKACHU_SEED_ENABLED ]; then
         POLKACHU_SEED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.seed')
@@ -204,6 +205,7 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEED_POLKACHU" 
         else
           export P2P_SEEDS="$POLKACHU_SEED"
         fi
+        echo "Configured Polkachu seed"
       else
         echo "Polkachu seed is not active for this chain"
       fi
@@ -220,6 +222,7 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEED_POLKACHU" 
         else
           export P2P_PERSISTENT_PEERS="$POLKACHU_PEER,$POLKACHU_LIVE_PEERS"
         fi
+        echo "Configured Polkachu live peers"
       else
         echo "Polkachu live peers is not active for this chain"
       fi

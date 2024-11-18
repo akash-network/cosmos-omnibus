@@ -308,7 +308,7 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 |Variable|Description|Default|Examples|
 |---|---|---|---|
 |`P2P_POLKACHU`|Import Polkachu's [seed node](https://www.polkachu.com/seeds) and [live peers](https://www.polkachu.com/live_peers) if available| |`1`|
-|`P2P_SEED_POLKACHU`|Import Polkachu's [seed node](https://www.polkachu.com/seeds) if available| |`1`|
+|`P2P_SEEDS_POLKACHU`|Import Polkachu's [seed node](https://www.polkachu.com/seeds) if available| |`1`|
 |`P2P_PEERS_POLKACHU`|Import Polkachu's [live peers](https://www.polkachu.com/live_peers) if available| |`1`|
 |`STATESYNC_POLKACHU`|Import Polkachu's [statesync addresses](https://www.polkachu.com/state_sync) if available| |`1`|
 |`ADDRBOOK_POLKACHU`|Import Polkachu's [addrbook](https://polkachu.com/addrbooks) if available| |`1`|
