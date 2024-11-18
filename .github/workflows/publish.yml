@@ -24,8 +24,6 @@ jobs:
             version: v7.0.0
           - project: assetmantle
             version: v1.0.0
-          - project: autonomy
-            version: v1.2.1
           - project: axelar
             version: v0.34.0
           - project: bandchain
@@ -54,8 +52,6 @@ jobs:
             version: v4.2.9
           - project: decentr
             version: v1.6.4
-          - project: defund
-            version: v0.1.0-alpha
           - project: desmos
             version: v6.2.0
           - project: dig
@@ -64,8 +60,6 @@ jobs:
             version: v7.0.1
           - project: dymension
             version: v3.1.0
-          - project: elysnetwork
-            version: v0.29.12
           - project: emoney
             version: v1.2.0
           - project: empowerchain
