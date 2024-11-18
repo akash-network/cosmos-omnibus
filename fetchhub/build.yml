@@ -11,6 +11,7 @@ services:
         VERSION: v0.10.6
         REPOSITORY: https://github.com/fetchai/fetchd
         NAMESPACE: FETCHD
+        POLKACHU_CHAIN_ID: fetch
     ports:
       - '26656:26656'
       - '26657:26657'
