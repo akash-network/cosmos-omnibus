@@ -172,7 +172,7 @@ jobs:
         run: |
           touch .env # Create dummy env file
           cd ${{matrix.project}}
-          docker buildx bake -f build.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push
+          docker buildx bake -f build.yml --set node.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push
   build_generic:
     runs-on: ubuntu-latest
     strategy:
@@ -194,4 +194,4 @@ jobs:
         run: |
           touch .env # Create dummy env file
           cd generic
-          docker buildx bake -f build.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-generic --push
+          docker buildx bake -f build.yml --set node.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-generic --push
