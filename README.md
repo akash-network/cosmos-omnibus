@@ -56,7 +56,6 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[akash](https://github.com/akash-network/node)|`v0.36.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-akash-v0.36.0`|[Example](./akash)|
 |[archway](https://github.com/archway-network/archway)|`v7.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-archway-v7.0.0`|[Example](./archway)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-assetmantle-v1.0.0`|[Example](./assetmantle)|
-|[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-autonomy-v1.2.1`|[Example](./autonomy)|
 |[axelar](https://github.com/axelarnetwork/axelar-core)|`v0.34.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-axelar-v0.34.0`|[Example](./axelar)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-bandchain-v2.5.1`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v3.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-bitcanna-v3.1.1`|[Example](./bitcanna)|
@@ -71,12 +70,10 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v1.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-cronos-v1.3.0`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-cryptoorgchain-v4.2.9`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-decentr-v1.6.4`|[Example](./decentr)|
-|[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-defund-v0.1.0-alpha`|[Example](./defund)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-desmos-v6.2.0`|[Example](./desmos)|
 |[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-dig-v3.3.1`|[Example](./dig)|
 |[dydx](https://github.com/dydxprotocol/v4-chain)|`v7.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-dydx-v7.0.1`|[Example](./dydx)|
 |[dymension](https://github.com/dymensionxyz/dymension)|`v3.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-dymension-v3.1.0`|[Example](./dymension)|
-|[elysnetwork](https://github.com/elys-network/elys)|`v0.29.12`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-elysnetwork-v0.29.12`|[Example](./elysnetwork)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-emoney-v1.2.0`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-empowerchain-v2.0.0`|[Example](./empowerchain)|
 |[evmos](https://github.com/evmos/evmos)|`v20.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-evmos-v20.0.0`|[Example](./evmos)|
@@ -107,7 +104,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v10.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-persistence-v10.3.0`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v5.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-regen-v5.1.1`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-rizon-v0.4.1`|[Example](./rizon)|
-|[seinetwork](https://github.com/sei-protocol/sei-chain)|`v5.7.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-seinetwork-v5.7.5`|[Example](./seinetwork)|
+|[sei](https://github.com/sei-protocol/sei-chain)|`v5.7.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-sei-v5.7.5`|[Example](./sei)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-sentinel-v0.11.5`|[Example](./sentinel)|
 |[shentu](https://github.com/certikfoundation/shentu)|`v2.11.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-shentu-v2.11.0`|[Example](./shentu)|
 |[sifchain](https://github.com/Sifchain/sifnode)|`v1.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-sifchain-v1.4.0`|[Example](./sifchain)|

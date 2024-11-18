@@ -24,8 +24,6 @@ jobs:
             version: v7.0.0
           - project: assetmantle
             version: v1.0.0
-          - project: autonomy
-            version: v1.2.1
           - project: axelar
             version: v0.34.0
           - project: bandchain
@@ -54,8 +52,6 @@ jobs:
             version: v4.2.9
           - project: decentr
             version: v1.6.4
-          - project: defund
-            version: v0.1.0-alpha
           - project: desmos
             version: v6.2.0
           - project: dig
@@ -64,8 +60,6 @@ jobs:
             version: v7.0.1
           - project: dymension
             version: v3.1.0
-          - project: elysnetwork
-            version: v0.29.12
           - project: emoney
             version: v1.2.0
           - project: empowerchain
@@ -126,7 +120,7 @@ jobs:
             version: v5.1.1
           - project: rizon
             version: v0.4.1
-          - project: seinetwork
+          - project: sei
             version: v5.7.5
           - project: sentinel
             version: v0.11.5
@@ -172,7 +166,7 @@ jobs:
         run: |
           touch .env # Create dummy env file
           cd ${{matrix.project}}
-          docker buildx bake -f build.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push
+          docker buildx bake -f build.yml --set node.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push
   build_generic:
     runs-on: ubuntu-latest
     strategy:
@@ -194,4 +188,4 @@ jobs:
         run: |
           touch .env # Create dummy env file
           cd generic
-          docker buildx bake -f build.yml --set node_1.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-generic --push
+          docker buildx bake -f build.yml --set node.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-generic --push

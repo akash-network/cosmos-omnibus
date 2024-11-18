@@ -3,24 +3,20 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.33-elysnetwork-v0.29.12
+    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.33-akash-v0.36.0
     env:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/testnets/elystestnet/chain.json
-      # - P2P_POLKACHU=1
-      # - STATESYNC_POLKACHU=1
+      - MONIKER=Cosmos Omnibus Node
     expose:
       - port: 26657
-        as: 80
         to:
           - global: true
       - port: 26656
         to:
           - global: true
-    # params:
-    #   storage:
-    #     data:
-    #       mount: /root/.elys
+    params: # remove for non-persistent storage
+      storage:
+        data:
+          mount: /root/.akash
 
 profiles:
   compute:
@@ -29,14 +25,14 @@ profiles:
         cpu:
           units: 4
         memory:
-          size: 16Gi
+          size: 8Gi
         storage:
-          size: 100Gi
-          # - size: 100Mi
-          # - name: data
-          #   size: 400Gi
-          #   attributes:
-          #     persistent: true
+          - size: 10Gi
+          - name: data # remove for non-persistent storage
+            size: 400Gi
+            attributes:
+              persistent: true
+
   placement:
     dcloud:
       attributes:

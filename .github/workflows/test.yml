@@ -39,4 +39,4 @@ jobs:
         run: |
           touch .env # Create dummy env file
           cd ${{matrix.project}}
-          docker buildx bake -f build.yml --set node_1.tags=node
+          docker buildx bake -f build.yml --set node.tags=node
