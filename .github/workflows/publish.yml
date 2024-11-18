@@ -120,7 +120,7 @@ jobs:
             version: v5.1.1
           - project: rizon
             version: v0.4.1
-          - project: seinetwork
+          - project: sei
             version: v5.7.5
           - project: sentinel
             version: v0.11.5
