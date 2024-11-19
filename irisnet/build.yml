@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: iris
         VERSION: v2.0.1
         REPOSITORY: https://github.com/irisnet/irishub
-        NAMESPACE: IRIS
     ports:
       - '26656:26656'
       - '26657:26657'

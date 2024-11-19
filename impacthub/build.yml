@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: ixod
         VERSION: v0.18.1
         REPOSITORY: https://github.com/ixofoundation/ixo-blockchain
-        NAMESPACE: IXOD
     ports:
       - '26656:26656'
       - '26657:26657'

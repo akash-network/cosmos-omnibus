@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .shentud
         VERSION: v2.11.0
         REPOSITORY: https://github.com/shentufoundation/shentu/
-        NAMESPACE: CERTIK
         GOLANG_VERSION: 1.23-bullseye
         DEBIAN_VERSION: bullseye
     ports:

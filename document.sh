@@ -21,7 +21,7 @@ for dir in $DIRS; do
   PROJECT_DIR=$(yq '.services.node.build.args.PROJECT_DIR // ""' $dir/build.yml)
   PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
   NAMESPACE=$(yq '.services.node.build.args.NAMESPACE // ""' $dir/build.yml)
-  NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN} | tr '[:lower:]' '[:upper:]')}"
+  NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN} | tr '[:lower:]' '[:upper:]' | tr '-' '_')}"
   VERSION=$(yq '.services.node.build.args.VERSION' $dir/build.yml)
   REPOSITORY=$(yq '.services.node.build.args.REPOSITORY' $dir/build.yml)
   IMAGE="ghcr.io/akash-network/cosmos-omnibus:${OMNIBUS_VERSION}-${PROJECT}-${VERSION}"

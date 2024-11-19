@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: empowerd
         VERSION: v2.0.0
         REPOSITORY: https://github.com/EmpowerPlastic/empowerchain
-        NAMESPACE: EMPOWERD
         PROJECT_DIR: .empowerchain
         BUILD_DIR: /data/chain
         GOLANG_VERSION: 1.20-buster

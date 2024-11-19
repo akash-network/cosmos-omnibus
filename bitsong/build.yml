@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: bitsongd
         VERSION: v0.17.0
         REPOSITORY: https://github.com/bitsongofficial/go-bitsong
-        NAMESPACE: BITSONGD
     ports:
       - '26656:26656'
       - '26657:26657'

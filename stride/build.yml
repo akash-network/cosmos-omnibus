@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: strided
         VERSION: v24.0.0
         REPOSITORY: https://github.com/Stride-Labs/stride
-        NAMESPACE: STRIDED
         PROJECT_DIR: .stride
         GOLANG_VERSION: 1.21-bullseye
         DEBIAN_VERSION: bullseye

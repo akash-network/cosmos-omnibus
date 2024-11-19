@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .sommelier
         VERSION: v4.0.2
         REPOSITORY: https://github.com/PeggyJV/sommelier
-        NAMESPACE: SOMMELIER
     ports:
       - '26656:26656'
       - '26657:26657'

@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .gitopia
         VERSION: v2.1.1
         REPOSITORY: https://github.com/gitopia/gitopia
-        NAMESPACE: GITOPIAD
         GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'

@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .bcna
         VERSION: v3.1.1
         REPOSITORY: https://github.com/BitCannaGlobal/bcna
-        NAMESPACE: BCNAD
         GOLANG_VERSION: 1.21-bullseye
         DEBIAN_VERSION: bullseye
     ports:

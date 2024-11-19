@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: terrad
         VERSION: v2.11.8
         REPOSITORY: https://github.com/terra-money/core.git
-        NAMESPACE: TERRAD
         PROJECT_DIR: .terra
         GOLANG_VERSION: 1.20-buster
     ports:

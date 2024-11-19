@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: canined
         VERSION: v4.2.1
         REPOSITORY: https://github.com/JackalLabs/canine-chain
-        NAMESPACE: CANINED
         PROJECT_DIR: .canine
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye

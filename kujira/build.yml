@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .kujira
         VERSION: v2.0.0
         REPOSITORY: https://github.com/Team-Kujira/core
-        NAMESPACE: KUJIRAD
         GOLANG_VERSION: 1.21.8-bullseye
         DEBIAN_VERSION: bullseye
     ports:

@@ -25,7 +25,7 @@ export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
 export CONFIG_DIR="${CONFIG_DIR:-config}"
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
-export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
+export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN} | tr '[:lower:]' '[:upper:]' | tr '-' '_')}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit

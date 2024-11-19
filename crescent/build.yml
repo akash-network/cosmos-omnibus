@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: crescentd
         VERSION: v4.2.0
         REPOSITORY: https://github.com/crescent-network/crescent
-        NAMESPACE: CRESCENTD
         PROJECT_DIR: .crescent
         GOLANG_VERSION: 1.19-buster
     ports:

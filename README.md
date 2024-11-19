@@ -144,7 +144,7 @@ See the [_examples](./_examples) directory for some common setups, including:
 ## Configuration
 
 Cosmos blockchains can be configured entirely using environment variables instead of the config files.
-Every chain has its own prefix, but the format of the configuration is the same.
+Every chain has its own namespace, but the format of the configuration is the same.
 
 For example to configure the `seeds` option in the `p2p` section of `config.toml`, for the Akash blockchain:
 
@@ -152,7 +152,7 @@ For example to configure the `seeds` option in the `p2p` section of `config.toml
 AKASH_P2P_SEEDS=id@node:26656
 ```
 
-The namespace for each of the supported chains in the cosmos omnibus can be found in the `README` in each project directory.
+The namespace for each of the supported chains in the cosmos omnibus can be found in the `README` in each project directory. In all cases it is the binary name in uppercase (e.g. `akash` -> `AKASH`, `gaiad` -> `GAIAD` etc).
 
 The omnibus images allow some specific variables and shortcuts to configure extra functionality, detailed below.
 

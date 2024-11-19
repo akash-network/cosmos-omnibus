@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .source
         VERSION: v3.0.1
         REPOSITORY: https://github.com/Source-Protocol-Cosmos/source
-        NAMESPACE: SOURCED
         GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'

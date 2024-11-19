@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: kyved
         VERSION: v1.5.0
         REPOSITORY: https://github.com/KYVENetwork/chain
-        NAMESPACE: KYVED
         PROJECT_DIR: .kyve
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye

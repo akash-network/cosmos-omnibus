@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .gaia
         VERSION: v21.0.0
         REPOSITORY: https://github.com/cosmos/gaia
-        NAMESPACE: GAIAD
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:

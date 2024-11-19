@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .rizon
         VERSION: v0.4.1
         REPOSITORY: https://github.com/rizon-world/rizon
-        NAMESPACE: RIZOND
     ports:
       - '26656:26656'
       - '26657:26657'
