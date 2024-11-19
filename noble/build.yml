@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -11,15 +11,9 @@ services:
         VERSION: v5.0.0
         REPOSITORY: https://github.com/noble-assets/noble.git
         GOLANG_VERSION: 1.19-buster
-        NAMESPACE: NOBLED
     ports:
       - '21556:26656'
       - '21557:26657'
       - '21590:9090'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/noble/chain.json
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.noble

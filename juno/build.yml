@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .juno
         VERSION: v25.0.0
         REPOSITORY: https://github.com/CosmosContracts/juno
-        NAMESPACE: JUNOD
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:
@@ -18,17 +17,11 @@ services:
       - '26657:26657'
       - '1317:1317'
     environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/juno/chain.json
-      - GENESIS_URL=https://download.dimi.sh/juno-phoenix2-genesis.tar.gz
+      # Non-standard genesis filename in ZIP
       - GENESIS_FILENAME=juno-phoenix2-genesis.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
       # These IAVL settings are required starting juno v11.0.0
       # https://github.com/CosmosContracts/juno/releases/tag/v11.0.0
       - JUNOD_IAVL_CACHE_SIZE=781250
       - JUNOD_IAVL_DISABLE_FASTNODE=false
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.juno

@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -9,18 +9,10 @@ services:
         PROJECT_BIN: kava
         VERSION: v0.25.0
         REPOSITORY: https://github.com/Kava-Labs/kava
-        NAMESPACE: KAVA
         GOLANG_VERSION: 1.20-buster
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.kava

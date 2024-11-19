@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -9,17 +9,11 @@ services:
         PROJECT_BIN: liked
         VERSION: v4.2.0
         REPOSITORY: https://github.com/likecoin/likecoin-chain
-        NAMESPACE: LIKED
         GOLANG_VERSION: 1.19-buster
         BUILD_CMD: "make codegen install"
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/likecoin/chain.json
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.liked

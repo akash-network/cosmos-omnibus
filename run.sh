@@ -65,7 +65,7 @@ export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
 export DATA_PATH="${DATA_PATH:-$PROJECT_ROOT/$DATA_DIR}"
 export WASM_PATH="${WASM_PATH:-$PROJECT_ROOT/$WASM_DIR}"
-export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
+export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN} | tr '[:lower:]' '[:upper:]' | tr '-' '_')}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 export MONIKER="${MONIKER:-Cosmos Omnibus Node}"
 

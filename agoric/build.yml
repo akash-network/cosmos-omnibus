@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -9,18 +9,10 @@ services:
         PROJECT_BIN: ag0
         VERSION: agoric-upgrade-7-2
         REPOSITORY: https://github.com/Agoric/ag0/
-        NAMESPACE: AG0
         PROJECT_DIR: .agoric
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/agoric/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data/.agoric:/root/.agoric

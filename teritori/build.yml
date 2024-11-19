@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -9,20 +9,11 @@ services:
         PROJECT_BIN: teritorid
         VERSION: v2.0.6
         REPOSITORY: https://github.com/TERITORI/teritori-chain
-        NAMESPACE: TERITORID
         PROJECT_DIR: .teritorid
         GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_ID=teritori-1
-      - GENESIS_URL=https://github.com/TERITORI/teritori-mainnet-genesis/raw/main/genesis.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.teritorid

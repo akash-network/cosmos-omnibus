@@ -1,16 +1,16 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
         PROJECT: dydx
         PROJECT_BIN: dydxprotocold
         PROJECT_DIR: .dydxprotocol
-        VERSION: protocol/v7.0.1
+        VERSION: v7.0.1
+        BUILD_REF: protocol/v7.0.1
         REPOSITORY: https://github.com/dydxprotocol/v4-chain
-        NAMESPACE: DYDXPROTOCOLD
         BUILD_CMD: make install -C protocol
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
@@ -18,12 +18,5 @@ services:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/dydx/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.dydxprotocol

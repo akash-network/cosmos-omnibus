@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -11,17 +11,9 @@ services:
         VERSION: v6.3.0
         GOLANG_VERSION: 1.21-bullseye
         REPOSITORY: https://github.com/umee-network/umee
-        NAMESPACE: UMEED
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/umee/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.umee

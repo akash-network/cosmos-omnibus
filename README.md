@@ -56,7 +56,6 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[akash](https://github.com/akash-network/node)|`v0.36.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-akash-v0.36.0`|[Example](./akash)|
 |[archway](https://github.com/archway-network/archway)|`v7.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-archway-v7.0.0`|[Example](./archway)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-assetmantle-v1.0.0`|[Example](./assetmantle)|
-|[autonomy](https://github.com/AutonomyNetwork/autonomy-chain)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-autonomy-v1.2.1`|[Example](./autonomy)|
 |[axelar](https://github.com/axelarnetwork/axelar-core)|`v0.34.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-axelar-v0.34.0`|[Example](./axelar)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-bandchain-v2.5.1`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v3.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-bitcanna-v3.1.1`|[Example](./bitcanna)|
@@ -71,12 +70,9 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v1.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-cronos-v1.3.0`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.9`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-cryptoorgchain-v4.2.9`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-decentr-v1.6.4`|[Example](./decentr)|
-|[defund](https://github.com/defund-labs/defund)|`v0.1.0-alpha`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-defund-v0.1.0-alpha`|[Example](./defund)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-desmos-v6.2.0`|[Example](./desmos)|
-|[dig](https://github.com/notional-labs/dig)|`v3.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-dig-v3.3.1`|[Example](./dig)|
 |[dydx](https://github.com/dydxprotocol/v4-chain)|`v7.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-dydx-v7.0.1`|[Example](./dydx)|
 |[dymension](https://github.com/dymensionxyz/dymension)|`v3.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-dymension-v3.1.0`|[Example](./dymension)|
-|[elysnetwork](https://github.com/elys-network/elys)|`v0.29.12`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-elysnetwork-v0.29.12`|[Example](./elysnetwork)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-emoney-v1.2.0`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-empowerchain-v2.0.0`|[Example](./empowerchain)|
 |[evmos](https://github.com/evmos/evmos)|`v20.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-evmos-v20.0.0`|[Example](./evmos)|
@@ -107,7 +103,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v10.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-persistence-v10.3.0`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v5.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-regen-v5.1.1`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-rizon-v0.4.1`|[Example](./rizon)|
-|[seinetwork](https://github.com/sei-protocol/sei-chain)|`v5.7.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-seinetwork-v5.7.5`|[Example](./seinetwork)|
+|[sei](https://github.com/sei-protocol/sei-chain)|`v5.7.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-sei-v5.7.5`|[Example](./sei)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-sentinel-v0.11.5`|[Example](./sentinel)|
 |[shentu](https://github.com/certikfoundation/shentu)|`v2.11.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-shentu-v2.11.0`|[Example](./shentu)|
 |[sifchain](https://github.com/Sifchain/sifnode)|`v1.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-sifchain-v1.4.0`|[Example](./sifchain)|
@@ -120,7 +116,6 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[terra](https://github.com/terra-money/core)|`v2.11.8`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-terra-v2.11.8`|[Example](./terra)|
 |[umee](https://github.com/umee-network/umee)|`v6.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-umee-v6.3.0`|[Example](./umee)|
 |[ununifi](https://github.com/UnUniFi/chain)|`v4.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-ununifi-v4.0.1`|[Example](./ununifi)|
-|[vidulum](https://github.com/vidulum/mainnet)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-vidulum-v1.2.0`|[Example](./vidulum)|
 |[xpla](https://github.com/xpladev/xpla)|`v1.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-xpla-v1.6.0`|[Example](./xpla)|
 
 ## Example configurations
@@ -155,7 +150,7 @@ See the [_examples](./_examples) directory for some common setups, including:
 ## Configuration
 
 Cosmos blockchains can be configured entirely using environment variables instead of the config files.
-Every chain has its own prefix, but the format of the configuration is the same.
+Every chain has its own namespace, but the format of the configuration is the same.
 
 For example to configure the `seeds` option in the `p2p` section of `config.toml`, for the Akash blockchain:
 
@@ -163,7 +158,7 @@ For example to configure the `seeds` option in the `p2p` section of `config.toml
 AKASH_P2P_SEEDS=id@node:26656
 ```
 
-The namespace for each of the supported chains in the cosmos omnibus can be found in the `README` in each project directory.
+The namespace for each of the supported chains in the cosmos omnibus can be found in the `README` in each project directory. In all cases it is the binary name in uppercase (e.g. `akash` -> `AKASH`, `gaiad` -> `GAIAD` etc).
 
 The omnibus images allow some specific variables and shortcuts to configure extra functionality, detailed below.
 
@@ -339,10 +334,48 @@ See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) f
 
 ## Contributing
 
-Adding a new chain is easy:
+Adding a new chain is easy, but there are a few steps you need to follow:
 
-- Ideally source or setup a `chain.json` to provide a single source of truth for chain info
-- Add a project directory based on the existing projects
-- Update the [github workflow](https://github.com/akash-network/cosmos-omnibus/blob/master/.github/workflows/publish.yaml) to create an image for your chain
+The chain should exist in the [Chain Registry](https://github.com/cosmos/chain-registry) to provide a single source of truth for chain info.
 
-Submit a PR or an issue if you want to see any specific chains.
+Add a project directory using the same name as the Chain Registry directory.
+
+Add a `build.yml` file using the template below. Adjust the variables as required, and run it using `docker-compose -f build.yml up --build`. Adjust until you have a working node. Check other chains for alternate configurations.
+
+Only include the `environment` section if there is recommended configuration for your chain. This will be copied to the documentation in the next step.
+
+```yaml
+services:
+  node:
+    build:
+      context: ../
+      args:
+        PROJECT: cosmoshub # should match the directory/Chain Registry
+        PROJECT_BIN: gaiad
+        PROJECT_DIR: .gaia
+        VERSION: v21.0.0
+        REPOSITORY: https://github.com/cosmos/gaia
+        GOLANG_VERSION: 1.22-bullseye
+        DEBIAN_VERSION: bullseye
+        POLKACHU_CHAIN_ID: cosmos # only include if different from Chain Registry name
+    # environment:
+    #   - FASTSYNC_VERSION=v0
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    volumes:
+      - ./node-data:/root/.gaia
+```
+
+Run the documentation script to automatically create `deploy.yml`, `docker-compose.yml` and `README.md` documentation files:
+
+```bash
+./document.sh mychainname
+```
+
+Update the main [`README.md`](./README.md) file to include your chain in the [Networks](#networks-pre-built-images) section. Keep this alphabetical and ensure the versions referenced are correct.
+
+Update the [`.github/workflows/publish.yml`](./.github/workflows/publish.yaml) file to include your chain and version. Again keep this alphabetical and ensure the versions referenced are correct.
+
+Submit a PR with your changes and it will be validated and merged if appropriate.

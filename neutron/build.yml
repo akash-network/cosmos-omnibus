@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -10,21 +10,11 @@ services:
         PROJECT_DIR: .neutrond
         VERSION: v5.0.1
         REPOSITORY: https://github.com/neutron-org/neutron.git
-        NAMESPACE: NEUTROND
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/neutron/chain.json
-      - CHAIN_ID=pion-1
-      - GENESIS_URL=https://github.com/cosmos/testnets/raw/master/replicated-security/pion-1/pion-1-genesis.json
-      - P2P_SEEDS=e2c07e8e6e808fb36cca0fc580e31216772841df@p2p-palvus.pion-1.ntrn.tech:26656
-      - P2P_PERSISTENT_PEERS=49d75c6094c006b6f2758e45457c1f3d6002ce7a@pion-banana.rs-testnet.polypore.xyz:26656,f2520026fb9086f1b2f09e132d209cbe88064ec1@pion-cherry.rs-testnet.polypore.xyz:26656
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.neutrond

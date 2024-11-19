@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -10,17 +10,10 @@ services:
         PROJECT_DIR: .regen
         VERSION: v5.1.1
         REPOSITORY: https://github.com/regen-network/regen-ledger
-        NAMESPACE: REGEN
         GOLANG_VERSION: 1.19-buster
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/regen/chain.json
-      - MINIMUM_GAS_PRICES=0.025uregen
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.regen

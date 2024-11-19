@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: canined
         VERSION: v4.2.1
         REPOSITORY: https://github.com/JackalLabs/canine-chain
-        NAMESPACE: CANINED
         PROJECT_DIR: .canine
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
@@ -17,15 +16,5 @@ services:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_ID=jackal-1
-      - GENESIS_URL=https://cdn.discordapp.com/attachments/1002389406650466405/1034968352591986859/updated_genesis2.json
-      - P2P_SEEDS=ec38fb158ffb0272c4b7c951fc790a8f9849e280@198.244.212.27:26656,ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:17556
-      - MINIMUM_GAS_PRICES=0.002ujkl
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.canine

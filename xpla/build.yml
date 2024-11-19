@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -10,19 +10,11 @@ services:
         PROJECT_DIR: .xpla
         VERSION: v1.6.0
         REPOSITORY: https://github.com/xpladev/xpla
-        NAMESPACE: XPLAD
         GOLANG_VERSION: 1.21-bullseye
         DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/xpla/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.xpla

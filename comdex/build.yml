@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -9,19 +9,11 @@ services:
         PROJECT_BIN: comdex
         VERSION: v14.1.0
         REPOSITORY: https://github.com/comdex-official/comdex
-        NAMESPACE: COMDEX
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/comdex/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.comdex

@@ -1,7 +1,7 @@
 version: '3.4'
 
 services:
-  node_1:
+  node:
     build:
       context: ../
       args:
@@ -9,16 +9,9 @@ services:
         PROJECT_BIN: emd
         VERSION: v1.2.0
         REPOSITORY: https://github.com/e-money/em-ledger
-        NAMESPACE: EMD
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
-    environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/emoney/chain.json
-      # - SNAPSHOT_QUICKSYNC=https://quicksync.io/emoney.json
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.emd
