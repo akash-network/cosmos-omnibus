@@ -1,27 +1,21 @@
 ---
 version: "2.0"
-
 services:
   node:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.4.33-konstellation-v0.5.0
     env:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/konstellation/chain.json
-      - P2P_POLKACHU=1
-      - STATESYNC_POLKACHU=1
+      - MONIKER=Cosmos Omnibus Node
     expose:
       - port: 26657
-        as: 80
         to:
           - global: true
       - port: 26656
         to:
           - global: true
-    # params:
-    #   storage:
-    #     data:
-    #       mount: /root/.knstld
-
+    params: # remove for non-persistent storage
+      storage:
+        data:
+          mount: /root/.knstld
 profiles:
   compute:
     node:
@@ -31,12 +25,11 @@ profiles:
         memory:
           size: 8Gi
         storage:
-          size: 100Gi
-          # - size: 100Mi
-          # - name: data
-          #   size: 400Gi
-          #   attributes:
-          #     persistent: true
+          - size: 10Gi
+          - name: data # remove for non-persistent storage
+            size: 400Gi
+            attributes:
+              persistent: true
   placement:
     dcloud:
       attributes:
@@ -48,7 +41,6 @@ profiles:
         node:
           denom: uakt
           amount: 1000
-
 deployment:
   node:
     dcloud:
