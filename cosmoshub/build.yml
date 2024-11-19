@@ -12,6 +12,7 @@ services:
         REPOSITORY: https://github.com/cosmos/gaia
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
+        POLKACHU_CHAIN_ID: cosmos
     ports:
       - '26656:26656'
       - '26657:26657'

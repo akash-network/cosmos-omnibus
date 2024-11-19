@@ -10,6 +10,7 @@ services:
         VERSION: v2.5.1
         REPOSITORY: https://github.com/bandprotocol/chain
         PROJECT_DIR: .band
+        POLKACHU_CHAIN_ID: band
     ports:
       - '26656:26656'
       - '26657:26657'

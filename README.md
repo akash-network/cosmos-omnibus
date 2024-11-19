@@ -32,9 +32,15 @@ services:
   node:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.4.33-generic
     env:
-      - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/edgenet/meta.json
-      - BINARY_ZIP_PATH=akash_0.15.0-rc14_linux_amd64/akash
+      - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
+      #
+      # alternatively configure manually
+      #
+      # - PROJECT=akash
+      # - PROJECT_DIR=.akash
+      # - PROJECT_BIN=akash
+      # - BINARY_URL=https://github.com/akash-network/node/releases/download/v0.36.0/akash_linux_amd64.zip
+      # - BINARY_ZIP_PATH=build/akash-v0.36.0 # only required if expected binary file isn't in the ZIP root
 ```
 
 More information on the generic image can be found at [/generic](./generic/), and configuration is detailed in depth below.
@@ -158,31 +164,31 @@ The omnibus images allow some specific variables and shortcuts to configure extr
 
 ### Chain configuration
 
-Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chain Registry](https://github.com/cosmos/chain-registry).
+Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chain Registry](https://github.com/cosmos/chain-registry). The [Chain Registry](https://github.com/cosmos/chain-registry) will be used automatically for all pre-built images, or whenever the `PROJECT` environment variable matches a [Chain Registry](https://github.com/cosmos/chain-registry) ID. Set `CHAIN_JSON` to an alternative URL if required, or `0` to disable this behaviour entirely.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`CHAIN_JSON`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`
-|`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`
-|`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON| |`https://raw.githubusercontent.com/akash-network/net/main/mainnet/genesis.json`
+|`CHAIN_JSON`|URL to a `chain.json` file detailing the chain meta| |`https://github.com/cosmos/chain-registry/blob/master/akash/chain.json`|
+|`CHAIN_ID`|The cosmos chain ID| |`akashnet-2`|
+|`GENESIS_URL`|URL to the genesis file in `.gz`, `.tar.gz`, or `.zip` format. Can be set by CHAIN_JSON| |`https://raw.githubusercontent.com/akash-network/net/main/mainnet/genesis.json`|
 |`DOWNLOAD_GENESIS`|Force download of genesis file. If unset the node will only download if the genesis file is missing| |`1`|
-|`VALIDATE_GENESIS`|Set to 1 to enable validation of genesis file|`0`|`1`
+|`VALIDATE_GENESIS`|Set to 1 to enable validation of genesis file|`0`|`1`|
 
 ### P2P
 
 Peer information can be provided manually, or obtained automatically from the following sources:
 
 - `CHAIN_JSON` URL with peer information included.
-- [Polkachu's live peers](https://www.polkachu.com/live_peers).
+- [Polkachu's live seed and peers](#polkachu-services).
 - Any `ADDRBOOK_URL` where the `config/addrbook.json` file is hosted.
 
 See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
-|`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
-|`ADDRBOOK_URL`|URL to an addrbook.json file| |`https://quicksync.io/addrbook.terra.json`
+|`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_JSON| |`id@node:26656`|
+|`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_JSON| |`id@node:26656`|
+|`ADDRBOOK_URL`|URL to an addrbook.json file| |`https://quicksync.io/addrbook.terra.json`|
 
 ### Private key backup/restore
 
@@ -274,6 +280,7 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`SNAPSHOT_SAVE_FORMAT`|Overrides value from `SNAPSHOT_FORMAT`.|`tar.gz`|`tar` (no compression)/`tar.zst` (use [zstd](https://github.com/facebook/zstd))|
 
 When `SNAPSHOT_SAVE_FORMAT` is set to `tar.zst`, [additional variables can be set](https://github.com/facebook/zstd/tree/v1.5.2/programs#passing-parameters-through-environment-variables):
+
 - `ZSTD_CLEVEL` - Compression level, default `3`
 - `ZSTD_NBTHREADS` - No. of threads, default `1`, `0` = detected no. of cpu cores
 
@@ -295,9 +302,12 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`POLKACHU_CHAIN_ID`| Polkachu API chain-id if it differs from Chain Registry naming convention.| |`cryptocom`
-|`P2P_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/seeds) seed node if available| |`1`|
-|`STATESYNC_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/state_sync) statesync addresses if available| |`1`|
+|`P2P_POLKACHU`|Import Polkachu's [seed node](https://www.polkachu.com/seeds) and [live peers](https://www.polkachu.com/live_peers) if available| |`1`|
+|`P2P_SEEDS_POLKACHU`|Import Polkachu's [seed node](https://www.polkachu.com/seeds) if available| |`1`|
+|`P2P_PEERS_POLKACHU`|Import Polkachu's [live peers](https://www.polkachu.com/live_peers) if available| |`1`|
+|`STATESYNC_POLKACHU`|Import Polkachu's [statesync addresses](https://www.polkachu.com/state_sync) if available| |`1`|
+|`ADDRBOOK_POLKACHU`|Import Polkachu's [addrbook](https://polkachu.com/addrbooks) if available| |`1`|
+|`POLKACHU_CHAIN_ID`| Polkachu API chain-id if it differs from Chain Registry naming convention.| |`cryptocom`|
 
 ### Cosmovisor
 
@@ -306,7 +316,7 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 |Variable|Description|Default|Examples|
 |---|---|---|---|
 |`COSMOVISOR_ENABLED`|Enable Cosmovisor binary download and support| |`1`|
-|`COSMOVISOR_VERSION`|Version of Cosmovisor to download|`1.5.0`| |
+|`COSMOVISOR_VERSION`|Version of Cosmovisor to download|`1.6.0`| |
 |`COSMOVISOR_URL`|Alternative full URL to Cosmovisor binary tar.gz| | |
 
 ### Shortcuts
@@ -315,9 +325,11 @@ See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) f
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
+|`MONIKER`|The node's moniker|`My Omnibus Node`|`Akash Node`|
 |`FASTSYNC_VERSION`|The fastsync version| |`v0`|
 |`MINIMUM_GAS_PRICES`|Minimum gas prices| |`0.025uakt`|
 |`PRUNING`|How much of the chain to prune| |`nothing`|
+|`DOUBLE_SIGN_CHECK_HEIGHT`|Set the double_sign_check_height config| |`10`|
 |`DEBUG`|Set to `1` to output all environment variables on boot. Set to `2` to debug shell scripts.| |`1`, `2`|
 
 ## Contributing

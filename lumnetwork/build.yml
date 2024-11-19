@@ -11,6 +11,7 @@ services:
         VERSION: v1.6.3
         REPOSITORY: https://github.com/lum-network/chain
         GOLANG_VERSION: 1.19.7-buster
+        POLKACHU_CHAIN_ID: lum
     ports:
       - '26656:26656'
       - '26657:26657'
