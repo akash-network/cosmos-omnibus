@@ -67,6 +67,7 @@ export DATA_PATH="${DATA_PATH:-$PROJECT_ROOT/$DATA_DIR}"
 export WASM_PATH="${WASM_PATH:-$PROJECT_ROOT/$WASM_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
+export MONIKER="${MONIKER:-Cosmos Omnibus Node}"
 
 [ -z "$CHAIN_ID" ] && echo "CHAIN_ID not found" && exit
 
@@ -158,7 +159,7 @@ backup_key () {
 
 # Config
 export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
-[ -n "$MONIKER" ] && export "${NAMESPACE}_MONIKER"="$MONIKER"
+export "${NAMESPACE}_MONIKER"="$MONIKER"
 [ -n "$FASTSYNC_VERSION" ] && export "${NAMESPACE}_FASTSYNC_VERSION"=$FASTSYNC_VERSION
 [ -n "$MINIMUM_GAS_PRICES" ] && export "${NAMESPACE}_MINIMUM_GAS_PRICES"=$MINIMUM_GAS_PRICES
 [ -n "$PRUNING" ] && export "${NAMESPACE}_PRUNING"=$PRUNING
