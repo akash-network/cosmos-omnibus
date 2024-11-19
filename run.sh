@@ -5,11 +5,25 @@ set -e
 [ "$DEBUG" == "2" ] && set -x
 
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
-if [ -n "$CHAIN_JSON" ]; then
+if [[ -z "$CHAIN_JSON" && -n "$PROJECT" ]]; then
+  CHAIN_JSON="https://raw.githubusercontent.com/cosmos/chain-registry/master/${PROJECT}/chain.json"
+fi
+
+CHAIN_JSON_EXISTS=false
+if [[ -n "$CHAIN_JSON" && "$CHAIN_JSON" != "0" ]]; then
+  if curl --output /dev/null --silent --head --fail "$CHAIN_JSON"; then
+    CHAIN_JSON_EXISTS=true
+  else
+    echo "Chain JSON not found"
+  fi
+fi
+if [[ $CHAIN_JSON_EXISTS == true ]]; then
+  sleep 0.5 # avoid rate limiting
   CHAIN_METADATA=$(curl -Ls $CHAIN_JSON)
+  CHAIN_SEEDS=$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')
+  CHAIN_PERSISTENT_PEERS=$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')
+
   export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
-  export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')}"
-  export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')}"
   export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r '.codebase.genesis.genesis_url? // .genesis.genesis_url? // .genesis?')}"
   export BINARY_URL="${BINARY_URL:-$(echo $CHAIN_METADATA | jq -r '.codebase.binaries."linux/amd64"?')}"
   export PROJECT="${PROJECT:-$(echo $CHAIN_METADATA | jq -r '.chain_name?')}"
@@ -18,13 +32,39 @@ if [ -n "$CHAIN_JSON" ]; then
     FULL_DIR=$(echo $CHAIN_METADATA | jq -r '.codebase.node_home? // .node_home?')
     [ -n "$FULL_DIR" ] && export PROJECT_DIR=${FULL_DIR#'$HOME/'}
   fi
+
+  if [ -z "$MINIMUM_GAS_PRICES" ]; then
+    GAS_PRICES=""
+    FEE_TOKENS=$(echo $CHAIN_METADATA | jq -c '.fees.fee_tokens[]? // empty')
+    if [ -n "$FEE_TOKENS" ]; then
+      for TOKEN in $FEE_TOKENS; do
+        FEE_TOKEN=$(echo $TOKEN | jq -r '.denom // empty')
+        GAS_PRICE=$(echo $TOKEN | jq -r '.fixed_min_gas_price // .low_gas_price // empty')
+        if [ -n "$FEE_TOKEN" ] && [ -n "$GAS_PRICE" ]; then
+          if [ -n "$GAS_PRICES" ]; then
+            GAS_PRICES="$GAS_PRICES,$GAS_PRICE$FEE_TOKEN"
+          else
+            GAS_PRICES="$GAS_PRICE$FEE_TOKEN"
+          fi
+        fi
+      done
+      if [ -n "$GAS_PRICES" ]; then
+        export MINIMUM_GAS_PRICES=$GAS_PRICES
+        echo "Minimum gas prices set to $MINIMUM_GAS_PRICES"
+      fi
+    fi
+  fi
 fi
 
 export PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
 export PROJECT_DIR="${PROJECT_DIR:-.$PROJECT_BIN}"
 export CONFIG_DIR="${CONFIG_DIR:-config}"
+export DATA_DIR="${DATA_DIR:-data}"
+export WASM_DIR="${WASM_DIR:-wasm}"
 export PROJECT_ROOT="/root/$PROJECT_DIR"
 export CONFIG_PATH="${CONFIG_PATH:-$PROJECT_ROOT/$CONFIG_DIR}"
+export DATA_PATH="${DATA_PATH:-$PROJECT_ROOT/$DATA_DIR}"
+export WASM_PATH="${WASM_PATH:-$PROJECT_ROOT/$WASM_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN^^})}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 export MONIKER="${MONIKER:-Cosmos Omnibus Node}"
@@ -40,7 +80,7 @@ if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
     *"tar archive"*)            mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar -C /bin && rm /bin/$PROJECT_BIN.tar;;
     *"zip archive data"*)       mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip;;
   esac
-  [ -n "$BINARY_ZIP_PATH" ] && mv /bin/${BINARY_ZIP_PATH} /bin
+  [ -n "$BINARY_ZIP_PATH" ] && mv /bin/${BINARY_ZIP_PATH} /bin/$PROJECT_BIN
   chmod +x /bin/$PROJECT_BIN
 
   if [ -n "$WASMVM_URL" ]; then
@@ -126,43 +166,82 @@ export "${NAMESPACE}_MONIKER"="$MONIKER"
 [ -n "$PRUNING_INTERVAL" ] && export "${NAMESPACE}_PRUNING_INTERVAL"=$PRUNING_INTERVAL
 [ -n "$PRUNING_KEEP_EVERY" ] && export "${NAMESPACE}_PRUNING_KEEP_EVERY"=$PRUNING_KEEP_EVERY
 [ -n "$PRUNING_KEEP_RECENT" ] && export "${NAMESPACE}_PRUNING_KEEP_RECENT"=$PRUNING_KEEP_RECENT
+[ -n "$DOUBLE_SIGN_CHECK_HEIGHT" ] && export "${NAMESPACE}_CONSENSUS_DOUBLE_SIGN_CHECK_HEIGHT"=$DOUBLE_SIGN_CHECK_HEIGHT
 
 # Polkachu
-if [[ -n "$P2P_POLKACHU" || -n "$STATESYNC_POLKACHU"  ]]; then
+if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEEDS_POLKACHU" || -n "$P2P_PEERS_POLKACHU" || -n "$ADDRBOOK_POLKACHU" ]]; then
   export POLKACHU_CHAIN_ID="${POLKACHU_CHAIN_ID:-$PROJECT}"
   POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v2/chains/$POLKACHU_CHAIN_ID | jq .`
-  if [ -z "$POLKACHU_CHAIN" ]; then
+  POLKACHU_SUCCESS=$(echo $POLKACHU_CHAIN | jq -r '.success')
+  if [ $POLKACHU_SUCCESS = false ]; then
     echo "Polkachu chain not recognised (POLKACHU_CHAIN_ID might need to be set)"
+    exit
   else
     [ "$DEBUG" == "1" ] && echo $POLKACHU_CHAIN
     # Polkachu statesync
     if [ -n "$STATESYNC_POLKACHU" ]; then
-      export POLKACHU_STATESYNC_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.active')
+      POLKACHU_STATESYNC_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.active')
       if [ $POLKACHU_STATESYNC_ENABLED = true ]; then
         export POLKACHU_RPC_SERVER=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.state_sync.node')
         export STATESYNC_RPC_SERVERS="$POLKACHU_RPC_SERVER,$POLKACHU_RPC_SERVER"
+        echo "Configured Polkachu statesync"
       else
         echo "Polkachu statesync is not active for this chain"
       fi
     fi
 
-    # Polkachu live peers
+    # Polkachu seed
     if [ "$P2P_POLKACHU" == "1" ]; then
-      export POLKACHU_SEED_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.active')
+      export P2P_SEEDS_POLKACHU="1"
+      export P2P_PEERS_POLKACHU="1"
+    fi
+
+    if [ "$P2P_SEEDS_POLKACHU" == "1" ]; then
+      POLKACHU_SEED_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.active')
       if [ $POLKACHU_SEED_ENABLED ]; then
-        export POLKACHU_SEED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.seed')
-        if [ -n "$P2P_SEEDS" ]; then
-            export P2P_SEEDS="$POLKACHU_SEED,$P2P_SEEDS"
+        POLKACHU_SEED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.seed')
+        if [ -n "$P2P_SEEDS" ] && ["$P2P_SEEDS" != "0"]; then
+          export P2P_SEEDS="$POLKACHU_SEED,$P2P_SEEDS"
         else
-            export P2P_SEEDS="$POLKACHU_SEED"
+          export P2P_SEEDS="$POLKACHU_SEED"
         fi
+        echo "Configured Polkachu seed"
       else
         echo "Polkachu seed is not active for this chain"
       fi
     fi
 
+    if [ "$P2P_PEERS_POLKACHU" == "1" ]; then
+      POLKACHU_PEERS_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.live_peers.active')
+      if [ $POLKACHU_PEERS_ENABLED ]; then
+        POLKACHU_PEERS=`curl -Ls https://polkachu.com/api/v2/chains/$POLKACHU_CHAIN_ID/live_peers | jq .`
+        POLKACHU_PEER=$(echo $POLKACHU_PEERS | jq -r '.polkachu_peer')
+        POLKACHU_LIVE_PEERS=$(echo $POLKACHU_PEERS | jq -r '.live_peers | join(",")')
+        if [ -n "$P2P_PERSISTENT_PEERS" ] && ["$P2P_PERSISTENT_PEERS" != "0"]; then
+          export P2P_PERSISTENT_PEERS="$POLKACHU_PEER,$POLKACHU_LIVE_PEERS,$P2P_PERSISTENT_PEERS"
+        else
+          export P2P_PERSISTENT_PEERS="$POLKACHU_PEER,$POLKACHU_LIVE_PEERS"
+        fi
+        echo "Configured Polkachu live peers"
+      else
+        echo "Polkachu live peers is not active for this chain"
+      fi
+    fi
+
+    if [ "$ADDRBOOK_POLKACHU" == "1" ]; then
+      POLKACHU_ADDRBOOK_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.addrbook.active')
+      if [ $POLKACHU_ADDRBOOK_ENABLED ]; then
+        POLKACHU_ADDRBOOK=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.addrbook.download_url')
+        export ADDRBOOK_URL="${ADDRBOOK_URL:-$POLKACHU_ADDRBOOK}"
+      else
+        echo "Polkachu addrbook is not active for this chain"
+      fi
+    fi
   fi
 fi
+
+[ -z "$P2P_SEEDS" ] && [ -n "$CHAIN_SEEDS" ] && export P2P_SEEDS=$CHAIN_SEEDS
+[ -z "$P2P_PERSISTENT_PEERS" ] && [ -n "$CHAIN_PERSISTENT_PEERS" ] && export P2P_PERSISTENT_PEERS=$CHAIN_PERSISTENT_PEERS
 
 # Peers
 [ -n "$P2P_SEEDS" ] && [ "$P2P_SEEDS" != '0' ] && export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS}"
@@ -267,23 +346,23 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   fi
 
   # SNAPSHOT_FORMAT default value generation via SNAPSHOT_URL
-  SNAPSHOT_FORMAT_DEFAULT="tar.gz"
-  # DCS Storj backups adding ?download=1 part which needs to be stripped before determining the extension
-  SNAPSHOT_URL_TRIM="${SNAPSHOT_URL%?download=1}"
-  case "${SNAPSHOT_URL_TRIM,,}" in
-    *.tar.gz)   SNAPSHOT_FORMAT_DEFAULT="tar.gz";;
-    *.tar.lz4)  SNAPSHOT_FORMAT_DEFAULT="tar.lz4";;
-    *.tar.zst)  SNAPSHOT_FORMAT_DEFAULT="tar.zst";;
-    # Catchall
-    *)          SNAPSHOT_FORMAT_DEFAULT="tar";;
-  esac
-  SNAPSHOT_FORMAT="${SNAPSHOT_FORMAT:-$SNAPSHOT_FORMAT_DEFAULT}"
+  if [ -z "${SNAPSHOT_FORMAT}" ]; then
+    # DCS Storj backups adding ?download=1 part which needs to be stripped before determining the extension
+    SNAPSHOT_URL_TRIM="${SNAPSHOT_URL%?download=1}"
+    case "${SNAPSHOT_URL_TRIM,,}" in
+      *.tar.gz)   SNAPSHOT_FORMAT="tar.gz";;
+      *.tar.lz4)  SNAPSHOT_FORMAT="tar.lz4";;
+      *.tar.zst)  SNAPSHOT_FORMAT="tar.zst";;
+      # Catchall
+      *)          SNAPSHOT_FORMAT="tar";;
+    esac
+  fi
 
   if [ -n "${SNAPSHOT_URL}" ]; then
     echo "Downloading snapshot from $SNAPSHOT_URL..."
-    rm -rf $PROJECT_ROOT/data;
-    mkdir -p $PROJECT_ROOT/data;
-    cd $PROJECT_ROOT/data
+    rm -rf $PROJECT_ROOT/snapshot;
+    mkdir -p $PROJECT_ROOT/snapshot;
+    cd $PROJECT_ROOT/snapshot;
 
     tar_cmd="tar xf -"
     # case insensitive match
@@ -305,16 +384,35 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
       STORJ_SNAPSHOT_URL=${SNAPSHOT_URL#*link.storjshare.io/s/}
       STORJ_SNAPSHOT_URL=${STORJ_SNAPSHOT_URL#*/}
       STORJ_SNAPSHOT_URL=${STORJ_SNAPSHOT_URL%%\?*}
-      (uplink cp $storj_args sj://${STORJ_SNAPSHOT_URL} - | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+      (uplink cp $storj_args sj://${STORJ_SNAPSHOT_URL} - | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n' || exit 1
     else
-      (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n'
+      (wget -nv -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n' || exit 1
     fi
 
-    [ -n "${SNAPSHOT_DATA_PATH}" ] && mv ./${SNAPSHOT_DATA_PATH}/* ./ && rm -rf ./${SNAPSHOT_DATA_PATH}
-    if [ -n "${SNAPSHOT_WASM_PATH}" ]; then
-      rm -rf ../wasm && mkdir ../wasm
-      mv ./${SNAPSHOT_WASM_PATH}/* ../wasm && rm -rf ./${SNAPSHOT_WASM_PATH}
+    # if [ -z "$( ls -A ./ )" ]; then
+    #   echo "Snapshot download empty, exiting..."
+    #   exit 1
+    # fi
+
+    [ -z "${SNAPSHOT_DATA_PATH}" ] && [ -d "./${DATA_DIR}" ] && SNAPSHOT_DATA_PATH="${DATA_DIR}"
+    [ -z "${SNAPSHOT_WASM_PATH}" ] && [ -d "./${WASM_DIR}" ] && SNAPSHOT_WASM_PATH="${WASM_DIR}"
+
+    if [ -n "${SNAPSHOT_DATA_PATH}" ]; then
+      rm -rf ../$DATA_DIR
+      mv ./${SNAPSHOT_DATA_PATH} ../$DATA_DIR
     fi
+
+    if [ -n "${SNAPSHOT_WASM_PATH}" ]; then
+      rm -rf ../$WASM_DIR
+      mv ./${SNAPSHOT_WASM_PATH} ../$WASM_DIR
+    fi
+
+    if [ -z "${SNAPSHOT_DATA_PATH}" ]; then
+      rm -rf ../$DATA_DIR && mkdir -p ../$DATA_DIR
+      mv ./* ../$DATA_DIR
+    fi
+
+    cd ../ && rm -rf ./snapshot
   else
     echo "Snapshot URL not found"
   fi
@@ -325,7 +423,7 @@ fi
 
 # Cosmovisor
 if [ "$COSMOVISOR_ENABLED" == "1" ]; then
-  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.5.0"}"
+  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.6.0"}"
   export COSMOVISOR_URL="${COSMOVISOR_URL:-"https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz"}"
 
   # Download Binary
@@ -342,6 +440,7 @@ if [ "$COSMOVISOR_ENABLED" == "1" ]; then
   # Set up the environment variables
   export DAEMON_NAME=$PROJECT_BIN
   export DAEMON_HOME=$PROJECT_ROOT
+  export DAEMON_SHUTDOWN_GRACE="${DAEMON_SHUTDOWN_GRACE:-15s}"
 
   # Setup Folder Structure
   mkdir -p $PROJECT_ROOT/cosmovisor/upgrades

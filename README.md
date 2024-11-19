@@ -169,7 +169,7 @@ The omnibus images allow some specific variables and shortcuts to configure extr
 
 ### Chain configuration
 
-Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chain Registry](https://github.com/cosmos/chain-registry).
+Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chain Registry](https://github.com/cosmos/chain-registry). The [Chain Registry](https://github.com/cosmos/chain-registry) will be used automatically for all pre-built images, or whenever the `PROJECT` environment variable matches a [Chain Registry](https://github.com/cosmos/chain-registry) ID. Set `CHAIN_JSON` to an alternative URL if required, or `0` to disable this behaviour entirely.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
@@ -184,15 +184,15 @@ Chain config can be sourced from a `chain.json` file [as seen in the Cosmos Chai
 Peer information can be provided manually, or obtained automatically from the following sources:
 
 - `CHAIN_JSON` URL with peer information included.
-- [Polkachu's live peers](https://www.polkachu.com/live_peers).
+- [Polkachu's live seed and peers](#polkachu-services).
 - Any `ADDRBOOK_URL` where the `config/addrbook.json` file is hosted.
 
 See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2p-settings) for more information.
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
-|`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
-|`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_JSON or GENESIS_URL| |`id@node:26656`|
+|`P2P_SEEDS`|Seed nodes. Can be set by CHAIN_JSON| |`id@node:26656`|
+|`P2P_PERSISTENT_PEERS`|Persistent peers. Can be set by CHAIN_JSON| |`id@node:26656`|
 |`ADDRBOOK_URL`|URL to an addrbook.json file| |`https://quicksync.io/addrbook.terra.json`|
 
 ### Private key backup/restore
@@ -307,9 +307,12 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 
 |Variable|Description|Default|Examples|
 |---|---|---|---|
+|`P2P_POLKACHU`|Import Polkachu's [seed node](https://www.polkachu.com/seeds) and [live peers](https://www.polkachu.com/live_peers) if available| |`1`|
+|`P2P_SEEDS_POLKACHU`|Import Polkachu's [seed node](https://www.polkachu.com/seeds) if available| |`1`|
+|`P2P_PEERS_POLKACHU`|Import Polkachu's [live peers](https://www.polkachu.com/live_peers) if available| |`1`|
+|`STATESYNC_POLKACHU`|Import Polkachu's [statesync addresses](https://www.polkachu.com/state_sync) if available| |`1`|
+|`ADDRBOOK_POLKACHU`|Import Polkachu's [addrbook](https://polkachu.com/addrbooks) if available| |`1`|
 |`POLKACHU_CHAIN_ID`| Polkachu API chain-id if it differs from Chain Registry naming convention.| |`cryptocom`|
-|`P2P_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/seeds) seed node if available| |`1`|
-|`STATESYNC_POLKACHU`|Import [Polkachu's](https://www.polkachu.com/state_sync) statesync addresses if available| |`1`|
 
 ### Cosmovisor
 
@@ -318,7 +321,7 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 |Variable|Description|Default|Examples|
 |---|---|---|---|
 |`COSMOVISOR_ENABLED`|Enable Cosmovisor binary download and support| |`1`|
-|`COSMOVISOR_VERSION`|Version of Cosmovisor to download|`1.5.0`| |
+|`COSMOVISOR_VERSION`|Version of Cosmovisor to download|`1.6.0`| |
 |`COSMOVISOR_URL`|Alternative full URL to Cosmovisor binary tar.gz| | |
 
 ### Shortcuts
@@ -331,6 +334,7 @@ See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) f
 |`FASTSYNC_VERSION`|The fastsync version| |`v0`|
 |`MINIMUM_GAS_PRICES`|Minimum gas prices| |`0.025uakt`|
 |`PRUNING`|How much of the chain to prune| |`nothing`|
+|`DOUBLE_SIGN_CHECK_HEIGHT`|Set the double_sign_check_height config| |`10`|
 |`DEBUG`|Set to `1` to output all environment variables on boot. Set to `2` to debug shell scripts.| |`1`, `2`|
 
 ## Contributing
