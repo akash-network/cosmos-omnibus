@@ -7,9 +7,10 @@ set -e
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
 if [ -n "$CHAIN_JSON" ]; then
   CHAIN_METADATA=$(curl -Ls $CHAIN_JSON)
+  CHAIN_SEEDS=$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')
+  CHAIN_PERSISTENT_PEERS=$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')
+
   export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
-  export P2P_SEEDS="${P2P_SEEDS:-$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')}"
-  export P2P_PERSISTENT_PEERS="${P2P_PERSISTENT_PEERS:-$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')}"
   export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r '.codebase.genesis.genesis_url? // .genesis.genesis_url? // .genesis?')}"
   export BINARY_URL="${BINARY_URL:-$(echo $CHAIN_METADATA | jq -r '.codebase.binaries."linux/amd64"?')}"
   export PROJECT="${PROJECT:-$(echo $CHAIN_METADATA | jq -r '.chain_name?')}"
@@ -222,6 +223,9 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEEDS_POLKACHU"
     fi
   fi
 fi
+
+[ -z "$P2P_SEEDS" ] && [ -n "$CHAIN_SEEDS" ] && export P2P_SEEDS=$CHAIN_SEEDS
+[ -z "$P2P_PERSISTENT_PEERS" ] && [ -n "$CHAIN_PERSISTENT_PEERS" ] && export P2P_PERSISTENT_PEERS=$CHAIN_PERSISTENT_PEERS
 
 # Peers
 [ -n "$P2P_SEEDS" ] && [ "$P2P_SEEDS" != '0' ] && export "${NAMESPACE}_P2P_SEEDS=${P2P_SEEDS}"
