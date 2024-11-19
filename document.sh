@@ -2,7 +2,7 @@
 
 set -e
 
-OMNIBUS_VERSION="v0.4.33"
+OMNIBUS_VERSION="v1.0.0"
 
 if [ "$#" -gt 0 ]; then
   DIRS="$@"

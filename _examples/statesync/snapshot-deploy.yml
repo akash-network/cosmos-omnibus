@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.33-akash-v0.36.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.0-akash-v0.36.0
     env:
       - MONIKER=public-node-1
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
@@ -26,7 +26,7 @@ services:
     #     data:
     #       mount: /root/.akash
   node2:
-    image: ghcr.io/akash-network/cosmos-omnibus:v0.4.33-akash-v0.36.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.0-akash-v0.36.0
     env:
       - MONIKER=public-node-2
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
