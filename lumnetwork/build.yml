@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .lumd
         VERSION: v1.6.3
         REPOSITORY: https://github.com/lum-network/chain
-        NAMESPACE: LUMD
         GOLANG_VERSION: 1.19.7-buster
         POLKACHU_CHAIN_ID: lum
     ports:

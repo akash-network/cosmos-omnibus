@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .juno
         VERSION: v25.0.0
         REPOSITORY: https://github.com/CosmosContracts/juno
-        NAMESPACE: JUNOD
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:

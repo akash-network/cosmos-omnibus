@@ -150,7 +150,7 @@ See the [_examples](./_examples) directory for some common setups, including:
 ## Configuration
 
 Cosmos blockchains can be configured entirely using environment variables instead of the config files.
-Every chain has its own prefix, but the format of the configuration is the same.
+Every chain has its own namespace, but the format of the configuration is the same.
 
 For example to configure the `seeds` option in the `p2p` section of `config.toml`, for the Akash blockchain:
 
@@ -158,7 +158,7 @@ For example to configure the `seeds` option in the `p2p` section of `config.toml
 AKASH_P2P_SEEDS=id@node:26656
 ```
 
-The namespace for each of the supported chains in the cosmos omnibus can be found in the `README` in each project directory.
+The namespace for each of the supported chains in the cosmos omnibus can be found in the `README` in each project directory. In all cases it is the binary name in uppercase (e.g. `akash` -> `AKASH`, `gaiad` -> `GAIAD` etc).
 
 The omnibus images allow some specific variables and shortcuts to configure extra functionality, detailed below.
 
@@ -334,10 +334,48 @@ See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html) f
 
 ## Contributing
 
-Adding a new chain is easy:
+Adding a new chain is easy, but there are a few steps you need to follow:
 
-- Ideally source or setup a `chain.json` to provide a single source of truth for chain info
-- Add a project directory based on the existing projects
-- Update the [github workflow](https://github.com/akash-network/cosmos-omnibus/blob/master/.github/workflows/publish.yaml) to create an image for your chain
+The chain should exist in the [Chain Registry](https://github.com/cosmos/chain-registry) to provide a single source of truth for chain info.
 
-Submit a PR or an issue if you want to see any specific chains.
+Add a project directory using the same name as the Chain Registry directory.
+
+Add a `build.yml` file using the template below. Adjust the variables as required, and run it using `docker-compose -f build.yml up --build`. Adjust until you have a working node. Check other chains for alternate configurations.
+
+Only include the `environment` section if there is recommended configuration for your chain. This will be copied to the documentation in the next step.
+
+```yaml
+services:
+  node:
+    build:
+      context: ../
+      args:
+        PROJECT: cosmoshub # should match the directory/Chain Registry
+        PROJECT_BIN: gaiad
+        PROJECT_DIR: .gaia
+        VERSION: v21.0.0
+        REPOSITORY: https://github.com/cosmos/gaia
+        GOLANG_VERSION: 1.22-bullseye
+        DEBIAN_VERSION: bullseye
+        POLKACHU_CHAIN_ID: cosmos # only include if different from Chain Registry name
+    # environment:
+    #   - FASTSYNC_VERSION=v0
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    volumes:
+      - ./node-data:/root/.gaia
+```
+
+Run the documentation script to automatically create `deploy.yml`, `docker-compose.yml` and `README.md` documentation files:
+
+```bash
+./document.sh mychainname
+```
+
+Update the main [`README.md`](./README.md) file to include your chain in the [Networks](#networks-pre-built-images) section. Keep this alphabetical and ensure the versions referenced are correct.
+
+Update the [`.github/workflows/publish.yml`](./.github/workflows/publish.yaml) file to include your chain and version. Again keep this alphabetical and ensure the versions referenced are correct.
+
+Submit a PR with your changes and it will be validated and merged if appropriate.

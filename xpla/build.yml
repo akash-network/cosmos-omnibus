@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .xpla
         VERSION: v1.6.0
         REPOSITORY: https://github.com/xpladev/xpla
-        NAMESPACE: XPLAD
         GOLANG_VERSION: 1.21-bullseye
         DEBIAN_VERSION: bullseye
     ports:

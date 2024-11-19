@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .decentr
         VERSION: v1.6.4
         REPOSITORY: https://github.com/Decentr-net/decentr
-        NAMESPACE: DECENTRD
     ports:
       - '26656:26656'
       - '26657:26657'

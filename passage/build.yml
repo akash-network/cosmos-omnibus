@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: passage
         VERSION: v2.4.0
         REPOSITORY: https://github.com/envadiv/Passage3D
-        NAMESPACE: PASSAGE
         PROJECT_DIR: .passage
         GOLANG_VERSION: 1.20-buster
     ports:

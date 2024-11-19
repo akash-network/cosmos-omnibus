@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: teritorid
         VERSION: v2.0.6
         REPOSITORY: https://github.com/TERITORI/teritori-chain
-        NAMESPACE: TERITORID
         PROJECT_DIR: .teritorid
         GOLANG_VERSION: 1.19-buster
     ports:

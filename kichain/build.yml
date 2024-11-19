@@ -10,7 +10,6 @@ services:
         VERSION: 5.0.1
         GOLANG_VERSION: 1.19-buster
         REPOSITORY: https://github.com/KiFoundation/ki-tools
-        NAMESPACE: KID
     ports:
       - '26656:26656'
       - '26657:26657'

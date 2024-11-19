@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: osmosisd
         VERSION: v26.0.1
         REPOSITORY: https://github.com/osmosis-labs/osmosis
-        NAMESPACE: OSMOSISD
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:

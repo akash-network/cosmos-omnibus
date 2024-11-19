@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: ag0
         VERSION: agoric-upgrade-7-2
         REPOSITORY: https://github.com/Agoric/ag0/
-        NAMESPACE: AG0
         PROJECT_DIR: .agoric
     ports:
       - '26656:26656'

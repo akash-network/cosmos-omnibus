@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .starsd
         VERSION: v12.0.0
         REPOSITORY: https://github.com/public-awesome/stargaze
-        NAMESPACE: STARSD
         GOLANG_VERSION: 1.21-bullseye
     ports:
       - '26656:26656'

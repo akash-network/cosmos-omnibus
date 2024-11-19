@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: migalood
         VERSION: v3.0.2
         REPOSITORY: https://github.com/White-Whale-Defi-Platform/migaloo-chain
-        NAMESPACE: MIGALOOD
         PROJECT_DIR: .migalood
         GOLANG_VERSION: 1.19-buster
     ports:

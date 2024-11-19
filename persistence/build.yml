@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: persistenceCore
         VERSION: v10.3.0
         REPOSITORY: https://github.com/persistenceOne/persistenceCore
-        NAMESPACE: PERSISTENCECORE
         GOLANG_VERSION: 1.21-bullseye
     ports:
       - '26656:26656'

@@ -10,7 +10,6 @@ services:
         PROJECT_DIR: .neutrond
         VERSION: v5.0.1
         REPOSITORY: https://github.com/neutron-org/neutron.git
-        NAMESPACE: NEUTROND
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
     ports:

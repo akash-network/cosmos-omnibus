@@ -9,7 +9,6 @@ services:
         PROJECT_BIN: ununifid
         VERSION: v4.0.1
         REPOSITORY: https://github.com/UnUniFi/chain
-        NAMESPACE: UNUNIFID
         PROJECT_DIR: .ununifi
         GOLANG_VERSION: 1.21-bullseye
     ports:
