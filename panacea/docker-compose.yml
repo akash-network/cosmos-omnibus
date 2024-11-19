@@ -1,19 +1,11 @@
-version: '3.4'
-
-# Required configuration can be found on
-# https://medibloc.gitbook.io/panacea-core/guide/join-the-network
-
 services:
-  node_1:
+  node:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.4.33-panacea-v2.2.0
     ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
     environment:
-      - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/panacea/chain.json
-      - SNAPSHOT_JSON=https://panacea.s3.filebase.com/snapshot.json
-      - MINIMUM_GAS_PRICES=5umed
+      - MONIKER=Cosmos Omnibus Node
     volumes:
       - ./node-data:/root/.panacea

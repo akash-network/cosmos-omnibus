@@ -1,28 +1,24 @@
 ---
 version: "2.0"
-
 services:
   node:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.4.33-nois-v1.0.5
     env:
-      - MONIKER=node_1
-      # - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/nois/chain.json
-      - CHAIN_ID=nois-1
-      - GENESIS_URL=https://raw.githubusercontent.com/noislabs/networks/nois1.final.1/nois-1/genesis.json
-      - P2P_SEEDS=b3e3bd436ee34c39055a4c9946a02feec232988c@seeds.cros-nest.com:56656,babc3f3f7804933265ec9c40ad94f4da8e9e0017@seed.rhinostake.com:17356,ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:17356,72cd4222818d25da5206092c3efc2c0dd0ec34fe@161.97.96.91:36656,20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:17356,c8db99691545545402a1c45fa897f3cb1a05aea6@nois-mainnet-seed.itrocket.net:36656
+      - MONIKER=Cosmos Omnibus Node
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
+      - ADDRBOOK_POLKACHU=1
     expose:
       - port: 26657
-        as: 80
         to:
           - global: true
       - port: 26656
         to:
           - global: true
-    # params:
-    #   storage:
-    #     data:
-    #       mount: /root/.noisd
-
+    params: # remove for non-persistent storage
+      storage:
+        data:
+          mount: /root/.noisd
 profiles:
   compute:
     node:
@@ -32,12 +28,11 @@ profiles:
         memory:
           size: 8Gi
         storage:
-          size: 100Gi
-          # - size: 100Mi
-          # - name: data
-          #   size: 400Gi
-          #   attributes:
-          #     persistent: true
+          - size: 10Gi
+          - name: data # remove for non-persistent storage
+            size: 400Gi
+            attributes:
+              persistent: true
   placement:
     dcloud:
       attributes:
@@ -49,7 +44,6 @@ profiles:
         node:
           denom: uakt
           amount: 1000
-
 deployment:
   node:
     dcloud:

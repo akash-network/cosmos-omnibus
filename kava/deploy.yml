@@ -1,35 +1,24 @@
 ---
 version: "2.0"
-
 services:
   node:
     image: ghcr.io/akash-network/cosmos-omnibus:v0.4.33-kava-v0.25.0
     env:
-      - MONIKER=my-moniker-1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/kava/chain.json
-      # If you don't want to use state-sync or it does not work, then you can use the snapshots:
-      # Obtain the current snapshot URL via this Polkachu site for Kava nodes:
-      # https://polkachu.com/tendermint_snapshots/kava
-      # Populated example SNAPSHOT_URL provided below
-      # - SNAPSHOT_URL=https://snapshots.polkachu.com/snapshots/kava/kava_3967613.tar.lz4
-      # - SNAPSHOT_DATA_PATH=data
-      # - ADDRBOOK_URL=https://snapshots.polkachu.com/addrbook/kava/addrbook.json
-      # Statesync for the Kava chain currerntly fails.  In the future - to test statesync anew - uncomment the P2P and STATESYNC lines below.
+      - MONIKER=Cosmos Omnibus Node
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
+      - ADDRBOOK_POLKACHU=1
     expose:
       - port: 26657
-        as: 80
         to:
           - global: true
       - port: 26656
         to:
           - global: true
-    # params:
-    #   storage:
-    #     data:
-    #       mount: /root/.kava
-
+    params: # remove for non-persistent storage
+      storage:
+        data:
+          mount: /root/.kava
 profiles:
   compute:
     node:
@@ -37,14 +26,13 @@ profiles:
         cpu:
           units: 4
         memory:
-          size: 32Gi
+          size: 8Gi
         storage:
-          size: 100Gi
-          # - size: 100Mi
-          # - name: data
-          #   size: 400Gi
-          #   attributes:
-          #     persistent: true
+          - size: 10Gi
+          - name: data # remove for non-persistent storage
+            size: 400Gi
+            attributes:
+              persistent: true
   placement:
     dcloud:
       attributes:
@@ -56,7 +44,6 @@ profiles:
         node:
           denom: uakt
           amount: 1000
-
 deployment:
   node:
     dcloud:

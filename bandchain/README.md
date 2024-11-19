@@ -1,32 +1,37 @@
-# Bandchain
+# Band Protocol
 
 | | |
 |---|---|
 |Version|`v2.5.1`|
 |Binary|`bandd`|
 |Directory|`.band`|
-|ENV namespace|`BAND`|
+|ENV namespace|`BANDD`|
 |Repository|`https://github.com/bandprotocol/chain`|
 |Image|`ghcr.io/akash-network/cosmos-omnibus:v0.4.33-bandchain-v2.5.1`|
 
 ## Examples
 
 - Run on Akash with the [example deploy.yml](./deploy.yml)
-- Run locally using the [example docker-compose.yml](./docker-compose.yml)
+- Run with Docker using the [example docker-compose.yml](./docker-compose.yml)
 
 ## Chain information
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes up to date chain info for Bandchain.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes [up to date chain info](https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/chain.json) for Band Protocol.
+
+This will be used automatically unless overridden with the `CHAIN_JSON` variable (use `0` to disable).
+
+## Polkachu Chain Services
+
+[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
+
+The following configuration is available for Band Protocol nodes. [See the documentation](../README.md#polkachu-services) for more information.
 
 |Variable|Value|
 |---|---|
-|`CHAIN_JSON`|`https://raw.githubusercontent.com/cosmos/chain-registry/master/bandchain/chain.json`|
+|`P2P_POLKACHU`|`1`|
+|`P2P_SEEDS_POLKACHU`|`1`|
+|`P2P_PEERS_POLKACHU`|`1`|
+|`STATESYNC_POLKACHU`|`1`|
+|`ADDRBOOK_POLKACHU`|`1`|
 
-## ChainLayer Quicksync
-
-ChainLayer provide snapshots for Bandchain as part of their [Quicksync service](https://quicksync.io/networks/band.html).
-
-|Variable|Value|
-|---|---|
-|`SNAPSHOT_QUICKSYNC`|`https://quicksync.io/band.json`|
-|`ADDRBOOK_URL`|`https://quicksync.io/addrbook.band.json`|
+Polkachu also provide pruned snapshots for Band Protocol. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/akash) and apply it using the `SNAPSHOT_URL` variable.

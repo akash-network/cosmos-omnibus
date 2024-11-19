@@ -12,32 +12,35 @@
 ## Examples
 
 - Run on Akash with the [example deploy.yml](./deploy.yml)
-- Run locally using the [example docker-compose.yml](./docker-compose.yml)
+- Run with Docker using the [example docker-compose.yml](./docker-compose.yml)
 
 ## Chain information
 
-Akash provide up to date chain information in their [akash-network/net](https://github.com/akash-network/net) repository.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes [up to date chain info](https://raw.githubusercontent.com/cosmos/chain-registry/master/akash/chain.json) for Akash.
+
+This will be used automatically unless overridden with the `CHAIN_JSON` variable (use `0` to disable).
+
+## Suggested configuration
+
+The following configuration is recommended for Akash nodes.
 
 |Variable|Value|
 |---|---|
 |`CHAIN_JSON`|`https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json`|
-
-## Suggested configuration
-
-Akash suggests setting a minimum gas price and using Fastsync v0.
-
-|Variable|Value|
-|---|---|
-|`MINIMUM_GAS_PRICES`|`0.025uakt`|
 |`FASTSYNC_VERSION`|`v0`|
 
 ## Polkachu Chain Services
 
-[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, statesync and pruned snapshots.
+[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
 
-Note you should choose between statesync and snapshot bootstrapping, snapshot will take precedence.
+The following configuration is available for Akash nodes. [See the documentation](../README.md#polkachu-services) for more information.
 
 |Variable|Value|
 |---|---|
 |`P2P_POLKACHU`|`1`|
+|`P2P_SEEDS_POLKACHU`|`1`|
+|`P2P_PEERS_POLKACHU`|`1`|
 |`STATESYNC_POLKACHU`|`1`|
+|`ADDRBOOK_POLKACHU`|`1`|
+
+Polkachu also provide pruned snapshots for Akash. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/akash) and apply it using the `SNAPSHOT_URL` variable.
