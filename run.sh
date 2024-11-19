@@ -158,8 +158,10 @@ export "${NAMESPACE}_RPC_LADDR"="${RPC_LADDR:-tcp://0.0.0.0:26657}"
 if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEEDS_POLKACHU" || -n "$P2P_PEERS_POLKACHU" || -n "$ADDRBOOK_POLKACHU" ]]; then
   export POLKACHU_CHAIN_ID="${POLKACHU_CHAIN_ID:-$PROJECT}"
   POLKACHU_CHAIN=`curl -Ls https://polkachu.com/api/v2/chains/$POLKACHU_CHAIN_ID | jq .`
-  if [ -z "$POLKACHU_CHAIN" ]; then
+  POLKACHU_SUCCESS=$(echo $POLKACHU_CHAIN | jq -r '.success')
+  if [ $POLKACHU_SUCCESS = false ]; then
     echo "Polkachu chain not recognised (POLKACHU_CHAIN_ID might need to be set)"
+    exit
   else
     [ "$DEBUG" == "1" ] && echo $POLKACHU_CHAIN
     # Polkachu statesync

@@ -13,6 +13,7 @@ services:
         NAMESPACE: OMNIFLIXHUBD
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
+        POLKACHU_CHAIN_ID: omniflix
     ports:
       - '26656:26656'
       - '26657:26657'
