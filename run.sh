@@ -347,7 +347,7 @@ fi
 
 # Cosmovisor
 if [ "$COSMOVISOR_ENABLED" == "1" ]; then
-  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.5.0"}"
+  export COSMOVISOR_VERSION="${COSMOVISOR_VERSION:-"1.6.0"}"
   export COSMOVISOR_URL="${COSMOVISOR_URL:-"https://github.com/cosmos/cosmos-sdk/releases/download/cosmovisor%2Fv$COSMOVISOR_VERSION/cosmovisor-v$COSMOVISOR_VERSION-$(uname -s)-$(uname -m | sed "s|x86_64|amd64|").tar.gz"}"
 
   # Download Binary
@@ -364,6 +364,7 @@ if [ "$COSMOVISOR_ENABLED" == "1" ]; then
   # Set up the environment variables
   export DAEMON_NAME=$PROJECT_BIN
   export DAEMON_HOME=$PROJECT_ROOT
+  export DAEMON_SHUTDOWN_GRACE="${DAEMON_SHUTDOWN_GRACE:-15s}"
 
   # Setup Folder Structure
   mkdir -p $PROJECT_ROOT/cosmovisor/upgrades
