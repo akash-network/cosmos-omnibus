@@ -2,7 +2,7 @@
 
 set -e
 
-OMNIBUS_VERSION="v1.0.0"
+OMNIBUS_IMAGE="cosmos-omnibus:v1.0.0"
 
 if [ "$#" -gt 0 ]; then
   DIRS="$@"
@@ -24,7 +24,7 @@ for dir in $DIRS; do
   NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN} | tr '[:lower:]' '[:upper:]' | tr '-' '_')}"
   VERSION=$(yq '.services.node.build.args.VERSION' $dir/build.yml)
   REPOSITORY=$(yq '.services.node.build.args.REPOSITORY' $dir/build.yml)
-  IMAGE="ghcr.io/akash-network/cosmos-omnibus:${OMNIBUS_VERSION}-${PROJECT}-${VERSION}"
+  IMAGE="ghcr.io/akash-network/${OMNIBUS_IMAGE}-${PROJECT}-${VERSION}"
 
   CHAIN_JSON="https://raw.githubusercontent.com/cosmos/chain-registry/master/${PROJECT}/chain.json"
   CHAIN_JSON_EXISTS=false
