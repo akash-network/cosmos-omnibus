@@ -8,7 +8,7 @@ services:
         PROJECT: neutron
         PROJECT_BIN: neutrond
         PROJECT_DIR: .neutrond
-        VERSION: v5.0.1
+        VERSION: v5.0.2
         REPOSITORY: https://github.com/neutron-org/neutron.git
         GOLANG_VERSION: 1.22-bullseye
         DEBIAN_VERSION: bullseye
