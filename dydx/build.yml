@@ -8,8 +8,8 @@ services:
         PROJECT: dydx
         PROJECT_BIN: dydxprotocold
         PROJECT_DIR: .dydxprotocol
-        VERSION: v7.0.1
-        BUILD_REF: protocol/v7.0.1
+        VERSION: v7.0.5
+        BUILD_REF: protocol/v7.0.5
         REPOSITORY: https://github.com/dydxprotocol/v4-chain
         BUILD_CMD: make install -C protocol
         GOLANG_VERSION: 1.22-bullseye
