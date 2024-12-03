@@ -55,7 +55,7 @@ jobs:
           - project: desmos
             version: v6.2.0
           - project: dydx
-            version: v7.0.1
+            version: v7.0.5
           - project: dymension
             version: v3.1.0
           - project: emoney
