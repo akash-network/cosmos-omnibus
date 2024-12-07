@@ -39,6 +39,7 @@ profiles:
             size: 400Gi
             attributes:
               persistent: true
+              class: beta3
   placement:
     dcloud:
       attributes:
