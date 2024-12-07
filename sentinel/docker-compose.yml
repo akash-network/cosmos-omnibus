@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.2-sentinel-v0.11.5
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.3-sentinel-v0.11.5
     ports:
       - '26656:26656'
       - '26657:26657'

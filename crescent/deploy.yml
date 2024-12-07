@@ -2,7 +2,7 @@
 version: "2.0"
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.2-crescent-v4.2.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.3-crescent-v4.2.0
     env:
       - MONIKER=Cosmos Omnibus Node
       - P2P_POLKACHU=1
