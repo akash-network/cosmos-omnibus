@@ -47,7 +47,7 @@ jobs:
           - project: crescent
             version: v4.2.0
           - project: cronos
-            version: v1.3.0
+            version: v1.4.0
           - project: cryptoorgchain
             version: v4.2.9
           - project: decentr
