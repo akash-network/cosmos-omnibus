@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v4.2.1`|
+|Version|`v4.3.0`|
 |Binary|`canined`|
 |Directory|`.canine`|
 |ENV namespace|`CANINED`|
 |Repository|`https://github.com/JackalLabs/canine-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-jackal-v4.2.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-jackal-v4.3.0`|
 
 ## Examples
 
