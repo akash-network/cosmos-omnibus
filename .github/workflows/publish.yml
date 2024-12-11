@@ -77,7 +77,7 @@ jobs:
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v4.2.1
+            version: v4.3.0
           - project: juno
             version: v25.0.0
           - project: kava
