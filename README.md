@@ -58,7 +58,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-assetmantle-v1.0.0`|[Example](./assetmantle)|
 |[axelar](https://github.com/axelarnetwork/axelar-core)|`v0.34.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-axelar-v0.34.0`|[Example](./axelar)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-bandchain-v2.5.1`|[Example](./bandchain)|
-|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v4.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-bitcanna-v4.0.1`|[Example](./bitcanna)|
+|[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-bitcanna-v4.0.2`|[Example](./bitcanna)|
 |[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.17.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-bitsong-v0.17.0`|[Example](./bitsong)|
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-bostrom-v0.3.2`|[Example](./bostrom)|
 |[canto](https://github.com/Canto-Network/Canto)|`v8.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-canto-v8.1.1`|[Example](./canto)|
