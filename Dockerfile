@@ -120,13 +120,14 @@ RUN chmod +x /bin/$PROJECT_BIN
 FROM debian:buster AS injective
 
 ARG VERSION
+ARG BUILD_REF=$VERSION
 
 RUN apt-get update && \
   apt-get install --no-install-recommends --assume-yes ca-certificates curl unzip && \
   apt-get clean
 
 WORKDIR /data
-RUN curl -Lo /data/release.zip https://github.com/InjectiveLabs/injective-chain-releases/releases/download/$VERSION/linux-amd64.zip
+RUN curl -Lo /data/release.zip https://github.com/InjectiveLabs/injective-chain-releases/releases/download/$BUILD_REF/linux-amd64.zip
 RUN unzip -oj /data/release.zip
 RUN mv injectived /bin
 RUN mv libwasmvm.x86_64.so /usr/lib
