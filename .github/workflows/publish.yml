@@ -49,7 +49,7 @@ jobs:
           - project: cronos
             version: v1.4.0
           - project: cryptoorgchain
-            version: v4.2.9
+            version: v4.2.10
           - project: decentr
             version: v1.6.4
           - project: desmos
