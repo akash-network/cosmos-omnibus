@@ -29,7 +29,7 @@ jobs:
           - project: bandchain
             version: v2.5.1
           - project: bitcanna
-            version: v4.0.1
+            version: v4.0.3
           - project: bitsong
             version: v0.17.0
           - project: bostrom
@@ -47,7 +47,7 @@ jobs:
           - project: crescent
             version: v4.2.0
           - project: cronos
-            version: v1.3.0
+            version: v1.4.0
           - project: cryptoorgchain
             version: v4.2.10
           - project: decentr
@@ -77,7 +77,7 @@ jobs:
           - project: irisnet
             version: v2.0.1
           - project: jackal
-            version: v4.2.1
+            version: v4.3.0
           - project: juno
             version: v25.0.0
           - project: kava
@@ -99,7 +99,7 @@ jobs:
           - project: migaloo
             version: v3.0.2
           - project: neutron
-            version: v5.0.2
+            version: v5.0.4
           - project: noble
             version: v5.0.0
           - project: nois
@@ -107,7 +107,7 @@ jobs:
           - project: omniflixhub
             version: v5.0.1
           - project: osmosis
-            version: v27.0.1
+            version: v28.0.0
           - project: panacea
             version: v2.2.0
           - project: passage
