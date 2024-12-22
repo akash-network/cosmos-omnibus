@@ -102,8 +102,6 @@ jobs:
             version: v5.0.4
           - project: noble
             version: v5.0.0
-          - project: nois
-            version: v1.0.5
           - project: omniflixhub
             version: v5.0.1
           - project: osmosis
