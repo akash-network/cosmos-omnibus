@@ -7,7 +7,7 @@
 |Directory|`.desmos`|
 |ENV namespace|`DESMOS`|
 |Repository|`null`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-desmos-v6.2.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.0.4-desmos-v6.2.0`|
 
 ## Examples
 

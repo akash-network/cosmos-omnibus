@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.3-bostrom-v0.3.2
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.4-bostrom-v0.3.2
     ports:
       - '26656:26656'
       - '26657:26657'

@@ -7,7 +7,7 @@
 |Directory|`.kujira`|
 |ENV namespace|`KUJIRAD`|
 |Repository|`https://github.com/Team-Kujira/core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.0.3-kujira-v2.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.0.4-kujira-v2.0.0`|
 
 ## Examples
 
@@ -30,8 +30,6 @@ The following configuration is available for Kujira nodes. [See the documentatio
 |---|---|
 |`P2P_POLKACHU`|`1`|
 |`P2P_SEEDS_POLKACHU`|`1`|
-|`P2P_PEERS_POLKACHU`|`1`|
-|`STATESYNC_POLKACHU`|`1`|
 |`ADDRBOOK_POLKACHU`|`1`|
 
 Polkachu also provide pruned snapshots for Kujira. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/akash) and apply it using the `SNAPSHOT_URL` variable.
