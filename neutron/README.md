@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v5.0.4`|
+|Version|`v5.0.5`|
 |Binary|`neutrond`|
 |Directory|`.neutrond`|
 |ENV namespace|`NEUTROND`|
 |Repository|`https://github.com/neutron-org/neutron.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.0.4-neutron-v5.0.4`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.0.4-neutron-v5.0.5`|
 
 ## Examples
 
