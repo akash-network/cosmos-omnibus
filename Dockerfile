@@ -167,7 +167,7 @@ RUN apt-get update && \
 # Note optional `BUILD_IMAGE` argument controls the base image
 #
 FROM ${BUILD_IMAGE} AS omnibus
-LABEL org.opencontainers.image.source https://github.com/akash-network/cosmos-omnibus
+LABEL org.opencontainers.image.source=https://github.com/akash-network/cosmos-omnibus
 
 RUN apt-get update && \
   apt-get install --no-install-recommends --assume-yes ca-certificates curl wget file unzip liblz4-tool gnupg2 jq pv && \
