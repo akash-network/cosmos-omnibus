@@ -9,6 +9,8 @@ services:
         PROJECT_BIN: bitsongd
         VERSION: v0.20.4
         REPOSITORY: https://github.com/bitsongofficial/go-bitsong
+        GOLANG_VERSION: 1.23-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
