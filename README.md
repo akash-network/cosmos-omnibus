@@ -59,7 +59,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[axelar](https://github.com/axelarnetwork/axelar-core)|`v0.34.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.5-axelar-v0.34.0`|[Example](./axelar)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.5-bandchain-v2.5.1`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v4.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.5-bitcanna-v4.0.3`|[Example](./bitcanna)|
-|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.17.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.5-bitsong-v0.17.0`|[Example](./bitsong)|
+|[bitsong](https://github.com/bitsongofficial/go-bitsong)|`v0.20.4`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.5-bitsong-v0.20.4`|[Example](./bitsong)|
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.5-bostrom-v0.3.2`|[Example](./bostrom)|
 |[canto](https://github.com/Canto-Network/Canto)|`v8.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.5-canto-v8.1.1`|[Example](./canto)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.5-cheqd-0.6.9`|[Example](./cheqd)|
