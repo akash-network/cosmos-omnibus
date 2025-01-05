@@ -7,10 +7,11 @@ services:
       args:
         PROJECT: migaloo
         PROJECT_BIN: migalood
-        VERSION: v3.0.2
+        VERSION: v4.2.7
         REPOSITORY: https://github.com/White-Whale-Defi-Platform/migaloo-chain
         PROJECT_DIR: .migalood
-        GOLANG_VERSION: 1.19-buster
+        GOLANG_VERSION: 1.23-bullseye
+        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
