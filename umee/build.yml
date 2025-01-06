@@ -7,7 +7,7 @@ services:
         PROJECT_BIN: umeed
         PROJECT_DIR: .umee
         VERSION: v6.3.0
-        GOLANG_VERSION: 1.21-bullseye
+        GOLANG_VERSION: 1.21
         REPOSITORY: https://github.com/umee-network/umee
     ports:
       - '26656:26656'

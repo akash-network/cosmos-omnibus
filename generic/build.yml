@@ -3,7 +3,7 @@ services:
     build:
       context: ../
       args:
-        BUILD_IMAGE: build_wasmvm
+        BASE_IMAGE: base
     ports:
       - '26656:26656'
       - '26657:26657'

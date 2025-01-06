@@ -8,7 +8,7 @@ services:
         PROJECT_DIR: .juno
         VERSION: v26.0.0
         REPOSITORY: https://github.com/CosmosContracts/juno
-        GOLANG_VERSION: 1.22-bullseye
+        GOLANG_VERSION: 1.22
         DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
