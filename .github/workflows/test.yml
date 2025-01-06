@@ -4,6 +4,11 @@ on:
     branches:
       - '**'
   pull_request:
+  workflow_dispatch:
+    inputs:
+      projects:
+        description: 'Comma separated list of projects to test'
+        required: false
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -12,11 +17,17 @@ concurrency:
 jobs:
   build_matrix:
     runs-on: ubuntu-latest
-
+    env:
+      PROJECTS: ${{ github.event.inputs.projects }}
     steps:
       - uses: actions/checkout@v4
       - id: set-matrix
-        run: echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+        run: |
+          if [ -z "${{ env.PROJECTS }}" ]; then
+            echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+          else
+            echo "matrix=$(echo ${{ env.PROJECTS }} | sed 's/, */,/g' | tr ',' '\n' | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+          fi
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
 
@@ -25,18 +36,39 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 12
+      max-parallel: 6
       matrix:
         project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
-
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-        id: buildx
-        with:
-          install: true
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
       - name: Build
+        uses: docker/bake-action@v5
+        with:
+          workdir: ${{ matrix.project}}
+          files: build.yml
+          allow: fs.read=..
+          set: |
+            node.tags=${{ matrix.project }}
+            node.platform=linux/amd64
+            *.cache-from=type=gha,scope=${{ matrix.project }}
+            *.cache-to=type=gha,mode=max,scope=${{ matrix.project }}
+          load: true
+      - name: Test
+        if: ${{ matrix.project != 'generic' }}
         run: |
-          touch .env # Create dummy env file
-          cd ${{matrix.project}}
-          docker buildx bake -f build.yml --set node.tags=node
+          cd ${{ matrix.project }}
+          PROJECT=${{ matrix.project }}
+          PROJECT_BIN=$(yq '.services.node.build.args.PROJECT_BIN // ""' ./build.yml)
+          PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
+          VERSION=$(yq '.services.node.build.args.VERSION' ./build.yml)
+          VERSION_STRING=$(docker run --platform=linux/amd64 --entrypoint='' $PROJECT $PROJECT_BIN version 2>&1)
+
+          if ! echo "v$VERSION_STRING" | grep -q "$VERSION"; then
+            echo "Version mismatch: '$VERSION_STRING' does not contain $VERSION"
+            exit 1
+          else
+            echo "Success: $VERSION_STRING"
+          fi

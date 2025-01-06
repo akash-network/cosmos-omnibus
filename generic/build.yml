@@ -13,7 +13,5 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.akash
