@@ -9,177 +9,50 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build_matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: set-matrix
+        run: |
+          echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
   build:
+    needs: build_matrix
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 12
+      max-parallel: 10
       matrix:
-        include:
-          - project: agoric
-            version: agoric-upgrade-7-2
-          - project: akash
-            version: v0.36.0
-          - project: archway
-            version: v7.0.0
-          - project: assetmantle
-            version: v1.0.0
-          - project: axelar
-            version: v0.34.0
-          - project: bandchain
-            version: v2.5.1
-          - project: bitcanna
-            version: v4.0.3
-          - project: bitsong
-            version: v0.20.4
-          - project: bostrom
-            version: v0.3.2
-          - project: canto
-            version: v8.1.1
-          - project: cheqd
-            version: 0.6.9
-          - project: chihuahua
-            version: v8.0.2
-          - project: comdex
-            version: v14.1.0
-          - project: cosmoshub
-            version: v21.0.1
-          - project: crescent
-            version: v4.2.0
-          - project: cronos
-            version: v1.4.0
-          - project: cryptoorgchain
-            version: v4.2.10
-          - project: decentr
-            version: v1.6.4
-          - project: desmos
-            version: v6.2.0
-          - project: dydx
-            version: v7.0.5
-          - project: dymension
-            version: v3.1.0
-          - project: emoney
-            version: v1.2.0
-          - project: empowerchain
-            version: v2.0.0
-          - project: evmos
-            version: v20.0.0
-          - project: fetchhub
-            version: v0.11.3
-          - project: gitopia
-            version: v2.1.1
-          - project: gravitybridge
-            version: v1.11.1
-          - project: impacthub
-            version: v0.18.1
-          - project: injective
-            version: v1.13.3
-          - project: irisnet
-            version: v2.0.1
-          - project: jackal
-            version: v4.3.0
-          - project: juno
-            version: v26.0.0
-          - project: kava
-            version: v0.25.0
-          - project: kichain
-            version: 5.0.1
-          - project: konstellation
-            version: v0.5.0
-          - project: kujira
-            version: v2.0.0
-          - project: kyve
-            version: v1.5.0
-          - project: likecoin
-            version: v4.2.0
-          - project: lumnetwork
-            version: v1.6.3
-          - project: mars
-            version: v1.0.2
-          - project: migaloo
-            version: v4.2.7
-          - project: neutron
-            version: v5.0.5
-          - project: noble
-            version: v5.0.0
-          - project: omniflixhub
-            version: v5.0.1
-          - project: osmosis
-            version: v28.0.0
-          - project: panacea
-            version: v2.2.0
-          - project: passage
-            version: v2.4.0
-          - project: persistence
-            version: v10.3.0
-          - project: regen
-            version: v5.1.1
-          - project: rizon
-            version: v0.4.1
-          - project: sei
-            version: v5.7.5
-          - project: sentinel
-            version: v0.11.5
-          - project: shentu
-            version: v2.11.0
-          - project: sifchain
-            version: v1.4.0
-          - project: sommelier
-            version: v4.0.2
-          - project: source
-            version: v3.0.1
-          - project: stargaze
-            version: v12.0.0
-          - project: stride
-            version: v24.0.0
-          - project: starname
-            version: v0.11.5
-          - project: teritori
-            version: v2.0.6
-          - project: terra
-            version: v2.11.8
-          - project: umee
-            version: v6.3.0
-          - project: ununifi
-            version: v4.0.1
-          - project: xpla
-            version: v1.6.0
+        project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-        id: buildx
-        with:
-          install: true
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Get image tag
+        id: get-image-tag
         run: |
-          touch .env # Create dummy env file
-          cd ${{matrix.project}}
-          docker buildx bake -f build.yml --set node.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-${{matrix.project}}-${{matrix.version}}${{matrix.tag_suffix}} --push
-  build_generic:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      max-parallel: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-        id: buildx
+          VERSION=$(yq '.services.node.build.args.VERSION // ""' ./${{matrix.project}}/build.yml)
+          if [ -n "$VERSION" ]; then
+            echo "image-tag=${GITHUB_REF#refs/tags/}-${{matrix.project}}-$VERSION" >> $GITHUB_OUTPUT
+          else
+            echo "image-tag=${GITHUB_REF#refs/tags/}-${{matrix.project}}" >> $GITHUB_OUTPUT
+          fi
+      - name: Build and push
+        uses: docker/bake-action@v5
         with:
-          install: true
-      - name: Login to DockerHub
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build
-        run: |
-          touch .env # Create dummy env file
-          cd generic
-          docker buildx bake -f build.yml --set node.tags=ghcr.io/${{ github.repository }}:${GITHUB_REF#refs/tags/}-generic --push
+          workdir: ${{ matrix.project}}
+          files: build.yml
+          allow: fs.read=..
+          set: |
+            node.tags=ghcr.io/${{ github.repository }}:${{ steps.get-image-tag.outputs.image-tag }}
+            node.platform=linux/amd64
+          push: true
