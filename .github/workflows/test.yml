@@ -15,7 +15,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  list_changed_directories:
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: sankichi92/list-changed-directories@v1
+        id: list_changed_directories
+        if: ${{ !env.ACT }}
+        with:
+          target-file: build.yml
+          common-dependency-paths: |-
+            Dockerfile
+            run.sh
+    outputs:
+      projects: ${{ steps.list_changed_directories.outputs.changed-directories }}
+
   build_matrix:
+    if: ${{ always() }}
+    needs: list_changed_directories
     runs-on: ubuntu-latest
     env:
       PROJECTS: ${{ github.event.inputs.projects }}
@@ -23,16 +41,21 @@ jobs:
       - uses: actions/checkout@v4
       - id: set-matrix
         run: |
-          if [ -z "${{ env.PROJECTS }}" ]; then
-            echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
-          else
+          if [ -n "${{ env.PROJECTS }}" ]; then
             echo "matrix=$(echo ${{ env.PROJECTS }} | sed 's/, */,/g' | tr ',' '\n' | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+          else
+            if [[ -n "${{ toJson(needs.list_changed_directories.outputs.projects) }}" ]]; then
+              echo "matrix=${{ toJson(needs.list_changed_directories.outputs.projects) }}" >> $GITHUB_OUTPUT
+            else
+              echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+            fi
           fi
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
 
   build:
     needs: build_matrix
+    if: needs.build_matrix.outputs.matrix != '[]'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
