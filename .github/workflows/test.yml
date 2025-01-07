@@ -53,8 +53,8 @@ jobs:
           set: |
             node.tags=${{ matrix.project }}
             node.platform=linux/amd64
-            *.cache-from=type=gha,scope=${{ matrix.project }}
-            *.cache-to=type=gha,mode=max,scope=${{ matrix.project }}
+            node.cache-from=type=gha,scope=${{ matrix.project }}
+            node.cache-to=type=gha,mode=max,scope=${{ matrix.project }}
           load: true
       - name: Test
         if: ${{ matrix.project != 'generic' }}
