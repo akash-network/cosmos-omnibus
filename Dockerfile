@@ -16,11 +16,10 @@ ARG BUILD_PACKAGES
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --assume-yes curl unzip file ${BUILD_PACKAGES} && \
-    apt-get clean
+    apt-get clean && \
+    mkdir -p /data/deps
 
 WORKDIR /data
-
-RUN mkdir deps
 
 #
 # Default build from source method
@@ -33,19 +32,17 @@ ARG BUILD_CMD="make install"
 ARG BUILD_DIR=.
 ARG BUILD_REF=$VERSION
 
-RUN git clone $REPOSITORY source
-WORKDIR /data/source/$BUILD_DIR
-RUN git checkout $BUILD_REF
-RUN $BUILD_CMD
+RUN git clone $REPOSITORY source && \
+    cd /data/source/$BUILD_DIR && \
+    git checkout $BUILD_REF && \
+    $BUILD_CMD && \
+    mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
 
-WORKDIR /data
-RUN mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
-# copy dependencies
+# copy dependencies to deps and move symlinked directories to usr
 RUN ldd /bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
-    xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
-# move symlinked directories to usr
-RUN [ ! -d deps/lib ] || mkdir -p deps/usr && mv deps/lib deps/usr/lib
-RUN [ ! -d deps/lib64 ] || mkdir -p deps/usr && mv deps/lib64 deps/usr/lib64
+    xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;' && \
+    [ ! -d deps/lib ] || mkdir -p deps/usr && mv deps/lib deps/usr/lib && \
+    [ ! -d deps/lib64 ] || mkdir -p deps/usr && mv deps/lib64 deps/usr/lib64
 
 #
 # Optional build image to install from binary
@@ -55,15 +52,15 @@ FROM build_base AS build_binary
 ARG BINARY_URL
 ARG BINARY_ZIP_PATH
 
-RUN curl -Lso /bin/$PROJECT_BIN $BINARY_URL
-RUN bash -c 'file_description=$(file /bin/$PROJECT_BIN) && \
-  case "${file_description,,}" in \
-    *"gzip compressed data"*)   mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tgz && tar -xvf /bin/$PROJECT_BIN.tgz -C /bin && rm /bin/$PROJECT_BIN.tgz;; \
-    *"tar archive"*)            mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar -C /bin && rm /bin/$PROJECT_BIN.tar;; \
-    *"zip archive data"*)       mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip;; \
-  esac'
-RUN if [ -n "$BINARY_ZIP_PATH" ]; then mv /bin/$BINARY_ZIP_PATH /bin/$PROJECT_BIN; fi
-RUN chmod +x /bin/$PROJECT_BIN
+RUN curl -Lso /bin/$PROJECT_BIN $BINARY_URL && \
+    bash -c 'file_description=$(file /bin/$PROJECT_BIN) && \
+    case "${file_description,,}" in \
+        *"gzip compressed data"*)   mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tgz && tar -xvf /bin/$PROJECT_BIN.tgz -C /bin && rm /bin/$PROJECT_BIN.tgz;; \
+        *"tar archive"*)            mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar -C /bin && rm /bin/$PROJECT_BIN.tar;; \
+        *"zip archive data"*)       mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip;; \
+    esac' && \
+    if [ -n "$BINARY_ZIP_PATH" ]; then mv /bin/$BINARY_ZIP_PATH /bin/$PROJECT_BIN; fi && \
+    chmod +x /bin/$PROJECT_BIN
 
 #
 # Custom build image for injective
@@ -73,12 +70,12 @@ FROM build_base AS build_injective
 ARG VERSION
 ARG BUILD_REF=$VERSION
 
-RUN curl -Lo release.zip https://github.com/InjectiveLabs/injective-chain-releases/releases/download/$BUILD_REF/linux-amd64.zip
-RUN unzip -oj release.zip
-RUN mv injectived /bin
-RUN mkdir -p deps/usr/lib
-RUN mv libwasmvm.x86_64.so deps/usr/lib
-RUN chmod +x /bin/injectived
+RUN curl -Lo release.zip https://github.com/InjectiveLabs/injective-chain-releases/releases/download/$BUILD_REF/linux-amd64.zip && \
+    unzip -oj release.zip && \
+    mv injectived /bin && \
+    mkdir -p deps/usr/lib && \
+    mv libwasmvm.x86_64.so deps/usr/lib && \
+    chmod +x /bin/injectived
 
 #
 # Final build environment
