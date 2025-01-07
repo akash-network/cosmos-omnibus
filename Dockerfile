@@ -1,7 +1,7 @@
 ARG DEBIAN_VERSION=bookworm
 ARG GOLANG_VERSION=1.21
 ARG BUILD_IMAGE=golang:${GOLANG_VERSION}-${DEBIAN_VERSION}
-ARG DEBIAN_IMAGE=debian:${DEBIAN_VERSION}
+ARG DEBIAN_IMAGE=debian:${DEBIAN_VERSION}-slim
 ARG BUILD_METHOD=source
 ARG BASE_IMAGE=copy_build
 
@@ -12,11 +12,11 @@ FROM ${BUILD_IMAGE} AS build_base
 
 ARG PROJECT
 ARG PROJECT_BIN=$PROJECT
-ARG INSTALL_PACKAGES
+ARG BUILD_PACKAGES
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes curl unzip pv file ${INSTALL_PACKAGES} && \
-  apt-get clean
+    apt-get install --no-install-recommends --assume-yes curl unzip file ${BUILD_PACKAGES} && \
+    apt-get clean
 
 WORKDIR /data
 
@@ -73,10 +73,6 @@ FROM build_base AS build_injective
 ARG VERSION
 ARG BUILD_REF=$VERSION
 
-RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes ca-certificates curl unzip && \
-  apt-get clean
-
 RUN curl -Lo release.zip https://github.com/InjectiveLabs/injective-chain-releases/releases/download/$BUILD_REF/linux-amd64.zip
 RUN unzip -oj release.zip
 RUN mv injectived /bin
@@ -113,9 +109,9 @@ FROM ${BASE_IMAGE} AS omnibus
 LABEL org.opencontainers.image.source=https://github.com/akash-network/cosmos-omnibus
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes \
+    apt-get install --no-install-recommends --assume-yes \
     ca-certificates curl wget file unzip zstd liblz4-tool gnupg2 jq s3cmd pv && \
-  apt-get clean
+    apt-get clean
 
 ARG PROJECT
 ARG PROJECT_BIN
@@ -147,9 +143,9 @@ EXPOSE 26656 \
 
 # Install Storj DCS uplink client
 RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux_amd64.zip -o uplink_linux_amd64.zip && \
-  unzip -o uplink_linux_amd64.zip && \
-  install uplink /usr/bin/uplink && \
-  rm -f uplink uplink_linux_amd64.zip
+    unzip -o uplink_linux_amd64.zip && \
+    install uplink /usr/bin/uplink && \
+    rm -f uplink uplink_linux_amd64.zip
 
 # Copy scripts
 COPY run.sh snapshot.sh /usr/bin/
