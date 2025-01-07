@@ -83,6 +83,10 @@ if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
   [ -n "$BINARY_ZIP_PATH" ] && mv /bin/${BINARY_ZIP_PATH} /bin/$PROJECT_BIN
   chmod +x /bin/$PROJECT_BIN
 
+  if [[ -n "$WASMVM_VERSION" && -z "$WASMVM_URL" ]]; then
+    WASMVM_URL="https://raw.githubusercontent.com/CosmWasm/wasmvm/${WASMVM_VERSION}/api/libwasmvm.so"
+  fi
+
   if [ -n "$WASMVM_URL" ]; then
     WASMVM_PATH="${WASMVM_PATH:-/lib/libwasmvm.so}"
     echo "Downloading wasmvm from $WASMVM_URL..."
