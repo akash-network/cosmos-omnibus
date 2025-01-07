@@ -113,7 +113,8 @@ FROM ${BASE_IMAGE} AS omnibus
 LABEL org.opencontainers.image.source=https://github.com/akash-network/cosmos-omnibus
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes ca-certificates curl wget file unzip zstd liblz4-tool gnupg2 jq pv && \
+  apt-get install --no-install-recommends --assume-yes \
+    ca-certificates curl wget file unzip zstd liblz4-tool gnupg2 jq s3cmd pv && \
   apt-get clean
 
 ARG PROJECT
@@ -143,11 +144,6 @@ EXPOSE 26656 \
        1317  \
        9090  \
        8080
-
-# Install AWS
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
-  && unzip -q awscliv2.zip -d /usr/src && rm -f awscliv2.zip \
-  && /usr/src/aws/install --bin-dir /usr/bin
 
 # Install Storj DCS uplink client
 RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux_amd64.zip -o uplink_linux_amd64.zip && \

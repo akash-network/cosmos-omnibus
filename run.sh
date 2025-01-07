@@ -90,11 +90,6 @@ if [[ -n "$BINARY_URL" && ! -f "/bin/$PROJECT_BIN" ]]; then
   fi
 fi
 
-export AWS_ACCESS_KEY_ID=$S3_KEY
-export AWS_SECRET_ACCESS_KEY=$S3_SECRET
-export S3_HOST="${S3_HOST:-https://s3.filebase.com}"
-export STORJ_ACCESS_GRANT=$STORJ_ACCESS_GRANT
-
 storj_args="${STORJ_UPLINK_ARGS:--p 4 --progress=false}"
 
 if [ -n "$STORJ_ACCESS_GRANT" ]; then
@@ -102,9 +97,21 @@ if [ -n "$STORJ_ACCESS_GRANT" ]; then
 fi
 
 if [ -n "$KEY_PATH" ]; then
-  s3_uri_base="s3://${KEY_PATH%/}"
-  storj_uri_base="sj://${KEY_PATH%/}"
-  aws_args="--endpoint-url ${S3_HOST}"
+  if [ -n "$STORJ_ACCESS_GRANT" ]; then
+    key_transport="uplink"
+    key_get_cmd="$key_transport cp"
+    key_put_cmd="$key_transport cp"
+    key_uri_base="sj://${KEY_PATH%/}"
+  else
+    aws_args="--host=${S3_HOST:-https://s3.filebase.com}"
+    aws_args="$aws_args --host-bucket=$(echo "$KEY_PATH" | cut -d'/' -f1)"
+    aws_args="$aws_args --access_key=${S3_KEY}"
+    aws_args="$aws_args --secret_key=${S3_SECRET}"
+    key_transport="s3cmd $aws_args"
+    key_get_cmd="$key_transport get"
+    key_put_cmd="$key_transport put"
+    key_uri_base="s3://${KEY_PATH%/}"
+  fi
   if [ -n "$KEY_PASSWORD" ]; then
     file_suffix=".gpg"
   else
@@ -113,20 +120,12 @@ if [ -n "$KEY_PATH" ]; then
 fi
 
 restore_key () {
-  if [ -n "$STORJ_ACCESS_GRANT" ]; then
-    existing=$(uplink ls "${storj_uri_base}/$1" | head -n 1)
-  else
-    existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
-  fi
+  existing=$($key_transport ls "${key_uri_base}/$1" | head -n 1)
   if [[ -z $existing ]]; then
     echo "$1 backup not found"
   else
     echo "Restoring $1"
-    if [ -n "$STORJ_ACCESS_GRANT" ]; then
-      uplink cp "${storj_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
-    else
-      aws $aws_args s3 cp "${s3_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
-    fi
+    $key_get_cmd "${key_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
 
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Decrypting"
@@ -137,22 +136,15 @@ restore_key () {
 }
 
 backup_key () {
-  if [ -n "$STORJ_ACCESS_GRANT" ]; then
-    existing=$(uplink ls "${storj_uri_base}/$1" | head -n 1)
-  else
-    existing=$(aws $aws_args s3 ls "${s3_uri_base}/$1" | head -n 1)
-  fi
+  existing=$($key_transport ls "${key_uri_base}/$1" | head -n 1)
   if [[ -z $existing ]]; then
     echo "Backing up $1"
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Encrypting backup..."
+      rm -f $CONFIG_PATH/$1.gpg
       gpg --symmetric --batch --passphrase "$KEY_PASSWORD" $CONFIG_PATH/$1
     fi
-    if [ -n "$STORJ_ACCESS_GRANT" ]; then
-      uplink cp $CONFIG_PATH/$1$file_suffix "${storj_uri_base}/$1"
-    else
-      aws $aws_args s3 cp $CONFIG_PATH/$1$file_suffix "${s3_uri_base}/$1"
-    fi
+    $key_put_cmd $CONFIG_PATH/$1$file_suffix "${key_uri_base}/$1"
     [ -n "$KEY_PASSWORD" ] && rm $CONFIG_PATH/$1.gpg
   fi
 }
