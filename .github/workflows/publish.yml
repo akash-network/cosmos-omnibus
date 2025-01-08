@@ -5,6 +5,9 @@ on:
       - v*
   workflow_dispatch:
     inputs:
+      tag:
+        description: 'Omnibus version tag to use for images'
+        required: true
       projects:
         description: 'Comma separated list of projects to test'
         required: false
@@ -37,6 +40,8 @@ jobs:
       max-parallel: 10
       matrix:
         project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
+    env:
+      TAG: ${{ github.event.inputs.tag }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -53,9 +58,9 @@ jobs:
         run: |
           VERSION=$(yq '.services.node.build.args.VERSION // ""' ./${{matrix.project}}/build.yml)
           if [ -n "$VERSION" ]; then
-            echo "image-tag=${GITHUB_REF#refs/tags/}-${{matrix.project}}-$VERSION" >> $GITHUB_OUTPUT
+            echo "image-tag=${{ env.tag || github.ref_name }}-${{matrix.project}}-$VERSION" >> $GITHUB_OUTPUT
           else
-            echo "image-tag=${GITHUB_REF#refs/tags/}-${{matrix.project}}" >> $GITHUB_OUTPUT
+            echo "image-tag=${{ env.tag || github.ref_name }}-${{matrix.project}}" >> $GITHUB_OUTPUT
           fi
       - name: Build and push
         uses: docker/bake-action@v5
