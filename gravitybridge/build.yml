@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   node:
     build:
@@ -8,8 +6,8 @@ services:
         PROJECT: gravitybridge
         PROJECT_BIN: gravity
         VERSION: v1.11.1
-        BUILD_IMAGE: binary
-        BINARY_URL: https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.7.2/gravity-linux-amd64
+        BUILD_METHOD: binary
+        BINARY_URL: https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.11.1/gravity-linux-amd64
         POLKACHU_CHAIN_ID: gravity
     ports:
       - '26656:26656'

@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   node:
     build:
@@ -9,7 +7,7 @@ services:
         PROJECT_BIN: comdex
         VERSION: v14.1.0
         REPOSITORY: https://github.com/comdex-official/comdex
-        GOLANG_VERSION: 1.22-bullseye
+        GOLANG_VERSION: 1.22
         DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'

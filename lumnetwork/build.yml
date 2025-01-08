@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   node:
     build:
@@ -8,9 +6,8 @@ services:
         PROJECT: lum
         PROJECT_BIN: lumd
         PROJECT_DIR: .lumd
-        VERSION: v1.6.3
+        VERSION: v1.6.7
         REPOSITORY: https://github.com/lum-network/chain
-        GOLANG_VERSION: 1.19.7-buster
         POLKACHU_CHAIN_ID: lum
     ports:
       - '26656:26656'

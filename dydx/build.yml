@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   node:
     build:
@@ -12,7 +10,7 @@ services:
         BUILD_REF: protocol/v7.0.5
         REPOSITORY: https://github.com/dydxprotocol/v4-chain
         BUILD_CMD: make install -C protocol
-        GOLANG_VERSION: 1.22-bullseye
+        GOLANG_VERSION: 1.22
         DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'

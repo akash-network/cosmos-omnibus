@@ -1,11 +1,9 @@
-version: '3.4'
-
 services:
   node:
     build:
       context: ../
       args:
-        BUILD_IMAGE: build_wasmvm
+        BASE_IMAGE: base
     ports:
       - '26656:26656'
       - '26657:26657'
@@ -15,7 +13,5 @@ services:
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
-    env_file:
-      - ../.env
     volumes:
       - ./node-data:/root/.akash

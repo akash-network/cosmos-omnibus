@@ -1,31 +1,25 @@
-ARG DEBIAN_VERSION=buster
-ARG BUILD_IMAGE=default
+ARG DEBIAN_VERSION=bookworm
+ARG GOLANG_VERSION=1.21
+ARG BUILD_IMAGE=golang:${GOLANG_VERSION}-${DEBIAN_VERSION}
+ARG DEBIAN_IMAGE=debian:${DEBIAN_VERSION}-slim
 ARG BUILD_METHOD=source
-ARG GOLANG_VERSION=1.18-buster
-ARG BASE_IMAGE=golang:${GOLANG_VERSION}
-ARG DEBIAN_IMAGE=debian:${DEBIAN_VERSION}
+ARG BASE_IMAGE=copy_build
 
 #
 # Default build environment for standard Tendermint chains
 #
-FROM ${BASE_IMAGE} AS build_base
+FROM ${BUILD_IMAGE} AS build_base
 
 ARG PROJECT
 ARG PROJECT_BIN=$PROJECT
-ARG INSTALL_PACKAGES
+ARG BUILD_PACKAGES
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes curl unzip pv ${INSTALL_PACKAGES} && \
-  apt-get clean
+    apt-get install --no-install-recommends --assume-yes curl unzip file ${BUILD_PACKAGES} && \
+    apt-get clean && \
+    mkdir -p /data/deps
 
-#
-# Optional build environment when libwasmvm.so is required
-#
-FROM build_base AS build_wasmvm
-
-ARG WASMVM_VERSION=v0.16.7
-ARG WASMVM_URL=https://raw.githubusercontent.com/CosmWasm/wasmvm/${WASMVM_VERSION}/api/libwasmvm.so
-ADD ${WASMVM_URL} /lib/libwasmvm.so
+WORKDIR /data
 
 #
 # Default build from source method
@@ -35,33 +29,53 @@ FROM build_base AS build_source
 ARG VERSION
 ARG REPOSITORY
 ARG BUILD_CMD="make install"
-ARG BUILD_DIR=/data
+ARG BUILD_DIR=.
 ARG BUILD_REF=$VERSION
 
-RUN git clone $REPOSITORY /data
-WORKDIR $BUILD_DIR
-RUN git checkout $BUILD_REF
+RUN git clone $REPOSITORY source && \
+    cd /data/source/$BUILD_DIR && \
+    git checkout $BUILD_REF && \
+    $BUILD_CMD && \
+    mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
+
+# copy dependencies to deps and move symlinked directories to usr
+RUN ldd /bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
+    xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;' && \
+    [ ! -d deps/lib ] || mkdir -p deps/usr && mv deps/lib deps/usr/lib && \
+    [ ! -d deps/lib64 ] || mkdir -p deps/usr && mv deps/lib64 deps/usr/lib64
 
 #
-# Optional build environment for Starport chains
+# Optional build image to install from binary
 #
-FROM build_source AS build_starport
+FROM build_base AS build_binary
 
-ARG BUILD_CMD="starport chain build"
+ARG BINARY_URL
+ARG BINARY_ZIP_PATH
 
-RUN curl https://get.starport.network/starport! | bash
+RUN curl -Lso /bin/$PROJECT_BIN $BINARY_URL && \
+    bash -c 'file_description=$(file /bin/$PROJECT_BIN) && \
+    case "${file_description,,}" in \
+        *"gzip compressed data"*)   mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tgz && tar -xvf /bin/$PROJECT_BIN.tgz -C /bin && rm /bin/$PROJECT_BIN.tgz;; \
+        *"tar archive"*)            mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar -C /bin && rm /bin/$PROJECT_BIN.tar;; \
+        *"zip archive data"*)       mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip;; \
+    esac' && \
+    if [ -n "$BINARY_ZIP_PATH" ]; then mv /bin/$BINARY_ZIP_PATH /bin/$PROJECT_BIN; fi && \
+    chmod +x /bin/$PROJECT_BIN
 
 #
-# Optional build environment for Skip support
+# Custom build image for injective
 #
-FROM build_source AS build_skip
+FROM build_base AS build_injective
 
-# Get MEV_TENDERMINT_VERSION from
-# https://raw.githubusercontent.com/skip-mev/config/main/$CHAIN_ID/mev-tendermint_version.txt
-ARG MEV_TENDERMINT_VERSION
+ARG VERSION
+ARG BUILD_REF=$VERSION
 
-RUN go mod edit -replace github.com/tendermint/tendermint=github.com/skip-mev/mev-tendermint@$MEV_TENDERMINT_VERSION && \
-    go mod tidy
+RUN curl -Lo release.zip https://github.com/InjectiveLabs/injective-chain-releases/releases/download/$BUILD_REF/linux-amd64.zip && \
+    unzip -oj release.zip && \
+    mv injectived /bin && \
+    mkdir -p deps/usr/lib && \
+    mv libwasmvm.x86_64.so deps/usr/lib && \
+    chmod +x /bin/injectived
 
 #
 # Final build environment
@@ -69,111 +83,32 @@ RUN go mod edit -replace github.com/tendermint/tendermint=github.com/skip-mev/me
 #
 FROM build_${BUILD_METHOD} AS build
 
-ARG BUILD_PATH=$GOPATH/bin
-RUN $BUILD_CMD
-
-RUN ldd $BUILD_PATH/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
-    xargs -I % sh -c 'mkdir -p $(dirname deps%); cp % deps%;'
-
-RUN mv $BUILD_PATH/$PROJECT_BIN /bin/$PROJECT_BIN
+#
+# Base debian image
+#
+FROM ${DEBIAN_IMAGE} AS base
 
 #
-# Default image
+# Base image copying build artifacts
 #
-FROM ${DEBIAN_IMAGE} AS default
+FROM base AS copy_build
 
 ARG PROJECT
 ARG PROJECT_BIN=$PROJECT
-ARG BUILD_DIR=/data
 
 COPY --from=build /bin/$PROJECT_BIN /bin/$PROJECT_BIN
-COPY --from=build $BUILD_DIR/deps/ /
-
-#
-# Optional image to install from binary
-#
-FROM build_base AS binary
-
-ARG BINARY_URL
-
-RUN curl -Lo /bin/$PROJECT_BIN $BINARY_URL
-RUN chmod +x /bin/$PROJECT_BIN
-
-#
-# Optional image to install from binary zip
-#
-FROM build_base AS binary_zip
-
-ARG BINARY_URL
-ARG BINARY_ZIP_PATH
-
-RUN curl -Lo /bin/$PROJECT_BIN.zip $BINARY_URL
-RUN unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip
-RUN if [ -n "$BINARY_ZIP_PATH" ]; then \
-      mv /bin/${BINARY_ZIP_PATH} /bin; \
-    fi
-RUN chmod +x /bin/$PROJECT_BIN
-
-#
-# Custom image for injective
-#
-FROM debian:buster AS injective
-
-ARG VERSION
-ARG BUILD_REF=$VERSION
-
-RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes ca-certificates curl unzip && \
-  apt-get clean
-
-WORKDIR /data
-RUN curl -Lo /data/release.zip https://github.com/InjectiveLabs/injective-chain-releases/releases/download/$BUILD_REF/linux-amd64.zip
-RUN unzip -oj /data/release.zip
-RUN mv injectived /bin
-RUN mv libwasmvm.x86_64.so /usr/lib
-RUN chmod +x /bin/injectived
-
-#
-# ZSTD build
-#
-FROM gcc:12 AS zstd_build
-
-ARG ZTSD_SOURCE_URL="https://github.com/facebook/zstd/releases/download/v1.5.6/zstd-1.5.6.tar.gz"
-
-ENV VIRTUAL_ENV=/opt/venv
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
-RUN apt-get update && \
-      apt-get install --no-install-recommends --assume-yes meson ninja-build && \
-      apt-get clean && \
-    mkdir -p /tmp/zstd && \
-    cd /tmp/zstd && \
-    curl -Lo zstd.source $ZTSD_SOURCE_URL && \
-    file zstd.source | grep -q 'gzip compressed data' && mv zstd.source zstd.source.gz && gzip -d zstd.source.gz && \
-    file zstd.source | grep -q 'tar archive' && mv zstd.source zstd.source.tar && tar -xf zstd.source.tar --strip-components=1 && rm zstd.source.tar && \
-    LDFLAGS=-static \
-    meson setup \
-      -Dbin_programs=true \
-      -Dstatic_runtime=true \
-      -Ddefault_library=static \
-      -Dzlib=disabled -Dlzma=disabled -Dlz4=disabled \
-      build/meson builddir-st && \
-    ninja -C builddir-st && \
-    ninja -C builddir-st install && \
-    /usr/local/bin/zstd -v
+COPY --from=build /data/deps/ /
 
 #
 # Final Omnibus image
-# Note optional `BUILD_IMAGE` argument controls the base image
 #
-FROM ${BUILD_IMAGE} AS omnibus
-LABEL org.opencontainers.image.source https://github.com/akash-network/cosmos-omnibus
+FROM ${BASE_IMAGE} AS omnibus
+LABEL org.opencontainers.image.source=https://github.com/akash-network/cosmos-omnibus
 
 RUN apt-get update && \
-  apt-get install --no-install-recommends --assume-yes ca-certificates curl wget file unzip liblz4-tool gnupg2 jq pv && \
-  apt-get clean
-
-COPY --from=zstd_build /usr/local/bin/zstd /bin/
+    apt-get install --no-install-recommends --assume-yes \
+    ca-certificates curl wget file unzip zstd liblz4-tool gnupg2 jq s3cmd pv && \
+    apt-get clean
 
 ARG PROJECT
 ARG PROJECT_BIN
@@ -203,21 +138,16 @@ EXPOSE 26656 \
        9090  \
        8080
 
-# Install AWS
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
-  && unzip awscliv2.zip -d /usr/src && rm -f awscliv2.zip \
-  && /usr/src/aws/install --bin-dir /usr/bin
-
 # Install Storj DCS uplink client
 RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux_amd64.zip -o uplink_linux_amd64.zip && \
-  unzip -o uplink_linux_amd64.zip && \
-  install uplink /usr/bin/uplink && \
-  rm -f uplink uplink_linux_amd64.zip
+    unzip -o uplink_linux_amd64.zip && \
+    install uplink /usr/bin/uplink && \
+    rm -f uplink uplink_linux_amd64.zip
 
 # Copy scripts
-COPY run.sh snapshot.sh /usr/bin/
-RUN chmod +x /usr/bin/run.sh /usr/bin/snapshot.sh
+COPY entrypoint.sh snapshot.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh /usr/bin/snapshot.sh
 
 WORKDIR /root
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 CMD []

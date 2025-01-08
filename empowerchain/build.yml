@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   node:
     build:
@@ -10,8 +8,8 @@ services:
         VERSION: v2.0.0
         REPOSITORY: https://github.com/EmpowerPlastic/empowerchain
         PROJECT_DIR: .empowerchain
-        BUILD_DIR: /data/chain
-        GOLANG_VERSION: 1.20-buster
+        BUILD_DIR: chain
+        GOLANG_VERSION: "1.20"
         POLKACHU_CHAIN_ID: empower
     ports:
       - '26656:26656'

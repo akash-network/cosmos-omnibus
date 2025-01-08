@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   node:
     build:
@@ -10,7 +8,7 @@ services:
         PROJECT_DIR: .injectived
         VERSION: v1.13.3
         BUILD_REF: release-prod-1734610315
-        BUILD_IMAGE: injective
+        BUILD_METHOD: injective
     ports:
       - '26656:26656'
       - '26657:26657'

@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   node:
     build:
@@ -8,7 +6,7 @@ services:
         PROJECT: akash
         VERSION: v0.36.0
         REPOSITORY: https://github.com/akash-network/node
-        BUILD_IMAGE: binary_zip
+        BUILD_METHOD: binary
         BINARY_URL: https://github.com/akash-network/node/releases/download/v0.36.0/akash_linux_amd64.zip
     ports:
       - '26656:26656'

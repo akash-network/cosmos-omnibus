@@ -291,6 +291,9 @@ The node binary can be downloaded at runtime when using the [Generic image](#gen
 |---|---|---|---|
 |`BINARY_URL`|URL to the binary (or `zip`, `tar`, `tar.gz`)| | |
 |`BINARY_ZIP_PATH`|Path to the binary in the archive. Can be left blank if correctly named in root| | |
+|`WASMVM_VERSION`|Version of wasmvm to download| |`v2.2.1`|
+|`WASMVM_URL`|Full URL to wasmvm to download| | |
+|`WASMVM_PATH`|Path to libwasmvm.so when downloaded|`/lib/libwasmvm.so`| |
 |`PROJECT`|Name of the project, informs other variables| | |
 |`PROJECT_BIN`|Binary name|`$PROJECT`|`osmosisd`|
 |`PROJECT_DIR`|Name of project directory|`.$PROJECT_BIN`|`.osmosisd`|
@@ -354,7 +357,7 @@ services:
         PROJECT_DIR: .gaia
         VERSION: v21.0.1
         REPOSITORY: https://github.com/cosmos/gaia
-        GOLANG_VERSION: 1.22-bullseye
+        GOLANG_VERSION: 1.22
         DEBIAN_VERSION: bullseye
         POLKACHU_CHAIN_ID: cosmos # only include if different from Chain Registry name
     # environment:
