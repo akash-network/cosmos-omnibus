@@ -55,7 +55,7 @@ jobs:
 
   build:
     needs: build_matrix
-    if: needs.build_matrix.outputs.matrix != '[]'
+    if: always() && needs.build_matrix.outputs.matrix != '[]'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
