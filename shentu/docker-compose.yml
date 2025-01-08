@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.6-shentu-v2.11.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.1.0-shentu-v2.11.0
     ports:
       - '26656:26656'
       - '26657:26657'
