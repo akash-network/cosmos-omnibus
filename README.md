@@ -90,7 +90,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kujira](https://github.com/Team-Kujira/core)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.6-kujira-v2.0.0`|[Example](./kujira)|
 |[kyve](https://github.com/KYVENetwork/chain)|`v1.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.6-kyve-v1.5.0`|[Example](./kyve)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.6-likecoin-v4.2.0`|[Example](./likecoin)|
-|[lumnetwork](https://github.com/lum-network/chain)|`v1.6.3`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.6-lumnetwork-v1.6.3`|[Example](./lumnetwork)|
+|[lumnetwork](https://github.com/lum-network/chain)|`v1.6.7`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.6-lumnetwork-v1.6.7`|[Example](./lumnetwork)|
 |[mars](https://github.com/mars-protocol/hub.git)|`v1.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.6-mars-v1.0.2`|[Example](./mars)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v4.2.7`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.6-migaloo-v4.2.7`|[Example](./migaloo)|
 |[neutron](https://github.com/neutron-org/neutron)|`v5.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v1.0.6-neutron-v5.0.5`|[Example](./neutron)|
