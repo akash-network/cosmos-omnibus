@@ -2,7 +2,7 @@
 version: "2.0"
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.0.6-gitopia-v2.1.1
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.1.0-gitopia-v2.1.1
     env:
       - MONIKER=Cosmos Omnibus Node
       - P2P_POLKACHU=1
