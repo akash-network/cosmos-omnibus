@@ -58,9 +58,9 @@ jobs:
         run: |
           VERSION=$(yq '.services.node.build.args.VERSION // ""' ./${{matrix.project}}/build.yml)
           if [ -n "$VERSION" ]; then
-            echo "image-tag=${{ env.tag || github.ref_name }}-${{matrix.project}}-$VERSION" >> $GITHUB_OUTPUT
+            echo "image-tag=${{ env.TAG || github.ref_name }}-${{matrix.project}}-$VERSION" >> $GITHUB_OUTPUT
           else
-            echo "image-tag=${{ env.tag || github.ref_name }}-${{matrix.project}}" >> $GITHUB_OUTPUT
+            echo "image-tag=${{ env.TAG || github.ref_name }}-${{matrix.project}}" >> $GITHUB_OUTPUT
           fi
       - name: Build and push
         uses: docker/bake-action@v5
