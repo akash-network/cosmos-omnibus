@@ -3,6 +3,11 @@ on:
   push:
     tags:
       - v*
+  workflow_dispatch:
+    inputs:
+      projects:
+        description: 'Comma separated list of projects to test'
+        required: false
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -11,11 +16,17 @@ concurrency:
 jobs:
   build_matrix:
     runs-on: ubuntu-latest
+    env:
+      PROJECTS: ${{ github.event.inputs.projects }}
     steps:
       - uses: actions/checkout@v4
       - id: set-matrix
         run: |
-          echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+          if [ -n "${{ env.PROJECTS }}" ]; then
+            echo "matrix=$(echo "${{ env.PROJECTS }}" | sed 's/, */,/g' | tr ',' '\n' | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+          else
+            echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+          fi
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
   build:
