@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 10
       matrix:
         project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
     steps:
@@ -73,12 +73,15 @@ jobs:
           workdir: ${{ matrix.project}}
           files: build.yml
           allow: fs.read=..
+          load: true
           set: |
             node.tags=${{ matrix.project }}
             node.platform=linux/amd64
-            node.cache-from=type=gha,scope=${{ matrix.project }}
-            node.cache-to=type=gha,mode=max,scope=${{ matrix.project }}
-          load: true
+          # cache is disabled for now
+          # we build too many images for it to be useful
+          # it causes cache timeouts and overuse of the 10GB cache limit
+          # node.cache-from=type=gha,scope=${{ matrix.project }}
+          # node.cache-to=type=gha,mode=max,scope=${{ matrix.project }}
       - name: Test
         if: ${{ matrix.project != 'generic' }}
         run: |
