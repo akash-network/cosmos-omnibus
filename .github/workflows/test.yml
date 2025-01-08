@@ -4,39 +4,97 @@ on:
     branches:
       - '**'
   pull_request:
+  workflow_dispatch:
+    inputs:
+      projects:
+        description: 'Comma separated list of projects to test'
+        required: false
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build_matrix:
+  list_changed_directories:
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'push' }}
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: sankichi92/list-changed-directories@v1
+        id: list_changed_directories
+        if: ${{ !env.ACT }}
+        with:
+          target-file: build.yml
+          common-dependency-paths: |-
+            Dockerfile
+            entrypoint.sh
+    outputs:
+      projects: ${{ steps.list_changed_directories.outputs.changed-directories }}
 
+  build_matrix:
+    if: ${{ always() }}
+    needs: list_changed_directories
+    runs-on: ubuntu-latest
+    env:
+      PROJECTS: ${{ github.event.inputs.projects }}
     steps:
       - uses: actions/checkout@v4
       - id: set-matrix
-        run: echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+        run: |
+          if [ -n "${{ env.PROJECTS }}" ]; then
+            echo "matrix=$(echo ${{ env.PROJECTS }} | sed 's/, */,/g' | tr ',' '\n' | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+          else
+            if [[ -n "${{ toJson(needs.list_changed_directories.outputs.projects) }}" ]]; then
+              echo "matrix=${{ toJson(needs.list_changed_directories.outputs.projects) }}" >> $GITHUB_OUTPUT
+            else
+              echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+            fi
+          fi
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
 
   build:
     needs: build_matrix
+    if: needs.build_matrix.outputs.matrix != '[]'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 12
+      max-parallel: 10
       matrix:
         project: ${{ fromJson(needs.build_matrix.outputs.matrix) }}
-
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-        id: buildx
-        with:
-          install: true
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
       - name: Build
+        uses: docker/bake-action@v5
+        with:
+          workdir: ${{ matrix.project}}
+          files: build.yml
+          allow: fs.read=..
+          load: true
+          set: |
+            node.tags=${{ matrix.project }}
+            node.platform=linux/amd64
+          # cache is disabled for now
+          # we build too many images for it to be useful
+          # it causes cache timeouts and overuse of the 10GB cache limit
+          # node.cache-from=type=gha,scope=${{ matrix.project }}
+          # node.cache-to=type=gha,mode=max,scope=${{ matrix.project }}
+      - name: Test
+        if: ${{ matrix.project != 'generic' }}
         run: |
-          touch .env # Create dummy env file
-          cd ${{matrix.project}}
-          docker buildx bake -f build.yml --set node.tags=node
+          cd ${{ matrix.project }}
+          PROJECT=${{ matrix.project }}
+          PROJECT_BIN=$(yq '.services.node.build.args.PROJECT_BIN // ""' ./build.yml)
+          PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
+          VERSION=$(yq '.services.node.build.args.VERSION' ./build.yml)
+          VERSION_STRING=$(docker run --platform=linux/amd64 --entrypoint='' $PROJECT $PROJECT_BIN version 2>&1 || true)
+
+          if ! echo "v$VERSION_STRING" | grep -q "$VERSION"; then
+            echo "Version mismatch: '$VERSION_STRING' does not contain $VERSION"
+            exit 1
+          else
+            echo "Success: $VERSION_STRING"
+          fi

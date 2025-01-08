@@ -1,5 +1,3 @@
-version: '3.4'
-
 services:
   node:
     build:
@@ -8,7 +6,7 @@ services:
         PROJECT: kichain
         PROJECT_BIN: kid
         VERSION: 5.0.1
-        GOLANG_VERSION: 1.19-buster
+        GOLANG_VERSION: 1.19
         REPOSITORY: https://github.com/KiFoundation/ki-tools
     ports:
       - '26656:26656'
