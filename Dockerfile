@@ -145,9 +145,9 @@ RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux
     rm -f uplink uplink_linux_amd64.zip
 
 # Copy scripts
-COPY run.sh snapshot.sh /usr/bin/
-RUN chmod +x /usr/bin/run.sh /usr/bin/snapshot.sh
+COPY entrypoint.sh snapshot.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh /usr/bin/snapshot.sh
 
 WORKDIR /root
-ENTRYPOINT ["run.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 CMD []

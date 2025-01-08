@@ -27,7 +27,7 @@ jobs:
           target-file: build.yml
           common-dependency-paths: |-
             Dockerfile
-            run.sh
+            entrypoint.sh
     outputs:
       projects: ${{ steps.list_changed_directories.outputs.changed-directories }}
 
