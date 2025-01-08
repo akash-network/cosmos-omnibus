@@ -198,7 +198,7 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEEDS_POLKACHU"
         POLKACHU_SEED_ENABLED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.active')
         if [ $POLKACHU_SEED_ENABLED ]; then
           POLKACHU_SEED=$(echo $POLKACHU_CHAIN | jq -r '.polkachu_services.seed.seed')
-          if [ -n "$P2P_SEEDS" ] && ["$P2P_SEEDS" != "0"]; then
+          if [ -n "$P2P_SEEDS" ] && [ "$P2P_SEEDS" != "0" ]; then
             export P2P_SEEDS="$POLKACHU_SEED,$P2P_SEEDS"
           else
             export P2P_SEEDS="$POLKACHU_SEED"
@@ -218,7 +218,7 @@ if [[ -n "$STATESYNC_POLKACHU" || -n "$P2P_POLKACHU" || -n "$P2P_SEEDS_POLKACHU"
             POLKACHU_PEERS=`curl -Ls $POLKACHU_CHAIN_URL/live_peers | jq .`
             POLKACHU_PEER=$(echo $POLKACHU_PEERS | jq -r '.polkachu_peer')
             POLKACHU_LIVE_PEERS=$(echo $POLKACHU_PEERS | jq -r '.live_peers | join(",")')
-            if [ -n "$P2P_PERSISTENT_PEERS" ] && ["$P2P_PERSISTENT_PEERS" != "0"]; then
+            if [ -n "$P2P_PERSISTENT_PEERS" ] && [ "$P2P_PERSISTENT_PEERS" != "0" ]; then
               export P2P_PERSISTENT_PEERS="$POLKACHU_PEER,$POLKACHU_LIVE_PEERS,$P2P_PERSISTENT_PEERS"
             else
               export P2P_PERSISTENT_PEERS="$POLKACHU_PEER,$POLKACHU_LIVE_PEERS"
