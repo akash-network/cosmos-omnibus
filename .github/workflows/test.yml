@@ -42,7 +42,7 @@ jobs:
       - id: set-matrix
         run: |
           if [ -n "${{ env.PROJECTS }}" ]; then
-            echo "matrix=$(echo ${{ env.PROJECTS }} | sed 's/, */,/g' | tr ',' '\n' | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
+            echo "matrix=$(echo "${{ env.PROJECTS }}" | sed 's/, */,/g' | tr ',' '\n' | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
           else
             if [[ -n "${{ toJson(needs.list_changed_directories.outputs.projects) }}" ]]; then
               echo "matrix=${{ toJson(needs.list_changed_directories.outputs.projects) }}" >> $GITHUB_OUTPUT
