@@ -1,9 +1,9 @@
 ARG DEBIAN_VERSION=bookworm
 ARG GOLANG_VERSION=1.21
 ARG BUILD_IMAGE=golang:${GOLANG_VERSION}-${DEBIAN_VERSION}
-ARG DEBIAN_IMAGE=debian:${DEBIAN_VERSION}-slim
 ARG BUILD_METHOD=source
-ARG BASE_IMAGE=copy_build
+ARG BASE_IMAGE=debian:${DEBIAN_VERSION}-slim
+ARG BASE_METHOD=copy_build
 
 #
 # Default build environment for standard Tendermint chains
@@ -86,9 +86,9 @@ RUN curl -Lo release.zip https://github.com/InjectiveLabs/injective-chain-releas
 FROM build_${BUILD_METHOD} AS build
 
 #
-# Base debian image
+# Base image
 #
-FROM ${DEBIAN_IMAGE} AS base
+FROM ${BASE_IMAGE} AS base
 
 #
 # Base image copying build artifacts
@@ -104,7 +104,7 @@ COPY --from=build /data/deps/ /
 #
 # Final Omnibus image
 #
-FROM ${BASE_IMAGE} AS omnibus
+FROM ${BASE_METHOD} AS omnibus
 LABEL org.opencontainers.image.source=https://github.com/akash-network/cosmos-omnibus
 
 RUN apt-get update && \

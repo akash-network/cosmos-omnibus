@@ -3,7 +3,7 @@ services:
     build:
       context: ../
       args:
-        BASE_IMAGE: base
+        BASE_METHOD: base
     ports:
       - '26656:26656'
       - '26657:26657'
