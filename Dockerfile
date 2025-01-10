@@ -29,14 +29,15 @@ FROM build_base AS build_source
 ARG VERSION
 ARG REPOSITORY
 ARG BUILD_CMD="make install"
-ARG BUILD_DIR=.
+ARG BUILD_PATH=.
 ARG BUILD_REF=$VERSION
+ARG BINARY_PATH=$GOPATH/bin/$PROJECT_BIN
 
 RUN git clone $REPOSITORY source && \
-    cd /data/source/$BUILD_DIR && \
+    cd /data/source/$BUILD_PATH && \
     git checkout $BUILD_REF && \
     $BUILD_CMD && \
-    mv $GOPATH/bin/$PROJECT_BIN /bin/$PROJECT_BIN
+    mv $BINARY_PATH /bin/$PROJECT_BIN
 
 # copy dependencies to deps and move symlinked directories to usr
 RUN ldd /bin/$PROJECT_BIN | tr -s '[:blank:]' '\n' | grep '^/' | \
@@ -51,6 +52,7 @@ FROM build_base AS build_binary
 
 ARG BINARY_URL
 ARG BINARY_ZIP_PATH
+ARG BINARY_PATH=$BINARY_ZIP_PATH
 
 RUN curl -Lso /bin/$PROJECT_BIN $BINARY_URL && \
     bash -c 'file_description=$(file /bin/$PROJECT_BIN) && \
@@ -59,7 +61,7 @@ RUN curl -Lso /bin/$PROJECT_BIN $BINARY_URL && \
         *"tar archive"*)            mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.tar && tar -xf /bin/$PROJECT_BIN.tar -C /bin && rm /bin/$PROJECT_BIN.tar;; \
         *"zip archive data"*)       mv /bin/$PROJECT_BIN /bin/$PROJECT_BIN.zip && unzip /bin/$PROJECT_BIN.zip -d /bin && rm /bin/$PROJECT_BIN.zip;; \
     esac' && \
-    if [ -n "$BINARY_ZIP_PATH" ]; then mv /bin/$BINARY_ZIP_PATH /bin/$PROJECT_BIN; fi && \
+    if [ -n "$BINARY_PATH" ]; then mv /bin/$BINARY_PATH /bin/$PROJECT_BIN; fi && \
     chmod +x /bin/$PROJECT_BIN
 
 #
