@@ -27,6 +27,7 @@ jobs:
           target-file: build.yml
           common-dependency-paths: |-
             Dockerfile
+            .github/workflows/test.yml
     outputs:
       projects: ${{ steps.list_changed_directories.outputs.changed-directories }}
 
@@ -81,7 +82,7 @@ jobs:
           # it causes cache timeouts and overuse of the 10GB cache limit
           # node.cache-from=type=gha,scope=${{ matrix.project }}
           # node.cache-to=type=gha,mode=max,scope=${{ matrix.project }}
-      - name: Test
+      - name: Test version
         if: ${{ matrix.project != 'generic' }}
         run: |
           cd ${{ matrix.project }}
@@ -91,11 +92,12 @@ jobs:
           VERSION=$(yq '.services.node.build.args.VERSION' ./build.yml)
           VERSION_CMD=$(yq '.services.node.build.args.VERSION_CMD // ""' ./build.yml)
           VERSION_CMD="${VERSION_CMD:-$PROJECT_BIN version}"
-          VERSION_STRING=$(docker run --platform=linux/amd64 --entrypoint='' $PROJECT $VERSION_CMD 2>&1 || true)
+          VERSION_OUTPUT=$(docker run --platform=linux/amd64 --entrypoint='' $PROJECT $VERSION_CMD 2>&1 || true)
 
-          if ! echo "v$VERSION_STRING" | grep -q "$VERSION"; then
-            echo "Version mismatch: '$VERSION_STRING' does not contain $VERSION"
+          if ! echo "$VERSION_OUTPUT" | grep -q "${VERSION#v}"; then
+            echo "Expected: $VERSION"
+            echo "Got: $VERSION_OUTPUT"
             exit 1
           else
-            echo "Success: $VERSION_STRING"
+            echo "Success: $VERSION_OUTPUT"
           fi
