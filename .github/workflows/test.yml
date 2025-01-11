@@ -89,7 +89,9 @@ jobs:
           PROJECT_BIN=$(yq '.services.node.build.args.PROJECT_BIN // ""' ./build.yml)
           PROJECT_BIN="${PROJECT_BIN:-$PROJECT}"
           VERSION=$(yq '.services.node.build.args.VERSION' ./build.yml)
-          VERSION_STRING=$(docker run --platform=linux/amd64 --entrypoint='' $PROJECT $PROJECT_BIN version 2>&1 || true)
+          VERSION_CMD=$(yq '.services.node.build.args.VERSION_CMD // ""' ./build.yml)
+          VERSION_CMD="${VERSION_CMD:-$PROJECT_BIN version}"
+          VERSION_STRING=$(docker run --platform=linux/amd64 --entrypoint='' $PROJECT $VERSION_CMD 2>&1 || true)
 
           if ! echo "v$VERSION_STRING" | grep -q "$VERSION"; then
             echo "Version mismatch: '$VERSION_STRING' does not contain $VERSION"
