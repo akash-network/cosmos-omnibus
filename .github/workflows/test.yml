@@ -23,6 +23,7 @@ jobs:
       - uses: sankichi92/list-changed-directories@v1
         id: list_changed_directories
         if: ${{ !env.ACT }}
+        continue-on-error: true
         with:
           target-file: build.yml
           common-dependency-paths: |-
@@ -44,8 +45,9 @@ jobs:
           if [ -n "${{ env.PROJECTS }}" ]; then
             echo "matrix=$(echo "${{ env.PROJECTS }}" | sed 's/, */,/g' | tr ',' '\n' | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
           else
-            if [[ -n "${{ toJson(needs.list_changed_directories.outputs.projects) }}" ]]; then
-              echo "matrix=${{ toJson(needs.list_changed_directories.outputs.projects) }}" >> $GITHUB_OUTPUT
+            changed_directories=${{ toJson(needs.list_changed_directories.outputs.projects) }}
+            if [[ -n "$changed_directories" && "$changed_directories" != "null" ]]; then
+              echo "matrix=$changed_directories" >> $GITHUB_OUTPUT
             else
               echo "matrix=$(find * -type f -name build.yml | xargs dirname | sort | uniq | jq --raw-input . | jq -c --slurp .)" >> $GITHUB_OUTPUT
             fi
