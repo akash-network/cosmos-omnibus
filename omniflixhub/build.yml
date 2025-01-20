@@ -6,7 +6,7 @@ services:
         PROJECT: omniflixhub
         PROJECT_BIN: omniflixhubd
         PROJECT_DIR: .omniflixhub
-        VERSION: v5.0.1
+        VERSION: v5.1.0
         REPOSITORY: https://github.com/OmniFlix/omniflixhub
         GOLANG_VERSION: 1.22
         DEBIAN_VERSION: bullseye
