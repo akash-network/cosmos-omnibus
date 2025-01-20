@@ -33,9 +33,8 @@ ARG BUILD_PATH=.
 ARG BUILD_REF=$VERSION
 ARG BINARY_PATH=$GOPATH/bin/$PROJECT_BIN
 
-RUN git clone $REPOSITORY source && \
+RUN git clone --depth 1 --branch $BUILD_REF $REPOSITORY source && \
     cd /data/source/$BUILD_PATH && \
-    git checkout $BUILD_REF && \
     $BUILD_CMD && \
     mv $BINARY_PATH /bin/$PROJECT_BIN
 
