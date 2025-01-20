@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.1.2-cryptoorgchain-v4.2.10
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.1.3-cryptoorgchain-v4.2.10
     ports:
       - '26656:26656'
       - '26657:26657'
