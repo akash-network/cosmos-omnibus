@@ -28,7 +28,7 @@ profiles:
         cpu:
           units: 4
         memory:
-          size: 8Gi
+          size: 32Gi
         storage:
           - size: 10Gi
           - name: data # remove for non-persistent storage

@@ -6,6 +6,7 @@ services:
         PROJECT: gravitybridge
         PROJECT_BIN: gravity
         VERSION: v1.11.1
+        REPOSITORY: https://github.com/Gravity-Bridge/Gravity-Bridge
         BUILD_METHOD: binary
         BINARY_URL: https://github.com/Gravity-Bridge/Gravity-Bridge/releases/download/v1.11.1/gravity-linux-amd64
         POLKACHU_CHAIN_ID: gravity

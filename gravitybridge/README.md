@@ -6,7 +6,7 @@
 |Binary|`gravity`|
 |Directory|`.gravity`|
 |ENV namespace|`GRAVITY`|
-|Repository|`null`|
+|Repository|`https://github.com/Gravity-Bridge/Gravity-Bridge`|
 |Image|`ghcr.io/akash-network/cosmos-omnibus:v1.1.3-gravitybridge-v1.11.1`|
 
 ## Examples

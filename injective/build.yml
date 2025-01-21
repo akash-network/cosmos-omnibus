@@ -6,6 +6,7 @@ services:
         PROJECT: injective
         PROJECT_BIN: injectived
         PROJECT_DIR: .injectived
+        REPOSITORY: https://github.com/InjectiveLabs/injective-chain-releases
         VERSION: v1.13.3
         BUILD_REF: release-prod-1734610315
         BUILD_METHOD: injective
