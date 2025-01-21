@@ -5,6 +5,7 @@ services:
       args:
         PROJECT: desmos
         VERSION: v6.2.0
+        REPOSITORY: https://github.com/desmos-labs/desmos
         BUILD_METHOD: binary
         BINARY_URL: https://github.com/desmos-labs/desmos/releases/download/v6.2.0/desmos-6.2.0-linux-amd64
     ports:
