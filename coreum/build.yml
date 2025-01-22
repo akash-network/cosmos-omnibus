@@ -1,0 +1,18 @@
+services:
+  node:
+    build:
+      context: ../
+      args:
+        PROJECT: coreum
+        PROJECT_BIN: cored
+        PROJECT_DIR: .core/coreum-mainnet-1
+        REPOSITORY: https://github.com/CoreumFoundation/coreum
+        VERSION: v4.1.2
+        BUILD_METHOD: binary
+        BINARY_URL: https://github.com/CoreumFoundation/coreum/releases/download/v4.1.2/cored-linux-amd64
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    volumes:
+      - ./node-data:/root/.core/coreum-mainnet-1
