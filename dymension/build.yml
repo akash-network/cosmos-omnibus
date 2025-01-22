@@ -9,7 +9,6 @@ services:
         VERSION: v3.1.0
         REPOSITORY: https://github.com/dymensionxyz/dymension
         GOLANG_VERSION: 1.22
-        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

@@ -9,7 +9,6 @@ services:
         VERSION: v20.0.0
         REPOSITORY: https://github.com/evmos/evmos
         GOLANG_VERSION: 1.22
-        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

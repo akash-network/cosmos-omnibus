@@ -9,7 +9,6 @@ services:
         REPOSITORY: https://github.com/KYVENetwork/chain
         PROJECT_DIR: .kyve
         GOLANG_VERSION: 1.22
-        DEBIAN_VERSION: bullseye
         BUILD_CMD: make install ENV=mainnet
     ports:
       - '26656:26656'
