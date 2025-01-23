@@ -7,7 +7,7 @@
 |Directory|`.gitopia`|
 |ENV namespace|`GITOPIAD`|
 |Repository|`https://github.com/gitopia/gitopia`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.1.4-gitopia-v2.1.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-gitopia-v2.1.1`|
 
 ## Examples
 
