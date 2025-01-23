@@ -3,11 +3,11 @@ version: "2.0"
 
 services:
   node1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.1.3-akash-v0.36.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.1.4-akash-v0.36.0
     env:
       - MONIKER=private_node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
-      - MINIMUM_GAS_PRICES=0.025uakt
+      - MINIMUM_GAS_PRICES=0.0025uakt
       - FASTSYNC_VERSION=v0
       - STATESYNC_RPC_SERVERS=<publicnode1:26657,publicnode2:26657>
     expose:

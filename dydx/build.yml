@@ -6,11 +6,11 @@ services:
         PROJECT: dydx
         PROJECT_BIN: dydxprotocold
         PROJECT_DIR: .dydxprotocol
-        VERSION: v7.0.5
-        BUILD_REF: protocol/v7.0.5
+        VERSION: v8.0.1
+        BUILD_REF: protocol/v8.0.1
         REPOSITORY: https://github.com/dydxprotocol/v4-chain
         BUILD_CMD: make install -C protocol
-        GOLANG_VERSION: 1.22
+        GOLANG_VERSION: 1.23
     ports:
       - '26656:26656'
       - '26657:26657'
