@@ -9,7 +9,6 @@ services:
         REPOSITORY: https://github.com/JackalLabs/canine-chain
         PROJECT_DIR: .canine
         GOLANG_VERSION: 1.22
-        DEBIAN_VERSION: bullseye
         BUILD_CMD: make install VERSION=4.4.0
     ports:
       - '26656:26656'

@@ -9,7 +9,6 @@ services:
         VERSION: v2.11.0
         REPOSITORY: https://github.com/shentufoundation/shentu/
         GOLANG_VERSION: 1.23
-        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

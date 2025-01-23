@@ -358,7 +358,6 @@ services:
         VERSION: v21.0.1
         REPOSITORY: https://github.com/cosmos/gaia
         GOLANG_VERSION: 1.22
-        DEBIAN_VERSION: bullseye
         POLKACHU_CHAIN_ID: cosmos # only include if different from Chain Registry name
     # environment:
     #   - FASTSYNC_VERSION=v0

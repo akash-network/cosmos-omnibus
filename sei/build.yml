@@ -9,7 +9,6 @@ services:
         VERSION: v5.7.5
         REPOSITORY: https://github.com/sei-protocol/sei-chain
         GOLANG_VERSION: 1.22
-        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

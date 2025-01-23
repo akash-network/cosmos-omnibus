@@ -9,7 +9,6 @@ services:
         REPOSITORY: https://github.com/White-Whale-Defi-Platform/migaloo-chain
         PROJECT_DIR: .migalood
         GOLANG_VERSION: 1.23
-        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
