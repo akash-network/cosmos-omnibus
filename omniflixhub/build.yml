@@ -9,7 +9,6 @@ services:
         VERSION: v5.1.0
         REPOSITORY: https://github.com/OmniFlix/omniflixhub
         GOLANG_VERSION: 1.22
-        DEBIAN_VERSION: bullseye
         POLKACHU_CHAIN_ID: omniflix
     ports:
       - '26656:26656'

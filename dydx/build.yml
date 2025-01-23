@@ -11,7 +11,6 @@ services:
         REPOSITORY: https://github.com/dydxprotocol/v4-chain
         BUILD_CMD: make install -C protocol
         GOLANG_VERSION: 1.23
-        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'

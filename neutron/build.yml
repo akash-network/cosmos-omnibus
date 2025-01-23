@@ -9,7 +9,6 @@ services:
         VERSION: v5.0.6
         REPOSITORY: https://github.com/neutron-org/neutron.git
         GOLANG_VERSION: 1.22
-        DEBIAN_VERSION: bullseye
     ports:
       - '26656:26656'
       - '26657:26657'
