@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v28.0.0`|
+|Version|`v28.0.3`|
 |Binary|`osmosisd`|
 |Directory|`.osmosisd`|
 |ENV namespace|`OSMOSISD`|
 |Repository|`https://github.com/osmosis-labs/osmosis`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-osmosis-v28.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-osmosis-v28.0.3`|
 
 ## Examples
 
