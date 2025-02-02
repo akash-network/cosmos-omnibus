@@ -9,7 +9,7 @@ services:
         VERSION: v7.0.0
         REPOSITORY: https://github.com/archway-network/archway
         BUILD_METHOD: binary
-        BINARY_URL: https://github.com/archway-network/archway/releases/download/v7.0.0/archwayd_linux_amd64
+        BINARY_URL: https://github.com/archway-network/archway/releases/download/v9.0.0/archwayd_linux_amd64
     ports:
       - '26656:26656'
       - '26657:26657'
