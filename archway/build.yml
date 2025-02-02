@@ -6,7 +6,7 @@ services:
         PROJECT: archway
         PROJECT_BIN: archwayd
         PROJECT_DIR: .archway
-        VERSION: v7.0.0
+        VERSION: v9.0.0
         REPOSITORY: https://github.com/archway-network/archway
         BUILD_METHOD: binary
         BINARY_URL: https://github.com/archway-network/archway/releases/download/v9.0.0/archwayd_linux_amd64
