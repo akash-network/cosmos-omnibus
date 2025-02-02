@@ -4,6 +4,8 @@ services:
       context: ../
       args:
         PROJECT: gitopia
+        PROJECT_BIN: gitopiad
+        PROJECT_DIR: .gitopia
         VERSION: v5.1.0
         REPOSITORY: https://github.com/gitopia/gitopia
         BUILD_METHOD: binary
