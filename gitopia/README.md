@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.1.1`|
+|Version|`v5.1.0`|
 |Binary|`gitopiad`|
 |Directory|`.gitopia`|
 |ENV namespace|`GITOPIAD`|
 |Repository|`https://github.com/gitopia/gitopia`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-gitopia-v2.1.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-gitopia-v5.1.0`|
 
 ## Examples
 
