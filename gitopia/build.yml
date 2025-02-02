@@ -7,8 +7,9 @@ services:
         PROJECT_BIN: gitopiad
         PROJECT_DIR: .gitopia
         VERSION: v5.1.0
+        BUILD_METHOD: binary
         REPOSITORY: https://github.com/gitopia/gitopia
-        GOLANG_VERSION: 1.21-bullseye
+        GOLANG_VERSION: 1.23
     ports:
       - '26656:26656'
       - '26657:26657'
