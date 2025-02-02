@@ -8,7 +8,7 @@ services:
         PROJECT_DIR: .gitopia
         VERSION: v5.1.0
         REPOSITORY: https://github.com/gitopia/gitopia
-        GOLANG_VERSION: 1.23
+        GOLANG_VERSION: 1.21
     ports:
       - '26656:26656'
       - '26657:26657'
