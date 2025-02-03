@@ -62,7 +62,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[bostrom](https://github.com/cybercongress/go-cyber)|`v0.3.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-bostrom-v0.3.2`|[Example](./bostrom)|
 |[canto](https://github.com/Canto-Network/Canto)|`v8.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-canto-v8.1.1`|[Example](./canto)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-cheqd-0.6.9`|[Example](./cheqd)|
-|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v8.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-chihuahua-v8.0.2`|[Example](./chihuahua)|
+|[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v9.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-chihuahua-v9.0.0`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v14.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-comdex-v14.1.0`|[Example](./comdex)|
 |[coreum](https://github.com/CoreumFoundation/coreum)|`v4.1.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-coreum-v4.1.2`|[Example](./coreum)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v21.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-cosmoshub-v21.0.1`|[Example](./cosmoshub)|
