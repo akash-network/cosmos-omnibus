@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.0-bitsong-v0.20.4
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.1-bitsong-v0.20.4
     ports:
       - '26656:26656'
       - '26657:26657'

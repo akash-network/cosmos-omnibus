@@ -7,7 +7,7 @@
 |Directory|`.kyve`|
 |ENV namespace|`KYVED`|
 |Repository|`https://github.com/KYVENetwork/chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.0-kyve-v1.5.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-kyve-v1.5.0`|
 
 ## Examples
 
