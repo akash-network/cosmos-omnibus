@@ -63,7 +63,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[canto](https://github.com/Canto-Network/Canto)|`v8.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-canto-v8.1.1`|[Example](./canto)|
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-cheqd-0.6.9`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v9.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-chihuahua-v9.0.0`|[Example](./chihuahua)|
-|[comdex](https://github.com/comdex-official/comdex)|`v14.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-comdex-v14.1.0`|[Example](./comdex)|
+|[comdex](https://github.com/comdex-official/comdex)|`v15.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-comdex-v15.3.0`|[Example](./comdex)|
 |[coreum](https://github.com/CoreumFoundation/coreum)|`v4.1.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-coreum-v4.1.2`|[Example](./coreum)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v22.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-cosmoshub-v22.0.0`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-crescent-v4.2.0`|[Example](./crescent)|
