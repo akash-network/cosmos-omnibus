@@ -5,10 +5,10 @@ services:
       args:
         PROJECT: stride
         PROJECT_BIN: strided
-        VERSION: v24.0.0
+        VERSION: v25.1.0
         REPOSITORY: https://github.com/Stride-Labs/stride
         PROJECT_DIR: .stride
-        GOLANG_VERSION: 1.21
+        GOLANG_VERSION: 1.22
     ports:
       - '26656:26656'
       - '26657:26657'
