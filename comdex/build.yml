@@ -5,7 +5,7 @@ services:
       args:
         PROJECT: comdex
         PROJECT_BIN: comdex
-        VERSION: v14.1.0
+        VERSION: v15.3.0
         REPOSITORY: https://github.com/comdex-official/comdex
         GOLANG_VERSION: 1.22
     ports:
