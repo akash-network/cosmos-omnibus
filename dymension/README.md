@@ -7,7 +7,7 @@
 |Directory|`.dymension`|
 |ENV namespace|`DYMD`|
 |Repository|`https://github.com/dymensionxyz/dymension`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.1-dymension-v3.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.2-dymension-v3.1.0`|
 
 ## Examples
 
