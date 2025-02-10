@@ -6,9 +6,9 @@ services:
         PROJECT: juno
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
-        VERSION: v26.0.0
+        VERSION: v27.0.0
         REPOSITORY: https://github.com/CosmosContracts/juno
-        GOLANG_VERSION: 1.22
+        GOLANG_VERSION: 1.23
     ports:
       - '26656:26656'
       - '26657:26657'
