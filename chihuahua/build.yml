@@ -5,10 +5,10 @@ services:
       args:
         PROJECT: chihuahua
         PROJECT_BIN: chihuahuad
-        VERSION: v9.0.0
+        VERSION: v9.0.1
         REPOSITORY: https://github.com/ChihuahuaChain/chihuahua
         PROJECT_DIR: .chihuahuad
-        GOLANG_VERSION: 1.22
+        GOLANG_VERSION: 1.23
     ports:
       - '26656:26656'
       - '26657:26657'
