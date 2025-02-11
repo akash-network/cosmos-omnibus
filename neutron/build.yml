@@ -8,7 +8,7 @@ services:
         PROJECT_DIR: .neutrond
         VERSION: v5.1.2
         REPOSITORY: https://github.com/neutron-org/neutron.git
-        GOLANG_VERSION: 1.22
+        GOLANG_VERSION: 1.23
     ports:
       - '26656:26656'
       - '26657:26657'
