@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.2-rizon-v0.4.1
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.3-rizon-v0.4.1
     ports:
       - '26656:26656'
       - '26657:26657'
