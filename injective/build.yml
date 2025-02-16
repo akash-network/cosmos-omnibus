@@ -7,8 +7,8 @@ services:
         PROJECT_BIN: injectived
         PROJECT_DIR: .injectived
         REPOSITORY: https://github.com/InjectiveLabs/injective-chain-releases
-        VERSION: v1.13.3
-        BUILD_REF: release-prod-1734610315
+        VERSION: v1.14.0
+        BUILD_REF: v1.14.0-1739303348
         BUILD_METHOD: injective
     ports:
       - '26656:26656'
