@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.13.3`|
+|Version|`v1.14.0`|
 |Binary|`injectived`|
 |Directory|`.injectived`|
 |ENV namespace|`INJECTIVED`|
 |Repository|`https://github.com/InjectiveLabs/injective-chain-releases`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.3-injective-v1.13.3`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.3-injective-v1.14.0`|
 
 ## Examples
 
