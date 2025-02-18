@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v4.2.7`|
+|Version|`v5.0.0`|
 |Binary|`migalood`|
 |Directory|`.migalood`|
 |ENV namespace|`MIGALOOD`|
 |Repository|`https://github.com/White-Whale-Defi-Platform/migaloo-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.3-migaloo-v4.2.7`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.3-migaloo-v5.0.0`|
 
 ## Examples
 
