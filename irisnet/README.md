@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.0.1`|
+|Version|`v3.1.1`|
 |Binary|`iris`|
 |Directory|`.iris`|
 |ENV namespace|`IRIS`|
 |Repository|`https://github.com/irisnet/irishub`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.4-irisnet-v2.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.4-irisnet-v3.1.1`|
 
 ## Examples
 
