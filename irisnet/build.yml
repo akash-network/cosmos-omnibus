@@ -5,8 +5,9 @@ services:
       args:
         PROJECT: irisnet
         PROJECT_BIN: iris
-        VERSION: v2.0.1
+        VERSION: v3.1.1
         REPOSITORY: https://github.com/irisnet/irishub
+        GOLANG_VERSION: 1.23
     ports:
       - '26656:26656'
       - '26657:26657'
