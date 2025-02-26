@@ -6,7 +6,7 @@ services:
         PROJECT: neutron
         PROJECT_BIN: neutrond
         PROJECT_DIR: .neutrond
-        VERSION: v5.1.2
+        VERSION: v5.1.3
         REPOSITORY: https://github.com/neutron-org/neutron.git
         GOLANG_VERSION: 1.23
     ports:
