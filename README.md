@@ -71,7 +71,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.12`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-cryptoorgchain-v4.2.12`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-decentr-v1.6.4`|[Example](./decentr)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-desmos-v6.2.0`|[Example](./desmos)|
-|[dydx](https://github.com/dydxprotocol/v4-chain)|`v8.0.5`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-dydx-v8.0.5`|[Example](./dydx)|
+|[dydx](https://github.com/dydxprotocol/v4-chain)|`v8.0.7`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-dydx-v8.0.7`|[Example](./dydx)|
 |[dymension](https://github.com/dymensionxyz/dymension)|`v3.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-dymension-v3.1.0`|[Example](./dymension)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-emoney-v1.2.0`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-empowerchain-v2.0.0`|[Example](./empowerchain)|
