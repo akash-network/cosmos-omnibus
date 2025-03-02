@@ -1,0 +1,18 @@
+services:
+  node:
+    build:
+      context: ../
+      args:
+        PROJECT: atomone
+        PROJECT_BIN: atomoned
+        PROJECT_DIR: .atomone
+        VERSION: v1.1.1
+        REPOSITORY: https://github.com/atomone-hub/atomone
+        BUILD_METHOD: binary
+        BINARY_URL: https://github.com/atomone-hub/atomone/releases/download/v1.1.1/atomoned-v1.1.1-linux-amd64
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    volumes:
+      - ./node-data:/root/.atomone

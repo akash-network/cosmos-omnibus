@@ -55,6 +55,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[akash](https://github.com/akash-network/node)|`v0.36.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-akash-v0.36.0`|[Example](./akash)|
 |[archway](https://github.com/archway-network/archway)|`v9.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-archway-v9.0.0`|[Example](./archway)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-assetmantle-v1.0.0`|[Example](./assetmantle)|
+|[atomone](https://github.com/atomone-hub/atomone)|`v1.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-atomone-v1.1.1`|[Example](./atomone)|
 |[axelar](https://github.com/axelarnetwork/axelar-core)|`v0.34.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-axelar-v0.34.0`|[Example](./axelar)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.5.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-bandchain-v2.5.1`|[Example](./bandchain)|
 |[bitcanna](https://github.com/BitCannaGlobal/bcna)|`v4.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.5-bitcanna-v4.0.3`|[Example](./bitcanna)|
