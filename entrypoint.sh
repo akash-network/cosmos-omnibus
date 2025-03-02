@@ -20,8 +20,8 @@ fi
 if [[ $CHAIN_JSON_EXISTS == true ]]; then
   sleep 0.5 # avoid rate limiting
   CHAIN_METADATA=$(curl -Ls $CHAIN_JSON)
-  CHAIN_SEEDS=$(echo $CHAIN_METADATA | jq -r '.peers.seeds | map(.id+"@"+.address) | join(",")')
-  CHAIN_PERSISTENT_PEERS=$(echo $CHAIN_METADATA | jq -r '.peers.persistent_peers | map(.id+"@"+.address) | join(",")')
+  CHAIN_SEEDS=$(echo $CHAIN_METADATA | jq -r '.peers.seeds? // [] | map(.id+"@"+.address) | join(",")')
+  CHAIN_PERSISTENT_PEERS=$(echo "$CHAIN_METADATA" | jq -r '.peers.persistent_peers? // [] | map(.id+"@"+.address) | join(",")')
 
   export CHAIN_ID="${CHAIN_ID:-$(echo $CHAIN_METADATA | jq -r .chain_id)}"
   export GENESIS_URL="${GENESIS_URL:-$(echo $CHAIN_METADATA | jq -r '.codebase.genesis.genesis_url? // .genesis.genesis_url? // .genesis?')}"
