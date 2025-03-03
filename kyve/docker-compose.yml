@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.5-kyve-v1.5.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.6-kyve-v1.5.0
     ports:
       - '26656:26656'
       - '26657:26657'
