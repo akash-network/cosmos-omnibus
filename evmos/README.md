@@ -32,5 +32,3 @@ The following configuration is available for Evmos nodes. [See the documentation
 |`P2P_SEEDS_POLKACHU`|`1`|
 |`P2P_PEERS_POLKACHU`|`1`|
 |`ADDRBOOK_POLKACHU`|`1`|
-
-Polkachu also provide pruned snapshots for Evmos. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/akash) and apply it using the `SNAPSHOT_URL` variable.
