@@ -66,10 +66,10 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v9.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-chihuahua-v9.0.1`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v15.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-comdex-v15.3.0`|[Example](./comdex)|
 |[coreum](https://github.com/CoreumFoundation/coreum)|`v4.1.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-coreum-v4.1.2`|[Example](./coreum)|
-|[cosmoshub](https://github.com/cosmos/gaia)|`v22.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-cosmoshub-v22.2.0`|[Example](./cosmoshub)|
+|[cosmoshub](https://github.com/cosmos/gaia)|`v22.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-cosmoshub-v22.3.0`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-crescent-v4.2.0`|[Example](./crescent)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v1.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-cronos-v1.4.0`|[Example](./cronos)|
-|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.13`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-cryptoorgchain-v4.2.13`|[Example](./cryptoorgchain)|
+|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.12`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-cryptoorgchain-v4.2.12`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-decentr-v1.6.4`|[Example](./decentr)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-desmos-v6.2.0`|[Example](./desmos)|
 |[dydx](https://github.com/dydxprotocol/v4-chain)|`v8.0.7`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-dydx-v8.0.7`|[Example](./dydx)|
@@ -81,7 +81,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[gitopia](https://github.com/gitopia/gitopia)|`v5.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-gitopia-v5.1.0`|[Example](./gitopia)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.11.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-gravitybridge-v1.11.1`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-impacthub-v0.18.1`|[Example](./impacthub)|
-|[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.14.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-injective-v1.14.0`|[Example](./injective)|
+|[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.14.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-injective-v1.14.1`|[Example](./injective)|
 |[irisnet](https://github.com/irisnet/irishub)|`v3.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-irisnet-v3.1.1`|[Example](./irisnet)|
 |[jackal](https://github.com/JackalLabs/canine-chain)|`v4.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-jackal-v4.4.0`|[Example](./jackal)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v27.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-juno-v27.0.0`|[Example](./juno)|
@@ -111,7 +111,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[source](https://github.com/Source-Protocol-Cosmos/source)|`v3.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-source-v3.0.1`|[Example](./source)|
 |[stargaze](https://github.com/public-awesome/stargaze)|`v15.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-stargaze-v15.2.0`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-starname-v0.11.5`|[Example](./starname)|
-|[stride](https://github.com/Stride-Labs/stride)|`v25.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-stride-v25.1.0`|[Example](./stride)|
+|[stride](https://github.com/Stride-Labs/stride)|`v26.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-stride-v26.0.0`|[Example](./stride)|
 |[teritori](https://github.com/TERITORI/teritori-chain)|`v2.0.6`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-teritori-v2.0.6`|[Example](./teritori)|
 |[terra](https://github.com/terra-money/core)|`v2.11.8`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-terra-v2.11.8`|[Example](./terra)|
 |[umee](https://github.com/umee-network/umee)|`v6.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-umee-v6.3.0`|[Example](./umee)|
@@ -356,7 +356,7 @@ services:
         PROJECT: cosmoshub # should match the directory/Chain Registry
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
-        VERSION: v22.2.0
+        VERSION: v22.3.0
         REPOSITORY: https://github.com/cosmos/gaia
         GOLANG_VERSION: 1.22
         POLKACHU_CHAIN_ID: cosmos # only include if different from Chain Registry name
