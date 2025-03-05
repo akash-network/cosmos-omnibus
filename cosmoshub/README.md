@@ -7,7 +7,7 @@
 |Directory|`.gaia`|
 |ENV namespace|`GAIAD`|
 |Repository|`https://github.com/cosmos/gaia`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-cosmoshub-v22.3.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.7-cosmoshub-v22.3.0`|
 
 ## Examples
 
