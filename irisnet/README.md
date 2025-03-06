@@ -7,7 +7,7 @@
 |Directory|`.iris`|
 |ENV namespace|`IRIS`|
 |Repository|`https://github.com/irisnet/irishub`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.6-irisnet-v3.1.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.7-irisnet-v3.1.1`|
 
 ## Examples
 
