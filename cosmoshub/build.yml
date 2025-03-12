@@ -6,7 +6,7 @@ services:
         PROJECT: cosmoshub
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
-        VERSION: v22.3.0
+        VERSION: v22.3.1
         REPOSITORY: https://github.com/cosmos/gaia
         GOLANG_VERSION: 1.23
         POLKACHU_CHAIN_ID: cosmos
