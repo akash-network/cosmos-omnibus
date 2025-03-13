@@ -69,7 +69,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cosmoshub](https://github.com/cosmos/gaia)|`v22.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.8-cosmoshub-v22.3.1`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.8-crescent-v4.2.0`|[Example](./crescent)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v1.4.4`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.8-cronos-v1.4.4`|[Example](./cronos)|
-|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.13`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.8-cryptoorgchain-v4.2.13`|[Example](./cryptoorgchain)|
+|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v4.2.14`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.8-cryptoorgchain-v4.2.14`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.8-decentr-v1.6.4`|[Example](./decentr)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.8-desmos-v6.2.0`|[Example](./desmos)|
 |[dydx](https://github.com/dydxprotocol/v4-chain)|`v8.0.8`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.8-dydx-v8.0.8`|[Example](./dydx)|
