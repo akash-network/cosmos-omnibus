@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.7-decentr-v1.6.4
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.8-decentr-v1.6.4
     ports:
       - '26656:26656'
       - '26657:26657'
