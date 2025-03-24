@@ -7,7 +7,7 @@
 |Directory|`.atomone`|
 |ENV namespace|`ATOMONED`|
 |Repository|`https://github.com/atomone-hub/atomone`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.9-atomone-v1.1.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.10-atomone-v1.1.1`|
 
 ## Examples
 

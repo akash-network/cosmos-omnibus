@@ -2,7 +2,7 @@
 version: "2.0"
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.9-chihuahua-v9.0.3
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.10-chihuahua-v9.0.3
     env:
       - MONIKER=Cosmos Omnibus Node
       - P2P_POLKACHU=1
