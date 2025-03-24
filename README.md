@@ -39,8 +39,8 @@ services:
       # - PROJECT=akash
       # - PROJECT_DIR=.akash
       # - PROJECT_BIN=akash
-      # - BINARY_URL=https://github.com/akash-network/node/releases/download/v0.38.0/akash_linux_amd64.zip
-      # - BINARY_ZIP_PATH=build/akash-v0.38.0 # only required if expected binary file isn't in the ZIP root
+      # - BINARY_URL=https://github.com/akash-network/node/releases/download/v0.38.1/akash_linux_amd64.zip
+      # - BINARY_ZIP_PATH=build/akash-v0.38.1 # only required if expected binary file isn't in the ZIP root
 ```
 
 More information on the generic image can be found at [/generic](./generic/), and configuration is detailed in depth below.
@@ -52,7 +52,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[akash](https://github.com/akash-network/node)|`v0.38.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.10-akash-v0.38.0`|[Example](./akash)|
+|[akash](https://github.com/akash-network/node)|`v0.38.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.10-akash-v0.38.1`|[Example](./akash)|
 |[archway](https://github.com/archway-network/archway)|`v9.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.10-archway-v9.0.0`|[Example](./archway)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.10-assetmantle-v1.0.0`|[Example](./assetmantle)|
 |[atomone](https://github.com/atomone-hub/atomone)|`v1.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.10-atomone-v1.1.1`|[Example](./atomone)|
