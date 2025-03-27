@@ -3,7 +3,7 @@ version: "2.0"
 
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.10-akash-v0.38.1
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.11-akash-v0.38.1
     env:
       - MONIKER=Cosmos Omnibus Node
     expose:

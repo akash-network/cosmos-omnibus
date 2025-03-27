@@ -7,7 +7,7 @@
 |Directory|`.regen`|
 |ENV namespace|`REGEN`|
 |Repository|`https://github.com/regen-network/regen-ledger`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.10-regen-v5.1.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.11-regen-v5.1.1`|
 
 ## Examples
 
