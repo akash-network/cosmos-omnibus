@@ -57,7 +57,7 @@ while true; do
         aws_args="$aws_args --access_key=${S3_KEY}"
         aws_args="$aws_args --secret_key=${S3_SECRET}"
         storj_args="${STORJ_UPLINK_ARGS:--p 4 --progress=false}"
-        s3_uri_base="s3://${SNAPSHOT_PATH}"
+        s3_uri_base="s3://${SNAPSHOT_PATH%/}"
         storj_uri_base="sj://${SNAPSHOT_PATH}"
         timestamp=$(date +"%Y-%m-%dT%H:%M:%S")
         s3_uri="${s3_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.${SNAPSHOT_SAVE_FORMAT}"
@@ -76,12 +76,12 @@ while true; do
           esac
         else
           case "${SNAPSHOT_SAVE_FORMAT,,}" in
-            tar.gz)   (tar c -C $SNAPSHOT_DIR . | gzip -1 | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | s3cmd $aws_args put - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            tar.gz)   (tar c -C $SNAPSHOT_DIR . | gzip -1 | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | s3cmd $aws_args put - "$s3_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
             # Compress level can be set via `ZSTD_CLEVEL`, default `3`
             # No. of threads can be set via `ZSTD_NBTHREADS`, default `1`, `0` = detected no. of cpu cores
-            tar.zst)  (tar c -C $SNAPSHOT_DIR . | zstd -c $zstd_extra_arg | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | s3cmd $aws_args put - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            tar.zst)  (tar c -C $SNAPSHOT_DIR . | zstd -c $zstd_extra_arg | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | s3cmd $aws_args put - "$s3_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
             # Catchall, assume to be tar
-            *)        (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | s3cmd $aws_args put - "$s3_uri" --expected-size $SNAPSHOT_SIZE) 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            *)        (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | s3cmd $aws_args put - "$s3_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
           esac
         fi
 
@@ -97,11 +97,8 @@ while true; do
                 createDate=`echo $line|awk {'print $1" "$2'}`
                 createDate=`date -d"$createDate" +%s`
                 fileName=`echo $line|awk '{$1=$2=$3=""; print $0}' | sed 's/^[ \t]*//'`
-                if [[ -n $SNAPSHOT_METADATA_URL && $SNAPSHOT_METADATA_URL != */ ]]; then
-                    fileUrl="${SNAPSHOT_METADATA_URL}/${fileName}"
-                else
-                    fileUrl="${SNAPSHOT_METADATA_URL}${fileName}"
-                fi
+                [ -z "$STORJ_ACCESS_GRANT" ] && fileName=${fileName#"$s3_uri_base/"}
+                fileUrl="${SNAPSHOT_METADATA_URL%/}/${fileName}"
                 if [ -n "$STORJ_ACCESS_GRANT" ]; then
 		    fileUrl="${fileUrl}?download=1"
                 fi
