@@ -6,9 +6,9 @@ services:
         PROJECT: xpla
         PROJECT_BIN: xplad
         PROJECT_DIR: .xpla
-        VERSION: v1.6.0
+        VERSION: v1.7.0
         REPOSITORY: https://github.com/xpladev/xpla
-        GOLANG_VERSION: 1.21
+        GOLANG_VERSION: 1.23.2
     ports:
       - '26656:26656'
       - '26657:26657'
