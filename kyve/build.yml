@@ -5,7 +5,7 @@ services:
       args:
         PROJECT: kyve
         PROJECT_BIN: kyved
-        VERSION: v1.5.0
+        VERSION: v2.0.0
         REPOSITORY: https://github.com/KYVENetwork/chain
         PROJECT_DIR: .kyve
         GOLANG_VERSION: 1.22
