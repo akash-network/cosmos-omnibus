@@ -7,7 +7,7 @@ services:
     env:
       - MONIKER=validator
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
-      - MINIMUM_GAS_PRICES=0.0025uakt
+      - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
       - AKASH_P2P_PEX=false
       - AKASH_P2P_UNCONDITIONAL_PEER_IDS=<node-1-id>,<node-2-id>...

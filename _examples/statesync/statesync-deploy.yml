@@ -7,7 +7,7 @@ services:
     env:
       - MONIKER=private_node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
-      - MINIMUM_GAS_PRICES=0.0025uakt
+      - MINIMUM_GAS_PRICES=0.025uakt
       - FASTSYNC_VERSION=v0
       - STATESYNC_RPC_SERVERS=<publicnode1:26657,publicnode2:26657>
     expose:
