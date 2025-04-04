@@ -4,6 +4,12 @@ set -e
 
 [ "$DEBUG" == "2" ] && set -x
 
+# fail fast, before snapshot is even taken
+if [[ "$SNAPSHOT_RETAIN" != "0" ]] && ! date -d "-$SNAPSHOT_RETAIN" >/dev/null 2>&1; then
+  echo "ERROR: Invalid SNAPSHOT_RETAIN value '$SNAPSHOT_RETAIN'. Expected format: '<N> minutes|hours|days|weeks|months'"
+  exit 1
+fi
+
 export CHAIN_JSON="${CHAIN_JSON:-$CHAIN_URL}" # deprecate CHAIN_URL
 if [[ -z "$CHAIN_JSON" && -n "$PROJECT" ]]; then
   CHAIN_JSON="https://raw.githubusercontent.com/cosmos/chain-registry/master/${PROJECT}/chain.json"
@@ -68,6 +74,28 @@ export WASM_PATH="${WASM_PATH:-$PROJECT_ROOT/$WASM_DIR}"
 export NAMESPACE="${NAMESPACE:-$(echo ${PROJECT_BIN} | tr '[:lower:]' '[:upper:]' | tr '-' '_')}"
 export VALIDATE_GENESIS="${VALIDATE_GENESIS:-0}"
 export MONIKER="${MONIKER:-Cosmos Omnibus Node}"
+# GCS support
+export GCS_ENABLED="${GCS_ENABLED:-0}"
+export GCS_BUCKET_PATH="${GCS_BUCKET_PATH}"
+export GCS_KEY_FILE="${GCS_KEY_FILE}"
+
+# Validate GCS config
+if [ "$GCS_ENABLED" == "1" ]; then
+  if [ -z "$GCS_BUCKET_PATH" ]; then
+    echo "ERROR: GCS_BUCKET_PATH must be set when GCS_ENABLED=1"
+    exit 1
+  fi
+
+  if [ -z "$GCS_KEY_FILE" ]; then
+    echo "ERROR: GCS_KEY_FILE must be set when GCS_ENABLED=1"
+    exit 1
+  fi
+
+  if [ ! -f "$GCS_KEY_FILE" ]; then
+    echo "ERROR: GCS_KEY_FILE not found at '$GCS_KEY_FILE'"
+    exit 1
+  fi
+fi
 
 [ -z "$CHAIN_ID" ] && echo "ERROR: CHAIN_ID not found" && exit
 
@@ -100,12 +128,23 @@ if [ -n "$STORJ_ACCESS_GRANT" ]; then
   uplink access import --force --interactive=false default "$STORJ_ACCESS_GRANT"
 fi
 
+if [ "$GCS_ENABLED" == "1" ] && [ -n "$GCS_BUCKET_PATH" ]; then
+  GOOGLE_APPLICATION_CREDENTIALS="$GCS_KEY_FILE"
+  echo "Activating GCS service account..."
+  gcloud auth activate-service-account --key-file="$GCS_KEY_FILE"
+fi
+
 if [ -n "$KEY_PATH" ]; then
   if [ -n "$STORJ_ACCESS_GRANT" ]; then
     key_transport="uplink"
     key_get_cmd="$key_transport cp"
     key_put_cmd="$key_transport cp"
     key_uri_base="sj://${KEY_PATH%/}"
+  elif [ "$GCS_ENABLED" == "1" ]; then
+    key_transport="gsutil"
+    key_get_cmd="gsutil -q cp"
+    key_put_cmd="gsutil -q cp"
+    key_uri_base="${KEY_PATH%/}"
   else
     aws_args="--host=${S3_HOST:-https://s3.filebase.com}"
     aws_args="$aws_args --host-bucket=$(echo "$KEY_PATH" | cut -d'/' -f1)"
@@ -339,7 +378,7 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
   fi
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_JSON}" ]; then
-    SNAPSHOT_URL="$(curl -Ls $SNAPSHOT_JSON | jq -r .latest)"
+    SNAPSHOT_URL="$(curl -Ls ${SNAPSHOT_JSON}?nocache=$(date +%s) | jq -r .latest)"
   fi
 
   if [ -z "${SNAPSHOT_URL}" ] && [ -n "${SNAPSHOT_QUICKSYNC}" ]; then
