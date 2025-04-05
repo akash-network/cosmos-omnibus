@@ -145,6 +145,7 @@ See the [_examples](./_examples) directory for some common setups, including:
 - [Validator and Public Sentries](./_examples/validator-and-public-sentries)
 - [Validator with Private Sentries](./_examples/validator-and-private-sentries)
 - [Snapshot Backup](./_examples/snapshot_backup)
+- [Google Cloud Storage Backup Setup](./_examples/snapshot_backup/GCS_SETUP.md)
 
 ## Configuration
 
