@@ -7,7 +7,7 @@
 |Directory|`.band`|
 |ENV namespace|`BANDD`|
 |Repository|`https://github.com/bandprotocol/chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.11-bandchain-v2.5.3`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-bandchain-v2.5.3`|
 
 ## Examples
 
