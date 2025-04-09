@@ -93,7 +93,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-likecoin-v4.2.0`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.6.7`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-lumnetwork-v1.6.7`|[Example](./lumnetwork)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v5.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-migaloo-v5.0.0`|[Example](./migaloo)|
-|[neutron](https://github.com/neutron-org/neutron)|`v5.1.4`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-neutron-v5.1.4`|[Example](./neutron)|
+|[neutron](https://github.com/neutron-org/neutron)|`v6.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-neutron-v6.0.0`|[Example](./neutron)|
 |[noble](https://github.com/noble-assets/noble)|`v5.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-noble-v5.0.0`|[Example](./noble)|
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v5.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-omniflixhub-v5.2.1`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v29.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-osmosis-v29.0.0`|[Example](./osmosis)|
