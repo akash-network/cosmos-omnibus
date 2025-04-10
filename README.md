@@ -16,8 +16,8 @@ Additional features are included to make running a node as simple as possible
 
 1. [Chain configuration can be sourced from a remote JSON file](#chain-configuration)
 1. [Genesis file can be downloaded and unzipped in various ways](#chain-configuration)
-1. [Private keys can be backed up and restored](#private-key-backuprestore) from any S3 compatible storage provider, such as Sia or Storj via [Filebase](https://filebase.com/).
-1. [Snapshots of a nodes data directory](#snapshot-backup) can be created at a certain time or day and uploaded to an S3 storage provider
+1. [Private keys can be backed up and restored](#private-key-backuprestore) from any S3-compatible storage provider (e.g., Filebase), Storj, or [Google Cloud Storage (GCS)](https://cloud.google.com/storage).
+1. [Snapshots of a node’s data directory](#snapshot-backup) can be created at a specific time/day and uploaded to an S3-compatible service, Storj, or GCS.
 
 ## Generic image (binary downloaded at runtime)
 
@@ -145,6 +145,7 @@ See the [_examples](./_examples) directory for some common setups, including:
 - [Validator and Public Sentries](./_examples/validator-and-public-sentries)
 - [Validator with Private Sentries](./_examples/validator-and-private-sentries)
 - [Snapshot Backup](./_examples/snapshot_backup)
+- [Google Cloud Storage Backup Setup](./_examples/snapshot_backup/GCS_SETUP.md)
 
 ## Configuration
 
@@ -191,7 +192,7 @@ See [Cosmos docs](https://docs.tendermint.com/master/nodes/configuration.html#p2
 
 ### Private key backup/restore
 
-On boot, the container can restore a private key from any S3 storage provider. If this is configured and the key doesn't exist in S3 yet, it will be uploaded from the node.
+On boot, the container can restore a private key from any compatible cloud storage provider (S3, Storj, or Google Cloud Storage). If a key does not exist yet, it will be uploaded from the node.
 
 This allows for a persistent node ID and validator key on Akash's ephemeral storage.
 
@@ -205,6 +206,9 @@ The `node_key.json` and `priv_validator_key.json` are both backed up, and can be
 |`S3_SECRET`|S3 secret key| | |
 |`S3_HOST`|The S3 API host|`https://s3.filebase.com`|`https://s3.us-east-1.amazonaws.com`|
 |`STORJ_ACCESS_GRANT`|DCS Storj Access Grant token (replaces `S3_KEY`, `S3_SECRET`, `S3_HOST`| | |
+|`GCS_ENABLED`|Enable Google Cloud Storage support|`0`|`1`|
+|`GCS_BUCKET_PATH`|Full `gs://` path to the directory| |`gs://my-snapshots/key-backups`|
+|`GCS_KEY_FILE`|Path to GCP service account JSON file|`/root/gcs_key.json`|`/root/backup-key.json`|
 |`KEY_PATH`|Bucket and directory to backup/restore to| |`bucket/nodes/node_1`|
 |`KEY_PASSWORD`|An optional password to encrypt your private keys. Shouldn't be optional| | |
 
@@ -258,6 +262,8 @@ Omnibus includes a script to automatically snapshot a node and upload the result
 At a specified time (or day), the script will shut down the tendermint server, create an archive of the `data` directory and upload it.
 Snapshots older than a specified time can also be deleted. Finally a JSON metadata file is created listing the current snapshots. The server is then restarted and monitored.
 
+Snapshot backups support S3-compatible providers, Storj (via uplink), and Google Cloud Storage (via gsutil).
+
 [See an example](_examples/snapshot_backup) of a snapshot node deployment.
 
 |Variable|Description|Default|Examples|
@@ -267,6 +273,9 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`S3_HOST`|The S3 API host|`https://s3.filebase.com`|`s3.us-east-1.amazonaws.com`|
 |`STORJ_ACCESS_GRANT`|DCS Storj Access Grant token (replaces `S3_KEY`, `S3_SECRET`, `S3_HOST`| | |
 |`STORJ_UPLINK_ARGS`|DCS Storj Uplink arguments|`-p 4 --progress=false`|`-p 4 --parallelism-chunk-size 256M --progress=false`|
+|`GCS_ENABLED`|Enable Google Cloud Storage support|`0`|`1`|
+|`GCS_BUCKET_PATH`|Full `gs://` path where snapshots will be uploaded| |`gs://my-snapshots/akash`|
+|`GCS_KEY_FILE`|Path to the GCS service account JSON key|`/root/gcs_key.json`|`/root/backup-key.json`|
 |`SNAPSHOT_PATH`|The S3 path to upload snapshots to, including the bucket| |`cosmos-snapshots/akash`|
 |`SNAPSHOT_PREFIX`|The prefix for the snapshot filename|`$CHAIN_ID`|`snapshot`|
 |`SNAPSHOT_TIME`|The time the snapshot will run|`00:00:00`|`09:00:00`|
@@ -274,9 +283,11 @@ Snapshots older than a specified time can also be deleted. Finally a JSON metada
 |`SNAPSHOT_DIR`|The directory on disk to snapshot|`$PROJECT_ROOT/data`|`/root/.akash`|
 |`SNAPSHOT_CMD`|The command to run the server|`$START_CMD`|`akash start --someflag`|
 |`SNAPSHOT_RETAIN`|How long to retain snapshots for (0 to disable)|`2 days`|`1 week`|
+|`SNAPSHOT_KEEP_LAST`|Always retain at least this number of recent snapshots, even if expired by `SNAPSHOT_RETAIN`|`2`|`3`|
 |`SNAPSHOT_METADATA`|Whether to create a snapshot.json metadata file|`1`|`0`|
 |`SNAPSHOT_METADATA_URL`|The URL snapshots will be served from (for snapshot.json)| |`https://cosmos-snapshots.s3.filebase.com/akash`|
 |`SNAPSHOT_SAVE_FORMAT`|Overrides value from `SNAPSHOT_FORMAT`.|`tar.gz`|`tar` (no compression)/`tar.zst` (use [zstd](https://github.com/facebook/zstd))|
+|`SNAPSHOT_ON_START`|Trigger a snapshot immediately after the container starts (before waiting for the scheduled time)|`0`|`1`|
 
 When `SNAPSHOT_SAVE_FORMAT` is set to `tar.zst`, [additional variables can be set](https://github.com/facebook/zstd/tree/v1.5.2/programs#passing-parameters-through-environment-variables):
 
