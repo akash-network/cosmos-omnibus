@@ -7,7 +7,7 @@
 |Directory|`.injectived`|
 |ENV namespace|`INJECTIVED`|
 |Repository|`https://github.com/InjectiveLabs/injective-chain-releases`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.12-injective-v1.14.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.13-injective-v1.14.1`|
 
 ## Examples
 

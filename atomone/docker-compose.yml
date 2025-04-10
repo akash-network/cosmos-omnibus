@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.12-atomone-v1.1.1
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.13-atomone-v1.1.1
     ports:
       - '26656:26656'
       - '26657:26657'
