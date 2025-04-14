@@ -1,0 +1,16 @@
+services:
+  node:
+    build:
+      context: ../
+      args:
+        PROJECT: babylon
+        PROJECT_BIN: babylond
+        VERSION: v1.0.1
+        REPOSITORY: https://github.com/babylonlabs-io/babylon.git
+        GOLANG_VERSION: 1.23
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    volumes:
+      - ./node-data:/root/.babylond
