@@ -22,7 +22,7 @@ This will be used automatically unless overridden with the `CHAIN_JSON` variable
 
 ## Polkachu Chain Services
 
-[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
+[Polkachu's Chain Services](https://www.polkachu.com/networks/evmos) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
 
 The following configuration is available for Evmos nodes. [See the documentation](../README.md#polkachu-services) for more information.
 
