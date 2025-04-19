@@ -2,7 +2,7 @@
 
 set -e
 
-OMNIBUS_IMAGE="cosmos-omnibus:v1.2.13"
+OMNIBUS_IMAGE="cosmos-omnibus:v1.2.14"
 
 if [ "$#" -gt 0 ]; then
   DIRS="$@"
@@ -131,7 +131,7 @@ EOF
 
 ## Polkachu Chain Services
 
-[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
+[Polkachu's Chain Services](https://www.polkachu.com/networks/$POLKACHU_CHAIN_ID) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
 
 The following configuration is available for $PROJECT_NAME nodes. [See the documentation](../README.md#polkachu-services) for more information.
 
@@ -168,7 +168,7 @@ EOF
     if [ $POLKACHU_SNAPSHOT_SUPPORT = true ]; then
       cat << EOF >> $dir/README.md
 
-Polkachu also provide pruned snapshots for $PROJECT_NAME. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/akash) and apply it using the \`SNAPSHOT_URL\` variable.
+Polkachu also provide pruned snapshots for $PROJECT_NAME. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/$POLKACHU_CHAIN_ID) and apply it using the \`SNAPSHOT_URL\` variable.
 EOF
     fi
   fi

@@ -7,7 +7,7 @@
 |Directory|`.juno`|
 |ENV namespace|`JUNOD`|
 |Repository|`https://github.com/CosmosContracts/juno`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.13-juno-v27.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-juno-v27.0.0`|
 
 ## Examples
 
@@ -32,7 +32,7 @@ The following configuration is recommended for Juno nodes.
 
 ## Polkachu Chain Services
 
-[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
+[Polkachu's Chain Services](https://www.polkachu.com/networks/juno) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
 
 The following configuration is available for Juno nodes. [See the documentation](../README.md#polkachu-services) for more information.
 
@@ -44,4 +44,4 @@ The following configuration is available for Juno nodes. [See the documentation]
 |`STATESYNC_POLKACHU`|`1`|
 |`ADDRBOOK_POLKACHU`|`1`|
 
-Polkachu also provide pruned snapshots for Juno. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/akash) and apply it using the `SNAPSHOT_URL` variable.
+Polkachu also provide pruned snapshots for Juno. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/juno) and apply it using the `SNAPSHOT_URL` variable.

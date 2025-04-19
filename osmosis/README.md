@@ -7,7 +7,7 @@
 |Directory|`.osmosisd`|
 |ENV namespace|`OSMOSISD`|
 |Repository|`https://github.com/osmosis-labs/osmosis`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.13-osmosis-v29.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-osmosis-v29.0.1`|
 
 ## Examples
 
@@ -22,7 +22,7 @@ This will be used automatically unless overridden with the `CHAIN_JSON` variable
 
 ## Polkachu Chain Services
 
-[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
+[Polkachu's Chain Services](https://www.polkachu.com/networks/osmosis) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
 
 The following configuration is available for Osmosis nodes. [See the documentation](../README.md#polkachu-services) for more information.
 
@@ -33,4 +33,4 @@ The following configuration is available for Osmosis nodes. [See the documentati
 |`P2P_PEERS_POLKACHU`|`1`|
 |`ADDRBOOK_POLKACHU`|`1`|
 
-Polkachu also provide pruned snapshots for Osmosis. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/akash) and apply it using the `SNAPSHOT_URL` variable.
+Polkachu also provide pruned snapshots for Osmosis. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/osmosis) and apply it using the `SNAPSHOT_URL` variable.

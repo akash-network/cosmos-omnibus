@@ -7,7 +7,7 @@
 |Directory|`.terra`|
 |ENV namespace|`TERRAD`|
 |Repository|`https://github.com/terra-money/core.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.13-terra-v2.11.8`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-terra-v2.11.8`|
 
 ## Examples
 
@@ -22,7 +22,7 @@ This will be used automatically unless overridden with the `CHAIN_JSON` variable
 
 ## Polkachu Chain Services
 
-[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
+[Polkachu's Chain Services](https://www.polkachu.com/networks/terra) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
 
 The following configuration is available for Terra Classic nodes. [See the documentation](../README.md#polkachu-services) for more information.
 
@@ -34,4 +34,4 @@ The following configuration is available for Terra Classic nodes. [See the docum
 |`STATESYNC_POLKACHU`|`1`|
 |`ADDRBOOK_POLKACHU`|`1`|
 
-Polkachu also provide pruned snapshots for Terra Classic. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/akash) and apply it using the `SNAPSHOT_URL` variable.
+Polkachu also provide pruned snapshots for Terra Classic. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/terra) and apply it using the `SNAPSHOT_URL` variable.

@@ -7,7 +7,7 @@
 |Directory|`.kujira`|
 |ENV namespace|`KUJIRAD`|
 |Repository|`https://github.com/Team-Kujira/core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.13-kujira-v2.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-kujira-v2.0.0`|
 
 ## Examples
 
@@ -22,7 +22,7 @@ This will be used automatically unless overridden with the `CHAIN_JSON` variable
 
 ## Polkachu Chain Services
 
-[Polkachu's Chain Services](https://www.polkachu.com/) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
+[Polkachu's Chain Services](https://www.polkachu.com/networks/kujira) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
 
 The following configuration is available for Kujira nodes. [See the documentation](../README.md#polkachu-services) for more information.
 
@@ -32,4 +32,4 @@ The following configuration is available for Kujira nodes. [See the documentatio
 |`P2P_SEEDS_POLKACHU`|`1`|
 |`ADDRBOOK_POLKACHU`|`1`|
 
-Polkachu also provide pruned snapshots for Kujira. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/akash) and apply it using the `SNAPSHOT_URL` variable.
+Polkachu also provide pruned snapshots for Kujira. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/kujira) and apply it using the `SNAPSHOT_URL` variable.
