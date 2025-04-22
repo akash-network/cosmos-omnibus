@@ -9,7 +9,7 @@ services:
         REPOSITORY: https://github.com/JackalLabs/canine-chain
         PROJECT_DIR: .canine
         GOLANG_VERSION: 1.23
-        BUILD_CMD: make install VERSION=4.5.0
+        BUILD_CMD: make install VERSION=4.6.0
     ports:
       - '26656:26656'
       - '26657:26657'
