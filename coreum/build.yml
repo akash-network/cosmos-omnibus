@@ -7,9 +7,9 @@ services:
         PROJECT_BIN: cored
         PROJECT_DIR: .core/coreum-mainnet-1
         REPOSITORY: https://github.com/CoreumFoundation/coreum
-        VERSION: v4.1.2
+        VERSION: v5.0.0
         BUILD_METHOD: binary
-        BINARY_URL: https://github.com/CoreumFoundation/coreum/releases/download/v4.1.2/cored-linux-amd64
+        BINARY_URL: https://github.com/CoreumFoundation/coreum/releases/download/v5.0.0/cored-linux-amd64
     ports:
       - '26656:26656'
       - '26657:26657'
