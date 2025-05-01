@@ -6,7 +6,7 @@ services:
         PROJECT: stargaze
         PROJECT_BIN: starsd
         PROJECT_DIR: .starsd
-        VERSION: v15.2.0
+        VERSION: v16.0.0
         REPOSITORY: https://github.com/public-awesome/stargaze
         GOLANG_VERSION: 1.23
     ports:
