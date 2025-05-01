@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v15.2.0`|
+|Version|`v16.0.0`|
 |Binary|`starsd`|
 |Directory|`.starsd`|
 |ENV namespace|`STARSD`|
 |Repository|`https://github.com/public-awesome/stargaze`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-stargaze-v15.2.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-stargaze-v16.0.0`|
 
 ## Examples
 
