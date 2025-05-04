@@ -109,7 +109,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[sifchain](https://github.com/Sifchain/sifnode)|`v1.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-sifchain-v1.4.0`|[Example](./sifchain)|
 |[sommelier](https://github.com/PeggyJV/sommelier)|`v4.0.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-sommelier-v4.0.2`|[Example](./sommelier)|
 |[source](https://github.com/Source-Protocol-Cosmos/source)|`v3.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-source-v3.0.1`|[Example](./source)|
-|[stargaze](https://github.com/public-awesome/stargaze)|`v15.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-stargaze-v15.2.0`|[Example](./stargaze)|
+|[stargaze](https://github.com/public-awesome/stargaze)|`v16.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-stargaze-v16.0.0`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-starname-v0.11.5`|[Example](./starname)|
 |[stride](https://github.com/Stride-Labs/stride)|`v26.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-stride-v26.0.0`|[Example](./stride)|
 |[teritori](https://github.com/TERITORI/teritori-chain)|`v2.0.6`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-teritori-v2.0.6`|[Example](./teritori)|
