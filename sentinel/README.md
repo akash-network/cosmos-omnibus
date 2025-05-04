@@ -7,7 +7,7 @@
 |Directory|`.sentinelhub`|
 |ENV namespace|`SENTINELHUB`|
 |Repository|`https://github.com/sentinel-official/hub.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-sentinel-v0.11.5`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-sentinel-v0.11.5`|
 
 ## Examples
 

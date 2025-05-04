@@ -7,7 +7,7 @@
 |Directory|`.umee`|
 |ENV namespace|`UMEED`|
 |Repository|`https://github.com/umee-network/umee`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.14-umee-v6.3.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-umee-v6.3.0`|
 
 ## Examples
 
