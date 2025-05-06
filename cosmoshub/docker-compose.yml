@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.15-cosmoshub-v23.1.1
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.15-cosmoshub-v23.2.0
     ports:
       - '26656:26656'
       - '26657:26657'
