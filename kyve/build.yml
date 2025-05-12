@@ -5,10 +5,10 @@ services:
       args:
         PROJECT: kyve
         PROJECT_BIN: kyved
-        VERSION: v2.0.0
+        VERSION: v2.1.0
         REPOSITORY: https://github.com/KYVENetwork/chain
         PROJECT_DIR: .kyve
-        GOLANG_VERSION: 1.22
+        GOLANG_VERSION: 1.23
         BUILD_CMD: make install ENV=mainnet
     ports:
       - '26656:26656'

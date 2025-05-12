@@ -90,7 +90,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-kichain-5.0.1`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-konstellation-v0.5.0`|[Example](./konstellation)|
 |[kujira](https://github.com/Team-Kujira/core)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-kujira-v2.0.0`|[Example](./kujira)|
-|[kyve](https://github.com/KYVENetwork/chain)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-kyve-v2.0.0`|[Example](./kyve)|
+|[kyve](https://github.com/KYVENetwork/chain)|`v2.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-kyve-v2.1.0`|[Example](./kyve)|
 |[likecoin](https://github.com/likecoin/likecoin-chain)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-likecoin-v4.2.0`|[Example](./likecoin)|
 |[lumnetwork](https://github.com/lum-network/chain)|`v1.6.7`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-lumnetwork-v1.6.7`|[Example](./lumnetwork)|
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v5.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-migaloo-v5.0.0`|[Example](./migaloo)|
