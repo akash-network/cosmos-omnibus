@@ -5,7 +5,7 @@ services:
       args:
         PROJECT: babylon
         PROJECT_BIN: babylond
-        VERSION: v1.0.1
+        VERSION: v1.1.0
         REPOSITORY: https://github.com/babylonlabs-io/babylon.git
         GOLANG_VERSION: 1.23
     ports:
