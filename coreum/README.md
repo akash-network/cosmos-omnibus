@@ -7,7 +7,7 @@
 |Directory|`.core/coreum-mainnet-1`|
 |ENV namespace|`CORED`|
 |Repository|`https://github.com/CoreumFoundation/coreum`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.15-coreum-v5.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.16-coreum-v5.0.0`|
 
 ## Examples
 
