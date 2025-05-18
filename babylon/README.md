@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.0.1`|
+|Version|`v1.1.0`|
 |Binary|`babylond`|
 |Directory|`.babylond`|
 |ENV namespace|`BABYLOND`|
 |Repository|`https://github.com/babylonlabs-io/babylon.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.16-babylon-v1.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.16-babylon-v1.1.0`|
 
 ## Examples
 
