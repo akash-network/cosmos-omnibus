@@ -7,7 +7,7 @@
 |Directory|`.babylond`|
 |ENV namespace|`BABYLOND`|
 |Repository|`https://github.com/babylonlabs-io/babylon.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.17-babylon-v1.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-babylon-v1.1.0`|
 
 ## Examples
 

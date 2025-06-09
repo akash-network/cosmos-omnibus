@@ -7,7 +7,7 @@
 |Directory|`.chihuahuad`|
 |ENV namespace|`CHIHUAHUAD`|
 |Repository|`https://github.com/ChihuahuaChain/chihuahua`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.17-chihuahua-v9.0.4`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-chihuahua-v9.0.4`|
 
 ## Examples
 
