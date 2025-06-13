@@ -8,7 +8,7 @@ services:
         PROJECT_DIR: .omniflixhub
         VERSION: v6.0.0
         REPOSITORY: https://github.com/OmniFlix/omniflixhub
-        GOLANG_VERSION: 1.22
+        GOLANG_VERSION: 1.24
         POLKACHU_CHAIN_ID: omniflix
     ports:
       - '26656:26656'
