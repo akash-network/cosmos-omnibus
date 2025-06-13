@@ -2,7 +2,7 @@
 version: "2.0"
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.18-bostrom-v0.3.2
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.19-bostrom-v0.3.2
     env:
       - MONIKER=Cosmos Omnibus Node
     expose:

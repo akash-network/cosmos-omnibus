@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.18-injective-v1.15.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.19-injective-v1.15.0
     ports:
       - '26656:26656'
       - '26657:26657'
