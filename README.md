@@ -96,7 +96,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[migaloo](https://github.com/White-Whale-Defi-Platform/migaloo-chain)|`v5.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-migaloo-v5.0.0`|[Example](./migaloo)|
 |[neutron](https://github.com/neutron-org/neutron)|`v6.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-neutron-v6.0.0`|[Example](./neutron)|
 |[noble](https://github.com/noble-assets/noble)|`v5.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-noble-v5.0.0`|[Example](./noble)|
-|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v5.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-omniflixhub-v5.2.1`|[Example](./omniflixhub)|
+|[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v6.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-omniflixhub-v6.0.0`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v29.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-osmosis-v29.0.1`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-panacea-v2.2.0`|[Example](./panacea)|
 |[passage](https://github.com/envadiv/Passage3D)|`v2.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.18-passage-v2.5.0`|[Example](./passage)|
