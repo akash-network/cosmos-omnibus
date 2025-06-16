@@ -111,7 +111,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[source](https://github.com/Source-Protocol-Cosmos/source)|`v3.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-source-v3.0.1`|[Example](./source)|
 |[stargaze](https://github.com/public-awesome/stargaze)|`v16.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-stargaze-v16.0.0`|[Example](./stargaze)|
 |[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-starname-v0.11.5`|[Example](./starname)|
-|[stride](https://github.com/Stride-Labs/stride)|`v26.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-stride-v26.0.0`|[Example](./stride)|
+|[stride](https://github.com/Stride-Labs/stride)|`v27.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-stride-v27.0.0`|[Example](./stride)|
 |[teritori](https://github.com/TERITORI/teritori-chain)|`v2.0.6`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-teritori-v2.0.6`|[Example](./teritori)|
 |[terra](https://github.com/terra-money/core)|`v2.11.8`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-terra-v2.11.8`|[Example](./terra)|
 |[umee](https://github.com/umee-network/umee)|`v6.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-umee-v6.3.0`|[Example](./umee)|
