@@ -99,7 +99,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[omniflixhub](https://github.com/OmniFlix/omniflixhub)|`v6.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-omniflixhub-v6.0.0`|[Example](./omniflixhub)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v29.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-osmosis-v29.0.1`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-panacea-v2.2.0`|[Example](./panacea)|
-|[passage](https://github.com/envadiv/Passage3D)|`v2.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-passage-v2.5.0`|[Example](./passage)|
+|[passage](https://github.com/envadiv/Passage3D)|`v2.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-passage-v2.6.0`|[Example](./passage)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v10.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-persistence-v10.3.0`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v5.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-regen-v5.1.1`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.19-rizon-v0.4.1`|[Example](./rizon)|
