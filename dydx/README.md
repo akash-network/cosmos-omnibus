@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v8.0.9`|
+|Version|`v8.1.0`|
 |Binary|`dydxprotocold`|
 |Directory|`.dydxprotocol`|
 |ENV namespace|`DYDXPROTOCOLD`|
 |Repository|`https://github.com/dydxprotocol/v4-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.20-dydx-v8.0.9`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.20-dydx-v8.1.0`|
 
 ## Examples
 
