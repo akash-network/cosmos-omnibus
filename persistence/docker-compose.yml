@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.20-persistence-v10.3.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.21-persistence-v10.3.0
     ports:
       - '26656:26656'
       - '26657:26657'
