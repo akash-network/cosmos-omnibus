@@ -4,10 +4,10 @@ services:
       context: ../
       args:
         PROJECT: axelar
-        VERSION: v0.34.0
+        VERSION: v1.2.1
         REPOSITORY: https://github.com/axelarnetwork/axelar-core
         BUILD_METHOD: binary
-        BINARY_URL: https://github.com/axelarnetwork/axelar-core/releases/download/v0.34.0/axelard-linux-amd64-v0.34.0
+        BINARY_URL: https://github.com/axelarnetwork/axelar-core/releases/download/v1.2.1/axelard-linux-amd64-v1.2.1
     ports:
       - '26656:26656'
       - '26657:26657'
