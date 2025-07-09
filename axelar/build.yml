@@ -7,7 +7,7 @@ services:
         VERSION: v1.2.1
         REPOSITORY: https://github.com/axelarnetwork/axelar-core
         BUILD_METHOD: binary
-        BINARY_URL: https://github.com/axelarnetwork/axelar-core/releases/download/v1.2.1/axelard-linux-amd64-v1.2.1.zip
+        BINARY_URL: https://github.com/axelarnetwork/axelar-core/releases/download/v1.2.1/axelard-linux-amd64-v1.2.1
         GOLANG_VERSION: 1.23
     ports:
       - '26656:26656'
