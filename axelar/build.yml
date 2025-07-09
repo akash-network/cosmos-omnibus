@@ -4,9 +4,10 @@ services:
       context: ../
       args:
         PROJECT: axelar
+        PROJECT_BIN: axelard
+        PROJECT_DIR: .axelar
         VERSION: v1.2.1
         REPOSITORY: https://github.com/axelarnetwork/axelar-core
-        BUILD_METHOD: binary
         BINARY_URL: https://github.com/axelarnetwork/axelar-core/releases/download/v1.2.1/axelard-linux-amd64-v1.2.1
         GOLANG_VERSION: 1.23
     ports:
