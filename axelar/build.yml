@@ -10,7 +10,7 @@ services:
         REPOSITORY: https://github.com/axelarnetwork/axelar-core
         GOLANG_VERSION: 1.23
         BUILD_CMD: make build
-        BINARY_PATH: build/axelard
+        BINARY_PATH: bin/axelard
     ports:
       - '26656:26656'
       - '26657:26657'
