@@ -1,4 +1,4 @@
-# Fetch.ai
+# ASI Alliance (formelry Fetch.ai)
 
 | | |
 |---|---|
