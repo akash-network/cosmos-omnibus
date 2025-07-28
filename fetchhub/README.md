@@ -1,13 +1,13 @@
-# Fetch.ai
+# ASI Alliance (formerly Fetch.ai)
 
 | | |
 |---|---|
-|Version|`v0.14.0`|
+|Version|`v0.14.1`|
 |Binary|`fetchd`|
 |Directory|`.fetchd`|
 |ENV namespace|`FETCHD`|
 |Repository|`https://github.com/fetchai/fetchd`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-fetchhub-v0.14.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-fetchhub-v0.14.1`|
 
 ## Examples
 
