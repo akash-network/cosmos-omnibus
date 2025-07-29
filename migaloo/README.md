@@ -7,7 +7,7 @@
 |Directory|`.migalood`|
 |ENV namespace|`MIGALOOD`|
 |Repository|`https://github.com/White-Whale-Defi-Platform/migaloo-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-migaloo-v5.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.23-migaloo-v5.0.0`|
 
 ## Examples
 
