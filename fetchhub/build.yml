@@ -6,7 +6,7 @@ services:
         PROJECT: fetchhub
         PROJECT_BIN: fetchd
         PROJECT_DIR: .fetchd
-        VERSION: v0.14.0
+        VERSION: v0.14.1
         REPOSITORY: https://github.com/fetchai/fetchd
         POLKACHU_CHAIN_ID: fetch
     ports:

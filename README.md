@@ -78,7 +78,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-emoney-v1.2.0`|[Example](./emoney)|
 |[empowerchain](https://github.com/empowerchain/empowerchain)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-empowerchain-v2.0.0`|[Example](./empowerchain)|
 |[evmos](https://github.com/evmos/evmos)|`v20.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-evmos-v20.0.0`|[Example](./evmos)|
-|[fetchhub](https://github.com/fetchai/fetchd)|`v0.14.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-fetchhub-v0.14.0`|[Example](./fetchhub)|
+|[fetchhub](https://github.com/fetchai/fetchd)|`v0.14.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-fetchhub-v0.14.1`|[Example](./fetchhub)|
 |[gitopia](https://github.com/gitopia/gitopia)|`v5.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-gitopia-v5.1.0`|[Example](./gitopia)|
 |[gravitybridge](https://github.com/Gravity-Bridge/Gravity-Bridge)|`v1.11.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-gravitybridge-v1.11.1`|[Example](./gravitybridge)|
 |[impacthub](https://github.com/ixofoundation/ixo-blockchain)|`v0.18.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.22-impacthub-v0.18.1`|[Example](./impacthub)|
