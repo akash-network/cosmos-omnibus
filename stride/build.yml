@@ -8,7 +8,7 @@ services:
         VERSION: v28.0.0
         REPOSITORY: https://github.com/Stride-Labs/stride
         PROJECT_DIR: .stride
-        GOLANG_VERSION: 1.22
+        GOLANG_VERSION: 1.23
     ports:
       - '26656:26656'
       - '26657:26657'
