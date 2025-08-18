@@ -10,6 +10,8 @@ services:
       - P2P_POLKACHU=1
       - STATESYNC_POLKACHU=1
       - ADDRBOOK_POLKACHU=1
+      # Use the /latest endpoint which now properly handles redirects
+      - SNAPSHOT_URL=https://snapshots.akash.network/akashnet-2/latest
     expose:
       - port: 26657
         to:
