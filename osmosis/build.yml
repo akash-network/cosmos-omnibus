@@ -5,9 +5,9 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: v29.0.1
+        VERSION: v30.0.0
         REPOSITORY: https://github.com/osmosis-labs/osmosis
-        GOLANG_VERSION: 1.22
+        GOLANG_VERSION: 1.23
     ports:
       - '26656:26656'
       - '26657:26657'
