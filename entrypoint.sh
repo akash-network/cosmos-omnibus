@@ -389,8 +389,14 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
 
   # SNAPSHOT_FORMAT default value generation via SNAPSHOT_URL
   if [ -z "${SNAPSHOT_FORMAT}" ]; then
-    # DCS Storj backups adding ?download=1 part which needs to be stripped before determining the extension
-    SNAPSHOT_URL_TRIM="${SNAPSHOT_URL%?download=1}"
+    # Follow redirect to get the actual URL for format detection
+    ACTUAL_URL=$(wget $SNAPSHOT_URL --spider --max-redirect=5 --server-response -O - 2>&1 | grep -i "Location:" | tail -1 | awk '{print $2}')
+    if [ -n "$ACTUAL_URL" ]; then
+      SNAPSHOT_URL_TRIM="${ACTUAL_URL%?download=1}"
+    else
+      # DCS Storj backups adding ?download=1 part which needs to be stripped before determining the extension
+      SNAPSHOT_URL_TRIM="${SNAPSHOT_URL%?download=1}"
+    fi
     case "${SNAPSHOT_URL_TRIM,,}" in
       *.tar.gz)   SNAPSHOT_FORMAT="tar.gz";;
       *.tar.lz4)  SNAPSHOT_FORMAT="tar.lz4";;
