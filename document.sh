@@ -2,7 +2,7 @@
 
 set -e
 
-OMNIBUS_IMAGE="cosmos-omnibus:v1.2.25"
+OMNIBUS_IMAGE="cosmos-omnibus:v1.2.26"
 
 if [ "$#" -gt 0 ]; then
   DIRS="$@"
