@@ -94,7 +94,7 @@ This creates a `gcs-backup-key.json` file that you'll mount into the container.
 
 ```
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.25-akash-v0.38.4
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.26-akash-v0.38.4
     restart: no
     environment:
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
