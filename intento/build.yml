@@ -1,0 +1,17 @@
+services:
+  node:
+    build:
+      context: ../
+      args:
+        PROJECT: intento
+        PROJECT_BIN: intentod
+        VERSION: v1.0.3
+        REPOSITORY: https://github.com/trstlabs/intento
+        PROJECT_DIR: .intento
+        GOLANG_VERSION: 1.24
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    volumes:
+      - ./node-data:/root/.intento
