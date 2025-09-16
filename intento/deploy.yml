@@ -1,0 +1,52 @@
+---
+version: "2.0"
+services:
+  node:
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.27-intento-v1.0.3
+    env:
+      - MONIKER=Cosmos Omnibus Node
+      - P2P_POLKACHU=1
+      - STATESYNC_POLKACHU=1
+      - ADDRBOOK_POLKACHU=1
+    expose:
+      - port: 26657
+        to:
+          - global: true
+      - port: 26656
+        to:
+          - global: true
+    params: # remove for non-persistent storage
+      storage:
+        data:
+          mount: /root/.intento
+profiles:
+  compute:
+    node:
+      resources:
+        cpu:
+          units: 4
+        memory:
+          size: 32Gi
+        storage:
+          - size: 10Gi
+          - name: data # remove for non-persistent storage
+            size: 400Gi
+            attributes:
+              persistent: true
+              class: beta3
+  placement:
+    dcloud:
+      attributes:
+        host: akash
+      signedBy:
+        anyOf:
+          - akash1365yvmc4s7awdyj3n2sav7xfx76adc6dnmlx63
+      pricing:
+        node:
+          denom: uakt
+          amount: 1000
+deployment:
+  node:
+    dcloud:
+      profile: node
+      count: 1
