@@ -1,5 +1,5 @@
-ARG DEBIAN_VERSION=bookworm
-ARG GOLANG_VERSION=1.21
+ARG DEBIAN_VERSION=trixie
+ARG GOLANG_VERSION=1.25
 ARG BUILD_IMAGE=golang:${GOLANG_VERSION}-${DEBIAN_VERSION}
 ARG BUILD_METHOD=source
 ARG BASE_IMAGE=debian:${DEBIAN_VERSION}-slim
@@ -91,7 +91,7 @@ FROM ${BASE_IMAGE} AS base
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --assume-yes \
-    ca-certificates curl wget file unzip zstd liblz4-tool gnupg2 jq s3cmd pv && \
+    ca-certificates curl wget file unzip zstd lz4 gnupg2 jq s3cmd pv && \
     apt-get clean
 
 # Install Storj DCS uplink client
