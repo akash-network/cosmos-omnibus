@@ -101,12 +101,10 @@ RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux
     rm -f uplink uplink_linux_amd64.zip
 
 # Install Google Cloud SDK (for gsutil/gcloud)
-RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" \
-      | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
-    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg \
-      | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
+RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
     apt-get update && \
-    apt-get install --no-install-recommends --assume-yes google-cloud-sdk && \
+    apt-get install --no-install-recommends --assume-yes google-cloud-cli && \
     apt-get clean
 
 # Copy scripts
