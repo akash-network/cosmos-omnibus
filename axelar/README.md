@@ -3,11 +3,11 @@
 | | |
 |---|---|
 |Version|`v1.2.1`|
-|Binary|`axelar`|
+|Binary|`axelard`|
 |Directory|`.axelar`|
-|ENV namespace|`AXELAR`|
+|ENV namespace|`AXELARD`|
 |Repository|`https://github.com/axelarnetwork/axelar-core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.28-axelar-v1.2.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.29-axelar-v1.2.1`|
 
 ## Examples
 
