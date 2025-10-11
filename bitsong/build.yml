@@ -5,9 +5,10 @@ services:
       args:
         PROJECT: bitsong
         PROJECT_BIN: bitsongd
-        VERSION: v0.21.6
+        VERSION: v0.23.0
         REPOSITORY: https://github.com/bitsongofficial/go-bitsong
         GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

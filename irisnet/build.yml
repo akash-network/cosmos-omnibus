@@ -8,6 +8,7 @@ services:
         VERSION: v3.1.1
         REPOSITORY: https://github.com/irisnet/irishub
         GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

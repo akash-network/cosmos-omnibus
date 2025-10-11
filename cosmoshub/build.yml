@@ -9,6 +9,7 @@ services:
         VERSION: v25.1.0
         REPOSITORY: https://github.com/cosmos/gaia
         GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
         POLKACHU_CHAIN_ID: cosmos
     ports:
       - '26656:26656'

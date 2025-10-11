@@ -9,7 +9,8 @@ services:
         VERSION: v1.0.0
         REPOSITORY: https://github.com/AssetMantle/node
         NAMESPACE: MANTLENODE
-        GOLANG_VERSION: "1.20"
+        GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

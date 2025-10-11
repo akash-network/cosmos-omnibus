@@ -9,6 +9,7 @@ services:
         VERSION: v3.0.1
         REPOSITORY: https://github.com/Source-Protocol-Cosmos/source
         GOLANG_VERSION: 1.19
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'
