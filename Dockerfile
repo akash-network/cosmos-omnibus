@@ -35,7 +35,7 @@ ARG BINARY_PATH=$GOPATH/bin/$PROJECT_BIN
 
 RUN git clone --depth 1 --branch $BUILD_REF $REPOSITORY source && \
     cd /data/source/$BUILD_PATH && \
-    $BUILD_CMD && \
+    sh -c "$BUILD_CMD" && \
     mv $BINARY_PATH /bin/$PROJECT_BIN
 
 # copy dependencies to deps and move symlinked directories to usr
