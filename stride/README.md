@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v28.0.0`|
+|Version|`v29.1.1`|
 |Binary|`strided`|
 |Directory|`.stride`|
 |ENV namespace|`STRIDED`|
 |Repository|`https://github.com/Stride-Labs/stride`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.29-stride-v28.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.29-stride-v29.1.1`|
 
 ## Examples
 
