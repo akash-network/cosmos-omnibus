@@ -1,18 +1,15 @@
 ---
-# Datagram Node Deployment Template - For New Deployers
-# Instructions: Replace the placeholder values with your own details
-# Status: ✅ READY TO DEPLOY - TESTED AND WORKING
-# Architecture: AMD64/x86_64 (correct for Akash servers)
+# Datagram Node Deployment Configuration
+# Instructions: Replace DATAGRAM_LICENSE_KEY with your license key from demo.datagram.network
 
 version: "2.0"
 
 services:
   datagram:
-    # WORKING IMAGE - This is the only version that actually works
     image: virgilbb/datagram-node:amd64
     env:
-      - DATAGRAM_LICENSE_KEY=REPLACE_WITH_YOUR_LICENSE_KEY
-      - NODE_NAME=REPLACE_WITH_YOUR_NODE_NAME
+      - DATAGRAM_LICENSE_KEY=your-license-key-here
+      - NODE_NAME=datagram-node
       - LOG_LEVEL=info
     expose:
       - port: 3000
