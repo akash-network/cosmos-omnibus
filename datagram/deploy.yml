@@ -1,0 +1,48 @@
+---
+# Datagram Node Deployment Template - For New Deployers
+# Instructions: Replace the placeholder values with your own details
+# Status: ✅ READY TO DEPLOY - TESTED AND WORKING
+# Architecture: AMD64/x86_64 (correct for Akash servers)
+
+version: "2.0"
+
+services:
+  datagram:
+    # WORKING IMAGE - This is the only version that actually works
+    image: virgilbb/datagram-node:amd64
+    env:
+      - DATAGRAM_LICENSE_KEY=REPLACE_WITH_YOUR_LICENSE_KEY
+      - NODE_NAME=REPLACE_WITH_YOUR_NODE_NAME
+      - LOG_LEVEL=info
+    expose:
+      - port: 3000
+        as: 3000
+        to:
+          - global: true
+      - port: 4000
+        as: 4000
+        to:
+          - global: true
+
+profiles:
+  compute:
+    datagram:
+      resources:
+        cpu:
+          units: 0.2
+        memory:
+          size: 256Mi
+        storage:
+          size: 512Mi
+  placement:
+    akash:
+      pricing:
+        datagram:
+          denom: uakt
+          amount: 1000
+
+deployment:
+  datagram:
+    akash:
+      profile: datagram
+      count: 1

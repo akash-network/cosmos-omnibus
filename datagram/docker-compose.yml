@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  datagram:
+    image: virgilbb/datagram-node:amd64
+    container_name: datagram-node
+    environment:
+      - DATAGRAM_LICENSE_KEY=${DATAGRAM_LICENSE_KEY}
+      - NODE_NAME=${NODE_NAME:-datagram-node}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    ports:
+      - "3000:3000"
+      - "4000:4000"
+    restart: unless-stopped
+    volumes:
+      - datagram_data:/app/data
+    networks:
+      - datagram_network
+
+volumes:
+  datagram_data:
+
+networks:
+  datagram_network:
+    driver: bridge
