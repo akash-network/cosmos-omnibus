@@ -5,7 +5,7 @@ services:
       args:
         PROJECT: bitsong
         PROJECT_BIN: bitsongd
-        VERSION: v0.23.0
+        VERSION: v0.21.6
         REPOSITORY: https://github.com/bitsongofficial/go-bitsong
         GOLANG_VERSION: 1.23
         DEBIAN_VERSION: bookworm

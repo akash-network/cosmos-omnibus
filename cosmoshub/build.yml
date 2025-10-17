@@ -12,7 +12,7 @@ services:
         DEBIAN_VERSION: bookworm
         POLKACHU_CHAIN_ID: cosmos
         BUILD_CMD: "env CGO_CFLAGS='-O2 -D__BLST_PORTABLE__' make install"
-      ports:
+    ports:
       - '26656:26656'
       - '26657:26657'
       - '1317:1317'
