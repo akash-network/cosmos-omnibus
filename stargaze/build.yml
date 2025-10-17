@@ -9,6 +9,7 @@ services:
         VERSION: v16.0.0
         REPOSITORY: https://github.com/public-awesome/stargaze
         GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

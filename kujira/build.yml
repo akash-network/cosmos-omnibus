@@ -9,6 +9,7 @@ services:
         VERSION: v2.0.0
         REPOSITORY: https://github.com/Team-Kujira/core
         GOLANG_VERSION: 1.21.8
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

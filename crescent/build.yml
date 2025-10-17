@@ -9,6 +9,7 @@ services:
         REPOSITORY: https://github.com/crescent-network/crescent
         PROJECT_DIR: .crescent
         GOLANG_VERSION: 1.19
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'
