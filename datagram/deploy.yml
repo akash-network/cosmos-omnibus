@@ -1,0 +1,45 @@
+---
+# Datagram Node Deployment Configuration
+# Instructions: Replace DATAGRAM_LICENSE_KEY with your license key from demo.datagram.network
+
+version: "2.0"
+
+services:
+  datagram:
+    image: virgilbb/datagram-node:amd64
+    env:
+      - DATAGRAM_LICENSE_KEY=your-license-key-here
+      - NODE_NAME=datagram-node
+      - LOG_LEVEL=info
+    expose:
+      - port: 3000
+        as: 3000
+        to:
+          - global: true
+      - port: 4000
+        as: 4000
+        to:
+          - global: true
+
+profiles:
+  compute:
+    datagram:
+      resources:
+        cpu:
+          units: 0.2
+        memory:
+          size: 256Mi
+        storage:
+          size: 512Mi
+  placement:
+    akash:
+      pricing:
+        datagram:
+          denom: uakt
+          amount: 1000
+
+deployment:
+  datagram:
+    akash:
+      profile: datagram
+      count: 1
