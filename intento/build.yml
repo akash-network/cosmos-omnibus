@@ -5,7 +5,7 @@ services:
       args:
         PROJECT: intento
         PROJECT_BIN: intentod
-        VERSION: v1.0.4
+        VERSION: v1.0.5
         REPOSITORY: https://github.com/trstlabs/intento
         PROJECT_DIR: .intento
         GOLANG_VERSION: 1.24
