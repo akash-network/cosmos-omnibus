@@ -9,6 +9,7 @@ services:
         VERSION: v1.4.10
         REPOSITORY: https://github.com/crypto-org-chain/cronos
         GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

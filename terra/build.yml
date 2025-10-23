@@ -9,6 +9,7 @@ services:
         REPOSITORY: https://github.com/terra-money/core.git
         PROJECT_DIR: .terra
         GOLANG_VERSION: "1.20"
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

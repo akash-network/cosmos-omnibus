@@ -9,6 +9,7 @@ services:
         VERSION: v1.7.0
         REPOSITORY: https://github.com/xpladev/xpla
         GOLANG_VERSION: 1.23.2
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

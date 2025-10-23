@@ -8,6 +8,7 @@ services:
         VERSION: v15.3.0
         REPOSITORY: https://github.com/comdex-official/comdex
         GOLANG_VERSION: 1.22
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

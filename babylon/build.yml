@@ -8,6 +8,7 @@ services:
         VERSION: v2.1.0
         REPOSITORY: https://github.com/babylonlabs-io/babylon.git
         GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'
