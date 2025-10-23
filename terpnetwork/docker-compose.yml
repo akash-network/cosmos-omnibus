@@ -1,0 +1,11 @@
+services:
+  node:
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.29-terpnetwork-v5.0.1
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    environment:
+      - MONIKER=Cosmos Omnibus Node
+    volumes:
+      - ./node-data:/root/.terp
