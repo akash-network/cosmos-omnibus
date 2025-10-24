@@ -1,0 +1,19 @@
+services:
+  node:
+    build:
+      context: ../
+      args:
+        PROJECT: terpnetwork # should match the directory/Chain Registry
+        PROJECT_BIN: terpd
+        PROJECT_DIR: .terp
+        VERSION: v5.0.1
+        REPOSITORY: https://github.com/terpnetwork/terp-core
+        GOLANG_VERSION: 1.24
+    # environment:
+    #   - FASTSYNC_VERSION=v0
+    ports:
+      - '26656:26656'
+      - '26657:26657'
+      - '1317:1317'
+    volumes:
+      - ./node-data:/root/.terp
