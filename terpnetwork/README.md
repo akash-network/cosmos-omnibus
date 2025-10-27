@@ -7,7 +7,7 @@
 |Directory|`.terp`|
 |ENV namespace|`TERPD`|
 |Repository|`https://github.com/terpnetwork/terp-core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-terpnetwork-v5.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.31-terpnetwork-v5.0.1`|
 
 ## Examples
 
