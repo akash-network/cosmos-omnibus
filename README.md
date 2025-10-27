@@ -113,6 +113,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[starname](https://github.com/iov-one/starnamed)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-starname-v0.11.5`|[Example](./starname)|
 |[stride](https://github.com/Stride-Labs/stride)|`v29.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-stride-v29.1.1`|[Example](./stride)|
 |[teritori](https://github.com/TERITORI/teritori-chain)|`v2.0.6`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-teritori-v2.0.6`|[Example](./teritori)|
+|[terpnetwork](https://github.com/terpnetwork/terp-core)|`v5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-terpnetwork-v5.0.1`|[Example](./terpnetwork)|
 |[terra](https://github.com/terra-money/core)|`v2.11.8`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-terra-v2.11.8`|[Example](./terra)|
 |[umee](https://github.com/umee-network/umee)|`v6.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-umee-v6.3.0`|[Example](./umee)|
 |[xpla](https://github.com/xpladev/xpla)|`v1.7.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-xpla-v1.7.0`|[Example](./xpla)|
