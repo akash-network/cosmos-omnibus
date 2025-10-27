@@ -69,11 +69,11 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[coreum](https://github.com/CoreumFoundation/coreum)|`v5.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-coreum-v5.0.0`|[Example](./coreum)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v25.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-cosmoshub-v25.1.1`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-crescent-v4.2.0`|[Example](./crescent)|
-|[cronos](https://github.com/crypto-org-chain/cronos)|`v1.4.10`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-cronos-v1.4.10`|[Example](./cronos)|
+|[cronos](https://github.com/crypto-org-chain/cronos)|`v1.4.11`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-cronos-v1.4.11`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v6.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-cryptoorgchain-v6.0.3`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-decentr-v1.6.4`|[Example](./decentr)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-desmos-v6.2.0`|[Example](./desmos)|
-|[dydx](https://github.com/dydxprotocol/v4-chain)|`v9.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-dydx-v9.2.1`|[Example](./dydx)|
+|[dydx](https://github.com/dydxprotocol/v4-chain)|`v9.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-dydx-v9.3.0`|[Example](./dydx)|
 |[dymension](https://github.com/dymensionxyz/dymension)|`v3.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-dymension-v3.1.0`|[Example](./dymension)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-emoney-v1.2.0`|[Example](./emoney)|
 |[evmos](https://github.com/evmos/evmos)|`v20.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.30-evmos-v20.0.0`|[Example](./evmos)|
@@ -388,6 +388,13 @@ Run the documentation script to automatically create `deploy.yml`, `docker-compo
 
 Update the main [`README.md`](./README.md) file to include your chain in the [Networks](#networks-pre-built-images) section. Keep this alphabetical and ensure the versions referenced are correct.
 
-Update the [`.github/workflows/publish.yml`](./.github/workflows/publish.yaml) file to include your chain and version. Again keep this alphabetical and ensure the versions referenced are correct.
-
 Submit a PR with your changes and it will be validated and merged if appropriate.
+
+## Updating Versions
+
+To update the project to a new release, replace `mychainname` with the chain's name, and provide the current version and the new version. The script automatically updates all references to the version number across configuration files, documentation, and container image tags.
+ run the following command:
+
+```bash
+./update-project-version.sh mychainname v1.2.0 v1.3.0
+```
