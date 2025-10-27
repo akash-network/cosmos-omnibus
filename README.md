@@ -388,6 +388,13 @@ Run the documentation script to automatically create `deploy.yml`, `docker-compo
 
 Update the main [`README.md`](./README.md) file to include your chain in the [Networks](#networks-pre-built-images) section. Keep this alphabetical and ensure the versions referenced are correct.
 
-Update the [`.github/workflows/publish.yml`](./.github/workflows/publish.yaml) file to include your chain and version. Again keep this alphabetical and ensure the versions referenced are correct.
-
 Submit a PR with your changes and it will be validated and merged if appropriate.
+
+## Updating Versions
+
+To update the project to a new release, replace `mychainname` with the chain's name, and provide the current version and the new version. The script automatically updates all references to the version number across configuration files, documentation, and container image tags.
+ run the following command:
+
+```bash
+./update-project-version.sh mychainname v1.2.0 v1.3.0
+```
