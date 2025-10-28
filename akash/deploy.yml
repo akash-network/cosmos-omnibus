@@ -2,7 +2,7 @@
 version: "2.0"
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.31-akash-v1.0.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.32-akash-v1.0.0
     env:
       - MONIKER=Cosmos Omnibus Node
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
