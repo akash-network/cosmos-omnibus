@@ -326,7 +326,7 @@ fi
 # Initialise
 if [ "$INIT_CONFIG" == "1" ]; then
   if [ -n "$INIT_CMD" ]; then
-    $INIT_CMD
+    $INIT_CMD "$MONIKER" --chain-id ${CHAIN_ID}
   else
     $PROJECT_BIN init "$MONIKER" --chain-id ${CHAIN_ID}
   fi

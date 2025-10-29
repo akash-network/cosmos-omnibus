@@ -8,6 +8,7 @@ services:
         REPOSITORY: https://github.com/akash-network/node
         BUILD_METHOD: binary
         BINARY_URL: https://github.com/akash-network/node/releases/download/v1.0.0/akash_linux_amd64.zip
+        INIT_CMD: akash genesis init
     ports:
       - '26656:26656'
       - '26657:26657'
