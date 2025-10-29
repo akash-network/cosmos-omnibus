@@ -9,6 +9,7 @@ services:
         VERSION: v5.0.0
         REPOSITORY: https://github.com/noble-assets/noble.git
         GOLANG_VERSION: 1.19
+        DEBIAN_VERSION: bookworm
     ports:
       - '21556:26656'
       - '21557:26657'

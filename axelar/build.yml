@@ -9,6 +9,7 @@ services:
         VERSION: v1.2.1
         REPOSITORY: https://github.com/axelarnetwork/axelar-core
         GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
         BUILD_CMD: make build
         BINARY_PATH: bin/axelard
     ports:

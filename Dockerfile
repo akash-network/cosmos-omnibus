@@ -1,5 +1,5 @@
-ARG DEBIAN_VERSION=bookworm
-ARG GOLANG_VERSION=1.21
+ARG DEBIAN_VERSION=trixie
+ARG GOLANG_VERSION=1.25
 ARG BUILD_IMAGE=golang:${GOLANG_VERSION}-${DEBIAN_VERSION}
 ARG BUILD_METHOD=source
 ARG BASE_IMAGE=debian:${DEBIAN_VERSION}-slim
@@ -35,7 +35,7 @@ ARG BINARY_PATH=$GOPATH/bin/$PROJECT_BIN
 
 RUN git clone --depth 1 --branch $BUILD_REF $REPOSITORY source && \
     cd /data/source/$BUILD_PATH && \
-    $BUILD_CMD && \
+    sh -c "$BUILD_CMD" && \
     mv $BINARY_PATH /bin/$PROJECT_BIN
 
 # copy dependencies to deps and move symlinked directories to usr
@@ -91,7 +91,7 @@ FROM ${BASE_IMAGE} AS base
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --assume-yes \
-    ca-certificates curl wget file unzip zstd liblz4-tool gnupg2 jq s3cmd pv && \
+    ca-certificates curl wget file unzip zstd lz4 gnupg2 jq s3cmd pv && \
     apt-get clean
 
 # Install Storj DCS uplink client
@@ -101,12 +101,10 @@ RUN curl -L https://github.com/storj/storj/releases/latest/download/uplink_linux
     rm -f uplink uplink_linux_amd64.zip
 
 # Install Google Cloud SDK (for gsutil/gcloud)
-RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" \
-      | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
-    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg \
-      | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
+RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
     apt-get update && \
-    apt-get install --no-install-recommends --assume-yes google-cloud-sdk && \
+    apt-get install --no-install-recommends --assume-yes google-cloud-cli && \
     apt-get clean
 
 # Copy scripts
