@@ -326,9 +326,7 @@ fi
 # Initialise
 if [ "$INIT_CONFIG" == "1" ]; then
   if [ -n "$INIT_CMD" ]; then
-    $INIT_CMD
-  elif [ "$PROJECT_BIN" == "akash" ]; then
-    $PROJECT_BIN genesis init "$MONIKER" --chain-id ${CHAIN_ID}
+    $INIT_CMD "$MONIKER" --chain-id ${CHAIN_ID}
   else
     $PROJECT_BIN init "$MONIKER" --chain-id ${CHAIN_ID}
   fi
