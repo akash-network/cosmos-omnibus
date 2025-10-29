@@ -8,6 +8,7 @@ services:
         PROJECT_DIR: .umee
         VERSION: v6.3.0
         GOLANG_VERSION: 1.21
+        DEBIAN_VERSION: bookworm
         REPOSITORY: https://github.com/umee-network/umee
     ports:
       - '26656:26656'

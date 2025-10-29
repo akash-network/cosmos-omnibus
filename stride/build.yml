@@ -9,6 +9,7 @@ services:
         REPOSITORY: https://github.com/Stride-Labs/stride
         PROJECT_DIR: .stride
         GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

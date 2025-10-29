@@ -9,6 +9,7 @@ services:
         VERSION: v8.1.1
         REPOSITORY: https://github.com/Canto-Network/Canto
         GOLANG_VERSION: 1.21
+        DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
       - '26657:26657'

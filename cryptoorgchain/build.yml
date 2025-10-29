@@ -8,6 +8,7 @@ services:
         VERSION: v6.0.3
         REPOSITORY: https://github.com/crypto-org-chain/chain-main
         GOLANG_VERSION: 1.23
+        DEBIAN_VERSION: bookworm
         POLKACHU_CHAIN_ID: cryptocom
     ports:
       - '26656:26656'
