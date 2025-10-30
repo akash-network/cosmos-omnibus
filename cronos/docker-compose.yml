@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.33-cronos-v1.4.11
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.33-cronos-v1.5.1
     ports:
       - '26656:26656'
       - '26657:26657'
