@@ -5,9 +5,9 @@ services:
       args:
         PROJECT: osmosis
         PROJECT_BIN: osmosisd
-        VERSION: v30.0.0
+        VERSION: v31.0.0
         REPOSITORY: https://github.com/osmosis-labs/osmosis
-        GOLANG_VERSION: 1.23
+        GOLANG_VERSION: 1.24
         DEBIAN_VERSION: bookworm
     ports:
       - '26656:26656'
