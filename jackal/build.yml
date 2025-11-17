@@ -5,11 +5,11 @@ services:
       args:
         PROJECT: jackal
         PROJECT_BIN: canined
-        VERSION: v5.0.0
+        VERSION: v5.1.0
         REPOSITORY: https://github.com/JackalLabs/canine-chain
         PROJECT_DIR: .canine
         GOLANG_VERSION: 1.24
-        BUILD_CMD: make install VERSION=5.0.0
+        BUILD_CMD: make install VERSION=5.1.0
     ports:
       - '26656:26656'
       - '26657:26657'
