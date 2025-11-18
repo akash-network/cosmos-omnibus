@@ -6,10 +6,10 @@ services:
         PROJECT: atomone
         PROJECT_BIN: atomoned
         PROJECT_DIR: .atomone
-        VERSION: v2.0.0
+        VERSION: v3.0.3
         REPOSITORY: https://github.com/atomone-hub/atomone
         BUILD_METHOD: binary
-        BINARY_URL: https://github.com/atomone-hub/atomone/releases/download/v2.0.0/atomoned-v2.0.0-linux-amd64
+        BINARY_URL: https://github.com/atomone-hub/atomone/releases/download/v3.0.3/atomoned-v3.0.3-linux-amd64
     ports:
       - '26656:26656'
       - '26657:26657'
