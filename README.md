@@ -55,7 +55,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[akash](https://github.com/akash-network/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-akash-v1.0.0`|[Example](./akash)|
 |[archway](https://github.com/archway-network/archway)|`v9.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-archway-v9.0.0`|[Example](./archway)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-assetmantle-v1.0.0`|[Example](./assetmantle)|
-|[atomone](https://github.com/atomone-hub/atomone)|`v2.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-atomone-v2.0.0`|[Example](./atomone)|
+|[atomone](https://github.com/atomone-hub/atomone)|`v3.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-atomone-v3.0.3`|[Example](./atomone)|
 |[axelar](https://github.com/axelarnetwork/axelar-core)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-axelar-v1.2.1`|[Example](./axelar)|
 |[babylon](https://github.com/babylonlabs-io/babylon.git)|`v2.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-babylon-v2.1.0`|[Example](./babylon)|
 |[bandchain](https://github.com/bandprotocol/chain)|`v2.5.3`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-bandchain-v2.5.3`|[Example](./bandchain)|

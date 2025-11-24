@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v2.0.0`|
+|Version|`v3.0.3`|
 |Binary|`atomoned`|
 |Directory|`.atomone`|
 |ENV namespace|`ATOMONED`|
 |Repository|`https://github.com/atomone-hub/atomone`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-atomone-v2.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-atomone-v3.0.3`|
 
 ## Examples
 
