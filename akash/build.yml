@@ -4,10 +4,10 @@ services:
       context: ../
       args:
         PROJECT: akash
-        VERSION: v1.0.0
+        VERSION: v1.1.0
         REPOSITORY: https://github.com/akash-network/node
         BUILD_METHOD: binary
-        BINARY_URL: https://github.com/akash-network/node/releases/download/v1.0.0/akash_linux_amd64.zip
+        BINARY_URL: https://github.com/akash-network/node/releases/download/v1.1.0/akash_linux_amd64.zip
         INIT_CMD: akash genesis init
     ports:
       - '26656:26656'
