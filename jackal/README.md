@@ -7,7 +7,7 @@
 |Directory|`.canine`|
 |ENV namespace|`CANINED`|
 |Repository|`https://github.com/JackalLabs/canine-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-jackal-v5.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.35-jackal-v5.1.0`|
 
 ## Examples
 

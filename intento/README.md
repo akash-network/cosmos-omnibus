@@ -7,7 +7,7 @@
 |Directory|`.intento`|
 |ENV namespace|`INTENTOD`|
 |Repository|`https://github.com/trstlabs/intento`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.34-intento-v1.0.7`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.35-intento-v1.0.7`|
 
 ## Examples
 
