@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v1.0.7`|
+|Version|`v1.0.8`|
 |Binary|`intentod`|
 |Directory|`.intento`|
 |ENV namespace|`INTENTOD`|
 |Repository|`https://github.com/trstlabs/intento`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.35-intento-v1.0.7`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.35-intento-v1.0.8`|
 
 ## Examples
 
