@@ -6,7 +6,7 @@ services:
         PROJECT: cronos
         PROJECT_BIN: cronosd
         PROJECT_DIR: .cronos
-        VERSION: v1.5.1
+        VERSION: v1.6.1
         REPOSITORY: https://github.com/crypto-org-chain/cronos
         GOLANG_VERSION: 1.23
         DEBIAN_VERSION: bookworm
