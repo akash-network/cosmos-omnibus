@@ -6,7 +6,7 @@ services:
         PROJECT: omniflixhub
         PROJECT_BIN: omniflixhubd
         PROJECT_DIR: .omniflixhub
-        VERSION: v6.0.0
+        VERSION: v6.1
         REPOSITORY: https://github.com/OmniFlix/omniflixhub
         GOLANG_VERSION: 1.24
         POLKACHU_CHAIN_ID: omniflix
