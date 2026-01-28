@@ -1,6 +1,6 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.36-stride-v29.1.1
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.37-stride-v29.1.1
     ports:
       - '26656:26656'
       - '26657:26657'
