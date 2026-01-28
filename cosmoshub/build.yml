@@ -6,7 +6,7 @@ services:
         PROJECT: cosmoshub
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
-        VERSION: v25.2.0
+        VERSION: v25.3.0
         REPOSITORY: https://github.com/cosmos/gaia
         GOLANG_VERSION: 1.23
         DEBIAN_VERSION: bookworm
