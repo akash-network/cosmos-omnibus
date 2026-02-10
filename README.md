@@ -101,7 +101,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-panacea-v2.2.0`|[Example](./panacea)|
 |[passage](https://github.com/envadiv/Passage3D)|`v2.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-passage-v2.6.0`|[Example](./passage)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v10.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-persistence-v10.3.0`|[Example](./persistence)|
-|[regen](https://github.com/regen-network/regen-ledger)|`v6.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-regen-v6.0.0`|[Example](./regen)|
+|[regen](https://github.com/regen-network/regen-ledger)|`v7.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-regen-v7.2.0`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-rizon-v0.4.1`|[Example](./rizon)|
 |[sei](https://github.com/sei-protocol/sei-chain)|`v5.7.5`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-sei-v5.7.5`|[Example](./sei)|
 |[sentinel](https://github.com/sentinel-official/hub)|`v0.11.5`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-sentinel-v0.11.5`|[Example](./sentinel)|
