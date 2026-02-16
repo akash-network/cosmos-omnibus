@@ -7,7 +7,7 @@
 |Directory|`.noble`|
 |ENV namespace|`NOBLED`|
 |Repository|`https://github.com/noble-assets/noble.git`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-noble-v5.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.38-noble-v5.0.0`|
 
 ## Examples
 
