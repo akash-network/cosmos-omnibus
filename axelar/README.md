@@ -7,7 +7,7 @@
 |Directory|`.axelar`|
 |ENV namespace|`AXELARD`|
 |Repository|`https://github.com/axelarnetwork/axelar-core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.37-axelar-v1.2.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.38-axelar-v1.2.1`|
 
 ## Examples
 
