@@ -2,17 +2,19 @@
 
 | | |
 |---|---|
-|Version|`v5.0.1`|
+|Version|`v5.0.3`|
 |Binary|`terpd`|
 |Directory|`.terp`|
 |ENV namespace|`TERPD`|
 |Repository|`https://github.com/terpnetwork/terp-core`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.38-terpnetwork-v5.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.38-terpnetwork-v5.0.3`|
 
 ## Examples
 
 - Run on Akash with the [example deploy.yml](./deploy.yml)
 - Run with Docker using the [example docker-compose.yml](./docker-compose.yml)
+
+> ### Try out our dedicated sentry-node array deployment scripting, [O-line](https://github.com/permissionlessweb/o-line/tree/master/plays/oline-sdl), powered by cosmos-omnibus & [akash-deploy-rs](https://github.com/permissionlessweb/akash-deploy-rs)
 
 ## Chain information
 
