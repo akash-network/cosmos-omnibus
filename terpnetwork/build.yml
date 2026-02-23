@@ -6,7 +6,7 @@ services:
         PROJECT: terpnetwork # should match the directory/Chain Registry
         PROJECT_BIN: terpd
         PROJECT_DIR: .terp
-        VERSION: v5.0.1
+        VERSION: v5.0.3
         REPOSITORY: https://github.com/terpnetwork/terp-core
         GOLANG_VERSION: 1.24
     # environment:
