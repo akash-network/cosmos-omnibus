@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v5.0.0`|
+|Version|`v6.0.1`|
 |Binary|`cored`|
 |Directory|`.core/coreum-mainnet-1`|
 |ENV namespace|`CORED`|
 |Repository|`https://github.com/CoreumFoundation/coreum`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.38-coreum-v5.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.38-coreum-v6.0.1`|
 
 ## Examples
 
