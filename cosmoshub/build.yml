@@ -6,9 +6,9 @@ services:
         PROJECT: cosmoshub
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
-        VERSION: v25.3.0
+        VERSION: v26.0.0
         REPOSITORY: https://github.com/cosmos/gaia
-        GOLANG_VERSION: 1.23
+        GOLANG_VERSION: 1.24
         DEBIAN_VERSION: bookworm
         POLKACHU_CHAIN_ID: cosmos
         BUILD_CMD: "env CGO_CFLAGS='-O2 -D__BLST_PORTABLE__' make install"
