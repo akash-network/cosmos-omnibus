@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v5.0.0`|
-|Binary|`cored`|
+|Version|`v6.0.1`|
+|Binary|`txd`|
 |Directory|`.core/coreum-mainnet-1`|
-|ENV namespace|`CORED`|
-|Repository|`https://github.com/CoreumFoundation/coreum`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-coreum-v5.0.0`|
+|ENV namespace|`TXD`|
+|Repository|`https://github.com/tokenize-x/tx-chain`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-coreum-v6.0.1`|
 
 ## Examples
 
