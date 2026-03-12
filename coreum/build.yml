@@ -4,12 +4,12 @@ services:
       context: ../
       args:
         PROJECT: coreum
-        PROJECT_BIN: cored
+        PROJECT_BIN: txd
         PROJECT_DIR: .core/coreum-mainnet-1
-        REPOSITORY: https://github.com/CoreumFoundation/coreum
-        VERSION: v5.0.0
+        REPOSITORY: https://github.com/tokenize-x/tx-chain
+        VERSION: v6.0.1
         BUILD_METHOD: binary
-        BINARY_URL: https://github.com/CoreumFoundation/coreum/releases/download/v5.0.0/cored-linux-amd64
+        BINARY_URL: https://github.com/tokenize-x/tx-chain/releases/download/v6.0.1/txd-linux-amd64
     ports:
       - '26656:26656'
       - '26657:26657'

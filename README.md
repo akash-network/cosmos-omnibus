@@ -39,8 +39,8 @@ services:
       # - PROJECT=akash
       # - PROJECT_DIR=.akash
       # - PROJECT_BIN=akash
-      # - BINARY_URL=https://github.com/akash-network/node/releases/download/v1.2.0/akash_linux_amd64.zip
-      # - BINARY_ZIP_PATH=build/akash-v1.2.0 # only required if expected binary file isn't in the ZIP root
+      # - BINARY_URL=https://github.com/akash-network/node/releases/download/v1.2.1/akash_linux_amd64.zip
+      # - BINARY_ZIP_PATH=build/akash-v1.2.1 # only required if expected binary file isn't in the ZIP root
 ```
 
 More information on the generic image can be found at [/generic](./generic/), and configuration is detailed in depth below.
@@ -52,7 +52,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 
 |Project|Version|Image| |
 |---|---|---|---|
-|[akash](https://github.com/akash-network/node)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-akash-v1.2.0`|[Example](./akash)|
+|[akash](https://github.com/akash-network/node)|`v1.2.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-akash-v1.2.1`|[Example](./akash)|
 |[archway](https://github.com/archway-network/archway)|`v9.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-archway-v9.0.0`|[Example](./archway)|
 |[assetmantle](https://github.com/AssetMantle/node)|`v1.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-assetmantle-v1.0.0`|[Example](./assetmantle)|
 |[atomone](https://github.com/atomone-hub/atomone)|`v3.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-atomone-v3.2.0`|[Example](./atomone)|
@@ -66,7 +66,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-cheqd-0.6.9`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v9.0.6`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-chihuahua-v9.0.6`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v15.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-comdex-v15.3.0`|[Example](./comdex)|
-|[coreum](https://github.com/CoreumFoundation/coreum)|`v5.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-coreum-v5.0.0`|[Example](./coreum)|
+|[coreum](https://github.com/tokenize-x/tx-chain)|`v6.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-coreum-v6.0.1`|[Example](./coreum)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v27.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-cosmoshub-v27.0.0`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-crescent-v4.2.0`|[Example](./crescent)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v1.6.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.39-cronos-v1.6.1`|[Example](./cronos)|
@@ -397,5 +397,5 @@ To update the project to a new release, replace `mychainname` with the chain's n
  run the following command:
 
 ```bash
-./update-project-version.sh mychainname v1.2.0 v1.3.0
+./update-project-version.sh mychainname v1.2.1 v1.3.0
 ```
