@@ -1,4 +1,4 @@
-# Coreum
+# TX
 
 | | |
 |---|---|
@@ -7,7 +7,7 @@
 |Directory|`.core/coreum-mainnet-1`|
 |ENV namespace|`TXD`|
 |Repository|`https://github.com/tokenize-x/tx-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.41-coreum-v6.1.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.42-coreum-v6.1.0`|
 
 ## Examples
 
@@ -16,7 +16,7 @@
 
 ## Chain information
 
-The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes [up to date chain info](https://raw.githubusercontent.com/cosmos/chain-registry/master/coreum/chain.json) for Coreum.
+The [Cosmos Chain Registry](https://github.com/cosmos/chain-registry) publishes [up to date chain info](https://raw.githubusercontent.com/cosmos/chain-registry/master/coreum/chain.json) for TX.
 
 This will be used automatically unless overridden with the `CHAIN_JSON` variable (use `0` to disable).
 
@@ -24,7 +24,7 @@ This will be used automatically unless overridden with the `CHAIN_JSON` variable
 
 [Polkachu's Chain Services](https://www.polkachu.com/networks/coreum) make bootstrapping a node extremely easy. They provide live peers, seeds, statesync, addrbooks and pruned snapshots among other features.
 
-The following configuration is available for Coreum nodes. [See the documentation](../README.md#polkachu-services) for more information.
+The following configuration is available for TX nodes. [See the documentation](../README.md#polkachu-services) for more information.
 
 |Variable|Value|
 |---|---|
@@ -34,4 +34,4 @@ The following configuration is available for Coreum nodes. [See the documentatio
 |`STATESYNC_POLKACHU`|`1`|
 |`ADDRBOOK_POLKACHU`|`1`|
 
-Polkachu also provide pruned snapshots for Coreum. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/coreum) and apply it using the `SNAPSHOT_URL` variable.
+Polkachu also provide pruned snapshots for TX. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/coreum) and apply it using the `SNAPSHOT_URL` variable.

@@ -7,7 +7,7 @@
 |Directory|`.dydxprotocol`|
 |ENV namespace|`DYDXPROTOCOLD`|
 |Repository|`https://github.com/dydxprotocol/v4-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.41-dydx-v9.4.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.42-dydx-v9.4.0`|
 
 ## Examples
 
@@ -31,7 +31,6 @@ The following configuration is available for dYdX Protocol nodes. [See the docum
 |`P2P_POLKACHU`|`1`|
 |`P2P_SEEDS_POLKACHU`|`1`|
 |`P2P_PEERS_POLKACHU`|`1`|
-|`STATESYNC_POLKACHU`|`1`|
 |`ADDRBOOK_POLKACHU`|`1`|
 
 Polkachu also provide pruned snapshots for dYdX Protocol. Find the [latest snapshot](https://polkachu.com/tendermint_snapshots/dydx) and apply it using the `SNAPSHOT_URL` variable.
