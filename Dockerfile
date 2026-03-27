@@ -91,7 +91,7 @@ FROM ${BASE_IMAGE} AS base
 
 RUN apt-get update && \
     apt-get install --no-install-recommends --assume-yes \
-    ca-certificates curl wget file unzip zstd lz4 gnupg2 jq s3cmd pv && \
+    ca-certificates curl wget file unzip zstd lz4 gnupg2 jq s3cmd pv aria2 && \
     apt-get clean
 
 # Install Storj DCS uplink client

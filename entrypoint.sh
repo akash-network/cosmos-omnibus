@@ -438,11 +438,14 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
         (uplink cp $storj_args sj://${STORJ_SNAPSHOT_URL} - | pv -petrafb -i 5 | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n' || exit 1
       fi
     else
+      SNAPSHOT_FILE="$PROJECT_ROOT/snapshot/snapshot_download"
+      aria2c -x 10 -j 3 -s 16 --allow-overwrite=true --auto-file-renaming=false -d "$PROJECT_ROOT/snapshot" -o "snapshot_download" "$SNAPSHOT_URL" || exit 1
       if [ -n "$pv_extra_args" ]; then
-        (wget -nv --max-redirect=5 -O - $SNAPSHOT_URL | pv -petrafb -i 5 $pv_extra_args | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n' || exit 1
+        (pv -petrafb -i 5 $pv_extra_args "$SNAPSHOT_FILE" | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n' || exit 1
       else
-        (wget -nv --max-redirect=5 -O - $SNAPSHOT_URL | pv -petrafb -i 5 | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n' || exit 1
+        (pv -petrafb -i 5 "$SNAPSHOT_FILE" | eval $tar_cmd) 2>&1 | stdbuf -o0 tr '\r' '\n' || exit 1
       fi
+      rm -f "$SNAPSHOT_FILE"
     fi
 
     [ -z "${SNAPSHOT_DATA_PATH}" ] && [ -d "./${DATA_DIR}" ] && SNAPSHOT_DATA_PATH="${DATA_DIR}"
