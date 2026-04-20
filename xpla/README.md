@@ -7,7 +7,7 @@
 |Directory|`.xpla`|
 |ENV namespace|`XPLAD`|
 |Repository|`https://github.com/xpladev/xpla`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.42-xpla-v1.8.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-xpla-v1.8.0`|
 
 ## Examples
 
