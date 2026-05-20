@@ -5,7 +5,7 @@ services:
       args:
         PROJECT: cryptoorgchain
         PROJECT_BIN: chain-maind
-        VERSION: v7.1.0
+        VERSION: v7.2.0
         REPOSITORY: https://github.com/crypto-org-chain/chain-main
         GOLANG_VERSION: 1.25
         DEBIAN_VERSION: bookworm
