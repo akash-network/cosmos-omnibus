@@ -6,15 +6,15 @@ services:
         PROJECT: cosmoshub
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
-        VERSION: v27.2.0
+        VERSION: v27.3.0
         REPOSITORY: https://github.com/cosmos/gaia
         GOLANG_VERSION: 1.25
         DEBIAN_VERSION: bookworm
         POLKACHU_CHAIN_ID: cosmos
         BUILD_CMD: "env CGO_CFLAGS='-O2 -D__BLST_PORTABLE__' make install"
     ports:
-      - '26656:26656'
-      - '26657:26657'
-      - '1317:1317'
+      - "26656:26656"
+      - "26657:26657"
+      - "1317:1317"
     volumes:
       - ./node-data:/root/.gaia
