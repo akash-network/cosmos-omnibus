@@ -1,10 +1,10 @@
 services:
   node:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.43-babylon-v2.1.0
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.44-babylon-v2.1.0
     ports:
-      - '26656:26656'
-      - '26657:26657'
-      - '1317:1317'
+      - "26656:26656"
+      - "26657:26657"
+      - "1317:1317"
     environment:
       - MONIKER=Cosmos Omnibus Node
       - P2P_POLKACHU=1

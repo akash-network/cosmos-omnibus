@@ -1,10 +1,10 @@
 services:
   node_1:
-    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.43-generic
+    image: ghcr.io/akash-network/cosmos-omnibus:v1.2.44-generic
     ports:
-      - '26656:26656'
-      - '26657:26657'
-      - '1317:1317'
+      - "26656:26656"
+      - "26657:26657"
+      - "1317:1317"
     environment:
       - MONIKER=node_1
       - CHAIN_JSON=https://raw.githubusercontent.com/akash-network/net/main/mainnet/meta.json
