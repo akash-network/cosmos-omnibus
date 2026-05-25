@@ -66,11 +66,11 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-cheqd-0.6.9`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v9.0.6`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-chihuahua-v9.0.6`|[Example](./chihuahua)|
 |[comdex](https://github.com/comdex-official/comdex)|`v15.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-comdex-v15.3.0`|[Example](./comdex)|
-|[coreum](https://github.com/tokenize-x/tx-chain)|`v6.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-coreum-v6.1.0`|[Example](./coreum)|
+|[coreum](https://github.com/tokenize-x/tx-chain)|`v7.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-coreum-v7.0.0`|[Example](./coreum)|
 |[cosmoshub](https://github.com/cosmos/gaia)|`v27.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-cosmoshub-v27.3.0`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-crescent-v4.2.0`|[Example](./crescent)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v1.7.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-cronos-v1.7.0`|[Example](./cronos)|
-|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v6.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-cryptoorgchain-v6.0.3`|[Example](./cryptoorgchain)|
+|[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v7.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-cryptoorgchain-v7.2.0`|[Example](./cryptoorgchain)|
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-decentr-v1.6.4`|[Example](./decentr)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-desmos-v6.2.0`|[Example](./desmos)|
 |[dydx](https://github.com/dydxprotocol/v4-chain)|`v9.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-dydx-v9.4.0`|[Example](./dydx)|
@@ -84,7 +84,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[injective](https://github.com/InjectiveLabs/injective-chain-releases)|`v1.15.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-injective-v1.15.0`|[Example](./injective)|
 |[intento](https://github.com/trstlabs/intento)|`v1.1.0-hotfix.13`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-intento-v1.1.0-hotfix.13`|[Example](./intento)|
 |[irisnet](https://github.com/irisnet/irishub)|`v3.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-irisnet-v3.1.1`|[Example](./irisnet)|
-|[jackal](https://github.com/JackalLabs/canine-chain)|`v5.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-jackal-v5.1.0`|[Example](./jackal)|
+|[jackal](https://github.com/JackalLabs/canine-chain)|`v5.1.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-jackal-v5.1.2`|[Example](./jackal)|
 |[juno](https://github.com/CosmosContracts/Juno)|`v29.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-juno-v29.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.25.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-kava-v0.25.0`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.43-kichain-5.0.1`|[Example](./kichain)|

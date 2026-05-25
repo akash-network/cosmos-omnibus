@@ -7,12 +7,12 @@ services:
         PROJECT_BIN: txd
         PROJECT_DIR: .core/coreum-mainnet-1
         REPOSITORY: https://github.com/tokenize-x/tx-chain
-        VERSION: v6.1.0
+        VERSION: v7.0.0
         BUILD_METHOD: binary
-        BINARY_URL: https://github.com/tokenize-x/tx-chain/releases/download/v6.1.0/txd-linux-amd64
+        BINARY_URL: https://github.com/tokenize-x/tx-chain/releases/download/v7.0.0/txd-linux-amd64
     ports:
-      - '26656:26656'
-      - '26657:26657'
-      - '1317:1317'
+      - "26656:26656"
+      - "26657:26657"
+      - "1317:1317"
     volumes:
       - ./node-data:/root/.core/coreum-mainnet-1
