@@ -7,7 +7,7 @@
 |Directory|`.core/coreum-mainnet-1`|
 |ENV namespace|`TXD`|
 |Repository|`https://github.com/tokenize-x/tx-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.44-coreum-v7.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-coreum-v7.0.0`|
 
 ## Examples
 
