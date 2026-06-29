@@ -5,14 +5,14 @@ services:
       args:
         PROJECT: passage
         PROJECT_BIN: passage
-        VERSION: v2.6.0
+        VERSION: v3.0.0
         REPOSITORY: https://github.com/envadiv/Passage3D
         PROJECT_DIR: .passage
-        GOLANG_VERSION: "1.20"
+        GOLANG_VERSION: "1.23"
         DEBIAN_VERSION: bookworm
     ports:
-      - '26656:26656'
-      - '26657:26657'
-      - '1317:1317'
+      - "26656:26656"
+      - "26657:26657"
+      - "1317:1317"
     volumes:
       - ./node-data:/root/.passage
