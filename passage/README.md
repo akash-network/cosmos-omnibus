@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v3.0.1`|
+|Version|`v4.0.0`|
 |Binary|`passage`|
 |Directory|`.passage`|
 |ENV namespace|`PASSAGE`|
 |Repository|`https://github.com/envadiv/Passage3D`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-passage-v3.0.1`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-passage-v4.0.0`|
 
 ## Examples
 
