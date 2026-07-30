@@ -73,7 +73,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[decentr](https://github.com/Decentr-net/decentr)|`v1.6.4`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-decentr-v1.6.4`|[Example](./decentr)|
 |[desmos](https://github.com/desmos-labs/desmos)|`v6.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-desmos-v6.2.0`|[Example](./desmos)|
 |[dydx](https://github.com/dydxprotocol/v4-chain)|`v9.4.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-dydx-v9.4.0`|[Example](./dydx)|
-|[dymension](https://github.com/dymensionxyz/dymension)|`v3.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-dymension-v3.1.0`|[Example](./dymension)|
+|[dymension](https://github.com/dymensionxyz/dymension)|`v3.1.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-dymension-v3.1.0`|[Example](./dymension)|
 |[emoney](https://github.com/e-money/em-ledger)|`v1.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-emoney-v1.2.0`|[Example](./emoney)|
 |[evmos](https://github.com/evmos/evmos)|`v20.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-evmos-v20.0.0`|[Example](./evmos)|
 |[fetchhub](https://github.com/fetchai/fetchd)|`v0.14.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-fetchhub-v0.14.1`|[Example](./fetchhub)|
@@ -97,7 +97,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[noble](https://github.com/noble-assets/noble)|`v5.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-noble-v5.0.0`|[Example](./noble)|
 |[osmosis](https://github.com/osmosis-labs/osmosis)|`v31.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-osmosis-v31.0.0`|[Example](./osmosis)|
 |[panacea](https://github.com/medibloc/panacea-core)|`v2.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-panacea-v2.2.0`|[Example](./panacea)|
-|[passage](https://github.com/envadiv/Passage3D)|`v2.6.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-passage-v2.6.0`|[Example](./passage)|
+|[passage](https://github.com/envadiv/Passage3D)|`v4.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-passage-v4.0.3`|[Example](./passage)|
 |[persistence](https://github.com/persistenceOne/persistenceCore)|`v10.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-persistence-v10.3.0`|[Example](./persistence)|
 |[regen](https://github.com/regen-network/regen-ledger)|`v7.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-regen-v7.2.0`|[Example](./regen)|
 |[rizon](https://github.com/rizon-world/rizon)|`v0.4.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-rizon-v0.4.1`|[Example](./rizon)|
