@@ -113,7 +113,6 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[teritori](https://github.com/TERITORI/teritori-chain)|`v2.0.6`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-teritori-v2.0.6`|[Example](./teritori)|
 |[terpnetwork](https://github.com/terpnetwork/terp-core)|`v5.0.3`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-terpnetwork-v5.0.3`|[Example](./terpnetwork)|
 |[terra](https://github.com/terra-money/core)|`v2.11.8`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-terra-v2.11.8`|[Example](./terra)|
-|[umee](https://github.com/umee-network/umee)|`v6.3.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-umee-v6.3.0`|[Example](./umee)|
 |[xpla](https://github.com/xpladev/xpla)|`v1.8.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-xpla-v1.8.0`|[Example](./xpla)|
 
 ## Example configurations
