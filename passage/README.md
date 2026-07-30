@@ -7,7 +7,7 @@
 |Directory|`.passage`|
 |ENV namespace|`PASSAGE`|
 |Repository|`https://github.com/envadiv/Passage3D`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.45-passage-v4.0.3`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.46-passage-v4.0.3`|
 
 ## Examples
 
