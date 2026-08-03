@@ -6,14 +6,14 @@ services:
         PROJECT: juno
         PROJECT_BIN: junod
         PROJECT_DIR: .juno
-        VERSION: v29.0.0
+        VERSION: v30.0.0
         REPOSITORY: https://github.com/CosmosContracts/juno
-        GOLANG_VERSION: 1.23
+        GOLANG_VERSION: 1.25
         DEBIAN_VERSION: bookworm
     ports:
-      - '26656:26656'
-      - '26657:26657'
-      - '1317:1317'
+      - "26656:26656"
+      - "26657:26657"
+      - "1317:1317"
     environment:
       # Non-standard genesis filename in ZIP
       - GENESIS_FILENAME=juno-phoenix2-genesis.json

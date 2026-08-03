@@ -84,7 +84,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[intento](https://github.com/trstlabs/intento)|`v1.1.0-hotfix.13`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.46-intento-v1.1.0-hotfix.13`|[Example](./intento)|
 |[irisnet](https://github.com/irisnet/irishub)|`v3.1.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.46-irisnet-v3.1.1`|[Example](./irisnet)|
 |[jackal](https://github.com/JackalLabs/canine-chain)|`v5.1.2`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.46-jackal-v5.1.2`|[Example](./jackal)|
-|[juno](https://github.com/CosmosContracts/Juno)|`v29.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.46-juno-v29.0.0`|[Example](./juno)|
+|[juno](https://github.com/CosmosContracts/Juno)|`v30.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.46-juno-v30.0.0`|[Example](./juno)|
 |[kava](https://github.com/Kava-Labs/kava)|`v0.25.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.46-kava-v0.25.0`|[Example](./kava)|
 |[kichain](https://github.com/KiFoundation/ki-tools)|`5.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.46-kichain-5.0.1`|[Example](./kichain)|
 |[konstellation](https://github.com/konstellation/konstellation)|`v0.5.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.46-konstellation-v0.5.0`|[Example](./konstellation)|
