@@ -2,12 +2,12 @@
 
 | | |
 |---|---|
-|Version|`v7.0.0`|
+|Version|`v8.0.0`|
 |Binary|`txd`|
 |Directory|`.core/coreum-mainnet-1`|
 |ENV namespace|`TXD`|
 |Repository|`https://github.com/tokenize-x/tx-chain`|
-|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.47-coreum-v7.0.0`|
+|Image|`ghcr.io/akash-network/cosmos-omnibus:v1.2.47-coreum-v8.0.0`|
 
 ## Examples
 
