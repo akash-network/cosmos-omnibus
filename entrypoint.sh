@@ -168,12 +168,12 @@ restore_key () {
     echo "$1 backup not found"
   else
     echo "Restoring $1"
-    $key_get_cmd "${key_uri_base}/$1" $CONFIG_PATH/$1$file_suffix
+    $key_get_cmd "${key_uri_base}/$1" "$CONFIG_PATH/$1$file_suffix"
 
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Decrypting"
-      gpg --decrypt --batch --passphrase "$KEY_PASSWORD" $CONFIG_PATH/$1$file_suffix > $CONFIG_PATH/$1
-      rm $CONFIG_PATH/$1$file_suffix
+      gpg --decrypt --batch --passphrase "$KEY_PASSWORD" "$CONFIG_PATH/$1$file_suffix" > "$CONFIG_PATH/$1"
+      rm "$CONFIG_PATH/$1$file_suffix"
     fi
   fi
 }
@@ -184,11 +184,11 @@ backup_key () {
     echo "Backing up $1"
     if [ -n "$KEY_PASSWORD" ]; then
       echo "Encrypting backup..."
-      rm -f $CONFIG_PATH/$1.gpg
-      gpg --symmetric --batch --passphrase "$KEY_PASSWORD" $CONFIG_PATH/$1
+      rm -f "$CONFIG_PATH/$1.gpg"
+      gpg --symmetric --batch --passphrase "$KEY_PASSWORD" "$CONFIG_PATH/$1"
     fi
-    $key_put_cmd $CONFIG_PATH/$1$file_suffix "${key_uri_base}/$1"
-    [ -n "$KEY_PASSWORD" ] && rm $CONFIG_PATH/$1.gpg
+    $key_put_cmd "$CONFIG_PATH/$1$file_suffix" "${key_uri_base}/$1"
+    [ -n "$KEY_PASSWORD" ] && rm "$CONFIG_PATH/$1.gpg"
   fi
 }
 
@@ -334,7 +334,7 @@ fi
 
 # Overwrite seeds in config.toml for chains that are not using the env variable correctly
 if [ "$OVERWRITE_SEEDS" == "1" ]; then
-    sed -i "s/seeds = \"\"/seeds = \"$P2P_SEEDS\"/" $CONFIG_PATH/config.toml
+    sed -i "s/seeds = \"\"/seeds = \"$P2P_SEEDS\"/" "$CONFIG_PATH/config.toml"
 fi
 
 # Restore keys
@@ -352,7 +352,7 @@ fi
 # Addressbook
 if [ -n "$ADDRBOOK_URL" ]; then
   echo "Downloading addrbook from $ADDRBOOK_URL..."
-  curl -sfL $ADDRBOOK_URL > $CONFIG_PATH/addrbook.json
+  curl -sfL $ADDRBOOK_URL > "$CONFIG_PATH/addrbook.json"
 fi
 
 # Download genesis
@@ -365,8 +365,8 @@ if [ "$DOWNLOAD_GENESIS" == "1" ]; then
   file genesis.json | grep -q 'tar archive' && mv genesis.json genesis.json.tar && tar -xf genesis.json.tar && rm genesis.json.tar
   file genesis.json | grep -q 'Zip archive data' && mv genesis.json genesis.json.zip && unzip -o genesis.json.zip
 
-  mkdir -p $CONFIG_PATH
-  mv $GENESIS_FILENAME $CONFIG_PATH/genesis.json
+  mkdir -p "$CONFIG_PATH"
+  mv "$GENESIS_FILENAME" "$CONFIG_PATH/genesis.json"
 fi
 
 # Snapshot
@@ -408,9 +408,9 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
 
   if [ -n "${SNAPSHOT_URL}" ]; then
     echo "Downloading snapshot from $SNAPSHOT_URL..."
-    rm -rf $PROJECT_ROOT/snapshot;
-    mkdir -p $PROJECT_ROOT/snapshot;
-    cd $PROJECT_ROOT/snapshot;
+    rm -rf "$PROJECT_ROOT/snapshot";
+    mkdir -p "$PROJECT_ROOT/snapshot";
+    cd "$PROJECT_ROOT/snapshot";
 
     tar_cmd="tar xf -"
     # case insensitive match
@@ -449,18 +449,18 @@ if [ "$DOWNLOAD_SNAPSHOT" == "1" ]; then
     [ -z "${SNAPSHOT_WASM_PATH}" ] && [ -d "./${WASM_DIR}" ] && SNAPSHOT_WASM_PATH="${WASM_DIR}"
 
     if [ -n "${SNAPSHOT_DATA_PATH}" ]; then
-      rm -rf ../$DATA_DIR
-      mv ./${SNAPSHOT_DATA_PATH} ../$DATA_DIR
+      rm -rf "../$DATA_DIR"
+      mv "./${SNAPSHOT_DATA_PATH}" "../$DATA_DIR"
     fi
 
     if [ -n "${SNAPSHOT_WASM_PATH}" ]; then
-      rm -rf ../$WASM_DIR
-      mv ./${SNAPSHOT_WASM_PATH} ../$WASM_DIR
+      rm -rf "../$WASM_DIR"
+      mv "./${SNAPSHOT_WASM_PATH}" "../$WASM_DIR"
     fi
 
     if [ -z "${SNAPSHOT_DATA_PATH}" ]; then
-      rm -rf ../$DATA_DIR && mkdir -p ../$DATA_DIR
-      mv ./* ../$DATA_DIR
+      rm -rf "../$DATA_DIR" && mkdir -p "../$DATA_DIR"
+      mv ./* "../$DATA_DIR"
     fi
 
     cd ../ && rm -rf ./snapshot
@@ -494,9 +494,9 @@ if [ "$COSMOVISOR_ENABLED" == "1" ]; then
   export DAEMON_SHUTDOWN_GRACE="${DAEMON_SHUTDOWN_GRACE:-15s}"
 
   # Setup Folder Structure
-  mkdir -p $PROJECT_ROOT/cosmovisor/upgrades
-  mkdir -p $PROJECT_ROOT/cosmovisor/genesis/bin
-  cp "/bin/$PROJECT_BIN" $PROJECT_ROOT/cosmovisor/genesis/bin/
+  mkdir -p "$PROJECT_ROOT/cosmovisor/upgrades"
+  mkdir -p "$PROJECT_ROOT/cosmovisor/genesis/bin"
+  cp "/bin/$PROJECT_BIN" "$PROJECT_ROOT/cosmovisor/genesis/bin/"
 fi
 
 # preseed priv_validator_state.json if missing
