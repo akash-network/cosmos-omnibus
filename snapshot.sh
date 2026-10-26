@@ -98,35 +98,35 @@ while true; do
         s3_uri="${s3_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.${SNAPSHOT_SAVE_FORMAT}"
         storj_uri="${storj_uri_base}/${SNAPSHOT_PREFIX}_${timestamp}.${SNAPSHOT_SAVE_FORMAT}"
 
-        SNAPSHOT_SIZE=$(du -sb $SNAPSHOT_DIR | cut -f1)
+        SNAPSHOT_SIZE=$(du -sb "$SNAPSHOT_DIR" | cut -f1)
 
         if [ -n "$STORJ_ACCESS_GRANT" ]; then
           case "${SNAPSHOT_SAVE_FORMAT,,}" in
-            tar.gz)   (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | gzip -1 | uplink cp $storj_args - "$storj_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            tar.gz)   (tar c -C "$SNAPSHOT_DIR" . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | gzip -1 | uplink cp $storj_args - "$storj_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
             # Compress level can be set via `ZSTD_CLEVEL`, default `3`
             # No. of threads can be set via `ZSTD_NBTHREADS`, default `1`, `0` = detected no. of cpu cores
-            tar.zst)  (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | zstd -c $zstd_extra_arg | uplink cp $storj_args - "$storj_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            tar.zst)  (tar c -C "$SNAPSHOT_DIR" . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | zstd -c $zstd_extra_arg | uplink cp $storj_args - "$storj_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
             # Catchall, assume to be tar
-            *)        (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | uplink cp $storj_args - "$storj_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            *)        (tar c -C "$SNAPSHOT_DIR" . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | uplink cp $storj_args - "$storj_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
           esac
 	elif [ "$GCS_ENABLED" == "1" ]; then
           # GCS
           gcs_uri="${GCS_BUCKET_PATH}/${SNAPSHOT_PREFIX}_${timestamp}.${SNAPSHOT_SAVE_FORMAT}"
           case "${SNAPSHOT_SAVE_FORMAT,,}" in
-            tar.gz)   (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | gzip -1 | gsutil -q cp - "$gcs_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
-            tar.zst)  (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | zstd -c $zstd_extra_arg | gsutil -q cp - "$gcs_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
-            *)        (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | gsutil -q cp - "$gcs_uri") 2>&1 | stdbuf -o0 tr '\r' '\n' ;;
+            tar.gz)   (tar c -C "$SNAPSHOT_DIR" . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | gzip -1 | gsutil -q cp - "$gcs_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            tar.zst)  (tar c -C "$SNAPSHOT_DIR" . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | zstd -c $zstd_extra_arg | gsutil -q cp - "$gcs_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            *)        (tar c -C "$SNAPSHOT_DIR" . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | gsutil -q cp - "$gcs_uri") 2>&1 | stdbuf -o0 tr '\r' '\n' ;;
           esac
           make_gcs_file_public "$(basename "$gcs_uri")"
         else
           # AWS S3
           case "${SNAPSHOT_SAVE_FORMAT,,}" in
-            tar.gz)   (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | gzip -1 | s3cmd $aws_args put - "$s3_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            tar.gz)   (tar c -C "$SNAPSHOT_DIR" . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | gzip -1 | s3cmd $aws_args put - "$s3_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
             # Compress level can be set via `ZSTD_CLEVEL`, default `3`
             # No. of threads can be set via `ZSTD_NBTHREADS`, default `1`, `0` = detected no. of cpu cores
-            tar.zst)  (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | zstd -c $zstd_extra_arg | s3cmd $aws_args put - "$s3_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            tar.zst)  (tar c -C "$SNAPSHOT_DIR" . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | zstd -c $zstd_extra_arg | s3cmd $aws_args put - "$s3_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
             # Catchall, assume to be tar
-            *)        (tar c -C $SNAPSHOT_DIR . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | s3cmd $aws_args put - "$s3_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
+            *)        (tar c -C "$SNAPSHOT_DIR" . | pv -petrafb -i 5 -s $SNAPSHOT_SIZE | s3cmd $aws_args put - "$s3_uri") 2>&1 | stdbuf -o0 tr '\r' '\n';;
           esac
         fi
 
