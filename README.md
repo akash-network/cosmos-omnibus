@@ -66,7 +66,7 @@ tagged with the form `$COSMOS_OMNIBUS_VERSION-$PROJECT-$PROJECT_VERSION`.
 |[cheqd](https://github.com/cheqd/cheqd-node)|`0.6.9`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.48-cheqd-0.6.9`|[Example](./cheqd)|
 |[chihuahua](https://github.com/ChihuahuaChain/chihuahua)|`v9.0.6`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.48-chihuahua-v9.0.6`|[Example](./chihuahua)|
 |[coreum](https://github.com/tokenize-x/tx-chain)|`v8.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.48-coreum-v8.0.0`|[Example](./coreum)|
-|[cosmoshub](https://github.com/cosmos/gaia)|`v28.3.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.48-cosmoshub-v28.3.1`|[Example](./cosmoshub)|
+|[cosmoshub](https://github.com/cosmos/gaia)|`v29.0.1`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.48-cosmoshub-v29.0.1`|[Example](./cosmoshub)|
 |[crescent](https://github.com/crescent-network/crescent)|`v4.2.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.48-crescent-v4.2.0`|[Example](./crescent)|
 |[cronos](https://github.com/crypto-org-chain/cronos)|`v1.7.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.48-cronos-v1.7.0`|[Example](./cronos)|
 |[cryptoorgchain](https://github.com/crypto-org-chain/chain-main)|`v8.0.0`|`ghcr.io/akash-network/cosmos-omnibus:v1.2.48-cryptoorgchain-v8.0.0`|[Example](./cryptoorgchain)|
@@ -364,7 +364,7 @@ services:
         PROJECT: cosmoshub # should match the directory/Chain Registry
         PROJECT_BIN: gaiad
         PROJECT_DIR: .gaia
-        VERSION: v28.3.1
+        VERSION: v29.0.1
         REPOSITORY: https://github.com/cosmos/gaia
         GOLANG_VERSION: 1.22
         POLKACHU_CHAIN_ID: cosmos # only include if different from Chain Registry name
